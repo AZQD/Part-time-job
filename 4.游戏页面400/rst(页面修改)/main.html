@@ -1,0 +1,1777 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=0" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Keywords" content="rst,人参，润川，润川集团，农场">
+	<meta name="Description" content="以推广东北文化为背景的模拟经营类游戏">
+	<link rel="stylesheet" type="text/css" href="css/page_RST.css">
+	<link rel="stylesheet" type="text/css" href="css/page_response.css">
+	<link rel="stylesheet" type="text/css" href="css/page_animate.css">
+	<link rel="stylesheet" type="text/css" href="css/new.css">
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script src="js/layer.js"></script>
+	<script src="js/youxi.js"></script>
+	<script src="js/rst_popup.sass"></script>
+	<title>RST</title>
+</head>
+
+<body class="xw_bj ">
+
+<!--背景音乐-->
+<embed style="position: absolute; right:100px; top:60px; height:60px;" src="music.mp3" hidden="true" autostart="true" loop="true" volume=10>
+		
+<div class="xw_con_bj">
+	<div class="xyw_wap_bj">
+		<img src="images/wap_bj.jpg">
+	</div>
+	<div class="xw_content">
+		<div class="xw_state">
+			<img class="xw_state_bj" src="images/rst_state.png">
+			<div class="xw_head">
+				<img src="images/rst_head.png">
+			</div>
+			<div class="xw_name">
+				<p>小蕾蕾的家园</p>
+				<div class="clearfix"></div>
+			</div>
+			<div class="xw_float">
+				<div class="xw_column">
+					<h6>收益：</h6>
+					<p>500株</p>
+				</div>
+				<div class="xw_column">
+					<h6>参苗总量：</h6>
+					<p>3000株</p>
+				</div>
+			</div>
+		</div>
+		<div class="xw_exit"> 
+			<a href="page_land.html">
+				<img src="images/rst_exit.png" alt="退出登陆">
+			</a>
+		</div>
+		<div class="xyw_notice_box">
+			<div id="xw_notice">
+				<img src="images/rst_notice.png" alt="公告">
+			</div>
+			<div id="xyw_horn"> 
+				<ul> 
+					<li> 
+						<p>公告1 ： 亲爱的用户您离出局还有7天</p> 
+					</li> 
+					<li> 
+						<p>公告2 ：亲爱的用户您离出局还有7天 </p> 
+					</li> 
+					<li> 
+						<p>公告3 ：亲爱的用户您离出局还有7天 </p> 
+					</li> 
+				</ul> 
+			</div>
+		</div>
+		<!--<div class="xw_water">
+			<img src="images/rst_water.gif">
+		</div>-->
+		<div class="xw_tree" >
+			<div id="xw_hover" >
+				十个直接好友点亮
+			</div>
+			<div class="xw_tree_o" onmouseover="document.getElementById('xw_hover').style.display='block';" onmouseout="document.getElementById('xw_hover').style.display='none'">
+				<img src="images/rst_tree_1.png" alt="树a">
+			</div>
+			<div id="xw_hovert">
+				二十个直接好友点亮
+			</div>
+			<div class="xw_tree_t" onmouseover="document.getElementById('xw_hovert').style.display='block';" onmouseout="document.getElementById('xw_hovert').style.display='none'">
+				<img src="images/rst_tree_2.png" alt="树b">
+			</div>
+			<div id="xw_hovers">
+				三十个直接好友点亮
+			</div>
+			<div class="xw_tree_s" onmouseover="document.getElementById('xw_hovers').style.display='block';" onmouseout="document.getElementById('xw_hovers').style.display='none'">
+				<img src="images/rst_tree_3.png" alt="树c">
+			</div>
+			<div id="xw_hoverf">
+				四十个直接好友点亮
+			</div>
+			<div class="xw_tree_f" onmouseover="document.getElementById('xw_hoverf').style.display='block';" onmouseout="document.getElementById('xw_hoverf').style.display='none'">
+				<img src="images/rst_tree_4.png" alt="树d">
+			</div>
+		</div>
+		<div class="xw_transaction">
+			<img src="images/rts_transaction.png" alt="转换中心">
+		</div>
+		<div class="xw_home">
+			<img src="images/rst_home.png" alt="家">
+		</div>
+		<div id="xw_bot">
+			<div class="xw_set_up" id="xw_clickbtn">
+				<img src="images/u52.png" alt="设置">
+			</div>
+			<div class="xw_set" id="xw_setshow">
+					<a href="javascript:;" id="xw_team"></a>
+					<a href="javascript:;" id="xw_register"></a>
+					<a href="javascript:;" id="xw_activation"></a>
+					<a href="javascript:;" id="xw_information"></a>
+			</div>
+			<div class="xw_btn">			
+				<a href="javascript:;" id="xw_primary"></a>
+				<a href="javascript:;" id="xw_intermediate"></a>
+				<a href="javascript:;" id="xw_senior"></a>
+				<a href="javascript:;" id="xw_ultimate"></a>
+			</div>
+			<div class="xw_origin">
+				<input type="button">
+			</div>
+		</div>
+		<div class="xw_land_box">
+			<div class="xw_land_a xw_land">		<!--增种后的土地命名改为复数xw_land_aa 以下七块土地相同-->
+				<img src="images/rst_land.png" alt="土地">
+			</div>
+			<div class="xw_land_b xw_land">
+				<img src="images/rst_land.png" alt="土地">
+			</div>
+			<div class="xw_land_c xw_land">
+				<img src="images/rst_land.png" alt="土地">
+			</div>
+			<div class="xw_land_d xw_land">
+				<img src="images/rst_land.png" alt="土地">
+			</div>
+			<div class="xw_land_e xw_land">
+				<img src="images/z6.png" alt="土地">
+			</div>
+			<div class="xw_land_f xw_land">
+				<img src="images/z5.png" alt="土地">
+			</div>
+			<div class="xw_land_g xw_land">
+				<img src="images/z4.png" alt="土地">
+			</div>
+			<div class="xw_land_h xw_land">
+				<img src="images/z3.png" alt="土地">
+			</div>
+			<div class="xw_land_i xw_land">
+				<img src="images/z2.png" alt="土地">
+			</div>
+			<div class="xw_land_j xw_land">
+				<img src="images/z1.png" alt="土地">
+			</div>
+		</div>
+		<div class="xw_fence">
+			<img src="images/rst_fence.png" alt="土地">
+		</div>
+		<div class="xw_bulletin">
+			<img src="images/rst_bulletin.png">
+		</div>
+	</div>
+</div>
+
+<!--信息管理-->
+<div class="gl_window2">
+		
+	<div class="gl_back2">
+		<img src="images/yh_03.png" alt="返回">
+	</div>
+
+	<!--左边导航-->
+
+	<div class="gl_left_conter1">
+		<!--昵称-->
+		<div class="gl_number1">
+			<div class="gl_number_text1">
+				<img src="images/xxgl_img_03.png" alt="昵称">
+			</div>
+			<input type="text">
+		</div>
+		<!--微信号码-->
+		<div class="gl_yzm1">
+			<div class="gl_yzm_text1">
+				<img src="images/xxgl_img_06.png" alt="微信号码">
+			</div>
+			<div class="gl_position1">
+				<input type="text">
+				<!--<input class="gl_yzmhq1" type="button" >-->
+			</div>
+		</div>
+		<!--一级密码-->
+		<div class="gl_bh1">
+			<div class="gl_bh_text1">
+				<img src="images/xxgl_img_08.png" alt="一级密码">
+			</div>
+			<input type="text">
+		</div>
+			<!--二级密码-->
+		<div class="gl_id1">
+			<div class="gl_id_text1">
+				<img src="images/xxgl_img_10.png" alt="二级密码">
+			</div>
+			<input type="text">
+		</div>
+			<!--报单中心-->
+		<div class="gl_zx1">
+			<div class="gl_zx_text1">
+				<img src="images/xxgl_img_12.png" alt="报单中心">
+			</div>
+			<input type="text">
+		</div>
+	</div>
+
+	<div class="gl_yes1">
+		<input type="button">
+	</div>		
+</div>
+<div class="mask opacity"></div>
+
+<!--用户注册-->
+<div class="gl_window">
+		
+	<div class="gl_back">
+		<img src="images/yh_03.png" alt="返回按钮">
+	</div>
+			
+			<!--左边导航-->		
+	<div class="gl_left_conter">
+		<!--手机号码-->
+		<div class="gl_number">
+			<div class="gl_number_text">
+				<img src="images/yh_07.png" alt="手机号码">
+			</div>
+			<input type="text">
+		</div>
+					<!--验证码-->
+		<div class="gl_yzm">
+			<div class="gl_yzm_text">
+				<img src="images/yh_23.png" alt="验证码">
+			</div>
+			<div class="gl_position">
+				<input type="text">
+				<input class="gl_yzmhq" type="button" >
+			</div>
+		</div>
+							<!--会员编号-->
+		<div class="gl_bh">
+			<div class="gl_bh_text">
+				<img src="images/yh_31.png" alt="会员编号">
+			</div>
+			<input type="text">
+		</div>
+									<!--推荐人ID-->
+		<div class="gl_id">
+			<div class="gl_id_text">
+				<img src="images/yh_39.png" alt="推荐人id">
+			</div>
+			<input type="text">
+		</div>
+			<!--报单中心-->
+		<div class="gl_zx">
+			<div class="gl_zx_text">
+				<img src="images/yh_48.png" alt="报单中心">
+			</div>
+			<input type="text">
+		</div>
+	</div>
+
+			<!--右边导航-->		
+	<div class="gl_right_conter">
+			<!--昵称-->
+		<div class="gl_nc">
+			<div class="gl_nc_text">
+				<img src="images/yh_09.png" alt="昵称">
+			</div>
+			<input type="text">
+		</div>
+				<!--姓名-->
+		<div class="gl_name">
+			<div class="gl_name_text">
+				<img src="images/yh_20.png" alt="真实姓名">
+			</div>
+				<input type="text">
+		</div>
+					<!--登录密码-->
+		<div class="gl_mm">
+			<div class="gl_mm_text">
+				<img src="images/yh_26.png" alt="登录密码">
+			</div>
+			<input type="text">
+		</div>
+						<!--确认密码-->
+		<div class="gl_qrmm">
+			<div class="gl_qrmm_text">
+				<img src="images/yh_35.png" alt="确认密码">
+			</div>
+			<input type="text">
+		</div>
+							<!--二级密码-->
+		<div class="gl_ejmm">
+			<div class="gl_ejmm_text">
+				<img src="images/yh_43.png" alt="二级密码">
+			</div>
+			<input type="text">
+		</div>
+								<!--确认二级密码-->
+		<div class="gl_qrejmm">
+			<div class="gl_qrejmm_text">
+				<img src="images/yh_51.png" alt="确认二级密码">
+			</div>
+			<input type="text">
+		</div>
+	</div>
+
+	<div class="gl_yes">
+		<input type="button">
+	</div>
+	</div>
+<div class="mask opacity"></div>
+
+<!--安全验证-->
+<div class="gl_window1">
+		
+	<div class="gl_back1">
+		<img src="images/yh_03.png" alt="返回按钮">
+	</div>
+	<div class="gl_conter">
+		<p>二级密码：</p>
+		<input type="text">
+	</div>
+
+	<div class="gl_foot">
+		<input type="button">
+	</div>
+	
+</div>
+<div class="mask opacity"></div>
+
+<!--公告-->
+<div class="gl_window3">		
+	<div class="gl_back3">
+		<img src="images/yh_03.png" alt="返回按钮">
+	</div>	
+	<div class="gl_title">
+		<p><b>说明：请会员留意发布的公告</b></p>
+	</div>	
+	<table title="测试" cellspacing="1">
+		<tr class="gl_top">
+			<th>标题</th>
+			<th>简介</th>
+			<th>发布日期</th>
+			<th>查看详情</th>
+		</tr>
+		<tr class="gl_congter">
+			<td>TG 3月27日 公告</td>
+			<td>TG 3月27日 公告</td>
+			<td>2017.03.27</td>
+			<td><input type="button" value="查看详情"></td>
+		</tr>
+		<tr class="gl_congter1">
+			<td>TG 3月27日 公告</td>
+			<td>TG 3月27日 公告</td>
+			<td>2017.03.27</td>
+			<td><input type="button" value="查看详情"></td>
+		</tr>
+		<tr class="gl_congter">
+			<td>TG 3月27日 公告</td>
+			<td>TG 3月27日 公告</td>
+			<td>2017.03.27</td>
+			<td><input type="button" value="查看详情"></td>
+		</tr>
+		 <tr class="gl_congter1">
+			<td>TG 3月27日 公告</td>
+			<td>TG 3月27日 公告</td>
+			<td>2017.03.27</td>
+			<td><input type="button" value="查看详情"></td>
+		</tr>
+		<tr class="gl_congter">
+			<td>TG 3月27日 公告</td>
+			<td>TG 3月27日 公告</td>
+			<td>2017.03.27</td>
+			<td><input type="button" value="查看详情"></td>
+		</tr>
+		<tr class="gl_congter1">
+			<td>TG 3月27日 公告</td>
+			<td>TG 3月27日 公告</td>
+			<td>2017.03.27</td>
+			<td><input type="button" value="查看详情"></td>
+		</tr>  
+	</table>
+			
+	<!--页码-->
+	<div class="gl_box">
+		<div class="gl_s2">
+			<img src="images/rst_previous_page.png" alt="上一页">
+		</div>
+		<ul>
+			<li class="gl_current">1</li>
+			<li>2</li>
+			<li>...</li>
+		</ul>
+		<div class="gl_s1">
+			<img src="images/rst_next_page.png" alt="下一页">
+		</div>
+		<div class="gl_p1">
+			<p>跳转到</p>
+		</div>
+		<input type="text">
+		<p class="gl_p2">
+			<a href="#">页 go</a>
+		</p>
+		<div class="clearfix"></div>
+	</div>
+</div>
+<div class="mask opacity"></div>
+
+<!--参苗详情-->
+<div class="gl_window5">
+	<div class="gl_back5">
+		<img src="images/yh_03.png" alt="返回按钮">
+	</div>
+	<div class="clearfix"></div>	
+	<div class="gl_top1">
+		<img src="images/smzz_img_031_03.png" alt="参苗">
+		<h1>成长期</h1>
+		<p>种植时间：2017-03-01</p>
+		<input type="button" class="gl_zz">
+		<input type="button" class="gl_cz">
+	</div>	
+	<div class="gl_bottom">
+		<ul>
+			<li> 率：1%</li>
+			<li>辅助成长率：5%</li>
+			<li>参苗日成长数量：000</li>
+			<li>已种植参苗：000</li>
+		</ul>
+	</div>
+	<div class="gl_na">
+		<p>参苗收入</p>
+	</div>
+</div>
+<div class="mask opacity"></div>
+
+<!--参苗增种-->
+<div class="gl_window4">
+	<div class="gl_back4">
+		<img src="images/yh_03.png" alt="返回按钮">
+	</div>
+	<div class="gl_z_img">
+		<img src="images/smzz_img_031_03.png" alt="参苗">
+	</div>	
+	<div class="gl_db">
+		<input type="text" value="0" class="gl_shuru">
+		<input type="button" class="gl_jian">
+		<input type="button" class="gl_jia">
+		<input type="button" class="gl_queding">
+		<div class="clearfix"></div>
+	</div>
+</div>
+<div class="mask opacity"></div>
+
+<!--参苗成长记录-->
+<div class="wyf_jlmx_bigbox">
+   <div class="xyw_jlmx_box">
+        <div class="xyw_jlmx_jt">
+            <img src="images/jt.png" alt="返回按钮">
+        </div>
+        <div class="xyw_jlmx_jlmx">
+            <img src="images/smczjl.png" alt="参苗成长记录">
+        </div>
+        <div class="clearfix"></div>
+        <div class="wyf_jlmx_smbox">
+            <div class="wyf_jlmx_sm">
+                 <p class="wyf_jlmx_smp"><b>说明:查看参苗每日成长详细情况</b></p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <table class="wyf_jlmx_tb" border="1" width="500" cellspacing="0" cellpadding="0">
+            <thead class="wyf_jlmx_bbd">
+				<td class="wyf_jlmx_bdnr time">
+				   日期
+				</td>
+				<td class="wyf_jlmx_bdnr">
+					用户ID
+				</td>
+				<td class="wyf_jlmx_bdnr">
+					一代
+				</td>
+					<td class="wyf_jlmx_bdnr">
+					二代
+				</td>
+				<td class="wyf_jlmx_bdnr">
+				   合计
+				</td>
+				<td class="wyf_jlmx_bdnr long">
+					参苗日成长数量
+				</td>
+				<td class="wyf_jlmx_bdnr">
+				   总计
+				</td>
+            </thead>
+            <tbody class="wyf_ljmx_hbd">
+                <tr>
+                    <td class="xyw_jlmx_qs">2017-03-30-01:30</td>
+                    <td class="xyw_jlmx_qs">0001</td>
+                    <td class="xyw_jlmx_qs">50</td>
+                    <td class="xyw_jlmx_qs">100</td>
+                    <td class="xyw_jlmx_qs">150</td>
+                  	<td class="xyw_jlmx_qs">100</td>
+                    <td class="xyw_jlmx_qs">150</td>
+                </tr>
+                <tr>
+                    <td class="xyw_jlmx_ss">2017-03-30-01:30</td>
+                    <td class="xyw_jlmx_ss">0002</td>
+                    <td class="xyw_jlmx_ss">50</td>
+                    <td class="xyw_jlmx_ss">100</td>
+                    <td class="xyw_jlmx_ss">150</td>
+                     <td class="xyw_jlmx_ss">100</td>
+                    <td class="xyw_jlmx_ss">30000</td>
+                </tr>
+                <tr>
+                    <td class="xyw_jlmx_qs">2017-03-30-01:30</td>
+                    <td class="xyw_jlmx_qs">0003</td>
+                    <td class="xyw_jlmx_qs">50</td>
+                    <td class="xyw_jlmx_qs">100</td>
+                    <td class="xyw_jlmx_qs">150</td>
+                    <td class="xyw_jlmx_qs">100</td>
+                    <td class="xyw_jlmx_qs">150</td>
+                </tr>
+                <tr>
+                    <td class="xyw_jlmx_ss">2017-03-30-01:30</td>
+                    <td class="xyw_jlmx_ss">0004</td>
+                    <td class="xyw_jlmx_ss">50</td>
+                    <td class="xyw_jlmx_ss">100</td>
+                    <td class="xyw_jlmx_ss">150</td>
+                      <td class="xyw_jlmx_ss">100</td>
+                    <td class="xyw_jlmx_ss">150</td>
+                </tr>
+                <tr>
+                    <td class="xyw_jlmx_qs">2017-03-30-01:30</td>
+                    <td class="xyw_jlmx_qs">0005</td>
+                    <td class="xyw_jlmx_qs">50</td>
+                    <td class="xyw_jlmx_qs">100</td>
+                    <td class="xyw_jlmx_qs">150</td>
+                    <td class="xyw_jlmx_qs">100</td>
+                    <td class="xyw_jlmx_qs">150</td>
+                </tr>
+              </tbody>
+        </table>
+		<div class="yj_box">
+			<div class="s1">
+				<img src="images/rst_previous_page.png" alt="上一页">
+			</div>
+			<ul>
+				<li class="current">1</li>
+				<li>2</li>
+				<li>...</li>
+			</ul>
+			<div class="s2">
+				<img src="images/rst_next_page.png" alt="下一页">
+			</div>
+			<div class="p1">
+				<p>跳转到</p>
+			</div>
+			<input type="text">
+			<p class="p2">
+				<a href="javascript:;">页</a>
+			</p>
+			<div class="clearfix"></div>
+		</div>
+    </div>
+</div>  
+<div class="mask opacity"></div>
+
+<!--好友列表-->
+<div class="xyw_td_bigbox">
+    <div class="xyw_td_box">
+		<div>
+			<div class="xyw_td_jt">
+				<img src="images/jt.png" alt="返回按钮">
+			</div>
+			<div class="xyw_td_td">
+				<img src="images/td.png" alt="团队">
+			</div>
+		</div>	
+		<div class="xyw_tabs">
+			<ul>
+				<li class="xy_jh add">
+						<img src="images/td_jhyh.png" alt="用户激活"> 
+				</li>
+				<li>
+					<img src="images/td_wjhyh.png" alt="未激活用户">
+				</li>
+			</ul>
+		</div>    
+		<div class="xyw_content_box">
+			<ul class="xyw_content1">
+				<li>
+					<div class="wyf_td_smbox">
+						<div class="clearfix"></div>
+						<div class="wyf_td_sm">
+							<p><b>说明:若您的帐号中有可用的激活码，点击激活后将自动使用，若无激活码请申请充值激活码或使用别人激活码。</b></p>
+						</div>
+						<input class="wyf_td_IDcx" type="text" value="用户ID查询"  >
+						<div class="wyf_td_cx">
+						   <a href=""> <img src="images/td_cx.png" alt="查询"> </a>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<table class="wyf_td_tab1" border="1" width="500" cellspacing="0" cellpadding="0">
+						<thead class="wyf_td_tabsbox">
+							<td class="wyf_td_tabs">
+								<img src="images/td_rymd.png" alt="人员名单">
+							</td>
+							<td class="wyf_td_tabs">
+								<img src="images/td_yhID.png" alt="用户id">
+							</td>
+							<td class="wyf_td_tabs">
+								<img src="images/td_1drs.png" alt="1代人数">
+							</td>
+							<td class="wyf_td_tabs">
+								<img src="images/td_2drs.png" alt="2代人数">
+							</td>
+							<td class="wyf_td_tabs">
+								<img src="images/td_zrs.png" alt="总人数">
+							</td>
+							<td class="wyf_td_tabs">
+								<img src="images/td_jhzt.png" alt="激活状态">
+							</td>
+						</thead>
+						<tbody class="wyf_td_oddeven">
+							<tr>
+								<td class="wyf_td_odd">赵一</td>
+								<td class="wyf_td_odd">0001</td>
+								<td class="wyf_td_odd">50</td>
+								<td class="wyf_td_odd">100</td>
+								<td class="wyf_td_odd">150</td>
+								<td class="wyf_td_odd">是</td>
+							</tr>
+							<tr>
+								<td class="wyf_td_even">钱二</td>
+								<td class="wyf_td_even">0002</td>
+								<td class="wyf_td_even">50</td>
+								<td class="wyf_td_even">100</td>
+								<td class="wyf_td_even">150</td>
+								<td class="wyf_td_even">否</td>
+							</tr>
+							<tr>
+								<td class="wyf_td_odd">孙三</td>
+								<td class="wyf_td_odd">0003</td>
+								<td class="wyf_td_odd">50</td>
+								<td class="wyf_td_odd">100</td>
+								<td class="wyf_td_odd">150</td>
+								<td class="wyf_td_odd">是</td>
+							</tr>
+							<tr>
+								<td class="wyf_td_even">李四</td>
+								<td class="wyf_td_even">0004</td>
+								<td class="wyf_td_even">50</td>
+								<td class="wyf_td_even">100</td>
+								<td class="wyf_td_even">150</td>
+								<td class="wyf_td_even">否</td>
+							</tr>
+
+						</tbody>
+					</table>
+					<div class="yj_box">
+						<div class="s1">
+							<img src="images/rst_previous_page.png" alt="上一页">
+						</div>
+						<ul>
+							<li class="current">1</li>
+							<li>2</li>
+							<li>...</li>
+						</ul>
+						<div class="s2">
+							<img src="images/rst_next_page.png" alt="下一页">
+						</div>
+						<div class="p1">
+							<p>跳转到</p>
+						</div>
+						<input type="text">
+						<p class="p2">
+							<a href="#">页</a>
+						</p>
+						<div class="clearfix"></div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="xyw_content_box">		
+			<ul class="xyw_content2" style="z-index: 99999">
+				<li>
+					<table class="wyf_td_wjhtab1" border="1" width="500" cellspacing="0" cellpadding="0">
+						<thead class="wyf_td_wjhtabsbox">
+							<td class="wyf_td_wjhtabs">
+								<img src="images/td_rymd.png" alt="人员名单">
+							</td>
+							<td class="wyf_td_wjhtabs">
+								<img src="images/td_yhID.png" alt="用户id">
+							</td>
+							<td class="wyf_td_wjhtabs">
+								<img src="images/wjh_srjum.png" alt="输入激活码">
+							</td>
+							<td class="wyf_td_wjhtabs">
+								<img src="images/wjh_sfjh.png" alt="是否激活">
+							</td>
+						</thead>
+						<tbody class="wyf_td_wjhoddeven">
+							<tr>
+								<td class="wyf_td_wjhodd">赵一</td>
+								<td class="wyf_td_wjhodd">0001</td>
+								<td class="wyf_td_wjhodd">2581</td>
+								<td class="wyf_td_wjhodd">是</td>
+
+							</tr>
+							<tr>
+								<td class="wyf_td_wjheven">钱二</td>
+								<td class="wyf_td_wjheven">0002</td>
+								<td class="wyf_td_wjheven">2582</td>
+								<td class="wyf_td_wjheven">否</td>
+
+							</tr>
+							<tr>
+								<td class="wyf_td_wjhodd">孙三</td>
+								<td class="wyf_td_wjhodd">0003</td>
+								<td class="wyf_td_wjhodd">2583</td>
+								<td class="wyf_td_wjhodd">否</td>
+
+							</tr>
+							<tr>
+								<td class="wyf_td_wjheven">李四</td>
+								<td class="wyf_td_wjheven">0004</td>
+								<td class="wyf_td_wjheven">2584</td>
+								<td class="wyf_td_wjheven">是</td>
+
+							</tr>
+						</tbody>
+					</table>
+					<div class="yj_box">
+						<div class="s1">
+							<img src="images/rst_previous_page.png" alt="上一页">
+						</div>
+						<ul>
+							<li class="current">1</li>
+							<li>2</li>
+							<li>...</li>
+						</ul>
+						<div class="s2">
+							<img src="images/rst_next_page.png" alt="下一页">
+						</div>
+						<div class="p1">
+							<p>跳转到</p>
+						</div>
+						<input type="text">
+						<p class="p2">
+							<a href="#">页</a>
+						</p>
+						<div class="clearfix"></div>
+					</div>
+				</li>
+			</ul>
+		</div>	
+	</div>
+</div>		
+<div class="mask opacity"></div>
+
+<script>
+		$(".xyw_tabs li").removeClass("add").first().addClass("add")
+		$(".xyw_tabs li").click(
+			function(){
+				$(this).addClass("add").siblings().removeClass("add")
+			}
+		)
+		
+		$(".xyw_content_box").hide().first().show()
+		$(".xyw_tabs li").click(
+			function(){
+				$(".xyw_content_box").hide().eq($(this).index()).show()
+			}
+	)
+</script>
+    
+<!--转换中心-->
+<div class="bac">
+	<a class="fh" href="#">
+		<img src="images/a (3).png" alt="返回按钮">
+	</a>
+	<div class="title_box">
+		<ul class="title">
+			<li class="current">转出</li>
+			<li>转入记录</li>
+			<li>转出记录</li>
+			<div class="clear"></div>
+		</ul>
+	</div>
+	<div class="xx">
+		<ul>
+			<li>1、根据板块的不同，您当日可转总量的40%，30%，20%，10%</li>
+			<li>2、系统自动损耗转换数量的10%为参苗转换损耗数量。</li>
+		</ul>
+	</div>
+	<div class="content">
+		<div class="content_box">
+			<div class="colum1">
+				<div class="xyy_content_slide">
+					<div class="xyy_column-1">
+						<div class="xyy_col-title xyy_col-title1">
+							<img src="images/rst_title_1.png" alt="当前激活码余量">
+						</div>
+						<div class="xyy_clo_input">
+							<div class="xyy_text">1111</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="xyy_column-1">
+						<div class="xyy_col-title xyy_col-title2">
+							<img src="images/rst_title_2.png" alt="转入编号">
+						</div>
+						<div class="xyy_clo_input">
+							<div class="xyy_text">1234</div>
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="xyy_column-1">
+						<div class="xyy_col-title xyy_col-title3">
+							<img src="images/rst_title_3.png" alt="转入数量">
+						</div>
+						<div class="xyy_clo_input">
+							<input class="xyy_input_text" type="text">
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="xyy_column-1">
+						<div class="xyy_col-title xyy_col-title4">
+							<img src="images/rst_title_4.png" alt="转入数量">
+						</div>
+						<div class="xyy_clo_input">
+							<input class="xyy_input_text" type="text">
+						</div>
+						<div class="clearfix"></div>
+					</div>
+					<div class="xw_confirm_btn">
+						<input type="submit" value="">
+					</div>	
+				</div>
+					
+			</div>
+		</div>
+		<div class="content_box">
+			<div class="colum2">
+				<a href="#">
+					<img class="wycx2" src="images/kkk_03.png" alt="查询">
+				</a>
+				<input class="rq" type="text" value="2017.7.2">
+				<input class="rq" type="text" value="2017.7.2">
+				<div class="clear"></div>
+				<table class="tab1" border="1"  cellspacing="0" cellpadding="0">
+					<thead>
+						<td class="tabs">
+							时间
+							</td>
+						<td class="tabs">
+							单号
+						</td>
+						<td class="tabs">
+							转入ID
+						</td>
+						<td class="tabs">
+							姓名
+						</td>
+						<td class="tabs">
+							转出ID
+						</td>
+						<td class="tabs">
+							姓名
+						</td>
+						<td class="tabs">
+							转出数量
+						</td>
+						<td class="tabs tabls">
+							实际转出数量
+						</td>
+						<td class="tabs">
+							状态
+						</td>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="xyw_odd">0001</td>
+							<td class="xyw_odd">张三</td>
+							<td class="xyw_odd">21</td>
+							<td class="xyw_odd">0001</td>
+							<td class="xyw_odd">张三</td>
+							<td class="xyw_odd">21</td>
+							<td class="xyw_odd">21</td>
+							<td class="xyw_odd">21</td>
+							<td class="xyw_odd">成功</td>
+						</tr>
+						<tr>
+							<td class="xyw_even">0002</td>
+							<td class="xyw_even">李四</td>
+							<td class="xyw_even">22</td>
+							<td class="xyw_even">0002</td>
+							<td class="xyw_even">李四</td>
+							<td class="xyw_even">22</td>
+							<td class="xyw_even">22</td>
+							<td class="xyw_even">22</td>
+							<td class="xyw_even">失败</td>
+						</tr>
+						<tr>
+							<td class="xyw_odd">0003</td>
+							<td class="xyw_odd">赵伟</td>
+							<td class="xyw_odd">32</td>
+							<td class="xyw_odd">0003</td>
+							<td class="xyw_odd">赵伟</td>
+							<td class="xyw_odd">32</td>
+							<td class="xyw_odd">32</td>
+							<td class="xyw_odd">32</td>
+							<td class="xyw_odd">成功</td>
+						</tr>
+						<tr>
+							<td class="xyw_even">0004</td>
+							<td class="xyw_even">王五</td>
+							<td class="xyw_even">24</td>
+							<td class="xyw_even">0004</td>
+							<td class="xyw_even">王五</td>
+							<td class="xyw_even">24</td>
+							<td class="xyw_even">24</td>
+							<td class="xyw_even">24</td>
+							<td class="xyw_even">失败</td>
+						</tr>
+						<tr>
+							<td class="xyw_odd">0005</td>
+							<td class="xyw_odd">赵伟</td>
+							<td class="xyw_odd">32</td>
+							<td class="xyw_odd">0003</td>
+							<td class="xyw_odd">赵伟</td>
+							<td class="xyw_odd">32</td>
+							<td class="xyw_odd">32</td>
+							<td class="xyw_odd">32</td>
+							<td class="xyw_odd">成功</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="yj_box">
+					<div class="s1">
+						<img src="images/rst_previous_page.png" alt="上一页">
+					</div>
+					<ul>
+						<li class="current">1</li>
+						<li>2</li>
+						<li>...</li>
+					</ul>
+					<div class="s2">
+						<img src="images/rst_next_page.png" alt="下一页">
+					</div>
+					<div class="p1">
+						<p>跳转到</p>
+					</div>
+					<input type="text">
+					<p class="p2">
+						<a href="#">页 go</a>
+					</p>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+		<div  class="content_box">
+			<div class="colum2">
+				<div>
+					<div class="colum_box">
+						<a href="#">
+							<img class="wycx" src="images/kkk_03.png" alt="查询">
+						</a>
+						<input class="rq" type="text" value="2017.07.2">
+						<input class="rq" type="text" value="2017.7.2">
+						<div class="clear"></div>
+						<table class="tab1" border="1"  cellspacing="0" cellpadding="0">
+							<thead>
+									<td class="tabs">
+										时间
+									</td>
+									<td class="tabs">
+										单号
+									</td>
+									<td class="tabs">
+										转出ID
+									</td>
+									<td class="tabs">
+										姓名
+									</td>
+									<td class="tabs">
+										转入ID
+									</td>
+									<td class="tabs">
+										姓名
+									</td>
+									<td class="tabs">
+										转出数量
+									</td>
+									<td class="tabs tabls">
+										实际转出数量
+									</td>
+									<td class="tabs">
+										状态
+									</td>
+								</thead>
+							<tbody>
+								<tr>
+									<td class="xyw_odd">0001</td>
+									<td class="xyw_odd">张三</td>
+									<td class="xyw_odd">21</td>
+									<td class="xyw_odd">0001</td>
+									<td class="xyw_odd">张三</td>
+									<td class="xyw_odd">21</td>
+									<td class="xyw_odd">21</td>
+									<td class="xyw_odd">21</td>
+									<td class="xyw_odd">成功</td>
+								</tr>
+								<tr>
+									<td class="xyw_even">0002</td>
+									<td class="xyw_even">李四</td>
+									<td class="xyw_even">22</td>
+									<td class="xyw_even">0002</td>
+									<td class="xyw_even">李四</td>
+									<td class="xyw_even">22</td>
+									<td class="xyw_even">22</td>
+									<td class="xyw_even">22</td>
+									<td class="xyw_even">失败</td>
+								</tr>
+								<tr>
+									<td class="xyw_odd">0003</td>
+									<td class="xyw_odd">赵伟</td>
+									<td class="xyw_odd">32</td>
+									<td class="xyw_odd">0003</td>
+									<td class="xyw_odd">赵伟</td>
+									<td class="xyw_odd">32</td>
+									<td class="xyw_odd">32</td>
+									<td class="xyw_odd">32</td>
+									<td class="xyw_odd">成功</td>
+								</tr>
+								<tr>
+									<td class="xyw_even">0004</td>
+									<td class="xyw_even">王五</td>
+									<td class="xyw_even">24</td>
+									<td class="xyw_even">0004</td>
+									<td class="xyw_even">王五</td>
+									<td class="xyw_even">24</td>
+									<td class="xyw_even">24</td>
+									<td class="xyw_even">24</td>
+									<td class="xyw_even">失败</td>
+								</tr>
+								<tr>
+									<td class="xyw_odd">0005</td>
+									<td class="xyw_odd">赵伟</td>
+									<td class="xyw_odd">32</td>
+									<td class="xyw_odd">0003</td>
+									<td class="xyw_odd">赵伟</td>
+									<td class="xyw_odd">32</td>
+									<td class="xyw_odd">32</td>
+									<td class="xyw_odd">32</td>
+									<td class="xyw_odd">成功</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="yj_box">
+							<div class="s1">
+								<img src="images/rst_previous_page.png" alt="上一页">
+							</div>
+							<ul>
+								<li class="current">1</li>
+								<li>2</li>
+								<li>...</li>
+							</ul>
+							<div class="s2">
+								<img src="images/rst_next_page.png" alt="下一页">
+							</div>
+							<div class="p1">
+								<p>跳转到</p>
+							</div>
+							<input type="text">
+							<p class="p2"><a href="#">页 go</a></p>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="mask opacity"></div>
+
+<script>
+		$(".title_box li").removeClass("current").first().addClass("current")
+		$(".title_box li").click(
+			function(){
+				$(this).addClass("current").siblings().removeClass("current")
+			}
+		)
+		
+		$(".content_box").hide().first().show()
+		$(".title_box li").click(
+			function(){
+				$(".content_box").hide().eq($(this).index()).show()
+			}
+		)
+		
+		$(".title2 li").removeClass("current3").first().addClass("current3")
+		$(".title2 li").click(
+			function(){
+				$(this).addClass("current3").siblings().removeClass("current3")
+			}
+		)
+		
+		$(".colum_box").hide().first().show()
+		$(".title2 li").click(
+			function(){
+				$(".colum_box").hide().eq($(this).index()).show()
+			}
+		)
+ </script>
+
+<!--激活码-->
+<div class="xyy_jhmcon_box">
+    <div class="xyy_jhmcen_box">
+		<div>
+			<div class="xyy_backo">
+				<img src="images/jt.png" alt="返回按钮">
+			</div>
+			<div class="xyy_title">
+				<img src="images/rst_jhm.png" alt="激活码">
+			</div>
+		</div>	
+		<div class="xyy_tabs">
+			<ul>
+				<li class="add">
+						<img src="images/jhm_wd.png" alt="我的激活码"> 
+				</li>
+				<li>
+					<img src="images/jhm_zr.png" alt="激活码转让">
+				</li>
+				<li>
+					<img class="xyy_zrjl" src="images/jhm_zrjl.png" alt="转让记录">
+				</li>
+			</ul>
+		</div>    
+		<div class="xyy_content_box">
+			<ul class="xyy_content1">
+				<li>
+					<div class="content-slide">
+						<p class="p3">说明：可以进行激活码转让，或激活会员试用，使用后该激活码失效！</p>
+						<table class="tab1" border="1" cellspacing="0" cellpadding="0">
+							<thead>
+								<td class="tabs">
+									激活码
+									</td>
+								<td class="tabs">
+									生成时间
+								</td>
+								<td class="tabs">
+									激活会员
+								</td>
+								<td class="tabs">
+									激活状态
+								</td>
+								<td class="tabs">
+									使用时间
+								</td>
+
+							</thead>
+							<tbody>
+								<tr>
+									<td class="xyy_odd">0001</td>
+									<td class="xyy_odd">张三</td>
+									<td class="xyy_odd">21</td>
+									<td class="xyy_odd">0001</td>
+									<td class="xyy_odd">张三</td>
+
+								</tr>
+								<tr>
+									<td class="xyy_even">0002</td>
+									<td class="xyy_even">李四</td>
+									<td class="xyy_even">22</td>
+									<td class="xyy_even">0002</td>
+									<td class="xyy_even">李四</td>
+
+								</tr>
+								<tr>
+									<td class="xyy_odd">0005</td>
+									<td class="xyy_odd">赵伟</td>
+									<td class="xyy_odd">32</td>
+									<td class="xyy_odd">0003</td>
+									<td class="xyy_odd">赵伟</td>
+
+								</tr>
+								<tr>
+									<td class="xyy_even">0004</td>
+									<td class="xyy_even">王五</td>
+									<td class="xyy_even">24</td>
+									<td class="xyy_even">0004</td>
+									<td class="xyy_even">王五</td>
+
+								</tr>
+								<tr>
+									<td class="xyy_odd">0005</td>
+									<td class="xyy_odd">赵伟</td>
+									<td class="xyy_odd">32</td>
+									<td class="xyy_odd">0003</td>
+									<td class="xyy_odd">赵伟</td>
+
+								</tr>
+							</tbody>
+						</table>
+						<div class="yj_box">
+							<div class="s1">
+								<img src="images/rst_previous_page.png" alt="上一页">
+							</div>
+							<ul>
+								<li class="current">1</li>
+								<li>2</li>
+								<li>...</li>
+							</ul>
+							<div class="s2">
+								<img src="images/rst_next_page.png" alt="下一页">
+							</div>
+							<div class="p1">
+								<p>跳转到</p>
+							</div>
+							<input type="text">
+							<p class="p2">
+								<a href="#">页 go</a>
+							</p>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="xyy_content_box">		
+			<ul class="xyy_content2">
+				<li>
+					<div class="swiper-slide">
+						<div class="xyy_content-slide">
+							<P class="p4">激活码转让后无法取消！请核对好信息 、可批量进行转让</P>
+							<div class="xyy_column_1">
+								<div class="xyy_col_title">
+									<img src="images/jhm_yl.png" alt="当前激活码余量">
+								</div>
+								<div class="xyy_clo_input">
+									<input class="xyy_input_text" type="text">
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="xyy_column_1">
+								<div class="xyy_col_title">
+									<img src="images/jhm_zrbh.png" alt="转入编号">
+								</div>
+								<div class="xyy_clo_input">
+									<input class="xyy_input_text" type="text">
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="xyy_column_1">
+								<div class="xyy_col_title">
+									<img src="images/jhm_zrsl.png" alt="转入数量">
+								</div>
+								<div class="xyy_clo_input">
+									<input class="xyy_input_text" type="text">
+								</div>
+								<div class="clearfix"></div>
+							</div>
+							<div class="xyy_btn">
+								<input type="submit">
+							</div>
+				  		</div>
+				  </div>
+				</li>
+			</ul>
+		</div>	
+		<div class="xyy_content_box">		
+			<ul class="xyy_content3">
+				<li>
+					<div class="swiper-slide">
+						<div class="content-slide">
+							<P class="p3">说明：相关用户表示和您进行转币的用户编号，如对交易有疑问，请联系管理员！</P>
+							<table class="tab1" border="1"  cellspacing="0" cellpadding="0">
+								<thead>
+									<td class="tabs">
+										转让时间
+										</td>
+									<td class="tabs">
+										相关用户
+									</td>
+									<td class="tabs">
+										转让数量
+									</td>
+									<td class="tabs">
+										转入转出
+									</td>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="xyy_odd">0001</td>
+										<td class="xyy_odd">张三</td>
+										<td class="xyy_odd">21</td>
+										<td class="xyy_odd">0001</td>
+									</tr>
+									<tr>
+										<td class="xyy_even">0002</td>
+										<td class="xyy_even">李四</td>
+										<td class="xyy_even">22</td>
+										<td class="xyy_even">0002</td>
+									</tr>
+									<tr>
+										<td class="xyy_odd">0003</td>
+										<td class="xyy_odd">赵伟</td>
+										<td class="xyy_odd">32</td>
+										<td class="xyy_odd">0003</td>
+									</tr>
+									<tr>
+										<td class="xyy_even">0004</td>
+										<td class="xyy_even">王五</td>
+										<td class="xyy_even">24</td>
+										<td class="xyy_even">0004</td>
+									</tr>
+									<tr>
+										<td class="xyy_odd">0005</td>
+										<td class="xyy_odd">赵伟</td>
+										<td class="xyy_odd">32</td>
+										<td class="xyy_odd">0003</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="yj_box">
+								<div class="s1">
+									<img src="images/rst_previous_page.png" alt="上一页">
+								</div>
+								<ul>
+									<li class="current">1</li>
+									<li>2</li>
+									<li>...</li>
+								</ul>
+								<div class="s2">
+									<img src="images/rst_next_page.png" alt="下一页">
+								</div>
+								<div class="p1">
+									<p>跳转到</p>
+								</div>
+								<input type="text">
+								<p class="p2">
+									<a href="#">页 go</a>
+								</p>
+								<div class="clear"></div>
+							</div>
+					    </div>
+				    </div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>		
+<div class="mask opacity"></div>
+
+<script>
+		$(".xyy_tabs li").removeClass("add").first().addClass("add")
+		$(".xyy_tabs li").click(
+			function(){
+				$(this).addClass("add").siblings().removeClass("add")
+			}
+		)
+		
+		$(".xyy_content_box").hide().first().show()
+		$(".xyy_tabs li").click(
+			function(){
+				$(".xyy_content_box").hide().eq($(this).index()).show()
+			}
+		)
+</script>
+
+<!--留言板-->
+<div class="d_bac">
+	<a class="d_fh" href="#"><img src="images/a (3).png" alt=""></a>
+	<div class="d_title_box">
+		<ul class="d_title">
+			<li class="d_current">收件箱</li>
+			<li>发件箱</li>
+			<li>写留言</li>
+			<div class="clear"></div>
+		</ul>
+	</div>
+	<div class="d_xx">
+		<ul>
+			<li>说明：您可以给公司留言，并查看他们的回复。</li>
+		</ul>
+	</div>
+	<div class="d_content">
+		<div class="d_content_box">
+			<div class="d_colum2">
+				<table id="d_tab1" border="1"  cellspacing="0" cellpadding="0">
+					<thead>
+						<td class="d_tabs">
+							时间
+							</td>
+						<td class="d_tabs">
+							标题
+						</td>
+						<td class="d_tabs">
+							留言内容
+						</td>
+						<td class="d_tabs">
+							回复内容
+						</td>
+						<td class="d_tabs">
+							回复状态
+						</td>
+						<td class="d_tabs">
+							回复时间
+						</td>
+						<td class="d_tabs">
+							操作
+						</td>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="xyw_even">0002</td>
+							<td class="xyw_even">李四</td>
+							<td class="xyw_even">点击查看</td>
+							<td class="xyw_even">0002</td>
+							<td class="xyw_even">李四</td>
+							<td class="xyw_even">0002</td>
+							<td class="xyw_even">李四</td>
+						</tr>
+						<tr>
+							<td class="xyw_odd">0001</td>
+							<td class="xyw_odd">张三</td>
+							<td class="xyw_odd">点击查看</td>
+							<td class="xyw_odd">0001</td>
+							<td class="xyw_odd">张三</td>
+							<td class="xyw_odd">0001</td>
+							<td class="xyw_odd">张三</td>
+						</tr>
+						<tr>
+							<td class="xyw_even">0002</td>
+							<td class="xyw_even">李四</td>
+							<td class="xyw_even">点击查看</td>
+							<td class="xyw_even">0002</td>
+							<td class="xyw_even">李四</td>
+							<td class="xyw_even">0002</td>
+							<td class="xyw_even">李四</td>
+						</tr>
+						<tr>
+							<td class="xyw_odd">0003</td>
+							<td class="xyw_odd">赵伟</td>
+							<td class="xyw_odd">点击查看</td>
+							<td class="xyw_odd">0003</td>
+							<td class="xyw_odd">赵伟</td>
+							<td class="xyw_odd">0003</td>
+							<td class="xyw_odd">赵伟</td>
+						</tr>
+						<tr>
+							<td class="xyw_even">0004</td>
+							<td class="xyw_even">王五</td>
+							<td class="xyw_even">点击查看</td>
+							<td class="xyw_even">0004</td>
+							<td class="xyw_even">王五</td>
+							<td class="xyw_even">0004</td>
+							<td class="xyw_even">王五</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="yj_box">
+					<div class="s1">
+						<img src="images/rst_previous_page.png" alt="上一页">
+					</div>
+					<ul>
+						<li class="current">1</li>
+						<li>2</li>
+						<li>...</li>
+					</ul>
+					<div class="s2">
+						<img src="images/rst_next_page.png" alt="下一页">
+					</div>
+					<div class="p1">
+						<p>跳转到</p>
+					</div>
+					<input type="text">
+					<p class="p2">
+						<a href="#">页</a>
+					</p>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<div class="d_content_box">
+			<div class="d_colum2">
+				<table id="d_tab1" border="1"  cellspacing="0" cellpadding="0">
+					<thead>
+						<td class="tabs">
+							时间
+							</td>
+						<td class="tabs">
+							标题
+						</td>
+						<td class="tabs">
+							留言内容
+						</td>
+						<td class="tabs">
+							回复内容
+						</td>
+						<td class="tabs">
+							回复状态
+						</td>
+						<td class="tabs">
+							回复时间
+						</td>
+						<td class="d_tabs">
+							操作
+						</td>
+
+					</thead>
+					<tbody>
+						<tr>
+							<td class="xyw_even">0002</td>
+							<td class="xyw_even">李四</td>
+							<td class="xyw_even">点击查看</td>
+							<td class="xyw_even">0002</td>
+							<td class="xyw_even">李四</td>
+							<td class="xyw_even">0002</td>
+							<td class="xyw_even">李四</td>
+						</tr>
+						<tr>
+							<td class="xyw_odd">0001</td>
+							<td class="xyw_odd">张三</td>
+							<td class="xyw_odd">点击查看</td>
+							<td class="xyw_odd">0001</td>
+							<td class="xyw_odd">张三</td>
+							<td class="xyw_odd">0001</td>
+							<td class="xyw_odd">张三</td>
+						</tr>
+						<tr>
+							<td class="xyw_even">0002</td>
+							<td class="xyw_even">李四</td>
+							<td class="xyw_even">点击查看</td>
+							<td class="xyw_even">0002</td>
+							<td class="xyw_even">李四</td>
+							<td class="xyw_even">0002</td>
+							<td class="xyw_even">李四</td>
+						</tr>
+						<tr>
+							<td class="xyw_odd">0003</td>
+							<td class="xyw_odd">赵伟</td>
+							<td class="xyw_odd">点击查看</td>
+							<td class="xyw_odd">0003</td>
+							<td class="xyw_odd">赵伟</td>
+							<td class="xyw_odd">0003</td>
+							<td class="xyw_odd">赵伟</td>
+						</tr>
+						<tr>
+							<td class="xyw_even">0004</td>
+							<td class="xyw_even">王五</td>
+							<td class="xyw_even">点击查看</td>
+							<td class="xyw_even">0004</td>
+							<td class="xyw_even">王五</td>
+							<td class="xyw_even">0004</td>
+							<td class="xyw_even">王五</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="yj_box">
+					<div class="s1">
+						<img src="images/rst_previous_page.png" alt="上一页">
+					</div>
+					<ul>
+						<li class="current">1</li>
+						<li>2</li>
+						<li>...</li>
+					</ul>
+					<div class="s2">
+						<img src="images/rst_next_page.png" alt="下一页">
+					</div>
+					<div class="p1">
+						<p>跳转到</p>
+					</div>
+					<input type="text">
+					<p class="p2">
+						<a href="#">页</a>
+					</p>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+		<div class="d_content_box">
+			<div class="colum2">
+				<div>
+					<div class="d_colum_box">
+						<div class="ly_box">
+							<div class="ly">
+								<img src="images/lybt.png" alt="">
+								<input type="text">
+								<div class="clear"></div>
+							</div>
+							<div class="ly1">
+								<img src="images/nr.png" alt="">
+								<textarea></textarea>
+								<div class="clear"></div>
+							</div>
+							<input class="ly_tj" type="button">
+
+						</div>
+
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="mask opacity"></div>
+
+<script>
+		$(".d_title_box li").removeClass("d_current").first().addClass("d_current")
+		$(".d_title_box li").click(
+			function(){
+				$(this).addClass("d_current").siblings().removeClass("d_current")
+			}
+		)
+		
+		$(".d_content_box").hide().first().show()
+		$(".d_title_box li").click(
+			function(){
+				$(".d_content_box").hide().eq($(this).index()).show()
+			}
+		)
+		
+		$(".d_title2 li").removeClass("d_current3").first().addClass("d_current3")
+		$(".d_title2 li").click(
+			function(){
+				$(this).addClass("d_current3").siblings().removeClass("d_current3")
+			}
+		)
+		
+		$(".d_colum_box").hide().first().show()
+		$(".d_title2 li").click(
+			function(){
+				$(".d_colum_box").hide().eq($(this).index()).show()
+			}
+		)
+</script>
+
+<!--原点复投-->
+<div class="bac2">
+	<a class="fh2" href="#">
+		<img src="images/a (3).png" alt="返回按钮">
+	</a>
+	<p class="ts_box2">您需要300参苗和一个激活码来激活您的账户</p>
+</div>
+<div class="mask opacity"></div>
+
+<!--<div class="bac1">
+		<a class="fh1" href="#"><img src="images/a (3).png" alt="背景"></a>
+	
+		<p class="ts_box1">您已有300参苗和激活码，确定需要激活账户么？</p>
+		
+		<div>
+			<input class="queding" type="button">
+		<input class="quxiao" type="button">
+		</div>
+		
+</div>-->	
+<div class="mask opacity"></div>
+<!--<script>
+$('.xw_state').on('click', function(){ 
+
+/*		//iframe层-父子操作
+	layer.open({
+	  type: 2,
+	  title: false,
+	  area: ['700px', '530px'],
+	  fixed: false, //不固定
+	  maxmin: true,
+	  closeBtn: 0,
+	  shadeClose: true,
+	  content: 'page_land.html'
+	});*/
+
+	layer.open({				 
+		  type: 1,
+		  title: false,
+        area: ['430px', '500px'],
+        maxmin: false,
+        closeBtn: 1,
+		  content: $('.bac2'),
+		});
+
+	});
+	
+$('#xw_notice').on('click', function(){ 
+/*	//iframe层-父子操作
+	layer.open({
+	  type: 2,
+	  title: false,
+	  area: ['700px', '530px'],
+	  fixed: false, //不固定
+	  maxmin: true,
+	  closeBtn: 0,
+	  shadeClose: true,
+	  content: 'page_land.html'
+	  
+	  
+	  title: false,
+	  closeBtn: 0,
+	  anim:4,
+	  shade:0.3,
+	  offset: ['100px', '50px'],
+	  shadeClose: true, 
+	  id:'LAY_layuipro',
+	  skin: 'layui-laye   r-nobg', //没有背景色
+	  
+	  
+	});*/
+
+	layer.open({				 
+	  type: 1,
+	  title: false,
+	  id:'LAY_layuipro',
+		maxmin: true,
+        shadeClose: true, //点击遮罩关闭层
+	  content:$('.gl_window3')
+	});
+   
+});
+</script>-->
+
+<!--滚动公告-->
+<script type="text/javascript"> 
+	
+	(function (win){ 
+		var callboarTimer; 
+		var xyw_horn = $('#xyw_horn'); 
+		var xyw_hornUl = xyw_horn.find('ul'); 
+		var xyw_hornLi = xyw_horn.find('li'); 
+		var liLen = xyw_horn.find('li').length; 
+		var initHeight = xyw_hornLi.first().outerHeight(true); 
+		
+		win.autoAnimation = function (){ 
+			if (liLen <= 1) return; 
+			var self = arguments.callee; 
+			var xyw_hornLiFirst = xyw_horn.find('li').first(); 
+			xyw_hornLiFirst.animate({ 
+			marginTop:-initHeight 
+			}, 500, function (){ 
+			clearTimeout(callboarTimer); 
+			xyw_hornLiFirst.appendTo(xyw_hornUl).css({marginTop:0}); 
+			callboarTimer = setTimeout(self, 3000); 
+			}); 
+		};
+		
+		xyw_horn.mouseenter( 
+		function (){ 
+			clearTimeout(callboarTimer); 
+		}).mouseleave(function (){ 
+			callboarTimer = setTimeout(win.autoAnimation, 3000); 
+		}); 
+	}(window)); 
+	
+	setTimeout(window.autoAnimation, 3000);
+
+</script>
+</body>
+</html>

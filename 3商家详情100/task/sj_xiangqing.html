@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>商家详情</title>
+		<link rel="stylesheet" type="text/css" href="css/base.css"/>
+		<link rel="stylesheet" type="text/css" href="css/public.css"/>
+		<link rel="stylesheet" type="text/css" href="css/2.0alliance.css"/>
+		<script src="js/rem.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body style="overflow: scroll;overflow-x: hidden;">
+		<!--头部-->
+		<div class="pub_head1 touming">
+			<div class="icon_back">
+				<a href="javascript:history.go(-1)"></a>
+				<span><img src="images/sj_xq_kongfx.png"/></span>
+				<span><img src="images/sj_xq_kongxin.png"/></span>
+			</div>
+		</div>
+		<div class="sjqx_main">
+		<div class="sjxq_banner">
+		<img src="images/sj_xq_banner.png"/>
+		<span>12张</span>
+		</div>
+		<div class="sjxq_con">
+			<div class="xq_biaoti">
+				<h1 class="font-36">鲜言-鲜辣蒸汽海鲜</h1>
+				<h2>
+					<img src="images/middlestar_quan.png"/>
+					<img src="images/middlestar_quan.png"/>
+					<img src="images/middlestar_quan.png"/>
+					<img src="images/middlestar_ban.png"/>
+					<img src="images/middlestar_kong.png"/>
+					<span class="font-30 color-yellow">4.0</span>
+					<span class="font-26 color-666">人均&nbsp;&nbsp;120元/人</span>
+				</h2>
+				<h3>
+					<img src="images/sj_xq_lb.png"/>
+					<span class="font-30 color-red">使用龙币买单，立享优惠</span>
+				</h3>
+			</div>
+			<div class="xintemian">
+				<ul>
+					<li><span class="bgc_xin font-26">新</span>新用户优惠</li>
+					<li><span class="bgc_te font-26">特</span>活动特价</li>
+					<li><span class="bgc_mian font-26">免</span>免费提供WIFI、空调、茶水</li>
+				</ul>
+			</div>
+		</div>
+		<div class="sjxq_address">
+			<ul>
+				<li>
+					<img src="images/dingwei.png"/>
+					<span class="font-30">武侯区天府大道苏宁广场5楼502号</span>
+				</li>
+				<li><img src="images/sh_xq_tel.png"/></li>
+			</ul>
+		</div>
+		<div class="sjxq_footer">	
+			<div>
+				<h1 class="font-30">营业时间:</h1>
+				<p class="font-26">10:00-22:00&nbsp;&nbsp;周一至周五</p>
+			</div>
+			<div>
+				<h1 class="font-30">商家简介:</h1>
+				<p class="font-26">
+					古万州烤鱼是一家川菜餐馆，位于近郊双流县航空港锦华路四段45号。适宜情侣约会、家庭聚会、朋友聚餐、休闲小憩、随便吃吃。特色服务：是老字号，有露天位，有包厢，提供在线菜单，有夜宵。
+				</p>
+			</div>
+		</div>
+		</div>
+		<div class="sjqx_footers">
+			<div>
+				<span class="font-34 color-white">前往该商家</span>
+				<img src="images/sj_xq_nav.png"/>
+			</div>
+			<div class="font-34 color-white">扫码付款</div>
+		</div>
+		
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+            $(function(){
+				var windowWidth = $(window).width();
+                var bannerImgHeight = $('.sjxq_banner img').height();
+                var bannerImgWidth = $('.sjxq_banner img').width();
+                window.addEventListener("scroll",function(){
+                    if($('.sjxq_banner img').height() > bannerImgHeight+1){
+                        $('.sjxq_banner img').css({"height":bannerImgHeight,"width":bannerImgWidth,"left":0,'transition':'all .3s cubic-bezier(0,0,0.58,1)'});
+                    }
+                },false);
+                var startpoint = 0; //定义手指初始化位置
+                window.addEventListener('touchstart',function(ev){
+                    startpoint = ev.changedTouches[0].clientY;
+                });
+                window.addEventListener('touchmove',function(ev){
+                    if($(this).scrollTop() == 0){
+                        var nowpoint = ev.changedTouches[0].clientY;
+                        var dis = nowpoint - startpoint;
+                        if(dis>=0){
+                            $('.sjxq_banner img').css({"height":bannerImgHeight*(1+dis/bannerImgHeight*0.4),"width":bannerImgWidth*(1+dis/bannerImgWidth*0.4),"left":-windowWidth*0.5*(dis/windowWidth*0.4),'transition':'all .3s linear'});
+                            if($('.sjxq_banner img').height() == bannerImgHeight){
+                                $("body").css('overflow','scroll');
+                            }
+                        }
+                    }
+                    if($(this).scrollTop() >= bannerImgHeight){
+                        $('.touming').css({"background":'rgba(0,0,0,0.5)','transition':'all 1s linear'});
+                        $('.icon_back span:nth-of-type(1) img').attr('src','images/sj_xq_shifx.png');
+                        $('.icon_back span:nth-of-type(2) img').attr('src','images/sj_xq_shixin.png');
+                    }else{
+                        $('.touming').css({"background":'transparent','transition':'all 1s linear'});
+                        $('.icon_back span:nth-of-type(1) img').attr('src','images/sj_xq_kongfx.png');
+                        $('.icon_back span:nth-of-type(2) img').attr('src','images/sj_xq_kongxin.png');
+                    }
+                });
+                window.addEventListener('touchend',function(ev){
+                    $('.sjxq_banner img').css({"height":bannerImgHeight,"width":bannerImgWidth,"left":0,'transition':'all .3s linear'});
+                });
+            });
+		</script>
+	</body>
+</html>

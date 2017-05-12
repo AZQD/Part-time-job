@@ -1,0 +1,192 @@
+/* Sass Document */
+
+
+$(function(){
+	/*设置*/
+	$("#xw_clickbtn").click(function(e){
+		   e.stopPropagation('');
+		   $('#xw_setshow').slideToggle();
+	});
+	$(document).click(function(){
+		   $('#xw_setshow').hide();
+	});
+});	
+	
+$(function(){
+	/*参苗详情*/
+    $('.xw_land_box').click(function(e){
+		e.stopPropagation('');
+        $('.gl_window5').slideToggle();    //显示
+    });
+    $(document).click(function(){
+        $('.gl_window5').hide();    //隐藏
+    });
+});
+
+$(function(){
+	/*信息管理*/
+    $('#xw_information').click(function(){
+        $('.gl_window2').stop().show();    //显示
+		$('.mask').stop().show(); 
+    });
+    $('.gl_back2').click(function(){
+        $('.gl_window2').stop().hide();    //隐藏
+		$('.mask').stop().hide(); 
+    });
+});
+	
+$(function(){
+	/*注册*/
+    $('#xw_register').click(function(){
+        $('.gl_window').stop().show();    //显示
+		$('.mask').stop().show(); 
+    });
+    $('.gl_back').click(function(){
+        $('.gl_window').stop().hide();    //隐藏
+		$('.mask').stop().hide(); 
+    });
+});
+	
+$(function(){
+	/*团队*/
+    $('#xw_team').click(function(){
+        $('.xyw_td_bigbox').stop().show();    //显示
+		$('.mask').stop().show(); 
+    });
+    $('.xyw_td_bigbox .xyw_td_jt').click(function(){
+        $('.xyw_td_bigbox').stop().hide();    //隐藏
+		$('.mask').stop().hide(); 
+    });
+});	
+
+$(function(){
+	/*团队未激活*/
+    $('.wyf_td_yhjh1').click(function(){
+        $('.xyw_td_wjhbigbox').stop().show();    //显示
+		$('.mask').stop().show(); 
+    });
+    $('.xyw_td_bigbox .xyw_td_jt').click(function(){
+        $('.xyw_td_wjhbigbox').stop().hide();    //隐藏
+		$('.mask').stop().hide(); 
+    });
+});
+
+$(function(){
+	/*用户激活*/
+    $('.wyf_td_yhjh').click(function(){
+        $('.xyw_td_bigbox').stop().show();    //显示
+		$('.mask').stop().show(); 
+    });
+    $('.xyw_td_bigbox .xyw_td_jt').click(function(){
+        $('.xyw_td_bigbox').stop().hide();    //隐藏
+		$('.mask').stop().hide(); 
+    });
+});
+
+$(function(){
+	/*团队安全密码*/
+    $('#安全密码').click(function(){
+        $('.gl_window1').stop().show();    //显示
+		$('.mask').stop().show(); 
+    });
+    $('.gl_back1').click(function(){
+        $('.gl_window1').stop().hide();    //隐藏
+		$('.mask').stop().hide(); 
+    });
+});	
+	
+$(function(){
+	/*公告*/
+    $('#xw_notice').click(function(){
+        $('.gl_window3').stop().show();    //显示
+		$('.mask').stop().show(); 
+    });
+    $('.gl_back3').click(function(){
+        $('.gl_window3').stop().hide();    //隐藏
+		$('.mask').stop().hide(); 
+    });
+});	
+	
+$(function(){
+	/*人参增种*/
+    $('.gl_zz').click(function(){
+        $('.gl_window4').stop().show();    //显示
+		$('.mask').stop().show(); 
+    });
+    $('.gl_back4').click(function(){
+        $('.gl_window4').stop().hide();    //隐藏
+		$('.mask').stop().hide(); 
+    });
+});	
+	
+$(function(){
+	/*参苗成长记录*/
+    $('.xw_home').click(function(){
+        $('.wyf_jlmx_bigbox').stop().show();    //显示
+		$('.mask').stop().show(); 
+    });
+    $('.xyw_jlmx_jt').click(function(){
+        $('.wyf_jlmx_bigbox').stop().hide();    //隐藏
+		$('.mask').stop().hide(); 
+    });
+});
+	
+$(function(){
+	/*查看明细*/
+    $('.wyf_ljmx_hbd td a').click(function(){
+        $('.wyf_jlxq_bigbox').stop().show();    //显示
+		$('.mask').stop().show(); 
+    });
+    $('.wyf_jlxq_box .wyf_jlxq_jt').click(function(){
+        $('.wyf_jlxq_bigbox').stop().hide();    //隐藏
+		$('.mask').stop().hide(); 
+    });
+});	
+
+$(function(){
+	/*激活码*/
+    $('#xw_activation').click(function(){
+        $('.xyy_jhmcon_box').stop().show();    //显示
+		$('.mask').stop().show(); 
+    });
+    $('.xyy_backo').click(function(){
+        $('.xyy_jhmcon_box').stop().hide();    //隐藏
+		$('.mask').stop().hide(); 
+    });
+});	
+
+$(function(){
+	/*转换中心*/
+    $('.xw_transaction').click(function(){
+        $('.bac').stop().show();    //显示
+		$('.mask').stop().show(); 
+    });
+    $('.fh').click(function(){
+        $('.bac').stop().hide();    //隐藏
+		$('.mask').stop().hide(); 
+    });
+});	
+
+$(function(){
+	/*留言*/
+    $('.xw_bulletin').click(function(){
+        $('.d_bac').stop().show();    //显示
+		$('.mask').stop().show(); 
+    });
+    $('.d_fh').click(function(){
+        $('.d_bac').stop().hide();    //隐藏
+		$('.mask').stop().hide(); 
+    });
+});
+
+$(function(){
+	/*原点复投*/
+   $('.xw_origin').click(function(){
+        $('.bac2').stop().show();    //显示
+		$('.mask').stop().show(); 
+    });
+    $('.fh2').click(function(){
+        $('.bac2').stop().hide();    //隐藏
+		$('.mask').stop().hide(); 
+    });
+});	

@@ -1,0 +1,80 @@
+@media screen and (orientation: landscape){/*横屏*/
+
+}
+body{
+    min-width:420px;
+}
+.mobileBox{
+    padding-top:10%;
+}
+.mobileBox .loginMsg{
+    width:40%;
+}
+/*@media screen and (orientation: portrait){!*竖屏*!
+    .mobileBox{
+        padding: 36% 0 0 0;
+    }
+    .mobileBox .loginMsg{
+        width:240px;
+    }
+}*/
+
+.mobileBox{
+    width:100%;
+    height:100%;
+    background: url(../images/land_bj1.jpg) no-repeat center center;
+    background-size: 100% 100%;
+}
+.mobileBox .loginMsg{
+    margin: 0 auto;
+}
+.mobileBox .loginMsg .logo1{
+    width:100%;
+    margin: 3% 0;
+}
+.mobileBox .loginMsg .inputsBox{
+    width:100%;
+}
+.mobileBox .loginMsg .inputsTyle{
+    background-color: #fff;
+    opacity: 0.8;
+    border: 1px solid #B0B0B0;
+    width: 100%;
+    line-height: 32px;
+    background-size: 100%;
+    margin: 3% 0;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #666;
+    text-indent: 1rem;
+}
+.mobileBox .loginMsg .verify{
+    width:100%;
+    background-color: #fff;
+    opacity: 0.8;
+    border: 1px solid #B0B0B0;
+    line-height: 32px;
+    margin: 3% 0;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #666;
+    text-indent: 1rem;
+}
+.mobileBox .loginMsg .verifyImgBox {
+    text-align: right;
+}
+.mobileBox .loginMsg .verifyImg {
+    width: 90%;
+    margin: 6% 0;
+    height: 30px;
+}
+.mobileBox .loginMsg .lostPsw {
+    text-align: center;
+}
+.mobileBox .loginMsg .lostPsw a{
+    color: #1A00FF;
+    border-bottom: 1px solid #1A00FF;
+}
+.mobileBox .boxShadow{
+    box-shadow: 1px 4px 10px #999;
+}

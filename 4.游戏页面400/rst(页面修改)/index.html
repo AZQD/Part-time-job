@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" id="viewport" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="email=no" />
+    <link rel="stylesheet" type="text/css" href="css/bootstraptc.min.css">
+    <link rel="stylesheet" type="text/css" href="css/ppublic.min.css">
+    <link rel="stylesheet" type="text/css" id="linkHref">
+</head>
+<body>
+<section class="container mobileBox">
+    <aside class="loginMsg">
+        <div><img class="logo1" src="images/logo1.png"></div>
+        <div class="inputsBox"><input type="text" class="inputsTyle userName inputs" placeholder="请输入您的账号"></div>
+        <div class="inputsBox"><input type="password" class="inputsTyle password inputs" placeholder="请输入您的密码"></div>
+        <div class="row">
+            <div class="col-xs-7 col-sm-7 verifyBox"><input type="text" class="verify inputs" placeholder="请输入验证码"></div>
+            <div class="col-xs-5 col-sm-5 verifyImgBox"><img class="verifyImg" src="images/yzm.png"></div>
+        </div>
+        <div><img class="logo1" src="images/djdl.png"></div>
+        <div class="lostPsw"><a href="javascript:void(0);">忘记密码</a></div>
+    </aside>
+</section>
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript">
+    $('body').css('height',$(window).height());
+    $('.mobileBox .inputs').unbind('click').click(function(){
+        $('.mobileBox .inputs').removeClass("boxShadow");
+        $(this).addClass("boxShadow");
+    });
+
+
+    if(isMobile() == "isMobile"){
+        $("#linkHref").attr("href", "css/indexMobile.css");
+    }else{
+        $("#linkHref").attr("href", "css/indexPC.css");
+    }
+    function isMobile() {
+        for(var e = new Array("Android", "iPhone", "Windows Phone", "iPod", "BlackBerry", "MeeGo", "SymbianOS"), i = navigator.userAgent, n = e.length, s = 0; n > s; s++)
+            if(i.indexOf(e[s]) >= 0) return "isMobile";
+        return "isPC"
+    }
+</script>
+</body>
+</html>
