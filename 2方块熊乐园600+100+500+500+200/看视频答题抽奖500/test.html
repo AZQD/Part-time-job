@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+	
+	<body>
+		<div>
+			<canvas id="myCanvas" style="border: 1px solid #000000;"></canvas>
+			
+		</div>
+		
+		<script>
+			$(document).ready(function(){
+				$("#b01").click(function(){
+					htmlobj=$.ajax({url:"https://j020d4ksuc.execute-api.us-west-2.amazonaws.com/boxbear/videoprom/guajiang",async:false});
+					
+					$("#myDiv").html(htmlobj.responseText);
+					
+					alert(htmlobj.responseJSON.result);
+					if (htmlobj.responseJSON.result) alert(htmlobj.responseJSON.key);
+				});
+			});
+			
+		</script>
+		
+		
+		<div id="myDiv"><h2>Let AJAX change this text</h2></div>
+		<button id="b01" type="button">Change Content</button>
+		
+		<script type="text/javascript">
+			var c = document.getElementById("myCanvas");
+			var context = c.getContext("2d");
+
+			var img = new Image();
+			//img.src = "image/0.jpg";  //完整图片地址  
+
+			var str = "image/"; //图片地址前缀  
+			var nums = "0000000000000001122334455"; //控制图片出现的概率
+			var num = nums.charAt(parseInt(Math.random() * 25)); //随机数生成出现的图片数字  
+			var jpg = ".jpg"; //图片地址的后缀  
+			c.style.backgroundImage = 'url("' + str + num + jpg + '")'; //设置画布背景为随机生成的图片地址
+
+			c.style.width = "320px";
+			c.style.height = "160px";
+
+			context.fillStyle = "#ccc";
+			context.globalCompositeOperation = "destination-over"; //实现擦除效果  
+			context.beginPath();
+			context.fillRect(0, 0, 320, 160);
+			context.closePath();
+
+			c.onmousemove = function(e) {
+				//获取鼠标位置  
+				var x = e.pageX - c.offsetLeft;
+				var y = e.pageY - c.offsetTop;
+
+				context.globalCompositeOperation = "destination-out";
+				context.beginPath();
+				context.arc(x, y, 10, 0, 2 * Math.PI, true);
+				context.fill();
+				context.closePath();
+			}
+		</script>
+	</body>
+
+</html>
