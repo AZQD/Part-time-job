@@ -52,7 +52,7 @@ $('#addLog').attr('src', 'http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/PC/
 $('#addLog').css({"position":"absolute","zIndex":99,"width":220});
 $('#addLog').css('left',$('.bodyContent .contentBox').css('marginLeft'));
 var topSize = $('.bodyContent .contentBox').offset().top;
-$('#addLog').css('top',(topSize+36.5)/2);
+$('#addLog').css('top',(topSize+87.5-$('#addLog').height())/2);
 //alert(windowWidth);
 //alert($('.bodyContent .contentBox').css('marginLeft'));
 $('.bodyContent .tips').css('marginLeft',$('.bodyContent .contentBox').offset().left+60);
@@ -136,11 +136,11 @@ function randomNum(e, n, t) { for(var o = [], a = 0; t > a; a++) { o[a] = Math.f
 	var n = randomNum(0, 5, 5),
 		t = randomNum(0, 3, 3),
 		o = [
-			{ id: 0, questionTitleName: "本期节目里方块熊教谁做雪糕呢？", answerABC: ["佩奇", "乔治", "蛋蛋猪"], answerA: "佩奇", answerB: "乔治", answerC: "蛋蛋猪", titleImgUrl: "http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/timu1.jpg", rightAnswer: "蛋蛋猪" }, 
-			{ id: 1, questionTitleName: "蛋蛋猪为什么要学做雪糕呢？", answerABC: ["他想送给好朋友", "他想开个雪糕店", "他想送给家人吃"], answerA: "他想送给好朋友", answerB: "他想开个雪糕店", answerC: "他想送给家人吃", titleImgUrl: "http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/timu2.jpg", rightAnswer: "他想开个雪糕店" }, 
-			{ id: 2, questionTitleName: "故事里方块熊用的魔力沙是？", answerABC: ["伊比沙", "培培乐", "趣威"], answerA: "伊比沙", answerB: "培培乐", answerC: "趣威", titleImgUrl: "http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/timu3.jpg", rightAnswer: "伊比沙" }, 
-			{ id: 3, questionTitleName: "蛋蛋猪找谁帮忙做雪糕呢？", answerABC: ["小丸子", "西瓜猴", "方块熊"], answerA: "小丸子", answerB: "西瓜猴", answerC: "方块熊", titleImgUrl: "http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/timu4.jpg", rightAnswer: "方块熊" }, 
-			{ id: 4, questionTitleName: "是谁想在方块熊乐园里开雪糕店呢？", answerABC: ["蛋蛋猪", "西瓜猴", "方块熊"], answerA: "蛋蛋猪", answerB: "西瓜猴", answerC: "方块熊", titleImgUrl: "http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/timu5.jpg", rightAnswer: "蛋蛋猪" }
+			{ id: 0, questionTitleName: "本期节目里方块熊教谁做雪糕呢？", answerABC: ["佩奇", "乔治", "蛋蛋猪"], answerA: "佩奇", answerB: "乔治", answerC: "蛋蛋猪", titleImgUrl: "image/timu1.jpg", rightAnswer: "蛋蛋猪" }, 
+			{ id: 1, questionTitleName: "蛋蛋猪为什么要学做雪糕呢？", answerABC: ["他想送给好朋友", "他想开个雪糕店", "他想送给家人吃"], answerA: "他想送给好朋友", answerB: "他想开个雪糕店", answerC: "他想送给家人吃", titleImgUrl: "image/timu2.jpg", rightAnswer: "他想开个雪糕店" }, 
+			{ id: 2, questionTitleName: "故事里方块熊用的魔力沙是？", answerABC: ["伊比沙", "培培乐", "趣威"], answerA: "伊比沙", answerB: "培培乐", answerC: "趣威", titleImgUrl: "image/timu3.jpg", rightAnswer: "伊比沙" }, 
+			{ id: 3, questionTitleName: "蛋蛋猪找谁帮忙做雪糕呢？", answerABC: ["小丸子", "西瓜猴", "方块熊"], answerA: "小丸子", answerB: "西瓜猴", answerC: "方块熊", titleImgUrl: "image/timu4.jpg", rightAnswer: "方块熊" }, 
+			{ id: 4, questionTitleName: "是谁想在方块熊乐园里开雪糕店呢？", answerABC: ["蛋蛋猪", "西瓜猴", "方块熊"], answerA: "蛋蛋猪", answerB: "西瓜猴", answerC: "方块熊", titleImgUrl: "image/timu5.jpg", rightAnswer: "蛋蛋猪" }
 		],
 		a = 0,
 		i = !0,
@@ -149,7 +149,7 @@ function randomNum(e, n, t) { for(var o = [], a = 0; t > a; a++) { o[a] = Math.f
 		if(i) {
 			i = !1;
 			var r = $(this).index();
-			$(".page3 .page3Content .answerBox2 .answer .answerContent").eq(r).html() == o[n[a]].rightAnswer ? (s += 20, $(".page3 .page3Content .answerBox2 .answer .isTrue img").css("opacity", 0).eq(r).css("opacity", 1).attr("src", "http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/three_right.png")) : $(".page3 .page3Content .answerBox2 .answer .isTrue img").css("opacity", 0).eq(r).css("opacity", 1).attr("src", "http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/three_wrong.png"), a++
+			$(".page3 .page3Content .answerBox2 .answer .answerContent").eq(r).html() == o[n[a]].rightAnswer ? (s += 20, $(".page3 .page3Content .answerBox2 .answer .isTrue img").css("opacity", 0).eq(r).css("opacity", 1).attr("src", "image/three_right.png")) : $(".page3 .page3Content .answerBox2 .answer .isTrue img").css("opacity", 0).eq(r).css("opacity", 1).attr("src", "image/three_wrong.png"), a++
 		}
 		setTimeout(function() { 5 == a && (e.unlockSwipes(), e.slideTo(2, 1e3, !1), e.lockSwipes(), $(".page4 .page4Content .page4Box .four_myScore").html(s)),
 

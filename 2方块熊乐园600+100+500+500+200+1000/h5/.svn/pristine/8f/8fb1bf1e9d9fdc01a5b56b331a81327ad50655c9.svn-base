@@ -52,7 +52,7 @@ $('#addLog').attr('src', 'http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/PC/
 $('#addLog').css({"position":"absolute","zIndex":99,"width":220});
 $('#addLog').css('left',$('.bodyContent .contentBox').css('marginLeft'));
 var topSize = $('.bodyContent .contentBox').offset().top;
-$('#addLog').css('top',(topSize+36.5)/2);
+$('#addLog').css('top',(topSize+87.5-$('#addLog').height())/2);
 //alert(windowWidth);
 //alert($('.bodyContent .contentBox').css('marginLeft'));
 $('.bodyContent .tips').css('marginLeft',$('.bodyContent .contentBox').offset().left+60);

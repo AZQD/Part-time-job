@@ -43,7 +43,8 @@
 						
 						<div class="tipsInner">
 							<p>爱奇艺母婴&amp;方块熊邀您看趣味视频答题抽大奖！</p>
-							<p>活动时间：5月16日-5月24日  5月25日公布获奖名单</p>
+							<p>活动时间：5月18日-5月24日</p>
+							<p>5月25日将于爱奇艺臻选微信公众号公布获奖名单</p>
 							<p>活动奖品：智能手表、绘本精灵阅读机、魔力沙 </p>
 							<p>看视频答题有机会抽中以上奖品！请关注爱宝贝臻选微信公众号，还有更多奖品免费送给您！</p>
 						</div>
@@ -147,9 +148,9 @@
 								<br/>
 								<div class="erWeiMa">
                                     <img src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/erweima.png"><br/>
-									<p class="erWeiMaTop">长按识别二维码，关注爱宝贝臻选</p>
-									<p>送您特别抽奖机会噢！大奖在等您！</p>
-									<!--p>还有惊喜大奖等你拿噢~</p-->
+									<p class="erWeiMaTop">长按识别二维码</p>
+									<p class="erWeiMaTop">或搜索关注微信公众号“爱宝贝臻选”</p>
+									<p class="erWeiMaTop">送您特别抽奖机会哦！</p>
                                 </div>
 								<!--<span class="duiJiang"><span class="duiJiangID"></span></span>-->
 							</div>
@@ -303,11 +304,13 @@
 					</div>
 					<div class="tipsInner">
 						<p>爱奇艺母婴&amp;方块熊邀您看趣味视频答题抽大奖！</p>
-						<p>活动时间：5月16日-5月24日  5月25日公布获奖名单</p>
+						<p>活动时间：5月18日-5月24日</p>
+						<p>5月25日将于爱奇艺臻选微信公众号公布获奖名单</p>
 						<p>活动奖品：智能手表、绘本精灵阅读机、魔力沙 </p>
 						<p>看视频答题有机会抽中以上奖品！请关注爱宝贝臻选微信公众号，还有更多奖品免费送给您！</p>
 					</div>
 				</div>
+				<img id="addLog" src="">
 				<div class="contentBox" style="opacity: 0;">
 
 
@@ -422,8 +425,9 @@
 											<br/>
 											<div class="erWeiMa">
 												<img src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/erweima.png"><br/>
-												<p>扫码识别二维码，关注爱宝贝臻选</p>
-												<p>送您特别抽奖机会噢！大奖在等您！</p>
+												<p class="erWeiMaTop">扫码识别二维码</p>
+												<p class="erWeiMaTop">或搜索关注微信公众号“爱宝贝臻选”</p>
+												<p class="erWeiMaTop">送您特别抽奖机会哦！</p>
 											</div>
 											<!--<span class="duiJiang"><span class="duiJiangID"></span></span>-->
 										</div>
