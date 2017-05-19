@@ -8,12 +8,12 @@
 		<meta http-equiv="x-dns-prefetch-control" content="on" />
 		<meta name="format-detection" content="telephone=no" />
 		<meta name="format-detection" content="email=no" />
-		<link href="image/logo.png" rel="shortcut icon" type="image/x-icon" />
-		<link rel="stylesheet" type="text/css" href="css/bootstraptc.min.css">
-		<link rel="stylesheet" type="text/css" href="css/swiper.min.css">
-		<link rel="stylesheet" type="text/css" href="css/ppublic.min.css">
+		<link href="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/logo.png" rel="shortcut icon" type="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/x-icon" />
+		<link rel="stylesheet" type="text/css" href="http://boxbear.youkongwan.cn/iqiyi/pigsdream/css/bootstraptc.min.css">
+		<link rel="stylesheet" type="text/css" href="http://boxbear.youkongwan.cn/iqiyi/pigsdream/css/swiper.min.css">
+		<link rel="stylesheet" type="text/css" href="http://boxbear.youkongwan.cn/iqiyi/pigsdream/css/ppublic.min.css">
 
-		<!--<link rel="stylesheet" type="text/css" href="css/index.min.css">-->
+		<!--<link rel="stylesheet" type="text/css" href="http://boxbear.youkongwan.cn/iqiyi/pigsdream/css/index.min.css">-->
 		<link rel="stylesheet" type="text/css" id="linkHref">
 	</head>
 
@@ -25,9 +25,9 @@
 				<div id="goodcover1" class="goodcover"></div>
 						<div id="code1" class="code">
 							<div class="close1">
-									<a href="javascript:void(0)" id="closebt1"><img src="image/close.jpg"></a>
+									<a href="javascript:void(0)" id="closebt1"><img src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/close.jpg"></a>
 							</div>
-					<div class="code-img"> <img id="ewmsrc" src="image/erweima.png"></div>
+					<div class="code-img"> <img id="ewmsrc" src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/erweima.png"></div>
 					<div class="goodtxt">
 						<p>长按识别二维码，关注【爱宝贝臻选】</p>
 					</div>
@@ -38,13 +38,12 @@
 					
 					<div class="tips" style="display: none;" id="tips">
 						<div class="title" id="title">
-							<div class="col-xs-12 col-sm-12 btnClose"><img src="image/one_btnClose.png"></div>
+							<div class="col-xs-12 col-sm-12 btnClose"><img src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/one_btnClose.png"></div>
 						</div>
 						
 						<div class="tipsInner">
 							<p>爱奇艺母婴&amp;方块熊邀您看趣味视频答题抽大奖！</p>
-							<p>活动时间：5月18日-5月24日</p>
-							<p>5月25日将于爱奇艺臻选微信公众号公布获奖名单</p>
+							<p>活动时间：5月16日-5月24日  5月25日公布获奖名单</p>
 							<p>活动奖品：智能手表、绘本精灵阅读机、魔力沙 </p>
 							<p>看视频答题有机会抽中以上奖品！请关注爱宝贝臻选微信公众号，还有更多奖品免费送给您！</p>
 						</div>
@@ -64,7 +63,7 @@
 								<button class="btnToQue">看完了，立即测试！</button>
 							</div>
 						</div>
-						<div class="col-xs-12 col-sm-12 gameRule" id="gameRule"><img src="image/hdgz.png"></div>
+						<div class="col-xs-12 col-sm-12 gameRule" id="gameRule"><img src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/hdgz.png"></div>
 					</div>
 				</aside>
 				<aside class="row page3 swiper-slide">
@@ -106,13 +105,13 @@
 							</div>
 						</div>
 						<div class="wenJuan">
-							<!--<img src="image/four_wenJuan.jpg">-->
+							<!--<img src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/four_wenJuan.jpg">-->
 						</div>
 					</div>
 
                     <div class="alertLoading" style="display: none;">
                         <div class="bg"></div>
-                        <img src="image/loading.gif">
+                        <img src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/loading.gif">
                     </div>
 
                     <div class="alertLowCount" style="display: none;">
@@ -121,8 +120,8 @@
                             <!--<button class="writeMsg writeMsg1">参与集体抽奖活动</button>
                             <button class="writeMsg writeMsg2" style="margin-top: 10px;">重新观看视频并答题</button>-->
                             <div class="chouJiangImg" style="display: none;background-color: white;">
-                                <img class="closeImg" src="image/close.jpg">
-                                <img src="image/erweima.png">
+                                <img class="closeImg" src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/close.jpg">
+                                <img src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/erweima.png">
                                 <p style="padding: 5px 0;">长按识别二维码</p>
                                 <p>加入官方微信群,参与抽奖活动</p>
                             </div>
@@ -147,11 +146,10 @@
 								<span class="zhongJiang">非常遗憾，您未中奖</span>
 								<br/>
 								<div class="erWeiMa">
-                                    <img src="image/erweima.png"><br/>
+                                    <img src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/erweima.png"><br/>
 									<p class="erWeiMaTop">长按识别二维码</p>
 									<p class="erWeiMaTop">或搜索关注微信公众号“爱宝贝臻选”</p>
 									<p class="erWeiMaTop">送您特别抽奖机会哦！</p>
-									<!--p>还有惊喜大奖等你拿噢~</p-->
                                 </div>
 								<!--<span class="duiJiang"><span class="duiJiangID"></span></span>-->
 							</div>
@@ -269,9 +267,9 @@
 						<div id="goodcover" class="goodcover"></div>
 						<div id="code" class="code">
 							<div class="close1">
-									<a href="javascript:void(0)" id="closebt"><img src="image/close.jpg"></a>
+									<a href="javascript:void(0)" id="closebt"><img src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/close.jpg"></a>
 							</div>
-					<div class="code-img"> <img id="ewmsrc" src="image/erweima.png"></div>
+					<div class="code-img"> <img id="ewmsrc" src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/erweima.png"></div>
 					<div class="goodtxt">
 						<p>长按识别二维码关注【爱宝贝臻选】</p>
 					</div>
@@ -287,11 +285,11 @@
 		<section class="container-fluid sectionPC" style="display: none;">
 
 			<div id="fangKuaiXiong" style="display: none;">
-				<img src="image/PC/fangKuaiXiong.png"><br/>
+				<img src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/PC/fangKuaiXiong.png"><br/>
 			</div>
 			<div id="erWeiMa" style="display: none;">
-				<img src="image/PC/jiangPin.png" style="height: 742px; width: 273px;">
-				<!--<img id="erWeiMaImg" src="image/PC/erweima.png"><br/>
+				<img src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/PC/jiangPin.png" style="height: 742px; width: 273px;">
+				<!--<img id="erWeiMaImg" src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/PC/erweima.png"><br/>
 				<p>扫码识别二维码</p>
 				<p>关注【爱宝贝臻选】公众微信号</p>
 				<p>还有惊喜大奖等你拿噢～</p>-->
@@ -301,17 +299,15 @@
 				<div class="col-xs-12 col-sm-12 bg" style="display: none;"></div>
 				<div class="tips" style="display: none;">
 					<div class="title">
-						<div class="col-xs-12 col-sm-12 btnClose"><img src="image/one_btnClose.png"></div>
+						<div class="col-xs-12 col-sm-12 btnClose"><img src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/one_btnClose.png"></div>
 					</div>
 					<div class="tipsInner">
 						<p>爱奇艺母婴&amp;方块熊邀您看趣味视频答题抽大奖！</p>
-						<p>活动时间：5月18日-5月24日</p>
-						<p>5月25日将于爱奇艺臻选微信公众号公布获奖名单</p>
+						<p>活动时间：5月16日-5月24日  5月25日公布获奖名单</p>
 						<p>活动奖品：智能手表、绘本精灵阅读机、魔力沙 </p>
 						<p>看视频答题有机会抽中以上奖品！请关注爱宝贝臻选微信公众号，还有更多奖品免费送给您！</p>
 					</div>
 				</div>
-				<img id="addLog" src="image/PC/logo_iqiyi.png" style="position: absolute; z-index: 99; width: 220px;">
 				<div class="contentBox" style="opacity: 0;">
 
 
@@ -327,7 +323,7 @@
 									<div class="two_watch"></div>
 									<div class="boxInfo">
 										<div class="aboutVideo">
-											<!--<video controls=controls poster="image/PC/posterPC2.jpg" id="video" x-webkit-airplay="true" webkit-playsinline playsinline="true" preload="none" >
+											<!--<video controls=controls poster="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/PC/posterPC2.jpg" id="video" x-webkit-airplay="true" webkit-playsinline playsinline="true" preload="none" >
 												<source src="http://open.iqiyi.com/developer/player_js/coopPlayerIndex.html?vid=ac2b1cb82bf6731f8915ebedcdb04367&tvId=644056100&accessToken=2.f22860a2479ad60d8da7697274de9346&appKey=3955c3425820435e86d0f4cdfe56f5e7&appId=1368&height=100%&width=100%"> Your browser doesn't support video embedding feature! 温馨提示：IE8及以下浏览器不支持Video！
 											</video>-->
 											<iframe  id="video" src="" frameborder="0" allowfullscreen="true" width="100%" height="100%"></iframe>
@@ -384,13 +380,13 @@
 									</div>
 
 								<div class="wenJuan">
-										<!--<img src="image/four_wenJuan.jpg">-->
+										<!--<img src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/four_wenJuan.jpg">-->
 									</div>
 								</div>
 
 								<div class="alertLoading" style="display: none;">
 									<div class="bg"></div>
-									<img src="image/loading.gif">
+									<img src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/loading.gif">
 								</div>
 
 								<div class="alertLowCount" style="display: none;">
@@ -399,8 +395,8 @@
 										<!--<button class="writeMsg writeMsg1">参与集体抽奖活动</button>
                                         <button class="writeMsg writeMsg2" style="margin-top: 10px;">重新观看视频并答题</button>-->
 										<div class="chouJiangImg" style="display: none;background-color: white;">
-											<img class="closeImg" src="image/close.jpg">
-											<img src="image/erweima.png">
+											<img class="closeImg" src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/close.jpg">
+											<img src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/erweima.png">
 											<p style="padding: 5px 0;">扫描二维码</p>
 											<p>加入官方微信群，参与抽奖活动</p>
 										</div>
@@ -425,7 +421,7 @@
 											<span class="zhongJiang">非常遗憾，您未中奖</span>
 											<br/>
 											<div class="erWeiMa">
-												<img src="image/erweima.png"><br/>
+												<img src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/erweima.png"><br/>
 												<p class="erWeiMaTop">扫码识别二维码</p>
 												<p class="erWeiMaTop">或搜索关注微信公众号“爱宝贝臻选”</p>
 												<p class="erWeiMaTop">送您特别抽奖机会哦！</p>
@@ -474,7 +470,7 @@
 									</div>
 									
 									<div class="wenJuan">
-										<img src="image/four_wenJuan.jpg">
+										<img src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/image/four_wenJuan.jpg">
 									</div>
 								</div>
 							</aside>
@@ -490,10 +486,10 @@
 			</aside>
 			
 		</section>
-		<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
-		<script type="text/javascript" src="js/swiper.min.js"></script>
+		<script type="text/javascript" src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/js/jquery-3.0.0.min.js"></script>
+		<script type="text/javascript" src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/js/swiper.min.js"></script>
 		<script type="text/javascript" id="scriptSrc"></script>
-		<script type="text/javascript" src="js/main.min.js"></script>
+		<script type="text/javascript" src="http://boxbear.youkongwan.cn/iqiyi/pigsdream/js/main.min.js"></script>
         <script type="text/javascript">
             $(window).scroll(function(){
 // 重点就是下面这一条语句的实现

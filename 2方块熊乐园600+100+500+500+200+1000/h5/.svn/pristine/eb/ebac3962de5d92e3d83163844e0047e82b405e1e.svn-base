@@ -50,6 +50,7 @@ if(windowWidth > 1800){
 }
 $('#addLog').css('left',$('.bodyContent .contentBox').css('marginLeft'));
 var topSize = $('.bodyContent .contentBox').offset().top;
+alert(topSize);
 $('#addLog').css('top',(topSize+87.5-$('#addLog').height())/2);
 //alert(windowWidth);
 //alert($('.bodyContent .contentBox').css('marginLeft'));
