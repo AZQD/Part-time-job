@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>详细页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body style="margin: 0; padding: 0;">
+<table align="center"  border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr  style="background-color: #F2F2F2;width: 100%;font-family: 'ArialMT', 'Arial';">
+        <td width="100%">
+            <table width="100%">
+                <tr>
+                    <td>
+                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+                            <tr style="height: 44px;line-height: 44px;border-bottom: 1px solid #000000;">
+
+                                <td style="font-weight: 700; font-size: 20px;padding-left: 20px;letter-spacing: 0;">
+                                    <a href="#" style="color:#000000;">Next></a>
+                                </td>
+                                <td style="font-weight: 700; font-size: 20px;padding-right: 20px;letter-spacing: 0;" align="right">
+                                    <a href="#" style="color:#000000;">Search</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="font-size: 13px;padding-left: 20px;padding-right: 20px;color: #333333;padding-top:4px;padding-bottom:10px;letter-spacing: 0;">
+                                    Laan, 18/05/2017
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="font-size: 13px;padding-left: 20px;padding-right: 20px;color: #333333;padding-top:4px;padding-bottom:10px;letter-spacing: 0;">
+                                    Here is the detail information of things.Here is the detail information of thingsHere is the detail information of thingsHere is the detail information of thingsHere is the detail information of things.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" style="font-size: 13px;padding-left: 20px;padding-right: 20px;color: #333333;padding-top:4px;padding-bottom:10px;letter-spacing: 0;">
+                                    <a href="#" style="font-size: 14px;color: #333333;font-weight: 700;">Images</a>
+                                    &nbsp;&nbsp;|&nbsp;&nbsp;
+                                    <a href="#" style="font-size: 14px;color: #333333;font-weight: 700;">Messages</a>
+                                </td>
+                            </tr><tr>
+                            <td colspan="2" style="font-size: 13px;padding-left: 20px;padding-right: 20px;color: #333333;padding-top:4px;padding-bottom:10px;letter-spacing: 0;">
+                                Author  address & ...
+                            </td>
+                        </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

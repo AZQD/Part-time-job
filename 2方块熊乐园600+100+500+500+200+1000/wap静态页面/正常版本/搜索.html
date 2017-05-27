@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="format-detection"content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <link rel="stylesheet" href="css/bootstraptc.min.css">
+    <link rel="stylesheet" href="css/ppublic.min.css?version=1.0">
+    <style type="text/css">
+        .container{
+            background-color: #F2F2F2;
+            padding: 40px 20px;
+            font-family: 'Arial-BoldMT', 'Arial Bold', 'Arial';
+        }
+        .searchBox{
+            font-size: 13px;
+            color: #333333;
+            height:24px;
+            line-height:24px;
+        }
+        .searchBox .ipt{
+            width:100%;
+            border: 1px solid black;
+            outline: none;
+        }
+        .searchBox .search{
+            border: 1px solid black;
+            outline: none;
+            background-color: #fff;
+            padding: 0 12px;
+            border-radius: 5px;
+        }
+        .searchBox .right{
+            text-align: center;
+        }
+        .info{
+            padding-top:30px;
+            font-size: 18px;
+            font-weight: 700;
+        }
+        .info a{
+            text-decoration: underline;
+            color: black;
+        }
+        .info .line1 a{
+            display: inline-block;
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+<section class="container">
+    <aside class="row searchBox">
+        <div class="col-xs-9 col-sm-9 left"><input class="ipt" type="text"></div>
+        <div class="col-xs-3 col-sm-3 right"><button class="search">Search</button></div>
+    </aside>
+    <aside class="row info">
+        <div class="col-xs-12 col-sm-12 line1"><a href="#">abc</a><a href="#">abc</a><a href="#">abc</a><a href="#">abc</a><a href="#">abcd</a></div>
+        <div class="col-xs-12 col-sm-12 line1"><a href="#">abc</a><a href="#">abcd</a><a href="#">abc</a></div>
+    </aside>
+</section>
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.searchBox .search').unbind('click').click(function(){
+            window.location.href = '浏览.html';
+        });
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="format-detection"content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <link rel="stylesheet" href="css/bootstraptc.min.css">
+    <link rel="stylesheet" href="css/ppublic.min.css?version=1.0">
+    <style type="text/css">
+        .container{
+            background-color: #F2F2F2;
+            padding: 40px 10px;
+            font-family: 'ArialMT', 'Arial';
+            font-weight: 400;
+            font-style: normal;
+        }
+        #form input{
+            outline: none;
+            border: 1px solid black;
+        }
+        .phoneBox{
+            padding-bottom: 5px;
+        }
+        .goTo{
+            text-align: right;
+            padding-top:40px;
+        }
+        .goTo .register{
+            border: 1px solid black;
+            outline: none;
+            background-color: #fff;
+            padding: 2px 12px;
+            border-radius: 5px;
+        }
+        .goTo .login{
+            font-weight: 700;
+            font-style: normal;
+            font-size: 20px;
+            color: black;
+            text-decoration: underline;
+            padding-left: 30px;
+            margin-right:50px;
+        }
+    </style>
+</head>
+<body>
+<section class="container">
+    <form action="#" id="form">
+        <div class="phoneBox">
+            <label for="phone">Cell Phone:</label>&nbsp;&nbsp;
+            <input id="phone" type="text"><br/>
+        </div>
+        <div class="passwordBox">
+            &nbsp;&nbsp;<label for="password">Password:</label>&nbsp;&nbsp;
+            <input id="password" type="text">
+        </div>
+    </form>
+    <div class="col-xs-12 col-sm-12 goTo">
+        <button class="register">Register</button>
+        <a href="#" class="login">Login</a>
+    </div>
+</section>
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('.goTo .register').unbind('click').click(function(){
+            window.location.href = '发布.html';
+        });
+        $('.goTo .login').unbind('click').click(function(){
+            window.location.reload();
+        });
+    });
+</script>
+</body>
+</html>

@@ -20,3 +20,9 @@ SVN密码：lcj_789
 
 
 动态数据：name, 版本，大小，说明、下载量、更新时间、图标、截图（多张、横竖都有可能），安卓下载地址（可为空）、iOS下载地址（可为空）
+
+
+时间：2017年5月22日14:01:10
+新需求：http://h.youkongwan.com/test/wap/index.html
+
+新建svn：https://182.92.177.5/svn/lusaka/

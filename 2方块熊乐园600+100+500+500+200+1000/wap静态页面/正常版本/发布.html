@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="format-detection"content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <link rel="stylesheet" href="css/bootstraptc.min.css">
+    <link rel="stylesheet" href="css/ppublic.min.css?version=1.0">
+    <style type="text/css">
+        .container{
+            background-color: #F2F2F2;
+            font-family: 'Arial-BoldMT', 'Arial Bold', 'Arial';
+        }
+        .warning{
+            height:25px;
+            line-height:25px;
+            background-color: red;
+        }
+        .warning .text{
+            font-size: 13px;
+        }
+        .warning .login{
+            font-size: 18px;
+        }
+
+        .content{
+            padding: 0 16px;
+        }
+        .content #details{
+            /*width:100%;*/
+            margin-left:40px;
+            height:75px;
+            width:260px;
+        }
+        .cellPhoneBox{
+            padding-top:10px;
+        }
+        .cellPhoneBox #cellPhone{
+            border: 1px solid black;
+            outline: none;
+            width:230px;
+        }
+        .publishBox{
+            text-align: center;
+            padding-top:10px;
+        }
+        .publish{
+            border: 1px solid black;
+            outline: none;
+            background-color: #fff;
+            padding: 2px 12px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<section class="container">
+    <div class="rom warning">
+        <div class="col-xs-10 col-sm-10 text">  Message will be deleted 7 days later.</div>
+        <div class="col-xs-2 col-sm-2 login">Login</div>
+    </div>
+    <aside class="content">
+        <div class="detailsBox">
+            <label for="details">Details:</label><br/>
+            <textarea name="name" id="details" cols="30" rows="10"></textarea>
+        </div>
+        <div class="cellPhoneBox">
+            <label for="cellPhone">CellPhone:</label>
+            <input id="cellPhone" type="text">
+        </div>
+    </aside>
+    <aside class="publishBox">
+        <button class="publish">Publish</button>
+    </aside>
+</section>
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+</body>
+</html>
