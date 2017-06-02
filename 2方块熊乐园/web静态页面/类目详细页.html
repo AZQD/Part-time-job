@@ -116,7 +116,6 @@
         /*headerBox*/
         .bottomBox{
             background-color: #F2F2F2;
-            margin-top:250px;
         }
         .bottomBox .bottom{
             width:1200px;
@@ -159,7 +158,6 @@
         .selectBox .select{
             width:1200px;
             margin:0 auto;
-            background-color: #baf;
             padding:18px 0;
             line-height: 32px;
         }
@@ -170,9 +168,14 @@
             padding-left:28px;
             display: inline-block;
             width:74px;
+            text-align: center;
         }
         .selectBox .select .selectPrice a{
             padding-left:16px;
+            color: #999;
+        }
+        .selectBox .select .selectPrice .all{
+            color: #FF4720;
         }
         .selectBox .select .selectArea .area{
             font-size: 16px;
@@ -181,9 +184,14 @@
             padding-left:28px;
             display: inline-block;
             width:74px;
+            text-align: center;
         }
         .selectBox .select .selectArea a{
             padding-left:16px;
+            color: #999;
+        }
+        .selectBox .select .selectArea .all{
+            color: #FF4720;
         }
 
         /*tabsBox*/
@@ -222,11 +230,81 @@
             line-height:25px;
             color: #333;
             font-size: 13px;
-            border: none;
             outline: none;
             background-color: #ffffff;
-            margin-right:16px;
-            margin-top:5px;
+            margin-top:10px;
+            border: 1px solid #333;
+        }
+        .tabsBox .tabs .tabsRight .tabBtn1{
+            border-radius: 5px 0 0 5px;
+        }
+        .tabsBox .tabs .tabsRight .tabBtn2{
+            margin-right: 16px;
+            border-radius: 0 5px 5px 0;
+            border-left:0;
+        }
+
+        /*goodsBox*/
+        .goodsBox{
+            margin-top:10px;
+        }
+        .goodsBox .goods{
+            width:1200px;
+            margin:0 auto;
+            /*background-color: #baf;*/
+            padding:10px;
+            border-bottom: 1px solid #666;
+        }
+        .goodsBox .goods .goodsLeft{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            margin-right:32px;
+        }
+        .goodsBox .goods .goodsLeft img{
+            width:100%;
+            height:100%;
+        }
+        .goodsBox .goods .goodsLeft .tip{
+            display: inline-block;
+            width: 23px;
+            height: 18px;
+            line-height:18px;
+            color: #ffffff;
+            font-size: 13px;
+            text-align: center;
+            background-color: #FF4720;
+            position: absolute;
+            right:0;
+            bottom:0;
+        }
+        .goodsBox .goods .goodsMiddle .goodName{
+            font-size: 16px;
+            color: #3366FF;
+            font-weight:bold;
+        }
+        .goodsBox .goods .goodsMiddle .goodDesc{
+            font-size: 14px;
+            color: #999;
+            padding-top:10px;
+        }
+        .goodsBox .goods .goodsMiddle .goodDate{
+            color: #333;
+        }
+        .goodsBox .goods .goodsRight{
+            height: 100px;
+            line-height: 100px;
+            font-weight: bold;
+            text-align: right;
+            margin-left:40px;
+        }
+        .goodsBox .goods .goodsRight1{
+            font-size: 13px;
+            color: #999999;
+        }
+        .goodsBox .goods .goodsRight2{
+            font-size: 24px;
+            color: red;
         }
     </style>
 </head>
@@ -266,7 +344,7 @@
         <div class="row select">
             <div class="col-xs-12 col-sm-12 selectPrice">
                 <span class="price">PRICE</span>
-                <a href="#" class="selectA">ALL</a>
+                <a href="#" class="selectA all">ALL</a>
                 <a href="#" class="selectB">0-100</a>
                 <a href="#" class="selectC">100-200</a>
                 <a href="#" class="selectD">200-500</a>
@@ -274,7 +352,7 @@
             </div>
             <div class="col-xs-12 col-sm-12 selectArea">
                 <span class="area">AREA</span>
-                <a href="#" class="selectA">ALL</a>
+                <a href="#" class="selectA all">ALL</a>
                 <a href="#" class="selectB">Lusaka</a>
                 <a href="#" class="selectC">Others</a>
             </div>
@@ -288,7 +366,80 @@
                 <a href="#" class="tabLink">Buyer</a>
             </div>
             <div class="col-xs-6 col-sm-6 tabsRight">
-                <button class="tabBtn">Date</button><button class="tabBtn">Price</button>
+                <button class="tabBtn tabBtn1">Date</button><button class="tabBtn tabBtn2">Price</button>
+            </div>
+        </div>
+    </aside>
+
+    <aside class="goodsBox">
+        <div class="row goods">
+            <div class="col-xs-3 col-sm-3 goodsLeft">
+                <img src="image/categoryDetail/good1.jpg">
+                <span class="tip">3</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 goodsMiddle">
+                <p class="goodName">iPhone 6, OS is 10.3</p>
+                <p class="goodDesc">Product details</p>
+                <p class="goodDesc">Address Details <span class="goodDate">23/05/2017</span></p>
+            </div>
+            <div class="col-xs-3 col-sm-3 goodsRight">
+                <span class="goodsRight1">ZMW</span><span class="goodsRight2">1205</span>
+            </div>
+        </div>
+        <div class="row goods">
+            <div class="col-xs-3 col-sm-3 goodsLeft">
+                <img src="image/categoryDetail/good1.jpg">
+                <span class="tip">3</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 goodsMiddle">
+                <p class="goodName">iPhone 6, OS is 10.3</p>
+                <p class="goodDesc">Product details</p>
+                <p class="goodDesc">Address Details <span class="goodDate">23/05/2017</span></p>
+            </div>
+            <div class="col-xs-3 col-sm-3 goodsRight">
+                <span class="goodsRight1">ZMW</span><span class="goodsRight2">1205</span>
+            </div>
+        </div>
+        <div class="row goods">
+            <div class="col-xs-3 col-sm-3 goodsLeft">
+                <img src="image/categoryDetail/good1.jpg">
+                <span class="tip">3</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 goodsMiddle">
+                <p class="goodName">iPhone 6, OS is 10.3</p>
+                <p class="goodDesc">Product details</p>
+                <p class="goodDesc">Address Details <span class="goodDate">23/05/2017</span></p>
+            </div>
+            <div class="col-xs-3 col-sm-3 goodsRight">
+                <span class="goodsRight1">ZMW</span><span class="goodsRight2">1205</span>
+            </div>
+        </div>
+        <div class="row goods">
+            <div class="col-xs-3 col-sm-3 goodsLeft">
+                <img src="image/categoryDetail/good1.jpg">
+                <span class="tip">3</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 goodsMiddle">
+                <p class="goodName">iPhone 6, OS is 10.3</p>
+                <p class="goodDesc">Product details</p>
+                <p class="goodDesc">Address Details <span class="goodDate">23/05/2017</span></p>
+            </div>
+            <div class="col-xs-3 col-sm-3 goodsRight">
+                <span class="goodsRight1">ZMW</span><span class="goodsRight2">1205</span>
+            </div>
+        </div>
+        <div class="row goods">
+            <div class="col-xs-3 col-sm-3 goodsLeft">
+                <img src="image/categoryDetail/good1.jpg">
+                <span class="tip">3</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 goodsMiddle">
+                <p class="goodName">iPhone 6, OS is 10.3</p>
+                <p class="goodDesc">Product details</p>
+                <p class="goodDesc">Address Details <span class="goodDate">23/05/2017</span></p>
+            </div>
+            <div class="col-xs-3 col-sm-3 goodsRight">
+                <span class="goodsRight1">ZMW</span><span class="goodsRight2">1205</span>
             </div>
         </div>
     </aside>
