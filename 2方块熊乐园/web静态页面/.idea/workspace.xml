@@ -2,11 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="75517a66-0ead-4f48-80a9-a1c84f153b12" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/index/good1.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/index/refresh.png" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/1.html" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/detailPage/bigImg1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/detailPage/gt.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/detailPage/headImg.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/detailPage/leftFlag.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/detailPage/like.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/detailPage/littleImg1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/detailPage/rightFlag.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/详情页.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/image/categoryDetail/gt.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/类目详细页.html" afterPath="$PROJECT_DIR$/类目详细页.html" />
     </list>
     <ignored path="web静态页面.iws" />
@@ -31,19 +36,33 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.265625">
-              <caret line="193" column="21" selection-start-line="193" selection-start-column="21" selection-end-line="193" selection-end-column="21" />
+            <state vertical-scroll-proportion="-3.484375">
+              <caret line="185" column="42" selection-start-line="185" selection-start-column="42" selection-end-line="185" selection-end-column="42" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="类目详细页.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="类目详细页.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/类目详细页.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5919854">
-              <caret line="58" column="45" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
+            <state vertical-scroll-proportion="-2.703125">
+              <caret line="335" column="31" selection-start-line="335" selection-start-column="29" selection-end-line="335" selection-end-column="31" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="详情页.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/详情页.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.22928709">
+              <caret line="326" column="34" selection-start-line="326" selection-start-column="34" selection-end-line="326" selection-end-column="34" />
+              <folding>
+                <element signature="n#aside#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#aside#1;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#aside#3;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -68,6 +87,7 @@
         <option value="$PROJECT_DIR$/css/ppublic.min.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/类目详细页.html" />
+        <option value="$PROJECT_DIR$/详情页.html" />
       </list>
     </option>
   </component>
@@ -146,8 +166,22 @@
               <option name="myItemId" value="image" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="index" />
+              <option name="myItemId" value="web静态页面" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web静态页面" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="image" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="detailPage" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -169,6 +203,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web静态页面" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web静态页面" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -184,14 +232,16 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\task\Part-time-job\2方块熊乐园\web静态页面\image\categoryDetail" />
       <recent name="E:\Project\Part-time-job\2方块熊乐园\web静态页面\image\categoryDetail" />
       <recent name="E:\Project\Part-time-job\2方块熊乐园\web静态页面\image\index" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\task\Part-time-job\2方块熊乐园\web静态页面\image\detailPage" />
+      <recent name="C:\Users\Administrator\Desktop\task\Part-time-job\2方块熊乐园\web静态页面" />
       <recent name="C:\Users\Administrator\Desktop\task\Part-time-job\2方块熊乐园\web静态页面\image\index" />
       <recent name="E:\Project\Part-time-job\2方块熊乐园\web静态页面\image\categoryDetail" />
       <recent name="E:\Project\Part-time-job\2方块熊乐园\web静态页面\image" />
-      <recent name="E:\Project\Part-time-job\2方块熊乐园\web静态页面\image\index" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
@@ -202,6 +252,9 @@
       <method />
     </configuration>
     <configuration default="false" name="1.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/web静态页面/1.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="详情页.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/web静态页面/详情页.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -252,16 +305,18 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.类目详细页.html" />
       <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.1.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.详情页.html" />
     </list>
     <recent_temporary>
-      <list size="3">
+      <list size="4">
         <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.类目详细页.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.1.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.详情页.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.类目详细页.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.1.html" />
       </list>
     </recent_temporary>
   </component>
@@ -385,27 +440,39 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/ppublic.min.css">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="373" selection-start-line="0" selection-start-column="373" selection-end-line="0" selection-end-column="373" />
+        <state vertical-scroll-proportion="-3.484375">
+          <caret line="185" column="42" selection-start-line="185" selection-start-column="42" selection-end-line="185" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/css/ppublic.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.265625">
-          <caret line="193" column="21" selection-start-line="193" selection-start-column="21" selection-end-line="193" selection-end-column="21" />
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="524" selection-start-line="0" selection-start-column="519" selection-end-line="0" selection-end-column="524" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/类目详细页.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5919854">
-          <caret line="58" column="45" selection-start-line="58" selection-start-column="45" selection-end-line="58" selection-end-column="45" />
+        <state vertical-scroll-proportion="-2.703125">
+          <caret line="335" column="31" selection-start-line="335" selection-start-column="29" selection-end-line="335" selection-end-column="31" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/详情页.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22928709">
+          <caret line="326" column="34" selection-start-line="326" selection-start-column="34" selection-end-line="326" selection-end-column="34" />
+          <folding>
+            <element signature="n#aside#0;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#aside#1;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#aside#3;n#section#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
