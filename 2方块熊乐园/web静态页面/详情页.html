@@ -16,7 +16,7 @@
         }
         /*headerBox*/
         .headerBox{
-            background-color: #F2F2F2;
+
         }
         .headerBox .header{
             width:1200px;
@@ -25,6 +25,7 @@
             margin:0 auto;
             font-size: 14px;
             color: #666;
+            background-color: #F2F2F2;
         }
         .headerBox .header .headerLeft .lusaka{
             padding-left:16px;
@@ -47,7 +48,7 @@
 
         /*searchBox*/
         .searchBox{
-            background-color: #FFCDC0;
+
         }
         .searchBox .search{
             width:1200px;
@@ -56,6 +57,7 @@
             margin:0 auto;
             font-size: 14px;
             color: #666;
+            background-color: #FFCDC0;
             border-bottom: 2px solid #FF4720;
         }
         .searchBox .search .searchLeft{
@@ -118,12 +120,13 @@
 
         /*bottomBox*/
         .bottomBox{
-            background-color: #F2F2F2;
+
         }
         .bottomBox .bottom{
             width:1200px;
             margin:0 auto;
             border-top: 2px solid #FF4720;
+            background-color: #F2F2F2;
         }
         .bottomBox .bottom .bottomLink{
             font-size: 13px;
@@ -164,7 +167,7 @@
         }
         .detailBox .detail .detailLeft{
             width:900px;
-            background-color: #bfa;
+            /*background-color: #bfa;*/
         }
         .detailBox .detail .detailLeft .goodName{
             color: #333;
@@ -305,10 +308,14 @@
 
         .detailBox .detail .detailRight{
             width:300px;
-            background-color: pink;
+            /*background-color: pink;*/
+        }
+        .detailBox .detail .detailRight .userInfo{
+            background-color: #F2F2F2;
         }
         .detailBox .detail .detailRight .headImg{
             text-align: center;
+            padding: 18px 0 6px 0;
         }
         .detailBox .detail .detailRight .name{
             font-size: 14px;
@@ -323,10 +330,83 @@
             height: 40px;
             line-height: 40px;
             background-color: #F6B9AA;
-            margin-left: 18px;
             border: 1px solid #ccc;
+            margin: 28px 0 66px 18px;
         }
         .detailBox .detail .detailRight .talk a{
+            color: #FF4720;
+        }
+        .detailBox .detail .detailRight .selling{
+            background-color: #F2F2F2;
+        }
+        .detailBox .detail .detailRight .selling .sellingTitle{
+            color: #333333;
+            font-size: 18px;
+            font-weight:bold;
+            padding-bottom:16px;
+        }
+        .detailBox .detail .detailRight .selling .sellingTitle .gang{
+            padding:0 6px;
+            color: #FF4720;
+        }
+        .detailBox .detail .detailRight .selling .sellingList{
+            text-align: center;
+            padding-bottom:16px;
+        }
+        .detailBox .detail .detailRight .selling .sellingList .sellingImg{
+            width: 110px;
+            height: 110px;
+        }
+        .detailBox .detail .detailRight .selling .more{
+            font-weight:bold;
+            font-size: 18px;
+            text-align: right;
+            padding-right: 5px;
+        }
+        .detailBox .detail .detailRight .selling .more .moreLink{
+            text-decoration: underline;
+            color: #333;
+        }
+
+        .detailBox .detail .detailRight .recommend{
+            background-color: #F2F2F2;
+            margin-top:10px;
+            font-family: "微软雅黑";
+        }
+        .detailBox .detail .detailRight .recommend .recommendTitle{
+            color: #333333;
+            font-size: 18px;
+            font-weight:bold;
+        }
+        .detailBox .detail .detailRight .recommend .recommendTitle .gang{
+            padding:0 6px;
+            color: #FF4720;
+        }
+        .detailBox .detail .detailRight .recommend .recommendList{
+            padding: 16px 24px;
+
+            border-bottom:2px solid #EDEDED;
+        }
+        .detailBox .detail .detailRight .recommend .recommendList .recommendListLeft img{
+            width: 108px;
+            height: 80px;
+        }
+        .detailBox .detail .detailRight .recommend .recommendList .recommendListRight{
+            position: relative;
+            height:80px;
+            color: #333;
+        }
+        .detailBox .detail .detailRight .recommend .recommendList .recommendListRight .desc{
+            font-size: 14px;
+        }
+        .detailBox .detail .detailRight .recommend .recommendList .recommendListRight .price{
+            width:100%;
+            position: absolute;
+            left:0;
+            bottom:0;
+            text-align: right;
+        }
+        .detailBox .detail .detailRight .recommend .recommendList .recommendListRight .price .num1{
             color: #FF4720;
         }
     </style>
@@ -403,14 +483,76 @@
             </div>
             <!--detailRight-->
             <div class="col-xs-3 col-sm-3 detailRight">
-                <div class="col-xs-12 col-sm-12 headImg">
-                    <img src="image/detailPage/headImg.png">
+                <div class="userInfo">
+                    <div class="col-xs-12 col-sm-12 headImg">
+                        <img src="image/detailPage/headImg.png">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 name">
+                        laan
+                    </div>
+                    <div class="col-xs-12 col-sm-12 talk">
+                        <a href="###">TALK WITH HIM</a>
+                    </div>
                 </div>
-                <div class="col-xs-12 col-sm-12 name">
-                    laan
+                <div class="row selling">
+                    <p class="col-xs-12 col-sm-12 sellingTitle"><span class="gang">|</span><span class="">SELLING (18)</span></p>
+                    <div class="sellingListBox">
+                        <div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src="image/detailPage/selling1.jpg"></div>
+                        <div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src="image/detailPage/selling1.jpg"></div>
+                        <div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src="image/detailPage/selling1.jpg"></div>
+                        <div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src="image/detailPage/selling1.jpg"></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 more"><a href="###" class="moreLink">MORE</a></div>
                 </div>
-                <div class="col-xs-12 col-sm-12 talk">
-                    <a href="###">TALK WITH HIM</a>
+                <div class="row recommend">
+                    <p class="col-xs-12 col-sm-12 recommendTitle"><span class="gang">|</span><span class="">精选推荐</span></p>
+                    <div class="recommendListBox">
+                        <div class="col-xs-12 col-sm-12 recommendList">
+                            <div class="col-xs-6 col-sm-6 recommendListLeft">
+                                <img src="image/detailPage/recommend1.png">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 recommendListRight">
+                                <p class="desc">美的智能变频空调美的智能变频空调</p>
+                                <p class="price"><span class="num1">2800</span>&nbsp;<span class="num2">元</span></p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 recommendList">
+                            <div class="col-xs-6 col-sm-6 recommendListLeft">
+                                <img src="image/detailPage/recommend1.png">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 recommendListRight">
+                                <p class="desc">美的智能变频空调美的智能变频空调</p>
+                                <p class="price"><span class="num1">2800</span>&nbsp;<span class="num2">元</span></p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 recommendList">
+                            <div class="col-xs-6 col-sm-6 recommendListLeft">
+                                <img src="image/detailPage/recommend1.png">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 recommendListRight">
+                                <p class="desc">美的智能变频空调美的智能变频空调</p>
+                                <p class="price"><span class="num1">2800</span>&nbsp;<span class="num2">元</span></p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 recommendList">
+                            <div class="col-xs-6 col-sm-6 recommendListLeft">
+                                <img src="image/detailPage/recommend1.png">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 recommendListRight">
+                                <p class="desc">美的智能变频空调美的智能变频空调</p>
+                                <p class="price"><span class="num1">2800</span>&nbsp;<span class="num2">元</span></p>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 recommendList">
+                            <div class="col-xs-6 col-sm-6 recommendListLeft">
+                                <img src="image/detailPage/recommend1.png">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 recommendListRight">
+                                <p class="desc">美的智能变频空调美的智能变频空调</p>
+                                <p class="price"><span class="num1">2800</span>&nbsp;<span class="num2">元</span></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
