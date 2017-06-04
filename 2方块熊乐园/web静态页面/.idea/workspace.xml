@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="75517a66-0ead-4f48-80a9-a1c84f153b12" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/information/headImg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/information/sellingImg.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/loginRegister/dragBlock.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/loginRegister/login1.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/loginRegister/login2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/loginRegister/passwordImg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/loginRegister/phoneImg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/publish/complete.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/image/publish/upload.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/个人信息.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/发布.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/找回密码.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/登陆_注册.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/ppublic.min.css" afterPath="$PROJECT_DIR$/css/ppublic.min.css" />
-    </list>
+    <list default="true" id="75517a66-0ead-4f48-80a9-a1c84f153b12" name="Default" comment="" />
     <ignored path="web静态页面.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
