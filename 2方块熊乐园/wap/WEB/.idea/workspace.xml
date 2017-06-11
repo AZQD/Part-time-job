@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="6cbd55c2-1485-4026-9990-25d0f9e8717d" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RSA" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RSA/js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图片预览" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图片预览/css" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图片预览/img" />
@@ -14,6 +16,14 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/省市区三级联动" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/省市区三级联动/css" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/省市区三级联动/js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RSA/2.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RSA/3.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RSA/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RSA/js/jquery.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RSA/js/jsencrypt.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RSA/js/jsencrypt.min.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RSA/test.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RSA/备注.text" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图片预览/css/viewer.css" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图片预览/css/viewer.min.css" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/图片预览/index.html" />
@@ -44,7 +54,58 @@
     <favorites_list name="WEB" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RSA/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.234375">
+              <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/RSA/test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.67228466">
+              <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="备注.text" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RSA/备注.text">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="61" selection-start-line="0" selection-start-column="61" selection-end-line="0" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RSA/2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-16.796875">
+              <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="3.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RSA/3.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.6764705">
+              <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -64,6 +125,11 @@
         <option value="$PROJECT_DIR$/图片预览/css.html" />
         <option value="$PROJECT_DIR$/图片预览/index.html" />
         <option value="$PROJECT_DIR$/省市区三级联动/index.html" />
+        <option value="$PROJECT_DIR$/RSA/2.html" />
+        <option value="$PROJECT_DIR$/RSA/3.html" />
+        <option value="$PROJECT_DIR$/RSA/备注.text" />
+        <option value="$PROJECT_DIR$/RSA/index.html" />
+        <option value="$PROJECT_DIR$/RSA/test.html" />
       </list>
     </option>
   </component>
@@ -115,6 +181,80 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="图片预览" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="图片预览" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RSA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RSA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -132,23 +272,27 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\taskNew\Part-time-job\2方块熊乐园\wap\WEB\RSA" />
+      <recent name="C:\Users\Administrator\Desktop\taskNew\Part-time-job\2方块熊乐园\wap\WEB\RSA\js" />
       <recent name="C:\Users\Administrator\Desktop\taskNew\Part-time-job\2方块熊乐园\wap\WEB\省市区三级联动\js" />
       <recent name="C:\Users\Administrator\Desktop\taskNew\Part-time-job\2方块熊乐园\wap\WEB\图片预览\js" />
       <recent name="C:\Users\Administrator\Desktop\taskNew\Part-time-job\2方块熊乐园\wap\WEB\图片预览\css" />
-      <recent name="C:\Users\Administrator\Desktop\taskNew\Part-time-job\2方块熊乐园\wap\WEB\图片预览\img" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.index.html (2)">
-    <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/WEB/index.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="产品详情.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/WEB/产品详情.html">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.index.html (3)">
     <configuration default="false" name="index.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/WEB/图片预览/index.html">
       <method />
     </configuration>
     <configuration default="false" name="index.html (2)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/WEB/省市区三级联动/index.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="index.html (3)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/WEB/RSA/index.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="2.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/WEB/RSA/2.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="3.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/WEB/RSA/3.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -199,18 +343,20 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.产品详情.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html (2)" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html (2)" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html (3)" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.2.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.3.html" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html (2)" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.产品详情.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html (3)" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.3.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.2.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html (2)" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.index.html (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -247,10 +393,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="728" extended-state="1" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1366" height="728" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13930723" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13930723" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -359,7 +505,7 @@
         <state vertical-scroll-proportion="-191.47359">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -368,6 +514,56 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.48501873">
           <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RSA/js/jsencrypt.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33271375">
+          <caret line="2144" column="17" selection-start-line="2144" selection-start-column="13" selection-end-line="2144" selection-end-column="17" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RSA/备注.text">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="61" selection-start-line="0" selection-start-column="61" selection-end-line="0" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RSA/2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.796875">
+          <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RSA/3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.6764705">
+          <caret line="5" column="32" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RSA/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.234375">
+          <caret line="29" column="50" selection-start-line="29" selection-start-column="50" selection-end-line="29" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RSA/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67228466">
+          <caret line="29" column="7" selection-start-line="29" selection-start-column="7" selection-end-line="29" selection-end-column="7" />
           <folding />
         </state>
       </provider>
