@@ -143,11 +143,12 @@
             border: 1px solid #FF4720;
             margin-bottom: 10px;
         }
-        .sellingBox .selling .sellingList .sellingLink img{
+        .sellingBox .selling .sellingList .sellingLink .goodImg{
             width: 100%;
             height: 100%;
         }
         .sellingBox .selling .sellingList .sellingLink .desc{
+            display: none;
             position: absolute;
             width:100%;
             left:0;
@@ -219,11 +220,12 @@
             border: 1px solid #FF4720;
             margin-bottom: 10px;
         }
-        .likeBox .like .likeList .likeLink img{
+        .likeBox .like .likeList .likeLink .goodImg{
             width: 100%;
             height: 100%;
         }
         .likeBox .like .likeList .likeLink .desc{
+            display: none;
             position: absolute;
             width:100%;
             left:0;
@@ -333,35 +335,35 @@
             </div>
             <div class="col-xs-12 col-sm-12 sellingList">
                 <a href="#" class="sellingLink">
-                    <img src="image/information/sellingImg.jpg">
+                    <img class="goodImg" src="image/information/sellingImg.jpg">
                     <div class="row desc">
                         <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
                         <div class="col-xs-6 col-sm-6 right">1054</div>
                     </div>
                 </a>
                 <a href="#" class="sellingLink">
-                    <img src="image/information/sellingImg.jpg">
+                    <img class="goodImg" src="image/information/sellingImg.jpg">
                     <div class="row desc">
                         <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
                         <div class="col-xs-6 col-sm-6 right">1054</div>
                     </div>
                 </a>
                 <a href="#" class="sellingLink">
-                    <img src="image/information/sellingImg.jpg">
+                    <img class="goodImg" src="image/information/sellingImg.jpg">
                     <div class="row desc">
                         <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
                         <div class="col-xs-6 col-sm-6 right">1054</div>
                     </div>
                 </a>
                 <a href="#" class="sellingLink">
-                    <img src="image/information/sellingImg.jpg">
+                    <img class="goodImg" src="image/information/sellingImg.jpg">
                     <div class="row desc">
                         <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
                         <div class="col-xs-6 col-sm-6 right">1054</div>
                     </div>
                 </a>
                 <a href="#" class="sellingLink">
-                    <img src="image/information/sellingImg.jpg">
+                    <img class="goodImg" src="image/information/sellingImg.jpg">
                     <div class="row desc">
                         <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
                         <div class="col-xs-6 col-sm-6 right">1054</div>
@@ -381,35 +383,35 @@
             </div>
             <div class="col-xs-12 col-sm-12 likeList">
                 <a href="#" class="likeLink">
-                    <img src="image/information/sellingImg.jpg">
+                    <img class="goodImg" src="image/information/sellingImg.jpg">
                     <div class="row desc">
                         <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
                         <div class="col-xs-6 col-sm-6 right">1054</div>
                     </div>
                 </a>
                 <a href="#" class="likeLink">
-                    <img src="image/information/sellingImg.jpg">
+                    <img class="goodImg" src="image/information/sellingImg.jpg">
                     <div class="row desc">
                         <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
                         <div class="col-xs-6 col-sm-6 right">1054</div>
                     </div>
                 </a>
                 <a href="#" class="likeLink">
-                    <img src="image/information/sellingImg.jpg">
+                    <img class="goodImg" src="image/information/sellingImg.jpg">
                     <div class="row desc">
                         <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
                         <div class="col-xs-6 col-sm-6 right">1054</div>
                     </div>
                 </a>
                 <a href="#" class="likeLink">
-                    <img src="image/information/sellingImg.jpg">
+                    <img class="goodImg" src="image/information/sellingImg.jpg">
                     <div class="row desc">
                         <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
                         <div class="col-xs-6 col-sm-6 right">1054</div>
                     </div>
                 </a>
                 <a href="#" class="likeLink">
-                    <img src="image/information/sellingImg.jpg">
+                    <img class="goodImg" src="image/information/sellingImg.jpg">
                     <div class="row desc">
                         <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
                         <div class="col-xs-6 col-sm-6 right">1054</div>
@@ -434,7 +436,17 @@
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
 <script type="text/javascript" src="js/swiper.min.js"></script>
 <script type="text/javascript">
-
+    $(function(){
+        /*hover图片动效*/
+        $('.sellingBox .selling .sellingList .sellingLink .goodImg, .likeBox .like .likeList .likeLink .goodImg').hover(
+                function(){
+                    $(this).siblings('.desc').fadeIn();
+                },
+                function(){
+                    $(this).siblings('.desc').fadeOut();
+                }
+        );
+    });
 </script>
 </body>
 </html>

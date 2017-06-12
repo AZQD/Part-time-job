@@ -22,10 +22,12 @@
             margin:0 auto;
             font-size: 14px;
             color: #666;
-            /*background-color: #bfa;*/
+            background-color: #fff;
         }
         .searchBox .search .searchLeft .logo{
             padding-left:16px;
+            width: 325px;
+            height: 51px;
         }
         .searchBox .search .searchLeft .change{
             text-decoration: underline;
@@ -73,7 +75,29 @@
         .loginRegisterBox .loginRegister .loginWrap .loginBox{
             width: 290px;
             margin:0 auto;
+            position: relative;
             /*background-color: #bfa;*/
+        }
+        .loginRegisterBox .loginRegister .loginWrap .loginBox .warning{
+            width: 197px;
+            height: 81px;
+            position: absolute;
+            right: -206px;
+            top: 109px;
+            z-index: 999;
+            color: #666;
+            font-size: 13px;
+            padding: 8px 16px;
+            line-height: 16px;
+            background-color: #B3CCFF;
+        }
+        .loginRegisterBox .loginRegister .loginWrap .loginBox .warning .leftTop{
+            width: 10px;
+            height: 30px;
+            background-color: #B3CCFF;
+            position: absolute;
+            left:-8px;
+            top:0;
         }
         .loginRegisterBox .loginRegister .loginWrap .loginBox .loginTitle{
             font-size: 18px;
@@ -120,6 +144,8 @@
             display: inline-block;
             width:100px;
             text-align: center;
+            background-color: #B3CCFF;
+            border-right: 1px solid #FF4720;
         }
         .loginRegisterBox .loginRegister .passwordBox{
             height: 42px;
@@ -168,6 +194,7 @@
         <div class="row loginRegister">
             <div class="col-xs-12 col-sm-12 loginWrap">
                 <div class="row loginBox">
+                    <div class="warning"><div class="leftTop"></div>Our system will sent you a short message includes the VERIFY CODE to verify that the cellphone is yours.</div>
                     <div class="col-xs-12 col-sm-12 loginTitle">
                         <span class="gang">|</span>&nbsp;<span class="">RESET PASSWORD</span>
                     </div>

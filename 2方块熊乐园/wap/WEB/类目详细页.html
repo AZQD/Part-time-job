@@ -26,6 +26,7 @@
             margin:0 auto;
             font-size: 14px;
             color: #666;
+            position: relative;
         }
         .headerBox .header .headerLeft .lusaka{
             padding-left:16px;
@@ -44,6 +45,33 @@
             padding-right: 8px;
             padding-left:4px;
             cursor: pointer;
+        }
+        .headerBox .header .changeUl{
+            list-style: none;
+            cursor: pointer;
+            position: absolute;
+            z-index: 2;
+            top:30px;
+            padding:0;
+            background-color: #fff;
+            border: 1px solid #999;
+        }
+        .headerBox .header .changeUl .changeLi{
+            border-bottom: 1px solid #999;
+            width: 97px;
+            height: 26px;
+            line-height:26px;
+            font-size: 13px;
+            text-align: center;
+        }
+        .headerBox .header .changeUl .changeLi .changeLiLink{
+            color: #333333;
+        }
+        .headerBox .header .changeUl .changeLi .changeLiLink:hover{
+            color: #FF4720;
+        }
+        .headerBox .header .changeUl .changeLi:last-child{
+            border-bottom: 0;
         }
 
         /*searchBox*/
@@ -69,7 +97,6 @@
             text-decoration: underline;
         }
         .searchBox .search .searchLeft .gt{
-            font-family: Arial,sans-serif;
             padding:0 12px;
         }
         .searchBox .search .searchLeft .second{
@@ -119,43 +146,57 @@
             margin-right:42px;
         }
 
-        /*bottomBox*/
-        .bottomBox{
-            min-width: 1200px;
-            background-color: #F2F2F2;
+        .searchBox .search .menuUl{
+            list-style: none;
+            cursor: pointer;
+            position: absolute;
+            z-index: 1000;
+            top:90px;
+            padding:0;
+            background-color: #fff;
+            border: 1px solid #999;
         }
-        .bottomBox .bottom{
-            width:1200px;
-            margin:0 auto;
-            border-top: 2px solid #FF4720;
-        }
-        .bottomBox .bottom .bottomLink{
+        .searchBox .search .menuUl .menuLi{
+            border-bottom: 1px solid #999;
+            width: 97px;
+            height: 29px;
+            line-height:29px;
             font-size: 13px;
-            height:38px;
-            line-height:38px;
-            padding-left: 40px;
+            text-align: center;
+            position: relative;
         }
-        .bottomBox .bottom .bottomLink a{
-            color: #666;
-            padding-right: 14px;
+        .searchBox .search .menuUl .menuLi .menuLiLink{
+            color: #333333;
         }
-        .bottomBox .bottom .bottomCopyRight{
-            height:38px;
-            line-height:38px;
+        .searchBox .search .menuUl .menuLi:hover{
+            background-color: #F0F0F0;
         }
-        .bottomBox .bottom .bottomCopyRight .bottomCopyRightText{
-            margin:0 22px;
-            border-top:1px dashed #666;
+        .searchBox .search .menuUl .menuLi:last-child{
+            border-bottom: 0;
+        }
+        .searchBox .search .menuUl .menuLi .twoUl{
+            background-color: #fff;
+            border: 1px solid #999;
+            position: absolute;
+            left:97px;
+            top:-1px;
+        }
+        .searchBox .search .menuUl .menuLi .twoUl .twoLi{
+            border-bottom: 1px solid #999;
+            width: 97px;
+            height: 29px;
+            line-height:29px;
+            font-size: 13px;
             text-align: center;
         }
-        .bottomBox .bottom .bottomCopyRight .bottomCopyRightText .copy{
-            font-size: 12px;
-            color: #333;
+        .searchBox .search .menuUl .menuLi .twoUl .twoLi:last-child{
+            border-bottom: 0;
         }
-        .bottomBox .bottom .bottomCopyRight .bottomCopyRightText .contact{
-            font-size: 13px;
-            color: #3366FF;
-            text-decoration: underline;
+        .searchBox .search .menuUl .menuLi .twoUl .twoLi .twoLiLink{
+            color: #333333;
+        }
+        .searchBox .search .menuUl .menuLi .twoUl .twoLi:hover{
+            background-color: #F0F0F0;
         }
 
         /*selectBox*/
@@ -314,6 +355,51 @@
             font-size: 24px;
             color: red;
         }
+
+        /*bottomBox*/
+        .bottomBox{
+            margin-top:445px;
+            min-width: 1200px;
+            background-color: #F2F2F2;
+        }
+        .bottomBox .bottom{
+            width:1200px;
+            margin:0 auto;
+            border-top: 2px solid #FF4720;
+        }
+        .bottomBox .bottom .bottomLink{
+            font-size: 13px;
+            height:38px;
+            line-height:38px;
+            text-align: center;
+            /*padding-left: 40px;*/
+        }
+        .bottomBox .bottom .bottomLink a{
+            color: #666;
+            padding: 0 12px;
+        }
+        .bottomBox .bottom .bottomCopyRight{
+            height:35px;
+            line-height:35px;
+        }
+        .bottomBox .bottom .bottomCopyRight .bottomCopyRightText{
+            margin:0 22px;
+            border-top:1px dashed #666;
+            text-align: center;
+        }
+        .bottomBox .bottom .bottomCopyRight .bottomCopyRightText .copy{
+            font-size: 12px;
+            color: #999;
+        }
+        .bottomBox .bottom .bottomCopyRight .bottomCopyRightText .copy .copyLink{
+            color: #999;
+            text-decoration: underline;
+        }
+        .bottomBox .bottom .bottomCopyRight .bottomCopyRightText .contact{
+            font-size: 13px;
+            color: #3366FF;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -330,6 +416,14 @@
                 <span class="space register">Register</span>|
                 <span class="space help">Help</span>
             </div>
+            <ul class="changeUl" style="display: none;">
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka1</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka2</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka3</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka4</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka5</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka6</a></li>
+            </ul>
         </div>
     </aside>
 
@@ -337,7 +431,7 @@
         <div class="row search">
             <div class="col-xs-6 col-sm-6 searchLeft">
                 <a href="#" class="fist">INDEX</a>
-                <span class="gt">></span>
+                <img  class="gt" src="image/detailPage/gt.png">
                 <a href="#" class="second">PHONE</a>
             </div>
             <div class="col-xs-6 col-sm-6 searchRight">
@@ -345,6 +439,36 @@
                 <img class="searchImg" src="image/index/search.png">
                 <button class="searchBtn">PUBLISH</button>
             </div>
+            <ul class="menuUl" style="display: none;">
+                <li class="menuLi">
+                    <a href="#" class="menuLiLink">phone1</a>
+                    <ul class="twoUl" style="display: none;">
+                        <li class="twoLi"><a href="###" class="twoLiLink">11</a></li>
+                        <li class="twoLi"><a href="###" class="twoLiLink">11</a></li>
+                    </ul>
+                </li>
+                <li class="menuLi">
+                    <a href="#" class="menuLiLink">phone2</a>
+                    <ul class="twoUl" style="display: none;">
+                        <li class="twoLi"><a href="###" class="twoLiLink">22</a></li>
+                        <li class="twoLi"><a href="###" class="twoLiLink">22</a></li>
+                    </ul>
+                </li>
+                <li class="menuLi">
+                    <a href="#" class="menuLiLink">phone3</a>
+                    <ul class="twoUl" style="display: none;">
+                        <li class="twoLi"><a href="###" class="twoLiLink">33</a></li>
+                        <li class="twoLi"><a href="###" class="twoLiLink">33</a></li>
+                    </ul>
+                </li>
+                <li class="menuLi">
+                    <a href="#" class="menuLiLink">phone4</a>
+                    <ul class="twoUl" style="display: none;">
+                        <li class="twoLi"><a href="###" class="twoLiLink">44</a></li>
+                        <li class="twoLi"><a href="###" class="twoLiLink">44</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </aside>
 
@@ -455,14 +579,13 @@
     <aside class="bottomBox">
         <div class="row bottom">
             <div class="col-xs-12 col-sm-12 bottomLink">
-                <a href="#">Google</a>
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
+                <a href="#">Contact Us</a>|<a href="#">Privacy Notice</a>|<a href="#">Conditions of Use</a>
             </div>
             <div class="col-xs-12 col-sm-12 bottomCopyRight">
                 <div class="bottomCopyRightText">
-                    <span class="copy">© 2017</span>&emsp;
-                    <a href="#" class="contact">Contact Us</a>
+
+                    <span class="copy">Copyright © 2017 <a href="###" class="copyLink">kalichi.com</a> All Right Reserved</span>
+                    <!--&emsp;<a href="#" class="contact">Contact Us</a>-->
                 </div>
             </div>
         </div>
@@ -477,6 +600,55 @@
             $('.tabsBox .tabs .tabsLeft .tabLink').removeClass("active");
             $(this).addClass("active");
         });
+
+
+        /*change切换地址*/
+        var header = $('.headerBox .header').offset().left;
+        var changeUlLeft = $('.headerBox .header .headerLeft .change').offset().left;
+        $('.headerBox .header .changeUl').css('left', changeUlLeft-header);
+        $('.headerBox .header .headerLeft .change').hover(function () {
+            $('.headerBox .header .changeUl').show();
+        });
+        $('.headerBox .header .changeUl').hover(function () {
+            $('.headerBox .header .changeUl').show();
+        },function () {
+            $('.headerBox .header .changeUl').hide();
+        });
+        $('.headerBox .header .changeUl .changeLi').click(function () {
+            $('.headerBox .header .changeUl').hide();
+            $('.headerBox .header .headerLeft .lusaka').text($(this).text());
+        });
+
+        /*.searchBox .search .menuUl .menuLi .menuLiLink*/
+        /*跳转到index页面*/
+        $('.searchBox .search .searchLeft .fist').click(function(){
+            window.location.href = 'index.html';
+        });
+
+        /*phone切换菜单*/
+        var search = $('.searchBox .search').offset().left;
+        var searchUlLeft = $('.searchBox .search .searchLeft .second').offset().left;
+        $('.searchBox .search .menuUl').css('left', searchUlLeft);
+        $('.searchBox .search .searchLeft .second').hover(function () {
+            $('.searchBox .search .menuUl').show();
+        });
+        $('.searchBox .search .menuUl').hover(function () {
+            $('.searchBox .search .menuUl').show();
+        },function () {
+            $('.searchBox .search .menuUl').hide();
+        });
+        $('.searchBox .search .menuUl .menuLi').hover(
+                function(){
+                    $(this).children('.twoUl').show();
+                    $(this).find('.twoLi').click(function () {
+                        $('.searchBox .search .menuUl').hide();
+                        $('.searchBox .search .searchLeft .second').text($(this).children('.twoLiLink').text());
+                    });
+                },
+                function(){
+                    $(this).children('.twoUl').hide();
+                }
+        );
     });
 </script>
 </body>

@@ -27,7 +27,6 @@
             margin:0 auto;
             font-size: 14px;
             color: #666;
-            position: relative;
         }
         .headerBox .header .headerLeft .lusaka{
             padding-left:16px;
@@ -46,41 +45,6 @@
             padding-right: 8px;
             padding-left:4px;
             cursor: pointer;
-        }
-        .headerBox .header .headerRight .headImg{
-            width: 15px;
-            vertical-align: -3px;
-        }
-        .headerBox .header .headerRight .logout{
-            color: #ff0000;
-            text-decoration: underline;
-        }
-        .headerBox .header .changeUl{
-            list-style: none;
-            cursor: pointer;
-            position: absolute;
-            z-index: 2;
-            top:30px;
-            padding:0;
-            background-color: #fff;
-            border: 1px solid #999;
-        }
-        .headerBox .header .changeUl .changeLi{
-            border-bottom: 1px solid #999;
-            width: 97px;
-            height: 26px;
-            line-height:26px;
-            font-size: 13px;
-            text-align: center;
-        }
-        .headerBox .header .changeUl .changeLi .changeLiLink{
-            color: #333333;
-        }
-        .headerBox .header .changeUl .changeLi .changeLiLink:hover{
-            color: #FF4720;
-        }
-        .headerBox .header .changeUl .changeLi:last-child{
-            border-bottom: 0;
         }
 
         /*searchBox*/
@@ -433,7 +397,7 @@
             text-align: right;
         }
 
-        /*bottomBox*/
+        /*headerBox*/
         .bottomBox{
             margin-top:445px;
             min-width: 1200px;
@@ -488,24 +452,11 @@
                 <span class="lusaka">Lusaka</span>&nbsp;
                 <span class="change">[Change]</span>
             </div>
-            <!--<div class="col-xs-6 col-sm-6 headerRight headerRight1">
+            <div class="col-xs-6 col-sm-6 headerRight">
                 <span class="space login">Login</span>|
                 <span class="space register">Register</span>|
                 <span class="space help">Help</span>
-            </div>-->
-            <div class="col-xs-6 col-sm-6 headerRight headerRight2">
-                <span class="headImgBox"><img src="image/index/headImg.png" class="headImg"><span class="space">laan</span>|</span>
-                <span class="space logout">logout</span>|
-                <span class="space help">Help</span>
             </div>
-            <ul class="changeUl" style="display: none;">
-                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka1</a></li>
-                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka2</a></li>
-                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka3</a></li>
-                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka4</a></li>
-                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka5</a></li>
-                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka6</a></li>
-            </ul>
         </div>
     </aside>
 
@@ -717,13 +668,13 @@
 <script type="text/javascript" src="js/swiper.min.js"></script>
 <script type="text/javascript">
     $(function(){
-        //tabsBox：tab切换
+        //tab切换
         $('.tabsBox .tabs .tabsLeft .tabLink').click(function () {
             $('.tabsBox .tabs .tabsLeft .tabLink').removeClass("active");
             $(this).addClass("active");
         });
 
-        //bannerBox：轮播图
+        //轮播图
         var mySwiper = new Swiper ('.swiper-container', {
             direction: 'horizontal',//水平滑动
             loop: true, //循环播放
@@ -733,7 +684,7 @@
             speed: 2000
         });
 
-        /*refreshImgBox，nearbyImgBox：hover图片动效*/
+        /*hover图片动效*/
         $('.refreshImgBox .refreshImg .refreshLi .goodImg, .nearbyImgBox .nearbyImg .nearbyLi .goodImg').hover(
                 function(){
                     $(this).siblings('.desc').fadeIn();
@@ -742,43 +693,6 @@
                     $(this).siblings('.desc').fadeOut();
                 }
         );
-
-
-        /*headerBox：点击change切换地址*/
-        var header = $('.headerBox .header').offset().left;
-        var changeUlLeft = $('.headerBox .header .headerLeft .change').offset().left;
-        $('.headerBox .header .changeUl').css('left', changeUlLeft-header);
-        $('.headerBox .header .headerLeft .change').hover(function () {
-            $('.headerBox .header .changeUl').show();
-        });
-        $('.headerBox .header .changeUl').hover(function () {
-            $('.headerBox .header .changeUl').show();
-        },function () {
-            $('.headerBox .header .changeUl').hide();
-        });
-        $('.headerBox .header .changeUl .changeLi').click(function () {
-            $('.headerBox .header .changeUl').hide();
-            $('.headerBox .header .headerLeft .lusaka').text($(this).text());
-        });
-        /*headerBox：点击login登陆*/
-       $('.headerBox .header .headerRight .login, .headerBox .header .headerRight .register').unbind('click').click(function(){
-           window.location.href = "登陆_注册.html";
-       });
-       $('.headerBox .header .headerRight .headImgBox').unbind('click').click(function(){
-           window.location.href = "个人管理后台.html";
-       });
-       $('.headerBox .header .headerRight .logout').unbind('click').click(function(){
-           window.location.href = "index.html";
-       });
-
-        /*
-        * https://www.taobao.com/?spm=a1z09.2.1581860521.1.SnYGhR
-        * https://buyertrade.taobao.com/trade/itemlist/list_bought_items.htm?spm=a21bo.50862.1997525045.2.PPijI0
-        * https://buyertrade.taobao.com/trade/itemlist/list_bought_items.htm?spm=a21bo.50862.1997525045.2.PPijI0
-        * https://lu.taobao.com/newMyPath.htm?spm=a1z09.2.1997525045.3.skaywP
-        * https://cart.taobao.com/cart.htm?spm=a1z2k.6997417.1997525049.1.OFhSfP&from=mini&ad_id=&am_id=&cm_id=&pm_id=1501036000a02c5c3739
-        *
-        * */
     });
 </script>
 </body>

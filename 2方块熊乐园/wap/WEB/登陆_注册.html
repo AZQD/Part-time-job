@@ -22,10 +22,12 @@
             margin:0 auto;
             font-size: 14px;
             color: #666;
-            /*background-color: #bfa;*/
+            background-color: #fff;
         }
         .searchBox .search .searchLeft .logo{
             padding-left:16px;
+            width: 325px;
+            height: 51px;
         }
         .searchBox .search .searchLeft .change{
             text-decoration: underline;
@@ -119,6 +121,7 @@
             text-indent: 5px;
         }
         .loginRegisterBox .loginRegister .loginBtn{
+            cursor: pointer;
             font-size: 13px;
             color: #fff;
             width:100%;
@@ -244,12 +247,12 @@
                         <span class="gang">|</span>&nbsp;<span class="">LOGIN</span>
                     </div>
                     <div class="col-xs-12 col-sm-12 loginPhone">
-                        <img class="phoneImg" src="image/loginRegister/phoneImg.png"><input class="phoneText" type="text" placeholder="Cellphone Number">
+                        <img class="phoneImg" src="image/loginRegister/phoneImg.png"><input class="phoneText" id="loginPhone" type="text" placeholder="Cellphone Number">
                     </div>
                     <div class="col-xs-12 col-sm-12 loginPassword">
-                        <img class="passwordImg" src="image/loginRegister/passwordImg.png"><input class="passwordText" type="text" placeholder="Password">
+                        <img class="passwordImg" src="image/loginRegister/passwordImg.png"><input class="passwordText" id="loginPassword" type="text" placeholder="Password">
                     </div>
-                    <div class="col-xs-12 col-sm-12 loginBtn">LOGIN</div>
+                    <div class="col-xs-12 col-sm-12 loginBtn" id="loginBtn">LOGIN</div>
                     <div class="col-xs-12 col-sm-12 loginBottom">
                         <img class="passwordImg" src="image/loginRegister/login1.png">&nbsp;&nbsp;
                         <img class="passwordImg" src="image/loginRegister/login2.png">
@@ -283,8 +286,48 @@
 </section>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
 <script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/base64.js"></script>
+<script type="text/javascript" src="js/jsencrypt.js"></script>
 <script type="text/javascript">
+    $(function(){
+        var b = new Base64_new();
+        var publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC5jmTSO5V9ILlphRYdfFk4M2Rko/Ur22h43SxkFcGcj9Vkuew5P65XJPQtJesvY37UmU7zXWsqT/i4Evo2gaYu9Eu/fgutkP9KE4yKh4Ruk/pYC+hyNFVIK21kl4o8cfV9cKumydj2WXgmuywX8UQiVIfbKuvEAw+RVvPjBt9UqQIDAQAB";
+        var encrypt = new JSEncrypt();
+        encrypt.setPublicKey(publicKey);
+        //登陆
 
+        $('#loginBtn').unbind('click').click(function () {
+            var loginPhone = b.encode($.trim($('#loginPhone').val()));
+            var loginPassword = b.encode($.trim($('#loginPassword').val()));
+            var authKey = encrypt.encrypt("user="+ loginPhone +"&pass="+ loginPassword);//获取密钥
+            var timestamp=new Date().getTime();//获取时间戳
+            console.log(loginPhone);
+            console.log(loginPassword);
+            console.log(authKey);
+            var authInfo = {
+                "auth":authKey,
+                "timestamp":timestamp
+            };
+            $.ajax({
+                type:"POST",
+                url:"http://www.kalichimall.com/apigateway/login",
+                dataType:"json",
+                data:JSON.stringify(authInfo),
+                success:function(data){
+                    console.log(data);
+                    if(data.status == 200){
+                        var token = JSON.parse(data.data).token;
+                        window.location.href = "index.html?" + "token="+token;
+                    }else{
+                        alert(data.msg);
+                    }
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            });
+        });
+    });
 </script>
 </body>
 </html>
