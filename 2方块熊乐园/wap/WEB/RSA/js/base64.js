@@ -1,6 +1,7 @@
 /**
 *
-*  Base64 encode / decode
+*  Base64_new encode / decode*
+ *  有修改(仅本次开发所用)
 *
 *  @author haitao.tu
 *  @date   2010-04-26
@@ -8,7 +9,7 @@
 *
 */
  
-function Base64() {
+function Base64_new() {
  
 	// private property
 	_keyStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
