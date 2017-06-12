@@ -201,6 +201,7 @@
 
         /*bottomBox*/
         .bottomBox{
+            margin-top:445px;
             min-width: 1200px;
             background-color: #F2F2F2;
         }
@@ -213,15 +214,16 @@
             font-size: 13px;
             height:38px;
             line-height:38px;
-            padding-left: 40px;
+            text-align: center;
+            /*padding-left: 40px;*/
         }
         .bottomBox .bottom .bottomLink a{
             color: #666;
-            padding-right: 14px;
+            padding: 0 12px;
         }
         .bottomBox .bottom .bottomCopyRight{
-            height:38px;
-            line-height:38px;
+            height:35px;
+            line-height:35px;
         }
         .bottomBox .bottom .bottomCopyRight .bottomCopyRightText{
             margin:0 22px;
@@ -230,7 +232,11 @@
         }
         .bottomBox .bottom .bottomCopyRight .bottomCopyRightText .copy{
             font-size: 12px;
-            color: #333;
+            color: #999;
+        }
+        .bottomBox .bottom .bottomCopyRight .bottomCopyRightText .copy .copyLink{
+            color: #999;
+            text-decoration: underline;
         }
         .bottomBox .bottom .bottomCopyRight .bottomCopyRightText .contact{
             font-size: 13px;
@@ -367,16 +373,22 @@
             top:-12px;
         }
         .detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3{
-            width: 54px;
-            height: 25px;
-            line-height:25px;
+            width: 122px;
+            height: 22px;
+            line-height:22px;
             position: relative;
             left: 184px;
             top:-20px;
+            font-size: 14px;
+            color: #1E1E1E;
+            border: none;
+        }
+        .detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn4{
+            z-index: 99999999999;
         }
         .detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .likeImg{
             /*vertical-align: -1px;*/
-            width:18px;
+            width:14px;
             margin-bottom: 5px;
         }
 
@@ -612,8 +624,9 @@
                             <a href="#" class="btnLink btn1">BUY IT</a>
                             <!--<a href="#" class="btnLink btn2">SHARE</a>-->
                             <a href="#" class="btnLink btn2"><img class="likeImg" src="image/detailPage/share.png">&nbsp;SHARE</a><br/>
-                            <a href="#" class="btnLink btn2 btn3"><img class="likeImg" src="image/detailPage/good.png">&nbsp;999</a>
-                            <a href="#" class="btnLink btn2 btn3"><img class="likeImg" src="image/detailPage/bad.png">&nbsp;99</a>
+                            <a href="#" class="btnLink btn2 btn3"><img class="likeImg" src="image/detailPage/asMyWish.png">&nbsp;As my wish(50)</a><br/>
+                            <a href="#" class="btnLink btn2 btn3 btn4"><img class="likeImg" src="image/detailPage/remove.png">&nbsp;Remove</a>
+                            <!--<a href="#" class="btnLink btn2 btn3"><img class="likeImg" src="image/detailPage/bad.png">&nbsp;99</a>-->
                         </div>
                     </div>
                 </div>
@@ -701,14 +714,13 @@
     <aside class="bottomBox">
         <div class="row bottom">
             <div class="col-xs-12 col-sm-12 bottomLink">
-                <a href="#">Google</a>
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
+                <a href="#">Contact Us</a>|<a href="#">Privacy Notice</a>|<a href="#">Conditions of Use</a>
             </div>
             <div class="col-xs-12 col-sm-12 bottomCopyRight">
                 <div class="bottomCopyRightText">
-                    <span class="copy">© 2017</span>&emsp;
-                    <a href="#" class="contact">Contact Us</a>
+
+                    <span class="copy">Copyright © 2017 <a href="###" class="copyLink">kalichi.com</a> All Right Reserved</span>
+                    <!--&emsp;<a href="#" class="contact">Contact Us</a>-->
                 </div>
             </div>
         </div>
@@ -727,14 +739,21 @@
         /*change切换地址*/
         var header = $('.headerBox .header').offset().left;
         var changeUlLeft = $('.headerBox .header .headerLeft .change').offset().left;
-        $('.headerBox .header .changeUl').css('left', changeUlLeft-header-4);
-        $('.headerBox .header .headerLeft .change').click(function () {
+        $('.headerBox .header .changeUl').css('left', changeUlLeft-header);
+        $('.headerBox .header .headerLeft .change').hover(function () {
             $('.headerBox .header .changeUl').show();
+        });
+        $('.headerBox .header .changeUl').hover(function () {
+            $('.headerBox .header .changeUl').show();
+        },function () {
+            $('.headerBox .header .changeUl').hide();
         });
         $('.headerBox .header .changeUl .changeLi').click(function () {
             $('.headerBox .header .changeUl').hide();
             $('.headerBox .header .headerLeft .lusaka').text($(this).text());
         });
+
+
 
         /*.searchBox .search .menuUl .menuLi .menuLiLink*/
         /*跳转到index页面*/
@@ -743,21 +762,16 @@
         });
 
         /*phone切换菜单*/
-
-        /*
-        * <li class="menuLi">
-         <a href="#" class="menuLiLink">phone1</a>
-         <ul class="twoUl">
-         <li class="twoLi">22</li>
-         <li class="twoLi">22</li>
-         </ul>
-         </li>
-         */
         var search = $('.searchBox .search').offset().left;
         var searchUlLeft = $('.searchBox .search .searchLeft .second').offset().left;
-        $('.searchBox .search .menuUl').css('left', searchUlLeft-search);
-        $('.searchBox .search .searchLeft .second').click(function () {
+        $('.searchBox .search .menuUl').css('left', searchUlLeft);
+        $('.searchBox .search .searchLeft .second').hover(function () {
             $('.searchBox .search .menuUl').show();
+        });
+        $('.searchBox .search .menuUl').hover(function () {
+            $('.searchBox .search .menuUl').show();
+        },function () {
+            $('.searchBox .search .menuUl').hide();
         });
         $('.searchBox .search .menuUl .menuLi').hover(
                 function(){
@@ -771,8 +785,6 @@
                     $(this).children('.twoUl').hide();
                 }
         );
-        var time = new Date();
-console.log("time="+time);
     });
 </script>
 </body>

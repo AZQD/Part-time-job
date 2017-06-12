@@ -27,6 +27,7 @@
             margin:0 auto;
             font-size: 14px;
             color: #666;
+            position: relative;
         }
         .headerBox .header .headerLeft .lusaka{
             padding-left:16px;
@@ -46,6 +47,33 @@
             padding-left:4px;
             cursor: pointer;
         }
+        .headerBox .header .changeUl{
+            list-style: none;
+            cursor: pointer;
+            position: absolute;
+            z-index: 2;
+            top:30px;
+            padding:0;
+            background-color: #fff;
+            border: 1px solid #999;
+        }
+        .headerBox .header .changeUl .changeLi{
+            border-bottom: 1px solid #999;
+            width: 97px;
+            height: 26px;
+            line-height:26px;
+            font-size: 13px;
+            text-align: center;
+        }
+        .headerBox .header .changeUl .changeLi .changeLiLink{
+            color: #333333;
+        }
+        .headerBox .header .changeUl .changeLi .changeLiLink:hover{
+            color: #FF4720;
+        }
+        .headerBox .header .changeUl .changeLi:last-child{
+            border-bottom: 0;
+        }
 
         /*searchBox*/
         .searchBox .search{
@@ -59,6 +87,8 @@
         }
         .searchBox .search .searchLeft .logo{
             padding-left:16px;
+            width: 325px;
+            height: 51px;
         }
         .searchBox .search .searchLeft .change{
             text-decoration: underline;
@@ -298,6 +328,14 @@
                 <span class="space register">Register</span>|
                 <span class="space help">Help</span>
             </div>
+            <ul class="changeUl" style="display: none;">
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka1</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka2</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka3</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka4</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka5</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka6</a></li>
+            </ul>
         </div>
     </aside>
 
@@ -413,6 +451,24 @@
     });
     $('.sortBox .sort .partInner3 .completeBtn').click(function(){
         window.location.href = "详情页.html";
+    });
+
+
+    /*change切换地址*/
+    var header = $('.headerBox .header').offset().left;
+    var changeUlLeft = $('.headerBox .header .headerLeft .change').offset().left;
+    $('.headerBox .header .changeUl').css('left', changeUlLeft-header);
+    $('.headerBox .header .headerLeft .change').hover(function () {
+        $('.headerBox .header .changeUl').show();
+    });
+    $('.headerBox .header .changeUl').hover(function () {
+        $('.headerBox .header .changeUl').show();
+    },function () {
+        $('.headerBox .header .changeUl').hide();
+    });
+    $('.headerBox .header .changeUl .changeLi').click(function () {
+        $('.headerBox .header .changeUl').hide();
+        $('.headerBox .header .headerLeft .lusaka').text($(this).text());
     });
 </script>
 </body>
