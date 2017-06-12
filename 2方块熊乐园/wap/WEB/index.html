@@ -59,6 +59,8 @@
         }
         .searchBox .search .searchLeft .logo{
             padding-left:16px;
+            width: 325px;
+            height: 51px;
         }
         .searchBox .search .searchLeft .change{
             text-decoration: underline;
@@ -194,6 +196,7 @@
             border-bottom: 2px solid #FF4720;
         }
         .bannerBox .banner .bannerRight .bannerRightBox{
+            cursor: pointer;
             position: relative;
             width: 236px;
             height: 236px;
@@ -224,7 +227,7 @@
             line-height: 30px;
             font-size: 16px;
             color: #fff;
-            background-color: #FF4720;
+            background-color: RGBA(255, 71, 32, 0.8);
         }
         .bannerBox .banner .bannerRight .bannerRightBox .desc .left{
             font-weight: bold;
@@ -266,7 +269,7 @@
 
         /*refreshImgBox*/
         .refreshImgBox{
-            background-color: #F2F2F2;
+            /*background-color: #F2F2F2;*/
         }
         .refreshImgBox .refreshImg{
             width:1200px;
@@ -274,6 +277,7 @@
             overflow: hidden;
         }
         .refreshImgBox .refreshImg .refreshLi{
+            cursor: pointer;
             float: left;
             position: relative;
             width: 240px;
@@ -287,6 +291,7 @@
             border: 1px solid #FF4720;
         }
         .refreshImgBox .refreshImg .refreshLi .desc{
+            display: none;
             position: absolute;
             width:200px;
             left:0;
@@ -306,6 +311,92 @@
             text-align: right;
         }
 
+        /*nearbyBox*/
+        .nearbyBox{
+            /*background-color: #F2F2F2;*/
+            /*padding-top:10px;*/
+        }
+        .nearbyBox .nearby{
+            width:1200px;
+            margin:0 auto;
+            padding:8px 0;
+        }
+        .nearbyBox .nearby .nearbyLeft .nearbyName{
+            font-weight:bold;
+            font-size: 18px;
+            color: #333;
+            border-left:2px solid #FF4720;
+            padding-left:8px;
+        }
+        .nearbyBox .nearby .nearbyRight{
+            padding-right:30px;
+            text-align: right;
+        }
+        .nearbyBox .nearby .nearbyRight .nearbyImg{
+            width:20px;
+            vertical-align: -4px;
+        }
+        .nearbyBox .nearby .nearbyRight .nearbyBtn{
+            color: #999;
+            font-size: 16px;
+            text-decoration: underline;
+        }
+
+        /*nearbyImgBox*/
+        .nearbyImgBox{
+            /*background-color: #F2F2F2;*/
+        }
+        .nearbyImgBox .more{
+            margin: 0 auto;
+            width:1200px;
+            text-align: right;
+        }
+        .nearbyImgBox .more .moreText{
+            font-size: 16px;
+            color: #333;
+            padding-right: 24px;
+            text-decoration: underline;
+        }
+        .nearbyImgBox .nearbyImg{
+            width:1200px;
+            margin:0 auto;
+            overflow: hidden;
+        }
+        .nearbyImgBox .nearbyImg .nearbyLi{
+            cursor: pointer;
+            float: left;
+            position: relative;
+            width: 240px;
+            height: 200px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .nearbyImgBox .nearbyImg .nearbyLi .goodImg{
+            width:200px;
+            height:200px;
+            border: 1px solid #FF4720;
+        }
+        .nearbyImgBox .nearbyImg .nearbyLi .desc{
+            display: none;
+            position: absolute;
+            width:200px;
+            left:0;
+            bottom:0;
+            padding:0 6px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            color: #fff;
+            margin-left:20px;
+            background-color: #FF4720;
+        }
+        .nearbyImgBox .nearbyImg .nearbyLi .desc .left{
+            font-weight: bold;
+        }
+        .nearbyImgBox .nearbyImg .nearbyLi .desc .right{
+            text-align: right;
+        }
+
         /*headerBox*/
         .bottomBox{
             margin-top:445px;
@@ -321,15 +412,16 @@
             font-size: 13px;
             height:38px;
             line-height:38px;
-            padding-left: 40px;
+            text-align: center;
+            /*padding-left: 40px;*/
         }
         .bottomBox .bottom .bottomLink a{
             color: #666;
-            padding-right: 14px;
+            padding: 0 12px;
         }
         .bottomBox .bottom .bottomCopyRight{
-            height:38px;
-            line-height:38px;
+            height:35px;
+            line-height:35px;
         }
         .bottomBox .bottom .bottomCopyRight .bottomCopyRightText{
             margin:0 22px;
@@ -338,7 +430,11 @@
         }
         .bottomBox .bottom .bottomCopyRight .bottomCopyRightText .copy{
             font-size: 12px;
-            color: #333;
+            color: #999;
+        }
+        .bottomBox .bottom .bottomCopyRight .bottomCopyRightText .copy .copyLink{
+            color: #999;
+            text-decoration: underline;
         }
         .bottomBox .bottom .bottomCopyRight .bottomCopyRightText .contact{
             font-size: 13px;
@@ -500,18 +596,69 @@
         </ul>
     </aside>
 
+    <aside class="nearbyBox">
+        <div class="row nearby">
+            <div class="col-xs-6 col-sm-6 nearbyLeft">
+                <span class="nearbyName">SOMETHING NEARBY</span>
+            </div>
+            <!--<div class="col-xs-6 col-sm-6 refreshRight">
+                <img class="refreshImg" src="image/index/refresh.png">
+                <a href="#" class="refreshBtn">REFRESH</a>
+            </div>-->
+        </div>
+    </aside>
+
+    <aside class="nearbyImgBox">
+        <ul class="nearbyImg">
+            <li class="nearbyLi">
+                <img class="goodImg" src="image/index/good1.jpg">
+                <div class="desc row">
+                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                    <div class="col-xs-6 col-sm-6 right">1054</div>
+                </div>
+            </li>
+            <li class="nearbyLi">
+                <img class="goodImg" src="image/index/good1.jpg">
+                <div class="desc row">
+                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                    <div class="col-xs-6 col-sm-6 right">1054</div>
+                </div>
+            </li>
+            <li class="nearbyLi">
+                <img class="goodImg" src="image/index/good1.jpg">
+                <div class="desc row">
+                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                    <div class="col-xs-6 col-sm-6 right">1054</div>
+                </div>
+            </li>
+            <li class="nearbyLi">
+                <img class="goodImg" src="image/index/good1.jpg">
+                <div class="desc row">
+                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                    <div class="col-xs-6 col-sm-6 right">1054</div>
+                </div>
+            </li>
+            <li class="nearbyLi">
+                <img class="goodImg" src="image/index/good1.jpg">
+                <div class="desc row">
+                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                    <div class="col-xs-6 col-sm-6 right">1054</div>
+                </div>
+            </li>
+        </ul>
+        <p class="more"><a href="###" class="moreText">MORE</a></p>
+    </aside>
+
     <aside class="bottomBox">
         <div class="row bottom">
             <div class="col-xs-12 col-sm-12 bottomLink">
-                <a href="#">Google</a>
-                <a href="#">Facebook</a>
-                <a href="#">Twitter</a>
+                <a href="#">Contact Us</a>|<a href="#">Privacy Notice</a>|<a href="#">Conditions of Use</a>
             </div>
             <div class="col-xs-12 col-sm-12 bottomCopyRight">
                 <div class="bottomCopyRightText">
 
-                    <span class="copy">© 2017</span>&emsp;
-                    <a href="#" class="contact">Contact Us</a>
+                    <span class="copy">Copyright © 2017 <a href="###" class="copyLink">kalichi.com</a> All Right Reserved</span>
+                    <!--&emsp;<a href="#" class="contact">Contact Us</a>-->
                 </div>
             </div>
         </div>
@@ -536,6 +683,16 @@
             pagination: '.swiper-pagination',  // 分页器
             speed: 2000
         });
+
+        /*hover图片动效*/
+        $('.refreshImgBox .refreshImg .refreshLi .goodImg, .nearbyImgBox .nearbyImg .nearbyLi .goodImg').hover(
+                function(){
+                    $(this).siblings('.desc').fadeIn();
+                },
+                function(){
+                    $(this).siblings('.desc').fadeOut();
+                }
+        );
     });
 </script>
 </body>
