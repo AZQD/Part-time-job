@@ -485,7 +485,7 @@
     <aside class="headerBox">
         <div class="row header">
             <div class="col-xs-6 col-sm-6 headerLeft">
-                <span class="lusaka">Lusaka</span>&nbsp;
+                <span class="lusaka"><!--Lusaka--></span>&nbsp;
                 <span class="change">[Change]</span>
             </div>
             <div class="col-xs-6 col-sm-6 headerRight headerRight1" style="display: none;">
@@ -499,12 +499,12 @@
                 <span class="space help">Help</span>
             </div>
             <ul class="changeUl" style="display: none;">
-                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka1</a></li>
+                <!--<li class="changeLi"><a href="#" class="changeLiLink">Lusaka1</a></li>
                 <li class="changeLi"><a href="#" class="changeLiLink">Lusaka2</a></li>
                 <li class="changeLi"><a href="#" class="changeLiLink">Lusaka3</a></li>
                 <li class="changeLi"><a href="#" class="changeLiLink">Lusaka4</a></li>
                 <li class="changeLi"><a href="#" class="changeLiLink">Lusaka5</a></li>
-                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka6</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka6</a></li>-->
             </ul>
         </div>
     </aside>
@@ -747,22 +747,7 @@
         );
 
 
-        /*headerBox：点击change切换地址*/
-        var header = $('.headerBox .header').offset().left;
-        var changeUlLeft = $('.headerBox .header .headerLeft .change').offset().left;
-        $('.headerBox .header .changeUl').css('left', changeUlLeft-header);
-        $('.headerBox .header .headerLeft .change').hover(function () {
-            $('.headerBox .header .changeUl').show();
-        });
-        $('.headerBox .header .changeUl').hover(function () {
-            $('.headerBox .header .changeUl').show();
-        },function () {
-            $('.headerBox .header .changeUl').hide();
-        });
-        $('.headerBox .header .changeUl .changeLi').click(function () {
-            $('.headerBox .header .changeUl').hide();
-            $('.headerBox .header .headerLeft .lusaka').text($(this).text());
-        });
+
 
 
 
@@ -818,60 +803,107 @@
                     console.log(error);
                 }
             });
-
-
-            //获得产品分类
-            $.ajax({
-                type: "get",
-                url: baseUrl+"/apigateway/categorys",
-                dataType:"json",
-                success: function(data){
-//                    console.log(data);
-                    if(data.status == 200){
-                        data = JSON.parse(data.data);
-//                        console.log(data);
-
-                        var totalStr = "";
-                        for (var sort in data) {
-                            var str = "";
-                            var listStr = '<li class="listLi"></li>';
-                            console.log(data[sort].name);
-                            str += ('<img class="listImg" src="image/index/bannerLeft1.png"><a href="#" class="sortLink">'+data[sort].name+'</a>');
-                            var details = data[sort].sub;
-//                            console.log(details);
-                            for (var detail in details){
-                                console.log(details[detail].name);
-                                str += ('<a href="#" class="detailLink">'+details[detail].name+'</a>');
-                            }
-                            console.log('str='+str);
-                            listStr = '<li class="listLi">'+str+'</li>';
-                            $('.bannerBox .banner .bannerLeft .listUl').append(listStr);
-
-                        }
-
-
-                    }else{
-                        alert(data.msg);
-                    }
-                },
-                error:function(error){
-                    console.log(error);
-                }
-            });
         }
 
-        /*
-        * <li class="listLi">
-         <img class="listImg" src="image/index/bannerLeft1.png">
-         <a href="#" class="sortLink">影视家电</a>
-         <a href="#" class="detailLink">大家电</a><a href="#" class="detailLink">小家电</a><a href="#" class="detailLink">料理机</a>
-         </li>
 
-         .bannerBox .banner .bannerLeft .listUl .listLi
-        * */
+        //获得产品分类
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/categorys",
+            dataType:"json",
+            success: function(data){
+//                    console.log(data);
+                if(data.status == 200){
+                    data = JSON.parse(data.data);
+//                        console.log(data);
+
+                    var totalStr = "";
+                    for (var sort in data) {
+                        var str = "";
+                        var listStr = '<li class="listLi"></li>';
+                        console.log(data[sort].name);
+                        str += ('<img class="listImg" src="image/index/bannerLeft1.png"><a href="#" class="sortLink">'+data[sort].name+'</a>');
+                        var details = data[sort].sub;
+//                            console.log(details);
+                        for (var detail in details){
+                            console.log(details[detail].name);
+                            str += ('<a href="#" class="detailLink">'+details[detail].name+'</a>');
+                        }
+                        console.log('str='+str);
+                        listStr = '<li class="listLi">'+str+'</li>';
+                        $('.bannerBox .banner .bannerLeft .listUl').append(listStr);
+
+                    }
+
+
+                }else{
+                    alert(data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+
+        //获得区域信息
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/areas",
+            dataType:"json",
+            success: function(data){
+//                    console.log(data);
+                if (data.status == 200) {
+                    data = JSON.parse(data.data);
+                    console.log("data", data);
+                    var changeLiStr = '';
+                    for (var areas in data) {
+                        console.log("data[areas].name="+data[areas]);
+
+
+                        /*<li class="changeLi"><a href="#" class="changeLiLink">Lusaka6</a></li>
+                        *
+                        * .headerBox .header .changeUl .changeLi*/
+                        console.log($('.changeLi').length);
+                        changeLiStr += '<li class="changeLi"><a href="#" class="changeLiLink">'+ data[areas].name +'</a></li>';
+                    }
+
+                    $('.headerBox .header .changeUl').append(changeLiStr);
+                    $('.headerBox .header .headerLeft .lusaka').html($('.headerBox .header .changeUl .changeLi .changeLiLink').eq(0).html());
+
+
+                    /*headerBox：点击change切换地址*/
+                    var header = $('.headerBox .header').offset().left;
+                    var changeUlLeft = $('.headerBox .header .headerLeft .change').offset().left;
+                    $('.headerBox .header .changeUl').css('left', changeUlLeft-header);
+                    $('.headerBox .header .headerLeft .change').hover(function () {
+                        $('.headerBox .header .changeUl').show();
+                    });
+                    $('.headerBox .header .changeUl').hover(function () {
+                        $('.headerBox .header .changeUl').show();
+                    },function () {
+                        $('.headerBox .header .changeUl').hide();
+                    });
+                    $('.headerBox .header .changeUl .changeLi').click(function () {
+                        $('.headerBox .header .changeUl').hide();
+                        $('.headerBox .header .headerLeft .lusaka').text($(this).text());
+                    });
+
+
+
+                } else {
+                    alert(data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
 
 
     });
+
 </script>
 </body>
 </html>
