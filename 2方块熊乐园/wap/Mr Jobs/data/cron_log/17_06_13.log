@@ -1,0 +1,54 @@
+[ 2017-06-13T09:17:05+08:00 ] ::1 /qishi/
+INFO: Cron:ClearPromotion Runat 2017-06-13 09:17:04 Use 1.836105 s 
+Cron:AutoApplyJobs Runat 2017-06-13 09:17:04 Use -0.013001 s 
+Cron:AutoRefreshResume Runat 2017-06-13 09:17:04 Use -0.306018 s 
+Cron:AutoRefreshJobs Runat 2017-06-13 09:17:04 Use -0.439025 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-13 09:17:05 Use -0.453026 s 
+Cron:ClearOrder Runat 2017-06-13 09:17:05 Use -0.751043 s 
+
+[ 2017-06-13T10:02:13+08:00 ] 192.168.102.116 /qishi/index.php?m=&c=index&a=index
+INFO: Cron:ClearPromotion Runat 2017-06-13 10:02:13 Use 0.037002 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-13 10:02:13 Use 0.000000 s 
+
+[ 2017-06-13T10:15:21+08:00 ] 192.168.102.116 /qishi/
+INFO: Cron:AutoRefreshResume Runat 2017-06-13 10:15:21 Use 0.015001 s 
+Cron:AutoRefreshJobs Runat 2017-06-13 10:15:21 Use 0.000000 s 
+
+[ 2017-06-13T11:01:06+08:00 ] 192.168.102.116 /qishi/undefined
+INFO: Cron:ClearPromotion Runat 2017-06-13 11:01:06 Use 0.108007 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-13 11:01:06 Use 0.000000 s 
+
+[ 2017-06-13T11:10:01+08:00 ] 192.168.102.116 /qishi/undefined
+INFO: Cron:AutoRefreshResume Runat 2017-06-13 11:10:01 Use 0.032001 s 
+Cron:AutoRefreshJobs Runat 2017-06-13 11:10:01 Use 0.000000 s 
+
+[ 2017-06-13T14:01:13+08:00 ] 192.168.102.116 /qishi/index.php?m=&c=members&a=register&utype=1
+INFO: Cron:ClearPromotion Runat 2017-06-13 14:01:13 Use 0.030002 s 
+Cron:AutoRefreshResume Runat 2017-06-13 14:01:13 Use 0.000000 s 
+Cron:AutoRefreshJobs Runat 2017-06-13 14:01:13 Use -0.004000 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-13 14:01:13 Use -0.005000 s 
+
+[ 2017-06-13T15:01:16+08:00 ] ::1 /qishi/
+INFO: Cron:ClearPromotion Runat 2017-06-13 15:01:16 Use 0.045003 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-13 15:01:16 Use 0.000000 s 
+
+[ 2017-06-13T15:11:23+08:00 ] 192.168.102.116 /qishi/index.php?m=&c=company&a=com_auth
+INFO: Cron:AutoRefreshResume Runat 2017-06-13 15:11:23 Use 0.012001 s 
+Cron:AutoRefreshJobs Runat 2017-06-13 15:11:23 Use 0.000000 s 
+
+[ 2017-06-13T16:07:57+08:00 ] 192.168.102.116 /qishi/
+INFO: Cron:ClearPromotion Runat 2017-06-13 16:07:57 Use 0.026001 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-13 16:07:57 Use 0.000000 s 
+
+[ 2017-06-13T16:10:39+08:00 ] 192.168.102.116 /qishi/
+INFO: Cron:AutoRefreshResume Runat 2017-06-13 16:10:39 Use 0.013001 s 
+Cron:AutoRefreshJobs Runat 2017-06-13 16:10:39 Use 0.000000 s 
+
+[ 2017-06-13T17:01:38+08:00 ] ::1 /qishi/index.php?m=Home&c=wap
+INFO: Cron:ClearPromotion Runat 2017-06-13 17:01:38 Use 0.037002 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-13 17:01:38 Use 0.000000 s 
+
+[ 2017-06-13T17:10:35+08:00 ] ::1 /qishi/index.php?m=Home&c=wap
+INFO: Cron:AutoRefreshResume Runat 2017-06-13 17:10:35 Use 0.034002 s 
+Cron:AutoRefreshJobs Runat 2017-06-13 17:10:35 Use 0.000000 s 
+

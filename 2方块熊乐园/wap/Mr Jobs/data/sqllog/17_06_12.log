@@ -1,0 +1,6 @@
+[ 2017-06-12T10:25:31+08:00 ] ::1 /qishi/index.php?m=&c=CompanyService&a=setmeal_add_save
+SQL: SHOW COLUMNS FROM `qs_sms_config` [RunTime:0.265s] [IP:0.0.0.0] [AddTime:1497234331] [qscms]
+[ 2017-06-12T10:38:36+08:00 ] ::1 /qishi/index.php?m=&c=members&a=login
+SQL: SHOW COLUMNS FROM `qs_crons` [RunTime:0.256s] [IP:0.0.0.0] [AddTime:1497235116] [qscms]
+[ 2017-06-12T11:13:03+08:00 ] ::1 /qishi/index.php?m=&c=resume&a=resume_show&id=1&style=default
+SQL: SHOW COLUMNS FROM `qs_company_favorites` [RunTime:0.218s] [IP:0.0.0.0] [AddTime:1497237183] [qscms]

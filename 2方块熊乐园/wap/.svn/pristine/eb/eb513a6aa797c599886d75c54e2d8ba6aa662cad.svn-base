@@ -1,0 +1,22 @@
+<div id="J_passwordWrap" class="modify_user_dialog">
+	<div class="tip">
+         After the account password is modified successfully ， Remember the new password for the next time you log in ！
+    </div>
+	<div class="content">
+		<div class="td1"><span class="asterisk"></span>&nbsp; old password ：</div>
+		<div class="td2">
+            <input type="password" value="" class="input_245_34" name="oldpassword" placeholder=" Please enter an existing password ">
+        </div>
+		<div class="clear"></div>
+		<div class="td1"><span class="asterisk"></span>&nbsp; new password ：</div>
+		<div class="td2">
+			<input type="password" value="" class="input_245_34" name="password" placeholder=" please enter 6-16 Character ">
+		</div>
+		<div class="clear"></div>
+        <div class="td1"><span class="asterisk"></span>&nbsp; confirm password ：</div>
+        <div class="td2">
+            <input type="password" value="" class="input_245_34" name="password1" placeholder=" Please enter your password again ">
+        </div>
+        <div class="clear"></div>
+	</div>
+</div>

@@ -1,0 +1,47 @@
+<div style="width: 900px;margin: 0 auto;font-size: 14px;">
+<div style="margin-bottom:10px">
+	<div style="float: left;"><a target="_blank" href="<if condition="!$apply['Subsite']">{:C('qscms_site_domain')}</if>{:url_rewrite('QS_resumeshow',array('id'=>$resume_basic['id']),'',false)}"> see details >></a></div>
+	<div style="float: right;padding-top:10px;"> Update time ：{:date("Y-m-d",$resume_basic["refreshtime"])}</div>
+	<div style="clear:both"></div>
+</div>
+<div style="padding-bottom: 10px;">
+	<span style="font-size: 18px;font-weight: 700;">{$resume_basic["fullname"]}</span><span>（{$resume_basic["sex_cn"]}，{$resume_basic["age"]}）</span>
+	<p> Education ：{$resume_basic["education_cn"]} |  profession ：{$resume_basic["major_cn"]} |  work experience ：{$resume_basic["experience_cn"]} |  Living ：{$resume_basic["residence"]}</p>
+	<p> cellphone number ：{$resume_basic["telephone"]}  E-mail ：{$resume_basic["email"]}</p>
+	<if condition="$resume_basic['tag_arr']">
+	<volist name="resume_basic['tag_arr']" id="vo">
+	<p>
+	<span style="color: #656565;display:inline-block;background-color: #f2f4f7; border: 1px solid #d6d6d7;text-align: center;height:30px;line-height: 30px;margin-right:10px;padding:0 10px">{$vo}</span>
+	</p>
+	</volist>
+</div>
+<div style="padding-bottom: 10px;">
+	<p style="font-size: 16px;font-weight: 700;"> Career Objective </p>
+	<p> Dream position ：{$resume_basic["intention_jobs"]}</p>
+	<p> expected salary ：{$resume_basic["wage_cn"]}</p>
+	<p> Expected area ：{$resume_basic["district_cn"]}</p>
+</div>
+<div style="padding-bottom: 10px;">
+	<p style="font-size: 16px;font-weight: 700;"> work experience </p>
+	<notempty name="resume_basic['work_list']">
+		<volist name="resume_basic['work_list']" id="value">
+		<div>
+			<p style="font-size: 14px;font-weight: 700;">{$value["companyname"]}</p>
+			<p>{$value["startyear"]} year {$value["startmonth"]} month -<eq name="value['todate']" value="1"> to date <else />{$value['endyear']} year {$value['endmonth']} month </eq> {$value["jobs"]}</p>
+			<div style="float: left;width: 100px;"> Work content ：</div>
+			<div style="float: right;width: 800px;">{$value["achievements"]}</div>
+			<div style="clear:both"></div>
+		</div>
+		</volist>
+	<else/>
+		<div> did not fill in work experience </div>
+	</notempty>
+</div>
+<div style="padding-bottom: 10px;">
+	<p style="font-size: 16px;font-weight: 700;"> Self-description </p>
+	<p>{$resume_basic["specialty"]}</p>
+</div>
+<div style="text-align: center;margin-top:20px">
+		 The resume comes from <a target="_blank" href="{:C('qscms_site_domain')}{:C('qscms_site_dir')}">{:C('qscms_site_name')}</a>
+	</div>
+</div>

@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<include file="public:meta" />
+		<link href="../public/css/company/common.css" rel="stylesheet" type="text/css" />
+		<link href="../public/css/company/company_points.css" rel="stylesheet" type="text/css" />
+		<script src="../public/js/company/jquery.common.js" type="text/javascript" language="javascript"></script>
+	</head>
+	<body>
+		<include file="Company:index_header" />
+		<div class="user_main">
+			<div class="mleft">
+				<include file="Company:left_service" />
+			</div>
+			<div class="mright">
+				<div class="user_pagetitle">
+					<div class="pat_l"> Value-added services </div>
+					<div class="clear"></div>
+				</div>
+				<div class="confirm_order_group">
+					<div class="confirm_title"> payment successful </div>
+					<div class="confirm_time link_blue"> Thank you for choosing <span class="blue">【{$order['service_name']}】</span>  service ， Your order has been completed <if condition="$order['pay_type'] neq 1 && C('qscms_open_invoice') eq 1">，<a href="{:U('order_detail',array('id'=>$order['id']))}"> Request an invoice </a></if></div>
+					<if condition="$my_setmeal['endtime'] neq 0 || $consultant">
+					<div class="confirm_contents">
+					<if condition="$my_setmeal['endtime'] neq 0">
+						 You bought this time 【{$order['service_name']}】 Valid until  <span class="red">{$endtime}</span> ， Please use the resource kit as soon as possible 。
+					</if>
+					<if condition="$consultant">
+						 If you have any questions, please contact your customer service <a target="blank" href="tencent://message/?uin={$consultant['qq']}&amp;Site= Tools &amp;Menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=1:{$consultant['qq']}:1" alt=" Click here to send me a message "></a>
+					</if>
+					</div>
+					</if>
+					<!-- <div class="contact_type">
+						<if condition="C('qscms_bootom_tel')">
+							<div class="left_contact"><div class="contact_box"> service 热线：{:C('qscms_bootom_tel')}</div></div>
+						</if>
+						<if condition="C('qscms_contact_email')">
+							<div class="right_contact"><div class="contact_box"> Contact the mailbox ：{:C('qscms_contact_email')}</div></div>
+						</if>
+						<div class="clear"></div>
+					</div> -->
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<include file="Company:index_footer" />
+	</body>
+</html>

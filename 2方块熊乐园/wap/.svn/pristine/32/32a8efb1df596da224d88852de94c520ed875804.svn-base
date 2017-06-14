@@ -1,0 +1,54 @@
+[ 2017-06-07T11:20:36+08:00 ] ::1 /qishi/admin.php
+INFO: Cron:ClearPromotion Runat 2017-06-07 11:20:36 Use 0.149009 s 
+Cron:AutoApplyJobs Runat 2017-06-07 11:20:36 Use 0.000000 s 
+Cron:AutoRefreshResume Runat 2017-06-07 11:20:36 Use -0.023001 s 
+Cron:AutoRefreshJobs Runat 2017-06-07 11:20:36 Use -0.029001 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-07 11:20:36 Use -0.030002 s 
+Cron:ClearOrder Runat 2017-06-07 11:20:36 Use -0.045002 s 
+
+[ 2017-06-07T13:39:38+08:00 ] ::1 /qishi/admin.php
+INFO: Cron:ClearPromotion Runat 2017-06-07 13:39:38 Use 0.081004 s 
+Cron:AutoRefreshResume Runat 2017-06-07 13:39:38 Use 0.000000 s 
+Cron:AutoRefreshJobs Runat 2017-06-07 13:39:38 Use -0.012001 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-07 13:39:38 Use -0.014001 s 
+
+[ 2017-06-07T14:01:35+08:00 ] ::1 /qishi/index.php?m=Mobile&c=members&a=register&utype=2&regtype=email
+INFO: Cron:ClearPromotion Runat 2017-06-07 14:01:35 Use 0.052003 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-07 14:01:35 Use 0.000000 s 
+
+[ 2017-06-07T14:11:36+08:00 ] ::1 /qishi/index.php?m=Admin&c=Personal&a=index&menuid=171&child=1
+INFO: Cron:AutoRefreshResume Runat 2017-06-07 14:11:36 Use 0.021001 s 
+Cron:AutoRefreshJobs Runat 2017-06-07 14:11:36 Use 0.000000 s 
+
+[ 2017-06-07T15:01:00+08:00 ] ::1 /qishi/index.php?m=Admin&c=Index&a=left_menu&menuid=1
+INFO: Cron:ClearPromotion Runat 2017-06-07 15:01:00 Use 0.086005 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-07 15:01:00 Use 0.000000 s 
+
+[ 2017-06-07T15:01:00+08:00 ] ::1 /qishi/index.php?m=Admin&c=Config&a=index&menuid=1&child=1
+INFO: Cron:ClearPromotion Runat 2017-06-07 15:01:00 Use 0.083004 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-07 15:01:00 Use 0.000000 s 
+
+[ 2017-06-07T15:11:13+08:00 ] ::1 /qishi/admin.php
+INFO: Cron:AutoRefreshResume Runat 2017-06-07 15:11:13 Use 0.035002 s 
+Cron:AutoRefreshJobs Runat 2017-06-07 15:11:13 Use 0.000000 s 
+
+[ 2017-06-07T16:01:51+08:00 ] ::1 /qishi/index.php?m=&c=m&a=index
+INFO: Cron:ClearPromotion Runat 2017-06-07 16:01:51 Use 0.715041 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-07 16:01:51 Use 0.000000 s 
+
+[ 2017-06-07T16:10:24+08:00 ] ::1 /qishi/
+INFO: Cron:AutoRefreshResume Runat 2017-06-07 16:10:24 Use 0.072004 s 
+Cron:AutoRefreshJobs Runat 2017-06-07 16:10:24 Use 0.000000 s 
+
+[ 2017-06-07T17:03:14+08:00 ] ::1 /qishi/index.php?m=&c=index&a=index
+INFO: Cron:ClearPromotion Runat 2017-06-07 17:03:14 Use 0.117007 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-07 17:03:14 Use 0.000000 s 
+
+[ 2017-06-07T17:12:57+08:00 ] ::1 /qishi/index.php?m=Admin&c=Index&a=left_menu&menuid=194
+INFO: Cron:AutoRefreshResume Runat 2017-06-07 17:12:57 Use 0.043003 s 
+Cron:AutoRefreshJobs Runat 2017-06-07 17:12:57 Use 0.000000 s 
+
+[ 2017-06-07T17:12:57+08:00 ] ::1 /qishi/index.php?m=Admin&c=Jobs&a=index&menuid=194&child=1
+INFO: Cron:AutoRefreshResume Runat 2017-06-07 17:12:57 Use 0.046003 s 
+Cron:AutoRefreshJobs Runat 2017-06-07 17:12:57 Use 0.000000 s 
+

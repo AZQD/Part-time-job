@@ -1,0 +1,285 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<include file="public:meta" />
+	<link href="../public/css/personal/common.css" rel="stylesheet" type="text/css" />
+	<link href="../public/css/personal/personal_user.css" rel="stylesheet" type="text/css" />
+	<link href="../public/css/personal/personal_ajax_dialog.css" rel="stylesheet" type="text/css" />
+	<script src="../public/js/personal/jquery.common.js" type="text/javascript" language="javascript"></script>
+</head>
+<body>
+	<include file="index_header" />
+	<div class="user_main">
+		<include file="index_left_nav" />
+  		<div class="mainbox">
+			<!--职 Bit 切换卡 -->
+			<div class="tab">
+				<a class="li J_hoverbut" href="{:U('personal/user_info')}"> basic information </a>
+				<a class="li J_hoverbut" href="{:U('personal/user_avatar')}" > My icon </a>
+				<a class="li select"> Account security </a>
+				<a class="li J_hoverbut" href="{:U('personal/user_loginlog')}"> Log in log </a>
+			  	<div class="clear"></div>
+			</div>
+			<!--切换卡结束 -->
+			<div class="resume_tip">
+				<div class="tiptit"> hint </div>
+				<div class="tiptxt link_blue">
+					 Bind the phone number 、 Complete mailbox verification ， Can increase the timeliness and accuracy of job feedback ， Thereby increasing your job success rate ！
+				</div>
+			</div>
+			<div class="safety J_hoverbut link_blue">
+				<div class="td1"> username </div>
+				<div id="J_unameWrap" class="td2">{$visitor.username}</div>
+				<div class="td3">&nbsp;</div>
+				<div class="td4"><a id="J_edit_uname" href="javascript:;"> modify </a></div>
+				<div class="clear"></div>
+			</div>
+			<div class="safety J_hoverbut link_blue">
+				<div class="td1 t1"> password </div>
+				<div class="td2"> Last Login Time ：<span>{:date('Y-m-d H:i:s',$visitor['last_login_time'])}</span></div>
+				<div class="td3"><a href="{:U('personal/user_loginlog')}">[查看 Log in log ]</a></div>
+				<div class="td4"><a id="J_edit_password" href="javascript:;"> modify </a></div>
+				<div class="clear"></div>
+			</div>
+			<div class="safety J_hoverbut link_blue">
+				<div class="td1 t2"> Mobile phone </div>
+					<div id="J_mobileWrap" class="td2"><if condition="$members_info['mobile']">{$members_info.mobile}<else /> Mobile phone 未填写</if><span>（认证后可使用该 Mobile phone 登录账号、找回 password ）</span></div>
+				<div id="J_mobileStatus" class="td3">
+					<if condition="$members_info['mobile_audit']">
+						<div class="yes"> verified </div>
+					<else/>
+						<div class="no"> not certified </div>
+					</if>
+				</div>
+				<div class="td4">
+					<a id="J_auth_mobile" href="javascript:;" data-auth="<if condition="$members_info['mobile_audit']">1<else/>0</if>">
+						<if condition="$members_info['mobile_audit']">
+							 modify 
+						<else/>
+							 Immediate certification 
+						</if>
+					</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="safety J_hoverbut link_blue">
+				<div class="td1 t3"> mailbox </div>
+				<div id="J_emailWrap" class="td2"><if condition="$members_info['email']">{$members_info.email}<else /> mailbox 未填写</if><span>（认证后可使用该 mailbox 登录账号、找回 password ）</span></div>
+				<div id="J_emailStatus" class="td3">
+					<if condition="$members_info['email_audit']">
+						<div class="yes"> verified </div>
+					<else/>
+						<div class="no"> not certified </div>
+					</if>
+				</div>
+				<div class="td4">
+					<a id="J_auth_email" href="javascript:;" data-auth="<if condition="$members_info['email_audit']">1<else/>0</if>">
+						<if condition="$members_info['email_audit']">
+							 modify 
+						<else/>
+							 Immediate certification 
+						</if>
+					</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+        	<div class="safety_btit"> Account binding <span>（ After authorization is bound ， You can use a third party account to log in quickly ）</span></div>
+        	<div class="safety_binding">
+ 				<volist name="oauth_list" id="oauth">
+					<div class="td1">
+						<empty name="user_bind[$oauth['alias']]">
+							<div class="{$oauth.alias}">{$oauth.name}</div>
+					    	<div class="txt link_blue">
+					    		<a id="J_bind_{$oauth.alias}" href="{:U('callback/index',array('mod'=>$oauth['alias'],'type'=>'bind'))}"> Immediately bind </a>
+					    	</div>
+						<else/>
+							<div class="{$oauth.alias} ok">{$oauth.name}</div>
+							<div class="txt link_blue"><a class="J_unlogin" href="javascript:;" url="{:U('callback/index',array('mod'=>$oauth['alias'],'type'=>'unbind'))}" name="{$oauth.name}"> Unbind </a></div>
+						</empty>
+	 		   		</div>
+ 				</volist>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<include file="index_footer" />
+	<script src="http://static.geetest.com/static/tools/gt.js"></script>
+	<script type="text/javascript">
+		$('#J_edit_password').click(function(){
+			var qsDialog = $(this).dialog({
+        		title: ' modify  password ',
+				loading: true,
+				showFooter: false,
+				yes: function() {
+					var options = {};
+					options['oldpassword'] = $('#J_passwordWrap').find('input[name="oldpassword"]').val();
+					options['password'] = $('#J_passwordWrap').find('input[name="password"]').val();
+					options['password1'] = $('#J_passwordWrap').find('input[name="password1"]').val();
+					$.post("{:U('Members/save_password')}",options,function(r){
+						if(r.status == 1){
+							disapperTooltip('success',r.msg);
+							qsDialog.hide();
+						}else{
+							disapperTooltip("remind", r.msg);
+						}
+					},'json');
+				}
+			});
+			$.getJSON("{:U('Members/save_password')}",function(result){
+				if(result.status == 1){
+					qsDialog.setCloseDialog(false);
+					qsDialog.setContent(result.data.html);
+        			qsDialog.showFooter(true);
+				}else{
+					qsDialog.setContent('<div class="confirm">' + result.msg + '</div>');
+				}
+			});
+		});
+		var regularUsername = /^(?=[\u4e00-\u9fa5a-zA-Z])(?!\d+)[\u4e00-\u9fa5\w.]{6,18}$/;
+		$('#J_edit_uname').click(function(){
+			var qsDialog = $(this).dialog({
+        		title: ' modify  username ',
+				loading: true,
+				showFooter: false,
+				yes: function() {
+					var username = $.trim($('#J_usernameInput').val());
+					if (!username.length) {
+							disapperTooltip("remind", '请填写新 username ');
+							$('#J_usernameInput').focus();
+							return false;
+						}
+						if (username.length && !regularUsername.test(username)) {
+							disapperTooltip("remind", " username 中英文开头6-18 Bit ， No special symbols ");
+							$('#J_usernameInput').focus();
+							return false;
+						}
+					$.post("{:U('Members/save_username')}",{username:username},function(r){
+						if(r.status == 1){
+							$('#J_unameWrap').text(username);
+							disapperTooltip('success',r.msg);
+							qsDialog.hide();
+						}else{
+							disapperTooltip("remind", r.msg);
+						}
+					},'json');
+				}
+			});
+			$.getJSON("{:U('Members/save_username')}",function(result){
+				if(result.status == 1){
+					qsDialog.setCloseDialog(false);
+					qsDialog.setContent(result.data.html);
+        			qsDialog.showFooter(true);
+				}else{
+					qsDialog.setContent('<div class="confirm">' + result.msg + '</div>');
+				}
+			});
+		});
+		$('#J_auth_mobile').click(function(){
+			var f = $(this);
+			var auth = f.data('auth');
+			var title = '认证 Mobile phone ';
+			if(auth == 1){
+				title = ' modify  verified  Mobile phone ';
+			}
+			var qsDialog = $(this).dialog({
+        		title: title,
+				loading: true,
+				showFooter: false,
+				yes: function() {
+					var verifycode  = $.trim($('#J_mobileWrap input[name="verifycode"]').val());
+					if(!verifycode){
+						disapperTooltip("remind", " Please fill in the verification code ！");
+						return !1;
+					}
+					$.post("{:U('Members/verify_mobile_code')}",{verifycode:verifycode},function(result){
+						if(result.status == 1){
+							f.text(' modify ');
+							$('#J_mobileStatus').html('<div class="yes"> verified </div>');
+							$('#J_mobileWrap').html(result.data.mobile+'<span>（认证后可使用该 Mobile phone 登录账号、找回 password ）</span>');
+							if(result.data.points){
+								disapperTooltip("goldremind", '验证 Mobile phone 号增加'+result.data.points+'{:C('qscms_points_byname')}<span class="point">+'+result.data.points+'</span>');
+							}else{
+								disapperTooltip('success',result.msg);
+							}
+							qsDialog.hide();
+						}else{
+							disapperTooltip('remind',result.msg);
+						}
+					},'json');
+				}
+			});
+			$.getJSON("{:U('Members/user_mobile')}",function(result){
+	    		if(result.status == 1){
+					qsDialog.setCloseDialog(false);
+	    			qsDialog.setContent(result.data);
+        			qsDialog.showFooter(true);
+	    		}else{
+	    			qsDialog.setContent('<div class="confirm">' + result.msg + '</div>');
+	    		}
+	    	});
+		});
+		$('#J_auth_email').click(function(){
+			var f = $(this);
+			var auth = $(this).data('auth');
+			var title = '认证 mailbox ';
+			if(auth == 1){
+				title = ' modify  verified  mailbox ';
+			}
+			var qsDialog = $(this).dialog({
+        		title: title,
+				loading: true,
+				footer: false
+			});
+			$.getJSON("{:U('Members/user_email')}",function(result){
+	    		if(result.status == 1){
+					qsDialog.setCloseDialog(false);
+	    			qsDialog.setContent(result.data);
+	    		}else{
+	    			qsDialog.setContent('<div class="confirm">' + result.msg + '</div>');
+	    		}
+	    	});
+		});
+		var qrcode_bind_time,
+			waiting_weixin_bind = function(){
+				$.getJSON("{:U('Members/waiting_weixin_bind')}",function(result){
+					if(result.status == 1){
+						location.reload();
+					}
+				});
+			};
+		$('#J_bind_weixin').click(function(){
+			clearInterval(qrcode_bind_time);
+			var qsDialog = $(this).dialog({
+        		title: ' WeChat binding ',
+				loading: true,
+				showFooter: false,
+				footer: false
+			});
+			$.getJSON("{:U('Qrcode/get_weixin_qrcode')}",{type:'bind'},function(result){
+				if(result.status == 1){
+					qsDialog.setContent(result.data);
+        			qsDialog.showFooter(true);
+					qrcode_bind_time=setInterval(waiting_weixin_bind,5000);
+				}else{
+					qsDialog.setContent('<div class="confirm">' + result.msg + '</div>');
+				}
+			});
+			return !1;
+		});
+		$('.J_unlogin').click(function(){
+			var url = $(this).attr('url'),
+				name = $(this).attr('name'),
+				qsDialog=$(this).dialog({
+					title: ' Unbind ',
+					loading: false,
+					border: false,
+					content : '<div style="width:350px"> The current account is bound <'+name+'> Are you sure you want to bind? ？</div>',
+					yes: function() {
+						window.location.href=url;
+					}
+				});
+		});
+	</script>
+</body>
+</html>

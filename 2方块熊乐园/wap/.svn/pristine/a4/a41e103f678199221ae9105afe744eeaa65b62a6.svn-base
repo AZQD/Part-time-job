@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<include file="public:meta" />
+	<link href="../public/css/personal/common.css" rel="stylesheet" type="text/css" />
+	<link href="../public/css/personal/personal_favorites.css" rel="stylesheet" type="text/css" />
+	<link href="../public/css/personal/personal_ajax_dialog.css" rel="stylesheet" type="text/css" />
+	<script src="../public/js/personal/jquery.common.js" type="text/javascript" language="javascript"></script>
+</head>
+<body>
+	<include file="index_header" />
+	<div class="user_main">
+		<include file="index_left_nav"/>
+		<div class="mainbox">
+			<!--职位切换卡 -->
+			<div class="tab">
+				<a class="li J_hoverbut" href="{:U('personal/jobs_favorites')}"> Job collection </a>
+				<a class="li J_hoverbut" href="{:U('personal/attention_com')}" > Concerned about the business </a>
+				<a class="li select"> Job Subscriber </a>
+			  	<div class="clear"></div>
+			</div>
+			<!--切换卡结束 -->
+			<div class="resume_tip">
+				<div class="tiptit"> hint </div>
+						<div class="tiptxt link_blue">
+						 You can add up to most <strong class="font_yellow"> {:C('qscms_subscribe_num')} </strong> One  Job Subscriber ， Has been added <strong  class="font_yellow"> {$total}</strong>  One ！
+					</div>
+				</div>
+				<div class="subscribe">
+		 			<volist name="subscribe['list']" id="subscribe">
+						<div class="list J_hoverbut">
+					 		<div class="thisid font_blue">{$subscribe.title}</div>
+							<div class="txt">[ Function ]{$subscribe.intention_jobs} <if condition="$subscribe['district_cn']"> + [ area ]{$subscribe.district_cn}</if> <if condition="$subscribe['key']"> + [ Keywords ]{$subscribe.key}</if></div>
+							<div class="J_subscribeWrap buts link_blue">
+								<div class="td1">
+									<if condition="$subscribe['status']">
+										<span> Has been subscribed </span>， Receiving frequency ：{:C('qscms_subscribe_period')} day 
+									<else/>
+										 Has been unsubscribed 
+									</if>
+								</div>
+								<div class="td2">
+									<a href="{:U('personal/jobs_subscribe_edit',array('id'=>$subscribe['id']))}"> modify </a>
+									<a class="J_quitSubscribe" href="javascript:;" iid="{$subscribe.id}" subscribe="{$subscribe.status}">
+										<if condition="$subscribe['status']">
+											 Unsubscribe 
+										<else/>
+											 subscription 
+										</if>
+									</a>
+								</div>
+								<div class="clear"></div>
+							</div>
+			                <div class="J_delSubscribe del" iid="{$subscribe.id}" title="删除 subscription 器"></div>
+				 		</div>
+		 			</volist>
+		    		<div class="list add J_hoverbut">
+	   		 			<div class="addbut" onclick="window.location='{:U('personal/jobs_subscribe_edit')}'">添加 Job Subscriber </div>
+ 					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		<div class="clear"></div>
+	</div>
+	<include file="index_footer" />
+	<script type="text/javascript">
+		var is_exe = !1;
+		$('.J_quitSubscribe').die().live('click', function(){
+			if(is_exe) return !0;
+			var u = $(this),f = u.closest('.J_subscribeWrap'),s = u.attr('subscribe') == 0 ? 1 : 0;
+			is_exe = !0;
+			$.getJSON("{:U('Personal/subscribe_switch')}",{id:u.attr('iid'),switchs:s},function(result){
+				if(result.status == 1){
+					if(s){
+						f.find('.td1').html('<span> Has been subscribed </span>， Accept the frequency ：{:C('qscms_subscribe_period')} day ');
+						u.html(' Unsubscribe ').attr('subscribe',1);
+					}else{
+						f.find('.td1').html(' Has been unsubscribed ');
+						u.html(' subscription ').attr('subscribe',0);
+
+					}
+				}else{
+					alert(result.msg);
+				}
+				is_exe = !1;
+			});
+		});
+		$('.J_delSubscribe').click(function(){
+			var url = "{:U('Personal/subscribe_del')}";
+			var id = $(this).attr('iid');
+            var qsDialog=$(this).dialog({
+                title: '删除职位 subscription ',
+                loading: true,
+                border: false,
+                yes: function() {
+                	if(is_exe) return !0;
+					is_exe = !0;
+                	$.post(url,{id:id},function(result){
+		               if(result.status == 1){
+							window.location.reload();
+						}else{
+							disapperTooltip('remind',result.msg);
+						}
+						is_exe = !1;
+		            },'json');
+                }
+            });
+            $.getJSON(url,{id:id},function(result){
+                if(result.status == 1){
+                    qsDialog.setContent(result.data.html);
+                }else{
+                    disapperTooltip('remind',result.msg);
+                }
+            });
+		});
+	</script>
+</body>
+</html>

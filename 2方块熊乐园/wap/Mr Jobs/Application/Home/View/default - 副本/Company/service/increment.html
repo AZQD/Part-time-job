@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<include file="public:meta" />
+		<link href="../public/css/company/common.css" rel="stylesheet" type="text/css" />
+		<link href="../public/css/company/company_points.css" rel="stylesheet" type="text/css" />
+		<link href="../public/css/company/company_ajax_dialog.css" rel="stylesheet" type="text/css" />
+		<script src="../public/js/company/jquery.common.js" type="text/javascript" language="javascript"></script>
+	</head>
+	<body>
+		<include file="Company:index_header" />
+		<div class="user_main">
+			<div class="mleft">
+				<include file="Company:left_service" />
+			</div>
+			<div class="mright">
+				<div class="user_pagetitle">
+					<div class="pat_l"> Value-added services </div>
+					<div class="clear"></div>
+				</div>
+				<div class="point_title_group">
+					<div class="title_left"> Package value package </div>
+					<if condition="C('qscms_enable_com_buy_points') eq 1">
+					<div class="title_right link_blue"> use {:C('qscms_points_byname')} Buy more concessions ， More charge to send more ，<a href="{:U('points_add')}"> Immediate recharge </a></div>
+					</if>
+					<div class="clear"></div>
+				</div>
+				<div class="service_pack_group">
+					<if condition="C('qscms_resume_download_quick') eq 1">
+					<div class="service_pack_list">
+						<div class="list_box J_hoverbut">
+							<div class="list_box_icon icon1"></div>
+							<div class="list_box_contents"> Resume package </div>
+							<div class="list_box_describe"> Resume package to buy more affordable ，VIP Members can enjoy the lowest purchase  <span class="prominent">{$return_discount[0]} fold </span>  Offer </div>
+							<div class="btn_yellow J_hoverbut btn_100_32" onclick="javascript:location.href='{:U('increment_add',array('cat'=>'download_resume'))}'"> Buy now </div>
+						</div>
+					</div>
+					</if>
+					<if condition="C('qscms_sms_open') eq 1 && C('qscms_company_sms') eq 1">
+					<div class="service_pack_list">
+						<div class="list_box J_hoverbut">
+							<div class="list_box_icon icon3"></div>
+							<div class="list_box_contents"> SMS package </div>
+							<div class="list_box_describe"> Triple play ， Important notice is delivered in real time ，VIP会员购买 SMS package 可享最低 <span class="prominent">{$return_discount[1]} fold </span>  Offer </div>
+							<div class="btn_yellow J_hoverbut btn_100_32" onclick="javascript:location.href='{:U('increment_add',array('cat'=>'sms'))}'"> Buy now </div>
+						</div>
+					</div>
+					</if>
+					<div class="service_pack_list">
+						<div class="list_box J_hoverbut">
+							<div class="list_box_icon icon2"></div>
+							<div class="list_box_contents"> Smart refresh </div>
+							<div class="list_box_describe"> Let the position at any time among the best , In the same information cut a striking figure 。VIP Members enjoy the lowest enjoyment  <span class="prominent">{$return_discount[5]} fold </span>  Offer </div>
+							<div class="btn_yellow J_hoverbut btn_100_32" onclick="javascript:location.href='{:U('increment_add',array('cat'=>'auto_refresh_jobs'))}'"> Buy now </div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="point_title_group">
+					<div class="title_left"> Business promotion services </div>
+					<div class="clear"></div>
+				</div>
+				<div class="service_pack_group">
+					<div class="service_pack_list">
+						<div class="list_box J_hoverbut">
+							<div class="list_box_icon icon4"></div>
+							<div class="list_box_contents"> Positions </div>
+							<div class="list_box_describe"> Positions 让你的职位始终名列前茅。VIP Members can enjoy the lowest  <span class="prominent">{$return_discount[2]} fold </span>  Offer </div>
+							<div class="btn_yellow J_hoverbut btn_100_32" onclick="javascript:location.href='{:U('increment_add',array('cat'=>'stick'))}'"> Buy now </div>
+						</div>
+					</div>
+					<div class="service_pack_list">
+						<div class="list_box J_hoverbut">
+							<div class="list_box_icon icon5"></div>
+							<div class="list_box_contents"> Emergency recruitment </div>
+							<div class="list_box_describe"> Do not have to wait ， Position expedited ， Increase exposure for posts 。VIP Members can enjoy the lowest  <span class="prominent">{$return_discount[3]} fold </span>  Offer </div>
+							<div class="btn_yellow J_hoverbut btn_100_32" onclick="javascript:location.href='{:U('increment_add',array('cat'=>'emergency'))}'"> Buy now </div>
+						</div>
+					</div>
+					<div class="service_pack_list">
+						<div class="list_box J_hoverbut">
+							<div class="list_box_icon icon6"></div>
+							<div class="list_box_contents"> Enterprise template </div>
+							<div class="list_box_describe"> Enterprise template ， Different ， Highlight the professional standards 。VIP Members can enjoy the lowest  <span class="prominent">{$return_discount[4]} fold </span>  Offer </div>
+							<div class="btn_yellow J_hoverbut btn_100_32" onclick="javascript:location.href='{:U('increment_add',array('cat'=>'tpl'))}'"> Buy now </div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<if condition="C('apply.Sincerity')">
+				<div class="point_title_group">
+					<div class="title_left"> Business-employed </div>
+					<if condition="$company_profile['famous'] eq 1">
+					<div class="title_right link_blue"><a href="javascript:;" class="J_exit_cpt" url="{:U('cancel_famous')}"> Quit a member </a></div>
+					</if>
+					<div class="clear"></div>
+				</div>
+				<div class="service_pack_group">
+					<div class="service_pack_list1">
+						<div class="list_box J_hoverbut">
+							<div class="list_box_icon icon7"></div>
+							<div class="con_des_group">
+								<div class="list_box_contents"> Recruitment </div>
+								<div class="list_box_describe"> Improve the credibility of enterprises ， So that job seekers more at ease ！ After opening the service all your posts are within the scope of job security </div>
+								<div class="list_box_describe"><span class="prominent">【0  Enjoy the privilege 】</span> Recruitment 会员专属标识、 Job Preference Priority 、 The position deposit is refundable at all times </div>
+							</div>
+							<if condition="$company_profile['famous'] eq 1">
+							<div class="btn_lightgray J_hoverbut btn_100_32"> already opened </div>
+							<else />
+							<div class="btn_yellow J_hoverbut btn_100_32" onclick="javascript:location.href='{:U('famouns_add')}'"> Immediately opened </div>
+							</if>
+							<div class="clear"></div>
+						</div>
+					</div>
+				</div>
+				</if>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<include file="Company:index_footer" />
+		<script type="text/javascript">
+			$('.J_exit_cpt').die().live('click', function() {
+				var url = $(this).attr('url');
+	            var qsDialog = $(this).dialog({
+	                title: ' Tips ',
+	                content:'<div class="warning_dialog ft14"><div class="tip"> Quit a member 后，您将不再享有 Recruitment 会员专属标识、 Job preference and other exclusive privileges ！</div></div><div class="confirm_pad">要 Quit a member ， Please contact your exclusive customer service for a refund </div>',
+	                border: false,
+	                showFooter: false,
+	                yes: function () {
+	                    $.post(url,function(result){
+	                    	disapperTooltip('success', result.msg);
+	                    	setTimeout(function () {
+								window.location.reload();
+							}, 2000);
+	                    },'json');
+	                }
+	            });
+			});
+		</script>
+	</body>
+</html>

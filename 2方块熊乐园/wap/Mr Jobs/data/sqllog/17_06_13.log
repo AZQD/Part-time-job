@@ -1,0 +1,8 @@
+[ 2017-06-13T09:17:04+08:00 ] ::1 /qishi/
+SQL: SHOW COLUMNS FROM `qs_promotion` [RunTime:0.476s] [IP:0.0.0.0] [AddTime:1497316624] [qscms]
+[ 2017-06-13T09:17:05+08:00 ] ::1 /qishi/
+SQL: SELECT qs_order.*,m.username,m.utype FROM `qs_order` INNER JOIN qs_members as m on qs_order.uid=m.uid  WHERE qs_order.is_paid = 1 AND qs_order.addtime < 1496020625    [RunTime:0.359s] [IP:0.0.0.0] [AddTime:1497316625] [qscms]
+[ 2017-06-13T09:17:09+08:00 ] ::1 /qishi/
+SQL: SHOW COLUMNS FROM `qs_explain` [RunTime:0.235s] [IP:0.0.0.0] [AddTime:1497316629] [qscms]
+[ 2017-06-13T16:13:18+08:00 ] ::1 /qishi/index.php?m=Home&c=Qrcode&a=index&url=http%3A%2F%2F192.168.102.130%2Fqishi%2F%3Fm%3DMobile
+SQL: SELECT `type`,`update_time`,`unread` FROM `qs_members_msgtip` WHERE `uid` = 23    [RunTime:0.278s] [IP:0.0.0.0] [AddTime:1497341598] [qscms]

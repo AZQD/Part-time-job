@@ -1,0 +1,155 @@
+<empty name="visitor['uid']">
+	<span class="link_yellow"> Welcome to {:C('qscms_site_name')}！  <a href="{:U('members/login')}"> Login </a>  or  <a href="{:U('members/register')}"> Register for FREE </a></span>
+<else/>
+	<div class="n welcome link_yellow"> Welcome &nbsp;<a href="{:U('members/index')}">{:cut_str($visitor['username'],5,0,'…')}</a>&nbsp; log in <div class="vertical_line"></div></div>
+	<if condition="$visitor['utype'] eq 2">
+		<empty name="resume">
+			<div class="n refresh"><a href="{:U('personal/resume_add')}"> Create a resume </a><div class="vertical_line"></div></div>
+		<else/>
+			<div class="n refresh">
+				<if condition="!$refresh"><div class="dot"></div></if>
+				<a href="javascript:;" id="refresh_resume_top" pid="{$resume}"> Refresh your resume </a>
+				<div class="vertical_line"></div>
+			</div>
+			<div class="name per_name">
+				<a class="aname" href="{:U('personal/index')}">{$realname}</a><div class="vertical_line"></div><div class="arrow_icon"></div><div class="arrow_icon_hover"></div>
+				<div class="name_list">
+					<li><a href="{:url_rewrite('QS_resumeshow',array('id'=>$resume,'preview'=>1))}"> Preview Resume </a></li>
+					<li><a href="{:U('personal/resume_list')}"> my resume </a></li>
+					<li><a href="{:U('personal/jobs_apply')}"> Shen  please  Of the post </a></li>
+					<li><a href="{:U('personal/jobs_interview')}"> Interview invitation  please </a></li>
+					<li><a href="{:U('personal/user_info')}"> Account management </a></li>
+				</div>
+			</div>
+			<div class="n top_min_pms"><if condition="$msgtip['unread']"><div class="dot"></div></if><a href="{:U('personal/msg_pms')}"> News </a><div class="vertical_line"></div></div>
+			<script type="text/javascript">
+				var anameTexts = $('.aname').text();
+				if (anameTexts.length > 3) {
+					$('.arrow_icon').css('right', '7px');
+					$('.arrow_icon_hover').css('right', '7px');
+				}
+			</script>
+		</empty>
+	<else/>
+		<div class="n refresh">
+			<empty name="jobs">
+				<div>
+					<if condition="$upper_limit neq 1">
+						<a href="{:U('company/jobs_add')}"> Post position </a>
+					<else/>
+						<a href="javascript:;" class="J_addJobsDig"> Post position </a>
+					</if>
+					<div class="vertical_line"></div>
+				</div>
+			<else/>
+				<div><a href="javascript:;" id="refresh_jobs_all_top"> Refresh the job </a><div class="vertical_line"></div></div>
+			</empty>
+		</div>
+		<div class="name com_name">
+			<a class="aname" href="{:U('company/index')}">{$company.companyname}</a><div class="vertical_line"></div><div class="arrow_icon"></div><div class="arrow_icon_hover"></div>
+			<div class="name_list">
+			<if condition="$company['contents']">
+				<li><a target="_blank" href="{:url_rewrite('QS_companyshow',array('id'=>$company['id']))}"> Preview the home page </a></li>
+			</if>
+				<li>
+					<if condition="$upper_limit neq 1">
+						<a href="{:U('company/jobs_add')}"> Post position </a>
+					<else/>
+						<a href="javascript:;" class="J_addJobsDig"> Post position </a>
+					</if>
+				</li>
+				<li><a href="{:U('company/jobs_list')}"> Post position </a></li>
+				<li><a href="{:U('company/jobs_apply')}"> Received resume </a></li>
+				<li><a href="{:U('company/com_info')}"> Account management </a></li>
+			</div>
+		</div>
+		<div class="n top_min_pms"><if condition="$msgtip['unread']"><div class="dot"></div></if><a href="{:U('company/pms_sys')}"> news </a><div class="vertical_line"></div></div>
+	</if>
+	<div class="n quit link_gray6"><a href="{:U('members/logout')}">Logout</a></div>
+	<div class="clear"></div>
+</empty>
+<link href="../public/css/company/company_ajax_dialog.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript">
+	$('#J_header .name').hover(function() {
+		$(this).addClass('hover');
+	}, function() {
+		$(this).removeClass('hover');
+	});
+	$("#refresh_jobs_all_top").click(function(){
+    	$.getJSON("{:U('CompanyService/jobs_refresh_all')}",function(result){
+    		if(result.status==1){
+    			disapperTooltip('success',result.msg);
+    		}
+    		else if(result.status==2)
+    		{
+    			var qsDialog = $(this).dialog({
+	                title: ' batch  Refresh the job ',
+	                loading: true,
+	                border: false,
+	                yes: function () {
+	                	window.location.href=result.data;
+	                }
+	            });
+	            qsDialog.setBtns([' Single refresh ', ' cancel ']);
+	            qsDialog.setContent('<div class="refresh_jobs_all_confirm">' + result.msg + '</div>');
+    		}
+    		else
+    		{
+			disapperTooltip('remind',result.msg);
+    		}
+    	});
+    });
+    $('.J_addJobsDig').click(function(){
+    	var qsDialog = $(this).dialog({
+            title: ' Post position ',
+            loading: true,
+            border: false,
+            yes: function () {
+            	window.location.href=result.data;
+            }
+        });
+    	var href = $(this).attr('href');
+    	if(href == 'javascript:;'){
+    		$.getJSON("{:U('ajaxCompany/jobs_add_guide_dig')}",function(result){
+    			if(result.status == 1){
+    				qsDialog.hide();
+    				var son_qsDialog = $(this).dialog({
+			            title: ' Post position ',
+			            content:result.data.html,
+			            border: false,
+			            yes: function () {
+			            	if(result.data.hidden_val==1){
+			            		window.location.href="{:U('CompanyService/index')}";
+			            	}
+			            }
+			        });
+			        if(result.data.hidden_val==1){
+			        	son_qsDialog.setBtns([' Upgrade package ', ' cancel ']);
+			        }
+    			}else{
+    				disapperTooltip('remind',result.msg);
+    			}
+    		})
+    	}
+    });
+    //  top  Refresh your resume 
+    $('#refresh_resume_top').click(function() {
+    	var pid = $(this).attr('pid');
+    	$.post("{:U('personal/refresh_resume')}",{pid:pid},function(result){
+			if(result.status == 1){
+				if(result.data){
+					disapperTooltip("goldremind", ' Refresh your resume  increase '+result.data+'{:C('qscms_points_byname')}<span class="point">+'+result.data+'</span>');
+				}else{
+					disapperTooltip('success',result.msg);
+				}
+				$.getJSON("{:U('AjaxCommon/get_header_min')}",function(result){
+					if(result.status == 1){
+						$('#J_header').html(result.data.html);
+					}
+				});
+			}else{
+				disapperTooltip('remind',result.msg);
+			}
+		},'json');
+    });
+</script>

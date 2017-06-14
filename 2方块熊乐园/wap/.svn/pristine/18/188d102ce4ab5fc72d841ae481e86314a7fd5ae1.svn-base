@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<include file="public:meta" />
+	<link href="../public/css/common.css" rel="stylesheet" type="text/css" />
+	<link href="../public/css/m.css" rel="stylesheet" type="text/css" />
+	<qscms:load type="category"/>
+</head>
+<body>
+<include file="public:header_m" />
+<div id="banner-block">
+    <div class="banner-wrap wechat">
+        <div class="container">
+            <div class="chatpage-img"><img src="../public/images/190.jpg" alt="" /></div>
+            <div class="a-text-wrap">
+                <div class="weimg-box clearfix">
+                    <div class="wechat-icon f-left"></div>
+                    <div class="wechat-code-box f-right"><img src="{:attach(C('qscms_weixin_img'),'resource')}" alt=" QR code " width="100" height="100" /></div>
+                </div>
+                <h4> Micro letter  “ scan it ”  jobs  “ code ”  Looking for </h4>
+                <div class="wechat-sreach"> Find the public number ：<b>{:C('qscms_weixin_mpname')}</b>  or  <b>{:C('qscms_weixin_mpnumber')}</b></div>
+                <p> Latest position 、 Emergency recruitment 、 A key brush resume 、 Immediate Interview Announcement ……<br />从此不再错过任何 jobs 机会</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="m-main">
+    <div class="wechat-top-title">
+        <div class="container clearfix">
+            <h2>如何绑定 Micro letter 公众号</h2>
+        </div>
+    </div>
+    <div class="m-row weixin odd">
+        <div class="container clearfix">
+            <div class="wechat-left-text f-left">
+                <h3>01</h3>
+                <p>扫描 QR code 并 Click on 关注， Easy job search 。 Massive <br /> position ， Anytime, anywhere you search ！</p>
+            </div>
+            <div class="wechat-right-img f-right">
+                <div class="wechat-phone"><img src="../public/images/191.jpg" alt="" /></div>
+                <div class="wechat-enlarge enlarge1"></div>
+            </div>
+        </div>
+    </div>
+    <div class="m-row weixin">
+        <div class="container clearfix">
+            <div class="wechat-left-img f-left">
+                <div class="wechat-phone"><img src="../public/images/192.jpg" alt="" /></div>
+                <div class="wechat-enlarge enlarge2"></div>
+            </div>
+            <div class="wechat-right-text f-right">
+                <h3>02</h3>
+                <p> Attention will automatically pop up immediately after the binding message ， Click on <br /> Bind account 。</p>
+            </div>
+        </div>
+    </div>
+    <div class="m-row weixin odd">
+        <div class="container clearfix">
+            <div class="wechat-left-text f-left">
+                <h3>03</h3>
+                <p>输入您的平台账号和密 code ， No longer have to bear <br /> Heart miss any job updates ！</p>
+            </div>
+            <div class="wechat-right-img f-right">
+                <div class="wechat-phone"><img src="../public/images/193.jpg" alt="" /></div>
+                <div class="wechat-enlarge enlarge3"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<include file="public:footer_min" />
+</body>
+</html>

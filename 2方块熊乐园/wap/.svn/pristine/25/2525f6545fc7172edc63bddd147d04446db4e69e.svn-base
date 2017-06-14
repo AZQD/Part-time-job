@@ -1,0 +1,36 @@
+<div class="batch_delivery">
+    <div class="result_info icon2">
+    <if condition="$apply['count_jids'] eq 1"> 
+        <div class="top_txt"> Application failed ，{$apply['list'][$jid]['tip']}</div>
+    <else />
+        <div class="top_txt"> You applied for it  <span class="yellow_light">{$apply.total}</span>  Position ， among them  <span class="yellow_light">{$apply.success|default=0}</span>  A success </div>
+        <div class="down_txt"> Resume delivery is successful <if condition="$apply['points'] neq 0">，<span class="yellow_light"> obtain  {$apply.points|default=0} {:C('qscms_points_byname')}</span></if></div>
+    </if>
+    </div>
+    <div class="clear"></div>
+    <div class="delivery_fail_box">
+    <if condition="$apply['count_jids'] eq 1">
+        <div class="fail_head"> According to the statistics ， Average delivery 10 Position  obtain 2-3 Interview opportunities ， Go and apply for other posts ！</div>
+    <else />
+        <div class="fail_head"> The following post delivery failed ：</div>
+        <div class="fail_list_line">
+            <volist name="apply['list']" id="list">
+                <if condition="$list['status'] neq 1">
+                    <div class="fail_cell_left" title="{$list.jobs_name}">{$list.jobs_name}</div>
+                    <div class="fail_cell right">{$list.tip}</div>
+                </if>
+            </volist>
+            <div class="clear"></div>
+        </div>
+    </if>
+    </div>
+    <div class="tips_info"> Present total  <span class="yellow_light">{$user_points|default=0}</span> {:C('qscms_points_byname')}， Immediately resume resume promotion ， Let the enterprise take the initiative to find you </div>
+    <div class="txt_center">
+        <div class="tabs_group">
+            <a href="{:U('PersonalService/increment_add',array('cat'=>'stick'))}" class="tab_box"><span class="txt"> Resume Sticky </span></a>
+            <a href="{:U('PersonalService/increment_add',array('cat'=>'tag'))}" class="tab_box"><span class="txt icon1"> Eye-catching labels </span></a>
+            <a href="{:U('PersonalService/increment_add',array('cat'=>'tpl'))}" class="tab_box last"><span class="txt icon2"> Resume template </span></a>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>

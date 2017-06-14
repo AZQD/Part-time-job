@@ -1,0 +1,167 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<include file="public:meta" />
+	<link href="../public/css/members/common.css" rel="stylesheet" type="text/css" />
+	<script src="../public/js/members/jquery.common.js" type="text/javascript" language="javascript"></script>
+</head>
+<body>
+	<include file="header" />
+	<div class="J_apilogin_bind_box apilogin_binding_new" style="display:block">
+		<div class="apil">
+			<div class="tbnox">
+				<div class="tit"> You are already logged in {$third_name} account number </div>
+				<div class="imgbox">
+					<img src="{$user_bind_info.keyavatar_big}" border="0">
+				</div>
+				<div class="apiname">{$user_bind_info.username}</div>
+			</div>
+		</div>
+		<div class="apic"></div>
+		<div class="apir">
+			<div class="regtitson">
+				<div class="alohtit"> registered 并绑定新 account number </div>
+				<div class="clear"></div>
+			</div>
+			<div class="reg_tab">
+				<div class="J_tab_list tab_list select"><div class="txt"> Job Seeker Registration </div><div class="bttom_line"></div></div>
+				<div class="J_tab_list tab_list last"><div class="txt icon2"> enterprise HR registered </div><div class="bttom_line"></div></div>
+				<div class="clear"></div>
+			</div>
+			<div class="solid_line"></div>
+			<div class="J_regcontent_box regcontent_box">
+				<form class="J_passwordalert_group" id="regEmailForm" action="{:U('members/oauth_reg')}" method="post" onkeydown="if(event.keyCode==13){return false;}">
+					<div class="J_validate_group">
+						<div class="td1">
+							<input class="input_295_34" name="username" id="username" type="text" placeholder=" please enter user name " autocomplete="off" readonly="readonly" value="{$user_bind_info.username}"/>
+						</div>
+						<div class="td2 J_showtip_box"></div>
+						<div class="clear"></div>
+					</div>
+					<div class="J_validate_group">
+						<div class="td1">
+							<input class="input_295_34" name="email" id="email" type="text" placeholder=" Please enter a common mailbox " autocomplete="off" readonly="readonly" value="{$user_bind_info.email}"/>
+						</div>
+						<div class="td2 J_showtip_box"></div>
+						<div class="clear"></div>
+					</div>
+					<div class="agreement link_blue"><label><input name="agreement" type="checkbox" value="" checked="checked" />
+					 I have read and agree <a href="javascript:;" class="J_reg_agreement">《{:C('qscms_site_name')} User Services Agreement 》</a></label></div>
+					<input type="hidden" name="reg_type" value="2" />
+					<input type="hidden" name="utype" value="2">
+					<input name="ucenter" type="hidden" value="bind">
+					<div class="btnbox"><input id="btnEmailRegister" type="submit" value=" registered " class="btn_reg J_hoverbut" /></div>
+				</form>	
+			</div>
+			<div class="J_regcontent_box regcontent_box last">
+				<form class="J_passwordalert_group" id="registerForm" action="{:U('members/oauth_reg')}" method="post" onkeydown="if(event.keyCode==13){return false;}">
+					<div class="rl J_focus">
+						<div class="regtit"> enterprise 信息</div>
+						<div class="J_validate_group">
+							<div class="td1">
+								<input class="input_295_34" name="companyname" id="companyname" type="text" placeholder="请输入 enterprise 名称" autocomplete="off" />
+							</div>
+							<div class="td2 J_showtip_box"></div>
+						</div>
+						<div class="J_validate_group">
+							<div class="td1">
+								<input class="input_295_34" name="contact" id="contact" type="text" placeholder="请输入 enterprise 联系人" autocomplete="off" />
+							</div>
+							<div class="td2 J_showtip_box"></div>
+						</div>
+						<div class="J_validate_group">
+							<div class="td1">
+								<div class="tel_td1">
+									<input class="input_295_34" name="landline_tel_first" id="landline_tel_first" type="text" placeholder=" Area code "/>
+								</div>
+								<div class="tel_td2">
+									<input class="input_295_34" name="landline_tel_next" id="landline_tel_next" type="text" placeholder=" Fixed telephone "/>
+								</div>
+								<div class="tel_td3">
+									<input class="input_295_34" name="landline_tel_last" id="landline_tel_last" type="text" placeholder=" Ext "/>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="td2 J_showtip_box"></div>
+						</div>
+						<div class="J_validate_group">
+							<div class="td1">
+								<input class="input_295_34" name="telephone" id="telephone" type="text" placeholder=" Please enter phone number " autocomplete="off" />
+							</div>
+							<div class="td2 J_showtip_box"></div>
+						</div>
+						<div class="clear"></div>
+						<div class="tips_td"> Fixed telephone 和手机号码至少填写一项</div>
+						<div class="regtit"> account information <span>( Used to log in {:C('qscms_site_name')})</span></div>
+						<div class="J_validate_group">
+							<div class="td1">
+								<input class="input_295_34" name="username" id="username" type="text" placeholder=" please enter user name " autocomplete="off" value="{$user_bind_info.username}"/>
+							</div>
+							<div class="td2 J_showtip_box"></div>
+						</div>
+						<div class="J_validate_group">
+							<div class="td1">
+								<input class="input_295_34" name="email" id="email" type="text" placeholder=" Please enter a common mailbox " autocomplete="off" value="{$user_bind_info.email}"/>
+							</div>
+							<div class="td2 J_showtip_box"></div>
+						</div>
+						<div class="clear"></div>
+						<div class="agreement link_blue"><label><input name="agreement" type="checkbox" value="" checked="checked" />
+						 I have read and agree <a href="javascript:;" id="reg_agreement">《{:C('qscms_site_name')} User Services Agreement 》</a></label></div>
+						<div class="btnbox">
+							<input name="utype" type="hidden" value="1">
+							<input type="hidden" name="reg_type" value="2">
+							<input type="hidden" name="landline_tel" id="landline_tel" value="">
+							<input name="ucenter" type="hidden" value="bind">
+							<input name="" id="btnRegister" type="submit" value=" registered " class="btn_reg J_hoverbut" />
+						</div>
+					</div>
+					<div class="clear"></div>
+				</form>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<div class="apilogin_binding_bg">
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="clear"></div>
+	</div>
+	<include file="public:footer_min" />
+	<script type="text/javascript" src="../public/js/jquery.form.js"></script>
+	<script type="text/javascript" src="../public/js/jquery.validate.js"></script>
+	<script type="text/javascript" src="../public/js/members/jquery.pwdalert.js"></script>
+	<script type="text/javascript" src="../public/js/members/jquery.validate.uc.js"></script>
+	<script type="text/javascript" src="../public/js/jquery.modal.dialog.js"></script>
+	<script type="text/javascript">
+		// 已有 account number 绑定
+		$('#J_dobind').live('click', function() {
+	        var usernameValue = $.trim($('input[name="username"]').val());
+	        var passwordValue = $.trim($('input[name="password"]').val());
+	        var $thisTypeBox = $(this).closest('.apir');
+	        if (usernameValue == "") {
+	            $thisTypeBox.addClass('openerr');
+	            $('#J_errbox').text(' Please fill in the mobile phone number / Member name / mailbox ');
+	            $('#username').focus();
+	            return false;
+	        }
+	        if (passwordValue == "") {
+	            $thisTypeBox.addClass('openerr');
+	            $('#J_errbox').text(' Please enter your password ');
+	            $('#password').focus();
+	            return false;
+	        }
+	        $thisTypeBox.removeClass('openerr');
+	        $('#formDoBind').submit();
+	    });
+
+	    /*  registered 新 account number 绑定 */
+	    //  enterprise 个人 registered 方式切换
+	    $('.J_tab_list').click(function() {
+	    	$(this).addClass('select').siblings().removeClass('select');
+	    	var index = $('.J_tab_list').index(this);
+	    	$('.J_regcontent_box').eq(index).show().siblings('.J_regcontent_box').hide();
+	    });
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<notempty name="resume_list">
+<volist name="resume_list" id="resume">
+	<div class="li">
+		<div class="bg J_hoverbut">
+		 	<div class="photobox">
+		 		<a target="_blank" href="{:url_rewrite('QS_resumeshow',array('id'=>$resume['id']))}">
+		 			<img  border="0" src="{$resume['photosrc']}" />
+		 		</a>
+		 	</div>
+			<div class="info">
+				  <div class="name link_blue"><a target="_blank" href="{:url_rewrite('QS_resumeshow',array('id'=>$resume['id']))}">{$resume.fullname}</a></div>
+				  <div class="time">{:date('Y-m-d',$resume['refreshtime'])}</div>
+				  <div class="clear"></div>
+			      <div class="txt">{$resume['sex_cn']} | {$resume['age']} year old  | {$resume['education_cn']} | {$resume['experience_cn']} <br /><div class="substring">{$resume['intention_jobs']}</div> </div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+</volist>
+<else />
+<div class="res_empty link_blue">
+	 Sorry ， Did not find the relevant resume ， please <a href="{:U('jobs_add')}"> Post position </a> Let job seekers take the initiative to deliver resume 。
+</div>
+</notempty>
+<div class="clear"></div>

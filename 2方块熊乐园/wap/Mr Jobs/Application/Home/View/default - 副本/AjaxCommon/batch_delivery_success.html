@@ -1,0 +1,32 @@
+<div class="batch_delivery">
+    <div class="result_info">
+    <if condition="$apply['count_jids'] eq 1">
+    <div class="top_txt"> Job application is successful <if condition="$apply['points'] neq 0"><eq name="show_points" value="1">, obtain  <sapn class="yellow_light">+{$apply.points}</sapn> {:C('qscms_points_byname')}</eq></div>
+    <else />
+    <div class="top_txt"> You applied for it  <span class="yellow_light">{$apply.total}</span>  Position ， among them  <span class="yellow_light">{$apply.success}</span>  A success </div>
+        <div class="down_txt"> Resume delivery is successful <eq name="show_points" value="1">，<span class="yellow_light"> obtain  {$apply.points} {:C('qscms_points_byname')}</span></eq></div>
+    </if> 
+    </div>
+    <if condition="C('qscms_weixin_apiopen') neq ''">
+        <div class="txt_center">
+            <div class="qrcode_box">
+                <div class="qrcode_img"><img src="{:attach(C('qscms_weixin_img'),'resource')}" alt=""></div>
+                <div class="qrcode_txt">
+                    <div class=""> attention “{:C('qscms_weixin_mpname')}” No public ,</div>
+                    <div class=""> at any time  attention  Job search ,</div>
+                    <div class=""> Never miss the high salary position </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </if> 
+    <div class="tips_info"> Present total  <span class="yellow_light">{$user_points|default=0}</span> {:C('qscms_points_byname')}， Immediately resume resume promotion ， Let the enterprise take the initiative to find you </div>
+    <div class="txt_center">
+        <div class="tabs_group">
+            <a href="{:U('PersonalService/increment_add',array('cat'=>'stick'))}" class="tab_box"><span class="txt"> Resume Sticky </span></a>
+            <a href="{:U('PersonalService/increment_add',array('cat'=>'tag'))}" class="tab_box"><span class="txt icon1"> Eye-catching labels </span></a>
+            <a href="{:U('PersonalService/increment_add',array('cat'=>'tpl'))}" class="tab_box last"><span class="txt icon2"> Resume template </span></a>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>

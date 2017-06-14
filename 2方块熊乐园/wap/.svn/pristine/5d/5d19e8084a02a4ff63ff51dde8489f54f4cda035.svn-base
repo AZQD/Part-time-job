@@ -1,0 +1,391 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<include file="public:meta" />
+	<link href="../public/css/personal/common.css" rel="stylesheet" type="text/css" />
+	<link href="../public/css/personal/personal_index.css" rel="stylesheet" type="text/css" />
+	<link href="../public/css/personal/personal_ajax_dialog.css" rel="stylesheet" type="text/css" />
+	<script src="../public/js/personal/jquery.common.js" type="text/javascript" language="javascript"></script>
+	<script src="../public/js/jquery.cookie.js" type="text/javascript" language="javascript"></script>
+</head>
+<body>
+	<include file="index_header" />
+	<div class="user_main">
+		<include file="index_left_nav" />
+		<div class="mainbox">
+			<!-- 完善简历提示-->
+			<if condition="$resume_info['complete_percent'] lt 60 && $hidden_perfect_notice neq 1">
+				<div class="toptip">   
+				    <div class="topadd">
+				        <div class="td1"></div>
+					    <div class="td2"><span class="font_blue"> Your resume is too low ， Will greatly affect the success rate of job Oh ！</span><br /> Improve your work experience 、 Education and training experience 、 language skills 、 Skills certificate … Wait ， Can effectively improve the success rate of job search </div>
+					    <div class="td3"><div class="but_blue_115 J_hoverbut" onclick="window.location='{:U('personal/resume_edit',array('pid'=>$resume_info['id']))}'"> Immediately improve your resume </div></div>
+					    <div class="td4"><div class="but_gray_60 J_hoverbut" id="ignore"> ignore </div></div>
+					    <div class="clear"></div> 
+					</div>
+				    <div class="topaddarrow"></div>
+				</div>
+			</if>
+			<!-- 完善简历提示结束-->
+			<!-- 用户名微信绑定提示-->
+			<div class="userbox <if condition="$resume_info['complete_percent'] lt 60 && $hidden_perfect_notice neq 1">showtip</if>">
+				<div class="td1 substring"><strong><if condition="date('a') eq 'am'"> morning <else/> in the afternoon </if> it is good ，{$resume_info['fullname']}</strong></div>
+				<div class="td2 <if condition="$visitor['mobile_audit']">ok link_blue<else/>link_gray6</if>"><a href="{:U('personal/user_safety')}">{$resume_info['telephone']}</a></div>
+				<div class="td3 <if condition="$visitor['email_audit']">ok link_blue<else/>link_gray6</if>"><a href="{:U('personal/user_safety')}">{$resume_info['email']}</a></div>
+				<notempty name="wx_status">
+					<empty name="qrcode">
+						<div class="td4 ok link_blue"><a href="{:U('personal/user_safety')}"> Has been bound to WeChat </a></div>
+					<else/>
+						<div class="td4 link_gray6">
+							<a href="javascript:;" class="bind_wx"> Unbound microsecond </a>
+							<div class="popWeixin" id="J_popWeixin">
+								<div><div class="qrarrow"></div></div>
+								<div><a class="close" href="javascript:void(0)">×</a></div>
+								<div class="qrimg">{$qrcode}</div>
+								<div class="qrtxt">
+									<div class="dd"> WeChat sweep sweep bound account </div>
+									<div class="dd_small"> WeChat to receive an interview invitation </div>
+									<div class="dd_small"> Use WeChat to quickly log in </div>
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+					</empty>
+				</notempty>
+				<div class="clear"></div>
+			</div>
+			<!--结束 -->
+			<!--  my resume 和统计部分-- -->
+		 	<div class="infobox">
+				<div class="picbox">
+					<div class="photo"><a href="{:U('personal/user_avatar')}"><img src="{$visitor['avatars']}?{:time()}" border="0"/></a></div>
+			    	<div class="txt link_blue"> my resume </div>
+				</div>
+				<div class="clear"></div>
+				<div class="td1 J_hoverbut">
+					<if condition="$resume_info['level'] eq 3">
+					<div class="val font_green">{$resume_info['complete_percent']}%</div>
+					 Resume integrity <span class="green_light">( excellent )</span>
+					<div class="des_box">
+						<div class="desarrow"></div>
+					  	<div class="des_txt">
+							<strong>您 of  Resume integrity 很 it is good ！</strong><br />
+							 Delivery resume can not only quickly find a job ， Also presented <span>+{$points_rule['points']}</span> of {:C('qscms_points_byname')}！<br />
+							<div class="btn"><a href="{:url_rewrite('QS_jobs')}" class="btn_yellow btn_inline"> Search for jobs </a></div>
+						</div>
+					</div>
+					<elseif condition="$resume_info['level'] eq 1" />
+					<div class="val font_red">{$resume_info['complete_percent']}%</div>
+					 Resume integrity <span class="red_light">( difference )</span>
+					<div class="des_box">
+						<div class="desarrow"></div>
+					  	<div class="des_txt">
+							<strong>您 of  Resume integrity 太 difference ！</strong><br />
+								完整 of 简历才能快速 it is good 到工作！<br />
+						  		 Perfect resume can also be obtained <span>+{$points_rule['points']}</span>{:C('qscms_points_byname')} Oh ！<br />
+							<div class="btn"><a href="{:U('personal/resume_edit',array('pid'=>$resume_info['id']))}" class="btn_yellow btn_inline"> Immediately improve your resume </a></div>
+						</div>
+					</div>
+					<else />
+					<div class="val font_yellow">{$resume_info['complete_percent']}%</div>
+					 Resume integrity <span class="yellow_light">( good )</span>
+					<div class="des_box">
+						<div class="desarrow"></div>
+					  	<div class="des_txt">
+							<strong>您 of  Resume integrity 一般！</strong><br />
+								完整 of 简历才能快速 it is good 到工作！<br />
+						  		 Perfect resume can also be obtained <span>+{$points_rule['points']}</span>{:C('qscms_points_byname')} Oh ！<br />
+								<div class="btn"><a href="{:U('personal/resume_edit',array('pid'=>$resume_info['id']))}" class="btn_yellow btn_inline"> Immediately improve your resume </a></div>
+						</div>
+					</div>
+					</if>
+				</div>
+				<div class="td2 J_hoverbut" onclick="window.location='{:U('personal/resume_privacy')}'"><div class="pic <if condition="$resume_info['display'] eq 0">close</if>"></div> <if condition="$resume_info['display']"> Resume is open <else/> Resume closed </if></div>
+				<div class="td3 J_hoverbut" onclick="window.location='{:U('personal/jobs_apply',array('resume_id'=>$resume_info['id']))}'"><div class="val">{$resume_info['countapply']}</div>  Have applied for a job </div>
+				<div class="td4 J_hoverbut" onclick="window.location='{:U('personal/jobs_interview',array('resume_id'=>$resume_info['id']))}'"><div class="val">{$resume_info['countinterview']}</div>  Interview Invitation </div>
+				<div class="td5 J_hoverbut" onclick="window.location='{:U('personal/attention_me',array('resume_id'=>$resume_info['id']))}'"><div class="val">{$resume_info['views']}</div>  Who is paying attention to me </div>
+				<div class="clear"></div>
+			</div>
+			<!--  my resume 和统计部分结束-- -->
+			<!--  Refresh 推广修改-- -->
+			<div class="resumeinfo">
+			  <div class="linfo">	
+			    <div class="td1">
+			       Approval Status ：<switch name="resume_info['_audit']">
+			        <case value="1">
+			          <span class="font_green"> examination passed </span>			          </case>
+			        <case value="2">
+			          <span class="font_yellow"> under review </span>			          </case>
+			        <case value="3">
+			          <span class="font_red"> The audit did not pass </span>			          </case>
+			        </switch>
+			      <br />
+			       Dream position ：{:cut_str($resume_info['intention_jobs'],12,0,'..')}<br />
+			       expected salary ：{$resume_info['wage_cn']}<br />
+			       job searching status ：{$resume_info['current_cn']}<br />
+			       Update time ：{:fdate($resume_info['refreshtime'])}<br />
+			      </div>
+			    <div class="td2">
+					<div class="butlist"><div id="J_refresh_resume" class="J_hoverbut <if condition="$resume_info['_audit'] eq 1 && $resume_info['display'] eq 1">
+							btn_blue<else />btn_lightgray</if> btn_100_38" pid="{$resume_info.id}" _audit="{$resume_info['_audit']}" is_display="{$resume_info['display']}"> Refresh your resume </div></div>
+				    <div class="butlist"><a class="J_hoverbut btn_blue   btn_100_38" href="{:U('personal/resume_edit',array('pid'=>$resume_info['id']))}" > Modify your resume </a></div>
+				    <div class="butlist"><a class="J_hoverbut btn_blue   btn_100_38" href="{:U('personal/jobs_matching_list',array('jobcategory'=>$resume_info['jobcategory']))}" target="_blank"> Match position </a></div>
+					<if condition="$resume_info['_audit'] eq 1 && $resume_info['display'] eq 1">
+						<eq name="resume_info['stick']" value="1">
+						  	<div class="butlist">
+								<div class="for_hover">
+									<a class="btn_lightgray btn_100_38"> Resume has been set top </a>
+									<div class="des_box">
+										<div class="desarrow"></div>
+										<div class="des_txt">
+											<!-- -->
+											<strong> bought 【 Resume Sticky 】 service </strong><br />
+											 Effective time ：{:date('Y-m-d',$resume_info['stick_info']['addtime'])}  to  {:date('Y-m-d',$resume_info['stick_info']['endtime'])}
+										</div>
+									</div>
+								</div>
+						 	 </div>
+						<else />
+						  	<div class="butlist"><a class="btn_yellow btn_100_38 resume_stick" resume_id="{$resume_info['id']}" _audit="{$resume_info['_audit']}" is_display="{$resume_info['display']}"> Resume Sticky </a></div>
+						</eq>
+					<else />
+						<div class="butlist"><a class="btn_lightgray btn_100_38 resume_stick" resume_id="{$resume_info['id']}" _audit="{$resume_info['_audit']}" is_display="{$resume_info['display']}"> Resume Sticky </a></div>
+					</if>
+			      <div class="clear"></div>
+				  </div>
+			    <div class="clear"></div>
+		      </div>
+			  
+			  
+			   <div class="rinfo">
+			     <div class="goldtxt link_blue">
+				 我 of {:C('qscms_points_byname')}：<span class="my_points_num">{$points|default=0}</span><br />
+				 <notempty name="apply['Mall']"><a href="{:url_rewrite('QS_mall_index')}" target="_blank"> Exchange gifts </a><br /></notempty>
+				<a href="{:U('PersonalService/task')}" target="_blank"> Make a job {:C('qscms_points_byname')}</a>
+				 </div>
+				 <div class="sign"><a id="J_sign_in" href="javascript:;" class="J_hoverbut btn_inline <if condition="$issign">btn_lightgray<else />	btn_yellow</if>"><if condition="$issign"> Has been checked in <else /> Not sign in </if></a></div>
+				 <div class="clear"></div>
+			   </div>
+			   <div class="clear"></div>
+		  </div>
+ 
+			 
+			<!-- Recommended position ， Latest position  Switch 卡 -->
+			<div class="tabindex">
+				 <div class="li J_tab select" data-ajaxtype="recommend_jobs" ajaxpage="2"> Recommended position </div>
+				 <div class="li J_tab" data-ajaxtype="nearby_jobs" ajaxpage="2"> Near position </div>
+				 <div class="li J_tab" data-ajaxtype="new_jobs" ajaxpage="2"> Latest position </div>
+			  	 <div class="clear"></div>
+			     <div class="refresh link_gray6 J_refresh"><a href="javascript:;"> For a batch </a></div>
+			</div>
+			<!--职位 Switch 卡结束 -->
+			<!--选项卡对应内容div -->
+			<div class="tabshow J_tab_menu" style="display:block" >
+				<div class="ajax_loading"><div class="ajaxloadtxt"></div></div>
+				<div class="J_tab_menu_html">
+					<notempty name="jobs_list">
+						<volist name="jobs_list" id="jobs">
+							<div class="list_cell_box">
+								<div class="td1">
+									<div class="jobname link_blue substring"><a target="_blank" href="{$jobs.jobs_url}" title="{$jobs.jobs_name}">{$jobs.jobs_name}</a></div>
+									<div class="edu_wage substring">
+										<div class="education"> experience {$jobs.experience_cn} / {$jobs.education_cn}</div>
+										<div class="wage font_yellow">{$jobs.wage_cn}</div>
+										<div class="clear"></div>
+									</div>
+									<div class="cname link_gray9 substring"><a target="_blank" href="{$jobs.company_url}" title="{$jobs.companyname}">{$jobs.companyname}</a></div>
+								</div>
+							</div>
+						</volist>
+						<div class="clear"></div>
+					<else />
+						<div class="empty_tipstxt link_blue"> Did not find the relevant position ， you can <a target="_blank" href="{:url_rewrite('QS_jobslist')}" target="_blank"> Go to the post library </a>搜索您心仪 of 职位！</div>
+					</notempty>
+				</div>
+			</div>
+			<div class="tabshow J_tab_menu"><div class="ajax_loading"><div class="ajaxloadtxt"></div></div><div class="J_tab_menu_html"></div></div>
+			<div class="tabshow J_tab_menu"><div class="ajax_loading"><div class="ajaxloadtxt"></div></div><div class="J_tab_menu_html"></div></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<include file="index_footer" />
+	<script type="text/javascript">
+		$(".bind_wx").click(function(){
+			$('#J_popWeixin').show();
+		});
+		//  Close the WeChat binding prompt 
+        $('#J_popWeixin .close').on('click', function(){
+            $('#J_popWeixin').hide();
+        });
+        //  Recommended position 、 Near position 、 Latest position  Switch 加载内容
+        var isDone = true; //  Prevent duplicate clicks 
+        $('.J_tab').on('click', function(event) {
+        	$(this).addClass("select").siblings(".J_tab").removeClass("select");
+        	var obj = $('.J_tab.select');
+        	var index = $(".J_tab").index(this);
+        	var ajaxtype = $(this).data('ajaxtype');
+        	var ajaxpage = parseInt(obj.attr('ajaxpage')); //  Record the number of pages 
+        	$('.J_tab_menu').eq(index).find('.ajax_loading').show();
+        	$.getJSON("{:U('Personal/ajax_get_interest_jobs')}", {type: ajaxtype}, function(data) {
+        		$('.J_tab_menu').find('.ajax_loading').hide();
+        		if (data.data.html) {
+        			$('.J_tab_menu').eq(index).find('.J_tab_menu_html').html(data.data.html);
+        			if(data.data.isfull){
+                        obj.attr('ajaxpage', 1);
+                    }else{
+                        obj.attr('ajaxpage', ajaxpage+1);
+                    }
+        		} else {
+        			$('.J_tab_menu').eq(index).find('.J_tab_menu_html').html('<div class="empty_tipstxt link_blue"> Did not find the relevant position ， you can <a href="{:U('jobs/index')}" target="_blank"> Go to the post library </a> Try to cheer ！</div>');
+        		}
+        	});
+        	$('.J_tab_menu').eq(index).show().siblings(".J_tab_menu").hide();
+        	isDone = true; //  Switch tab After the reset 
+        });
+        //  For a batch 
+        $('.J_refresh').on('click', function(event) {
+        	var obj = $('.J_tab.select');
+        	var ajaxtype = obj.data('ajaxtype');
+        	var ajaxpage = parseInt(obj.attr('ajaxpage')); //  Record the number of pages 
+        	var sub = 0; //  Get selected tab of 下标
+        	$('.J_tab').each(function(index, el) {
+        		if ($(this).hasClass('select')) {
+        			sub = index;
+        		}
+        	});
+        	$('.J_tab_menu').eq(sub).find('.ajax_loading').show();
+        	if (isDone) {
+        		isDone = false;
+	        	$.getJSON("{:U('Personal/ajax_get_interest_jobs')}", {type: ajaxtype, p: ajaxpage}, function(data) {
+	        		$('.J_tab_menu').eq(sub).find('.J_tab_menu_html').html(data.data.html);
+	        		obj.attr('ajaxpage', ajaxpage+1);
+	        		isDone = true;
+	        		$('.J_tab_menu').find('.ajax_loading').hide();
+	        		if(data.data.isfull){
+                        obj.attr('ajaxpage', 1);
+                    }else{
+                        obj.attr('ajaxpage', ajaxpage+1);
+                    }
+	        	});
+        	};
+        });
+        $('#J_refresh_resume').click(function() {
+        	var pid = $(this).attr('pid');
+			var _audit = $(this).attr('_audit');
+			var is_display = eval($(this).attr('is_display'));
+			if (_audit != 1){
+				disapperTooltip('remind'," under review 或未通过 of 简历 Can not refresh ！");
+			} else if(!is_display){
+				disapperTooltip('remind'," The default resume is closed ， Can not refresh ！");
+			} else {
+				$.post("{:U('Personal/refresh_resume')}",{pid:pid},function(result){
+					if(result.status == 1){
+						if(result.data){
+							disapperTooltip("goldremind", ' Refresh your resume 增加'+result.data+'{:C('qscms_points_byname')}<span class="point">+'+result.data+'</span>');
+						}else{
+							disapperTooltip('success',result.msg);
+						}
+						setTimeout(function () {
+							window.location.reload();
+						}, 2000);
+					}else{
+						disapperTooltip('remind',result.msg);
+					}
+				},'json');
+			}
+        });
+        //  Check in 
+        $('#J_sign_in').click(function(){
+        	var f = $(this);
+        	$.getJSON("{:U('Members/sign_in')}",function(result){
+        		if(result.status == 1){
+        			disapperTooltip("goldremind", '每天 Check in 增加'+result.data+'{:C("qscms_points_byname")}<span class="point">+'+result.data+'</span>');
+        			f.addClass('btn_lightgray').text(' Has been checked in ');
+	    			$(".my_points_num").html(parseInt($(".my_points_num").html())+parseInt(result.data));
+        		}else{
+        			disapperTooltip('remind',result.msg);
+        		}
+        	});
+        });
+        $(".resume_stick").click(function(){
+			var _audit = $(this).attr('_audit');
+			var is_display = eval($(this).attr('is_display'));
+			if (_audit != 1){
+				disapperTooltip('remind'," under review 或未通过 of 简历 Can not stick ！");
+			} else if(!is_display){
+				disapperTooltip('remind'," The default resume is closed ， Can not stick ！");
+			} else {
+				var qsDialog = $(this).dialog({
+					title: ' Resume Sticky ',
+					loading:true,
+					showFooter: false
+				});
+				var url = "{:U('PersonalService/resume_stick')}";
+				var resume_id = $(this).attr('resume_id');
+				$.getJSON(url,{resume_id:resume_id},function(result){
+					qsDialog.setContent(result.msg);
+				});
+			}
+        });
+        <if condition="$resume">
+        	var qsDialog = $('#J_refresh_resume').dialog({
+        		title: ' Refresh your resume ',
+				loading: true,
+				showFooter: false,
+				yes: function() {
+					var options = {};
+					options['pid'] = $('#J_telWrap').attr('pid');
+					if($('#J_refreshWrap').hasClass('c')){
+						options['current'] = $('#J_telWrap #current').val();
+						if($('#J_telWrap').hasClass('c')){
+							options['mobile'] = $('#J_telWrap input[name="mobile"]').val();
+							options['verifycode'] = $('#J_telWrap input[name="verifycode"]').val();
+						}
+					}
+					$.post("{:U('Personal/refresh_resume')}",options,function(result){
+						if(result.status == 1){
+							if(result.data){
+								disapperTooltip("goldremind", ' Refresh your resume 增加'+result.data+'{:C('qscms_points_byname')}<span class="point">+'+result.data+'</span>');
+							}else{
+								disapperTooltip('success',result.msg);
+							}
+						}else{
+							disapperTooltip('remind',result.msg);
+						}
+					},'json');
+				}
+			});
+        	$.ajax({
+        		url: "{:U('Personal/ajax_refresh_resume')}",
+        		type: 'GET',
+        		dataType: 'json',
+        		data: {pid: $('#J_refresh_resume').attr('pid')},
+        		success: function(result) {
+        			if(result.status == 1){
+        				qsDialog.setContent(result.data);
+        				qsDialog.showFooter(true);
+        				qsDialog.setBtns([' Refresh ', ' cancel ']);
+	        		}else{
+	        			qsDialog.setContent('<div class="confirm">' + result.msg + '</div>');
+	        		}
+        		}
+        	});
+        </if>
+        <if condition="$wx_status eq '' and $qrcode neq ''">
+			function waiting_weixin_bind(){
+				$.getJSON("{:U('Members/waiting_weixin_bind')}",function(result){
+					if(result.status == 1){
+						location.reload();
+					}
+				});
+			}
+			var qrcode_time = setInterval(waiting_weixin_bind,5000);
+		</if>
+		$("#ignore").click(function(){
+			$.cookie("{$resume_info['uid']}_hidden_perfect_notice",1);
+			$(".toptip").hide();
+			$(".userbox").removeClass('showtip');
+		});
+    </script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<include file="public:meta" />
+		<link href="../public/css/company/common.css" rel="stylesheet" type="text/css" />
+		<link href="../public/css/company/company_points.css" rel="stylesheet" type="text/css" />
+		<link href="../public/css/company/company_ajax_dialog.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<include file="index_header" />
+		<div class="user_main">
+			<div class="mleft">
+				<include file="left_jobs" /> 
+			</div>
+			<div class="mright">
+				<div class="user_pagetitle">
+					<div class="pat_l"> WeChat recruitment effect data </div>
+					<div class="clear"></div>
+				</div>
+				<div class="cutoff_line"></div>
+				<div class="user_tip wx_result_data">
+					<div class="tiptit"> hint </div>
+					<div class="tiptxt link_blue">
+						 Microblogging hiring home page visits and through the visit micro-credit home page and bring resume resume and view the results of information statistics 。 The effect of good or bad with your share of communication efforts related 
+					</div>
+				</div>
+				<div class="wxresult_th">
+					<div class="th th1">&nbsp;</div>
+					<div class="th th2"> Views </div>
+					<div class="th th3"> Share the number of times </div>
+					<div class="th th4"> The number of times </div>
+					<div class="th th5"> independent IP</div>
+					<div class="clear"></div>
+				</div>
+				<div class="tabshow" style="display:block;">
+					<div class="wxresultlist J_hoverbut">
+						<div class="td td1"> yesterday </div>
+						<div class="td td2">{:intval($data['yesterday'][1])}</div>
+						<div class="td td3">{:intval($data['yesterday'][2])}</div>
+						<div class="td td4">{:intval($data['yesterday'][3])}</div>
+						<div class="td td4">{:intval($data['yesterday'][4])}</div>
+						<div class="clear"></div>
+					</div>
+					<div class="wxresultlist J_hoverbut">
+						<div class="td td1"> This week </div>
+						<div class="td td2">{:intval($data['week'][1])}</div>
+						<div class="td td3">{:intval($data['week'][2])}</div>
+						<div class="td td4">{:intval($data['week'][3])}</div>
+						<div class="td td4">{:intval($data['week'][4])}</div>
+						<div class="clear"></div>
+					</div>
+					<div class="wxresultlist J_hoverbut">
+						<div class="td td1"> Last week </div>
+						<div class="td td2">{:intval($data['last_week'][1])}</div>
+						<div class="td td3">{:intval($data['last_week'][2])}</div>
+						<div class="td td4">{:intval($data['last_week'][3])}</div>
+						<div class="td td4">{:intval($data['last_week'][4])}</div>
+						<div class="clear"></div>
+					</div>
+					<div class="wxresultlist J_hoverbut">
+						<div class="td td1"> this month </div>
+						<div class="td td2">{:intval($data['month'][1])}</div>
+						<div class="td td3">{:intval($data['month'][2])}</div>
+						<div class="td td4">{:intval($data['month'][3])}</div>
+						<div class="td td4">{:intval($data['month'][4])}</div>
+						<div class="clear"></div>
+					</div>
+					<div class="wxresultlist J_hoverbut">
+						<div class="td td1"> last month </div>
+						<div class="td td2">{:intval($data['last_month'][1])}</div>
+						<div class="td td3">{:intval($data['last_month'][2])}</div>
+						<div class="td td4">{:intval($data['last_month'][3])}</div>
+						<div class="td td4">{:intval($data['last_month'][4])}</div>
+						<div class="clear"></div>
+					</div>
+					<div class="wxresultlist J_hoverbut">
+						<div class="td td1"> History accumulated </div>
+						<div class="td td2">{:intval($data['total'][1])}</div>
+						<div class="td td3">{:intval($data['total'][2])}</div>
+						<div class="td td4">{:intval($data['total'][3])}</div>
+						<div class="td td4">{:intval($data['total'][4])}</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="date_dropdown">
+					<div class="item_val select_input select_205_34 J_hoverinput J_dropdown J_listitme_parent">
+						<span class="J_listitme_text"> recent {$settr} day </span>
+						<div class="dropdowbox8 J_dropdown_menu">
+				            <div class="dropdow_inner8">
+				                <ul class="nav_box">
+				                	<li><a class="J_listitme" href="{:P(array('settr'=>7))}" > recent 7 day </a></li>
+				                	<li><a class="J_listitme" href="{:P(array('settr'=>15))}" > recent 15 day </a></li>
+				                	<li><a class="J_listitme" href="{:P(array('settr'=>30))}" > recent 30 day </a></li>
+				                </ul>
+				            </div>
+				        </div>
+					</div>
+				</div>
+				<div class="date_dropdown" id="line_box"></div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<include file="index_footer" />
+		<script type="text/javascript" src="../public/js/company/fusioncharts/fusioncharts.js"></script>
+		<script type="text/javascript" src="../public/js/company/fusioncharts/fusioncharts.theme.fint.js"></script>
+		<script type="text/javascript">
+			FusionCharts.ready(function(){
+				var revenueChart = new FusionCharts({
+					"type": "msline",
+					"height":"250px",
+					"renderAt": "line_box",
+					"width":"99%",
+					"dataFormat": "xml",
+					"showLegend":"1",
+					"dataSource": '{$line_xml}',
+				});
+				revenueChart.render();
+			});
+		</script>
+	</body>
+</html>

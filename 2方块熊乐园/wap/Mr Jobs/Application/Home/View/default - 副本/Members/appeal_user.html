@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<include file="public:meta" />
+	<link href="../public/css/members/common.css" rel="stylesheet" type="text/css" />
+	<script src="../public/js/members/jquery.common.js" type="text/javascript" language="javascript"></script>
+</head>
+<body>
+<include file="header" />
+<div class="appeal_user">
+	<div class="titbg">
+	    <div class="ltit">
+	     	<div class="t font_blue"> Notice of complaint </div>
+	   	</div>
+	   	<div class="rtit">
+	     	<div class="t">  After the complaint ， Our customer service staff will contact you as soon as possible <br />
+	       	 Complaints Contact Phone  <span class="font_blue">{:C('qscms_bootom_tel')}</span><br />
+	       	 After the complaint is successful ， We will send the account information to your complaint mail by mail </div>
+	   	</div>
+	   	<div class="clear"></div>
+	</div>
+ 	<div class="rl J_focus">
+ 		<form id="appealForm" action="{:U('appeal_user')}" method="post">
+	 		<div id="form">
+	 			<div class="J_validate_group">
+				 	<div class="td1">
+						<input class="input_295_34" id="realname" name="realname" type="text" placeholder=" please enter your real name "/>
+					</div>
+					<div class="td2 J_showtip_box"></div>
+					<div class="clear"></div>
+				</div>
+				<div class="J_validate_group">
+					<div class="td1">
+						<input class="input_295_34" id="mobile" name="mobile" type="text" placeholder=" Please enter the phone number "/>
+					</div>
+					<div class="td2 J_showtip_box"></div>
+					<div class="clear"></div>
+				</div>
+				<div class="appeal_tip"> Please fill in the current phone number you are using ， Easy to contact the customer service staff </div>
+				<div class="J_validate_group">
+					<div class="td1">
+						<input class="input_295_34" id="email" name="email" type="text" placeholder=" Please enter your favorite email address "/>
+					</div>
+					<div class="td2 J_showtip_box"></div>
+				 	<div class="clear"></div>
+			 	</div>
+			 	<div class="J_validate_group">
+					<div class="td1 h" >
+						<textarea id="description" name="description" cols="" rows="" placeholder=" Account complaint description " class="textarea_438_80"  ></textarea>
+					</div>
+					<div class="td2 J_showtip_box"></div>
+					<div class="clear"></div>
+				</div>
+				<div class="btnbox">
+					<input id="btnAppealRegister" type="button" value=" submit " class="btn_reg J_hoverbut" />
+				</div>
+			</div>
+		</form>
+		<div class="appeal_ok" style="display:none;">
+			<h3> submit 成功！</h3>
+			 Customer service staff will contact you as soon as possible ， Please keep your phone open ！
+		</div>
+	</div>
+</div>
+<!--下方阴影 -->
+<div class="appeal_user_bg">
+  	<div class="bl"></div>
+  	<div class="br"></div>
+  	<div class="clear"></div>
+</div>
+<include file="public:footer_min" />
+<script type="text/javascript" src="../public/js/jquery.form.js"></script>
+<script type="text/javascript" src="../public/js/jquery.validate.js"></script>
+<script type="text/javascript" src="../public/js/members/jquery.validate.appeal.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		function check_input(objid){
+			if($.trim($(objid).val())==''){
+				$(objid+"_tip").show();
+				return false;
+			}else{
+				$(objid+"_tip").hide();
+			}
+		}
+		$("input,textarea").keyup(function(){
+			check_input('#'+$(this).attr('id'));
+		});
+	});
+</script>
+</body>
+</html>

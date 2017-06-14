@@ -1,0 +1,181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv=Content-Type  content="text/html; charset=utf-8" >
+	<title></title>
+	<style>
+	.table_tit{border-bottom: 2px solid #000;font-size: 14px;font-weight: bold;padding:10px 0;}
+	.fl{float: left;}
+	.fr{float: right;}
+	</style>
+</head>
+<body>
+<volist name="list" id="val">
+	<table width="700" border="0" align="center" cellpadding="10" cellspacing="0" style="background-color: #FAF7C1;padding:10px 0">
+		<tr>
+			<td align="center"> Resume title </td>
+			<td align="center">{$val['title']}</td>
+			<td align="center"> Recently logged in </td>
+			<td align="center">{$val['last_login_time']}</td>
+			<td align="center"><img width="130" height="40" src="{:C('qscms_site_domain')}{:attach(C('qscms_logo_other'),'resource')}" alt="{:C('qscms_site_name')}" border="0" align="absmiddle"></td>
+		</tr>
+	</table>
+	<table width="700" border="0" align="center" cellpadding="10" cellspacing="0">
+		<tr>
+			<td class="table_tit"> Personal information </td>
+		</tr>
+	</table>
+	<table width="700" border="0" align="center" cellpadding="6" cellspacing="0" style="font-size: 12px;">
+		<tr>
+			<td align="right" width="100"> Name ：</td>
+			<td align="left" width="200">{$val['fullname']}</td>
+			<td align="right" width="100"> gender ：</td>
+			<td align="left" width="200">{$val['sex_cn']}</td>
+			<td rowspan=5 align="center">
+				<img width="100" height="100" src="{$val['photosrc']}">
+			</td>
+		</tr>
+		<tr>
+			<td align="right" width="100" > cellphone number ：</td>
+			<td align="left" width="200">{$val['telephone']}</td>
+			<td align="right" width="100"> age ：</td>
+			<td align="left" width="200">{$val['age']} year old </td>
+		</tr>
+		<tr>
+			<td align="right" width="100"> e-mail ：</td>
+			<td align="left" width="200">{$val['email']}</td>
+			<td align="right" width="100"> education level ：</td>
+			<td align="left" width="200">{$val['education_cn']}</td>
+		</tr>
+		<tr>
+			<td align="right" width="100"> Years of work ：</td>
+			<td align="left" width="200">{$val['experience_cn']}</td>
+			<td align="right" width="100"> marital status ：</td>
+			<td align="left" width="200">{$val['marriage_cn']}</td>
+		</tr>
+		<tr>
+			<td align="right" width="100"> Native place ：</td>
+			<td align="left" width="200">{$val['householdaddress']}</td>
+			<td align="right" width="100"> Current location ：</td>
+			<td align="left" width="200">{$val['residence']}</td>
+		</tr>
+	</table>
+	<table width="700" border="0" align="center" cellpadding="10" cellspacing="0">
+		<tr>
+			<td class="table_tit"> Career Objective </td>
+		</tr>
+	</table>
+	<table width="700" border="0" align="center" cellpadding="6" cellspacing="0" style="font-size: 12px;">
+		<tr>
+			<td align="right" width="100"> Expect industry ：</td>
+			<td  align="left">{$val['trade_cn']}</td>
+		</tr>
+		<tr>
+			<td align="right" width="100"> Dream position ：</td>
+			<td align="left">{$val['intention_jobs']}</td>
+		</tr>
+		<tr>
+			<td align="right" width="100"> The desired location ：</td>
+			<td align="left">{$val['district_cn']}</td>
+		</tr>
+		<tr>
+			<td align="right" width="100"> expected salary ：</td>
+			<td align="left">{$val['wage_cn']}</td>
+		</tr>
+	</table>
+	<table width="700" border="0" align="center" cellpadding="10" cellspacing="0">
+		<tr>
+			<td class="table_tit"> work experience </td>
+		</tr>
+	</table>
+	<if condition="$val['work_list']">
+	<volist name="val['work_list']" id="wli">
+	<table width="700" border="0" align="center" cellpadding="10" cellspacing="0" style="font-size: 12px;padding-top: 20px;">
+		<tr>
+			<td align="right" width="100">{$wli['startyear']} year {$wli['startmonth']} month <eq name="wli['todate']" value="1"> to date <else />-{$wli['endyear']} year {$wli['endmonth']} month </eq></td>
+			<td align="left">{$wli['companyname']}</td>
+		</tr>
+		<tr>
+			<td width="100">&nbsp;</td>
+			<td >
+				<span class="fl w100"> Job Title ：</span>
+				<span class="fl">{$wli['jobs']}</span>
+			</td>
+		</tr>
+		<tr>
+			<td width="100">&nbsp;</td>
+			<td >
+				<span class="fl w100"> Job duties ：</span>
+				<span class="fl">{$wli['achievements']}</span>
+			</td>
+		</tr>
+	</table>
+	</volist>
+	<else />
+	<table width="700" border="0" align="center" cellpadding="10" cellspacing="0" style="font-size: 12px;padding-top: 20px;"><tr>没有填写 work experience </tr></table>
+	</if>
+	<table width="700" border="0" align="center" cellpadding="10" cellspacing="0">
+		<tr>
+			<td class="table_tit"> training experience </td>
+		</tr>
+	</table>
+	<if condition="$val['training_list']">
+	<volist name="val['training_list']" id="tli">
+	<table width="700" border="0" align="center" cellpadding="10" cellspacing="0" style="font-size: 12px;padding-top: 20px;">
+		<tr>
+			<td class="w100 td_left td_bgc">{$tli['startyear']} year {$tli['startmonth']} month <eq name="tli['todate']" value="1"> to date <else />-{$tli['endyear']} year {$tli['endmonth']} month </eq></td>
+			<td class="td_left td_bgc">{$tli['agency']}</td>
+		</tr>
+		<tr>
+			<td width="100">&nbsp;</td>
+			<td >
+				 Training Courses ：{$tli['course']}
+			</td>
+		</tr>
+		<tr>
+			<td width="100">&nbsp;</td>
+			<td >
+				<span class="fl w100"> Training Introduction ：</span>
+				<span class="fl">{$tli['description']}</span>
+			</td>
+		</tr>
+	</table>
+	</volist>
+	<else />
+	<table width="700" border="0" align="center" cellpadding="10" cellspacing="0" style="font-size: 12px;padding-top: 20px;"><tr>没有填写 training experience </tr></table>
+	</if>
+	<table width="700" border="0" align="center" cellpadding="10" cellspacing="0">
+		<tr>
+			<td class="table_tit"> Educational experience </td>
+		</tr>
+	</table>
+	<if condition="$val['education_list']">
+	<volist name="val['education_list']" id="eli">
+	<table width="700" border="0" align="center" cellpadding="10" cellspacing="0" style="font-size: 12px;padding-top: 20px;">
+		<tr>
+			<td style="font-weight: bold;">{$eli['school']}</td>
+			<td>{$eli['startyear']} year {$eli['startmonth']} month <eq name="eli['todate']" value="1"> to date <else />-{$eli['endyear']} year {$eli['endmonth']} month </eq></td>
+			<td>{$eli['speciality']}</td>
+			<td>{$eli['education_cn']}</td>
+		</tr>
+	</table>
+	</volist>
+	<else />
+	<table width="700" border="0" align="center" cellpadding="10" cellspacing="0" style="font-size: 12px;padding-top: 20px;"><tr>没有填写 Educational experience </tr></table>
+	</if>
+	<table width="700" border="0" align="center" cellpadding="10" cellspacing="0">
+		<tr>
+			<td class="table_tit"> Self-description </td>
+		</tr>
+	</table>
+	<table width="700" border="0" align="center" cellpadding="10" cellspacing="0" style="font-size: 12px;padding-top: 20px;">
+		<tr>
+			<td>{$val['specialty']|nl2br}</td>
+		</tr>
+	</table><br />
+</volist>
+<div align="center"><br />
+		<a title="{:C('qscms_site_name')}" href="{:C('qscms_site_domain')}{:C('qscms_site_dir')}">{:C("qscms_site_name")}</a>
+</div>
+</body>
+</html>

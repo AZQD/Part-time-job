@@ -1,0 +1,17 @@
+<empty name="list">
+	<div class="empty font_gray9"> The certificate is the stepping stone that you ride in the workplace 。  What are your certificates? ？</div>
+<else/>
+	<volist name="list" id="list">
+		<div class="course J_listhover_edit" data-id="{$list.id}">
+			<div class="td1">{$list.year}-{$list.month}</div>
+			<div class="td2"></div>
+			<div class="td3">
+				<div class="ltxt font_blue">{$list.name}</div>
+				<div class="editbox link_yellow"><a class="J_editcre" href="javascript:;"> modify </a>&nbsp;&nbsp;&nbsp;<a class="J_delcre" href="javascript:;"> delete </a></div>
+				<div class="clear"></div>
+				<div class="txt"> </div>
+			</div>			 
+			<div class="clear"></div>
+		</div>
+	</volist>
+</empty>

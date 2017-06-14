@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<include file="public:meta" />
+	<link href="../public/css/members/common.css" rel="stylesheet" type="text/css" />
+	<script src="../public/js/members/jquery.common.js" type="text/javascript" language="javascript"></script>
+</head>
+<body>
+	<include file="header" />
+	<div class="confirm_email_group no_pdtop">
+		<div class="step s1"></div>
+		<div class="steptxt">
+		  	<div class="tli font_blue">1. Verify account information </div>
+			<div class="tli">2. Set the new password </div>
+			<div class="tli">3. Retrieve success </div>
+		    <div class="clear"></div>
+		</div>
+		<div class="confirm_title"> Password reset message has been sent to the mailbox ：<span class="confirm_email">{$email}</span></div>
+		<div class="confirm_time"> please at 24 Mail in the mailbox to open the reset link to reset the password </div>
+		<div class="confirm_btn"><input name="" type="button" value=" Login mailbox view " class="btn_reg J_hoverbut" onclick="window.location='http://mail.{:ltrim(strstr($email,'@'),'@')}'" /></div>
+	</div>
+	<!--下方阴影 -->
+	<div class="find_pwd_bg_confirm">
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="clear"></div>
+	</div>
+	<include file="public:footer_min" />
+</body>
+</html>

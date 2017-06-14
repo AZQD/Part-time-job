@@ -1,0 +1,109 @@
+<div class="modify_user_dialog">
+	<div class="tip">
+		 SMS arrival needs 1~2 minute ， If you do not receive a long time please click to re-send ！
+	</div>
+	<div id="J_mobileWrap" class="content">
+		<div class="err J_errbox"></div>
+		<div class="td1"><span class="asterisk"></span>&nbsp; cellphone number ：</div>
+		<div class="td2">
+			<input type="text" data-original="{$visitor.mobile}" value="{$visitor.mobile}" class="input_245_34" name="mobile">
+			<input type="hidden" name="audit" id="audit" value="{$audit}">
+		</div>
+		<div class="clear"></div>
+		<div class="td1"><span class="asterisk"></span>&nbsp; Verification code ：</div>
+		<div class="td2">
+			<div class="code">
+				<input type="text" class="" name="verifycode">
+			</div>
+	        <div class="codebtn"><input type="button" id="J_mobileVerifyCode" class="btn_verficode J_hoverbut" value=" Obtain  Verification code "></div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+<div id="popup-captcha"></div>
+<input type="hidden" id="btnCheck" />
+<script src="http://static.geetest.com/static/tools/gt.js"></script>
+<script type="text/javascript">
+	$.ajax({
+        //  Obtain id，challenge，success（ Whether to enable failback）
+        url: "{:U('/captcha')}?m=Home&c=Captcha&t=" + (new Date()).getTime(), //  Plus random number to prevent caching 
+        type: "get",
+        dataType: "json",
+        success: function (data) {
+            //  use initGeetest interface 
+            //  parameter 1：配置 parameter 
+            //  parameter 2： Callback ， Callback 的第一个 parameter  Verification code 对象，之后可以 use 它做appendTo Such as the event 
+            initGeetest({
+                gt: data.gt,
+                challenge: data.challenge,
+                product: "popup", //  Product form ， include ：float，embed，popup。 Note only right PC版 Verification code 有效
+                offline: !data.success //  Indicates whether the user is in the background to check whether the server is down ， Generally do not need attention 
+            }, handlerAuthMob);
+        }
+    });
+    var handlerAuthMob = function(captchaObj) {
+        captchaObj.appendTo("#popup-captcha");
+        captchaObj.bindOn("#btnCheck");
+        captchaObj.onSuccess(function() {
+            $.post("{:U('Members/send_mobile_code')}",{mobile:$.trim($('#J_mobileWrap input[name="mobile"]').val())},function(result){
+				if(result.status == 1){
+					disapperTooltip('success',result.msg);
+					timer=setInterval(ountdown,1000);
+				}else{
+					$('#J_mobileWrap .J_errbox').text(result.msg).show();
+				}
+			},'json');
+        });
+        captchaObj.onFail(function() {
+            
+        });
+        captchaObj.onError(function() {
+            
+        });
+        captchaObj.getValidate()
+    };
+
+	var timer,ountdownVal = 180,
+	ountdown = function(){
+		ountdownVal--;
+		if(ountdownVal<=0){
+			clearInterval(timer);
+			$('#J_mobileVerifyCode').val(' Obtain  Verification code ').removeClass('disabled').prop('disabled', 0);
+		}else{
+			$('#J_mobileVerifyCode').val(' Resend '+ ountdownVal +' second ').addClass('disabled').prop('disabled', !0);
+		}
+	};
+	var regularMobileAuth = /^13[0-9]{9}$|14[0-9]{9}$|15[0-9]{9}$|18[0-9]{9}$|17[0-9]{9}$/; //  Verify the phone number is regular 
+	$('#J_mobileVerifyCode').click(function(){
+		var mobile = $.trim($('#J_mobileWrap input[name="mobile"]').val());
+		var audit = $.trim($('input[name="audit"]').val());
+		if(mobile == ''){
+			$('#J_mobileWrap .J_errbox').text(' Phone number can not be empty ！').show();
+			return false;
+		}
+		if (mobile != "" && !regularMobileAuth.test(mobile)) {
+			$('#J_mobileWrap .J_errbox').text(' cellphone number 格式不正确！').show();
+			return false;
+		}
+		if (eval(audit)) {
+			if (mobile == $('#J_mobileWrap input[name="mobile"]').data('original')) {
+				$('#J_mobileWrap .J_errbox').text(' your phone number  ' + mobile + '  Has been certified ！').show();
+				return false;
+			}
+		}
+		$('#J_mobileWrap .J_errbox').text('').hide();
+		<if condition="C('qscms_captcha_open') eq 1 && C('qscms_captcha_config.varify_mobile') eq 1">
+            $("#btnCheck").click();
+        <else/>
+            $.post("{:U('Members/send_mobile_code')}",{mobile:mobile},function(result){
+				if(result.status == 1){
+					disapperTooltip('success',result.msg);
+					timer=setInterval(ountdown,1000);
+				}else{
+					$('#J_mobileWrap .J_errbox').text(result.msg).show();
+				}
+			},'json');
+        </if>
+	});
+</script>

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<include file="public:meta" />
+		<link href="__HOMEPUBLIC__/css/company/common.css" rel="stylesheet" type="text/css" />
+		<link href="__HOMEPUBLIC__/css/company/company_service.css" rel="stylesheet" type="text/css" />
+		
+	</head>
+	<body>
+		<include file="Company:index_header" />
+		<div class="user_main">
+			<div class="mleft">
+				<include file="Company:left_service" /> 
+			</div>
+			<div class="mright">
+				<div class="user_pagetitle">
+					<div class="pat_l"> My Order </div>
+					<div class="clear"></div>
+				</div>
+				<div class="user_tab order_tab">
+					<a href="{:U('order_list')}" class="tabli"> My order order </a>
+					<a href="{:U('order_list',array('type'=>'increment'))}" class="tabli"> Value - added service orders </a>
+					<if condition="C('qscms_enable_com_buy_points') eq 1">
+					<a href="{:U('order_list',array('type'=>'points'))}" class="tabli">{:C('qscms_points_byname')} Order </a>
+					</if>
+					<a href="{:U('order_list_goods')}" class="tabli select">商城 Order </a>
+					<div class="clear"></div>
+				</div>
+				<div class="user_tip">
+					<div class="tiptit"> hint </div>
+					<div class="tiptxt link_blue">
+					 Order 自创建日期起， exceed 15 Day did not finish payment ，系统将会自动将 Order 取消
+					</div>
+				</div>
+				<div class="order_th">
+				    <div class="th1"> Order 内容</div>
+				    <div class="th2"> The number of redemption </div>
+				    <div class="th3">
+						<div class="select_input input_140_30_div J_hoverinput J_dropdown J_listitme_parent">
+							<span class="J_listitme_text"><if condition="$Think.get.status eq '2'"> completed <elseif condition="$Think.get.status eq '1'"/> Pending review <elseif condition="$Think.get.status eq '3'"/> The audit did not pass <else /> Order 状态</if></span>
+							<div class="dropdowbox10 J_dropdown_menu">
+					            <div class="dropdow_inner10">
+					                <ul class="nav_box">
+					                	<li><a class="J_listitme" href="{:P(array('status'=>'0'))}" >全部 Order </a></li>
+					                	<li><a class="J_listitme" href="{:P(array('status'=>'1'))}" > Pending review </a></li>
+					                	<li><a class="J_listitme" href="{:P(array('status'=>'2'))}" > completed </a></li>
+					                	<li><a class="J_listitme" href="{:P(array('status'=>'3'))}" > The audit did not pass </a></li>
+					                </ul>
+					            </div>
+					        </div>
+						</div>
+				    </div>
+				    <div class="th5"> Amount of money </div>
+				    <div class="clear"></div>
+				</div>
+				<notempty name="order['list']">
+				<volist name="order['list']" id="vo">
+				<div class="order_td">
+				    <div class="td1 link_blue ">
+				    	<a target="_blank" href="{:url_rewrite('QS_goods_show',array('id'=>$vo['goods_id']))}">{$vo['goods_title']}</a>
+				    	<div> order time ：{:date('Y-m-d H:i',$vo['addtime'])}</div>
+				    </div>
+				    <div class="td2">{$vo['goods_num']}</div>
+				    <div class="td3 goods"><if condition="$vo['status'] eq 1"> Pending review <elseif condition="$vo['status'] eq 2" /> completed <elseif condition="$vo['status'] eq 3" /> Did not pass </if></div>
+				    <div class="td5">{$vo['order_points']}</div>
+				    <div class="clear"></div>
+				</div>
+				</volist>
+				<div class="qspage">{$order.page}</div>
+				<else />
+				<div class="res_empty">
+					您暂时还没有 Order 记录
+				</div>
+				</notempty>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<include file="Company:index_footer" />
+	</body>
+</html>

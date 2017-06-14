@@ -1,0 +1,12 @@
+[ 2017-06-14T09:55:01+08:00 ] ::1 /qishi/index.php?m=Home&c=wap&a=lists
+INFO: Cron:ClearPromotion Runat 2017-06-14 09:55:01 Use 0.143009 s 
+Cron:AutoApplyJobs Runat 2017-06-14 09:55:01 Use 0.000000 s 
+Cron:AutoRefreshResume Runat 2017-06-14 09:55:01 Use -0.046002 s 
+Cron:AutoRefreshJobs Runat 2017-06-14 09:55:01 Use -0.069004 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-14 09:55:01 Use -0.070004 s 
+Cron:ClearOrder Runat 2017-06-14 09:55:01 Use -0.096005 s 
+
+[ 2017-06-14T10:04:26+08:00 ] ::1 /qishi/index.php?m=Home&c=wap&a=lists
+INFO: Cron:ClearPromotion Runat 2017-06-14 10:04:26 Use 0.118007 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-14 10:04:26 Use -0.001000 s 
+

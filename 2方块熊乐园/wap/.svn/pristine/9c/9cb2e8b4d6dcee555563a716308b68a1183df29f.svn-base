@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<include file="public:meta" />
+	<link href="../public/css/members/common.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<include file="header" />
+	<div class="reg_select">
+		<div class="tit"> Please select the registration type </div>
+		<div class="sbox">
+			<div class="slisit1 J_hoverbut" onclick="window.location='{:U('members/register',array('utype'=>1,'incode'=>$_GET['incode']))}'">
+				<div class="stitle"> Registered </div>
+				<div class="stxt">
+					 √&nbsp; Post a job offer <br />
+					√&nbsp; Receive resume delivery <br />
+					√&nbsp; Multiple job sharing 
+				</div>
+			</div>
+			<div class="slisitc">&nbsp;</div>
+			<div class="slisit2 J_hoverbut" onclick="window.location='{:U('members/register',array('utype'=>2,'incode'=>$_GET['incode']))}'">
+				<div class="stitle"> Personal registration </div>
+				<div class="stxt">
+					√&nbsp; Free resume <br />
+					√&nbsp; Positions Amoy Amoy <br />
+					√&nbsp; Resume easily cast <br />
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</div>
+	
+	<div class="reg_select_bg">
+		<div class="bl"></div>
+		<div class="br"></div>
+		<div class="clear"></div>
+	</div>
+<include file="public:footer_min" />
+<script src="../public/js/members/jquery.common.js" type="text/javascript" language="javascript"></script>
+</body>
+</html>

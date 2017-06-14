@@ -1,0 +1,2 @@
+[ 2017-06-09T15:09:08+08:00 ] ::1 /qishi/
+SQL: SHOW COLUMNS FROM `qs_promotion` [RunTime:0.414s] [IP:0.0.0.0] [AddTime:1496992148] [qscms]

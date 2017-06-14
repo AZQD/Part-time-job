@@ -1,0 +1,532 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<include file="public:meta" />
+		<link href="../public/css/company/common.css" rel="stylesheet" type="text/css" />
+		<link href="../public/css/company/company_jobs.css" rel="stylesheet" type="text/css" />
+		<link href="../public/css/company/company_ajax_dialog.css" rel="stylesheet" type="text/css" />
+		<script src="../public/js/company/jquery.common.js" type="text/javascript" language="javascript"></script>
+		<qscms:load type="category"/>
+	</head>
+	<body>
+		<include file="index_header" />
+		<div class="user_main">
+			<div class="mleft">
+				<include file="left_jobs" /> 
+			</div>
+			<div class="mright">
+				<div class="user_pagetitle">
+					<div class="pat_l"><if condition="$jobs['id']"> Modify the position <else /> Post position </if></div>
+					<div class="pat_r">( Note ： band &nbsp;<span class="asterisk"></span>  Is required )</div>
+					<div class="clear"></div>
+				</div>
+				<div class="user_tip w680">
+					<div class="tiptit"> hint </div>
+					<div class="tiptxt link_blue">
+					 Dear HR， Your account can be published at the same time  {$setmeal.jobs_meanwhile}  Position ， Is now available  {$total}  Position 。
+					</div>
+				</div>
+				<div class="modTitle"> Job information </div>
+				<form id="jobs_form" action="{:U('company/jobs')}" method="post">
+					<div class="mod J_focus">
+						<div class="mb16">
+							<div class="modKey"><span></span> Job Title ：</div>
+							<div class="modVal">
+								<div class="fl">
+									<input name="jobs_name" id="jobs_name" type="text" class="input_245_34 fl" value="{$jobs.jobs_name}">
+								</div>
+								<div class="radio_list fl J_radioitme_parent">
+									<volist name="category['QS_jobs_nature']" id="nature">
+										<div class="rli <if condition="$jobs['nature'] eq $key or ($jobs['nature'] eq 0 and $i eq 1)">checked</if> J_radioitme" data-code="{$key}">{$nature}</div>
+									</volist>
+									<input class="J_radioitme_code" name="nature" id="nature" type="hidden" value="{$jobs.nature|default=key($category['QS_jobs_nature'])}"/>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="mb16">
+							<div class="modKey"><span></span> Job Categories ：</div>
+							<div class="modVal">
+								<div class="select_input_multi select_205_34 fl J_hoverinput" id="J_showmodal_jobs" data-title=" please choose  Job Categories " data-multiple="false" data-addjob="true" data-maxnum="0" <if condition="C('qscms_category_jobs_level') gt 2">data-width="667"<else/>data-width="520"</if> data-category="{:C('qscms_category_jobs_level')}">
+									<span title="" class="result J_resuletitle_jobs">{$jobs['category_cn']|default=' please choose '}</span>
+									<input class="J_resultcode_jobs" name="jobcategory" id="jobcategory" type="hidden" value="<if condition="$jobs['topclass']">{$jobs.topclass}.{$jobs.category}.{$jobs.subclass}<else /></if>">
+									<div class="clear"></div>
+								</div>
+								<div class="fl">
+									<div class="modKey"><span></span> Working area ：</div>
+									<div class="modVal">
+										<div class="select_input_multi select_205_34 J_hoverinput" id="J_showmodal_city" data-title=" please choose  Working area " data-multiple="false" data-addjob="true" data-maxnum="0" <if condition="C('qscms_category_district_level') gt 2">data-width="667"<else/>data-width="520"</if> data-category="{:C('qscms_category_district_level')}">
+                      <span title="" class="result J_resuletitle_city">{$jobs['district_cn']|default=' please choose '}</span>
+                      <input class="J_resultcode_city" name="districtcategory" id="districtcategory" type="hidden" value="<if condition="$jobs['district']">{$jobs.district}.{$jobs.sdistrict}.{$jobs.tdistrict}<else /></if>">
+                      <div class="clear"></div>
+                    </div>
+									</div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="mb16">
+							<div class="modKey"><span></span> Salary ：</div>
+							<div class="modVal">
+								<div class="input_unit nopl w110 fl">
+									<input name="minwage" id="minwage" data-title="{$jobs.minwage}" value="{$jobs.minwage}" class="input_val pdl w110" type="text" placeholder=" Minimum salary " onkeyup="if(event.keyCode !=37 &amp;&amp; event.keyCode != 39) value=value.replace(/\D/g,'');" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/\D/g,''))">
+									<div class="unit"> yuan / month </div>
+								</div>
+								<div class="fl partition">-</div>
+								<div class="input_unit nopl w110 fl">
+									<input name="maxwage" id="maxwage" data-title="{$jobs.maxwage}" value="{$jobs.maxwage}" class="input_val pdl w110" type="text" placeholder=" Maximum salary " onkeyup="if(event.keyCode !=37 &amp;&amp; event.keyCode != 39) value=value.replace(/\D/g,'');" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/\D/g,''))">
+									<div class="unit"> yuan / month </div>
+								</div>
+								<label class="checkBox ml20 fl" for="J_negotiable"><input id="J_negotiable" class="J_switch" name="negotiable" id="negotiable" value="1" type="checkbox" <if condition="$jobs['negotiable']">checked="checked"</if>> Negotiable </label>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="mb16">
+							<div class="modKey"> Conditional restrictions ：</div>
+							<div class="modVal">
+								<div class="select_input w113 fl mr10 J_hoverinput J_dropdown J_listitme_parent">
+									<span class="J_listitme_text"><if condition="$jobs['education_cn'] eq ' Not limited to '">学历 Not limited to <else />{$jobs.education_cn|default='学历 Not limited to '}</if></span>
+									<div class="dropdowbox13 J_dropdown_menu">
+							            <div class="dropdow_inner13">
+							                <ul class="nav_box">
+							                	<li><a class="J_listitme" href="javascript:;" data-code="0"> Not limited to </a></li>
+							                	<volist name="category['QS_education']" id="education">
+							                		<li><a class="J_listitme" href="javascript:;" data-code="{$key}">{$education}</a></li>
+												</volist>
+							                </ul>
+							            </div>
+							        </div>
+									<input class="J_listitme_code" name="education" id="education" type="hidden" value="{$jobs.education|default='0'}" />
+								</div>
+								<div class="select_input w113 fl mr10 J_hoverinput J_dropdown J_listitme_parent">
+									<span class="J_listitme_text"><if condition="$jobs['experience_cn'] eq ' Not limited to '">经验 Not limited to <else />{$jobs.experience_cn|default='经验 Not limited to '}</if></span>
+									<div class="dropdowbox13 J_dropdown_menu">
+							            <div class="dropdow_inner13">
+							                <ul class="nav_box">
+							                	<li><a class="J_listitme" href="javascript:;" data-code="0"> Not limited to </a></li>
+							                	<volist name="category['QS_experience']" id="experience">
+							                		<li><a class="J_listitme" href="javascript:;" data-code="{$key}">{$experience}</a></li>
+												</volist>
+							                </ul>
+							            </div>
+							        </div>
+									<input class="J_listitme_code" name="experience" id="experience" type="hidden" value="{$jobs.experience|default='0'}" />
+								</div>
+								<div class="select_input w113 fl mr10 J_hoverinput J_dropdown J_listitme_parent">
+									<span class="J_listitme_text"><if condition="$jobs['sex_cn'] eq ' Not limited to '">性别 Not limited to <else />{$jobs.sex_cn|default='性别 Not limited to '}</if></span>
+									<div class="dropdowbox13 J_dropdown_menu">
+							            <div class="dropdow_inner13">
+							                <ul class="nav_box">
+							                	<li><a class="J_listitme" href="javascript:;" data-code="0"> Not limited to </a></li>
+							                	<li><a class="J_listitme" href="javascript:;" data-code="1"> male </a></li>
+							                	<li><a class="J_listitme" href="javascript:;" data-code="2"> Female </a></li>
+							                </ul>
+							            </div>
+							        </div>
+									<input class="J_listitme_code" name="sex" id="sex" type="hidden" value="{$jobs.sex|default='0'}" />
+								</div>
+								<input name="amount" id="amount" type="text" class="input_110_34 w113 fl" value="<if condition="$jobs['amount'] eq 0"><else />{$jobs.amount}</if>" onkeyup="if(event.keyCode !=37 &amp;&amp; event.keyCode != 39) value=value.replace(/\D/g,'');" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/\D/g,''))" placeholder=" Number of recruits ">
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="mb16">
+							<div class="modKey"> age requirement ：</div>
+							<div class="modVal">
+								<div class="w205 fl">
+									<div class="input_unit nopl unit_30 fl">
+										<input name="minage" id="minage" class="input_val pdl w35" type="text" value="<if condition="$jobs['age'][0] gt 0">{$jobs['age'][0]}</if>" onkeyup="if(event.keyCode !=37 &amp;&amp; event.keyCode != 39) value=value.replace(/\D/g,'');" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/\D/g,''))">
+										<div class="unit"> year old </div>
+									</div>
+									<div class="fl partition">-</div>
+									<div class="input_unit nopl unit_30 fl">
+										<input name="maxage" id="maxage" class="input_val pdl w35" type="text" value="<if condition="$jobs['age'][1] gt 0">{$jobs['age'][1]}</if>" onkeyup="if(event.keyCode !=37 &amp;&amp; event.keyCode != 39) value=value.replace(/\D/g,'');" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/\D/g,''))">
+										<div class="unit"> year old </div>
+									</div>
+								</div>
+								<div class="modKey"> Affiliated department ：</div>
+								<div class="modVal">
+									<input name="department" id="department" type="text" class="input_205_34" value="{$jobs.department}" maxlength="4">
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="mb16">
+							<div class="modKey"> Position highlights ：</div>
+							<div class="modVal">
+								<div class="select_input_multi w518 J_hoverinput" id="J_showmodal_jobtag" data-title=" please choose  Position highlights " data-multiple="true" data-maxnum="6" data-width="582">
+									<span title="" class="result J_resuletitle_jobtag"><if condition="$jobs['tag_cn'] eq '' && $tagStr['cn'] neq ''">{$tagStr['cn']}<else />{$jobs.tag_cn|default=' please choose '}</if></span>
+									<input class="J_resultcode_jobtag" name="tag" type="hidden" id="tag" value="<if condition="$jobs['tag'] eq '' && $tagStr['id'] neq ''">{$tagStr['id']}<else />{$jobs.tag|default=' please choose '}</if>">
+									<div class="clear"></div>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="mb16">
+							<div class="modKey"><span></span> description of job ：</div>
+							<div class="modVal">
+                                <div class="des-temp" id="des-cell-box">
+                                    <div class="des-ques">
+                                        <div class="des_box">
+                                            <div class="desarrow"></div>
+                                            <div class="des_txt"> Click the job link ， Automatically get job details template information ， Free to edit to perfect 。</div>
+                                        </div>
+                                    </div>
+                                    <div class="des-txt"><strong> Select the template ：</strong></div>
+                                    <div class="des-a" id="des-item-group"></div>
+                                    <div class="clear"></div>
+                                </div>
+								<textarea name="contents" id="contents" cols="" rows="" class="textarea_638_80 w518">{$jobs.contents}</textarea>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="modTitle contact"> Contact information </div>
+					<div class="mod J_focus">
+						<div class="J_contact contact">
+							<div class="mb16">
+								<div class="modKey"><span></span> Contact person ：</div>
+								<div class="modVal">
+									<input name="contact" id="contact" type="text" class="input_245_34 fl" value="{$company_profile.contact}">
+									<label class="checkBox ml20 fl"><input name="contact_show" id="contact_show" class="J_dontopen" type="checkbox" <if condition="$company_profile['contact_show'] eq 0">checked="checked" value="0"<else/>value="1"</if>> private </label>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="mb16">
+								<div class="modKey"><span></span> contact number ：</div>
+								<div class="modVal">
+									<input name="telephone" id="telephone" type="text" class="input_245_34 fl" value="{$company_profile.telephone}" placeholder=" Please enter contact phone "  onkeyup="if(event.keyCode !=37 &amp;&amp; event.keyCode != 39) value=value.replace(/\D/g,'');" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/\D/g,''))">
+									<label class="checkBox ml20 fl"><input name="telephone_show" id="telephone_show" class="J_dontopen" type="checkbox" <if condition="$company_profile['telephone_show'] eq 0">checked="checked" value="0"<else/>value="1"</if>> private </label>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="mb16">
+								<div class="modKey">&nbsp;</div>
+								<div class="modVal">
+									<input type="text" value="{$telarray[0]}" class="input_110_34 w60 mr4 fl" name="tel_first" id="tel_first" placeholder=" Area code " onkeyup="if(event.keyCode !=37 &amp;&amp; event.keyCode != 39) value=value.replace(/\D/g,'');" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/\D/g,''))">
+									<input type="text" value="{$telarray[1]}" class="input_110_34 w89 mr4 fl" name="tel_next" id="tel_next" placeholder=" Fixed telephone " onkeyup="if(event.keyCode !=37 &amp;&amp; event.keyCode != 39) value=value.replace(/\D/g,'');" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/\D/g,''))">
+									<input type="text" value="{$telarray[2]}" class="input_110_34 w52 fl" name="tel_last" id="tel_last" placeholder=" Ext " onkeyup="if(event.keyCode !=37 &amp;&amp; event.keyCode != 39) value=value.replace(/\D/g,'');" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/\D/g,''))">
+									<label class="checkBox ml20 fl"><input name="landline_tel_show" id="landline_tel_show" class="J_dontopen" type="checkbox" <if condition="$company_profile['landline_tel_show'] eq 0">checked="checked" value="0"<else/>value="1"</if>> private </label>
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="mb16">
+								<div class="modKey"> Contact the mailbox ：</div>
+								<div class="modVal reg-form-content">
+									<input name="email" id="email" type="text" class="input_245_34 fl inputElem" value="{$company_profile.email}">
+									
+								</div>
+								<div class="clear"></div>
+							</div>
+							<div class="mb16">
+								<div class="modKey"><span></span> contact address ：</div>
+								<div class="modVal">
+									<input name="address" id="address" type="text" class="input_245_34 w518" value="{$company_profile.address}">
+								</div>
+								<div class="clear"></div>
+							</div>
+						</div>
+						<div class="mb16">
+							<div class="modKey">&nbsp;</div>
+							<div class="modVal">
+								<label class="checkBox fl"><input name="basis_contact" id="basis_contact" class="J_basic" type="checkbox" checked="checked">使用企业基本资料的 Contact information </label>
+								<a href="javascript:;" class="J_other other fl">使用其它 Contact information </a>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="modTitle advanced"> advanced settings </div>
+					<div class="mod">
+						<div>
+							<div class="modKey">&nbsp;</div>
+							<div class="modVal">
+								<label class="checkBox fl"><input name="is_entrust" id="is_entrust" class="J_switch" type="checkbox" value="1" <if condition="$jobs['is_entrust']">checked="checked"</if>> Receive a resume of delegated delivery </label>&nbsp;&nbsp;&nbsp;
+								<label class="checkBox ml20 fl"><input name="notify" id="notify" value="1" class="J_dontopen" type="checkbox" <if condition="$company_profile['notify'] eq 1">checked="checked"</if>> Mail received delivery resume </label>
+							</div>
+							<div class="clear"></div>
+						</div>
+						<div class="mb30">
+						<if condition="C('qscms_sms_open') eq 1">
+							<eq name="Think.config.qscms_company_sms" value="1">
+								<div class="modKey">&nbsp;</div>
+								<div class="modVal">
+									<label class="checkBox fl">
+										<input name="notify_mobile" id="notify_mobile" class="J_switch" type="checkbox" <if condition="($jobs['id'] && $company_profile['notify_mobile'] && $visitor['sms_num'] gt 0) || (!$jobs['id'] && $visitor['sms_num'] gt 0)">value="1" checked="checked"</if> <if condition="$visitor['sms_num'] eq 0">disabled</if>> Contact the mobile phone to receive delivery resume notice 
+									</label>
+									<div href="javascript:;" class="buySms fl">
+										（ The number of available SMS messages is  <i class="smsMun">{$visitor.sms_num}</i>  Article 
+										<eq name="visitor['sms_num']" value="0">
+											，<a target="_blank" href="{:U('CompanyService/increment_add',array('cat'=>'sms'))}" class="buy"> Buy now </a>
+										</eq>）
+									</div>
+								</div>
+								<div class="clear"></div>
+							<else/>
+								<div class="modKey">&nbsp;</div>
+								<div class="modVal">
+									<label class="checkBox fl"><input name="notify_mobile" id="notify_mobile" class="J_switch" type="checkbox" <if condition="($jobs['id'] && $company_profile['notify_mobile']) || !$jobs['id']">value="1" checked="checked"</if>> Contact the mobile phone to receive delivery resume notice </label>
+								</div>
+								<div class="clear"></div>
+							</eq>
+						</if>
+						</div>
+						<div class="mb16">
+							<div class="modKey">&nbsp;</div>
+							<div class="modVal">
+							<input type="button" id="J_release" class="btn_blue J_hoverbut btn_80_38 w140" data-title="<if condition="$jobs['id']"> Save position <else /> Post position </if>" value="<if condition="$jobs['id']"> Save position <else /> Post position </if>">
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<input name="id" type="hidden" id="id" value="{$jobs.id}">
+				</form>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<include file="index_footer" />
+		<script type="text/javascript" src="../public/js/jquery.modal.userselectlayer.js"></script>
+		<script type="text/javascript" src="../public/js/emailAutoComplete.js"></script>
+	</body>
+	<script type="text/javascript">
+		$('.J_other').click(function(){
+			$(this).hide();
+			$('.J_contact').show();
+			$('.J_basic').attr('checked',false);
+		});
+		$('.J_basic').click(function(){
+			if(!$(this).is(":checked")){
+				$('.J_other').hide();
+				$('.J_contact').show();
+				$('.J_basic').attr('checked',false);
+			}else{
+				$('.J_other').show();
+				$('.J_contact').hide();
+				$('.J_basic').attr('checked',true);
+			}
+		});
+		<if condition="ACTION_NAME eq 'edit_jobs'">
+			$('.J_other').click();
+		</if>
+
+		//  Single value switch 
+		$('.J_switch').click(function(event) {
+			if ($(this).is(':checked')) {
+				$(this).val('1');
+			} else {
+				$(this).val('0');
+			}
+		});
+
+		if ($('#J_negotiable').is(':checked')) {
+			$('#J_negotiable').closest('.modVal').find('.input_val').val('').prop('disabled', !0);
+		} 
+		//  Negotiable 选中后，最低和 Maximum salary 不能编辑
+		$('#J_negotiable').die().live('click', function(event) {
+			if ($(this).is(':checked')) {
+				$(this).closest('.modVal').find('.input_val').val('').prop('disabled', !0);
+			} else {
+				$(this).closest('.modVal').find('.input_val').each(function(index, el) {
+					$(this).val($(this).data('title')).prop('disabled', 0);
+				});
+			}
+		});
+
+		//  Post position 验证表单并提交
+		var regularMobile = /^13[0-9]{9}$|14[0-9]{9}$|15[0-9]{9}$|18[0-9]{9}$|17[0-9]{9}$/; //  Verify the phone number 
+		var regularEmail = /^[_\.0-9a-zA-Z-]+[_0-9a-zA-Z-]@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,3}$/; //  Verify the mailbox 
+		var regularTelFirst = /^[0-9]{3}[0-9]?$/; // 验证 Area code 
+		var regularTelNext = /^[0-9]{6,11}$/; //  Verify the phone number 
+		var regularTelLast = /^-?(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d+)?$/; // 验证 Ext 码
+		$('#J_release').click(function(){
+			var id = $.trim($('#id').val());
+			var jobsnameValue = $.trim($('#jobs_name').val());
+			var natureValue = $.trim($('#nature').val());
+			var jobcategoryValue = $.trim($('#jobcategory').val());
+			var districtcategoryValue = $.trim($('#districtcategory').val());
+			var minwageValue = $.trim($('#minwage').val());
+			var maxwageValue = $.trim($('#maxwage').val());
+			var educationValue = $.trim($('#education').val());
+			var experienceValue = $.trim($('#experience').val());
+			var sexValue = $.trim($('#sex').val());
+			var amountValue = $.trim($('#amount').val());
+			var minageValue = $.trim($('#minage').val());
+			var maxageValue = $.trim($('#maxage').val());
+			var departmentValue = $.trim($('#department').val());
+			var tagValue = $.trim($('#tag').val());
+			var contentsValue = $.trim($('#contents').val());
+			var contactValue = $.trim($('#contact').val());
+			var telephoneValue = $.trim($('#telephone').val());
+			var telfirstValue = $.trim($('#tel_first').val());
+			var telnextValue = $.trim($('#tel_next').val());
+			var tellastValue = $.trim($('#tel_last').val());
+			var landlinetelValue = telfirstValue+'-'+telnextValue+'-'+tellastValue;
+			var emailValue = $.trim($('#email').val());
+			var addressValue = $.trim($('#address').val());
+			var negotiableValue = $('#J_negotiable').is(":checked")?1:0;
+			var contactshowValue = $('#contact_show').is(":checked")?0:1;
+			var telephoneshowValue = $('#telephone_show').is(":checked")?0:1;
+			var landlinetelshowValue = $('#landline_tel_show').is(":checked")?0:1;
+			var emailshowValue = $('#email_show').is(":checked")?0:1;
+			var isentrustValue = $('#is_entrust').is(":checked")?1:0;
+			var notifyValue = $('#notify').is(":checked")?1:0;
+			var notifymobileValue = $('#notify_mobile').is(":checked")?1:0;
+			var basis_contact = $('#basis_contact').is(":checked")?1:0;
+			if (jobsnameValue == "") {
+				disapperTooltip("remind", "请填写 Job Title ");
+				return false;
+			}
+			if (natureValue == "") {
+				disapperTooltip("remind", " please choose 职 Bit 性质");
+				return false;
+			}
+			if (jobcategoryValue == "") {
+				disapperTooltip("remind", " please choose  Job Categories ");
+				return false;
+			}
+			if (districtcategoryValue == "") {
+				disapperTooltip("remind", " please choose  Working area ");
+				return false;
+			}
+			if (!$('#J_negotiable').is(':checked')) {
+				if (!minwageValue.length || minwageValue==0) {
+					disapperTooltip("remind", "请填写 Minimum salary ");
+					return false;
+				}
+				if (minwageValue != "" && !regularTelLast.test(minwageValue)) {
+					disapperTooltip("remind", " Salaries should be numbers ");
+					return false;
+				}
+				if (!maxwageValue.length) {
+					disapperTooltip("remind", "请填写 Maximum salary ");
+					return false;
+				}
+				if (maxwageValue != "" && !regularTelLast.test(maxwageValue)) {
+					disapperTooltip("remind", " Salaries should be numbers ");
+					return false;
+				}
+				if (minwageValue != "" && maxwageValue != "" && parseInt(minwageValue) > parseInt(maxwageValue)) {
+					disapperTooltip("remind", " Minimum salary 不能大于 Maximum salary ");
+					return false;
+				}
+				if (parseInt(maxwageValue) > (parseInt(minwageValue) * 2)) {
+					disapperTooltip("remind", " Maximum salary 不能超过 Minimum salary 的2 Times ");
+					return false;
+				}
+			}
+			if (educationValue == "") {
+				disapperTooltip("remind", " please choose 学历");
+				return false;
+			}
+			if (experienceValue == "") {
+				disapperTooltip("remind", " please choose 工作经验");
+				return false;
+			}
+			if (sexValue == "") {
+				disapperTooltip("remind", " please choose 性别");
+				return false;
+			}
+			if (amountValue != "" && !regularTelLast.test(amountValue)) {
+				disapperTooltip("remind", " Number of recruits 应为数字");
+				return false;
+			}
+			if (minageValue != "" && !regularTelLast.test(minageValue)) {
+				disapperTooltip("remind", " Age should be a number ");
+				return false;
+			}
+			if (minageValue != "" && parseInt(minageValue) < 16) {
+				disapperTooltip("remind", " The minimum age can not be less than 16 year old ");
+				return false;
+			}
+			if (minageValue != "" && parseInt(minageValue) > 65) {
+				disapperTooltip("remind", " Age can not be greater than 65 year old ");
+				return false;
+			}
+			if (maxageValue != "" && !regularTelLast.test(maxageValue)) {
+				disapperTooltip("remind", " Age should be a number ");
+				return false;
+			}
+			if (maxageValue != "" && parseInt(maxageValue) < 16) {
+				disapperTooltip("remind", " Age can not be less than 16 year old ");
+				return false;
+			}
+			if (maxageValue != "" && parseInt(maxageValue) > 65) {
+				disapperTooltip("remind", "最大 Age can not be greater than 65 year old ");
+				return false;
+			}
+			if (maxageValue != "" && minageValue != "" && parseInt(minageValue) > parseInt(maxageValue)) {
+				disapperTooltip("remind", "最小 Age can not be greater than 最大年龄");
+				return false;
+			}
+			if (contentsValue == "") {
+				disapperTooltip("remind", "请填写 description of job ");
+				return false;
+			}
+			if(!basis_contact){
+				if (contactValue == "") {
+					disapperTooltip("remind", "请填写 Contact person ");
+					return false;
+				}
+				if (contactValue != "" && contactValue.length > 10) {
+					disapperTooltip("remind", " Contact person 1-10 The word ");
+					return false;
+				}
+				if(telnextValue=="" && telephoneValue=="") {
+					disapperTooltip("remind", " Please fill in contact phone or landline ");
+					return false;
+				} else {
+					if (telephoneValue != "" && !regularMobile.test(telephoneValue)) {
+						disapperTooltip("remind", " Phone number format is incorrect ");
+						return false;
+					}
+					if (telfirstValue != "" && !regularTelFirst.test(telfirstValue)) {
+						disapperTooltip("remind", "请填写正确的 Area code ");
+						return false;
+					}
+					if (telnextValue != "" && !regularTelNext.test(telnextValue)) {
+						disapperTooltip("remind", " Phone number is 6-11 Bit number ");
+						return false;
+					}
+					if (tellastValue != "" && !regularTelLast.test(tellastValue)) {
+						disapperTooltip("remind", " Ext 码为数字");
+						return false;
+					}
+					if (tellastValue != "" && !regularTelLast.test(tellastValue) || tellastValue.length > 4) {
+						disapperTooltip("remind", " Ext 码不能超出4 Bit ");
+						return false;
+					}
+				}
+				if (emailValue != "" && !regularEmail.test(emailValue) || emailValue.split("@")[0].length > 20) {
+					disapperTooltip("remind", " E-mail format is incorrect ");
+					return false;
+				}
+				if (addressValue == "") {
+					disapperTooltip("remind", " contact address 不能为空");
+					return false;
+				}
+				if (addressValue != "" && addressValue.length > 30) {
+					disapperTooltip("remind", " contact address 不能大于30 The word ");
+					return false;
+				}
+			}
+			$('#J_release').val(' saving ...').addClass('btn_disabled').prop('disabled', !0);
+			$.ajax({
+				url: "{:U('company/jobs_add')}",
+				type: 'POST',
+				dataType: 'json',
+				data: {id:id,jobs_name: jobsnameValue, nature: natureValue, jobcategory: jobcategoryValue, districtcategory: districtcategoryValue, minwage: parseInt(minwageValue), maxwage: parseInt(maxwageValue), negotiable: negotiableValue, education: educationValue, experience: experienceValue, sex: sexValue, amount: amountValue, minage: parseInt(minageValue), maxage: parseInt(maxageValue), department: departmentValue, tag: tagValue, contents: contentsValue, contact: contactValue, telephone: telephoneValue, landline_tel: landlinetelValue, email: emailValue, address: addressValue, contact_show: contactshowValue, telephone_show: telephoneshowValue, landline_tel_show: landlinetelshowValue, email_show: emailshowValue, is_entrust: isentrustValue, notify: notifyValue, notify_mobile: notifymobileValue,basis_contact:basis_contact}
+			})
+			.done(function(data) {
+				if (parseInt(data.status)) {
+					disapperTooltip('success',data.msg);
+					location.href = data.data;
+				} else {
+					$('#J_release').val($('#J_release').data('title')).removeClass('btn_disabled').prop('disabled', 0);
+					disapperTooltip("remind", data.msg);
+				}
+			})
+			.fail(function(result) {
+				$('#J_release').val($('#J_release').data('title')).removeClass('btn_disabled').prop('disabled', 0);
+				disapperTooltip("remind", result.msg);
+			});
+		});
+	</script>
+</html>

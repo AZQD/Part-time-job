@@ -1,0 +1,1 @@
+<?php	return array ( 'facebook' => array ( 'alias' => 'facebook', 'name' => 'facebook', 'config' => 'a:2:{s:6:"app_id";s:0:"";s:7:"app_key";s:0:"";}', ), ); ?>

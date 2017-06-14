@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<include file="public:meta" />
+	<link href="../public/css/personal/common.css" rel="stylesheet" type="text/css" />
+	<link href="../public/css/personal/personal_index.css" rel="stylesheet" type="text/css" />
+	<script src="../public/js/personal/jquery.common.js" type="text/javascript" language="javascript"></script>
+</head>
+<body>
+	<include file="index_header" />
+	<qscms:jobs_list 列表名="jobslist" 显示数目="20" 分页显示="1" 职位分类="$_GET['jobcategory']" 描述长度="100"/>
+	<div class="matching_group">
+		<div class="matching_head">
+			 According to your resume information has been automatically matched for you below {$jobslist.total} Posts 
+			<div class="tips_box">
+				 Match job is not satisfied ？&nbsp;&nbsp;<a href="{:url_rewrite('QS_jobslist')}" class="jump_link"> Search for jobs </a>
+			</div>
+		</div>
+		<div class="listb J_allListBox">
+			<notempty name="jobslist['list']">
+			<volist name="jobslist['list']" id="jobs">
+				<div class="J_jobsList yli" data-jid="{$jobs.id}">
+					<div class="td1"><div class="J_allList radiobox"></div></div>
+					<div class="td2 link_blue substring"><a href="{$jobs.jobs_url}">{$jobs.jobs_name}</a></div>
+					<div class="td3 link_gray6 substring"><a href="{$jobs.company_url}">{$jobs.companyname}</a></div>
+					<div class="td4">{$jobs.wage_cn}</div>
+					<div class="td5">{:fdate($jobs['refreshtime'])}</div>
+					<div class="td6"><div class="J_jobsStatus hide <if condition="$Think.cookie.resume_show_type eq 1">show</if>"></div> </div>
+					<div class="clear"></div>
+					<div class="detail" <if condition="$Think.cookie.jobs_show_type eq 1">style="display:none"</if>>
+					  	<div class="ltx">
+							<div class="txt font_gray6"> Education ：{$jobs.education_cn}<span>|</span> experience ：{$jobs.experience_cn}<span>|</span> The nature of the job ：{$jobs.nature_cn}<span>|</span> The number of people ：{$jobs.amount} people <span>|</span> location ：{$jobs.district_cn}</div>
+							<div class="dlabs">
+								<empty name="jobs['tag_cn']">
+									{$jobs.briefly}
+								<else/>
+									<volist name="jobs['tag_cn']" id="tag">
+										<div class="dl">{$tag}</div>
+									</volist>
+								</empty>
+								<div class="clear"></div>
+							</div>
+					  	</div>
+						<div class="rbtn">
+						  		<div class="deliver J_applyForJob" data-batch="false" data-url="{:U('AjaxPersonal/resume_apply')}"> Delivery resume </div>
+								<div class="favorites J_collectForJob" data-batch="false" data-url="{:U('AjaxPersonal/jobs_favorites')}"> Collection </div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</volist>
+			<div class="listbtn">
+				<div class="td1"><div class="radiobox J_allSelected"></div></div>
+				<div class="td2">
+					<div class="lbts J_applyForJob" data-batch="true" data-url="{:U('AjaxPersonal/resume_apply')}"> Apply for a job </div>
+					<div class="lbts J_collectForJob" data-batch="true" data-url="{:U('AjaxPersonal/jobs_favorites')}"> Collection 职位</div>
+					<div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="qspage">{$jobslist.page}</div>
+			<else />
+			<div class="res_empty link_blue">
+                 Did not find a qualified job ， Want to get more job opportunities <br/> Try searching for posts you are interested in now ！
+                <div class="clear"></div>
+                <a class="empty_search_btn" href="{:url_rewrite('QS_jobslist')}" target="_blank"> Search for jobs </a>
+                <div class="clear"></div>
+            </div>
+			</notempty>
+		</div>
+	</div>
+	<include file="index_footer" />
+	<script type="text/javascript" src="../public/js/jquery.jobslist.js"></script>
+</body>
+</html>

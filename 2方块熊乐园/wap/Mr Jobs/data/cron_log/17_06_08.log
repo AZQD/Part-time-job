@@ -1,0 +1,22 @@
+[ 2017-06-08T15:38:39+08:00 ] ::1 /qishi/
+INFO: Cron:ClearPromotion Runat 2017-06-08 15:38:38 Use 4.143237 s 
+Cron:AutoApplyJobs Runat 2017-06-08 15:38:38 Use -0.149009 s 
+Cron:AutoRefreshResume Runat 2017-06-08 15:38:38 Use -0.638037 s 
+Cron:AutoRefreshJobs Runat 2017-06-08 15:38:38 Use -0.805046 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-08 15:38:39 Use -0.826048 s 
+Cron:ClearOrder Runat 2017-06-08 15:38:39 Use -1.133065 s 
+
+[ 2017-06-08T16:31:59+08:00 ] ::1 /qishi/
+INFO: Cron:ClearPromotion Runat 2017-06-08 16:31:59 Use 0.507029 s 
+Cron:AutoRefreshResume Runat 2017-06-08 16:31:59 Use -0.049003 s 
+Cron:AutoRefreshJobs Runat 2017-06-08 16:31:59 Use -0.081005 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-08 16:31:59 Use -0.082005 s 
+
+[ 2017-06-08T17:04:16+08:00 ] ::1 /qishi/index.php?m=Home&c=index&a=test2
+INFO: Cron:ClearPromotion Runat 2017-06-08 17:04:16 Use 0.114007 s 
+Cron:ClearExpiredSetmeal Runat 2017-06-08 17:04:16 Use 0.000000 s 
+
+[ 2017-06-08T17:20:18+08:00 ] ::1 /qishi/index.php?m=Home&c=index&a=test
+INFO: Cron:AutoRefreshResume Runat 2017-06-08 17:20:18 Use 0.039002 s 
+Cron:AutoRefreshJobs Runat 2017-06-08 17:20:18 Use -0.001000 s 
+

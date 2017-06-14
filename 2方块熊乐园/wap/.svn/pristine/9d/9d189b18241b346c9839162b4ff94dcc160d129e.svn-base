@@ -1,0 +1,190 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<include file="public:meta" />
+	<link href="../public/css/personal/common.css" rel="stylesheet" type="text/css" />
+	<link href="../public/css/personal/personal_resume.css" rel="stylesheet" type="text/css" />
+	<link href="../public/css/personal/personal_ajax_dialog.css" rel="stylesheet" type="text/css" />
+	<script src="../public/js/personal/jquery.common.js" type="text/javascript" language="javascript"></script>
+</head>
+<body>
+	<include file="index_header" />
+	<div class="user_main">
+		<include file="index_left_nav" />
+	  <div class="mainbox">
+			<!--职位切换卡 -->
+			<div class="tab">
+				<a class="li J_hoverbut"  href="{:U('resume_list')}"> my resume </a>
+				<a class="li select"> Resume Outgoing </a>
+				<a class="li J_hoverbut" href="{:U('resume_privacy')}"> privacy setting </a>
+			  	<div class="clear"></div>
+			</div>
+		  <!--切换卡结束 -->
+		 <div class="resume_tip">
+		
+		  <div class="tiptit"> hint </div>
+				  <div class="tiptxt link_blue">
+				  1、 Outgoing resume is based on this site resume style ， On your site 、 press 、 Magazines and other media screening of recruitment information ， Uniform job application ！
+							 Your outgoing resume history can be reached “ my resume  > <a href="{:U('personal/outward')}"> Resume Outgoing 记录</a>” To view 。<br />
+				2、 Outgoing resume must be a resume for review 。
+		  </div>
+		 </div>
+ 		<!-- Resume Outgoing  -->
+		<div class="resume_outward J_focus">
+			<form id="resumeOutwardForm" action="{:U('personal/outward_save')}" method="post">
+				<div class="J_validate_group">
+					<div class="td1"> Will send a resume ：</div>
+					<div class="td2">
+						<div class="input_245_34_div r_fl J_hoverinput J_dropdown J_listitme_parent">
+							<notempty name="resume_list">
+							<span class="J_listitme_text"> Please select the resume you want to send </span>
+							<div class="dropdowbox4 J_dropdown_menu">
+								<div class="dropdow_inner4">
+									<ul class="nav_box">
+										<volist name="resume_list" id="vo">
+											<if condition="$vo['_audit'] eq 1">
+												<li><a class="J_listitme" href="javascript:;" data-code="{$vo.id}">{$vo.title}</a></li>
+											</if>
+										</volist>
+									</ul>
+								</div>
+							</div>
+							<else/>
+							<span class="J_listitme_text"> You have no review of your resume </span>
+							</notempty>
+							<input class="J_listitme_code" name="resume_id" id="resume_id" type="hidden" value="" />
+						</div>
+						<div class="r_fl tip_box J_showtip_box"></div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="J_validate_group">
+					<div class="td1"> Enterprise email address ：</div>
+					<div class="td2">
+						<input name="email" id="email" type="text" value="" class="input_245_34 r_fl"  placeholder=" Please enter your e-mail address " />
+						<div class="r_fl tip_box J_showtip_box"></div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="J_validate_group">
+					<div class="td1"> Applicant 's name ：</div>
+					<div class="td2">
+						<input name="companyname" id="companyname" type="text" value="" class="input_245_34 r_fl" placeholder=" Please enter the business name ， limit 20 word "/>
+						<div class="r_fl tip_box J_showtip_box"></div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="J_validate_group">
+					<div class="td1"> Name of job title ：</div>
+					<div class="td2">
+						<input name="jobs_name"  id="jobs_name"type="text" value="" class="input_245_34 r_fl" placeholder=" Please enter the job title ， limit 20 word "/>
+						<div class="r_fl tip_box J_showtip_box"></div>
+						<div class="clear"></div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div class="J_validate_group">
+					<div class="td1"></div>
+					<div class="td2"><input type="button"  class="but_blue_115 J_hoverbut" id="btnOutwarder" value=" send " />	</div>
+					<div class="clear"></div>
+				</div>
+			</form>
+		</div>
+		<!-- -->
+		</div>
+		<div class="clear"></div>
+	</div>
+	<include file="index_footer" />
+<script type="text/javascript" src="../public/js/jquery.listitem.js"></script>
+<script type="text/javascript" src="../public/js/jquery.dropdown.js"></script>
+<script type="text/javascript" src="../public/js/jquery.form.js"></script>
+<script type="text/javascript" src="../public/js/jquery.validate.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var frmOutwardValid = $("#resumeOutwardForm").validate({
+	        rules: {
+	            resume_id: {
+	                required: true
+	            },
+	            email: {
+	                required: true,
+	                email: true
+	            },
+	            companyname: {
+	                required: true
+	            },
+	            jobs_name: {
+	                required: true
+	            }
+	        },
+	        messages: {
+	            resume_id: {
+	                required: '<div class="ftxt"> Please select the resume you want to send </div><div class="fimg"></div>'
+	            },
+	            email: {
+	                required: '<div class="ftxt"> Please enter your e-mail address </div><div class="fimg"></div>',
+	                email: '<div class="ftxt"> E-mail address is malformed </div><div class="fimg"></div>'
+	            },
+	            companyname: {
+	                required: '<div class="ftxt"> Please enter the business name ， limit 20 word </div><div class="fimg"></div>'
+	            },
+	            jobs_name: {
+	                required: '<div class="ftxt"> Please enter the job title ， limit 20 word </div><div class="fimg"></div>'
+	            }
+	        },
+	        errorClasses: {
+	            resume_id: {
+	                required: 'tip err'
+	            },
+	            email: {
+	                required: 'tip err',
+	                email: 'tip err'
+	            },
+	            companyname: {
+	                required: 'tip err'
+	            },
+	            jobs_name: {
+	                required: 'tip err'
+	            }
+	        },
+	        errorElement: 'div',
+	        errorPlacement: function(error, element) {
+	            if (element.attr('name') == 'mobile_vcode') {
+	                element.closest('.J_validate_group').find('.J_showtip_box').append(error);
+	            }  else {
+	                element.closest('.J_validate_group').find('.J_showtip_box').append(error);
+	            }
+	            $('#btnOutwarder').val(' send ');
+	        },
+	        success: function(label) {
+	            label.append('<div class="ok"></div>');
+	        }
+	    });
+	
+		$('#btnOutwarder').click(function() {
+            $(this).submitForm({
+                beforeSubmit: $.proxy(frmOutwardValid.form, frmOutwardValid),
+                success: function(data) {
+                    if (data.status) {
+                        disapperTooltip("success", data.msg);
+                    } else {
+                        disapperTooltip("remind", data.msg);
+                    }
+                    setTimeout(function () {
+						window.location.href="{:U('personal/outward')}";
+					}, 2000);
+                },
+                clearForm: false
+            });
+            if (frmOutwardValid.valid()) {
+                $('#btnOutwarder').val(' send 中...').addClass('btn_disabled').prop('disabled', !0);
+            }
+            return false;
+        });
+	});
+</script>
+</body>
+</html>
