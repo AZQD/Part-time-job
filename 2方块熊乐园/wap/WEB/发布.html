@@ -10,69 +10,11 @@
     <link rel="stylesheet" href="css/bootstraptc.min.css">
     <link rel="stylesheet" href="css/ppublic.min.css">
     <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/headerBox.css">
     <style type="text/css">
         body{
             overflow: auto;
             /*background-color: #E9E9E9;*/
-        }
-        /*headerBox*/
-        .headerBox{
-            min-width: 1200px;
-            background-color: #F2F2F2;
-        }
-        .headerBox .header{
-            width:1200px;
-            height:25px;
-            line-height:25px;
-            margin:0 auto;
-            font-size: 14px;
-            color: #666;
-            position: relative;
-        }
-        .headerBox .header .headerLeft .lusaka{
-            padding-left:16px;
-            font-size: 16px;
-            color: #ff0000;
-            font-weight: bold;
-        }
-        .headerBox .header .headerLeft .change{
-            text-decoration: underline;
-            cursor: pointer;
-        }
-        .headerBox .header .headerRight{
-            text-align: right;
-        }
-        .headerBox .header .headerRight .space{
-            padding-right: 8px;
-            padding-left:4px;
-            cursor: pointer;
-        }
-        .headerBox .header .changeUl{
-            list-style: none;
-            cursor: pointer;
-            position: absolute;
-            z-index: 2;
-            top:30px;
-            padding:0;
-            background-color: #fff;
-            border: 1px solid #999;
-        }
-        .headerBox .header .changeUl .changeLi{
-            border-bottom: 1px solid #999;
-            width: 97px;
-            height: 26px;
-            line-height:26px;
-            font-size: 13px;
-            text-align: center;
-        }
-        .headerBox .header .changeUl .changeLi .changeLiLink{
-            color: #333333;
-        }
-        .headerBox .header .changeUl .changeLi .changeLiLink:hover{
-            color: #FF4720;
-        }
-        .headerBox .header .changeUl .changeLi:last-child{
-            border-bottom: 0;
         }
 
         /*searchBox*/
@@ -320,21 +262,26 @@
     <aside class="headerBox">
         <div class="row header">
             <div class="col-xs-6 col-sm-6 headerLeft">
-                <span class="lusaka">Lusaka</span>&nbsp;
+                <span class="lusaka"><!--Lusaka--></span>&nbsp;
                 <span class="change">[Change]</span>
             </div>
-            <div class="col-xs-6 col-sm-6 headerRight">
+            <div class="col-xs-6 col-sm-6 headerRight headerRight1" style="display: none;">
                 <span class="space login">Login</span>|
                 <span class="space register">Register</span>|
                 <span class="space help">Help</span>
             </div>
+            <div class="col-xs-6 col-sm-6 headerRight headerRight2" style="display: none;">
+                <span class="headImgBox"><img src="" class="headImg" style="display: none;"><span class="space name"></span>|</span>
+                <span class="space logout">logout</span>|
+                <span class="space help">Help</span>
+            </div>
             <ul class="changeUl" style="display: none;">
-                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka1</a></li>
+                <!--<li class="changeLi"><a href="#" class="changeLiLink">Lusaka1</a></li>
                 <li class="changeLi"><a href="#" class="changeLiLink">Lusaka2</a></li>
                 <li class="changeLi"><a href="#" class="changeLiLink">Lusaka3</a></li>
                 <li class="changeLi"><a href="#" class="changeLiLink">Lusaka4</a></li>
                 <li class="changeLi"><a href="#" class="changeLiLink">Lusaka5</a></li>
-                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka6</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka6</a></li>-->
             </ul>
         </div>
     </aside>
@@ -354,8 +301,8 @@
 
     <aside class="sortBox">
         <div class="row sort">
-            <div class="col-xs-4 col-sm-4 part space">
-                <span class="left">1. CATEGORY</span><span class="right">CHANGE</span>
+            <div class="col-xs-4 col-sm-4 part space active">
+                <span class="left">1. <span class="category">CATEGORY</span></span><span class="right">CHANGE</span>
             </div>
             <div class="col-xs-4 col-sm-4 part space">
                 2. DETAILS
@@ -363,7 +310,7 @@
             <div class="col-xs-4 col-sm-4 part">
                 3. COMPLETE
             </div>
-            <div class="row partInner partInner1" style="display: block;">
+            <div class="row partInner partInner1" style="display: none;">
                 <div class="col-xs-2 col-sm-2 partInner1Left">
                     <div class="title1">Electronic</div>
                     <div class="title2">Living</div>
@@ -372,15 +319,15 @@
                     <a href="###" class="computer">Computer</a>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 partInner partInner2" style="display: none;">
+            <div class="col-xs-12 col-sm-12 partInner partInner2" style="display: block;">
                 <div class="row partInner2Box">
                     <div class="col-xs-3 col-sm-3 left"></div>
                     <div class="col-xs-9 col-sm-9 right">
-                        <a href="#" class="btn active">SELL</a><a href="#" class="btn">NEED</a>
+                        <a href="#" class="btn issell active">SELL</a><a href="#" class="btn issell">NEED</a>
                     </div>
                     <div class="col-xs-3 col-sm-3 left"></div>
                     <div class="col-xs-9 col-sm-9 right">
-                        <a href="#" class="btn">Brand New</a><a href="#" class="btn active">New</a><a href="#" class="btn">As New</a><a href="#" class="btn">A Half New</a>
+                        <a href="#" class="btn goodstatus">Brand New</a><a href="#" class="btn goodstatus active">New</a><a href="#" class="btn goodstatus">As New</a><a href="#" class="btn goodstatus">A Half New</a>
                     </div>
                     <div class="col-xs-3 col-sm-3 left">PRICE</div>
                     <div class="col-xs-9 col-sm-9 right">
@@ -392,14 +339,16 @@
                     </div>
                     <div class="col-xs-3 col-sm-3 left">ADD</div>
                     <div class="col-xs-9 col-sm-9 right">
-                        <select class="location">
-                            <option value="0">LUSAKA</option>
+                        <select class="location location1">
+                            <option value="LUSAKA">LUSAKA</option>
                         </select>
-                        <select class="location">
-                            <option value="0">二级地理位置</option>
+                        <select class="location location2">
+                            <option value="二级地理位置">二级地理位置</option>
+                            <option value="北京">北京</option>
                         </select>
-                        <select class="location">
-                            <option value="0">三级地理位置</option>
+                        <select class="location location3">
+                            <option value="三级地理位置">三级地理位置</option>
+                            <option value="西城">西城</option>
                         </select>
                         <input type="text" class="locationText">
                     </div>
@@ -416,7 +365,7 @@
                     </div>
                     <div class="col-xs-3 col-sm-3 left">CONTACT</div>
                     <div class="col-xs-9 col-sm-9 right">
-                        <input type="text" class="contactText" placeholder="Your Name"><input type="text" class="contactText" placeholder="Your Cellphone Number">
+                        <input type="text" class="contactText contactName" placeholder="Your Name"><input type="text" class="contactText contactPhone" placeholder="Your Cellphone Number">
                     </div>
                     <div class="col-xs-12 col-sm-12 publishBtn"><a href="###" class="publishLink">PUBLISH</a></div>
                 </div>
@@ -432,44 +381,96 @@
 </section>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
 <script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="js/headerBox.js"></script>
 <script type="text/javascript">
     $(function(){
-        //tab切换
-        if($('.sortBox .sort .partInner1').is(":visible")){
-            $('.sortBox .sort .part').eq(0).addClass("active");
-        }else if($('.sortBox .sort .partInner2').is(":visible")){
-            $('.sortBox .sort .part').eq(1).addClass("active");
-        }else if($('.sortBox .sort .partInner3').is(":visible")){
-            $('.sortBox .sort .part').eq(2).addClass("active");
-        }
-    });
-    $('.sortBox .sort .partInner1 .partInner1Right .computer').click(function(){
-        $('.sortBox .sort .partInner').hide().eq(1).show();
-    });
-    $('.sortBox .sort .partInner2 .partInner2Box .publishBtn').click(function(){
-        $('.sortBox .sort .partInner').hide().eq(2).show();
-    });
-    $('.sortBox .sort .partInner3 .completeBtn').click(function(){
-        window.location.href = "详情页.html";
-    });
+
+        //内部页面跳转
+        $('.sortBox .sort .partInner1 .partInner1Right .computer').click(function(){
+            $('.sortBox .sort .part').removeClass("active").eq(1).addClass("active");
+            $('.sortBox .sort .partInner').hide().eq(1).show();
+        });
+        /*点击发布按钮*/
+        var token = localStorage.getItem("token");
+        console.log('localStorage.getItem("token")',localStorage.getItem("token"));
+
+        //issell
+        var issell = 1;//"1"为出售，"0"为需求
+        $('.sortBox .sort .partInner2 .partInner2Box .right .issell').click(function(){
+            $('.sortBox .sort .partInner2 .partInner2Box .right .issell').removeClass('active');
+            $(this).addClass('active');
+            $('.sortBox .sort .partInner2 .partInner2Box .right .issell').each(function(index){
+                if($('.sortBox .sort .partInner2 .partInner2Box .right .issell').eq(index).hasClass('active')){
+                    issell = index;
+                }
+            });
+//            alert(issell);
+        });
+
+        //goodstatus
+        var goodstatus = 0;
+        $('.sortBox .sort .partInner2 .partInner2Box .right .goodstatus').click(function(){
+            $('.sortBox .sort .partInner2 .partInner2Box .right .goodstatus').removeClass('active');
+            $(this).addClass('active');
+            $('.sortBox .sort .partInner2 .partInner2Box .right .goodstatus').each(function(index){
+                if($('.sortBox .sort .partInner2 .partInner2Box .right .goodstatus').eq(index).hasClass('active')){
+                    goodstatus = index;
+                }
+            });
+//            alert(goodstatus);
+        });
+
+        $('.sortBox .sort .partInner2 .partInner2Box .publishBtn').click(function(){
+
+            var pubGoodInfo = {
+                "token":token, 			//用户登录凭证，如果是匿名发布则留空""
+                "cid":"1",				//产品分类ID (需调整)
+                "issell":issell,		//是否是出售，"1"为出售，"0"为需求
+                "goodstatus":goodstatus,		//产品新旧,"0","1","2","3","4","5"...
+                "price":$('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val(),			//价格
+                "title":$('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val(),		//标题
+                "details":$('.sortBox .sort .partInner2 .partInner2Box .right .detailText').val(),	//产品详情
+                "addr_l1":$('.sortBox .sort .partInner2 .partInner2Box .right .location1 option:selected').val(),			//一级地址 ID
+                "addr_l2":$('.sortBox .sort .partInner2 .partInner2Box .right .location2 option:selected').val(),			//二级地址 ID
+                "addr_l3":$('.sortBox .sort .partInner2 .partInner2Box .right .location3 option:selected').val(),			//三级地址 ID
+                "addr_l4":$('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val(),			//详细地址
+                "contactname":$('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val(),	//联系人姓名
+                "phone":$('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(),		//联系人手机
+                "imgs":"http://www.kalichimall.com//static/img/default.png"				//产品图片ID，图片ID通过图片上传接口获得
+            };
+            console.log("pubGoodInfo", pubGoodInfo);
+
+            $('.sortBox .sort .part').removeClass("active").eq(2).addClass("active");
+//            $('.sortBox .sort .partInner').hide().eq(2).show();
+            $.ajax({
+                type:"POST",
+                url:baseUrl + "/apigateway/pubgood",
+                dataType:"json",
+                data:JSON.stringify(pubGoodInfo),
+                success:function(data){
+                    console.log(data);
+                    alert(data.status);
+                    if(data.status == 200){
+                        data = JSON.parse(data.data);
+                        console.log(data);
+                    }else{
+                        alert(data.msg);
+                    }
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            });
+        });
+
+        $('.sortBox .sort .partInner3 .completeBtn').click(function(){
+            window.location.href = "详情页.html";
+        });
 
 
-    /*change切换地址*/
-    var header = $('.headerBox .header').offset().left;
-    var changeUlLeft = $('.headerBox .header .headerLeft .change').offset().left;
-    $('.headerBox .header .changeUl').css('left', changeUlLeft-header);
-    $('.headerBox .header .headerLeft .change').hover(function () {
-        $('.headerBox .header .changeUl').show();
     });
-    $('.headerBox .header .changeUl').hover(function () {
-        $('.headerBox .header .changeUl').show();
-    },function () {
-        $('.headerBox .header .changeUl').hide();
-    });
-    $('.headerBox .header .changeUl .changeLi').click(function () {
-        $('.headerBox .header .changeUl').hide();
-        $('.headerBox .header .headerLeft .lusaka').text($(this).text());
-    });
+
 </script>
 </body>
 </html>

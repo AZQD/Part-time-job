@@ -320,7 +320,8 @@
                     if(data.status == 200){
                         data = JSON.parse(data.data);
                         var token = data.token;
-                        setCookie('token', token, 1);
+                        localStorage.setItem('token',token);//设置本地存储
+//                        setCookie('token', token, 1);
                         window.location.href = "index.html";
                     }else{
                         alert(data.msg);
