@@ -719,6 +719,28 @@
             }
         });
 
+
+        //获得指定产品的产品信息
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/getgood?id=1",
+            dataType:"json",
+            success: function(data){
+                console.log("获得指定产品的产品信息",data);
+                if(data.status == 200){
+                    data = JSON.parse(data.data);
+                    console.log(data);
+
+
+                }else{
+                    alert(data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
     });
 
 </script>
