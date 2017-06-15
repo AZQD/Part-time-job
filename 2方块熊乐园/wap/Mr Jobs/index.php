@@ -3,7 +3,7 @@
 if(version_compare(PHP_VERSION,'5.3.0','<'))  die('require PHP > 5.3.0 !');
 if (!is_file('./data/install.lock')) {
     header('Location: ./install.php');
-    exit;
+    exit;   
 }
 define('QSCMS_PRE', 'qs_');
 // 定义应用名称

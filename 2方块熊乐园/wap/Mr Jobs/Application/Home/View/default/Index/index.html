@@ -25,9 +25,9 @@
     </div>
 	<div class="sobox">
 		<div class="inputbg">
-			<div class="selecttype J_hoverbut">JOBS</div>
+			<div class="selecttype J_hoverbut">Jobs</div>
 			<div class="selecttype_down">
-				<div class="down_list J_hoverbut" data-type="QS_resumelist">RESUMES</div>
+				<div class="down_list J_hoverbut" data-type="QS_resumelist">Resumes</div>
 			</div>
 			<input type="hidden" id="top_search_type" value="QS_jobslist" />
 			<div class="inoputbox"><input id="top_search_input" name="" type="text"  value=""/></div>
@@ -35,6 +35,8 @@
 		</div>
 	    <!-- <div class="righttxt link_gray6"><a href="{:url_rewrite('QS_jobs')}">分类搜索</a> <a href="{:url_rewrite('QS_map')}" class="map">地图找工作</a></div> -->
 	</div>
+	
+	<!--
 	<notempty name="apply['Mobile']">
 		<div class="mob">
 			<img id="mobile_img" src="../public/images/115.png" border="0"/>
@@ -51,6 +53,7 @@
             });
         </script>
 	</notempty>
+	-->
 	<div class="clear"></div>
 </div>
 
@@ -95,6 +98,7 @@
 							<div class="inputbox">
 								<input id="J_do_login_btn" type="button" value="Login"  class="index_login_btn"/>
 							</div>
+							<!--
 							<div class="apptit">
 								<div class="t">
 									<notempty name="oauth_list">
@@ -108,6 +112,7 @@
 								</if>
 								<div class="clear"></div>
 							</div>
+							
 							<div class="appsparent">
 							    <div class="apps">
 							    	<volist name="oauth_list" id="oauth">
@@ -117,6 +122,7 @@
 									</volist>
 								</div>
 							</div>
+							-->
 							<div class="btns">
 						  		<a class="addbut a1" href="{:U('members/register',array('utype'=>1))}">New Job</a>
 			  	              	<a class="addbut a2" href="{:U('members/register',array('utype'=>2))}">New Resume</a>
@@ -164,12 +170,14 @@
 							</div>  
 					</div>
 				</div>
+				<!--
 				<if condition="C('qscms_weixin_apiopen') and C('qscms_weixin_scan_login')">
 					<div class="J_qr_code_show" style="display: none">
 					    <div id="J_weixinQrCode" class="codebox"></div>
 		                <div class="codetip">请使用微信扫一扫登录</div>
 		    		</div>
 		    	</if>
+		    	-->
 		    	<input type="hidden" id="J_loginType" value="0">
 		    	<input type="button" id="btnVerifiCode" style="display:none;">
 				<input type="hidden" id="verify_userlogin" value="{$verify_userlogin}">
@@ -222,6 +230,7 @@
 		</div>
 		<!-- -->
 		<!--公告 -->
+		<!--
 		<div class="notices">
 			<div class="noticestab">
 				<div class="tli select">公告</div>
@@ -250,6 +259,7 @@
 				</div>
 			</notempty>
 		</div>
+		-->
 		<div class="clear"></div>
 	</div>
 	<div class="clear"></div>
@@ -316,7 +326,7 @@
 <div class="index_4">
 	<div class="nleft">
 	    <div class="ntit">
-		  	<div class="lt">COMPANIES</div>
+		  	<div class="lt">Companies</div>
 		  	<div class="rt no_change link_gray6"><a target="_blank" href="{:url_rewrite('QS_helplist',array('id'=>19))}">How to appear here?</a></div>
 			<div class="clear"></div>
 		</div>
@@ -333,7 +343,7 @@
 									<a href="{$jobs.jobs_url}" class="jobname" title="{$jobs.jobs_name}" target="_blank">{$jobs.jobs_name}</a>&nbsp;&nbsp;
 								</volist>
 							<else />
-								NO COMPANY IS RECRUITING
+								No company is recruiting...
 							</notempty>
 						</div>
 					</div>	
@@ -345,7 +355,7 @@
 	</div>
 	<div class="nright">
 		<div class="ntit">
-		  	<div class="lt">HOT JOBS</div>
+		  	<div class="lt">Hot Jobs</div>
 		  	<div class="rt txt_right link_gray6"><a href="{:url_rewrite('QS_jobslist',array('settr'=>7,'displayorder'=>'hot'))}" target="_blank">more »</a></div>
 			<div class="clear"></div>
 		</div>
@@ -386,7 +396,7 @@
 </notempty>
 <div class="index_5 J_change_parent">
 	<div class="ntit">
-	  	<div class="lt">LATEST JOBS</div>
+	  	<div class="lt">Lastest Jobs</div>
 		<div class="rt"><div class="refreshbtn J_change_batch" data-url="{:U('AjaxCommon/jobs_list')}">refresh</div></div>
 		<div class="clear"></div>
 	</div>
@@ -420,7 +430,7 @@
 <div class="J_change_parent">
 	<div class="index_6">
 		<div class="ntit">
-		  	<div class="lt">RESUMES RECOMMENDED</div>
+		  	<div class="lt">Resumes Recommended</div>
 			<div class="rt"><div class="refreshbtn J_change_batch" data-url="{:U('AjaxCommon/resume_list')}">refresh</div></div>
 			<div class="clear"></div>
 		</div>
@@ -531,7 +541,7 @@
 
 <div class="index_8">
 	<div class="ntit">
-  	<div class="lt">FRIEND'S LINK</div>
+  	<div class="lt">Lins</div>
 	<div class="clear"></div>
 </div>
 <div class="links link_gray6">

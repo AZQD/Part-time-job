@@ -70,7 +70,7 @@ function _M.main()
     
     local session_info = session.gettable(dt.token)
     if not session_info then
-    	out.error('token error')
+	out.error("TOKEN_INVAID",out.ERR_TOKEN_INVAID, "/login")
     end
     
     if #dt.cid<1 then

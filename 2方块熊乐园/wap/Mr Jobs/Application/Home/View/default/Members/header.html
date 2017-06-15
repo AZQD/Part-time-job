@@ -7,18 +7,18 @@
 		<div class="logotxt">
 			|&nbsp;&nbsp;
 			<if condition="ACTION_NAME eq 'login'">
-				会员登录
+				LOGIN
 			<else/>
-				<if condition="$utype eq 0">会员注册</if>
-				<if condition="$utype eq 1">企业会员注册</if>
-				<if condition="$utype eq 2">个人会员注册</if>
+				<if condition="$utype eq 0">REGISTER</if>
+				<if condition="$utype eq 1">COMPANY</if>
+				<if condition="$utype eq 2">PERSONAL</if>
 			</if>
 		</div>
 		<div class="reg">
 			<if condition="ACTION_NAME eq 'login'">
-				还没有账号？ <a href="{:U('members/register')}" class="btn_blue J_hoverbut btn_inline">立即注册</a>
+				Unregistered? <a href="{:U('members/register')}" class="btn_blue J_hoverbut btn_inline">Register Now</a>
 			<else/>
-				已经有账号？ <a href="{:U('members/login')}" class="btn_blue J_hoverbut btn_inline">立即登录</a>
+				Registered? <a href="{:U('members/login')}" class="btn_blue J_hoverbut btn_inline">Login Now</a>
 			</if>
 		</div>
 		<div class="clear"></div>

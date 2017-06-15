@@ -44,7 +44,12 @@ if ngx.var.request_method == 'GET' then
 				if math.fmod(inu, 4)==0 then
 					cate_str = cate_str .. '<br>'
 				end
-				cate_str = cate_str .. '<a href="/list/'..v.id..'" style="font-size: 18px;font-weight: 700; color: #000000; padding-right: 5px;">'..v.name..'</a> '
+				if v.id == 2 then
+					cate_str = cate_str .. '<a href="/list/'..v.id..'" style="font-size: 18px;font-weight: 700; color: #000000; padding-right: 10px;">'..v.name..'</a> '
+				else
+					cate_str = cate_str .. '<a href="/list/'..v.id..'" style="font-size: 18px;font-weight: 700; color: #666666; padding-right: 10px;">'..v.name..'</a> '
+				end
+				
 				inu = inu +1
 			end
 		end
@@ -54,10 +59,11 @@ if ngx.var.request_method == 'GET' then
 	f_index = ngx.re.sub(f_index, "#CATE#", cate_str)
 	local hitip = '<a href="/login" style="font-weight: 700; font-size: 20px;color:#000000;" aligh="right">Login</a>'
 	if session_info then
-		if #session_info.nickname>1 then
-			hitip = '<a href="/s"><img src="/static/img/search.png" height="20"/></a> <a href="#" style="color:#000000">Hi,'..session_info.nickname.."</a>"
+		if #session_info.nickname>0 then
+			hitip = '<a href="/s"><img src="/static/img/search.png" style="width:18px;height: 18px;vertical-align: -3px;"/></a><a href="#" style="font-size: 14px;color: #333333;"> Hi,'..session_info.nickname..'</a>'
 		else
-			hitip = '<a href="/s"><img src="/static/img/search.png" height="20"/></a> <a href="#">Hi,'..session_info.phone.."</a>"
+			hitip = '<a href="/s"><img src="/static/img/search.png" style="width:18px;height: 18px;vertical-align: -3px;"/></a><a href="#" style="font-size: 14px;color: #333333;"> Hi,'..session_info.phone..'</a>'
+			
 		end
 	end
 	f_index = ngx.re.sub(f_index, "#HITIP#", hitip)

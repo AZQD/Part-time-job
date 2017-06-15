@@ -12,24 +12,24 @@
 <include file="index_header" />
 <div class="res_add_save">
   <div class="tit font_blue">
-  请继续完善简历，好工作近在咫尺
+  Please detail your resume for more jobs
   </div>
   <div class="ltn">
-  简历完整度
+  PROGRESS
   </div>  
   <div class="rtn">
 		<div class="t1box">
-		  	<div class="td1 font_gray6">企业看重这些信息，建议您进行补充</div>
-			<div class="td2"><a href="{:U('personal/resume_edit',array('pid'=>$resume['id'],'make'=>1))}" class="but_yellow_115 J_hoverbut">填写工作经验</a></div>
-			<div class="td3"><a href="{:U('personal/resume_edit',array('pid'=>$resume['id'],'make'=>1))}"  class="but_yellow_115 J_hoverbut" >填写教育背景</a></div>
+		  	<div class="td1 font_gray6">Write more details for companies:</div>
+			<div class="td2"><a href="{:U('personal/resume_edit',array('pid'=>$resume['id'],'make'=>1))}" class="but_yellow_115 J_hoverbut">Experience</a></div>
+			<div class="td3"><a href="{:U('personal/resume_edit',array('pid'=>$resume['id'],'make'=>1))}"  class="but_yellow_115 J_hoverbut" >Education</a></div>
 			<div class="clear"></div>
 		</div>
 		<div class="t2box">
-			<div class="td1 font_gray6">您也可以直接去搜索合适的职位了</div>
-			<div class="td2"><a href="{:url_rewrite('QS_jobs')}" class="but_blue_115 J_hoverbut">搜索职位</a></div>
+			<div class="td1 font_gray6">Or, search jobs now</div>
+			<div class="td2"><a href="{:url_rewrite('QS_jobs')}" class="but_blue_115 J_hoverbut">Search</a></div>
 			<div class="clear"></div>
 		</div>
-        <div class="t3box link_blue"><a href="{:U('personal/index')}">会员中心</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:U('personal/resume_list')}">简历列表</a>&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="{:url_rewrite('QS_resumeshow',array('id'=>$resume['id'],'preview'=>1))}">预览简历</a></div>
+        <div class="t3box link_blue"><a href="{:U('personal/index')}">Members</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:U('personal/resume_list')}">Resumes</a>&nbsp;&nbsp;&nbsp;&nbsp;<a target="_blank" href="{:url_rewrite('QS_resumeshow',array('id'=>$resume['id'],'preview'=>1))}">Preview</a></div>
   </div>
   <div class="clear"></div>
 </div>

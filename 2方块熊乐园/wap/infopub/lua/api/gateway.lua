@@ -8,6 +8,7 @@ local getgood = require "api.getgood"
 local pubgood = require "api.pubgood"
 local getgoods = require "api.getgoods"
 local search = require "api.search"
+local test_cleartoken = require "api.test_cleartoken"
 
 ngx.header['content-type'] = 'application/json'
 ngx.header['Access-Control-Allow-Origin'] = '*'
@@ -54,3 +55,9 @@ end
 if apiname == dic.API_SEARCH then
 	search.main()
 end
+
+if apiname == dic.API_TEST_CLEARTOKEN then
+	test_cleartoken.main()
+end
+
+ngx.say(apiname)

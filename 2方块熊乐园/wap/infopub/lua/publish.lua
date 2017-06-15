@@ -38,15 +38,16 @@ if session_info then
 end
 --
 
-local login_tip = [[
-	<tr style="background-color: #ff0000;">
-        <td width="80%" style="font-size: 13px;color: #ffffff;">
+local login_tip = [[    
+    <tr style="background-color: #ff0000;height: 30px;line-height: 30px;">
+        <td width="80%" style="font-size: 13px;color: #ffffff;padding-left: 10px;">
             Message will be deleted 7 days later.
         </td>
-        <td width="20%">
-            <a href="/login" style="font-weight: 700;font-style: normal;font-size: 18px;color: black;color: #ffffff;">Login</a>
+        <td width="20%" align="right">
+            <a href="/login" style="font-weight: 700;font-style: normal;font-size: 18px;color: #ffffff;padding-right: 5px;">Login</a>
         </td>
     </tr>
+    
 ]]
 
 local logined_tip = [[

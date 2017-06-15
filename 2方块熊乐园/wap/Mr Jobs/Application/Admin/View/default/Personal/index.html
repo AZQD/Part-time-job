@@ -8,9 +8,9 @@
   </div>
 <div class="seltpye_y">
   <div class="tit link_lan">
-    <strong>简历列表</strong><span>(共找到{$total}条)</span>
-    <a href="{:U('index')}">[恢复默认]</a>
-    <div class="pli link_bk"><u>每页显示：</u>
+    <strong>Resumes</strong><span>({$total})</span>
+    <a href="{:U('index')}">[Default]</a>
+    <div class="pli link_bk"><u>Count:</u>
       <a href="{:P(array('pagesize'=>10))}" <if condition="!$Think.get.pagesize || $Think.get.pagesize eq '10'">class="select"</if>>10</a>
       <a href="{:P(array('pagesize'=>20))}" <if condition="$Think.get.pagesize eq '20'">class="select"</if>>20</a>
       <a href="{:P(array('pagesize'=>30))}" <if condition="$Think.get.pagesize eq '30'">class="select"</if>>30</a>
@@ -19,66 +19,66 @@
     </div>
   </div>
   <div class="list">
-    <div class="t">可见状态</div>
+    <div class="t">Visiable</div>
     <div class="txt link_lan">
-      <a href="{:P(array('tabletype'=>0))}" <if condition="$Think.get.tabletype eq '' || $Think.get.tabletype eq '0'">class="select"</if>>不限<span>({$count[0]})</span></a>
-      <a href="{:P(array('tabletype'=>1))}" <if condition="$Think.get.tabletype eq 1">class="select"</if>>可见简历<span>({$count[1]})</span></a>
-      <a href="{:P(array('tabletype'=>2))}" <if condition="$Think.get.tabletype eq 2">class="select"</if>>非可见简历<span>({$count[2]})</span></a>
+      <a href="{:P(array('tabletype'=>0))}" <if condition="$Think.get.tabletype eq '' || $Think.get.tabletype eq '0'">class="select"</if>>All<span>({$count[0]})</span></a>
+      <a href="{:P(array('tabletype'=>1))}" <if condition="$Think.get.tabletype eq 1">class="select"</if>>Visiable<span>({$count[1]})</span></a>
+      <a href="{:P(array('tabletype'=>2))}" <if condition="$Think.get.tabletype eq 2">class="select"</if>>Unvisiable<span>({$count[2]})</span></a>
     </div>
   </div>
   
   <div class="list">
-    <div class="t">审核状态</div>
+    <div class="t">Review</div>
     <div class="txt link_lan">
-      <a href="{:P(array('audit'=>''))}" <if condition="$Think.get.audit eq ''">class="select"</if>>不限</a>
-	    <a href="{:P(array('audit'=>'2'))}" <if condition="$Think.get.audit eq '2'">class="select"</if>>等待审核<span <if condition="$count[4] gt 0">style="color:#FF0000"</if>>({$count[4]})</span></a>
-      <a href="{:P(array('audit'=>'1'))}" <if condition="$Think.get.audit eq '1'">class="select"</if>>审核通过<span>({$count[3]})</span></a>
+      <a href="{:P(array('audit'=>''))}" <if condition="$Think.get.audit eq ''">class="select"</if>>All</a>
+	    <a href="{:P(array('audit'=>'2'))}" <if condition="$Think.get.audit eq '2'">class="select"</if>>In Review<span <if condition="$count[4] gt 0">style="color:#FF0000"</if>>({$count[4]})</span></a>
+      <a href="{:P(array('audit'=>'1'))}" <if condition="$Think.get.audit eq '1'">class="select"</if>>Reviewed<span>({$count[3]})</span></a>
     
 	  <if condition="$Think.get.tabletype neq '1'">
-      <a href="{:P(array('audit'=>'3'))}" <if condition="$Think.get.audit eq '3'">class="select"</if>>审核未通过<span>({$count[5]})</span></a> </if>
+      <a href="{:P(array('audit'=>'3'))}" <if condition="$Think.get.audit eq '3'">class="select"</if>>Rejected<span>({$count[5]})</span></a> </if>
     </div>
   </div>
  
 <div class="list" >
-    <div class="t">照片</div>
+    <div class="t">Images</div>
     <div class="txt link_lan">
-      <a href="{:P(array('photos'=>''))}" <if condition="$Think.get.photos eq ''">class="select"</if>>不限</a>
-      <a href="{:P(array('photos'=>'1'))}" <if condition="$Think.get.photos eq '1'">class="select"</if>>有</a>
-      <a href="{:P(array('photos'=>'2'))}" <if condition="$Think.get.photos eq '2'">class="select"</if>>无</a>
+      <a href="{:P(array('photos'=>''))}" <if condition="$Think.get.photos eq ''">class="select"</if>>All</a>
+      <a href="{:P(array('photos'=>'1'))}" <if condition="$Think.get.photos eq '1'">class="select"</if>>Exist/a>
+      <a href="{:P(array('photos'=>'2'))}" <if condition="$Think.get.photos eq '2'">class="select"</if>>Not Exist</a>
     </div>
   </div>
   <div class="list" >
-    <div class="t">添加时间</div>
+    <div class="t">Publish Time</div>
     <div class="txt link_lan">
-      <a href="{:P(array('addtimesettr'=>''))}" <if condition="$Think.get.addtimesettr eq ''">class="select"</if>>不限</a>
-      <a href="{:P(array('addtimesettr'=>'3'))}" <if condition="$Think.get.addtimesettr eq '3'">class="select"</if>>三天内</a>
-      <a href="{:P(array('addtimesettr'=>'7'))}" <if condition="$Think.get.addtimesettr eq '7'">class="select"</if>>一周内</a>
-      <a href="{:P(array('addtimesettr'=>'30'))}" <if condition="$Think.get.addtimesettr eq '30'">class="select"</if>>一月内</a>
+      <a href="{:P(array('addtimesettr'=>''))}" <if condition="$Think.get.addtimesettr eq ''">class="select"</if>>All</a>
+      <a href="{:P(array('addtimesettr'=>'3'))}" <if condition="$Think.get.addtimesettr eq '3'">class="select"</if>>In 3 Days</a>
+      <a href="{:P(array('addtimesettr'=>'7'))}" <if condition="$Think.get.addtimesettr eq '7'">class="select"</if>>In a Week</a>
+      <a href="{:P(array('addtimesettr'=>'30'))}" <if condition="$Think.get.addtimesettr eq '30'">class="select"</if>>In a Month</a>
     </div>
   </div>
   <div class="list" >
-    <div class="t">刷新时间</div>
+    <div class="t">Update Time</div>
     <div class="txt link_lan">
-      <a href="{:P(array('settr'=>''))}" <if condition="$Think.get.settr eq ''">class="select"</if>>不限</a>
-      <a href="{:P(array('settr'=>'3'))}" <if condition="$Think.get.settr eq '3'">class="select"</if>>三天内</a>
-      <a href="{:P(array('settr'=>'7'))}" <if condition="$Think.get.settr eq '7'">class="select"</if>>一周内</a>
-      <a href="{:P(array('settr'=>'30'))}" <if condition="$Think.get.settr eq '30'">class="select"</if>>一月内</a>
+      <a href="{:P(array('settr'=>''))}" <if condition="$Think.get.settr eq ''">class="select"</if>>All</a>
+      <a href="{:P(array('settr'=>'3'))}" <if condition="$Think.get.settr eq '3'">class="select"</if>>In 3 Days</a>
+      <a href="{:P(array('settr'=>'7'))}" <if condition="$Think.get.settr eq '7'">class="select"</if>>In a Week</a>
+      <a href="{:P(array('settr'=>'30'))}" <if condition="$Think.get.settr eq '30'">class="select"</if>>In a Month</a>
     </div>
   </div>
   <div class="list" >
     <div class="t">是否委托</div>
     <div class="txt link_lan">
-      <a href="{:P(array('entrust'=>''))}" <if condition="$Think.get.entrust eq ''">class="select"</if>>不限</a>
-      <a href="{:P(array('entrust'=>'1'))}" <if condition="$Think.get.entrust eq '1'">class="select"</if>>一周</a>
-      <a href="{:P(array('entrust'=>'2'))}" <if condition="$Think.get.entrust eq '2'">class="select"</if>>二周</a>
-      <a href="{:P(array('entrust'=>'3'))}" <if condition="$Think.get.entrust eq '3'">class="select"</if>>一个月</a>
+      <a href="{:P(array('entrust'=>''))}" <if condition="$Think.get.entrust eq ''">class="select"</if>>All</a>
+      <a href="{:P(array('entrust'=>'1'))}" <if condition="$Think.get.entrust eq '1'">class="select"</if>>In a week</a>
+      <a href="{:P(array('entrust'=>'2'))}" <if condition="$Think.get.entrust eq '2'">class="select"</if>>In 2 week</a>
+      <a href="{:P(array('entrust'=>'3'))}" <if condition="$Think.get.entrust eq '3'">class="select"</if>>In a Month</a>
     </div>
   </div>
     <div class="list" >
-      <div class="t">排序方式</div>
+      <div class="t">Sort By</div>
       <div class="txt link_lan">
-        <a href="{:P(array('orderby'=>'addtime'))}" <if condition="$Think.get.orderby eq '' || $Think.get.orderby eq 'addtime'">class="select"</if>>添加时间倒序</a>
-        <a href="{:P(array('orderby'=>'refreshtime'))}" <if condition="$Think.get.orderby eq 'refreshtime'">class="select"</if>>刷新时间倒序</a>
+        <a href="{:P(array('orderby'=>'addtime'))}" <if condition="$Think.get.orderby eq '' || $Think.get.orderby eq 'addtime'">class="select"</if>>Publish Time</a>
+        <a href="{:P(array('orderby'=>'refreshtime'))}" <if condition="$Think.get.orderby eq 'refreshtime'">class="select"</if>>Update Time</a>
       </div>
     </div>
   <notempty name="apply['Subsite']">
@@ -107,12 +107,12 @@
   <table width="100%" border="0" cellpadding="0" cellspacing="0" class="link_lan">
     <tr>
       <td class="admin_list_tit admin_list_first" >
-        <label id="chkAll"><input type="checkbox" name="" title="全选/反选" id="chk"/>姓名</label>   </td>
+        <label id="chkAll"><input type="checkbox" name="" title="全选/反选" id="chk"/>Name</label>   </td>
         <td   align="center"  width="140" class="admin_list_tit">完整指数 </td>
-        <td align="center"  width="12%"  class="admin_list_tit">审核状态</td>
+        <td align="center"  width="12%"  class="admin_list_tit">Status</td>
         <td   align="center" width="12%" class="admin_list_tit">公开</td>
-        <td align="center" width="12%"  class="admin_list_tit">添加时间</td>
-        <td align="center"  width="12%"  class="admin_list_tit">刷新时间</td>
+        <td align="center" width="12%"  class="admin_list_tit">Publish</td>
+        <td align="center"  width="12%"  class="admin_list_tit">Update</td>
         <td align="center"  width="100"  class="admin_list_tit">委托状态</td>
         <td  align="center"  width="200" class="admin_list_tit">操作</td>
     </tr>

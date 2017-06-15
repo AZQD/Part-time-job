@@ -31,8 +31,12 @@ function _M.main()
     	out.error('token is null')
     end
     
-    
 	local session_info = session.gettable(token)
+	
+	if not session_info then
+		out.error("TOKEN_INVAID",out.ERR_TOKEN_INVAID, "/login")
+	end	
+
 	if session_info then
 		session_info.id=nil
 		session_info.salt=nil

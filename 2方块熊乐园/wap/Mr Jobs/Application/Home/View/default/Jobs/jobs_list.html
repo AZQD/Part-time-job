@@ -51,7 +51,7 @@
 	        		<input class="J_forclear" type="hidden" name="experience" value="{$Think.get.experience}" />
 	        		<input class="J_forclear" type="hidden" name="settr" value="{$Think.get.settr}" />
 				</div>
-				<input type="submit" class="sobut J_hoverbut" value="搜索" />
+				<input type="submit" class="sobut J_hoverbut" value="Search" />
 			</form>
 		</div>
   		<div class="righttxt link_gray6"><a href="{:url_rewrite('QS_jobs')}">more »</a><!--a href="{:url_rewrite('QS_map')}" class="map">地图找工作</a--></div>
@@ -345,13 +345,13 @@
 				<div class="J_detailList l4 <if condition="$Think.cookie.jobs_show_type eq 1">select</if>" title="simple list" show_type="1"></div>
 				<div class="l5">
 					<if condition="$jobslist['page_params']['nowPage'] gt 1">
-				  		<div class="prev" title="上一页" onclick="window.location='{:P(array('p'=>$jobslist['page_params']['nowPage']-1))}';"><</div>
+				  		<div class="prev" title="Next" onclick="window.location='{:P(array('p'=>$jobslist['page_params']['nowPage']-1))}';"><</div>
 				  	</if>
 				  	<if condition="$jobslist['page_params']['nowPage'] lt $jobslist['page_params']['totalPages']">
-						<div class="next"  title="下一页" onclick="window.location='{:P(array('p'=>$jobslist['page_params']['nowPage']+1))}';">></div>
+						<div class="next"  title="Previous" onclick="window.location='{:P(array('p'=>$jobslist['page_params']['nowPage']+1))}';">></div>
 					</if>
 					<if condition="$jobslist['page_params']['totalRows'] gt 0">
-						<span>{$jobslist.page_params.nowPage}</span>/{$jobslist.page_params.totalPages}页
+						<span>{$jobslist.page_params.nowPage}</span>/{$jobslist.page_params.totalPages}
 					</if>
 					<div class="clear"></div>
 				</div>

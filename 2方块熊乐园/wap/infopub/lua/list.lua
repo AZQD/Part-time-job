@@ -63,10 +63,11 @@ if ngx.var.request_method == 'GET' then
 	local res, err = mysql.query(sql)
 	if res then
 		for k, v in ipairs(res) do       
-			list_item = list_item..'<a href="/d/'..v.id..'" style="display:inline-block;margin-bottom: 4px;background-color: #D7D7D7;font-size: 13px;color: #333333;width:100%;text-decoration: none;">'
-			list_item = list_item..'<span style="width: 60%;display:inline-block;text-align: left">'
+			list_item = list_item..'<a href="/d/'..v.id..'" style="height: 20px; line-height: 20px;display:inline-block;margin-bottom: 2px;background-color: #D7D7D7;font-size: 14px;color: #333333;width:100%;text-decoration: none;">'
+			list_item = list_item..'<span style="width: 60%;display:inline-block;text-align: left;text-indent: 3px;">'
 			if #v.details>24 then
-				list_item = list_item .. string.sub(v.details, 1,26) ..".<font style='color:#ff0000'>("..v.views..")</font></span>"
+				list_item = list_item .. string.sub(v.details, 1,24) ..'.<span style="color: #ff0000;">('..v.views..")</span></span>"
+				--list_item = list_item .. v.details ..'.<span style="color: #ff0000;">('..v.views..")</span></span>"
 			else
 				list_item = list_item .. v.details.. ".<font style='color:#ff0000'>("..v.views..")</font></span>"
 			end
@@ -91,6 +92,7 @@ if ngx.var.request_method == 'GET' then
 	
 	--
 	local page_n = ''
+	local ncurl = 1
 	if listid == 0 or listid==1 then
 		page_n = '<span>1</span>/<span>'..tpage..'</span>'
 		local next_url = ngx.var.document_uri.."?p=2"
@@ -99,6 +101,7 @@ if ngx.var.request_method == 'GET' then
 		end
 		out_str = ngx.re.sub(out_str, "#NEXT#", next_url)
 	else
+		ncurl = listid
 		page_n = '<span>'..listid ..'</span>/<span>'..tpage..'</span>'
 		local next_url = ngx.var.document_uri.."?p="..listid+1
 		if listid+1>tpage then
@@ -108,6 +111,8 @@ if ngx.var.request_method == 'GET' then
 	end
 	
 	out_str = ngx.re.sub(out_str, "#PAGE_N#", page_n)
+	out_str = ngx.re.sub(out_str, "#NCUR#",ncurl)
+	out_str = ngx.re.sub(out_str, "#NMAX#",tpage)
 	
 	local hitip = '<a href="/login" style="font-weight: 700; font-size: 20px;color:#000000;" aligh="right">Login</a>'
 	if session_info then

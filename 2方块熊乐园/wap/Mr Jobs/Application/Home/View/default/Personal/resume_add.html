@@ -11,33 +11,33 @@
 <body>
 <include file="index_header" />
 
-<div class="res_add_title font_blue">简历是求职的利器，好的简历才能更快找到好工作！</div>
+<div class="res_add_title font_blue">Resume is the most important thing to find a good job.</div>
 <div class="res_addbox">
 	<form id="resume_add" class="" action="{:U('personal/resume_save')}" parent="post">
 		<div class="toptitle J_focus">
-			<div class="td1 link_blue"><a href="<if condition="$Think.get.first eq 1">javascript:;<else />{:U('personal/index')}</if>">会员中心</a>&nbsp;&nbsp;<span style="font_gray9">></span>&nbsp;&nbsp;创建简历&nbsp;&nbsp;<span style="font_gray9">></span>&nbsp;</div>	   
-			<div class="td2 link_blue" id="J_edit_title_txt"><span class="resume_title">我的简历{:date('Ymd',time())}</span>&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" id="J_edit_title">[重命名]</a></div>
-			<div class="td3" id="J_edit_title_input"><input name="title" id="title" type="text" value="我的简历{:date('Ymd',time())}"  class="input_245_34" maxlength="24"/>
+			<div class="td1 link_blue"><a href="<if condition="$Think.get.first eq 1">javascript:;<else />{:U('personal/index')}</if>">Members</a>&nbsp;&nbsp;<span style="font_gray9">></span>&nbsp;&nbsp;Resume&nbsp;&nbsp;<span style="font_gray9">></span>&nbsp;</div>	   
+			<div class="td2 link_blue" id="J_edit_title_txt"><span class="resume_title">My Resume{:date('Ymd',time())}</span>&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" id="J_edit_title">[Rename]</a></div>
+			<div class="td3" id="J_edit_title_input"><input name="title" id="title" type="text" value="My Resume{:date('Ymd',time())}"  class="input_245_34" maxlength="24"/>
 			</div>
 			<div class="clear"></div>
 		</div>
 		<div class="addmain J_focus">
-			<div class="imgtitle">基本信息</div>
+			<div class="imgtitle">Details</div>
 			<table width="200" border="0" align="center" cellpadding="0" cellspacing="0">
 			  <tr>
-				<td class="w1"><span>&nbsp;</span>姓名：</td>
+				<td class="w1"><span>&nbsp;</span>Name:</td>
 				<td>
 				
 				<div class="input_245_34_div2">
 					<input name="fullname" id="fullname" type="text"  dir="no_focus" class="inputst r_inputst" value="{$userprofile.realname}"/>
 					<div class="righttxt J_tooltip J_listitme_parent">
-					 	<span class="J_listitme_text">完全公开</span>
+					 	<span class="J_listitme_text">Public</span>
 					 	<div class="dropdowbox14 J_tooltip_menu">
 				            <div class="dropdow_inner14">
 				                <ul class="nav_box">
-				                    <li><a class="J_listitme" href="javascript:;" data-code="1">完全公开</a></li>
-				                    <li><a class="J_listitme" href="javascript:;" data-code="2">显示编号</a></li>
-				                    <li><a class="J_listitme" href="javascript:;" data-code="3">隐藏名字</a></li>
+				                    <li><a class="J_listitme" href="javascript:;" data-code="1">Public</a></li>
+				                    <li><a class="J_listitme" href="javascript:;" data-code="2">Show ID</a></li>
+				                    <li><a class="J_listitme" href="javascript:;" data-code="3">Hide Name</a></li>
 				                </ul>
 				            </div>
 				        </div>
@@ -46,11 +46,11 @@
 					<div class="clear"></div>
 				</div>
 				</td>
-				<td  class="w1"><span>&nbsp;</span>性别：</td>
+				<td  class="w1"><span>&nbsp;</span>Sex:</td>
 				<td>
 				<div class="sex_radio_list J_radioitme_parent">
-				    <div class="n <if condition="$userprofile['sex'] eq 1 or $userprofile['sex'] eq 0">checked</if> J_radioitme" data-code="1">男</div>
-					<div class="w <if condition="$userprofile['sex'] eq 2">checked</if> J_radioitme" data-code="2">女</div>
+				    <div class="n <if condition="$userprofile['sex'] eq 1 or $userprofile['sex'] eq 0">checked</if> J_radioitme" data-code="1">Male</div>
+					<div class="w <if condition="$userprofile['sex'] eq 2">checked</if> J_radioitme" data-code="2">Female</div>
 					<div class="clear"></div>
 					<input class="J_radioitme_code" name="sex" id="sex" type="hidden" value="{$userprofile.sex|default='1'}" />
 				  </div>
@@ -58,10 +58,10 @@
 				</td>
 			  </tr>
 			  <tr>
-				<td class="w1"><span>&nbsp;</span>出生年份：</td>
+				<td class="w1"><span>&nbsp;</span>Birthday:</td>
 				<td>
 					<div class="input_245_34_div J_hoverinput J_dropdown J_listitme_parent">
-						<span class="J_listitme_text">{$userprofile.birthday|default='请选择'}</span>
+						<span class="J_listitme_text">{$userprofile.birthday|default='---'}</span>
 						<div class="dropdowbox5 J_dropdown_menu">
 				            <div class="dropdow_inner5">
 				                <ul class="nav_box J_birthdy">
@@ -76,14 +76,14 @@
 						<input class="J_listitme_code" name="birthdate" id="birthdate" type="hidden" value="{$userprofile.birthday}" />
 					</div>
 				</td>
-				<td class="w1"><span>&nbsp;</span>现居住地：</td>
+				<td class="w1"><span>&nbsp;</span>Address:</td>
 				<td><input name="residence" id="residence" type="text" value="{$userprofile.residence}" class="input_245_34"/></td>
 			  </tr>
 			  <tr>
-				<td class="w1"><span>&nbsp;</span>最高学历：</td>
+				<td class="w1"><span>&nbsp;</span>Degree:</td>
 				<td>
 					<div class="input_245_34_div J_hoverinput J_dropdown J_listitme_parent">
-						<span class="J_listitme_text">{$userprofile.education_cn|default='请选择'}</span>
+						<span class="J_listitme_text">{$userprofile.education_cn|default='---'}</span>
 						<div class="dropdowbox4 J_dropdown_menu">
 				            <div class="dropdow_inner4">
 				                <ul class="nav_box">
@@ -96,10 +96,10 @@
 						<input class="J_listitme_code" name="education" id="education" type="hidden" value="{$userprofile.education}" />
 					</div>
 				</td>
-				<td class="w1"><span>&nbsp;</span>工作经验：</td>
+				<td class="w1"><span>&nbsp;</span>Experience:</td>
 				<td>
 					<div class="input_245_34_div J_hoverinput J_dropdown J_listitme_parent">
-						<span class="J_listitme_text">{$userprofile.experience_cn|default='请选择'}</span>
+						<span class="J_listitme_text">{$userprofile.experience_cn|default='---'}</span>
 						<div class="dropdowbox4 J_dropdown_menu">
 				            <div class="dropdow_inner4">
 				                <ul class="nav_box">
@@ -114,20 +114,20 @@
 				</td>
 			  </tr>
 			  <tr>
-				<td class="w1"><span>&nbsp;</span>手机：</td>
+				<td class="w1"><span>&nbsp;</span>Cellphone:</td>
 				<td id="mobileWrap">
 					<if condition="$visitor['mobile_audit']">
 						<span><input disabled name="telephone" id="telephone" type="text" class="input_245_34" value="{$visitor.mobile}"/></span>
-						<span class="link_blue"><a id="J_auth_mobile" href="javascript:;">修改</a></span>
+						<span class="link_blue"><a id="J_auth_mobile" href="javascript:;">Edit</a></span>
 					<else/>
 						<input name="telephone" id="telephone" type="text" class="input_245_34" value="{$visitor.mobile}"/>
 					</if>
 				</td>
-				<td class="w1"><span>&nbsp;</span>邮箱：</td>
+				<td class="w1"><span>&nbsp;</span>Email:</td>
 				<td>
 					<if condition="$visitor['email_audit']">
 						<span><input disabled name="email" id="email" type="text" class="input_245_34" value="{$visitor.email}"/></span>
-						<span class="link_blue"><a id="J_auth_email" href="javascript:;">修改</a></span>
+						<span class="link_blue"><a id="J_auth_email" href="javascript:;">Edit</a></span>
 					<else/>
 						<div class="reg-form-content">
 							<input name="email" id="email" type="text" value="{$visitor.email}" class="input_245_34 inputElem"/>
@@ -136,18 +136,18 @@
 				</td>
 			  </tr>
 		</table>
-		<div class="imgtitleshow font_blue" id="J_addmore">展开更多信息</div>
+		<div class="imgtitleshow font_blue" id="J_addmore">More Details:</div>
 		<table width="200" border="0" align="center" cellpadding="0" cellspacing="0" id="J_addmore_show" style="display:none">
 			  <tr>
-				<td class="w1">所学专业：</td>
+				<td class="w1">Major:</td>
 				<td>
                     <div class="input_245_34_div1 J_hoverinput" id="J_showmodal_major" data-title="请选择所学专业" data-multiple="false" data-maxnum="3" data-width="520">
-                    	<span title="" class="result J_resuletitle_major">{$userprofile.major_cn|default='请选择'}</span>
+                    	<span title="" class="result J_resuletitle_major">{$userprofile.major_cn|default='---'}</span>
 						<input class="J_resultcode_major" name="major" id="major" type="hidden" value="" />
 						<div class="clear"></div>
                     </div>
 				</td>
-				<td class="w1">身高：</td>
+				<td class="w1">Height:</td>
 				<td>
 				<div class="input_245_34_div3">
 					<input name="height" id="height" type="text"  dir="no_focus" class="inputst inputst_height" onkeyup="if(event.keyCode !=37 &amp;&amp; event.keyCode != 39) value=value.replace(/\D/g,'');" onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/\D/g,''))" value="<if condition="$userprofile['height'] eq '' || $userprofile['height'] eq 0"><else />{$userprofile.height}</if>"/>
@@ -156,27 +156,29 @@
 				</td>
 			  </tr>
 			  <tr>
+			  	<!--
 				<td class="w1">籍贯：</td>
 				<td><input name="householdaddress" id="householdaddress" type="text" value="{$userprofile.householdaddress}" class="input_245_34"/></td>
-				<td class="w1">婚姻状况：</td>
+				-->
+				<td class="w1">Marital Status:</td>
 				<td>
 				  <div class="radio_list J_radioitme_parent">
-				    <div class="rli checked J_radioitme" data-code="1">未婚</div>
-					<div class="rli J_radioitme" data-code="2">已婚</div>
-					<div class="rli J_radioitme" data-code="3">保密</div>
+				    <div class="rli checked J_radioitme" data-code="1">Unmarried</div>
+					<div class="rli J_radioitme" data-code="2">Married</div>
+					<div class="rli J_radioitme" data-code="3">Private</div>
 					<div class="clear"></div><input class="J_radioitme_code" name="marriage" id="marriage" type="hidden" value="1" />
 				  </div>
 			    </td>
 			  </tr>
 			   
 		</table>
-		<div class="imgtitle lot2">求职意向</div>
+		<div class="imgtitle lot2">For Jobs:</div>
 			<table width="200" border="0" align="center" cellpadding="0" cellspacing="0">
 			  <tr>
-				<td class="w1"><span>&nbsp;</span>目前状态：</td>
+				<td class="w1"><span>&nbsp;</span>Status:</td>
 				<td>
 					<div class="input_245_34_div J_hoverinput J_dropdown J_listitme_parent">
-						<span class="J_listitme_text">请选择</span>
+						<span class="J_listitme_text">---</span>
 						<div class="dropdowbox4 J_dropdown_menu">
 				            <div class="dropdow_inner4">
 				                <ul class="nav_box">
@@ -189,7 +191,7 @@
 						<input class="J_listitme_code" name="current" id="current" type="hidden" value="" />
 					</div>
 				</td>
-				<td  class="w1"><span>&nbsp;</span>工作性质：</td>
+				<td  class="w1"><span>&nbsp;</span>Type:</td>
 				<td>
 				<div class="radio_list J_radioitme_parent">
 					<volist name="jobs_nature" id="nature">
@@ -205,34 +207,34 @@
 				<td class="w1">期望行业：</td>
 				<td>
                     <div class="input_245_34_div1 J_hoverinput" id="J_showmodal_trade" data-title="请选择期望行业" data-multiple="true" data-maxnum="3" data-width="682">
-                        <span title="" class="result J_resuletitle_trade">请选择</span>
+                        <span title="" class="result J_resuletitle_trade">---</span>
                         <input class="J_resultcode_trade" name="trade" id="trade" type="hidden" value="" />
                         <div class="clear"></div>
                     </div>
                 </td>
-				<td class="w1"><span>&nbsp;</span>期望职位：</td>
+				<td class="w1"><span>&nbsp;</span>Position:</td>
 				<td>
 					<div class="input_245_34_div1 J_hoverinput" id="J_showmodal_jobs" data-title="请选择期望职位" data-multiple="true" data-maxnum="5" <if condition="C('qscms_category_jobs_level') gt 2">data-width="667"<else/>data-width="520"</if> data-category="{:C('qscms_category_jobs_level')}">
-						<span title="" class="result J_resuletitle_jobs">请选择</span>
+						<span title="" class="result J_resuletitle_jobs">---</span>
                         <input class="J_resultcode_jobs" name="intention_jobs_id" id="intention_jobs_id" type="hidden" value="" />
                         <div class="clear"></div>
 					</div>
 				</td>
 			  </tr>
 			  	 <tr>
-				<td class="w1"><span>&nbsp;</span>工作地区：</td>
+				<td class="w1"><span>&nbsp;</span>Address:</td>
 				<td>
 					
 					<div class="input_245_34_div1 J_hoverinput" id="J_showmodal_city" data-title="请选择工作地区" data-multiple="true" data-maxnum="3" <if condition="C('qscms_category_district_level') gt 2">data-width="667"<else/>data-width="520"</if> data-category="{:C('qscms_category_district_level')}">
-            <span title="" class="result J_resuletitle_city">请选择</span>
+            <span title="" class="result J_resuletitle_city">---</span>
             <input class="J_resultcode_city" name="district" id="district" type="hidden" value="" />
             <div class="clear"></div>
           </div>
 				</td>
-				<td class="w1"><span>&nbsp;</span>期望薪资：</td>
+				<td class="w1"><span>&nbsp;</span>Salary:</td>
 				<td>
 					<div class="input_245_34_div J_hoverinput J_dropdown J_listitme_parent">
-						<span class="J_listitme_text">请选择</span>
+						<span class="J_listitme_text">---</span>
 						<div class="dropdowbox4 J_dropdown_menu">
 				            <div class="dropdow_inner4">
 				                <ul class="nav_box">
@@ -266,10 +268,10 @@
 			
 	        <div class="res_add_but">
 				<div class="butlist">
-					<input type="button" id="J_saveresume"  class="but_blue_115 J_hoverbut" value="保存" />
+					<input type="button" id="J_saveresume"  class="but_blue_115 J_hoverbut" value="Save" />
 				</div>
 				<div class="butlist">
-					<input type="reset"  class="but_gray_115 J_hoverbut" value="取消" onclick="window.location='{:U('personal/resume_list')}'"/>
+					<input type="reset"  class="but_gray_115 J_hoverbut" value="Cancel" onclick="window.location='{:U('personal/resume_list')}'"/>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -279,7 +281,7 @@
 <include file="index_footer" />
 <script id="mobileHtml" type="text/html">
 	<span><input disabled name="telephone" id="telephone" type="text" class="input_245_34" value=""/></span>
-	<span class="link_blue"><a id="J_auth_mobile" href="javascript:;">修改</a></span>
+	<span class="link_blue"><a id="J_auth_mobile" href="javascript:;">Change</a></span>
 </script>
 <script type="text/javascript" src="../public/js/jquery.modal.userselectlayer.js"></script>
 <script type="text/javascript" src="../public/js/emailAutoComplete.js"></script>

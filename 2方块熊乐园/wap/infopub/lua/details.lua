@@ -62,9 +62,9 @@ if res then
 		local hitip = '<a href="/login" style="font-weight: 700; font-size: 20px;color:#000000;" aligh="right">Login</a>'
 		if session_info then
 			if #session_info.nickname>0 then
-				hitip = '<a href="/s"><img src="/static/img/search.png" width="20px"/></a> hi,'..session_info.nickname
+				hitip = '<a href="/s"><img src="/static/img/search.png" style="width:18px;height: 18px;vertical-align: -3px;"/></a><a href="#" style="font-size: 14px;color: #333333;"> Hi,'..session_info.nickname..'</a>'
 			else
-				hitip = '<a href="/s"><img src="/static/img/search.png" width="20px"/></a> hi,'..session_info.phone
+				hitip = '<a href="/s"><img src="/static/img/search.png" style="width:18px;height: 18px;vertical-align: -3px;"/></a><a href="#" style="font-size: 14px;color: #333333;"> Hi,'..session_info.phone..'</a>'
 				
 			end
 			out_str = ngx.re.sub(out_str, "#HITIP#", hitip)

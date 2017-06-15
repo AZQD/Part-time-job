@@ -10,6 +10,7 @@ local _M = {
     API_PUBGOOD = 'pubgood',
     API_GETGOODS = 'getgoods',
     API_SEARCH = 'search',
+    API_TEST_CLEARTOKEN = 'testcleartoken',
 }
 
 return _M
