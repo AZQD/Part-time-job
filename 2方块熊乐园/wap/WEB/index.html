@@ -8,9 +8,10 @@
     <meta name="format-detection"content="telephone=no"/>
     <meta name="format-detection" content="email=no"/>
     <link rel="stylesheet" href="css/bootstraptc.min.css">
-    <link rel="stylesheet" href="css/ppublic.min.css">
     <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/ppublic.min.css">
     <link rel="stylesheet" href="css/headerBox.css">
+    <link rel="stylesheet" href="css/bottomBox.css">
     <style type="text/css">
         body{
             overflow: auto;
@@ -116,7 +117,8 @@
             padding:10px;
         }
         .bannerBox .banner .bannerLeft{
-            width:247px;
+            /*width:247px;*/
+            width: 300px;
             height: 273px;
             border: 1px solid #E3E3E3;
         }
@@ -155,7 +157,8 @@
             height: 270px;
         }
         .bannerBox .banner .bannerRight{
-            width:236px;
+            /*width:236px;*/
+            width: 190px;
         }
         .bannerBox .banner .bannerRight .bannerRightTitle{
             margin-bottom:10px;
@@ -169,7 +172,8 @@
         .bannerBox .banner .bannerRight .bannerRightBox{
             cursor: pointer;
             position: relative;
-            width: 236px;
+            /*width: 236px;*/
+            width: 100%;
             height: 236px;
             animation-name: donghua;
             animation-duration: 4s;
@@ -246,8 +250,10 @@
             width:1200px;
             margin:0 auto;
             overflow: hidden;
+            height: 210px;
         }
         .refreshImgBox .refreshImg .refreshLi{
+            display: none;
             cursor: pointer;
             float: left;
             position: relative;
@@ -366,51 +372,6 @@
         }
         .nearbyImgBox .nearbyImg .nearbyLi .desc .right{
             text-align: right;
-        }
-
-        /*bottomBox*/
-        .bottomBox{
-            margin-top:445px;
-            min-width: 1200px;
-            background-color: #F2F2F2;
-        }
-        .bottomBox .bottom{
-            width:1200px;
-            margin:0 auto;
-            border-top: 2px solid #FF4720;
-        }
-        .bottomBox .bottom .bottomLink{
-            font-size: 13px;
-            height:38px;
-            line-height:38px;
-            text-align: center;
-            /*padding-left: 40px;*/
-        }
-        .bottomBox .bottom .bottomLink a{
-            color: #666;
-            padding: 0 12px;
-        }
-        .bottomBox .bottom .bottomCopyRight{
-            height:35px;
-            line-height:35px;
-        }
-        .bottomBox .bottom .bottomCopyRight .bottomCopyRightText{
-            margin:0 22px;
-            border-top:1px dashed #666;
-            text-align: center;
-        }
-        .bottomBox .bottom .bottomCopyRight .bottomCopyRightText .copy{
-            font-size: 12px;
-            color: #999;
-        }
-        .bottomBox .bottom .bottomCopyRight .bottomCopyRightText .copy .copyLink{
-            color: #999;
-            text-decoration: underline;
-        }
-        .bottomBox .bottom .bottomCopyRight .bottomCopyRightText .contact{
-            font-size: 13px;
-            color: #3366FF;
-            text-decoration: underline;
         }
     </style>
 </head>
@@ -654,6 +615,11 @@
 <script type="text/javascript" src="js/headerBox.js"></script>
 <script type="text/javascript">
     $(function(){
+
+        //refreshBox显示效果
+        $('.refreshImgBox .refreshImg .refreshLi').fadeIn(1000).show();
+//        $('.refreshImgBox .refreshImg .refreshLi').slideDown(1000).show();
+
         //tabsBox：tab切换
         $('.tabsBox .tabs .tabsLeft .tabLink').click(function () {
             $('.tabsBox .tabs .tabsLeft .tabLink').removeClass("active");
@@ -686,24 +652,23 @@
             url: baseUrl+"/apigateway/categorys",
             dataType:"json",
             success: function(data){
-                    console.log("获得产品分类",data);
                 if(data.status == 200){
                     data = JSON.parse(data.data);
-                        console.log(data);
+                    console.log("获得产品分类",data);
 
                     var totalStr = "";
                     for (var sort in data) {
                         var str = "";
                         var listStr = '<li class="listLi"></li>';
-                        console.log(data[sort].name);
+//                        console.log(data[sort].name);
                         str += ('<img class="listImg" src="image/index/bannerLeft1.png"><a href="#" class="sortLink">'+data[sort].name+'</a>');
                         var details = data[sort].sub;
 //                            console.log(details);
                         for (var detail in details){
-                            console.log(details[detail].name);
+//                            console.log(details[detail].name);
                             str += ('<a href="#" class="detailLink">'+details[detail].name+'</a>');
                         }
-                        console.log('str='+str);
+//                        console.log('str='+str);
                         listStr = '<li class="listLi">'+str+'</li>';
                         $('.bannerBox .banner .bannerLeft .listUl').append(listStr);
 
@@ -721,15 +686,15 @@
 
 
         //获得指定产品的产品信息
+
         $.ajax({
             type: "get",
             url: baseUrl+"/apigateway/getgood?id=1",
             dataType:"json",
             success: function(data){
-                console.log("获得指定产品的产品信息",data);
                 if(data.status == 200){
                     data = JSON.parse(data.data);
-                    console.log(data);
+                    console.log("获得指定产品的产品信息",data);
 
 
                 }else{
@@ -741,6 +706,25 @@
             }
         });
 
+        //搜索
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/search?key=a&start=1&n=10",
+            dataType:"json",
+            success: function(data){
+                if(data.status == 200){
+                    data = JSON.parse(data.data);
+                    console.log("搜索",data);
+
+
+                }else{
+                    alert(data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
     });
 
 </script>
