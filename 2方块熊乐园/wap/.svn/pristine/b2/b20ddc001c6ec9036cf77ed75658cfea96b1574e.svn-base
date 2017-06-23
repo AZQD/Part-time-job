@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="format-detection"content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <link rel="stylesheet" href="css/bootstraptc.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/ppublic.min.css">
+    <link rel="stylesheet" href="css/headerBox.css">
+    <link rel="stylesheet" href="css/bottomBox.css">
+    <style type="text/css">
+        body{
+            overflow: auto;
+            background-color: #E9E9E9;
+        }
+
+
+        /*searchBox*/
+        .searchBox .search{
+            width:1200px;
+            height:100px;
+            line-height:100px;
+            margin:0 auto;
+            font-size: 14px;
+            color: #666;
+            background-color: #fff;
+        }
+        .searchBox .search .searchLeft .logo{
+            padding-left:16px;
+            width: 325px;
+            height: 51px;
+        }
+        .searchBox .search .searchLeft .change{
+            text-decoration: underline;
+        }
+        .searchBox .search .searchRight{
+            text-align: right;
+        }
+        .searchBox .search .searchRight .ipt{
+            width: 310px;
+            height: 35px;
+            line-height:35px;
+            font-size: 13px;
+            outline: none;
+            text-indent: 10px;
+            letter-spacing: 0;
+            border: 1px solid #FF4720;
+        }
+        .searchBox .search .searchRight .searchImg{
+            width:70px;
+            margin-left:-6px;
+        }
+        .searchBox .search .searchRight .searchBtn{
+            width: 127px;
+            height: 35px;
+            line-height:35px;
+            color: #fff;
+            font-size: 13px;
+            border: none;
+            outline: none;
+            background-color: #FF4720;
+            margin-right:42px;
+        }
+
+        /*tabsBox*/
+        .tabsBox{
+            min-width: 1200px;
+            background-color: #F2F2F2;
+        }
+        .tabsBox .tabs{
+            width:1200px;
+            margin:0 auto;
+            border-bottom: 2px solid #FF4720;
+        }
+        .tabsBox .tabs .tabsLeft{
+            font-size: 0;
+        }
+        .tabsBox .tabs .tabsLeft .tabLink{
+            display: inline-block;
+            width: 103px;
+            height: 35px;
+            line-height: 35px;
+            margin-top: 10px;
+            text-align: center;
+            font-size: 13px;
+            color: #333;
+        }
+        .tabsBox .tabs .tabsLeft .active{
+            background-color: #FF4720;
+            color: #fff;
+        }
+        .tabsBox .tabs .tabsRight{
+            text-align: right;
+        }
+        .tabsBox .tabs .tabsRight .tabBtn{
+            width: 127px;
+            height: 35px;
+            line-height:35px;
+            color: #fff;
+            font-size: 13px;
+            border: none;
+            outline: none;
+            background-color: #6699FF;
+            margin-right:16px;
+            margin-top:5px;
+        }
+
+        /*bannerBox*/
+        .bannerBox .banner{
+            width:1200px;
+            margin:0 auto;
+            background-color: #fff;
+            padding:10px;
+        }
+        .bannerBox .banner .bannerLeft{
+            /*width:247px;*/
+            width: 300px;
+            height: 273px;
+            border: 1px solid #E3E3E3;
+        }
+        .bannerBox .banner .bannerLeft .listUl{
+            padding:0 10px;
+            height:100%;
+        }
+        .bannerBox .banner .bannerLeft .listUl .listLi{
+            height:16.666%;
+            line-height:45px;
+            font-size: 13px;
+            border-bottom: 1px solid #F0F0F0;
+        }
+        .bannerBox .banner .bannerLeft .listUl .listLi:last-child{
+            border: none;
+        }
+        .bannerBox .banner .bannerLeft .listUl .listLi .listImg{
+            width: 24px;
+            vertical-align: -6px;
+        }
+        .bannerBox .banner .bannerLeft .listUl .listLi .sortLink{
+            font-weight: bold;
+            color: #353535;
+            padding: 0 6px;
+        }
+        .bannerBox .banner .bannerLeft .listUl .listLi .sortLink:hover{
+            text-decoration: underline;
+        }
+        .bannerBox .banner .bannerLeft .listUl .listLi .detailLink{
+            color: #999;
+            padding-right: 3px;
+        }
+        .bannerBox .banner .bannerLeft .listUl .listLi .detailLink:hover{
+            text-decoration: underline;
+        }
+        .bannerBox .banner .bannerLeft .listUl .listLi .detailLink:after{
+            content: " |";
+        }
+        .bannerBox .banner .bannerLeft .listUl .listLi .detailLink:nth-last-child(1):after{
+            content: "";
+        }
+
+        .bannerBox .banner .bannerMiddle{
+            width:640px;
+            margin:0 22px;
+        }
+        .bannerBox .banner .bannerMiddle .bannerImg{
+            width: 640px;
+            height: 270px;
+        }
+        .bannerBox .banner .bannerRight{
+            /*width:236px;*/
+            width: 190px;
+        }
+        .bannerBox .banner .bannerRight .bannerRightTitle{
+            margin-bottom:10px;
+            border-bottom:1px solid #333;
+        }
+        .bannerBox .banner .bannerRight .bannerRightTitle span{
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 2px solid #FF4720;
+        }
+        .bannerBox .banner .bannerRight .bannerRightBox{
+            cursor: pointer;
+            position: relative;
+            /*width: 236px;*/
+            width: 100%;
+            height: 236px;
+            animation-name: donghua;
+            animation-duration: 4s;
+            animation-timing-function: ease;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+        @keyframes donghua {
+            0%{
+                background: url("image/index/bannerRight1.png")no-repeat ;
+                background-size: 100% 100%;
+            }
+
+            100%{
+                background: url("image/index/bannerRight2.png")no-repeat ;
+                background-size: 100% 100%;
+            }
+        }
+        .bannerBox .banner .bannerRight .bannerRightBox .desc{
+            position: absolute;
+            width:100%;
+            left:0;
+            bottom:0;
+            padding:0 6px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            color: #fff;
+            background-color: RGBA(255, 71, 32, 0.8);
+        }
+        .bannerBox .banner .bannerRight .bannerRightBox .desc .left{
+            font-weight: bold;
+        }
+        .bannerBox .banner .bannerRight .bannerRightBox .desc .right{
+            text-align: right;
+        }
+
+        /*refreshBox*/
+        .refreshBox{
+            background-color: #F2F2F2;
+            padding-top:10px;
+        }
+        .refreshBox .refresh{
+            width:1200px;
+            margin:0 auto;
+            padding:8px 0;
+        }
+        .refreshBox .refresh .refreshLeft .refreshName{
+            font-weight:bold;
+            font-size: 18px;
+            color: #333;
+            border-left:2px solid #FF4720;
+            padding-left:8px;
+        }
+        .refreshBox .refresh .refreshRight{
+            padding-right:30px;
+            text-align: right;
+        }
+        .refreshBox .refresh .refreshRight .refreshImg{
+            width:20px;
+            vertical-align: -4px;
+        }
+        .refreshBox .refresh .refreshRight .refreshBtn{
+            color: #999;
+            font-size: 16px;
+            text-decoration: underline;
+        }
+
+        /*refreshImgBox*/
+        .refreshImgBox{
+            /*background-color: #F2F2F2;*/
+        }
+        .refreshImgBox .refreshImg{
+            width:1200px;
+            margin:0 auto;
+            overflow: hidden;
+            height: 210px;
+        }
+        .refreshImgBox .refreshImg .refreshLi{
+            display: none;
+            cursor: pointer;
+            float: left;
+            position: relative;
+            width: 240px;
+            height: 200px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .refreshImgBox .refreshImg .refreshLi .goodImg{
+            width:200px;
+            height:200px;
+            border: 1px solid #FF4720;
+        }
+        .refreshImgBox .refreshImg .refreshLi .desc{
+            display: none;
+            position: absolute;
+            width:200px;
+            left:0;
+            bottom:0;
+            padding:0 6px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            color: #fff;
+            margin-left:20px;
+            background-color: #FF4720;
+        }
+        .refreshImgBox .refreshImg .refreshLi .desc .left{
+            font-weight: bold;
+        }
+        .refreshImgBox .refreshImg .refreshLi .desc .right{
+            text-align: right;
+        }
+
+        /*nearbyBox*/
+        .nearbyBox{
+            /*background-color: #F2F2F2;*/
+            /*padding-top:10px;*/
+        }
+        .nearbyBox .nearby{
+            width:1200px;
+            margin:0 auto;
+            padding:8px 0;
+        }
+        .nearbyBox .nearby .nearbyLeft .nearbyName{
+            font-weight:bold;
+            font-size: 18px;
+            color: #333;
+            border-left:2px solid #FF4720;
+            padding-left:8px;
+        }
+        .nearbyBox .nearby .nearbyRight{
+            padding-right:30px;
+            text-align: right;
+        }
+        .nearbyBox .nearby .nearbyRight .nearbyImg{
+            width:20px;
+            vertical-align: -4px;
+        }
+        .nearbyBox .nearby .nearbyRight .nearbyBtn{
+            color: #999;
+            font-size: 16px;
+            text-decoration: underline;
+        }
+
+        /*nearbyImgBox*/
+        .nearbyImgBox{
+            /*background-color: #F2F2F2;*/
+        }
+        .nearbyImgBox .more{
+            margin: 0 auto;
+            width:1200px;
+            text-align: right;
+        }
+        .nearbyImgBox .more .moreText{
+            font-size: 16px;
+            color: #333;
+            padding-right: 24px;
+            text-decoration: underline;
+        }
+        .nearbyImgBox .nearbyImg{
+            width:1200px;
+            margin:0 auto;
+            overflow: hidden;
+        }
+        .nearbyImgBox .nearbyImg .nearbyLi{
+            cursor: pointer;
+            float: left;
+            position: relative;
+            width: 240px;
+            height: 200px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .nearbyImgBox .nearbyImg .nearbyLi .goodImg{
+            width:200px;
+            height:200px;
+            border: 1px solid #FF4720;
+        }
+        .nearbyImgBox .nearbyImg .nearbyLi .desc{
+            display: none;
+            position: absolute;
+            width:200px;
+            left:0;
+            bottom:0;
+            padding:0 6px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            color: #fff;
+            margin-left:20px;
+            background-color: #FF4720;
+        }
+        .nearbyImgBox .nearbyImg .nearbyLi .desc .left{
+            font-weight: bold;
+        }
+        .nearbyImgBox .nearbyImg .nearbyLi .desc .right{
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+<section class="container-fluid">
+
+    <aside class="headerBox">
+        <div class="row header">
+            <div class="col-xs-6 col-sm-6 headerLeft">
+                <span class="lusaka"><!--Lusaka--></span>&nbsp;
+                <span class="change">[Change]</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 headerRight headerRight1" style="display: none;">
+                <span class="space login">Login</span>|
+                <span class="space register">Register</span>|
+                <span class="space help">Help</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 headerRight headerRight2" style="display: none;">
+                <span class="headImgBox"><img src="" class="headImg" style="display: none;"><span class="space name"></span>|</span>
+                <span class="space logout">logout</span>|
+                <span class="space help">Help</span>
+            </div>
+            <ul class="changeUl" style="display: none;">
+                <!--<li class="changeLi"><a href="#" class="changeLiLink">Lusaka1</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka2</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka3</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka4</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka5</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka6</a></li>-->
+            </ul>
+        </div>
+    </aside>
+
+    <aside class="searchBox">
+        <div class="row search">
+            <div class="col-xs-6 col-sm-6 searchLeft">
+                <img class="logo" src="image/index/logo.png">
+            </div>
+            <div class="col-xs-6 col-sm-6 searchRight">
+                <input class="ipt" type="text" placeholder="What dou you need?">
+                <img class="searchImg" src="image/index/search.png">
+                <button class="searchBtn">PUBLISH</button>
+            </div>
+        </div>
+    </aside>
+
+    <aside class="tabsBox">
+        <div class="row tabs">
+            <div class="col-xs-6 col-sm-6 tabsLeft">
+                <a href="#" class="tabLink active">HOME</a>
+                <a href="#" class="tabLink">VEHICLES</a>
+                <a href="#" class="tabLink">DIGTALS</a>
+                <a href="#" class="tabLink">LIFE GOODS</a>
+            </div>
+            <!--<div class="col-xs-6 col-sm-6 tabsRight">
+                <button class="tabBtn">FIND JOBS</button>
+            </div>-->
+        </div>
+    </aside>
+
+    <aside class="bannerBox">
+        <div class="row banner">
+            <ul class="col-xs-3 col-sm-3 bannerLeft">
+                <ul class="listUl">
+                    <!--<li class="listLi">
+                        <img class="listImg" src="image/index/bannerLeft1.png">
+                        <a href="#" class="sortLink">影视家电</a>
+                        <a href="#" class="detailLink">大家电</a><a href="#" class="detailLink">小家电</a><a href="#" class="detailLink">料理机</a>
+                    </li>
+                    <li class="listLi">
+                        <img class="listImg" src="image/index/bannerLeft1.png">
+                        <a href="#" class="sortLink">影视家电</a>
+                        <a href="#" class="detailLink">大家电</a><a href="#" class="detailLink">小家电</a><a href="#" class="detailLink">料理机</a>
+                    </li>
+                    <li class="listLi">
+                        <img class="listImg" src="image/index/bannerLeft1.png">
+                        <a href="#" class="sortLink">影视家电</a>
+                        <a href="#" class="detailLink">大家电</a><a href="#" class="detailLink">小家电</a><a href="#" class="detailLink">料理机</a>
+                    </li>
+                    <li class="listLi">
+                        <img class="listImg" src="image/index/bannerLeft1.png">
+                        <a href="#" class="sortLink">影视家电</a>
+                        <a href="#" class="detailLink">大家电</a><a href="#" class="detailLink">小家电</a><a href="#" class="detailLink">料理机</a>
+                    </li>
+                    <li class="listLi">
+                        <img class="listImg" src="image/index/bannerLeft1.png">
+                        <a href="#" class="sortLink">影视家电</a>
+                        <a href="#" class="detailLink">大家电</a><a href="#" class="detailLink">小家电</a><a href="#" class="detailLink">料理机</a>
+                    </li>
+                    <li class="listLi">
+                        <img class="listImg" src="image/index/bannerLeft1.png">
+                        <a href="#" class="sortLink">影视家电</a>
+                        <a href="#" class="detailLink">大家电</a><a href="#" class="detailLink">小家电</a><a href="#" class="detailLink">料理机</a>
+                    </li>-->
+                </ul>
+                <!--<a href="#"><img class="listsImg" src="image/index/lists.png"></a>-->
+            </ul>
+            <div class="col-xs-6 col-sm-6 bannerMiddle swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="col-xs-12 col-sm-12 swiper-slide"><a href="javascript:void(0);"><img class="bannerImg" src="image/index/banner1.png"></a></div>
+                    <div class="col-xs-12 col-sm-12 swiper-slide"><a href="javascript:void(0);"><img class="bannerImg" src="image/index/banner2.png"></a></div>
+                </div>
+            </div>
+            <div class="col-xs-3 col-sm-3 bannerRight">
+                <h3 class="bannerRightTitle"><span>SELLING</span></h3>
+                <div class="bannerRightBox">
+                    <!--<img class="bannerRightBoxImg" src="image/index/bannerRight1.png">
+                    <img class="bannerRightBoxImg" src="image/index/bannerRight2.png">-->
+                    <div class="desc row">
+                        <div class="col-xs-6 col-sm-6 left">Cloths</div>
+                        <div class="col-xs-6 col-sm-6 right">1054</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <aside class="refreshBox">
+        <div class="row refresh">
+            <div class="col-xs-6 col-sm-6 refreshLeft">
+                <span class="refreshName">SOMETHING YOU MAY LIKE</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 refreshRight">
+                <img class="refreshImg" src="image/index/refresh.png">
+                <a href="#" class="refreshBtn">REFRESH</a>
+            </div>
+        </div>
+    </aside>
+
+    <aside class="refreshImgBox">
+        <ul class="refreshImg">
+            <li class="refreshLi">
+                <img class="goodImg" src="image/index/good1.jpg">
+                <div class="desc row">
+                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                    <div class="col-xs-6 col-sm-6 right">1054</div>
+                </div>
+            </li>
+            <li class="refreshLi">
+                <img class="goodImg" src="image/index/good1.jpg">
+                <div class="desc row">
+                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                    <div class="col-xs-6 col-sm-6 right">1054</div>
+                </div>
+            </li>
+            <li class="refreshLi">
+                <img class="goodImg" src="image/index/good1.jpg">
+                <div class="desc row">
+                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                    <div class="col-xs-6 col-sm-6 right">1054</div>
+                </div>
+            </li>
+            <li class="refreshLi">
+                <img class="goodImg" src="image/index/good1.jpg">
+                <div class="desc row">
+                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                    <div class="col-xs-6 col-sm-6 right">1054</div>
+                </div>
+            </li>
+            <li class="refreshLi">
+                <img class="goodImg" src="image/index/good1.jpg">
+                <div class="desc row">
+                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                    <div class="col-xs-6 col-sm-6 right">1054</div>
+                </div>
+            </li>
+        </ul>
+    </aside>
+
+    <aside class="nearbyBox">
+        <div class="row nearby">
+            <div class="col-xs-6 col-sm-6 nearbyLeft">
+                <span class="nearbyName">SOMETHING NEARBY</span>
+            </div>
+            <!--<div class="col-xs-6 col-sm-6 refreshRight">
+                <img class="refreshImg" src="image/index/refresh.png">
+                <a href="#" class="refreshBtn">REFRESH</a>
+            </div>-->
+        </div>
+    </aside>
+
+    <aside class="nearbyImgBox">
+        <ul class="nearbyImg">
+            <li class="nearbyLi">
+                <img class="goodImg" src="image/index/good1.jpg">
+                <div class="desc row">
+                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                    <div class="col-xs-6 col-sm-6 right">1054</div>
+                </div>
+            </li>
+            <li class="nearbyLi">
+                <img class="goodImg" src="image/index/good1.jpg">
+                <div class="desc row">
+                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                    <div class="col-xs-6 col-sm-6 right">1054</div>
+                </div>
+            </li>
+            <li class="nearbyLi">
+                <img class="goodImg" src="image/index/good1.jpg">
+                <div class="desc row">
+                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                    <div class="col-xs-6 col-sm-6 right">1054</div>
+                </div>
+            </li>
+            <li class="nearbyLi">
+                <img class="goodImg" src="image/index/good1.jpg">
+                <div class="desc row">
+                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                    <div class="col-xs-6 col-sm-6 right">1054</div>
+                </div>
+            </li>
+            <li class="nearbyLi">
+                <img class="goodImg" src="image/index/good1.jpg">
+                <div class="desc row">
+                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                    <div class="col-xs-6 col-sm-6 right">1054</div>
+                </div>
+            </li>
+        </ul>
+        <p class="more"><a href="###" class="moreText">MORE</a></p>
+    </aside>
+
+    <aside class="bottomBox">
+        <div class="row bottom">
+            <div class="col-xs-12 col-sm-12 bottomLink">
+                <a href="#">Contact Us</a>|<a href="#">Privacy Notice</a>|<a href="#">Conditions of Use</a>
+            </div>
+            <div class="col-xs-12 col-sm-12 bottomCopyRight">
+                <div class="bottomCopyRightText">
+
+                    <span class="copy">Copyright © 2017 <a href="###" class="copyLink">kalichimall.com</a> All Right Reserved</span>
+                    <!--&emsp;<a href="#" class="contact">Contact Us</a>-->
+                </div>
+            </div>
+        </div>
+    </aside>
+</section>
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="js/headerBox.js"></script>
+<script type="text/javascript">
+    $(function(){
+
+        //refreshBox显示效果
+        $('.refreshImgBox .refreshImg .refreshLi').fadeIn(1000).show();
+//        $('.refreshImgBox .refreshImg .refreshLi').slideDown(1000).show();
+
+        //tabsBox：tab切换
+        $('.tabsBox .tabs .tabsLeft .tabLink').click(function () {
+            $('.tabsBox .tabs .tabsLeft .tabLink').removeClass("active");
+            $(this).addClass("active");
+        });
+
+        //bannerBox：轮播图
+        var mySwiper = new Swiper ('.swiper-container', {
+            direction: 'horizontal',//水平滑动
+            loop: true, //循环播放
+            autoplay: 2000, //自动播放
+            autoplayDisableOnInteraction: false, //用户操作swiper之后，是否禁止autoplay。默认为true：停止。
+            pagination: '.swiper-pagination',  // 分页器
+            speed: 2000
+        });
+
+        /*refreshImgBox，nearbyImgBox：hover图片动效*/
+        $('.refreshImgBox .refreshImg .refreshLi .goodImg, .nearbyImgBox .nearbyImg .nearbyLi .goodImg').hover(
+                function(){
+                    $(this).siblings('.desc').fadeIn();
+                },
+                function(){
+                    $(this).siblings('.desc').fadeOut();
+                }
+        );
+
+        //获得产品分类
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/categorys",
+            dataType:"json",
+            success: function(data){
+                if(data.status == 200){
+                    data = JSON.parse(data.data);
+                    console.log("获得产品分类",data);
+
+                    var totalStr = "";
+                    for (var sort in data) {
+                        var str = "";
+                        var listStr = '<li class="listLi"></li>';
+//                        console.log(data[sort].name);
+                        str += ('<img class="listImg" src="image/index/bannerLeft1.png"><a href="#" class="sortLink">'+data[sort].name+'</a>');
+                        var details = data[sort].sub;
+//                            console.log(details);
+                        for (var detail in details){
+//                            console.log(details[detail].name);
+                            str += ('<a href="#" class="detailLink">'+details[detail].name+'</a>');
+                        }
+//                        console.log('str='+str);
+                        listStr = '<li class="listLi">'+str+'</li>';
+                        $('.bannerBox .banner .bannerLeft .listUl').append(listStr);
+
+                    }
+
+
+                }else{
+                    alert(data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+
+        //获得指定产品的产品信息
+
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/getgood?id=1",
+            dataType:"json",
+            success: function(data){
+                if(data.status == 200){
+                    data = JSON.parse(data.data);
+                    console.log("获得指定产品的产品信息",data);
+
+
+                }else{
+                    alert(data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+
+        //搜索
+        localStorage.removeItem("searchKeyWord");
+        $('.searchBox .search .searchRight .searchImg').unbind('click').click(function () {
+            var searchKeyWord = $.trim($('.searchBox .search .searchRight .ipt').val());
+            localStorage.setItem('searchKeyWord',searchKeyWord);
+            $.ajax({
+                type: "get",
+                url: baseUrl+"/apigateway/search?key="+searchKeyWord+"&start=0&n=30",
+                dataType:"json",
+                success: function(data){
+                    if(data.status == 200){
+                        data = JSON.parse(data.data);
+                        console.log("搜索",data);
+
+                    }else{
+                        alert(data.msg);
+                    }
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            });
+        });
+
+
+        //提交评论(支持盖楼)
+        var putcommentInfo = {
+            "token":token, 			//用户登录凭证，必须登录才能发布评论
+            "goodid":"1",			//产品ID
+            "content":"hello",			//评论内容
+            "tocomment":"",			//如果不是回复其他评论，则留空，否则填评论ID
+            "timestamp":timestamp
+        };
+        $.ajax({
+            type:"POST",
+            url:baseUrl + "/apigateway/putcomment",
+            dataType:"json",
+            data:JSON.stringify(putcommentInfo),
+            success:function(data){
+                //console.log(data);
+                if(data.status == 200){
+//                    data = JSON.parse(data.data);
+                    console.log("提交评论(支持盖楼)",data);
+                }else if(data.status == 501){//token失效
+                    alert(data.msg);
+                }else{
+                    alert(data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+
+        //提交收藏
+        var putwishInfo = {
+            "token":token, 			//用户登录凭证，必须登录才能发布评论
+            "goodid":"1",			//产品ID
+            "timestamp":timestamp
+        };
+        $.ajax({
+            type:"POST",
+            url:baseUrl + "/apigateway/putwish",
+            dataType:"json",
+            data:JSON.stringify(putwishInfo),
+            success:function(data){
+                //console.log(data);
+                if(data.status == 200){
+//                    data = JSON.parse(data.data);
+                    console.log("提交收藏",data);
+                }else if(data.status == 501){//token失效
+                    alert(data.msg);
+                }else{
+                    alert(data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+        //删除收藏
+        var delwishInfo = {
+            "token":token, 			//用户登录凭证，必须登录才能发布评论
+            "goodid":"1",			//产品ID
+            "timestamp":timestamp
+        };
+        $.ajax({
+            type:"POST",
+            url:baseUrl + "/apigateway/delwish",
+            dataType:"json",
+            data:JSON.stringify(delwishInfo),
+            success:function(data){
+                //console.log(data);
+                if(data.status == 200){
+//                    data = JSON.parse(data.data);
+                    console.log("删除收藏",data);
+                }else if(data.status == 501){//token失效
+                    alert(data.msg);
+                }else{
+                    alert(data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+        //获得收藏信息
+        var getwishInfo = {
+            "token":token,			//登录凭证，当action="user" 时必须指定
+            "goodid":"1",		//商品ID, 当action="good" 时必须指定
+            "action":"good",	//good 或者 user,指定为good时获得该商品的评论信息，指定为user时获得该用户的评论信息
+            "start":"1",			//从第几条开始
+            "num":"10"			//获得几条,最多20条
+        };
+        $.ajax({
+            type:"POST",
+            url:baseUrl + "/apigateway/getwish",
+            dataType:"json",
+            data:JSON.stringify(getwishInfo),
+            success:function(data){
+                //console.log(data);
+                if(data.status == 200){
+                    data = JSON.parse(data.data);
+                    console.log("获得收藏信息",data);
+                }else if(data.status == 501){//token失效
+                    alert(data.msg);
+                }else{
+                    alert(data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+        //获得评论信息(支持盖楼)
+        var getcommentInfo = {
+            "token":token,			//登录凭证，当action="user" 时必须指定
+            "goodid":"1",		//商品ID, 当action="good" 时必须指定
+            "action":"good",	//good 或者 user,指定为good时获得该商品的评论信息，指定为user时获得该用户的评论信息
+            "start":"1",			//从第几条开始
+            "num":"10"			//获得几条,最多20条
+        };
+        $.ajax({
+            type:"POST",
+            url:baseUrl + "/apigateway/getcomment",
+            dataType:"json",
+            data:JSON.stringify(getcommentInfo),
+            success:function(data){
+                //console.log(data);
+                if(data.status == 200){
+                    data = JSON.parse(data.data);
+                    console.log("获得评论信息(支持盖楼)",data);
+                }else if(data.status == 501){//token失效
+                    alert(data.msg);
+                }else{
+                    alert(data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+
+    });
+
+</script>
+</body>
+</html>

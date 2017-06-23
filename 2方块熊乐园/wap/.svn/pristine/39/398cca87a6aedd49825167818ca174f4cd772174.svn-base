@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>发布</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="format-detection"content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <link rel="stylesheet" href="css/bootstraptc.min.css">
+    <link rel="stylesheet" href="css/ppublic.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/headerBox.css">
+    <style type="text/css">
+        body{
+            overflow: auto;
+            /*background-color: #E9E9E9;*/
+        }
+
+        /*searchBox*/
+        .searchBox .search{
+            width:1200px;
+            height:100px;
+            line-height:100px;
+            margin:0 auto;
+            font-size: 14px;
+            color: #666;
+            background-color: #fff;
+        }
+        .searchBox .search .searchLeft .logo{
+            padding-left:16px;
+            width: 325px;
+            height: 51px;
+        }
+        .searchBox .search .searchLeft .change{
+            text-decoration: underline;
+        }
+        .searchBox .search .searchRight{
+            text-align: right;
+        }
+        .searchBox .search .searchRight .ipt{
+            width: 310px;
+            height: 35px;
+            line-height:35px;
+            font-size: 13px;
+            outline: none;
+            text-indent: 10px;
+            letter-spacing: 0;
+            border: 1px solid #FF4720;
+        }
+        .searchBox .search .searchRight .searchImg{
+            width:70px;
+            margin-left:-6px;
+        }
+        .searchBox .search .searchRight .searchBtn{
+            width: 127px;
+            height: 35px;
+            line-height:35px;
+            color: #fff;
+            font-size: 13px;
+            border: none;
+            outline: none;
+            background-color: #FF4720;
+            margin-right:42px;
+        }
+
+        /*sortBox*/
+        .sortBox{
+
+        }
+        .sortBox .sort{
+            width:1200px;
+            margin:0 auto;
+            padding: 50px 90px 0 90px;
+        }
+        .sortBox .sort .part{
+            width: 300px;
+            height: 30px;
+            line-height:30px;
+            color: #333333;
+            font-size: 14px;
+            border-bottom: 2px solid #999999;
+        }
+        .sortBox .sort .space{
+            margin-right: 60px;
+        }
+        .sortBox .sort .active{
+            border-bottom: 2px solid #FF4720;
+        }
+        .sortBox .sort .space .left{
+            display: inline-block;
+            width: 50%;
+        }
+        .sortBox .sort .space .right{
+            display: inline-block;
+            width: 50%;
+            color: #FF4720;
+            text-decoration: underline;
+            text-align: right;
+        }
+        .sortBox .sort .partInner1{
+            margin-top: 54px;
+            padding-top:20px;
+        }
+        .sortBox .sort .partInner1 .partInner1Left{
+            border-right: 1px solid #999;
+            font-size: 24px;
+            font-weight:bold;
+            text-align: right;
+            padding-right: 26px;
+            height: 250px;
+        }
+        .sortBox .sort .partInner1 .partInner1Left .title1{
+            color: #333;
+        }
+        .sortBox .sort .partInner1 .partInner1Left .title2{
+            color: #999;
+        }
+        .sortBox .sort .partInner1 .partInner1Right .computer{
+            color: #333333;
+            font-size: 14px;
+            padding-left: 48px;
+        }
+
+        .sortBox .sort .partInner2{
+            margin-top: 54px;
+        }
+        .sortBox .sort .partInner2 .partInner2Box{
+            padding-left: 130px;
+            /*background-color: #bfa;*/
+        }
+        .sortBox .sort .partInner2 .partInner2Box .left{
+            width: 190px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            height: 35px;
+            line-height:35px;
+            text-align: right;
+            padding-right: 27px;
+        }
+        .sortBox .sort .partInner2 .partInner2Box .right{
+            padding-bottom: 20px;
+        }
+        .sortBox .sort .partInner2 .partInner2Box .right .btn{
+            display: inline-block;
+            width: 127px;
+            height: 35px;
+            line-height:35px;
+            color: #333;
+            text-align: center;
+            margin-right: 10px;
+            background-color: #E6E6E6;
+        }
+        .sortBox .sort .partInner2 .partInner2Box .right .active{
+            color: #fff;
+            background-color: #FF4720;
+        }
+        .sortBox .sort .partInner2 .partInner2Box .right .priceText{
+            width: 127px;
+            height: 35px;
+            line-height:35px;
+            margin-right: 10px;
+            font-size: 13px;
+            border: 1px solid #999;
+        }
+        .sortBox .sort .partInner2 .partInner2Box .right .titleText{
+            width: 100%;
+            height: 35px;
+            line-height:35px;
+            margin-right: 10px;
+            font-size: 13px;
+            border: 1px solid #999;
+        }
+        .sortBox .sort .partInner2 .partInner2Box .right .location{
+            height: 22px;
+            margin-right: 20px;
+            margin-top: 6px;
+            font-size: 13px;
+        }
+        .sortBox .sort .partInner2 .partInner2Box .right .locationText{
+            width: 305px;
+            height: 35px;
+            line-height:35px;
+            font-size: 13px;
+            border: 1px solid #999;
+        }
+        .sortBox .sort .partInner2 .partInner2Box .right .detailText{
+            width: 100%;
+            height: 133px;
+            font-size: 13px;
+            border: 1px solid #999;
+        }
+        .sortBox .sort .partInner2 .partInner2Box .right .imagesBox{
+            width: 150px;
+            height: 150px;
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+            border: 1px solid #999;
+        }
+        .sortBox .sort .partInner2 .partInner2Box .right .imagesBox .upload{
+            height: 30px;
+            line-height:30px;
+            background-color: #E6E6E6;
+        }
+        .sortBox .sort .partInner2 .partInner2Box .right .imagesBox .uploadLogo{
+            width: 88px;
+            height: 70px;
+            margin-top: 24px;
+        }
+        .sortBox .sort .partInner2 .partInner2Box .right .contactText{
+            width: 246px;
+            height: 35px;
+            line-height:35px;
+            font-size: 13px;
+            margin-right: 10px;
+            border: 1px solid #999;
+        }
+        .sortBox .sort .partInner2 .partInner2Box .publishBtn{
+            text-align: center;
+            padding-bottom: 10px;
+        }
+        .sortBox .sort .partInner2 .partInner2Box .publishBtn .publishLink{
+            display: inline-block;
+            width: 127px;
+            height: 35px;
+            line-height:35px;
+            color: #fff;
+            text-align: center;
+            margin-right: 10px;
+            background-color: #FF4720;
+        }
+
+        .sortBox .sort .partInner3{
+            text-align: center;
+        }
+        .sortBox .sort .partInner3 .complete{
+            padding:200px 0 60px 0;
+        }
+        .sortBox .sort .partInner3 .complete .completeImg{
+            width: 283px;
+            height: 198px;
+        }
+        .sortBox .sort .partInner3 .completeBtn{
+            padding-bottom: 10px;
+        }
+        .sortBox .sort .partInner3 .completeBtn .completeLink{
+            display: inline-block;
+            width: 283px;
+            height: 35px;
+            line-height:35px;
+            color: #fff;
+            text-align: center;
+            background-color: #FF4720;
+        }
+    </style>
+</head>
+<body>
+<section class="container-fluid">
+
+    <aside class="headerBox">
+        <div class="row header">
+            <div class="col-xs-6 col-sm-6 headerLeft">
+                <span class="lusaka"><!--Lusaka--></span>&nbsp;
+                <span class="change">[Change]</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 headerRight headerRight1" style="display: none;">
+                <span class="space login">Login</span>|
+                <span class="space register">Register</span>|
+                <span class="space help">Help</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 headerRight headerRight2" style="display: none;">
+                <span class="headImgBox"><img src="" class="headImg" style="display: none;"><span class="space name"></span>|</span>
+                <span class="space logout">logout</span>|
+                <span class="space help">Help</span>
+            </div>
+            <ul class="changeUl" style="display: none;">
+                <!--<li class="changeLi"><a href="#" class="changeLiLink">Lusaka1</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka2</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka3</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka4</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka5</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka6</a></li>-->
+            </ul>
+        </div>
+    </aside>
+
+    <aside class="searchBox">
+        <div class="row search">
+            <div class="col-xs-6 col-sm-6 searchLeft">
+                <img class="logo" src="image/index/logo.png">
+            </div>
+            <div class="col-xs-6 col-sm-6 searchRight">
+                <input class="ipt" type="text" placeholder="What dou you need?">
+                <img class="searchImg" src="image/index/search.png">
+                <button class="searchBtn">PUBLISH</button>
+            </div>
+        </div>
+    </aside>
+
+    <aside class="sortBox">
+        <div class="row sort">
+            <div class="col-xs-4 col-sm-4 part space active">
+                <span class="left">1. <span class="category">CATEGORY</span></span><span class="right">CHANGE</span>
+            </div>
+            <div class="col-xs-4 col-sm-4 part space">
+                2. DETAILS
+            </div>
+            <div class="col-xs-4 col-sm-4 part">
+                3. COMPLETE
+            </div>
+            <div class="row partInner partInner1" style="display: block;">
+                <div class="col-xs-2 col-sm-2 partInner1Left">
+                    <div class="title1">Electronic</div>
+                    <div class="title2">Living</div>
+                </div>
+                <div class="col-xs-10 col-sm-10 partInner1Right">
+                    <a href="###" class="computer">Computer</a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 partInner partInner2" style="display: none;">
+                <div class="row partInner2Box">
+                    <div class="col-xs-3 col-sm-3 left"></div>
+                    <div class="col-xs-9 col-sm-9 right">
+                        <a href="#" class="btn issell active">SELL</a><a href="#" class="btn issell">NEED</a>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 left"></div>
+                    <div class="col-xs-9 col-sm-9 right">
+                        <a href="#" class="btn goodstatus">Brand New</a><a href="#" class="btn goodstatus active">New</a><a href="#" class="btn goodstatus">As New</a><a href="#" class="btn goodstatus">A Half New</a>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 left">PRICE</div>
+                    <div class="col-xs-9 col-sm-9 right">
+                        <input type="text" class="priceText"><a href="#" class="btn">Negotiated</a>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 left">TITLE</div>
+                    <div class="col-xs-9 col-sm-9 right">
+                        <input type="text" class="titleText">
+                    </div>
+                    <div class="col-xs-3 col-sm-3 left">ADD</div>
+                    <div class="col-xs-9 col-sm-9 right">
+                        <select class="location location1">
+                            <option value="LUSAKA">LUSAKA</option>
+                        </select>
+                        <select class="location location2">
+                            <option value="二级地理位置">二级地理位置</option>
+                            <option value="北京">北京</option>
+                        </select>
+                        <select class="location location3">
+                            <option value="三级地理位置">三级地理位置</option>
+                            <option value="西城">西城</option>
+                        </select>
+                        <input type="text" class="locationText">
+                    </div>
+                    <div class="col-xs-3 col-sm-3 left">DETAILS</div>
+                    <div class="col-xs-9 col-sm-9 right">
+                        <input type="text" class="detailText">
+                    </div>
+                    <div class="col-xs-3 col-sm-3 left">IMAGES</div>
+                    <div class="col-xs-9 col-sm-9 right">
+                        <div class="imagesBox">
+                            <p class="upload">Upload Image</p>
+                            <img class="uploadLogo" src="image/publish/upload.png">
+                        </div>
+                    </div>
+                    <div class="col-xs-3 col-sm-3 left">CONTACT</div>
+                    <div class="col-xs-9 col-sm-9 right">
+                        <input type="text" class="contactText contactName" placeholder="Your Name"><input type="text" class="contactText contactPhone" placeholder="Your Cellphone Number">
+                    </div>
+                    <div class="col-xs-12 col-sm-12 publishBtn"><a href="###" class="publishLink">PUBLISH</a></div>
+                </div>
+            </div>
+            <div class="row partInner partInner3" style="display: none;">
+                <div class="col-xs-12 col-sm-12 complete">
+                    <img class="completeImg" src="image/publish/complete.png">
+                </div>
+                <div class="col-xs-12 col-sm-12 completeBtn"><a href="###" class="completeLink">CHECK IT</a></div>
+            </div>
+        </div>
+    </aside>
+</section>
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="js/headerBox.js"></script>
+<script type="text/javascript">
+    $(function(){
+
+        //内部页面跳转
+        $('.sortBox .sort .partInner1 .partInner1Right .computer').click(function(){
+            $('.sortBox .sort .part').removeClass("active").eq(1).addClass("active");
+            $('.sortBox .sort .partInner').hide().eq(1).show();
+        });
+
+
+        /*点击发布按钮*/
+        var token = localStorage.getItem("token");
+        console.log('localStorage.getItem("token")',localStorage.getItem("token"));
+
+        //issell
+        var issell = 1;//"1"为出售，"0"为需求
+        $('.sortBox .sort .partInner2 .partInner2Box .right .issell').click(function(){
+            $('.sortBox .sort .partInner2 .partInner2Box .right .issell').removeClass('active');
+            $(this).addClass('active');
+            $('.sortBox .sort .partInner2 .partInner2Box .right .issell').each(function(index){
+                if($('.sortBox .sort .partInner2 .partInner2Box .right .issell').eq(index).hasClass('active')){
+                    issell = index;
+                }
+            });
+//            alert(issell);
+        });
+
+
+        //goodstatus
+        var goodstatus = 0;
+        $('.sortBox .sort .partInner2 .partInner2Box .right .goodstatus').click(function(){
+            $('.sortBox .sort .partInner2 .partInner2Box .right .goodstatus').removeClass('active');
+            $(this).addClass('active');
+            $('.sortBox .sort .partInner2 .partInner2Box .right .goodstatus').each(function(index){
+                if($('.sortBox .sort .partInner2 .partInner2Box .right .goodstatus').eq(index).hasClass('active')){
+                    goodstatus = index;
+                }
+            });
+//            alert(goodstatus);
+        });
+
+        $('.sortBox .sort .partInner2 .partInner2Box .publishBtn').click(function(){
+            if(token == null){
+                alert("请登陆之后进行发布~");
+            }else{
+                var pubGoodInfo = {
+                    "token":token, 			//用户登录凭证，如果是匿名发布则留空""
+                    "cid":"1",				//产品分类ID (需调整)
+                    "issell":issell,		//是否是出售，"1"为出售，"0"为需求
+                    "goodstatus":goodstatus,		//产品新旧,"0","1","2","3","4","5"...
+                    "price":$('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val(),			//价格
+                    "title":$('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val(),		//标题
+                    "details":$('.sortBox .sort .partInner2 .partInner2Box .right .detailText').val(),	//产品详情
+                    "addr_l1":$('.sortBox .sort .partInner2 .partInner2Box .right .location1 option:selected').val(),			//一级地址 ID
+                    "addr_l2":$('.sortBox .sort .partInner2 .partInner2Box .right .location2 option:selected').val(),			//二级地址 ID
+                    "addr_l3":$('.sortBox .sort .partInner2 .partInner2Box .right .location3 option:selected').val(),			//三级地址 ID
+                    "addr_l4":$('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val(),			//详细地址
+                    "contactname":$('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val(),	//联系人姓名
+                    "phone":$('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(),		//联系人手机
+                    "imgs":"http://www.kalichimall.com//static/img/default.png"				//产品图片ID，图片ID通过图片上传接口获得
+                };
+                console.log("pubGoodInfo", pubGoodInfo);
+
+                $('.sortBox .sort .part').removeClass("active").eq(2).addClass("active");
+//            $('.sortBox .sort .partInner').hide().eq(2).show();
+                $.ajax({
+                    type:"POST",
+                    url:baseUrl + "/apigateway/pubgood",
+                    dataType:"json",
+                    data:JSON.stringify(pubGoodInfo),
+                    success:function(data){
+                        console.log(data);
+                        alert(data.status);
+                        if(data.status == 200){
+                            data = JSON.parse(data.data);
+                            console.log("发布产品",data);
+                        }else{
+                            alert(data.msg);
+                        }
+                    },
+                    error:function(error){
+                        console.log(error);
+                    }
+                });
+            }
+        });
+
+        $('.sortBox .sort .partInner3 .completeBtn').click(function(){
+            window.location.href = "detail.html";
+        });
+
+
+    });
+
+</script>
+</body>
+</html>

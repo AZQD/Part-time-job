@@ -1,7 +1,0 @@
-默认图片链接：
-密码有无限制：registration success
-判断有无token，token是否过期
-token失效：http://www.kalichimall.com/apigateway/testcleartoken?token=f99f33dfac245f7ffba88063dd413359
-
-搜索之后如何展示，如何跳转？
-publish点击之后跳转到publish页面

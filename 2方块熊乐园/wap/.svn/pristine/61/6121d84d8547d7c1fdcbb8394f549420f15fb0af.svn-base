@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>个人管理后台</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="format-detection"content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <link rel="stylesheet" href="css/bootstraptc.min.css">
+    <link rel="stylesheet" href="css/ppublic.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <style type="text/css">
+        body{
+            overflow: auto;
+        }
+        /*searchBox*/
+        .searchBox .search{
+            width:1200px;
+            height:100px;
+            line-height:100px;
+            margin:0 auto;
+            font-size: 14px;
+            color: #666;
+            background-color: #fff;
+        }
+        .searchBox .search .searchLeft .logo{
+            padding-left:16px;
+            width: 325px;
+            height: 51px;
+        }
+        .searchBox .search .searchLeft .change{
+            text-decoration: underline;
+        }
+        .searchBox .search .searchRight{
+            text-align: right;
+        }
+        .searchBox .search .searchRight .ipt{
+            width: 310px;
+            height: 35px;
+            line-height:35px;
+            font-size: 13px;
+            outline: none;
+            text-indent: 10px;
+            letter-spacing: 0;
+            border: 1px solid #FF4720;
+        }
+        .searchBox .search .searchRight .searchImg{
+            cursor: pointer;
+            width:70px;
+            margin-left:-6px;
+        }
+        .searchBox .search .searchRight .searchBtn{
+            width: 127px;
+            height: 35px;
+            line-height:35px;
+            color: #fff;
+            font-size: 13px;
+            border: none;
+            outline: none;
+            background-color: #FF4720;
+            margin-right:42px;
+        }
+
+        /*infoBox*/
+        .infoBox .info{
+            width:1200px;
+            margin:0 auto;
+        }
+        .infoBox .info .infoWrap{
+            /*padding-top: 72px;*/
+            margin:0 100px;
+            background-color: #FBFBFB;
+            padding-bottom: 100px;
+            height: 720px;
+        }
+        .infoBox .info .infoWrap .infoLeft{
+            padding-top: 42px;
+            width: 170px;
+            height: 465px;
+            border-right:1px solid #333;
+            margin-top: 72px;
+        }
+        .infoBox .info .infoWrap .infoLeft .infoLeftTitle{
+            text-align: right;
+            padding-right: 32px;
+            font-size: 16px;
+            font-weight: bold;
+            line-height:26px;
+        }
+        .infoBox .info .infoWrap .infoLeft .infoLeftTitle a{
+            color: #666666;
+        }
+        .infoBox .info .infoWrap .infoLeft .infoLeftTitle .active{
+            color: #FF4720;
+        }
+        .infoBox .info .infoWrap .infoRight{
+            position: relative;
+        }
+        .infoBox .info .infoWrap .infoRight .part1{
+            margin-top: 72px;
+            padding-top: 42px;
+        }
+        .infoBox .info .infoWrap .infoRight .part1 .attrBox{
+            font-size: 14px;
+            height: 23px;
+            line-height:23px;
+            padding-left: 80px;
+            margin-bottom: 16px;
+        }
+        .infoBox .info .infoWrap .infoRight .part1 .attrBox2{
+            margin-bottom: 0;
+            margin-top: 26px;
+        }
+        .infoBox .info .infoWrap .infoRight .part1 .attrBox3{
+            margin-bottom: 8px;
+        }
+        .infoBox .info .infoWrap .infoRight .part1 .attrBox .attr{
+            padding-left:38px;
+            color: #333;
+        }
+        .infoBox .info .infoWrap .infoRight .part1 .attrBox .attr2{
+            width: 154px;
+            padding-left:38px;
+            color: #333;
+            text-align: right;
+            margin-right: 30px;
+        }
+        .infoBox .info .infoWrap .infoRight .part1 .attrBox .value{
+            color: #666;
+        }
+        .infoBox .info .infoWrap .infoRight .part1 .attrBox .nikeNameIpt{
+            width: 158px;
+            font-size: 13px;
+            color: #999999;
+            border: 1px solid #666;
+        }
+        .infoBox .info .infoWrap .infoRight .part1 .attrBox .gender{
+            margin-left: 40px;
+        }
+        .infoBox .info .infoWrap .infoRight .part1 .attrBox .saveLink{
+            display: inline-block;
+            width: 160px;
+            height: 35px;
+            line-height: 35px;
+            color: #fff;
+            text-align: center;
+            margin-left: 183px;
+            margin-top: 24px;
+            background-color: #FF4720;
+        }
+        .infoBox .info .infoWrap .infoRight .part1 .attrBox .resetLink{
+            display: inline-block;
+            width: 160px;
+            height: 35px;
+            line-height: 35px;
+            color: #fff;
+            text-align: center;
+            margin-left: 183px;
+            margin-top: 10px;
+            background-color: #FF4720;
+        }
+        .infoBox .info .infoWrap .infoRight .part1 .attrBox .forget{
+            color: #169BD5;
+            font-size: 12px;
+            padding-left: 188px;
+        }
+        .infoBox .info .infoWrap .infoRight .part1 .passwordBox{
+            margin-left: 80px;
+            margin-top: 126px;
+            font-size: 14px;
+            border-bottom: 1px dashed #666;
+            width: 575px;
+        }
+        .infoBox .info .infoWrap .infoRight .part1 .passwordBox .password{
+            line-height: 20px;
+            color: #333;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .infoBox .info .infoWrap .infoRight .part1 .headBox{
+            position: absolute;
+            width: 80px;
+            text-align: center;
+            left: 534px;
+            top: 117px;
+        }
+        .infoBox .info .infoWrap .infoRight .part1 .headBox .headImg{
+            width: 100%;
+        }
+        .infoBox .info .infoWrap .infoRight .part1 .headBox .editLink{
+            color: #169BD5;
+            font-size: 13px;
+            text-decoration: underline;
+        }
+
+        .infoBox .info .infoWrap .infoRight .part2{
+            /*background-color: #bfa;*/
+            padding-top: 42px;
+            padding-left: 80px;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .form{
+            height: 22px;
+            line-height:22px;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .form .sell{
+            padding-left: 16px;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .form #search{
+            width: 202px;
+            outline: none;
+            border: none;
+            margin-left: 122px;
+            border-bottom:1px solid #ccc;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .form #search::-webkit-input-placeholder{
+            color: #ccc;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .listTitle{
+            font-size: 18px;
+            color: #333;
+            font-weight:bold;
+            margin:16px 0;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .listTitle .gang{
+            color: #FF4720;
+            padding-right: 5px;
+        }
+
+        .infoBox .info .infoWrap .infoRight .part2 .listUl{
+            background-color: #F2F2F2;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi{
+            color: #333;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 6px;
+            border-bottom: 1px solid #797979;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .left{
+            width: 90px;
+            height: 90px;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .left img{
+            width: 100%;
+            height: 100%;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .middle{
+            position: relative;
+            height: 90px;
+            width: 410px;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .middle .title{
+            padding-left: 18px;
+            color: #333;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .middle .count{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 22px;
+            line-height:22px;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .middle .count img{
+            width: 18px;
+            margin-left: 12px;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .middle .count .num{
+            color: #333333;
+            vertical-align: -2px;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .right{
+            width: 158px;
+            text-align: right;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .right img{
+            padding-top: 14px;
+            margin-right: 32px;
+            width: 40px;
+            padding-bottom: 20px;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .right a{
+            font-size: 14px;
+            color: #333;
+            text-decoration: underline;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .right .link2{
+            margin-right: 16px;
+        }
+    </style>
+</head>
+<body>
+<section class="container-fluid">
+
+    <aside class="searchBox">
+        <div class="row search">
+            <div class="col-xs-6 col-sm-6 searchLeft">
+                <img class="logo" src="image/index/logo.png">
+            </div>
+            <div class="col-xs-6 col-sm-6 searchRight">
+                <input class="ipt" type="text" placeholder="What dou you need?">
+                <img class="searchImg" src="image/index/search.png">
+                <button class="searchBtn">PUBLISH</button>
+            </div>
+        </div>
+    </aside>
+
+    <aside class="infoBox">
+        <div class="info">
+            <div class="row infoWrap">
+                <div class="col-xs-3 col-sm-3 infoLeft">
+                    <div class="infoLeftTitle"><a href="###" class="active">Profile</a></div>
+                    <div class="infoLeftTitle"><a href="###">Products</a></div>
+                    <div class="infoLeftTitle"><a href="###">Messages</a></div>
+                </div>
+                <div class="col-xs-9 col-sm-9 infoRight">
+                    <div class="part part1" style="display: block;">
+                        <div class="headBox">
+                            <img class="headImg" src="image/backManage/headImg.png">
+                            <a class="editLink" href="#">Edit</a>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 attrBox"><span class="attr">Cellphone:&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="value">XXXXXXXXX</span></div>
+                        <div class="col-xs-12 col-sm-12 attrBox"><span class="attr">Nickname:&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" class="nikeNameIpt" placeholder="显示当前昵称"></div>
+                        <div class="col-xs-12 col-sm-12 attrBox">
+                            <form action="#">
+                                <span class="attr">Gender:</span>
+                                <label><input type="radio" class="gender" name="gender" value="">Male</label>
+                                <label><input type="radio" class="gender" name="gender" value="">Female</label>
+                            </form>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 attrBox"><a href="###" class="saveLink">SAVE CHANGES</a></div>
+
+                        <div class="col-xs-12 col-sm-12 passwordBox"><span class="password">PASSWORD</span></div>
+                        <div class="col-xs-12 col-sm-12 attrBox attrBox2"><span class="attr attr2">Current password:</span><input type="text" class="nikeNameIpt"></div>
+                        <div class="col-xs-12 col-sm-12 attrBox attrBox3"><a href="reset_password.html" class="forget">Forgot your password?</a></div>
+                        <div class="col-xs-12 col-sm-12 attrBox"><span class="attr attr2">New password:</span><input type="text" class="nikeNameIpt"></div>
+                        <div class="col-xs-12 col-sm-12 attrBox"><span class="attr attr2">Verify  password:</span><input type="text" class="nikeNameIpt"></div>
+                        <div class="col-xs-12 col-sm-12 attrBox"><a href="###" class="resetLink">RESET PASSWARD</a></div>
+                    </div>
+                    <div class="row part part2" style="display: none;">
+                        <form action="#" class="form">
+                            <label class="sell"><input name="sell" type="radio" value="" />ALL</label>
+                            <label class="sell"><input name="sell" type="radio" value="" />SELLING</label>
+                            <label class="sell"><input name="sell" type="radio" value="" />SELLED</label>
+                            <label class="sell"><input name="sell" type="radio" value="" />OFFLINE</label>
+                            <input id="search" name="search" type="text" value="" placeholder="Search..."/>
+                        </form>
+                        <div class="col-xs-12 col-sm-12 listTitle"><span class="gang">|</span><span>SELLING(18)</span></div>
+                        <ul class="row col-xs-12 col-sm-12 listUl">
+                            <li class="row listLi">
+                                <div class="col-xs-2 col-sm-2 left"><img src="image/backManage/bigImg1.png"></div>
+                                <div class="col-xs-8 col-sm-8 middle">
+                                    <p class="title">Product title information</p>
+                                    <div class="count">
+                                        <img src="image/backManage/view.png">&nbsp;<span class="num view">20</span>
+                                        <img src="image/backManage/good.png">&nbsp;<span class="num good">20</span>
+                                        <img src="image/backManage/bad.png">&nbsp;<span class="num bad">20</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-2 col-sm-2 right">
+                                    <img src="image/backManage/littleImg1.png"><br/>
+                                    <a href="#">OFFLINE</a>&nbsp;<a href="#" class="link2">OFFLINE</a>
+                                </div>
+                            </li>
+                            <li class="row listLi">
+                                <div class="col-xs-2 col-sm-2 left"><img src="image/backManage/bigImg1.png"></div>
+                                <div class="col-xs-8 col-sm-8 middle">
+                                    <p class="title">Product title information</p>
+                                    <div class="count">
+                                        <img src="image/backManage/view.png">&nbsp;<span class="num view">20</span>
+                                        <img src="image/backManage/good.png">&nbsp;<span class="num good">20</span>
+                                        <img src="image/backManage/bad.png">&nbsp;<span class="num bad">20</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-2 col-sm-2 right">
+                                    <img src="image/backManage/littleImg1.png"><br/>
+                                    <a href="#">OFFLINE</a>&nbsp;<a href="#" class="link2">OFFLINE</a>
+                                </div>
+                            </li>
+                            <li class="row listLi">
+                                <div class="col-xs-2 col-sm-2 left"><img src="image/backManage/bigImg1.png"></div>
+                                <div class="col-xs-8 col-sm-8 middle">
+                                    <p class="title">Product title information</p>
+                                    <div class="count">
+                                        <img src="image/backManage/view.png">&nbsp;<span class="num view">20</span>
+                                        <img src="image/backManage/good.png">&nbsp;<span class="num good">20</span>
+                                        <img src="image/backManage/bad.png">&nbsp;<span class="num bad">20</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-2 col-sm-2 right">
+                                    <img src="image/backManage/littleImg1.png"><br/>
+                                    <a href="#">OFFLINE</a>&nbsp;<a href="#" class="link2">OFFLINE</a>
+                                </div>
+                            </li>
+                            <li class="row listLi">
+                                <div class="col-xs-2 col-sm-2 left"><img src="image/backManage/bigImg1.png"></div>
+                                <div class="col-xs-8 col-sm-8 middle">
+                                    <p class="title">Product title information</p>
+                                    <div class="count">
+                                        <img src="image/backManage/view.png">&nbsp;<span class="num view">20</span>
+                                        <img src="image/backManage/good.png">&nbsp;<span class="num good">20</span>
+                                        <img src="image/backManage/bad.png">&nbsp;<span class="num bad">20</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-2 col-sm-2 right">
+                                    <img src="image/backManage/littleImg1.png"><br/>
+                                    <a href="#">OFFLINE</a>&nbsp;<a href="#" class="link2">OFFLINE</a>
+                                </div>
+                            </li>
+                            <li class="row listLi">
+                                <div class="col-xs-2 col-sm-2 left"><img src="image/backManage/bigImg1.png"></div>
+                                <div class="col-xs-8 col-sm-8 middle">
+                                    <p class="title">Product title information</p>
+                                    <div class="count">
+                                        <img src="image/backManage/view.png">&nbsp;<span class="num view">20</span>
+                                        <img src="image/backManage/good.png">&nbsp;<span class="num good">20</span>
+                                        <img src="image/backManage/bad.png">&nbsp;<span class="num bad">20</span>
+                                    </div>
+                                </div>
+                                <div class="col-xs-2 col-sm-2 right">
+                                    <img src="image/backManage/littleImg1.png"><br/>
+                                    <a href="#">OFFLINE</a>&nbsp;<a href="#" class="link2">OFFLINE</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="part part3" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </aside>
+</section>
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="js/searchBoxRight.js"></script>
+<script type="text/javascript">
+    $(function(){
+        //tab切换
+        $('.infoBox .info .infoWrap .infoLeft .infoLeftTitle').click(function () {
+            var index = $(this).index();
+            $('.infoBox .info .infoWrap .infoLeft .infoLeftTitle').children("a").removeClass("active");
+            $(this).children("a").addClass("active");
+            $('.infoBox .info .infoWrap .infoRight .part').hide().eq(index).show();
+        });
+    });
+</script>
+</body>
+</html>
