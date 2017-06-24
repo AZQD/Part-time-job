@@ -400,7 +400,7 @@
         console.log('localStorage.getItem("token")',localStorage.getItem("token"));
 
         //issell
-        var issell = 1;//"1"为出售，"0"为需求
+        var issell = "1";//"1"为出售，"0"为需求
         $('.sortBox .sort .partInner2 .partInner2Box .right .issell').click(function(){
             $('.sortBox .sort .partInner2 .partInner2Box .right .issell').removeClass('active');
             $(this).addClass('active');
@@ -409,12 +409,13 @@
                     issell = index;
                 }
             });
+            issell = issell.toString();
 //            alert(issell);
         });
 
 
         //goodstatus
-        var goodstatus = 0;
+        var goodstatus = "0";
         $('.sortBox .sort .partInner2 .partInner2Box .right .goodstatus').click(function(){
             $('.sortBox .sort .partInner2 .partInner2Box .right .goodstatus').removeClass('active');
             $(this).addClass('active');
@@ -424,6 +425,7 @@
                 }
             });
 //            alert(goodstatus);
+            goodstatus = goodstatus.toString();
         });
 
         $('.sortBox .sort .partInner2 .partInner2Box .publishBtn').click(function(){
@@ -431,20 +433,24 @@
                 alert("请登陆之后进行发布~");
             }else{
                 var pubGoodInfo = {
-                    "token":token, 			//用户登录凭证，如果是匿名发布则留空""
+                    "token":"", 			//用户登录凭证，如果是匿名发布则留空""
                     "cid":"1",				//产品分类ID (需调整)
                     "issell":issell,		//是否是出售，"1"为出售，"0"为需求
                     "goodstatus":goodstatus,		//产品新旧,"0","1","2","3","4","5"...
                     "price":$('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val(),			//价格
                     "title":$('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val(),		//标题
                     "details":$('.sortBox .sort .partInner2 .partInner2Box .right .detailText').val(),	//产品详情
-                    "addr_l1":$('.sortBox .sort .partInner2 .partInner2Box .right .location1 option:selected').val(),			//一级地址 ID
+                    /*"addr_l1":$('.sortBox .sort .partInner2 .partInner2Box .right .location1 option:selected').val(),			//一级地址 ID
                     "addr_l2":$('.sortBox .sort .partInner2 .partInner2Box .right .location2 option:selected').val(),			//二级地址 ID
-                    "addr_l3":$('.sortBox .sort .partInner2 .partInner2Box .right .location3 option:selected').val(),			//三级地址 ID
+                    "addr_l3":$('.sortBox .sort .partInner2 .partInner2Box .right .location3 option:selected').val(),			//三级地址 ID*/
+                    "addr_l1":"3",			//一级地址 ID
+                    "addr_l2":"2",			//二级地址 ID
+                    "addr_l3":"4",			//三级地址 ID
                     "addr_l4":$('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val(),			//详细地址
                     "contactname":$('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val(),	//联系人姓名
                     "phone":$('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(),		//联系人手机
-                    "imgs":"http://www.kalichimall.com//static/img/default.png"				//产品图片ID，图片ID通过图片上传接口获得
+//                    "imgs":"http://www.kalichimall.com//static/img/default.png"				//产品图片ID，图片ID通过图片上传接口获得
+                    "imgs":"1"				//产品图片ID，图片ID通过图片上传接口获得
                 };
                 console.log("pubGoodInfo", pubGoodInfo);
 
@@ -457,10 +463,8 @@
                     data:JSON.stringify(pubGoodInfo),
                     success:function(data){
                         console.log(data);
-                        alert(data.status);
                         if(data.status == 200){
-                            data = JSON.parse(data.data);
-                            console.log("发布产品",data);
+                            alert(data.status);
                         }else{
                             alert(data.msg);
                         }

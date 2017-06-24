@@ -36,3 +36,9 @@ token失效：http://www.kalichimall.com/apigateway/testcleartoken?token=f99f33dfac
 
 搜索之后如何展示，如何跳转？
 publish点击之后跳转到publish页面
+
+
+@刘超杰 给你个好玩的，以后你这边WEB做了修改，通过GET这个接口 http://www.kalichimall.com/tmpupdate
+
+
+Content-Type: multipart/form-data
