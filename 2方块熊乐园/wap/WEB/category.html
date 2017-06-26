@@ -341,7 +341,7 @@
     <aside class="searchBox">
         <div class="row search">
             <div class="col-xs-6 col-sm-6 searchLeft">
-                <a href="#" class="fist">INDEX</a>
+                <a href="#" class="fist">HOME</a>
                 <img  class="gt" src="image/detailPage/gt.png">
                 <a href="#" class="second"></a>
             </div>
@@ -674,6 +674,7 @@
                         console.log($('.goodsBox .goods').length);
                         //.goodsBox .goods
                         $('.goodsBox .goods').unbind('click').click(function () {
+                            alert(1);
                             var index = $(this).index();
                             var goodId = goodIdArr[index];
                             window.location.href = "detail.html" + '?goodId='+ goodId;

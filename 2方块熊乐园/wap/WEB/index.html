@@ -798,15 +798,42 @@
                     data = JSON.parse(data.data);
                     console.log("获得评论信息(支持盖楼)",data);
                 }else if(data.status == 501){//token失效
-                    alert(data.msg);
+                    console.log(data.msg);
                 }else{
-                    alert(data.msg);
+                    console.log(data.msg);
                 }
             },
             error:function(error){
                 console.log(error);
             }
         });
+
+
+        //上传图片
+        $.ajax({
+            type:"POST",
+            url:baseUrl + "/apigateway/upfile",
+//            dataType:"json",
+            'Content-Type':"multipart/form-data",
+            success:function(data){
+                console.log("上传图片",data);
+                if(data.status == 200){
+
+                }else if(data.status == 501){//token失效
+                    console.log(data.msg);
+                }else{
+                    console.log (data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+        
+        
+        //获取图片
+        var src = baseUrl+"/gimg/A8D5883AE4946D2C3AEA7E02B77CED30";
+        console.log(src);
 
 
     });
