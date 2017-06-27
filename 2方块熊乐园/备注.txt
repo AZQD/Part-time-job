@@ -42,3 +42,5 @@ publish点击之后跳转到publish页面
 
 
 Content-Type: multipart/form-data
+
+图片剪裁插件：http://www.jq22.com/search?seo=jquery%E5%9B%BE%E7%89%87%E5%89%AA%E8%A3%81%E6%8F%92%E4%BB%B6

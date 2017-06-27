@@ -314,7 +314,7 @@
             <div class="col-xs-4 col-sm-4 part">
                 3. COMPLETE
             </div>
-            <div class="row partInner partInner1" style="display: none;">
+            <div class="row partInner partInner1" style="display: block;">
                 <div class="col-xs-2 col-sm-2 partInner1Left">
                     <div class="title1">Electronic</div>
                     <div class="title2">Living</div>
@@ -323,7 +323,7 @@
                     <a href="###" class="computer">Computer</a>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 partInner partInner2" style="display: block;">
+            <div class="col-xs-12 col-sm-12 partInner partInner2" style="display: none;">
                 <div class="row partInner2Box">
                     <div class="col-xs-12 col-sm-12" style="padding-left: 190px;padding-bottom: 20px;">
                         <select name="selectCid" id="selectCid">
@@ -355,10 +355,10 @@
                             <!--<option value="二级地理位置">二级地理位置</option>-->
                             <!--<option value="北京">北京</option>-->
                         </select>
-                        <select class="location location3">
+                        <!--<select class="location location3">
                             <option value="三级地理位置">三级地理位置</option>
                             <option value="西城">西城</option>
-                        </select>
+                        </select>-->
                         <input type="text" class="locationText">
                     </div>
                     <div class="col-xs-3 col-sm-3 left">DETAILS</div>
@@ -368,7 +368,8 @@
                     <div class="col-xs-3 col-sm-3 left">IMAGES</div>
                     <div class="col-xs-9 col-sm-9 right">
                         <div class="imagesBox">
-                            <p class="upload">Upload Image</p>
+                            <!--<p class="upload">Upload Image</p>-->
+                            <input type="file" id="upfile">
                             <img class="uploadLogo" src="image/publish/upload.png">
                         </div>
                     </div>
@@ -395,7 +396,6 @@
 <script type="text/javascript" src="js/searchBoxRight.js"></script>
 <script type="text/javascript">
     $(function(){
-
         //点击图片logo跳转到index页面；
         $('.searchBox .search .searchLeft .logo').click(function () {
             window.location.href = 'index.html' + window.location.search;
@@ -453,16 +453,7 @@
 
 
 
-        //地址
-        /*
-         * <select class="location location1" id="location1">
-         <option value="LUSAKA">LUSAKA</option>
-         </select>
-         <select class="location location2" id="location2">
-         <option value="二级地理位置">二级地理位置</option>
-         <option value="北京">北京</option>
-         </select>
-         * */
+        //获取地址id
 //        $('#location1')
         var addr_l1;
         var addr_l2;
@@ -475,6 +466,8 @@
                     data = JSON.parse(data.data);
                     console.log("获得区域信息2", data);
                     var str1 = '';
+                    var str2 = '';
+                    var str3 = '';
                     var locationArr1 = [];
                     var locationArr1Id = [];
                     var locationArr2 = [];
@@ -484,55 +477,59 @@
                         locationArr2.push(data[sort].sub);
                         str1 += "<option>"+data[sort].name+"</option>";
                     }
-                    var aaindex;
+                    console.log('locationArr1',locationArr1);
+                    console.log('locationArr2',locationArr2);
                     $('#location1').append(str1);
-                    for(let i=0; i<locationArr1.length; i++){
-                        if($('#location1 option:selected').html() == locationArr1[i]){
-                            aaindex = i;
-                            console.log(aaindex);
-                            addr_l1 = locationArr1Id[i];
-                            console.log(addr_l1);
-                            var str2 = '';
-                            for(var j=0; j<locationArr2[i].length; j++){
-                                str2 = "<option>"+locationArr2[i][j].name+"</option>";
-                                $('#location2').append(str2);
-                                if($('#location2 option:selected').html() == locationArr2[i][j].name){
-                                    addr_l2 = locationArr2[i][j].id;
-                                    console.log(addr_l2);
-                                }
-                            }
-
-                        }
+                    addr_l1 = locationArr1Id[0];
+                    addr_l2 = locationArr2[0][0].id;
+                    console.log(addr_l1);
+                    console.log(addr_l2);
+                    for(var i=0; i<locationArr2[0].length; i++){
+                        str2 += "<option>"+locationArr2[0][i].name+"</option>";
                     }
-                    $('#location1').change(function () {
+                    console.log(str2);
+                    $('#location2').append(str2);
+
+                    $('#location1').change(function (){
+                        str3 = '';
+                        $('#location2').empty();
                         for(let i=0; i<locationArr1.length; i++){
                             if($('#location1 option:selected').html() == locationArr1[i]){
-                                aaindex = i;
-                                console.log(aaindex);
+                                console.log(i);
                                 addr_l1 = locationArr1Id[i];
-                                console.log(addr_l1);
-                                var str2 = '';
+                                console.log('addr_l1='+addr_l1);
+
                                 for(var j=0; j<locationArr2[i].length; j++){
-                                    str2 = "<option>"+locationArr2[i][j].name+"</option>";
-                                    $('#location2').append(str2);
+                                    str3 = "<option>"+locationArr2[i][j].name+"</option>";
+                                    $('#location2').append(str3);
                                     if($('#location2 option:selected').html() == locationArr2[i][j].name){
                                         addr_l2 = locationArr2[i][j].id;
-                                        console.log(addr_l2);
+                                        console.log('addr_l2='+addr_l2);
                                     }
                                 }
 
+                                
                             }
                         }
                     });
-                    $('#location2').change(function () {
-                        var str2 = '';
-//                        $('#location2').empty();
-                        for(var j=0; j<locationArr2[aaindex].length; j++){
-                            str2 = "<option>"+locationArr2[aaindex][j].name+"</option>";
-                            $('#location2').append(str2);
-                            if($('#location2 option:selected').html() == locationArr2[aaindex][j].name){
-                                addr_l2 = locationArr2[aaindex][j].id;
-                                console.log(addr_l2);
+                    $('#location2').change(function (){
+                        for(let i=0; i<locationArr1.length; i++){
+                            if($('#location1 option:selected').html() == locationArr1[i]){
+                                console.log(i);
+                                addr_l1 = locationArr1Id[i];
+                                console.log('addr_l1='+addr_l1);
+
+//                                $('#location2').empty();
+                                for(var j=0; j<locationArr2[i].length; j++){
+                                    str3 = "<option>"+locationArr2[i][j].name+"</option>";
+                                    $('#location2').append(str3);
+                                    if($('#location2 option:selected').html() == locationArr2[i][j].name){
+                                        addr_l2 = locationArr2[i][j].id;
+                                        console.log('addr_l2='+addr_l2);
+                                    }
+                                }
+
+
                             }
                         }
                     });
@@ -583,47 +580,71 @@
             var token = localStorage.getItem("token");
             console.log('localStorage.getItem("token")',localStorage.getItem("token"));
             token=(token == null)?"":token;
-            var pubGoodInfo = {
-                "token":token, 			//用户登录凭证，如果是匿名发布则留空""
-                "cid":cid.toString(),				//产品分类ID (需调整)
-                "issell":issell,		//是否是出售，"1"为出售，"0"为需求
-                "goodstatus":goodstatus,		//产品新旧,"0","1","2","3","4","5"...
-                "price":$('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val(),			//价格
-                "title":$('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val(),		//标题
-                "details":$('.sortBox .sort .partInner2 .partInner2Box .right .detailText').val(),	//产品详情
-                /*"addr_l1":$('.sortBox .sort .partInner2 .partInner2Box .right .location1 option:selected').val(),			//一级地址 ID
-                 "addr_l2":$('.sortBox .sort .partInner2 .partInner2Box .right .location2 option:selected').val(),			//二级地址 ID
-                 "addr_l3":$('.sortBox .sort .partInner2 .partInner2Box .right .location3 option:selected').val(),			//三级地址 ID*/
-                "addr_l1":"3",			//一级地址 ID
-                "addr_l2":"2",			//二级地址 ID
-                "addr_l3":"4",			//三级地址 ID
-                "addr_l4":$('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val(),			//详细地址
-                "contactname":$('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val(),	//联系人姓名
-                "phone":$('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(),		//联系人手机
-//                    "imgs":"http://www.kalichimall.com//static/img/default.png"				//产品图片ID，图片ID通过图片上传接口获得
-                "imgs":"1"				//产品图片ID，图片ID通过图片上传接口获得
-            };
-            console.log("pubGoodInfo", pubGoodInfo);
 
-            $('.sortBox .sort .part').removeClass("active").eq(2).addClass("active");
-//            $('.sortBox .sort .partInner').hide().eq(2).show();
+
+            //上传图片
+            var imgsId;
+            var fd = new FormData();
+            fd.append("upload", 1);
+            console.log($("#upfile").get(0).files[0]);
+            fd.append("upfile", $("#upfile").get(0).files[0]);
             $.ajax({
-                type:"POST",
-                url:baseUrl + "/apigateway/pubgood",
-                dataType:"json",
-                data:JSON.stringify(pubGoodInfo),
-                success:function(data){
-                    console.log(data);
-                    if(data.status == 200){
-                        alert(data.status);
+                url: "http://www.kalichimall.com/apigateway/upfile",
+                type: "POST",
+                processData: false,
+                contentType: false,
+                data: fd,
+                success: function(imgData) {
+                    if(imgData.status == 200){
+                        console.log(imgData);
+                        console.log(imgData.data);
+                        imgsId = imgData.data;
+
+                        //上传图片成功执行提交
+                        var pubGoodInfo = {
+                            "token":token, 			//用户登录凭证，如果是匿名发布则留空""
+                            "cid":cid.toString(),				//产品分类ID (需调整)
+                            "issell":issell,		//是否是出售，"1"为出售，"0"为需求
+                            "goodstatus":goodstatus,		//产品新旧,"0","1","2","3","4","5"...
+                            "price":$('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val(),			//价格
+                            "title":$('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val(),		//标题
+                            "details":$('.sortBox .sort .partInner2 .partInner2Box .right .detailText').val(),	//产品详情
+                            "addr_l1":addr_l1.toString(),			//一级地址 ID
+                            "addr_l2":addr_l2.toString(),			//二级地址 ID
+                            "addr_l3":"0",			//三级地址 ID
+                            "addr_l4":$('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val(),			//详细地址
+                            "contactname":$('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val(),	//联系人姓名
+                            "phone":$('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(),		//联系人手机
+                            "imgs":imgsId				//产品图片ID，图片ID通过图片上传接口获得
+                        };
+                        console.log("pubGoodInfo", pubGoodInfo);
+
+                        $.ajax({
+                            type:"POST",
+                            url:baseUrl + "/apigateway/pubgood",
+                            dataType:"json",
+                            data:JSON.stringify(pubGoodInfo),
+                            success:function(data){
+                                console.log(data);
+                                if(data.status == 200){
+//                                alert(data.status);
+                                    $('.sortBox .sort .part').removeClass("active").eq(2).addClass("active");
+                                    $('.sortBox .sort .partInner').hide().eq(2).show();
+                                }else{
+                                    alert(data.msg);
+                                }
+                            },
+                            error:function(error){
+                                console.log(error);
+                            }
+                        });
                     }else{
-                        alert(data.msg);
+                        alert(imgData.msg);
                     }
-                },
-                error:function(error){
-                    console.log(error);
+
                 }
             });
+
         });
 
         $('.sortBox .sort .partInner3 .completeBtn').click(function(){

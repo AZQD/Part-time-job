@@ -240,7 +240,7 @@
             position: absolute;
             width:100%;
             left:0;
-            bottom:0;
+            bottom:-22px;
             padding-left: 38px;
         }
         .detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btnLink{
@@ -429,6 +429,31 @@
             margin-bottom: -5px;
             background-color: #F2F2F2;
         }
+
+        /*分享的btn*/
+        ul.share-buttons{
+            list-style: none;
+            padding: 0;
+        }
+
+        ul.share-buttons li{
+            display: inline;
+        }
+
+        ul.share-buttons .sr-only {
+            position: absolute;
+            clip: rect(1px 1px 1px 1px);
+            clip: rect(1px, 1px, 1px, 1px);
+            padding: 0;
+            border: 0;
+            height: 1px;
+            width: 1px;
+            overflow: hidden;
+        }
+
+        ul.share-buttons img{
+            width: 32px;
+        }
     </style>
 </head>
 <body>
@@ -537,9 +562,15 @@
                         <p class="attr attr1">Price:<span class="num1">1205</span>&nbsp;<span class="num2">ZMW</span></p>
                         <p class="attr">Add:</p>
                         <div class="userBtn">
-                            <a href="#" class="btnLink btn1">BUY IT</a>
+                            <ul class="share-buttons">
+                                <li><a href="https://www.facebook.com/sharer/sharer.php?u=编码后的跳转地址&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="social_flat_rounded_rects_svg/Facebook.svg"></a></li>
+                                <li><a href="https://twitter.com/intent/tweet?source=编码后的跳转地址&text=分享文本" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="social_flat_rounded_rects_svg/Twitter.svg"></a></li>
+                                <li><a href="https://plus.google.com/share?url=编码后的跳转地址" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Google+" src="social_flat_rounded_rects_svg/Google+.svg"></a></li>
+
+                            </ul>
+                            <!--<a href="#" class="btnLink btn1">BUY IT</a>-->
                             <!--<a href="#" class="btnLink btn2">SHARE</a>-->
-                            <a href="#" class="btnLink btn2"><img class="likeImg" src="image/detailPage/share.png">SHARE</a><br/>
+                            <!--<a href="#" class="btnLink btn2"><img class="likeImg" src="image/detailPage/share.png">SHARE</a><br/>-->
                             <a href="#" class="btnLink btn2 btn3"><img class="likeImg"/><span></span></a>
                             <!--<a href="#" class="btnLink btn2 btn3 btn4"><img class="likeImg" src="image/detailPage/remove.png">&nbsp;Remove</a>-->
                             <!--<a href="#" class="btnLink btn2 btn3"><img class="likeImg" src="image/detailPage/bad.png">&nbsp;99</a>-->
@@ -698,66 +729,70 @@
         }
 
         $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3').click(function () {
-            if(isCollect == true){//如果默认已经收藏
-                //删除收藏
-                var delwishInfo = {
-                    "token":token, 			//用户登录凭证，必须登录才能发布评论
-                    "goodid":"1",			//产品ID
-                    "timestamp":timestamp
-                };
-                $.ajax({
-                    type:"POST",
-                    url:baseUrl + "/apigateway/delwish",
-                    dataType:"json",
-                    data:JSON.stringify(delwishInfo),
-                    success:function(data){
-                        //console.log(data);
-                        if(data.status == 200){
+            if(token == null){
+                alert('请先登录~');
+            }else{
+                if(isCollect == true){//如果默认已经收藏
+                    //删除收藏
+                    var delwishInfo = {
+                        "token":token, 			//用户登录凭证，必须登录状态
+                        "goodid":"1",			//产品ID
+                        "timestamp":timestamp
+                    };
+                    $.ajax({
+                        type:"POST",
+                        url:baseUrl + "/apigateway/delwish",
+                        dataType:"json",
+                        data:JSON.stringify(delwishInfo),
+                        success:function(data){
+                            //console.log(data);
+                            if(data.status == 200){
 //                    data = JSON.parse(data.data);
-                            console.log("删除收藏",data);
-                            isCollect = false;
-                            $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 img').attr("src", "image/detailPage/asMyWish.png");
-                            $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 span').html("As my wish");
-                        }else if(data.status == 501){//token失效
-                            console.log(data.msg);
-                        }else{
-                            console.log(data.msg);
+                                console.log("删除收藏",data);
+                                isCollect = false;
+                                $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 img').attr("src", "image/detailPage/asMyWish.png");
+                                $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 span').html("As my wish");
+                            }else if(data.status == 501){//token失效
+                                console.log(data.msg);
+                            }else{
+                                console.log(data.msg);
+                            }
+                        },
+                        error:function(error){
+                            console.log(error);
                         }
-                    },
-                    error:function(error){
-                        console.log(error);
-                    }
-                });
-            }else{//如果默认未收藏
-                //提交收藏
-                var putwishInfo = {
-                    "token":token, 			//用户登录凭证，必须登录才能发布评论
-                    "goodid":"1",			//产品ID
-                    "timestamp":timestamp
-                };
-                $.ajax({
-                    type:"POST",
-                    url:baseUrl + "/apigateway/putwish",
-                    dataType:"json",
-                    data:JSON.stringify(putwishInfo),
-                    success:function(data){
-                        //console.log(data);
-                        if(data.status == 200){
+                    });
+                }else{//如果默认未收藏
+                    //提交收藏
+                    var putwishInfo = {
+                        "token":token, 			//用户登录凭证，必须登录状态
+                        "goodid":"1",			//产品ID
+                        "timestamp":timestamp
+                    };
+                    $.ajax({
+                        type:"POST",
+                        url:baseUrl + "/apigateway/putwish",
+                        dataType:"json",
+                        data:JSON.stringify(putwishInfo),
+                        success:function(data){
+                            //console.log(data);
+                            if(data.status == 200){
 //                    data = JSON.parse(data.data);
-                            console.log("提交收藏",data);
-                            $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 img').attr("src", "image/detailPage/remove.png");
-                            $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 span').html("Remove");
-                            isCollect = true;
-                        }else if(data.status == 501){//token失效
-                            console.log(data.msg);
-                        }else{
-                            console.log(data.msg);
+                                console.log("提交收藏",data);
+                                $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 img').attr("src", "image/detailPage/remove.png");
+                                $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 span').html("Remove");
+                                isCollect = true;
+                            }else if(data.status == 501){//token失效
+                                console.log(data.msg);
+                            }else{
+                                console.log(data.msg);
+                            }
+                        },
+                        error:function(error){
+                            console.log(error);
                         }
-                    },
-                    error:function(error){
-                        console.log(error);
-                    }
-                });
+                    });
+                }
             }
 
         });
