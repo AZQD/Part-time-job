@@ -17,7 +17,7 @@
             overflow: auto;
             background-color: #E9E9E9;
         }
-        
+
         /*searchBox*/
         .searchBox .search{
             width:1200px;
@@ -520,7 +520,7 @@
         </div>
     </aside>
 
-    <aside class="refreshBox">
+    <!--<aside class="refreshBox">
         <div class="row refresh">
             <div class="col-xs-6 col-sm-6 refreshLeft">
                 <span class="refreshName">SOMETHING YOU MAY LIKE</span>
@@ -570,7 +570,7 @@
                 </div>
             </li>
         </ul>
-    </aside>
+    </aside>-->
 
     <aside class="nearbyBox">
         <div class="row nearby">
@@ -586,7 +586,7 @@
 
     <aside class="nearbyImgBox">
         <ul class="nearbyImg">
-            <li class="nearbyLi">
+            <!--<li class="nearbyLi">
                 <img class="goodImg" src="image/index/good1.jpg">
                 <div class="desc row">
                     <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
@@ -620,7 +620,7 @@
                     <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
                     <div class="col-xs-6 col-sm-6 right">1054</div>
                 </div>
-            </li>
+            </li>-->
         </ul>
         <p class="more"><a href="###" class="moreText">MORE</a></p>
     </aside>
@@ -649,6 +649,20 @@
 <script type="text/javascript">
     $(function(){
 
+        //getbestgoods
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/getbestgoods",
+            success:function(data){
+                alert(1);
+                console.log("getbestgoods",data);
+            },
+            error:function(error){
+                alert(2);
+                console.log(error);
+            }
+        });
+
         //点击图片logo跳转到index页面；
         $('.searchBox .search .searchLeft .logo').click(function () {
             window.location.href = 'index.html' + window.location.search;
@@ -661,7 +675,7 @@
 
 
 
-        /*refreshImgBox，nearbyImgBox：hover图片动效*/
+        /*/!*refreshImgBox，nearbyImgBox：hover图片动效*!/
         $('.refreshImgBox .refreshImg .refreshLi .goodImg, .nearbyImgBox .nearbyImg .nearbyLi .goodImg').hover(
                 function(){
                     $(this).siblings('.desc').fadeIn();
@@ -669,7 +683,7 @@
                 function(){
                     $(this).siblings('.desc').fadeOut();
                 }
-        );
+        );*/
 
         //获得产品分类
         $.ajax({
@@ -872,6 +886,7 @@
                 console.log(error);
             }
         });
+
 
     });
 
