@@ -657,81 +657,87 @@
 
 
         $('.sortBox .sort .partInner2 .partInner2Box .publishBtn').click(function(){
-
-            var token = localStorage.getItem("token");
-            console.log('localStorage.getItem("token")',localStorage.getItem("token"));
-            token=(token == null)?"":token;
-
-
-            //上传图片
-            var imgsId;
-            var fd = new FormData();
-            fd.append("upload", 1);
-            console.log($("#upfile").get(0).files[0]);
-            fd.append("upfile", $("#upfile").get(0).files[0]);
-            $.ajax({
-                url: "http://www.kalichimall.com/apigateway/upfile",
-                type: "POST",
-                processData: false,
-                contentType: false,
-                data: fd,
-                success: function(imgData) {
-                    if(imgData.status == 200){
-                        console.log(imgData);
-                        console.log(imgData.data);
-                        imgsId = imgData.data;
+            if(priceRight){
+                var token = localStorage.getItem("token");
+                console.log('localStorage.getItem("token")',localStorage.getItem("token"));
+                token=(token == null)?"":token;
 
 
+                //上传图片
+                var imgsId;
+                var fd = new FormData();
+                fd.append("upload", 1);
+                console.log($("#upfile").get(0).files[0]);
+                fd.append("upfile", $("#upfile").get(0).files[0]);
+                $.ajax({
+                    url: "http://www.kalichimall.com/apigateway/upfile",
+                    type: "POST",
+                    processData: false,
+                    contentType: false,
+                    data: fd,
+                    success: function(imgData) {
+                        if(imgData.status == 200){
+                            console.log(imgData);
+                            console.log(imgData.data);
+                            imgsId = imgData.data;
 
-                        //上传图片成功执行提交
-                        var pubGoodInfo = {
-                            "token":token, 			//用户登录凭证，如果是匿名发布则留空""
-                            "cid":cid.toString(),				//产品分类ID (需调整)
-                            "issell":issell,		//是否是出售，"1"为出售，"0"为需求
-                            "goodstatus":goodstatus,		//产品新旧,"0","1","2","3","4","5"...
-                            "price":priceText.toString(),			//价格
-                            "title":$('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val(),		//标题
-                            "details":$('.sortBox .sort .partInner2 .partInner2Box .right .detailText').val(),	//产品详情
-                            "addr_l1":addr_l1.toString(),			//一级地址 ID
-                            "addr_l2":addr_l2.toString(),			//二级地址 ID
-                            "addr_l3":"0",			//三级地址 ID
-                            "addr_l4":$('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val(),			//详细地址
-                            "contactname":$('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val(),	//联系人姓名
-                            "phone":$('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(),		//联系人手机
-                            "imgs":imgsId				//产品图片ID，图片ID通过图片上传接口获得
-                        };
-                        console.log("pubGoodInfo", pubGoodInfo);
 
-                        $.ajax({
-                            type:"POST",
-                            url:baseUrl + "/apigateway/pubgood",
-                            dataType:"json",
-                            data:JSON.stringify(pubGoodInfo),
-                            success:function(data){
-                                console.log(data);
-                                if(data.status == 200){
+
+                            //上传图片成功执行提交
+                            var pubGoodInfo = {
+                                "token":token, 			//用户登录凭证，如果是匿名发布则留空""
+                                "cid":cid.toString(),				//产品分类ID (需调整)
+                                "issell":issell,		//是否是出售，"1"为出售，"0"为需求
+                                "goodstatus":goodstatus,		//产品新旧,"0","1","2","3","4","5"...
+                                "price":priceText.toString(),			//价格
+                                "title":$('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val(),		//标题
+                                "details":$('.sortBox .sort .partInner2 .partInner2Box .right .detailText').val(),	//产品详情
+                                "addr_l1":addr_l1.toString(),			//一级地址 ID
+                                "addr_l2":addr_l2.toString(),			//二级地址 ID
+                                "addr_l3":"0",			//三级地址 ID
+                                "addr_l4":$('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val(),			//详细地址
+                                "contactname":$('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val(),	//联系人姓名
+                                "phone":$('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(),		//联系人手机
+                                "imgs":imgsId				//产品图片ID，图片ID通过图片上传接口获得
+                            };
+                            console.log("pubGoodInfo", pubGoodInfo);
+
+                            $.ajax({
+                                type:"POST",
+                                url:baseUrl + "/apigateway/pubgood",
+                                dataType:"json",
+                                data:JSON.stringify(pubGoodInfo),
+                                success:function(data){
+                                    console.log(data);
+                                    if(data.status == 200){
 //                                alert(data.status);
-                                    $('.sortBox .sort .part').removeClass("active").eq(2).addClass("active");
-                                    $('.sortBox .sort .partInner').hide().eq(2).show();
-                                }else{
-                                    alert(data.msg);
+                                        $('.sortBox .sort .part').removeClass("active").eq(2).addClass("active");
+                                        $('.sortBox .sort .partInner').hide().eq(2).show();
+                                    }else{
+                                        alert(data.msg);
+                                    }
+                                },
+                                error:function(error){
+                                    console.log(error);
                                 }
-                            },
-                            error:function(error){
-                                console.log(error);
-                            }
+                            });
+                        }else{
+                            alert(imgData.msg);
+                        }
+
+                        $('.sortBox .sort .partInner3 .completeBtn').click(function(){
+                            window.location.href = "detail.html";
                         });
-                    }else{
-                        alert(imgData.msg);
+
+                    },
+                    error:function(error){
+                        console.log(error);
                     }
-
-                }
-            });
-
-        });
-
-        $('.sortBox .sort .partInner3 .completeBtn').click(function(){
-            window.location.href = "detail.html";
+                });
+            }else{
+                alert("价格范围在0-100000000之间,且为数字！");
+            }
+            
         });
 
 
