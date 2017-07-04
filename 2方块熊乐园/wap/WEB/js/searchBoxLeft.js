@@ -15,9 +15,11 @@ $.ajax({
             console.log("获得产品分类",data);
 
             var cidIdArr = [];
+            var cidNameArr = [];
             var totalStr = "";
             for (var sort in data) {
                 cidIdArr.push(data[sort].cid);
+                cidNameArr.push(data[sort].name);
                 //二级菜单
                 var str = '';
                 var listStr = '';
@@ -28,6 +30,7 @@ $.ajax({
                 listStr = '<li class="menuLi"><a href="#" class="menuLiLink">'+data[sort].name+'</a><ul class="twoUl" style="display: none;">'+str+'</ul></li>';
                 $('.searchBox .search .menuUl').append(listStr);
             }
+            $('.searchBox .search .searchLeft .second').html(cidNameArr[0]);
             console.log('cidIdArr='+cidIdArr);
 
             /*phone切换菜单*/

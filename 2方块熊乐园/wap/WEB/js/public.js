@@ -138,3 +138,5 @@ var token = localStorage.getItem("token");
 //console.log('localStorage.getItem("token")',localStorage.getItem("token"));
 //        var token = getCookie('token');//获取token
 var timestamp=new Date().getTime();//获取时间戳
+
+$('.favicon').attr('href', 'image/favicon.ico');

@@ -7,6 +7,7 @@
     <meta http-equiv="x-dns-prefetch-control" content="on" />
     <meta name="format-detection"content="telephone=no"/>
     <meta name="format-detection" content="email=no"/>
+    <link class="favicon" href="" rel="shortcut icon" type="image/x-icon"/>
     <link rel="stylesheet" href="css/bootstraptc.min.css">
     <link rel="stylesheet" href="css/ppublic.min.css">
     <link rel="stylesheet" href="css/swiper.min.css">
@@ -666,13 +667,20 @@
                         data = JSON.parse(data.data);
                         console.log("搜索",data);
                         var str = '';
+                        var imgsLth = 0;
                         var goodIdArr = [];
                         for (var list in data) {
                             goodIdArr.push(data[list].id);
+                            var imgs = data[list].imgs;
+                            if(imgs != null){
+                                imgs = imgs.split(',');
+                                imgsLth = imgs.length;
+                            }
+                            console.log(imgsLth);
 //                            console.log(data[list]);
                             str += '<div class="row goods">' +
                                     '<div class="col-xs-3 col-sm-3 goodsLeft">' +
-                                    '<img src='+baseUrl+'/gimg/'+data[list].imgs+'><span class="tip">3</span>' +
+                                    '<img src='+baseUrl+'/gimg/'+data[list].cimg+'><span class="tip">'+imgsLth+'</span>' +
                                     '</div>' +
                                     '<div class="col-xs-6 col-sm-6 goodsMiddle">' +
                                     '<p class="goodName">'+data[list].contactname+'</p>' +
@@ -766,12 +774,19 @@
                         console.log("产品列表查看",data);
                         var str = '';
                         var goodIdArr = [];
+                        var imgsLth = 0;
                         for (var list in data) {
+                            var imgs = data[list].imgs;
+                            if(imgs != null){
+                                imgs = imgs.split(',');
+                                imgsLth = imgs.length;
+                            }
+                            console.log(imgsLth);
                             goodIdArr.push(data[list].id);
 //                            console.log(data[list]);
                             str += '<div class="row goods">' +
                                     '<div class="col-xs-3 col-sm-3 goodsLeft">' +
-                                    '<img src='+baseUrl+'/gimg/'+data[list].imgs+'><span class="tip">3</span>' +
+                                    '<imdg src='+baseUrl+'/gimg/'+data[list].cimg+'><span class="tip">'+imgsLth+'</span>' +
                                     '</div>' +
                                     '<div class="col-xs-6 col-sm-6 goodsMiddle">' +
                                     '<p class="goodName">'+data[list].contactname+'</p>' +

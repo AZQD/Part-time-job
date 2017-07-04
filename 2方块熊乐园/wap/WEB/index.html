@@ -7,6 +7,7 @@
     <meta http-equiv="x-dns-prefetch-control" content="on" />
     <meta name="format-detection"content="telephone=no"/>
     <meta name="format-detection" content="email=no"/>
+    <link class="favicon" href="" rel="shortcut icon" type="image/x-icon"/>
     <link rel="stylesheet" href="css/bootstraptc.min.css">
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/ppublic.min.css">
@@ -788,34 +789,7 @@
 
 
 
-        //获得收藏信息
-        var getwishInfo = {
-            "token":token,			//登录凭证，当action="user" 时必须指定
-            "goodid":"1",		//商品ID, 当action="good" 时必须指定
-            "action":"good",	//good 或者 user,指定为good时获得该商品的评论信息，指定为user时获得该用户的评论信息
-            "start":"1",			//从第几条开始
-            "num":"10"			//获得几条,最多20条
-        };
-        $.ajax({
-            type:"POST",
-            url:baseUrl + "/apigateway/getwish",
-            dataType:"json",
-            data:JSON.stringify(getwishInfo),
-            success:function(data){
-                //console.log(data);
-                if(data.status == 200){
-                    data = JSON.parse(data.data);
-                    console.log("获得收藏信息",data);
-                }else if(data.status == 501){//token失效
-                    console.log(data.msg);
-                }else{
-                    console.log (data.msg);
-                }
-            },
-            error:function(error){
-                console.log(error);
-            }
-        });
+
 
         //获得评论信息(支持盖楼)
         var getcommentInfo = {
@@ -847,27 +821,6 @@
         });
 
 
-        //上传图片
-        $.ajax({
-            type:"POST",
-            url:baseUrl + "/apigateway/upfile",
-//            dataType:"json",
-            'Content-Type':"multipart/form-data",
-            success:function(data){
-                console.log(baseUrl + "/apigateway/upfile");
-                console.log("上传图片",data);
-                if(data.status == 200){
-
-                }else if(data.status == 501){//token失效
-                    console.log(data.msg);
-                }else{
-                    console.log (data.msg);
-                }
-            },
-            error:function(error){
-                console.log(error);
-            }
-        });
         
         
         //获取图片
