@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>类目详细页</title>
+    <title>category</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
     <meta http-equiv="x-dns-prefetch-control" content="on" />
     <meta name="format-detection"content="telephone=no"/>
@@ -660,7 +660,7 @@
             $('.searchBox .search .searchLeft .second').html(searchKeyWord);//二级标题
             $.ajax({
                 type: "get",
-                url: baseUrl+"/apigateway/search?key="+searchKeyWord+"&start=0&n=30",
+                url: baseUrl+"/apigateway/search?key="+searchKeyWord+"&start=2&n=30",
                 dataType:"json",
                 success: function(data){
                     if(data.status == 200){

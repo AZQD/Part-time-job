@@ -26,6 +26,7 @@ SVN密码：lcj_789
 时间：2017年5月22日14:01:10
 新需求：http://h.youkongwan.com/test/wap/index.html
 
+售卖网站：
 新建svn：https://182.92.177.5/svn/lusaka/
 
 
@@ -52,3 +53,6 @@ Content-Type: multipart/form-data
 
 //发布成功之后返回商品id
 //详情页右侧内容；
+
+2017年7月5日14:25:42
+分页需要获取总页数；

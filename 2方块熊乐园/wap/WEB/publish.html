@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>发布</title>
+    <title>publish</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
     <meta http-equiv="x-dns-prefetch-control" content="on" />
     <meta name="format-detection"content="telephone=no"/>
@@ -711,6 +711,8 @@
                                     console.log(data);
                                     if(data.status == 200){
 //                                alert(data.status);
+                                        //保存id，点击CLICK IT 进入该商品详情页
+                                        localStorage.setItem('goodIdFromCategory',data.data);
                                         $('.sortBox .sort .part').removeClass("active").eq(2).addClass("active");
                                         $('.sortBox .sort .partInner').hide().eq(2).show();
                                     }else{

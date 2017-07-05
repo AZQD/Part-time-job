@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>产品详情</title>
+    <title>detail</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
     <meta http-equiv="x-dns-prefetch-control" content="on" />
     <meta name="format-detection"content="telephone=no"/>
@@ -337,16 +337,22 @@
             width:300px;
             /*background-color: pink;*/
         }
-        .detailBox .detail .detailRight .userInfo{
+        .detailBox .detail .detailRight .userInfo {
             background-color: #F2F2F2;
+        }
+        .detailBox .detail .detailRight .userInfo .userInfoImg{
+
         }
         .detailBox .detail .detailRight .headImg{
             text-align: center;
             padding: 18px 0 6px 0;
+            height: 104px;
+            border: none;
         }
         .detailBox .detail .detailRight .name{
             font-size: 14px;
             color: #333;
+            height: 20px;
             text-align: center;
         }
         .detailBox .detail .detailRight .talk{
@@ -468,9 +474,79 @@
         ul.share-buttons img{
             width: 32px;
         }
+
+        .popBox{
+            position: absolute;
+            background-color: RGBA(0,0,0,0.6);
+            /*background-color: #000000;*/
+            /*opacity: .6;*/
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+        }
+        .popBox .tipOffBox{
+            width: 600px;
+            /*height: 300px;*/
+            background-color: #fff;
+            margin: 0 auto;
+            margin-top: 150px;
+            padding: 30px 24px;
+        }
+        .popBox .tipOffBox .title{
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+        .popBox .tipOffBox #detail{
+            vertical-align: top;
+            width: 464px;
+            height: 133px;
+            resize: none;
+            font-size: 13px;
+            color: #000000;
+        }
+        .popBox .tipOffBox #content{
+            width: 246px;
+            height: 35px;
+            line-height:35px;
+        }
+        .popBox .tipOffBox .tip{
+            color: #FF4720;
+        }
+        .popBox .tipOffBox .content{
+            padding-top: 20px;
+        }
+        .popBox .tipOffBox .submit{
+            text-align: center;
+            padding-top: 32px;
+        }
+        .popBox .tipOffBox .submit .submitBtn{
+            width: 127px;
+            height: 35px;
+            line-height:35px;
+            border:none;
+            outline: none;
+            background-color: #FF4720;
+            color: #fff;
+            font-size: 13px;
+        }
     </style>
 </head>
 <body>
+<section class="popBox" id="popBox" style="display: none;">
+<div class="tipOffBox">
+    <div class="">
+        <label id="labelDetail" for="detail"><span class="title">Details</span><span class="tip">*</span></label>&nbsp;&nbsp;&nbsp;&nbsp;
+        <textarea name="" id="detail" cols="30" rows="10"></textarea>
+    </div>
+    <div class="content">
+        <span class="title">Content</span>&nbsp;&nbsp;&nbsp;&nbsp;<input id="content" type="text" PLACEHOLDER="Your Cellphone Number">
+    </div>
+    <div class="submit">
+        <button class="submitBtn">Submit</button>
+    </div>
+</div>
+</section>
 <section class="container-fluid">
 
     <aside class="headerBox">
@@ -551,7 +627,7 @@
         <div class="row detail">
             <!--detailLeft-->
             <div class="col-xs-9 col-sm-9 detailLeft">
-                <a href="#" class="tipOff">TIP OFF</a>
+                <a href="###" class="tipOff">TIP OFF</a>
                 <h3 class="goodName">iPhone 5s,  More Info Here</h3>
                 <div class="row goodDesc">
                     <div class="col-xs-7 col-sm-7 goodDescLeft">
@@ -602,13 +678,14 @@
             <div class="col-xs-3 col-sm-3 detailRight">
                 <div class="userInfo">
                     <div class="col-xs-12 col-sm-12 headImg">
-                        <img src="image/detailPage/headImg.png">
+                        <!--<img src="image/detailPage/headImg.png">-->
+                        <img class="userInfoImg" src="">
                     </div>
                     <div class="col-xs-12 col-sm-12 name">
-                        laan
+
                     </div>
                     <div class="col-xs-12 col-sm-12 talk">
-                        <a href="###">TALK WITH HIM</a>
+                        <a href="###" class="goHome"></a>
                     </div>
                 </div>
                 <div class="row selling">
@@ -701,6 +778,24 @@
 <script type="text/javascript">
     $(function(){
 
+        //点击tipOff
+        $('.detailBox .detail .detailLeft .tipOff').click(function(event){
+            event.stopPropagation();
+            $('#popBox').show();
+        });
+        $('.popBox .tipOffBox').click(function(event){
+            event.stopPropagation();
+        });
+        $('.popBox .tipOffBox .submit .submitBtn, .popBox').click(function(event){
+            event.stopPropagation();
+            $('.popBox').hide();
+        });
+
+
+        //goHome
+        $('.detailBox .detail .detailRight .goHome').click(function(){
+            window.location.href = 'profile.html';
+        });
 
 
 

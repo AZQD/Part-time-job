@@ -29,8 +29,14 @@ $(function(){
                     console.log("用户已登陆");
                     $('.headerBox .header .headerRight2').show();
 //                        $('.headerBox .header .headerRight .headImgBox .headImg').show().attr('src',baseUrl+"/"+data.logo);
-                    $('.headerBox .header .headerRight .headImgBox .headImg').show().attr('src',"http://www.kalichimall.com//static/img/default.png");
+                    $('.headerBox .header .headerRight .headImgBox .headImg').show().attr('src',baseImgSrc+data.logo);
                     $('.headerBox .header .headerRight .name').html(data.nickname);
+
+                    //详情页信息
+                    $('.detailBox .detail .detailRight .userInfo .userInfoImg').attr('src',baseImgSrc+data.logo);
+                    $('.detailBox .detail .detailRight .name').html(data.nickname);
+                    $('.detailBox .detail .detailRight .goHome').html(data.nickname + '\'s home');
+
                     $('.headerBox .header .headerRight .headImgBox').unbind('click').click(function(){
                         window.location.href = "manage.html";
                     });

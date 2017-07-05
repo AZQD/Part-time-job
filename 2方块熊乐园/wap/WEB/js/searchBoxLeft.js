@@ -30,7 +30,7 @@ $.ajax({
                 listStr = '<li class="menuLi"><a href="#" class="menuLiLink">'+data[sort].name+'</a><ul class="twoUl" style="display: none;">'+str+'</ul></li>';
                 $('.searchBox .search .menuUl').append(listStr);
             }
-            $('.searchBox .search .searchLeft .second').html(cidNameArr[0]);
+            //$('.searchBox .search .searchLeft .second').html(cidNameArr[0]);
             console.log('cidIdArr='+cidIdArr);
 
             /*phone切换菜单*/

@@ -1,4 +1,5 @@
 var baseUrl = "http://www.kalichimall.com";
+var baseImgSrc = baseUrl+"/gimg/";
 function getParamByUrl(paramKey){
   var url=window.location.search.substring(1);
   var arr=url.split("&");
