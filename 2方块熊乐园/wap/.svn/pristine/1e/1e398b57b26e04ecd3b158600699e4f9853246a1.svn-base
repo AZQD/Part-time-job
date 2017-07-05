@@ -639,8 +639,7 @@
 
                     function controlAreaId(){
                         var areaIdArr = [];
-                        areaid = locationArr2[0][0].id;
-                        console.log('**********', areaid);
+                        areaid = locationArr2[0][0];
                         for(let i=0; i<locationArr1.length; i++){
                             var strArea = '<span class="area">AREA</span><a href="#" class="selectChoose active">ALL</a>';
                             if($('.headerBox .header .headerLeft .lusaka').html() == locationArr1[i]){
@@ -682,7 +681,7 @@
         var startSearch = 0;
         function searchPageControl(){
 
-            $('.pageControl .nextPage').unbind('click').click(function(){
+            $('.pageControl .nextPage').click(function(){
                 startSearch += 30 ;
                 if(startSearch<=totalCountSearch){
                     searchFun(searchKeyWord, startSearch);
@@ -691,7 +690,7 @@
                     alert('已经是最后一页了！');
                 }
             });
-            $('.pageControl .lastPage').unbind('click').click(function(){
+            $('.pageControl .lastPage').click(function(){
                 startSearch -= 30 ;
                 if(startSearch >= 0){
                     searchFun(searchKeyWord, startSearch);
@@ -715,10 +714,8 @@
                 success: function(data){
                     if(data.status == 200){
                         console.log("搜索",data);
-                        console.log("搜索url="+baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+"&n=30");
                         //搜索结果总数
                         totalCountSearch = data.extdata;
-                        $('.pageControl').hide();
                         if(totalCountSearch > 30){
                             $('.pageControl').show();
                         }
@@ -818,7 +815,7 @@
 
 
         function tabPageControl(){
-            $('.pageControl .nextPage').unbind('click').click(function(){
+            $('.pageControl .nextPage').click(function(){
                 startTab += 30 ;
                 if(startTab<=totalCountTab){
                     tabPageControl();
@@ -828,7 +825,7 @@
                     alert('已经是最后一页了！');
                 }
             });
-            $('.pageControl .lastPage').unbind('click').click(function(){
+            $('.pageControl .lastPage').click(function(){
                 startTab -= 30 ;
                 if(startTab >= 0){
                     tabPageControl();
@@ -856,8 +853,6 @@
                     console.log("url="+baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&start='+startTab+'&n=30');
                     if (data.status == 200) {
                         totalCountTab = data.extdata;
-//                        alert(totalCountTab);
-                        $('.pageControl').hide();
                         if(totalCountTab > 30){
                             $('.pageControl').show();
                         }
