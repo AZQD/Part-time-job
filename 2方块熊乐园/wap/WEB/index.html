@@ -667,6 +667,10 @@
                             "0%{background:url("+baseUrl+data[0].cimg+")no-repeat;background-size: 100% 100%} " +
                             "100%{background:url("+baseUrl+data[1].cimg+")no-repeat;background-size: 100% 100%}}",6);//写入样式
 
+                    $('#bannerRightBox').unbind('click').click(function(){
+                        localStorage.setItem('goodIdFromCategory',data[0].id);
+                        window.location.href = "detail.html?id="+data[0].id;
+                    });
                     setInterval(function () {
                         if(num == 0){
                             num = 1;
@@ -675,6 +679,10 @@
                         }
                         $('.bannerBox .banner .bannerRight .bannerRightBox .desc .left').html(data[num].cname);
                         $('.bannerBox .banner .bannerRight .bannerRightBox .desc .right').html(data[num].price);
+                        $('#bannerRightBox').unbind('click').click(function(){
+                            localStorage.setItem('goodIdFromCategory',data[num].id);
+                            window.location.href = "detail.html?id="+data[num].id;
+                        });
                     }, 4000);
                     $('.bannerBox .banner .bannerRight .bannerRightBox').click(function () {
                         console.log(data[num].id);
