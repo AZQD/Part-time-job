@@ -9,7 +9,7 @@ $(function(){
         console.log("用户未登陆（没有token）");
         $('.headerBox .header .headerRight1').show();
         $('.headerBox .header .headerRight .login, .headerBox .header .headerRight .register').unbind('click').click(function(){
-            window.location.href = "login.html";
+            window.location.href = "login.html?goLogin="+1;
         });
     }else{
         var authInfo = {
@@ -41,9 +41,7 @@ $(function(){
                         window.location.href = "manage.html";
                     });
                     $('.headerBox .header .headerRight .profile').unbind('click').click(function(){//进入profile.html；
-//                            delCookie('token');
-                        localStorage.removeItem("token");
-                        window.location.reload();
+                       window.location.href = "profile.html?pubUid="+data.uid;
                     });
                     $('.headerBox .header .headerRight .logout').unbind('click').click(function(){//删除token，刷新页面；
 //                            delCookie('token');
@@ -59,7 +57,7 @@ $(function(){
                     console.log("用户未登陆（token过期）");
                     $('.headerBox .header .headerRight1').show();
                     $('.headerBox .header .headerRight .login, .headerBox .header .headerRight .register').unbind('click').click(function(){
-                        window.location.href = "login.html";
+                        window.location.href = "login.html?goLogin="+1;
                     });
 
                 }else{
