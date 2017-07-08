@@ -10,6 +10,8 @@ $(function(){
 
         //publish.html
         $('.publishPopBox').show();
+        $('.publishPopBox').css('top', $(window).scrollTop());
+        $('body').css('overflow', 'hidden');
 
 
         $('.headerBox .header .headerRight1').show();
@@ -57,12 +59,19 @@ $(function(){
                     //profile.html:登陆成功之后显示发布按钮；
                     $('.publishBox .publish .publishBtnBox').show();
 
+                    //publish.html:登录之后默认显示用户昵称和手机号
+                    $('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val(data.nickname);
+                    $('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(data.phone);
+
+
 
                 }else if(data.status == 501){//token失效
                     console.log("用户未登陆（token过期）");
 
                     //publish.html
                     $('.publishPopBox').show();
+                    $('.publishPopBox').css('top', $(window).scrollTop());
+                    $('body').css('overflow', 'hidden');
 
                     $('.headerBox .header .headerRight1').show();
                     $('.headerBox .header .headerRight .login, .headerBox .header .headerRight .register').unbind('click').click(function(){
@@ -70,9 +79,7 @@ $(function(){
                     });
 
                 }else{
-                    $('.commonPopBox').show();
-                    $('.commonPopBox .commonPop .title').html();
-                    $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                    commonPopFun(data.msg);
                 }
             },
             error:function(error){
@@ -150,9 +157,7 @@ $(function(){
                                 }
                             );
                         }else{
-                            $('.commonPopBox').show();
-                            $('.commonPopBox .commonPop .title').html();
-                            $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                            commonPopFun(data.msg);
                         }
                     },
                     error: function (error) {
@@ -221,9 +226,7 @@ $(function(){
                                     }
                                 );
                             }else{
-                                $('.commonPopBox').show();
-                                $('.commonPopBox .commonPop .title').html();
-                                $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                                commonPopFun(data.msg);
                             }
                         },
                         error: function (error) {
@@ -239,9 +242,7 @@ $(function(){
 
 
             } else {
-                $('.commonPopBox').show();
-                $('.commonPopBox .commonPop .title').html();
-                $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                commonPopFun(data.msg);
             }
         },
         error:function(error){

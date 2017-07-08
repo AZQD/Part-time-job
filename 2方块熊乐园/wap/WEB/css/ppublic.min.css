@@ -5,8 +5,8 @@
     position: absolute;
     background-color: RGBA(0,0,0,0.6);
     z-index: 9999;
-    width: 100%;
-    height: 100%;
+    /*width: 100%;*/
+    /*height: 100%;*/
 }
 .commonPopBox .commonPop{
     width: 372px;
@@ -39,4 +39,8 @@
     background-color: rgba(255, 79, 13, 1);
     color: #fff;
     text-align: center;
+}
+
+input,textarea{
+    text-indent: 5px !important;
 }

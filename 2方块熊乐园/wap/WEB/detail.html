@@ -948,9 +948,7 @@
 
 
                 }else{
-                    $('.commonPopBox').show();
-                    $('.commonPopBox .commonPop .title').html();
-                    $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                    commonPopFun(data.msg);
                 }
             },
             error:function(error){
@@ -1020,13 +1018,9 @@
                                             $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 img').attr("src", "image/detailPage/asMyWish.png");
                                             $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 span').html("As my wish");
                                         }else if(data.status == 501){//token失效
-                                            $('.commonPopBox').show();
-                                            $('.commonPopBox .commonPop .title').html();
-                                            $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                                            commonPopFun(data.msg);
                                         }else{
-                                            $('.commonPopBox').show();
-                                            $('.commonPopBox .commonPop .title').html();
-                                            $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                                            commonPopFun(data.msg);
                                         }
                                     },
                                     error:function(error){
@@ -1054,13 +1048,9 @@
                                             $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 span').html("Remove");
                                             isCollect = true;
                                         }else if(data.status == 501){//token失效
-                                            $('.commonPopBox').show();
-                                            $('.commonPopBox .commonPop .title').html();
-                                            $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                                            commonPopFun(data.msg);
                                         }else{
-                                            $('.commonPopBox').show();
-                                            $('.commonPopBox .commonPop .title').html();
-                                            $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                                            commonPopFun(data.msg);
                                         }
                                     },
                                     error:function(error){
@@ -1073,13 +1063,9 @@
                     });
 
                 }else if(data.status == 501){//token失效
-                    $('.commonPopBox').show();
-                    $('.commonPopBox .commonPop .title').html();
-                    $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                    commonPopFun(data.msg);
                 }else{
-                    $('.commonPopBox').show();
-                    $('.commonPopBox .commonPop .title').html();
-                    $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                    commonPopFun(data.msg);
                 }
             },
             error:function(error){
@@ -1125,9 +1111,7 @@
                         console.log('提交投诉', data);
                         alert('投诉成功');
                     }else{
-                        $('.commonPopBox').show();
-                        $('.commonPopBox .commonPop .title').html();
-                        $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                        commonPopFun(data.msg);
                     }
                 },
                 error:function(error){

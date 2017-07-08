@@ -148,6 +148,30 @@ $('.favicon').attr('href', 'image/favicon.ico');
  $('.commonPopBox .commonPop .title').html();
  $('.commonPopBox .commonPop .detailTip').html();
 * */
+$('.commonPopBox').css({
+    'width':$(window).width(),
+    'height':$(window).height(),
+    'top':$(window).scrollTop()
+});
+//$('.commonPopBox').show();
+/*if($('.commonPopBox').is(':visible')){
+    $('body').css('overflow', 'hidden');
+}*/
 $('.commonPopBox .commonPop .confirmBox .confirmBtn').unbind('click').click(function(){
     $('.commonPopBox').hide();
+    $('body').css('overflow', 'auto');
 });
+
+function commonPopFun(dataMsg, title){
+    $('.commonPopBox').css({
+        'width':$(window).width(),
+        'height':$(window).height(),
+        'top':$(window).scrollTop()
+    });
+    $('.commonPopBox').show();
+    $('.commonPopBox .commonPop .title').html(title);
+    $('.commonPopBox .commonPop .detailTip').html(dataMsg);
+    if($('.commonPopBox').is(':visible')){
+        $('body').css('overflow', 'hidden');
+    }
+}

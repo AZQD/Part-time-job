@@ -829,9 +829,7 @@
 
 
                 }else{
-                    $('.commonPopBox').show();
-                    $('.commonPopBox .commonPop .title').html();
-                    $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                    commonPopFun(data.msg);
                 }
             },
             error:function(error){
@@ -867,13 +865,9 @@
                     data = JSON.parse(data.data);
                     console.log("获得评论信息(支持盖楼)",data);
                 }else if(data.status == 501){//token失效
-                    $('.commonPopBox').show();
-                    $('.commonPopBox .commonPop .title').html();
-                    $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                    commonPopFun(data.msg);
                 }else{
-                    $('.commonPopBox').show();
-                    $('.commonPopBox .commonPop .title').html();
-                    $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                    commonPopFun(data.msg);
                 }
             },
             error:function(error){
@@ -936,9 +930,7 @@
                     });
 
                 }else{
-                    $('.commonPopBox').show();
-                    $('.commonPopBox .commonPop .title').html();
-                    $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                    commonPopFun(data.msg);
                 }
             },
             error: function (error) {

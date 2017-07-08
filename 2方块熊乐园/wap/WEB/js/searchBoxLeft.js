@@ -75,9 +75,7 @@ $.ajax({
             );*/
 
         }else{
-            $('.commonPopBox').show();
-            $('.commonPopBox .commonPop .title').html();
-            $('.commonPopBox .commonPop .detailTip').html(data.msg);
+            commonPopFun(data.msg);
         }
     },
     error:function(error){

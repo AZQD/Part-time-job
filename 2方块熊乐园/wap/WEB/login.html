@@ -106,7 +106,7 @@
             height:42px;
             line-height: 42px;
             outline: none;
-            border: 1px solid #999;
+            border: 1px solid #ddd;
             text-indent: 5px;
         }
         .loginRegisterBox .loginRegister .loginPassword{
@@ -122,7 +122,7 @@
             height:42px;
             line-height: 42px;
             outline: none;
-            border: 1px solid #999;
+            border: 1px solid #ddd;
             text-indent: 5px;
         }
         .loginRegisterBox .loginRegister .loginBtn{
@@ -174,7 +174,7 @@
             height:42px;
             line-height: 42px;
             outline: none;
-            border: 1px solid #999;
+            border: 1px solid #ddd;
             text-indent: 5px;
         }
         .loginRegisterBox .loginRegister .registerPassword{
@@ -190,7 +190,7 @@
             height:42px;
             line-height: 42px;
             outline: none;
-            border: 1px solid #999;
+            border: 1px solid #ddd;
             text-indent: 5px;
         }
         .loginRegisterBox .loginRegister .registerDrag{
@@ -207,7 +207,7 @@
             height:35px;
             line-height: 35px;
             outline: none;
-            background-color: #ccc;
+            background-color: #ddd;
             text-align: center;
             margin-bottom: 16px;
         }
@@ -252,7 +252,7 @@
             left: 0px;
             width: 40px;
             height: 35px;
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
             cursor: move;
         }
         .handler_bg{
@@ -314,7 +314,7 @@
                         <img class="phoneImg" src="image/loginRegister/phoneImg.png"><input class="phoneText" id="loginPhone" type="text" placeholder="Cellphone Number"/>
                     </div>
                     <div class="col-xs-12 col-sm-12 loginPassword">
-                        <img class="passwordImg" src="image/loginRegister/passwordImg.png"><input class="passwordText" id="loginPassword" type="text" placeholder="Password"/>
+                        <img class="passwordImg" src="image/loginRegister/passwordImg.png"><input class="passwordText" id="loginPassword" type="password" placeholder="Password"/>
                     </div>
                     <div class="col-xs-12 col-sm-12 loginBtn" id="loginBtn">LOGIN</div>
                     <!--<div class="col-xs-12 col-sm-12 loginBottom">
@@ -405,9 +405,7 @@
                             window.location.href = "index.html";
                         }
                     }else{
-                        $('.commonPopBox').show();
-                        $('.commonPopBox .commonPop .title').html();
-                        $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                        commonPopFun(data.msg);
                     }
                 },
                 error:function(error){
@@ -507,9 +505,7 @@
                                             window.location.href = "index.html";
                                         }
                                     }else{
-                                        $('.commonPopBox').show();
-                                        $('.commonPopBox .commonPop .title').html();
-                                        $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                                        commonPopFun(data.msg);
                                     }
                                 },
                                 error:function(error){
@@ -519,9 +515,7 @@
 
 
                         }else{
-                            $('.commonPopBox').show();
-                            $('.commonPopBox .commonPop .title').html();
-                            $('.commonPopBox .commonPop .detailTip').html(data.msg);
+                            commonPopFun(data.msg);
                         }
                     },
                     error:function(error){
