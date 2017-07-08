@@ -321,6 +321,15 @@
     </style>
 </head>
 <body>
+<section class="commonPopBox" style="display: none;">
+    <div class="commonPop">
+        <h3 class="title"></h3>
+        <p class="detailTip"></p>
+        <div class="confirmBox">
+            <span class="confirmBtn">OK</span>
+        </div>
+    </div>
+</section>
 <section class="container-fluid">
 
     <aside class="headerBox">
@@ -773,7 +782,9 @@
                         });
 
                     }else{
-                        alert(data.msg);
+                        $('.commonPopBox').show();
+                        $('.commonPopBox .commonPop .title').html();
+                        $('.commonPopBox .commonPop .detailTip').html(data.msg);
                     }
                 },
                 error:function(error){
@@ -791,7 +802,7 @@
                 searchPageControl();
                 searchFun(searchKeyWord, startSearch);
             }else{
-                alert('Sorry, No product found!');
+//                alert('请输入搜索关键词！');
             }
         });
         //点击发布
@@ -922,7 +933,9 @@
 
 
                     } else {
-                        alert(data.msg);
+                        $('.commonPopBox').show();
+                        $('.commonPopBox .commonPop .title').html();
+                        $('.commonPopBox .commonPop .detailTip').html(data.msg);
                     }
                 },
                 error:function(error){

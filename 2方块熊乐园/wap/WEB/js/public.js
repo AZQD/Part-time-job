@@ -141,3 +141,13 @@ var token = localStorage.getItem("token");
 var timestamp=new Date().getTime();//获取时间戳
 
 $('.favicon').attr('href', 'image/favicon.ico');
+
+//commonPop
+/*
+* $('.commonPopBox').show();
+ $('.commonPopBox .commonPop .title').html();
+ $('.commonPopBox .commonPop .detailTip').html();
+* */
+$('.commonPopBox .commonPop .confirmBox .confirmBtn').unbind('click').click(function(){
+    $('.commonPopBox').hide();
+});

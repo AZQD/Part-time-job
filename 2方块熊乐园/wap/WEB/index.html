@@ -406,6 +406,15 @@
     </style>
 </head>
 <body>
+<section class="commonPopBox" style="display: none;">
+    <div class="commonPop">
+        <h3 class="title"></h3>
+        <p class="detailTip"></p>
+        <div class="confirmBox">
+            <span class="confirmBtn">OK</span>
+        </div>
+    </div>
+</section>
 <section class="container-fluid">
 
     <aside class="headerBox">
@@ -820,7 +829,9 @@
 
 
                 }else{
-                    alert(data.msg);
+                    $('.commonPopBox').show();
+                    $('.commonPopBox .commonPop .title').html();
+                    $('.commonPopBox .commonPop .detailTip').html(data.msg);
                 }
             },
             error:function(error){
@@ -856,9 +867,13 @@
                     data = JSON.parse(data.data);
                     console.log("获得评论信息(支持盖楼)",data);
                 }else if(data.status == 501){//token失效
-                    console.log(data.msg);
+                    $('.commonPopBox').show();
+                    $('.commonPopBox .commonPop .title').html();
+                    $('.commonPopBox .commonPop .detailTip').html(data.msg);
                 }else{
-                    console.log(data.msg);
+                    $('.commonPopBox').show();
+                    $('.commonPopBox .commonPop .title').html();
+                    $('.commonPopBox .commonPop .detailTip').html(data.msg);
                 }
             },
             error:function(error){
@@ -921,7 +936,9 @@
                     });
 
                 }else{
-                    alert(data.msg);
+                    $('.commonPopBox').show();
+                    $('.commonPopBox .commonPop .title').html();
+                    $('.commonPopBox .commonPop .detailTip').html(data.msg);
                 }
             },
             error: function (error) {

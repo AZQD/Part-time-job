@@ -7,6 +7,11 @@ $(function(){
     });*/
     if(token == null){//用户未登陆
         console.log("用户未登陆（没有token）");
+
+        //publish.html
+        $('.publishPopBox').show();
+
+
         $('.headerBox .header .headerRight1').show();
         $('.headerBox .header .headerRight .login, .headerBox .header .headerRight .register').unbind('click').click(function(){
             window.location.href = "login.html?goLogin="+1;
@@ -55,13 +60,19 @@ $(function(){
 
                 }else if(data.status == 501){//token失效
                     console.log("用户未登陆（token过期）");
+
+                    //publish.html
+                    $('.publishPopBox').show();
+
                     $('.headerBox .header .headerRight1').show();
                     $('.headerBox .header .headerRight .login, .headerBox .header .headerRight .register').unbind('click').click(function(){
                         window.location.href = "login.html?goLogin="+1;
                     });
 
                 }else{
-                    alert(data.msg);
+                    $('.commonPopBox').show();
+                    $('.commonPopBox .commonPop .title').html();
+                    $('.commonPopBox .commonPop .detailTip').html(data.msg);
                 }
             },
             error:function(error){
@@ -139,7 +150,9 @@ $(function(){
                                 }
                             );
                         }else{
-                            alert(data.msg);
+                            $('.commonPopBox').show();
+                            $('.commonPopBox .commonPop .title').html();
+                            $('.commonPopBox .commonPop .detailTip').html(data.msg);
                         }
                     },
                     error: function (error) {
@@ -208,7 +221,9 @@ $(function(){
                                     }
                                 );
                             }else{
-                                alert(data.msg);
+                                $('.commonPopBox').show();
+                                $('.commonPopBox .commonPop .title').html();
+                                $('.commonPopBox .commonPop .detailTip').html(data.msg);
                             }
                         },
                         error: function (error) {
@@ -224,7 +239,9 @@ $(function(){
 
 
             } else {
-                alert(data.msg);
+                $('.commonPopBox').show();
+                $('.commonPopBox .commonPop .title').html();
+                $('.commonPopBox .commonPop .detailTip').html(data.msg);
             }
         },
         error:function(error){

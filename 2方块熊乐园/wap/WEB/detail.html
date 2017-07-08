@@ -482,7 +482,8 @@
             width: 32px;
         }
 
-        .popBox{
+        /*popBopx弹窗*/
+        .tipOffPopBox{
             position: absolute;
             background-color: RGBA(0,0,0,0.6);
             /*background-color: #000000;*/
@@ -491,7 +492,7 @@
             width: 100%;
             height: 100%;
         }
-        .popBox .tipOffBox{
+        .tipOffPopBox .tipOffBox{
             width: 600px;
             /*height: 300px;*/
             background-color: #fff;
@@ -499,12 +500,12 @@
             margin-top: 150px;
             padding: 30px 24px;
         }
-        .popBox .tipOffBox .title{
+        .tipOffPopBox .tipOffBox .title{
             font-size: 18px;
             font-weight: bold;
             color: #333;
         }
-        .popBox .tipOffBox #detail{
+        .tipOffPopBox .tipOffBox #detail{
             vertical-align: top;
             width: 448px;
             height: 133px;
@@ -514,7 +515,7 @@
             outline: none;
             border: 1px solid #666;
         }
-        .popBox .tipOffBox #content{
+        .tipOffPopBox .tipOffBox #content{
             width: 246px;
             height: 35px;
             line-height:35px;
@@ -522,20 +523,20 @@
             border: 1px solid #666;
             text-indent: 4px;
         }
-        .popBox .tipOffBox #content::-webkit-input-placeholder{
+        .tipOffPopBox .tipOffBox #content::-webkit-input-placeholder{
             color: #ccc;
         }
-        .popBox .tipOffBox .tip{
+        .tipOffPopBox .tipOffBox .tip{
             color: #FF4720;
         }
-        .popBox .tipOffBox .content{
+        .tipOffPopBox .tipOffBox .content{
             padding-top: 20px;
         }
-        .popBox .tipOffBox .submit{
+        .tipOffPopBox .tipOffBox .submit{
             text-align: center;
             padding-top: 32px;
         }
-        .popBox .tipOffBox .submit .submitBtn{
+        .tipOffPopBox .tipOffBox .submit .submitBtn{
             width: 127px;
             height: 35px;
             line-height:35px;
@@ -548,7 +549,16 @@
     </style>
 </head>
 <body>
-<section class="popBox" id="popBox" style="display: none;">
+<section class="commonPopBox" style="display: none;">
+    <div class="commonPop">
+        <h3 class="title"></h3>
+        <p class="detailTip"></p>
+        <div class="confirmBox">
+            <span class="confirmBtn">OK</span>
+        </div>
+    </div>
+</section>
+<section class="tipOffPopBox" id="tipOffPopBox" style="display: none;">
 <div class="tipOffBox">
     <div class="">
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="labelDetail" for="detail"><span class="title">Details</span><span class="tip">*</span></label>&nbsp;&nbsp;
@@ -938,7 +948,9 @@
 
 
                 }else{
-                    alert(data.msg);
+                    $('.commonPopBox').show();
+                    $('.commonPopBox .commonPop .title').html();
+                    $('.commonPopBox .commonPop .detailTip').html(data.msg);
                 }
             },
             error:function(error){
@@ -1008,9 +1020,13 @@
                                             $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 img').attr("src", "image/detailPage/asMyWish.png");
                                             $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 span').html("As my wish");
                                         }else if(data.status == 501){//token失效
-                                            console.log(data.msg);
+                                            $('.commonPopBox').show();
+                                            $('.commonPopBox .commonPop .title').html();
+                                            $('.commonPopBox .commonPop .detailTip').html(data.msg);
                                         }else{
-                                            console.log(data.msg);
+                                            $('.commonPopBox').show();
+                                            $('.commonPopBox .commonPop .title').html();
+                                            $('.commonPopBox .commonPop .detailTip').html(data.msg);
                                         }
                                     },
                                     error:function(error){
@@ -1038,9 +1054,13 @@
                                             $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 span').html("Remove");
                                             isCollect = true;
                                         }else if(data.status == 501){//token失效
-                                            console.log(data.msg);
+                                            $('.commonPopBox').show();
+                                            $('.commonPopBox .commonPop .title').html();
+                                            $('.commonPopBox .commonPop .detailTip').html(data.msg);
                                         }else{
-                                            console.log(data.msg);
+                                            $('.commonPopBox').show();
+                                            $('.commonPopBox .commonPop .title').html();
+                                            $('.commonPopBox .commonPop .detailTip').html(data.msg);
                                         }
                                     },
                                     error:function(error){
@@ -1053,9 +1073,13 @@
                     });
 
                 }else if(data.status == 501){//token失效
-                    console.log(data.msg);
+                    $('.commonPopBox').show();
+                    $('.commonPopBox .commonPop .title').html();
+                    $('.commonPopBox .commonPop .detailTip').html(data.msg);
                 }else{
-                    console.log (data.msg);
+                    $('.commonPopBox').show();
+                    $('.commonPopBox .commonPop .title').html();
+                    $('.commonPopBox .commonPop .detailTip').html(data.msg);
                 }
             },
             error:function(error){
@@ -1068,18 +1092,18 @@
         ////点击tipOff
         $('.detailBox .detail .detailLeft .tipOff').click(function(event){
             event.stopPropagation();
-            $('#popBox').show();
+            $('#tipOffPopBox').show();
         });
-        $('.popBox .tipOffBox').click(function(event){
+        $('.tipOffPopBox .tipOffBox').click(function(event){
             event.stopPropagation();
         });
-        $('.popBox').click(function(event){
+        $('.tipOffPopBox').click(function(event){
             event.stopPropagation();
-            $('.popBox').hide();
+            $('.tipOffPopBox').hide();
         });
-        $('.popBox .tipOffBox .submit .submitBtn').click(function(event){
+        $('.tipOffPopBox .tipOffBox .submit .submitBtn').click(function(event){
             event.stopPropagation();
-            $('.popBox').hide();
+            $('.tipOffPopBox').hide();
             //提交投诉
             if(token == null){
                 token = '';
@@ -1087,8 +1111,8 @@
             var subtipoffInfo = {
                 "token":token, 			//有token,传token,没有就不传了，当做匿名了
                 "goodid":goodIdFromCategory,			//产品ID
-                "content":$('.popBox .tipOffBox #detail').val(),			//投诉内容
-                "phonenumber":$('.popBox .tipOffBox #content').val(),		//联系电话
+                "content":$('.tipOffPopBox .tipOffBox #detail').val(),			//投诉内容
+                "phonenumber":$('.tipOffPopBox .tipOffBox #content').val(),		//联系电话
                 "timestamp":timestamp			//时间戳
             };
             $.ajax({
@@ -1101,7 +1125,9 @@
                         console.log('提交投诉', data);
                         alert('投诉成功');
                     }else{
-                        alert(data.msg);
+                        $('.commonPopBox').show();
+                        $('.commonPopBox .commonPop .title').html();
+                        $('.commonPopBox .commonPop .detailTip').html(data.msg);
                     }
                 },
                 error:function(error){

@@ -8,7 +8,7 @@ $('.searchBox .search .searchRight .searchImg').unbind('click').click(function (
         window.location.href = "category.html?searchOrTab=search&searchKeyWord="+searchKeyWord;
     //    window.location.href = "category.html?searchOrTab=tab&cid="+cid;
     }else{
-        alert('请输入搜索关键词！');
+        //alert('请输入搜索关键词！');
     }
 });
 

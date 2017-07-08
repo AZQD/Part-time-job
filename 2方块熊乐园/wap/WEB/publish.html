@@ -300,9 +300,70 @@
             cursor: pointer
         }
 
+
+        /*popBopx弹窗*/
+        .publishPopBox{
+            position: absolute;
+            background-color: RGBA(0,0,0,0.6);
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+        }
+        .publishPopBox .tipOffBox{
+            width: 372px;
+            background-color: #fff;
+            margin: 0 auto;
+            margin-top: 150px;
+        }
+        .publishPopBox .tipOffBox .title{
+            height: 37px;
+            line-height:37px;
+            padding-left: 12px;
+            font-size: 13px;
+            background-color: rgba(204, 204, 204, 1);
+        }
+        .publishPopBox .tipOffBox .detailTip{
+            text-align: justify;
+            padding:32px 40px;
+            font-size: 14px;
+        }
+        .publishPopBox .tipOffBox .confirmBox{
+            font-size: 13px;
+            padding:12px 40px;
+        }
+        .publishPopBox .tipOffBox .confirmBox .confirmBtn{
+            cursor: pointer;
+            width: 127px;
+            height: 35px;
+            line-height:35px;
+            background-color: rgba(255, 79, 13, 1);
+            color: #fff;
+            text-align: center;
+        }
+        .publishPopBox .tipOffBox .confirmBox .loginNowBtn{
+            margin-right: 36px;
+        }
     </style>
 </head>
 <body>
+<section class="commonPopBox" style="display: none;">
+    <div class="commonPop">
+        <h3 class="title"></h3>
+        <p class="detailTip"></p>
+        <div class="confirmBox">
+            <span class="confirmBtn">OK</span>
+        </div>
+    </div>
+</section>
+<section class="publishPopBox" style="display: none;">
+    <div class="tipOffBox">
+        <h3 class="title">To Publish</h3>
+        <p class="detailTip">You should login first to publish a messge.Do you need to login now?</p>
+        <div class="confirmBox">
+            <span class="confirmBtn loginNowBtn">Login Now</span><span class="confirmBtn laterBtn">Later</span>
+        </div>
+    </div>
+</section>
 <section class="container-fluid">
 
     <aside class="headerBox">
@@ -446,6 +507,14 @@
 <script type="text/javascript">
     $(function(){
 
+        //用户未登录时弹窗
+        $('.publishPopBox .tipOffBox .confirmBox .loginNowBtn').unbind('click').click(function(){
+            window.location.href = "login.html?goLogin="+1;
+        });
+        $('.publishPopBox .tipOffBox .confirmBox .laterBtn').unbind('click').click(function(){
+            $('.publishPopBox').hide();
+        });
+
         $(".a-upload").on("change","input[type='file']",function(){
             $('.uploadLogo').hide();
             var filePath=$(this).val();
@@ -555,7 +624,9 @@
 
 
                 }else{
-                    alert(data.msg);
+                    $('.commonPopBox').show();
+                    $('.commonPopBox .commonPop .title').html();
+                    $('.commonPopBox .commonPop .detailTip').html(data.msg);
                 }
             },
             error:function(error){
@@ -702,7 +773,11 @@
                 }
             }else{
                 priceRight = false;
-                alert("价格范围在0-100000000之间,且为数字！");
+
+                $('.commonPopBox').show();
+                $('.commonPopBox .commonPop .title').html();
+                $('.commonPopBox .commonPop .detailTip').html('价格范围在0-100000000之间,且为数字！');
+
                 priceText = 0;
                 $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val('');
             }
@@ -712,7 +787,7 @@
             priceText = 0;
             $(this).addClass('active');
 //            $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').hide();
-            $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val('');
+            $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val('').attr('disabled','disabled');
             console.log(priceText);
         });
 
@@ -784,7 +859,9 @@
                                             window.location.href = "detail.html?id="+data.data;
                                         });
                                     }else{
-                                        alert(data.msg);
+                                        $('.commonPopBox').show();
+                                        $('.commonPopBox .commonPop .title').html();
+                                        $('.commonPopBox .commonPop .detailTip').html(data.msg);
                                     }
                                 },
                                 error:function(error){
@@ -792,7 +869,10 @@
                                 }
                             });
                         }else{
-                            alert(imgData.msg);
+//                            alert(imgData.msg);
+                            $('.commonPopBox').show();
+                            $('.commonPopBox .commonPop .title').html();
+                            $('.commonPopBox .commonPop .detailTip').html(imgData.msg);
                         }
 
 
@@ -802,7 +882,10 @@
                     }
                 });
             }else{
-                alert("价格范围在0-100000000之间,且为数字！");
+//                alert("价格范围在0-100000000之间,且为数字！");
+                $('.commonPopBox').show();
+                $('.commonPopBox .commonPop .title').html();
+                $('.commonPopBox .commonPop .detailTip').html('价格范围在0-100000000之间,且为数字！');
             }
             
         });
