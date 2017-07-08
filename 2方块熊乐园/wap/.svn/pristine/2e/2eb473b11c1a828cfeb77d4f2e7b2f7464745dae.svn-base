@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="format-detection"content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <link class="favicon" href="" rel="shortcut icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/bootstraptc.min.css">
+    <link rel="stylesheet" href="css/ppublic.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/headerBox.css">
+    <style type="text/css">
+        body{
+            overflow: auto;
+            /*background-color: #E9E9E9;*/
+        }
+
+        /*searchBox*/
+        .searchBox{
+            min-width: 1200px;
+            background-color: #F2F2F2;
+        }
+        .searchBox .search{
+            width:1200px;
+            height:120px;
+            margin:0 auto;
+            border-bottom: 2px solid #FF4720;
+        }
+        .searchBox .search .searchLeft .part1{
+
+        }
+        .searchBox .search .searchLeft .part1 .headImg{
+            text-align: center;
+            padding: 12px 0 5px 0;
+        }
+        .searchBox .search .searchLeft .part1 .headImg img{
+            cursor: pointer;
+            width: 80px;
+            height: 80px;
+            border-radius: 40px;
+        }
+        .searchBox .search .searchLeft .part1 .name{
+            font-size: 14px;
+            color: #333;
+            text-align: center;
+        }
+        .searchBox .search .searchLeft .part2{
+            text-align: center;
+            padding-top: 20px;
+            width:120px;
+        }
+        .searchBox .search .searchLeft .leftSize{
+            /*padding-right: 40px;*/
+        }
+        .searchBox .search .searchLeft .part2 .number{
+            font-size: 48px;
+            color: #3399FF;
+            font-weight:bold;
+            line-height:50px;
+        }
+        .searchBox .search .searchLeft .part2 .sort{
+            font-size: 14px;
+            color: #FF4720;
+            border-top:1px solid #FF4720;
+        }
+        .searchBox .search .searchRight{
+            text-align: right;
+            line-height:120px;
+            padding-right: 72px;
+        }
+        .searchBox .search .searchRight .ipt{
+            width: 310px;
+            height: 35px;
+            line-height:35px;
+            font-size: 13px;
+            outline: none;
+            text-indent: 10px;
+            letter-spacing: 0;
+            border: 1px solid #FF4720;
+        }
+        .searchBox .search .searchRight .searchImg{
+            cursor: pointer;
+            width:70px;
+            margin-left:-6px;
+        }
+
+        /*publishBox*/
+        .publishBox{
+
+        }
+        .publishBox .publish{
+            width:1200px;
+            margin:0 auto;
+        }
+        .publishBox .publish .publishText{
+            width: 1180px;
+            height:120px;
+            margin: 10px;
+            resize: none;
+            outline: none;
+            padding: 5px;
+            border: 1px solid #999;
+        }
+        .publishBox .publish .publishBtnBox{
+            text-align: right;
+            padding-right: 10px;
+            padding-top: 16px;
+        }
+        .publishBox .publish .publishBtnBox .publishBtn{
+            display: inline-block;
+            text-align: center;
+            width: 127px;
+            height: 35px;
+            line-height: 35px;
+            color: #fff;
+            font-size: 13px;
+            border: none;
+            outline: none;
+            background-color: #FF4720;
+        }
+
+        /*sellingBox*/
+        .sellingBox{
+
+        }
+        .sellingBox .selling{
+            width:1200px;
+            margin:0 auto;
+            padding-bottom: 10px;
+        }
+        .sellingBox .selling .sellingTitle{
+            font-size: 18px;
+            color: #333;
+            font-weight:bold;
+            margin:16px 0;
+        }
+        .sellingBox .selling .sellingTitle .gang{
+            color: #FF4720;
+            padding-left: 5px;
+        }
+        .sellingBox .selling .sellingList{
+
+        }
+        .sellingBox .selling .controlHeight{
+            height: 210px;
+            overflow: hidden;
+        }
+        .sellingBox .selling .sellingList .sellingLink{
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin-left: 32px;
+            border: 1px solid #FF4720;
+            margin-bottom: 10px;
+        }
+        .sellingBox .selling .sellingList .sellingLink .goodImg{
+            width: 100%;
+            height: 100%;
+        }
+        .sellingBox .selling .sellingList .sellingLink .desc{
+            display: none;
+            position: absolute;
+            width:100%;
+            left:0;
+            bottom:0;
+            padding:0 6px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #FF4720;
+        }
+        .sellingBox .selling .sellingList .sellingLink .left{
+            font-weight:bold;
+        }
+        .sellingBox .selling .sellingList .sellingLink .right{
+            text-align: right;
+        }
+        .sellingBox .selling .more{
+            background-color: #E6E6E6;
+            font-size: 13px;
+            text-align: center;
+            height: 22px;
+            line-height: 22px;
+        }
+        .sellingBox .selling .more .moreText{
+            color: #333333;
+        }
+        .sellingBox .selling .more .moreText:before{
+            display: inline-block;
+            position: relative;
+            top:5px;
+            left:-4px;
+            content: "";
+            font-size: 0;
+            border-top: 7px solid #333;
+            border-bottom: 7px solid transparent;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+        }
+
+        /*likeBox*/
+        .likeBox{
+
+        }
+        .likeBox .like{
+            width:1200px;
+            margin:0 auto;
+            padding-bottom: 10px;
+        }
+        .likeBox .like .likeTitle{
+            font-size: 18px;
+            color: #333;
+            font-weight:bold;
+            margin:16px 0;
+        }
+        .likeBox .like .likeTitle .gang{
+            color: #FF4720;
+            padding-left: 5px;
+        }
+        .likeBox .like .likeList{
+
+        }
+        .likeBox .like .likeList .likeLink{
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin-left: 32px;
+            border: 1px solid #FF4720;
+            margin-bottom: 10px;
+        }
+        .likeBox .like .likeList .likeLink .goodImg{
+            width: 100%;
+            height: 100%;
+        }
+        .likeBox .like .likeList .likeLink .desc{
+            display: none;
+            position: absolute;
+            width:100%;
+            left:0;
+            bottom:0;
+            padding:0 6px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #FF4720;
+        }
+        .likeBox .like .likeList .likeLink .left{
+            font-weight:bold;
+        }
+        .likeBox .like .likeList .likeLink .right{
+            text-align: right;
+        }
+        .likeBox .like .more{
+            background-color: #E6E6E6;
+            font-size: 13px;
+            text-align: center;
+            height: 22px;
+            line-height: 22px;
+        }
+        .likeBox .like .more .moreText{
+            color: #333333;
+        }
+        .likeBox .like .more .moreText:before{
+            display: inline-block;
+            position: relative;
+            top:5px;
+            left:-4px;
+            content: "";
+            font-size: 0;
+            border-top: 7px solid #333;
+            border-bottom: 7px solid transparent;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+        }
+
+        /*messageBox*/
+        .messageBox{
+
+        }
+        .messageBox .message{
+            width:1200px;
+            margin:0 auto;
+            padding-bottom: 10px;
+        }
+        .messageBox .message .messageTitle{
+            font-size: 18px;
+            color: #333;
+            font-weight:bold;
+            margin:16px 0;
+        }
+        .messageBox .message .messageTitle .gang{
+            color: #FF4720;
+            padding-left: 5px;
+        }
+    </style>
+</head>
+<body>
+<section class="container-fluid">
+
+    <aside class="headerBox">
+        <div class="row header">
+            <div class="col-xs-6 col-sm-6 headerLeft">
+                <span class="lusaka"><!--Lusaka--></span>&nbsp;
+                <span class="change">[Change]</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 headerRight headerRight1" style="display: none;">
+                <span class="space home">Home</span>|
+                <span class="space login">Login</span>|
+                <span class="space register">Register</span>|
+                <span class="space help">Help</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 headerRight headerRight2" style="display: none;">
+                <span class="space home">Home</span>|
+                <span class="headImgBox"><img src="" class="headImg" style="display: none;"><span class="space name"></span>|</span>
+                <span class="space logout">logout</span>|
+                <span class="space help">Help</span>
+            </div>
+            <ul class="changeUl" style="display: none;">
+                <!--<li class="changeLi"><a href="#" class="changeLiLink">Lusaka1</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka2</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka3</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka4</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka5</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka6</a></li>-->
+            </ul>
+        </div>
+    </aside>
+
+    <aside class="searchBox">
+        <div class="row search">
+            <div class="col-xs-6 col-sm-6 searchLeft">
+                <div class="col-xs-3 col-sm-3 part1">
+                    <div class="col-xs-12 col-sm-12 headImg"><img src="" style="display: none;"></div>
+                    <div class="col-xs-12 col-sm-12 name"></div>
+                </div>
+
+                <div class="col-xs-3 col-sm-3 part2">
+                    <a href="#sellingSign" style="display: block; width: 100%;height: 90px;">
+                    <div class="col-xs-12 col-sm-12" style="height:50px;"><span class="number" id="sellingNum"></span></div>
+                    <div class="col-xs-12 col-sm-12"><span class="sort">SELLING</span></div>
+                    </a>
+                </div>
+                <div class="col-xs-3 col-sm-3 part2 leftSize">
+                    <div class="col-xs-12 col-sm-12" style="height:50px;"><a href="#" class="number" id="likeNum">25</a></div>
+                    <div class="col-xs-12 col-sm-12"><a href="#" class="sort">MY WISH</a></div>
+                </div>
+                <div class="col-xs-3 col-sm-3 part2 leftSize">
+                    <div class="col-xs-12 col-sm-12" style="height:50px;"><a href="#" class="number" id="messageNum">134</a></div>
+                    <div class="col-xs-12 col-sm-12"><a href="#" class="sort">MESSAGE</a></div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 searchRight">
+                <input class="ipt" type="text" placeholder="What dou you need?">
+                <img class="searchImg" src="image/index/search.png">
+            </div>
+        </div>
+    </aside>
+
+    <aside class="publishBox">
+        <div class="row publish">
+            <!--<div class="col-xs-12 col-sm-12">
+                <textarea name="name" class="publishText"></textarea>
+            </div>-->
+            <div class="col-xs-12 col-sm-12 publishBtnBox" style="display: none;">
+                <a href="#" class="publishBtn">PUBLISH</a>
+            </div>
+        </div>
+    </aside>
+
+    <aside class="sellingBox">
+        <div class="row selling">
+            <div class="col-xs-12 col-sm-12 sellingTitle">
+                <a class="gang"  name="sellingSign">|</a>&nbsp;<span class="" id="sellingTitle">SELLING(<span class="sellingNum"></span>)</span>
+            </div>
+            <div class="col-xs-12 col-sm-12 sellingList controlHeight">
+                <!--<a href="#" class="sellingLink">
+                    <img class="goodImg" src="image/information/sellingImg.jpg">
+                    <div class="row desc">
+                        <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                        <div class="col-xs-6 col-sm-6 right">1054</div>
+                    </div>
+                </a>-->
+            </div>
+            <div class="col-xs-12 col-sm-12 more" id="moreSelling">
+                <a href="#"  class="moreText">MORE</a>
+            </div>
+        </div>
+    </aside>
+
+    <aside class="likeBox">
+        <div class="row like">
+            <div class="col-xs-12 col-sm-12 likeTitle">
+                <span class="gang">|</span>&nbsp;<span class="">MY WISH(3)</span>
+            </div>
+            <div class="col-xs-12 col-sm-12 likeList">
+                <a href="#" class="likeLink">
+                    <img class="goodImg" src="image/information/sellingImg.jpg">
+                    <div class="row desc">
+                        <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                        <div class="col-xs-6 col-sm-6 right">1054</div>
+                    </div>
+                </a>
+                <a href="#" class="likeLink">
+                    <img class="goodImg" src="image/information/sellingImg.jpg">
+                    <div class="row desc">
+                        <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                        <div class="col-xs-6 col-sm-6 right">1054</div>
+                    </div>
+                </a>
+                <a href="#" class="likeLink">
+                    <img class="goodImg" src="image/information/sellingImg.jpg">
+                    <div class="row desc">
+                        <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                        <div class="col-xs-6 col-sm-6 right">1054</div>
+                    </div>
+                </a>
+                <a href="#" class="likeLink">
+                    <img class="goodImg" src="image/information/sellingImg.jpg">
+                    <div class="row desc">
+                        <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                        <div class="col-xs-6 col-sm-6 right">1054</div>
+                    </div>
+                </a>
+                <a href="#" class="likeLink">
+                    <img class="goodImg" src="image/information/sellingImg.jpg">
+                    <div class="row desc">
+                        <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                        <div class="col-xs-6 col-sm-6 right">1054</div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-xs-12 col-sm-12 more">
+                <a href="#"  class="moreText">MORE</a>
+            </div>
+        </div>
+    </aside>
+
+    <aside class="messageBox">
+        <div class="row message">
+            <div class="col-xs-12 col-sm-12 messageTitle">
+                <span class="gang">|</span>&nbsp;<span class="">MESSAGES</span>
+            </div>
+        </div>
+    </aside>
+
+
+</section>
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="js/headerBox.js"></script>
+<script type="text/javascript">
+    $(function(){
+        /*hover图片动效*/
+        $('.likeBox .like .likeList .likeLink .goodImg').hover(
+                function(){
+                    $(this).siblings('.desc').fadeIn();
+                },
+                function(){
+                    $(this).siblings('.desc').fadeOut();
+                }
+        );
+
+
+        //搜索
+        localStorage.removeItem("searchKeyWord");
+        $('.searchBox .search .searchRight .searchImg').unbind('click').click(function () {
+            var searchKeyWord = $.trim($('.searchBox .search .searchRight .ipt').val());
+            localStorage.setItem('searchOrTab',"search");
+            localStorage.setItem('searchKeyWord',searchKeyWord);
+            window.location.href = "category.html";
+        });
+
+        //点击发布
+        $('.publishBox .publish .publishBtnBox .publishBtn').unbind('click').click(function () {
+            window.location.href = "publish.html";
+            //提交评论(支持盖楼)
+            /*var putcommentInfo = {
+                "token":token, 			//用户登录凭证，必须登录才能发布评论
+                "goodid":"1",			//产品ID
+                "content":"hello",			//评论内容
+                "tocomment":"",			//如果不是回复其他评论，则留空，否则填评论ID
+                "timestamp":timestamp
+            };
+            $.ajax({
+                type:"POST",
+                url:baseUrl + "/apigateway/putcomment",
+                dataType:"json",
+                data:JSON.stringify(putcommentInfo),
+                success:function(data){
+                    //console.log(data);
+                    if(data.status == 200){
+//                    data = JSON.parse(data.data);
+                        console.log("提交评论(支持盖楼)",data);
+                    }else if(data.status == 501){//token失效
+                        alert(data.msg);
+                    }else{
+                        alert(data.msg);
+                    }
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            });*/
+        });
+
+
+        //
+        var pubUid = getParamByUrl('pubUid');
+
+        //获得商品发布者用户信息
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/getuserinfo_pub?uid="+pubUid+"&token="+token,
+            dataType:"json",
+            success: function(data){
+                console.log(baseUrl+"/apigateway/getuserinfo_pub?uid="+pubUid+"&token="+token);
+                console.log('获得商品发布者用户信息', data);
+                data = data.data;
+                //详情页信息
+                $('.searchBox .search .searchLeft .part1 .headImg img').show().attr('src',baseImgSrc+data.logo).click(function(){
+//                    alert("跳转");
+//                    window.location.href = 'manage.html?pubUid='+pubUid;
+                    window.location.href = 'manage.html';
+                });
+                $('.searchBox .search .searchLeft .part1 .name').html(data.nickname);
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+        //获得发布者的售卖信息
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/getselling_ext?uid="+pubUid+'&start=0&n=30',
+            dataType:"json",
+            success: function(data){
+                if(data.status == 200){
+                    data = JSON.parse(data.data);
+                    console.log("获得发布者的售卖信息",data);
+                    $('#sellingNum').html(data.length);
+                    $('#sellingTitle .sellingNum').html(data.length);
+                    for(var i=0; i<data.length; i++){
+                        $('.sellingBox .selling .sellingList').append(
+                            '<a href="#" class="sellingLink">' +
+                            '<img class="goodImg" src="image/information/sellingImg.jpg">' +
+                            '<div class="row desc">' +
+                            '<div class="col-xs-6 col-sm-6 left">'+data[i].title+'</div>' +
+                            '<div class="col-xs-6 col-sm-6 right">'+data[i].price+'</div>' +
+                            '</div>' +
+                            '</a>');
+                        $('.sellingBox .selling .sellingList .sellingLink .goodImg').hover(
+                                function(){
+                                    $(this).siblings('.desc').fadeIn();
+                                },
+                                function(){
+                                    $(this).siblings('.desc').fadeOut();
+                                }
+                        );
+                        //点击某个跳转
+                        $('.sellingBox .selling .sellingList .sellingLink').unbind('click').click(function(){
+                            var index = $(this).index();
+                            window.location.href = "detail.html?id="+data[index].id;
+                        });
+                        $('#moreSelling').unbind('click').click(function(){
+                            $('.sellingBox .selling .sellingList').removeClass('controlHeight');
+                            $(this).hide();
+                            /*$('.sellingBox .selling .sellingList').animate({'height':'auto'}, '200', "linear", function(){
+                                $(this).removeClass('controlHeight');
+                            });*/
+                        });
+                    }
+
+                }else{
+                    alert(data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+    });
+</script>
+</body>
+</html>
