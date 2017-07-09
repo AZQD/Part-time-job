@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>publish</title>
+    <meta name="keywords" content="kalichi,mall, kalichimall,vehicle,sedan,suv,digtal,cellphone,computer,watch,bulding,family,house,office,life goods,clothes,shoes,furniture,sell,buy,second,free">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
     <meta http-equiv="x-dns-prefetch-control" content="on" />
     <meta name="format-detection"content="telephone=no"/>
@@ -206,12 +207,11 @@
             outline: none;
         }
         .sortBox .sort .partInner2 .partInner2Box .right .imagesBox{
-            width: 150px;
+            /*width: 150px;*/
             height: 150px;
             font-size: 14px;
             color: #333;
             text-align: center;
-            border: 1px solid #999;
         }
         .sortBox .sort .partInner2 .partInner2Box .right .imagesBox .upload{
             height: 30px;
@@ -284,6 +284,9 @@
 
         /*a  upload */
         .a-upload {
+            border: 1px solid #999;
+            float: left;
+            margin-right: 16px;
             width: 150px;
             /*padding: 4px 10px;*/
             height: 150px;
@@ -486,9 +489,21 @@
                         <div class="imagesBox">
                             <!--<p class="upload">Upload Image</p>-->
                             <!--<input type="file" id="upfile">-->
-                            <a href="javascript:;" class="a-upload">
-                                <input type="file" id="upfile" name="file"><img class="uploadLogo" src="image/publish/upload.png">
-                                <span class="showFileName"></span>
+                            <a href="javascript:;" class="a-upload a-upload1">
+                                <input type="file" id="upfile1" name="file"><img class="uploadLogo uploadLogo1" src="image/publish/upload.png">
+                                <span class="showFileName showFileName1"></span>
+                            </a>
+                            <a href="javascript:;" class="a-upload a-upload2" style="display: none;">
+                                <input type="file" id="upfile2" name="file"><img class="uploadLogo uploadLogo2" src="image/publish/upload.png">
+                                <span class="showFileName showFileName2"></span>
+                            </a>
+                            <a href="javascript:;" class="a-upload a-upload3" style="display: none;">
+                                <input type="file" id="upfile3" name="file"><img class="uploadLogo uploadLogo3" src="image/publish/upload.png">
+                                <span class="showFileName showFileName3"></span>
+                            </a>
+                            <a href="javascript:;" class="a-upload a-upload4" style="display: none;">
+                                <input type="file" id="upfile4" name="file"><img class="uploadLogo uploadLogo4" src="image/publish/upload.png">
+                                <span class="showFileName showFileName4"></span>
                             </a>
                         </div>
                     </div>
@@ -529,20 +544,164 @@
             $('body').css('overflow', 'auto');
         });
 
-        $(".a-upload").on("change","input[type='file']",function(){
-            $('.uploadLogo').hide();
+        var imgIdAll = '';
+        $(".a-upload1").on("change","input[type='file']",function(){
+            $('.uploadLogo1').hide();
             var filePath=$(this).val();
             if(filePath.indexOf("jpg")!=-1 || filePath.indexOf("png")!=-1){
                 $(".fileerrorTip").html("").hide();
                 var arr=filePath.split('\\');
                 var fileName=arr[arr.length-1];
-                $(".showFileName").html(fileName);
+                $(".showFileName1").html(fileName);
+
+                //上传图片
+                var fd = new FormData();
+                fd.append("upload", 1);
+                console.log($("#upfile1").get(0).files[0]);
+                fd.append("upfile", $("#upfile1").get(0).files[0]);
+                $.ajax({
+                    url: "http://www.kalichimall.com/apigateway/upfile",
+                    type: "POST",
+                    processData: false,
+                    contentType: false,
+                    data: fd,
+                    success: function(imgData) {
+                        if(imgData.status == 200) {
+                            console.log(imgData);
+                            console.log(imgData.data);
+                            imgIdAll = imgData.data;
+                            console.log("imgIdAll="+imgIdAll);
+
+
+                            $(".a-upload2").show().on("change","input[type='file']",function(){
+                                $('.uploadLogo2').hide();
+                                var filePath=$(this).val();
+                                if(filePath.indexOf("jpg")!=-1 || filePath.indexOf("png")!=-1){
+                                    $(".fileerrorTip").html("").hide();
+                                    var arr=filePath.split('\\');
+                                    var fileName=arr[arr.length-1];
+                                    $(".showFileName2").html(fileName);
+
+                                    //上传图片
+                                    var fd = new FormData();
+                                    fd.append("upload", 1);
+                                    console.log($("#upfile2").get(0).files[0]);
+                                    fd.append("upfile", $("#upfile2").get(0).files[0]);
+                                    $.ajax({
+                                        url: "http://www.kalichimall.com/apigateway/upfile",
+                                        type: "POST",
+                                        processData: false,
+                                        contentType: false,
+                                        data: fd,
+                                        success: function(imgData) {
+                                            if(imgData.status == 200) {
+                                                console.log(imgData);
+                                                console.log(imgData.data);
+                                                imgIdAll = imgIdAll+','+imgData.data;
+                                                console.log("imgIdAll="+imgIdAll);
+
+
+                                                $(".a-upload3").show().on("change","input[type='file']",function(){
+                                                    $('.uploadLogo3').hide();
+                                                    var filePath=$(this).val();
+                                                    if(filePath.indexOf("jpg")!=-1 || filePath.indexOf("png")!=-1){
+                                                        $(".fileerrorTip").html("").hide();
+                                                        var arr=filePath.split('\\');
+                                                        var fileName=arr[arr.length-1];
+                                                        $(".showFileName3").html(fileName);
+
+                                                        //上传图片
+                                                        var fd = new FormData();
+                                                        fd.append("upload", 1);
+                                                        console.log($("#upfile3").get(0).files[0]);
+                                                        fd.append("upfile", $("#upfile3").get(0).files[0]);
+                                                        $.ajax({
+                                                            url: "http://www.kalichimall.com/apigateway/upfile",
+                                                            type: "POST",
+                                                            processData: false,
+                                                            contentType: false,
+                                                            data: fd,
+                                                            success: function(imgData) {
+                                                                if(imgData.status == 200) {
+                                                                    console.log(imgData);
+                                                                    console.log(imgData.data);
+                                                                    imgIdAll = imgIdAll+','+imgData.data;
+                                                                    console.log("imgIdAll="+imgIdAll);
+
+
+                                                                    $(".a-upload4").show().on("change","input[type='file']",function(){
+                                                                        $('.uploadLogo4').hide();
+                                                                        var filePath=$(this).val();
+                                                                        if(filePath.indexOf("jpg")!=-1 || filePath.indexOf("png")!=-1){
+                                                                            $(".fileerrorTip").html("").hide();
+                                                                            var arr=filePath.split('\\');
+                                                                            var fileName=arr[arr.length-1];
+                                                                            $(".showFileName4").html(fileName);
+
+                                                                            //上传图片
+                                                                            var fd = new FormData();
+                                                                            fd.append("upload", 1);
+                                                                            console.log($("#upfile4").get(0).files[0]);
+                                                                            fd.append("upfile", $("#upfile4").get(0).files[0]);
+                                                                            $.ajax({
+                                                                                url: "http://www.kalichimall.com/apigateway/upfile",
+                                                                                type: "POST",
+                                                                                processData: false,
+                                                                                contentType: false,
+                                                                                data: fd,
+                                                                                success: function(imgData) {
+                                                                                    if(imgData.status == 200) {
+                                                                                        console.log(imgData);
+                                                                                        console.log(imgData.data);
+                                                                                        imgIdAll = imgIdAll+','+imgData.data;
+                                                                                        console.log("imgIdAll="+imgIdAll);
+                                                                                    }
+                                                                                }
+                                                                            });
+
+                                                                        }else{
+                                                                            $(".showFileName4").html("");
+                                                                            $(".fileerrorTip").html("您未上传文件，或者您上传文件类型有误！").show();
+                                                                            return false
+                                                                        }
+                                                                    });
+
+
+                                                                }
+                                                            }
+                                                        });
+
+                                                    }else{
+                                                        $(".showFileName3").html("");
+                                                        $(".fileerrorTip").html("您未上传文件，或者您上传文件类型有误！").show();
+                                                        return false
+                                                    }
+                                                });
+
+
+                                            }
+                                        }
+                                    });
+
+                                }else{
+                                    $(".showFileName2").html("");
+                                    $(".fileerrorTip").html("您未上传文件，或者您上传文件类型有误！").show();
+                                    return false
+                                }
+                            });
+
+
+                        }
+                    }
+                });
+
             }else{
-                $(".showFileName").html("");
+                $(".showFileName1").html("");
                 $(".fileerrorTip").html("您未上传文件，或者您上传文件类型有误！").show();
                 return false
             }
         });
+
 
         //点击图片logo跳转到index页面；
         $('.searchBox .search .searchLeft .logo').click(function () {
@@ -794,6 +953,7 @@
             console.log(priceText);
         });
         $('.sortBox .sort .partInner2 .partInner2Box .right .negotiated').click(function(){
+            priceRight = true;
             priceText = 0;
             $(this).addClass('active');
 //            $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').hide();
@@ -831,83 +991,58 @@
                 token=(token == null)?"":token;
 
 
-                //上传图片
-                var imgsId = '';
-                var fd = new FormData();
-                fd.append("upload", 1);
-                console.log($("#upfile").get(0).files[0]);
-                fd.append("upfile", $("#upfile").get(0).files[0]);
+                //执行提交
+                var pubGoodInfo = {
+                    "token":token, 			//用户登录凭证，如果是匿名发布则留空""
+                    "cid":cid.toString(),				//产品分类ID (需调整)
+                    "issell":issell,		//是否是出售，"1"为出售，"0"为需求
+                    "goodstatus":goodstatus,		//产品新旧,"0","1","2","3","4","5"...
+                    "price":priceText.toString(),			//价格
+                    "title":$('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val(),		//标题
+                    "details":$('.sortBox .sort .partInner2 .partInner2Box .right .detailText').val(),	//产品详情
+                    "addr_l1":addr_l1.toString(),			//一级地址 ID
+                    "addr_l2":addr_l2.toString(),			//二级地址 ID
+                    "addr_l3":"0",			//三级地址 ID
+                    "addr_l4":$('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val(),			//详细地址
+                    "contactname":$('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val(),	//联系人姓名
+                    "phone":$('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(),		//联系人手机
+                    "imgs":imgIdAll				//产品图片ID，图片ID通过图片上传接口获得
+                };
+                console.log("pubGoodInfo", pubGoodInfo);
+                console.log(baseImgSrc+imgIdAll.split(',')[0]);
+                console.log(baseImgSrc+imgIdAll.split(',')[1]);
+                console.log(baseImgSrc+imgIdAll.split(',')[2]);
+                console.log(baseImgSrc+imgIdAll.split(',')[3]);
+
                 $.ajax({
-                    url: "http://www.kalichimall.com/apigateway/upfile",
-                    type: "POST",
-                    processData: false,
-                    contentType: false,
-                    data: fd,
-                    success: function(imgData) {
-                        if(imgData.status == 200){
-                            console.log(imgData);
-                            console.log(imgData.data);
-                            imgsId = imgData.data;
-
-
-
-                            //上传图片成功执行提交
-                            var pubGoodInfo = {
-                                "token":token, 			//用户登录凭证，如果是匿名发布则留空""
-                                "cid":cid.toString(),				//产品分类ID (需调整)
-                                "issell":issell,		//是否是出售，"1"为出售，"0"为需求
-                                "goodstatus":goodstatus,		//产品新旧,"0","1","2","3","4","5"...
-                                "price":priceText.toString(),			//价格
-                                "title":$('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val(),		//标题
-                                "details":$('.sortBox .sort .partInner2 .partInner2Box .right .detailText').val(),	//产品详情
-                                "addr_l1":addr_l1.toString(),			//一级地址 ID
-                                "addr_l2":addr_l2.toString(),			//二级地址 ID
-                                "addr_l3":"0",			//三级地址 ID
-                                "addr_l4":$('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val(),			//详细地址
-                                "contactname":$('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val(),	//联系人姓名
-                                "phone":$('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(),		//联系人手机
-                                "imgs":imgsId				//产品图片ID，图片ID通过图片上传接口获得
-                            };
-                            console.log("pubGoodInfo", pubGoodInfo);
-                            console.log(baseImgSrc+imgsId);
-
-                            $.ajax({
-                                type:"POST",
-                                url:baseUrl + "/apigateway/pubgood",
-                                dataType:"json",
-                                data:JSON.stringify(pubGoodInfo),
-                                success:function(data){
-                                    console.log(data);
-                                    if(data.status == 200){
+                    type:"POST",
+                    url:baseUrl + "/apigateway/pubgood",
+                    dataType:"json",
+                    data:JSON.stringify(pubGoodInfo),
+                    success:function(data){
+                        console.log(data);
+                        if(data.status == 200){
 //                                alert(data.status);
-                                        //保存id，点击CLICK IT 进入该商品详情页
-                                        localStorage.setItem('goodIdFromCategory',data.data);
-                                        $('.sortBox .sort .part').removeClass("active").eq(2).addClass("active");
-                                        $('.sortBox .sort .partInner').hide().eq(2).show();
-                                        $('.sortBox .sort .space .changeCid').hide();
+                            //保存id，点击CLICK IT 进入该商品详情页
+                            localStorage.setItem('goodIdFromCategory',data.data);
+                            $('.sortBox .sort .part').removeClass("active").eq(2).addClass("active");
+                            $('.sortBox .sort .partInner').hide().eq(2).show();
+                            $('.sortBox .sort .space .changeCid').hide();
 
-                                        $('.sortBox .sort .partInner3 .completeBtn').click(function(){
-                                            window.location.href = "detail.html?id="+data.data;
-                                        });
-                                    }else{
-                                        commonPopFun(data.msg);
-                                    }
-                                },
-                                error:function(error){
-                                    console.log(error);
-                                }
+                            $('.sortBox .sort .partInner3 .completeBtn').click(function(){
+                                window.location.href = "detail.html?id="+data.data;
                             });
                         }else{
-//                            alert(imgData.msg);
-                            commonPopFun(imgData.msg);
+                            commonPopFun(data.msg);
                         }
-
-
                     },
                     error:function(error){
                         console.log(error);
                     }
                 });
+
+
+
             }else{
                 if(($('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val() == '')){
                     $('.sortBox .sort .partInner2 .partInner2Box .right .titleText').css('border','1px solid #f00');
@@ -924,8 +1059,10 @@
                 if(($('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val() == '')){
                     $('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').css('border','1px solid #f00');
                 }
+                if((($('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val() == '') && (priceRight == false))){
+                    $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').css('border','1px solid #f00');
+                }
                 commonPopFun("填写完整信息才能发布");
-                $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').css('border','1px solid #f00');
             }
             
         });

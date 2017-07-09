@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>category</title>
+    <title id="categoryTitle"></title>
+    <meta name="keywords" content="kalichi,mall, kalichimall,vehicle,sedan,suv,digtal,cellphone,computer,watch,bulding,family,house,office,life goods,clothes,shoes,furniture,sell,buy,second,free">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
     <meta http-equiv="x-dns-prefetch-control" content="on" />
     <meta name="format-detection"content="telephone=no"/>
@@ -726,6 +727,7 @@
                 dataType:"json",
                 success: function(data){
                     if(data.status == 200){
+
                         console.log("搜索",data);
                         console.log("搜索url="+baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+"&n=30");
                         //搜索结果总数
@@ -818,6 +820,10 @@
             console.log("用户点击search进入");
 //            var searchKeyWord = localStorage.getItem("searchKeyWord");
             var searchKeyWord = getParamByUrl('searchKeyWord');
+
+            //修改title
+            $('#categoryTitle').html(searchKeyWord+' kalichimall, make money by your second-hand goods.');
+
             searchPageControl();
             searchFun(searchKeyWord,startSearch);
 
@@ -828,6 +834,10 @@
             var cidName = localStorage.getItem("cidName");
 //            cid = localStorage.getItem("cid");
             cid = getParamByUrl('cid');
+
+            //修改title
+            $('#categoryTitle').html(cidName+' kalichimall, make money by your second-hand goods.');
+
             $('.searchBox .search .searchLeft .second').html(cidName);//二级标题
             tabPageControl();
             getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab);

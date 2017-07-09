@@ -63,6 +63,9 @@ $(function(){
                     $('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val(data.nickname);
                     $('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(data.phone);
 
+                    //detail.html:默认已填写用户投诉电话；
+                    $('.tipOffPopBox .tipOffBox #content').val(data.phone);
+
 
 
                 }else if(data.status == 501){//token失效

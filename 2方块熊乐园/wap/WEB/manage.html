@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>manage</title>
+    <title id="manageTitle"></title>
+    <meta name="keywords" content="kalichi,mall, kalichimall,vehicle,sedan,suv,digtal,cellphone,computer,watch,bulding,family,house,office,life goods,clothes,shoes,furniture,sell,buy,second,free">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
     <meta http-equiv="x-dns-prefetch-control" content="on" />
     <meta name="format-detection"content="telephone=no"/>
@@ -453,6 +454,9 @@
 <script type="text/javascript" src="js/searchBoxRight.js"></script>
 <script type="text/javascript">
     $(function(){
+
+        //修改title
+        $('#manageTitle').html("user" + "'s home. kalichimall, make money by your second-hand goods.");
 
         //点击图片logo跳转到index页面；
         $('.searchBox .search .searchLeft .logo').click(function () {

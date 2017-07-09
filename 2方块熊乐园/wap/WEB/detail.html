@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>detail</title>
+    <title id="detailTitle"></title>
+    <meta name="keywords" content="kalichi,mall, kalichimall,vehicle,sedan,suv,digtal,cellphone,computer,watch,bulding,family,house,office,life goods,clothes,shoes,furniture,sell,buy,second,free">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
     <meta http-equiv="x-dns-prefetch-control" content="on" />
     <meta name="format-detection"content="telephone=no"/>
@@ -827,6 +828,10 @@
                     data = JSON.parse(data.data);
                     console.log("获得指定产品的产品信息",data);
                     console.log(baseUrl+"/apigateway/getgood?id="+goodIdFromCategory);
+
+                    //修改title
+                    $('#detailTitle').html(data.title + data.price +" kalichimall, make money by your second-hand goods.");
+
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', baseUrl+'/gimg/'+data.cimg);
 
                     //保存当前商品的发布者uid
@@ -1063,9 +1068,9 @@
                     });
 
                 }else if(data.status == 501){//token失效
-                    commonPopFun(data.msg);
+//                    commonPopFun(data.msg);
                 }else{
-                    commonPopFun(data.msg);
+//                    commonPopFun(data.msg);
                 }
             },
             error:function(error){
@@ -1109,7 +1114,7 @@
                 success:function(data){
                     if(data.status == 200){
                         console.log('提交投诉', data);
-                        alert('投诉成功');
+                        commonPopFun('OK');
                     }else{
                         commonPopFun(data.msg);
                     }
