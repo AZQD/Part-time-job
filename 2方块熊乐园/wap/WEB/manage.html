@@ -166,6 +166,7 @@
             background-color: #FF4720;
         }
         .infoBox .info .infoWrap .infoRight .part1 .attrBox .forget{
+            cursor: pointer;
             color: #169BD5;
             font-size: 12px;
             padding-left: 188px;
@@ -189,14 +190,21 @@
             text-align: center;
             left: 534px;
             top: 117px;
+            height: 100px;
         }
         .infoBox .info .infoWrap .infoRight .part1 .headBox .headImg{
+            border-radius: 40px;
+            height: 80px;
             width: 100%;
         }
         .infoBox .info .infoWrap .infoRight .part1 .headBox .editLink{
             color: #169BD5;
             font-size: 13px;
             text-decoration: underline;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
         }
 
         .infoBox .info .infoWrap .infoRight .part2{
@@ -279,12 +287,11 @@
             vertical-align: -2px;
         }
         .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .right{
-            width: 158px;
-            text-align: right;
+            width: 156px;
+            text-align: center;
         }
         .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .right img{
             padding-top: 14px;
-            margin-right: 32px;
             width: 40px;
             padding-bottom: 20px;
         }
@@ -296,6 +303,37 @@
         .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .right .link2{
             margin-right: 16px;
         }
+
+        /*a  upload */
+        .a-upload {
+            float: left;
+            margin-right: 16px;
+            /*padding: 4px 10px;*/
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            /*border-radius: 4px;*/
+            overflow: hidden;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+            color: #169BD5;
+            font-size: 13px;
+        }
+
+        .a-upload  input {
+            position: absolute;
+            font-size: 100px;
+            right: 0;
+            top: 0;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            cursor: pointer
+        }
+
     </style>
 </head>
 <body>
@@ -334,25 +372,31 @@
                 <div class="col-xs-9 col-sm-9 infoRight">
                     <div class="part part1" style="display: block;">
                         <div class="headBox">
-                            <img class="headImg" src="image/backManage/headImg.png">
-                            <a class="editLink" href="#">Edit</a>
+                            <img class="headImg" src="" style="display: none;">
+                            <!--<a class="editLink" href="#"></a>-->
+
+                            <a href="javascript:;" class="a-upload a-upload4">Edit
+                                <input type="file" id="upfile4" name="file">
+                                <span class="showFileName showFileName4"></span>
+                            </a>
+
                         </div>
-                        <div class="col-xs-12 col-sm-12 attrBox"><span class="attr">Cellphone:&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="value">XXXXXXXXX</span></div>
-                        <div class="col-xs-12 col-sm-12 attrBox"><span class="attr">Nickname:&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" class="nikeNameIpt" placeholder="显示当前昵称"></div>
-                        <div class="col-xs-12 col-sm-12 attrBox">
+                        <div class="col-xs-12 col-sm-12 attrBox"><span class="attr">Cellphone:&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="value"></span></div>
+                        <div class="col-xs-12 col-sm-12 attrBox"><span class="attr">Nickname:&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" id="nickName" class="nikeNameIpt"></div>
+                        <div class="col-xs-12 col-sm-12 attrBox" style="width:400px;">
                             <form action="#">
                                 <span class="attr">Gender:</span>
                                 <label><input type="radio" class="gender" name="gender" value="">Male</label>
                                 <label><input type="radio" class="gender" name="gender" value="">Female</label>
                             </form>
                         </div>
-                        <div class="col-xs-12 col-sm-12 attrBox"><a href="###" class="saveLink">SAVE CHANGES</a></div>
+                        <div class="col-xs-12 col-sm-12 attrBox"><a href="javascript:void(0);" class="saveLink">SAVE CHANGES</a></div>
 
                         <div class="col-xs-12 col-sm-12 passwordBox"><span class="password">PASSWORD</span></div>
-                        <div class="col-xs-12 col-sm-12 attrBox attrBox2"><span class="attr attr2">Current password:</span><input type="text" class="nikeNameIpt"></div>
-                        <div class="col-xs-12 col-sm-12 attrBox attrBox3"><a href="reset_password.html" class="forget">Forgot your password?</a></div>
-                        <div class="col-xs-12 col-sm-12 attrBox"><span class="attr attr2">New password:</span><input type="text" class="nikeNameIpt"></div>
-                        <div class="col-xs-12 col-sm-12 attrBox"><span class="attr attr2">Verify  password:</span><input type="text" class="nikeNameIpt"></div>
+                        <div class="col-xs-12 col-sm-12 attrBox attrBox2"><span class="attr attr2">Current password:</span><input id="oldpass" type="text" class="nikeNameIpt"></div>
+                        <div class="col-xs-12 col-sm-12 attrBox attrBox3"><span class="forget">Forgot your password?</span></div>
+                        <div class="col-xs-12 col-sm-12 attrBox"><span class="attr attr2">New password:</span><input id="newpass" type="text" class="nikeNameIpt"></div>
+                        <div class="col-xs-12 col-sm-12 attrBox"><span class="attr attr2">Verify  password:</span><input id="verifypass" type="text" class="nikeNameIpt"></div>
                         <div class="col-xs-12 col-sm-12 attrBox"><a href="###" class="resetLink">RESET PASSWARD</a></div>
                     </div>
                     <div class="row part part2" style="display: none;">
@@ -365,7 +409,7 @@
                         </form>
                         <div class="col-xs-12 col-sm-12 listTitle"><span class="gang">|</span><span>SELLING(18)</span></div>
                         <ul class="row col-xs-12 col-sm-12 listUl">
-                            <li class="row listLi">
+                            <!--<li class="row listLi">
                                 <div class="col-xs-2 col-sm-2 left"><img src="image/backManage/bigImg1.png"></div>
                                 <div class="col-xs-8 col-sm-8 middle">
                                     <p class="title">Product title information</p>
@@ -377,69 +421,9 @@
                                 </div>
                                 <div class="col-xs-2 col-sm-2 right">
                                     <img src="image/backManage/littleImg1.png"><br/>
-                                    <a href="#">OFFLINE</a>&nbsp;<a href="#" class="link2">OFFLINE</a>
+                                    <a href="#">OFFLINE</a>
                                 </div>
-                            </li>
-                            <li class="row listLi">
-                                <div class="col-xs-2 col-sm-2 left"><img src="image/backManage/bigImg1.png"></div>
-                                <div class="col-xs-8 col-sm-8 middle">
-                                    <p class="title">Product title information</p>
-                                    <div class="count">
-                                        <img src="image/backManage/view.png">&nbsp;<span class="num view">20</span>
-                                        <img src="image/backManage/good.png">&nbsp;<span class="num good">20</span>
-                                        <img src="image/backManage/bad.png">&nbsp;<span class="num bad">20</span>
-                                    </div>
-                                </div>
-                                <div class="col-xs-2 col-sm-2 right">
-                                    <img src="image/backManage/littleImg1.png"><br/>
-                                    <a href="#">OFFLINE</a>&nbsp;<a href="#" class="link2">OFFLINE</a>
-                                </div>
-                            </li>
-                            <li class="row listLi">
-                                <div class="col-xs-2 col-sm-2 left"><img src="image/backManage/bigImg1.png"></div>
-                                <div class="col-xs-8 col-sm-8 middle">
-                                    <p class="title">Product title information</p>
-                                    <div class="count">
-                                        <img src="image/backManage/view.png">&nbsp;<span class="num view">20</span>
-                                        <img src="image/backManage/good.png">&nbsp;<span class="num good">20</span>
-                                        <img src="image/backManage/bad.png">&nbsp;<span class="num bad">20</span>
-                                    </div>
-                                </div>
-                                <div class="col-xs-2 col-sm-2 right">
-                                    <img src="image/backManage/littleImg1.png"><br/>
-                                    <a href="#">OFFLINE</a>&nbsp;<a href="#" class="link2">OFFLINE</a>
-                                </div>
-                            </li>
-                            <li class="row listLi">
-                                <div class="col-xs-2 col-sm-2 left"><img src="image/backManage/bigImg1.png"></div>
-                                <div class="col-xs-8 col-sm-8 middle">
-                                    <p class="title">Product title information</p>
-                                    <div class="count">
-                                        <img src="image/backManage/view.png">&nbsp;<span class="num view">20</span>
-                                        <img src="image/backManage/good.png">&nbsp;<span class="num good">20</span>
-                                        <img src="image/backManage/bad.png">&nbsp;<span class="num bad">20</span>
-                                    </div>
-                                </div>
-                                <div class="col-xs-2 col-sm-2 right">
-                                    <img src="image/backManage/littleImg1.png"><br/>
-                                    <a href="#">OFFLINE</a>&nbsp;<a href="#" class="link2">OFFLINE</a>
-                                </div>
-                            </li>
-                            <li class="row listLi">
-                                <div class="col-xs-2 col-sm-2 left"><img src="image/backManage/bigImg1.png"></div>
-                                <div class="col-xs-8 col-sm-8 middle">
-                                    <p class="title">Product title information</p>
-                                    <div class="count">
-                                        <img src="image/backManage/view.png">&nbsp;<span class="num view">20</span>
-                                        <img src="image/backManage/good.png">&nbsp;<span class="num good">20</span>
-                                        <img src="image/backManage/bad.png">&nbsp;<span class="num bad">20</span>
-                                    </div>
-                                </div>
-                                <div class="col-xs-2 col-sm-2 right">
-                                    <img src="image/backManage/littleImg1.png"><br/>
-                                    <a href="#">OFFLINE</a>&nbsp;<a href="#" class="link2">OFFLINE</a>
-                                </div>
-                            </li>
+                            </li>-->
                         </ul>
                     </div>
                     <div class="part part3" style="display: none;"></div>
@@ -449,14 +433,14 @@
     </aside>
 </section>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/drag.js"></script>
 <script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/base64.js"></script>
+<script type="text/javascript" src="js/jsencrypt.js"></script>
 <script type="text/javascript" src="js/public.js"></script>
 <script type="text/javascript" src="js/searchBoxRight.js"></script>
 <script type="text/javascript">
     $(function(){
-
-        //修改title
-        $('#manageTitle').html("user" + "'s home. kalichimall, make money by your second-hand goods.");
 
         //点击图片logo跳转到index页面；
         $('.searchBox .search .searchLeft .logo').click(function () {
@@ -470,6 +454,245 @@
             $(this).children("a").addClass("active");
             $('.infoBox .info .infoWrap .infoRight .part').hide().eq(index).show();
         });
+
+        //跳转都忘记密码页
+        $('.infoBox .info .infoWrap .infoRight .part1 .attrBox .forget').click(function(){
+            window.location.href = 'reset_password.html';
+        });
+
+
+
+        //获取用户信息（用于展示修改之前的用户信息）
+        var authInfo = {
+            "token":token,
+            "timestamp":timestamp
+        };
+        $.ajax({
+            type:"POST",
+            url:baseUrl + "/apigateway/getuserinfo",
+            dataType:"json",
+            data:JSON.stringify(authInfo),
+            success:function(data){
+                if(data.status == 200){
+                    data = JSON.parse(data.data);
+                    console.log("获得用户信息",data);
+                    console.log("用户已登陆");
+
+                    //修改title
+                    $('#manageTitle').html(data.nickname + "'s home. kalichimall, make money by your second-hand goods.");
+
+                    $('.infoBox .info .infoWrap .infoRight .part1 .attrBox .value').html(data.phone);
+                    $('#nickName').val(data.nickname);
+
+                    $('.infoBox .info .infoWrap .infoRight .part1 .headBox .headImg').show().attr('src', baseImgSrc + data.logo);
+                }else{
+                    console.log(data);
+                    commonPopFun(data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+
+        //修改用户信息
+        var headLogo = '';
+        //修改用户头像
+        $(".a-upload4").on("change","input[type='file']",function(){
+            $('.uploadLogo4').hide();
+            var filePath=$(this).val();
+            if(filePath.indexOf("jpg")!=-1 || filePath.indexOf("png")!=-1){
+                $(".fileerrorTip").html("").hide();
+                var arr=filePath.split('\\');
+                var fileName=arr[arr.length-1];
+
+                //上传图片
+                var fd = new FormData();
+                fd.append("upload", 1);
+                console.log($("#upfile4").get(0).files[0]);
+                fd.append("upfile", $("#upfile4").get(0).files[0]);
+                $.ajax({
+                    url: "http://www.kalichimall.com/apigateway/upfile",
+                    type: "POST",
+                    processData: false,
+                    contentType: false,
+                    data: fd,
+                    success: function(imgData) {
+                        if(imgData.status == 200) {
+                            console.log(imgData.data);
+                            headLogo = imgData.data;
+                            $('.infoBox .info .infoWrap .infoRight .part1 .headBox .headImg').attr('src', baseImgSrc + headLogo);
+
+                        }
+                    }
+                });
+
+            }else{
+                $(".showFileName4").html("");
+                $(".fileerrorTip").html("您未上传文件，或者您上传文件类型有误！").show();
+                return false
+            }
+        });
+
+        //点击保存：SAVE CHANGES
+        var sex = 0;
+        $('.infoBox .info .infoWrap .infoRight .part1 .attrBox .saveLink').unbind('click').click(function(){
+            if ($('.infoBox .info .infoWrap .infoRight .part1 .attrBox .gender').get(0).checked) {
+                sex = 1;
+            }
+            if ($('.infoBox .info .infoWrap .infoRight .part1 .attrBox .gender').get(1).checked) {
+                sex = 2;
+            }
+            console.log(sex);
+            var changeuserinfo = {
+                "token":token,
+                "sex":sex.toString(),
+                "logo":headLogo,
+                "nickname":$('#nickName').val()
+            };
+            $.ajax({
+                type:"POST",
+                url:baseUrl + "/apigateway/changeuserinfo",
+                dataType:"json",
+                data:JSON.stringify(changeuserinfo),
+                success:function(data){
+                    console.log(data);
+                    if(data.status == 200){
+                        console.log("修改用户信息",data);
+                        console.log("changeuserinfo",changeuserinfo);
+
+                        //修改title
+                        $('#manageTitle').html(data.nickname + "'s home. kalichimall, make money by your second-hand goods.");
+                        commonPopFun('CHANGED');
+                    }else{
+                        console.log(data);
+                        commonPopFun(data.msg);
+                    }
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            });
+        });
+
+        //重置密码
+        var b = new Base64_new();
+        var publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC5jmTSO5V9ILlphRYdfFk4M2Rko/Ur22h43SxkFcGcj9Vkuew5P65XJPQtJesvY37UmU7zXWsqT/i4Evo2gaYu9Eu/fgutkP9KE4yKh4Ruk/pYC+hyNFVIK21kl4o8cfV9cKumydj2WXgmuywX8UQiVIfbKuvEAw+RVvPjBt9UqQIDAQAB";
+        var encrypt = new JSEncrypt();
+        encrypt.setPublicKey(publicKey);
+        $('.infoBox .info .infoWrap .infoRight .part1 .attrBox .resetLink').unbind('click').click(function(){
+            var oldpass = b.encode($.trim($('#oldpass').val()));
+            var newpass = b.encode($.trim($('#newpass').val()));
+            var verifypass = b.encode($.trim($('#verifypass').val()));
+            if(newpass == verifypass){
+                var passwordData = encrypt.encrypt("oldpass="+ oldpass +"&newpass="+ newpass);//获取密钥
+                var timestamp=new Date().getTime();//获取时间戳
+//            console.log(loginPhone);
+//            console.log(loginPassword);
+//            console.log(authKey);
+                var changePassInfo = {
+                    "token":token,
+                    "data":passwordData,
+                    "timestamp":timestamp
+                };
+                $.ajax({
+                    type:"POST",
+                    url:baseUrl + "/apigateway/changepass",
+                    dataType:"json",
+                    data:JSON.stringify(changePassInfo),
+                    success:function(data){
+                        if(data.status == 200){
+//                    data = JSON.parse(data.data);
+                            console.log("重置密码",data);
+                            commonPopFun('CHANGED');
+                        }else{
+                            commonPopFun(data.msg);
+                        }
+                    },
+                    error:function(error){
+                        console.log(error);
+                    }
+                });
+            }else{
+                commonPopFun('两次输入密码不一致');
+            }
+        });
+
+
+        //获得用户的发布信息
+        getuserpubinfo(0,0,30);
+        function getuserpubinfo(status, start, number){
+            $.ajax({
+                type: "get",
+                url: baseUrl+"/apigateway/getuserpubinfo?token="+token+"&start="+start+"&n="+number+"&status="+status,
+//                url: baseUrl+"/apigateway/getuserpubinfo?token="+token+'&start=&n=&status=0',
+                dataType:"json",
+                success: function(data){
+                    if(data.status == 200){
+                        data = JSON.parse(data.data);
+                        console.log("获得用户的发布信息",data);
+
+                        $('.infoBox .info .infoWrap .infoRight .part2 .listUl').empty();
+                        for(var i=0; i<data.length; i++){
+                            var str = '';
+                            if(data[i].issell == 0){
+                                str = 'OFFLINE';
+                            }else{
+                                str = 'ONLINE';
+                            }
+                            $('.infoBox .info .infoWrap .infoRight .part2 .listUl').append(
+                                '<li class="row listLi">' +
+                                '<div class="col-xs-2 col-sm-2 left"><img src='+baseImgSrc + data[i].cimg+'></div>' +
+                                '<div class="col-xs-8 col-sm-8 middle">' +
+                                '<p class="title">'+data[i].title+'</p>' +
+                                '<div class="count">' +
+                                '<img src="image/backManage/view.png">&nbsp;' +
+                                '<span class="num view">'+data[i].views+'</span>' +
+                                '<img src="image/backManage/good.png">&nbsp;' +
+                                '<span class="num good">'+data[i].wishs+'</span>' +
+                                '<img src="image/backManage/bad.png">&nbsp;' +
+                                '<span class="num bad">20</span>' +
+                                '</div></div>' +
+                                '<div class="col-xs-2 col-sm-2 right">' +
+                                '<img src="image/backManage/littleImg1.png"><br/>' +
+                                '<a href="#">'+str+'</a>' +
+                                '</div>' +
+                                '</li>'
+                            );
+                        }
+
+                    }
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            });
+        }
+
+
+
+        //更新发布状态
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/updatepubstatus?token="+token+"&status="+1+"&goodid="+14,
+            dataType:"json",
+            success: function(data){
+                if(data.status == 200){
+//                    data = JSON.parse(data.data);
+                    console.log("更新发布状态",data);
+
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+
+
+
+
     });
 </script>
 </body>
