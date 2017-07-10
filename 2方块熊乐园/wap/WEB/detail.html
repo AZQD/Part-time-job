@@ -679,7 +679,7 @@
                         </div>
                     </div>
                     <div class="col-xs-5 col-sm-5 goodDescRight">
-                        <p class="attr attr1">Price:<span class="num1 price"></span>&nbsp;<span class="num2">ZMW</span></p>
+                        <p class="attr attr1">Price:<span id="mianYi"><span class="num1 price"></span>&nbsp;<span class="num2 aboutNum" style="display: none;">ZMW</span></span></p>
                         <p class="attr">Add&nbsp;&nbsp;:<span class="address"></span></p>
                         <div class="userBtn">
                             <ul class="share-buttons">
@@ -698,7 +698,7 @@
                     </div>
                 </div>
                 <div class="tabToggle">
-                    <a href="###" class="tabLink active">DETAILS</a><a href="###" class="tabLink tabLink2">COMMENTS</a>
+                    <a href="###" class="tabLink active">DETAIL</a><a href="###" class="tabLink tabLink2">COMMENTS</a>
                 </div>
             </div>
             <!--detailRight-->
@@ -716,7 +716,7 @@
                     </div>
                 </div>
                 <div class="row selling">
-                    <p class="col-xs-12 col-sm-12 sellingTitle"><span class="gang">|</span><span class="">SELLING (18)</span></p>
+                    <p class="col-xs-12 col-sm-12 sellingTitle"><span class="gang">|</span><span class="">PUBLISHED (18)</span></p>
                     <div class="sellingListBox" id="dowebok">
                         <div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src="image/detailPage/selling1.jpg"></div>
                         <div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src="image/detailPage/selling1.jpg"></div>
@@ -832,7 +832,6 @@
                     //修改title
                     $('#detailTitle').html(data.title + data.price +" kalichimall, make money by your second-hand goods.");
 
-                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', baseUrl+'/gimg/'+data.cimg);
 
                     //保存当前商品的发布者uid
                     var pubUid = data.uid;
@@ -845,6 +844,7 @@
                     for(var i=0; i<imgsArr.length; i++){
                         $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li"><img src='+baseUrl+'/gimg/'+imgsArr[i]+'></li>');
                     }
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', baseUrl+'/gimg/'+imgsArr[0]);
                     var moveNum = 0;
                     var imgsLength = imgsArr.length;
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .leftFlag').click(function(){
@@ -925,7 +925,12 @@
 
 
                     //price
-                    $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .attr .price').html(data.price);
+                    if(data.price == 0){
+                        $('#mianYi').html("Negotiated").css({"color":'#FF4720',"paddingLeft":'8px'});
+                    }else{
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .attr .aboutNum').show();
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .attr .price').html(data.price);
+                    }
 
 
 
@@ -1114,9 +1119,9 @@
                 success:function(data){
                     if(data.status == 200){
                         console.log('提交投诉', data);
-                        commonPopFun('OK');
+                        commonPopFun(data.data);
                     }else{
-                        commonPopFun(data.msg);
+                        commonPopFun(data.data);
                     }
                 },
                 error:function(error){

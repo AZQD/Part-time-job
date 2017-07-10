@@ -141,12 +141,18 @@ $(function(){
                             
                             $('.nearbyImgBox .nearbyImg').empty();
                             for (var nearby in data){
+                                var str;
+                                if(data[nearby].price == 0){
+                                    str = 'Negotiated';
+                                }else{
+                                    str = data[nearby].price;
+                                }
                                 $('.nearbyImgBox .nearbyImg').append('' +
                                     '<li class="nearbyLi">' +
                                     '<img class="goodImg" src='+baseUrl+'/gimg/'+data[nearby].imgs+'>' +
                                     '<div class="desc row">' +
                                     '<div class="col-xs-6 col-sm-6 left">'+data[nearby].title+'</div>' +
-                                    '<div class="col-xs-6 col-sm-6 right">'+data[nearby].price+'</div>' +
+                                    '<div class="col-xs-6 col-sm-6 right">'+str+'</div>' +
                                     '</div>' +
                                     '</li>');
                             }
@@ -210,12 +216,18 @@ $(function(){
                                 console.log('获取附近商品信息',data);
                                 $('.nearbyImgBox .nearbyImg').empty();
                                 for (var nearby in data){
+                                    var str;
+                                    if(data[nearby].price == 0){
+                                        str = 'Negotiated';
+                                    }else{
+                                        str = data[nearby].price;
+                                    }
                                     $('.nearbyImgBox .nearbyImg').append('' +
                                         '<li class="nearbyLi">' +
                                         '<img class="goodImg" src='+baseUrl+'/gimg/'+data[nearby].imgs+'>' +
                                         '<div class="desc row">' +
                                         '<div class="col-xs-6 col-sm-6 left">'+data[nearby].title+'</div>' +
-                                        '<div class="col-xs-6 col-sm-6 right">'+data[nearby].price+'</div>' +
+                                        '<div class="col-xs-6 col-sm-6 right">'+str+'</div>' +
                                         '</div>' +
                                         '</li>');
                                 }

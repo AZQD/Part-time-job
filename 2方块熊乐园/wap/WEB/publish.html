@@ -98,6 +98,9 @@
             display: inline-block;
             width: 50%;
         }
+        .sortBox .sort .space .left .categoryName{
+            font-family: Arial,sans-serif;
+        }
         .sortBox .sort .space .changeCid{
             cursor: pointer;
         }
@@ -118,16 +121,21 @@
             font-weight:bold;
             text-align: right;
             padding-right: 26px;
-            height: 250px;
         }
         .sortBox .sort .partInner1 .partInner1Left .title{
             cursor: pointer;
             color: #999;
+            padding-top:12px;
+            font-weight: bold;
         }
         .sortBox .sort .partInner1 .partInner1Left .isActive{
             color: #333;
         }
+        .sortBox .sort .partInner1 .partInner1Right{
+            padding-top: 22px;
+        }
         .sortBox .sort .partInner1 .partInner1Right .secondCidName{
+            display: inline-block;
             cursor: pointer;
             color: #333333;
             font-size: 14px;
@@ -423,7 +431,7 @@
     <aside class="sortBox">
         <div class="row sort">
             <div class="col-xs-4 col-sm-4 part space active">
-                <span class="left">1. <span class="category">CATEGORY</span></span><span class="right changeCid" style="display: none;">CHANGE</span>
+                <span class="left" style="width: auto;">1. <span class="category categoryName">CATEGORY</span></span><span class="right changeCid" style="display: none;float: right;width: auto;">CHANGE</span>
             </div>
             <div class="col-xs-4 col-sm-4 part space">
                 2. DETAILS
@@ -542,17 +550,19 @@
         $('.publishPopBox .tipOffBox .confirmBox .laterBtn').unbind('click').click(function(){
             $('.publishPopBox').hide();
             $('body').css('overflow', 'auto');
+            window.history.go(-1);
         });
 
         var imgIdAll = '';
         $(".a-upload1").on("change","input[type='file']",function(){
+            $(".a-upload2").show();
             $('.uploadLogo1').hide();
             var filePath=$(this).val();
             if(filePath.indexOf("jpg")!=-1 || filePath.indexOf("png")!=-1){
                 $(".fileerrorTip").html("").hide();
                 var arr=filePath.split('\\');
                 var fileName=arr[arr.length-1];
-                $(".showFileName1").html(fileName);
+                $(".showFileName1").html("uploading");
 
                 //上传图片
                 var fd = new FormData();
@@ -567,20 +577,22 @@
                     data: fd,
                     success: function(imgData) {
                         if(imgData.status == 200) {
+                            $(".showFileName1").html(fileName);
                             console.log(imgData);
                             console.log(imgData.data);
                             imgIdAll = imgData.data;
                             console.log("imgIdAll="+imgIdAll);
 
 
-                            $(".a-upload2").show().on("change","input[type='file']",function(){
+                            $(".a-upload2").on("change","input[type='file']",function(){
+                                $(".a-upload3").show();
                                 $('.uploadLogo2').hide();
                                 var filePath=$(this).val();
                                 if(filePath.indexOf("jpg")!=-1 || filePath.indexOf("png")!=-1){
                                     $(".fileerrorTip").html("").hide();
                                     var arr=filePath.split('\\');
                                     var fileName=arr[arr.length-1];
-                                    $(".showFileName2").html(fileName);
+                                    $(".showFileName2").html("uploading");
 
                                     //上传图片
                                     var fd = new FormData();
@@ -595,20 +607,22 @@
                                         data: fd,
                                         success: function(imgData) {
                                             if(imgData.status == 200) {
+                                                $(".showFileName2").html(fileName);
                                                 console.log(imgData);
                                                 console.log(imgData.data);
                                                 imgIdAll = imgIdAll+','+imgData.data;
                                                 console.log("imgIdAll="+imgIdAll);
 
 
-                                                $(".a-upload3").show().on("change","input[type='file']",function(){
+                                                $(".a-upload3").on("change","input[type='file']",function(){
+                                                    $(".a-upload4").show();
                                                     $('.uploadLogo3').hide();
                                                     var filePath=$(this).val();
                                                     if(filePath.indexOf("jpg")!=-1 || filePath.indexOf("png")!=-1){
                                                         $(".fileerrorTip").html("").hide();
                                                         var arr=filePath.split('\\');
                                                         var fileName=arr[arr.length-1];
-                                                        $(".showFileName3").html(fileName);
+                                                        $(".showFileName3").html("uploading");
 
                                                         //上传图片
                                                         var fd = new FormData();
@@ -623,20 +637,21 @@
                                                             data: fd,
                                                             success: function(imgData) {
                                                                 if(imgData.status == 200) {
+                                                                    $(".showFileName3").html(fileName);
                                                                     console.log(imgData);
                                                                     console.log(imgData.data);
                                                                     imgIdAll = imgIdAll+','+imgData.data;
                                                                     console.log("imgIdAll="+imgIdAll);
 
 
-                                                                    $(".a-upload4").show().on("change","input[type='file']",function(){
+                                                                    $(".a-upload4").on("change","input[type='file']",function(){
                                                                         $('.uploadLogo4').hide();
                                                                         var filePath=$(this).val();
                                                                         if(filePath.indexOf("jpg")!=-1 || filePath.indexOf("png")!=-1){
                                                                             $(".fileerrorTip").html("").hide();
                                                                             var arr=filePath.split('\\');
                                                                             var fileName=arr[arr.length-1];
-                                                                            $(".showFileName4").html(fileName);
+                                                                            $(".showFileName4").html("uploading");
 
                                                                             //上传图片
                                                                             var fd = new FormData();
@@ -651,6 +666,7 @@
                                                                                 data: fd,
                                                                                 success: function(imgData) {
                                                                                     if(imgData.status == 200) {
+                                                                                        $(".showFileName4").html(fileName);
                                                                                         console.log(imgData);
                                                                                         console.log(imgData.data);
                                                                                         imgIdAll = imgIdAll+','+imgData.data;
@@ -752,6 +768,7 @@
                     //点击一级菜单
                     var firstIndex = 0;
                     $('.sortBox .sort .partInner1 .partInner1Left .title').unbind('click').click(function(){
+                        var categoryName = '';
                         var index = $(this).index();
                         $('.sortBox .sort .partInner1 .partInner1Left .title').removeClass('isActive').eq(index).addClass('isActive');
                         var nowSubArr = data[index].sub;
@@ -760,14 +777,21 @@
                             $('.sortBox .sort .partInner1 .partInner1Right').append('<div class="secondCidName">'+nowSubArr[i].name+'</div>');
                         }
 
+                        categoryName = data[index].name;
+                        $('.sortBox .sort .space .left .categoryName').empty().html(categoryName);
+
                         //点击二级菜单
                         $('.sortBox .sort .partInner1 .partInner1Right .secondCidName').unbind('click').click(function(){
+                            var categoryName2 = '';
                             var secondIndex = $(this).index();
                             cid = nowSubArr[secondIndex].cid;
                             console.log('cid='+cid);
                             $('.sortBox .sort .part').removeClass("active").eq(1).addClass("active");
                             $('.sortBox .sort .partInner').hide().eq(1).show();
                             $('.sortBox .sort .space .changeCid').show();
+                            categoryName2 = (">"+nowSubArr[secondIndex].name);
+
+                            $('.sortBox .sort .space .left .categoryName').empty().html(categoryName + categoryName2);
                         });
                     });
 
@@ -957,7 +981,7 @@
             priceText = 0;
             $(this).addClass('active');
 //            $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').hide();
-            $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val('').attr('disabled','disabled');
+            $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val('').hide();
             console.log(priceText);
         });
 

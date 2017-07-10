@@ -234,10 +234,50 @@
         .tabsBox .tabs .tabsRight .tabBtn1{
             border-radius: 5px 0 0 5px;
         }
+        .tabsBox .tabs .tabsRight .tabBtn1Up:before{
+            display: inline-block;
+            content: "";
+            border-top: 10px solid black;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid transparent;
+            position: relative;
+            top: 8px;
+        }
+        .tabsBox .tabs .tabsRight .tabBtn1Down:before{
+            display: inline-block;
+            content: "";
+            border-top: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 10px solid black;
+            border-left: 8px solid transparent;
+            position: relative;
+            top: 0px;
+        }
         .tabsBox .tabs .tabsRight .tabBtn2{
             margin-right: 16px;
             border-radius: 0 5px 5px 0;
             border-left:0;
+        }
+        .tabsBox .tabs .tabsRight .tabBtn2Up:before{
+            display: inline-block;
+            content: "";
+            border-top: 10px solid black;
+            border-right: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid transparent;
+            position: relative;
+            top: 8px;
+        }
+        .tabsBox .tabs .tabsRight .tabBtn2Down:before{
+            display: inline-block;
+            content: "";
+            border-top: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-bottom: 10px solid black;
+            border-left: 8px solid transparent;
+            position: relative;
+            top: 0px;
         }
 
         /*goodsBox*/
@@ -434,7 +474,7 @@
                 <a href="#" class="tabLink">Buyer</a>
             </div>
             <div class="col-xs-6 col-sm-6 tabsRight">
-                <button class="tabBtn tabBtn1">Date</button><button class="tabBtn tabBtn2">Price</button>
+                <button class="tabBtn tabBtn1 tabBtn1Up">Date</button><button class="tabBtn tabBtn2 tabBtn2Up">Price</button>
             </div>
         </div>
     </aside>
@@ -580,8 +620,12 @@
             orderby = 'date';
             if(dateClickNum%2 == 0){
                 sort = 'desc';
+                $(this).removeClass('tabBtn1Up');
+                $(this).addClass('tabBtn1Down');
             }else{
                 sort = 'asc';
+                $(this).removeClass('tabBtn1Down');
+                $(this).addClass('tabBtn1Up');
             }
             dateClickNum ++;
             console.log(sort);
@@ -592,8 +636,12 @@
             orderby = 'price';
             if(priceClickNum%2 == 0){
                 sort = 'desc';
+                $(this).removeClass('tabBtn2Up');
+                $(this).addClass('tabBtn2Down');
             }else{
                 sort = 'asc';
+                $(this).removeClass('tabBtn2Down');
+                $(this).addClass('tabBtn2Up');
             }
             priceClickNum ++;
             console.log(sort);
@@ -739,9 +787,19 @@
                         data = JSON.parse(data.data);
                         console.log("搜索",data);
                         var str = '';
-                        var imgsLth = 0;
+
                         var goodIdArr = [];
                         for (var list in data) {
+                            var imgsLth = 0;
+                            var priceStr = '';
+                            var priceHtml = '';
+                            if(data[list].price == 0){
+                                priceStr = 'Negotiated';
+                                priceHtml = '<span class="goodsRight1"></span><span class="goodsRight2">'+priceStr+'</span>';
+                            }else{
+                                priceStr = data[list].price;
+                                priceHtml = '<span class="goodsRight1">ZMW</span><span class="goodsRight2">'+priceStr+'</span>';
+                            }
                             goodIdArr.push(data[list].id);
                             var imgs = data[list].imgs;
                             if(imgs != null){
@@ -761,11 +819,11 @@
                                     '<span class="goodDate">'+data[list].pubtime+'</span>' +
                                     '</p>' +
                                     '</div>' +
-                                    '<div class="col-xs-3 col-sm-3 goodsRight"><span class="goodsRight1">ZMW</span>' +
-                                    '<span class="goodsRight2">'+data[list].price+'</span></div>' +
+                                    '<div class="col-xs-3 col-sm-3 goodsRight">'+priceHtml+'</div>' +
                                     '</div>';
                         }
                         $('.goodsBox').empty().append(str);
+
                         console.log(str == '');
                         if(str == ''){
                             $('.goodsBox').empty().append('Sorry,No product found!').css({
@@ -895,8 +953,18 @@
                         console.log("产品列表查看",data);
                         var str = '';
                         var goodIdArr = [];
-                        var imgsLth = 0;
+
                         for (var list in data) {
+                            var imgsLth = 0;
+                            var priceStr = '';
+                            var priceHtml = '';
+                            if(data[list].price == 0){
+                                priceStr = 'Negotiated';
+                                priceHtml = '<span class="goodsRight1"></span><span class="goodsRight2">'+priceStr+'</span>';
+                            }else{
+                                priceStr = data[list].price;
+                                priceHtml = '<span class="goodsRight1">ZMW</span><span class="goodsRight2">'+priceStr+'</span>';
+                            }
                             var imgs = data[list].imgs;
                             if(imgs != null){
                                 imgs = imgs.split(',');
@@ -907,7 +975,7 @@
 //                            console.log(data[list]);
                             str += '<div class="row goods">' +
                                     '<div class="col-xs-3 col-sm-3 goodsLeft">' +
-                                    '<imdg src='+baseUrl+'/gimg/'+data[list].cimg+'><span class="tip">'+imgsLth+'</span>' +
+                                    '<img src='+baseUrl+'/gimg/'+data[list].cimg+'><span class="tip">'+imgsLth+'</span>' +
                                     '</div>' +
                                     '<div class="col-xs-6 col-sm-6 goodsMiddle">' +
                                     '<p class="goodName">'+data[list].contactname+'</p>' +
@@ -916,11 +984,11 @@
                                     '<span class="goodDate">'+data[list].pubtime+'</span>' +
                                     '</p>' +
                                     '</div>' +
-                                    '<div class="col-xs-3 col-sm-3 goodsRight"><span class="goodsRight1">ZMW</span>' +
-                                    '<span class="goodsRight2">'+data[list].price+'</span></div>' +
+                                    '<div class="col-xs-3 col-sm-3 goodsRight">'+priceHtml+'</div>' +
                                     '</div>';
                         }
                         $('.goodsBox').empty().append(str);
+
                         console.log(str == '');
 
                         if(str == ''){

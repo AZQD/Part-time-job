@@ -223,7 +223,7 @@
             width: 202px;
             outline: none;
             border: none;
-            margin-left: 122px;
+            margin-left: 10px;
             border-bottom:1px solid #ccc;
         }
         .infoBox .info .infoWrap .infoRight .part2 .form #search::-webkit-input-placeholder{
@@ -280,6 +280,10 @@
         }
         .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .middle .count img{
             width: 18px;
+            margin-left: 12px;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .middle .count .wishs{
+            width: 14px;
             margin-left: 12px;
         }
         .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .middle .count .num{
@@ -402,12 +406,12 @@
                     <div class="row part part2" style="display: none;">
                         <form action="#" class="form">
                             <label class="sell"><input name="sell" type="radio" value="" />ALL</label>
-                            <label class="sell"><input name="sell" type="radio" value="" />SELLING</label>
-                            <label class="sell"><input name="sell" type="radio" value="" />SELLED</label>
-                            <label class="sell"><input name="sell" type="radio" value="" />OFFLINE</label>
+                            <label class="sell"><input name="sell" type="radio" value="" />PUBLISHED</label>
+                            <label class="sell"><input name="sell" type="radio" value="" />FINISHED</label>
+                            <label class="sell"><input name="sell" type="radio" value="" />UNPUBLISH</label>
                             <input id="search" name="search" type="text" value="" placeholder="Search..."/>
                         </form>
-                        <div class="col-xs-12 col-sm-12 listTitle"><span class="gang">|</span><span>SELLING(18)</span></div>
+                        <div class="col-xs-12 col-sm-12 listTitle"><span class="gang">|</span><span><span id="searchName">ALL</span>(<span id="searchLength"></span>)</span></div>
                         <ul class="row col-xs-12 col-sm-12 listUl">
                             <!--<li class="row listLi">
                                 <div class="col-xs-2 col-sm-2 left"><img src="image/backManage/bigImg1.png"></div>
@@ -621,8 +625,23 @@
 
 
         //获得用户的发布信息
-        getuserpubinfo(0,0,30);
-        function getuserpubinfo(status, start, number){
+        //初始化
+        getuserpubinfo('',0,30);
+        $(".infoBox .info .infoWrap .infoRight .part2 .form .sell").change(function(){
+            var index = $(this).index();
+            if(index == 1){
+                getuserpubinfo(0,0,30);//status=0表示在线
+            }else if(index == 2){
+                getuserpubinfo(2,0,30);//status=2表示完成
+            }else if(index == 3){
+                getuserpubinfo(1,0,30);//status=1表示下线
+            }else{
+                getuserpubinfo('',0,30);
+            }
+        });
+
+
+        function getuserpubinfo(status, start, number){//status=0表示在线，status=1表示下线，status=2表示完成
             $.ajax({
                 type: "get",
                 url: baseUrl+"/apigateway/getuserpubinfo?token="+token+"&start="+start+"&n="+number+"&status="+status,
@@ -632,6 +651,21 @@
                     if(data.status == 200){
                         data = JSON.parse(data.data);
                         console.log("获得用户的发布信息",data);
+
+
+                        if(status === 0){
+                            $('#searchName').html('PUBLISHED');
+                            $('#searchLength').html(data.length);
+                        }else if(status == 1){
+                            $('#searchName').html('UNPUBLISH');
+                            $('#searchLength').html(data.length);
+                        }else if(status == 2){
+                            $('#searchName').html('FINISHED');
+                            $('#searchLength').html(data.length);
+                        }else{
+                            $('#searchName').html('ALL');
+                            $('#searchLength').html(data.length);
+                        }
 
                         $('.infoBox .info .infoWrap .infoRight .part2 .listUl').empty();
                         for(var i=0; i<data.length; i++){
@@ -649,10 +683,9 @@
                                 '<div class="count">' +
                                 '<img src="image/backManage/view.png">&nbsp;' +
                                 '<span class="num view">'+data[i].views+'</span>' +
-                                '<img src="image/backManage/good.png">&nbsp;' +
+                                '<img src="image/backManage/wishs.png" class="wishs">&nbsp;' +
                                 '<span class="num good">'+data[i].wishs+'</span>' +
-                                '<img src="image/backManage/bad.png">&nbsp;' +
-                                '<span class="num bad">20</span>' +
+
                                 '</div></div>' +
                                 '<div class="col-xs-2 col-sm-2 right">' +
                                 '<img src="image/backManage/littleImg1.png"><br/>' +

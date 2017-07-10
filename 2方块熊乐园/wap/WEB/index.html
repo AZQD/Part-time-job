@@ -165,6 +165,9 @@
         .bannerBox .banner .bannerLeft .listUl .listLi .detailLink:nth-last-child(1):after{
             content: "";
         }
+        .bannerBox .banner .bannerLeft .listUl .listLi .detailLink:nth-last-child(2):after{
+            content: "";
+        }
 
         .bannerBox .banner .bannerMiddle{
             width:640px;
@@ -672,7 +675,11 @@
                     console.log("getbestgoods",data);
                     var num = 0;
                     $('.bannerBox .banner .bannerRight .bannerRightBox .desc .left').html(data[0].cname);
-                    $('.bannerBox .banner .bannerRight .bannerRightBox .desc .right').html(data[0].price);
+                    if(data[num].price == 0){
+                        $('.bannerBox .banner .bannerRight .bannerRightBox .desc .right').html("Negotiated");
+                    }else{
+                        $('.bannerBox .banner .bannerRight .bannerRightBox .desc .right').html(data[0].price);
+                    }
 
                     var tt = document.styleSheets[0];
                     tt.deleteRule(6);//清除之前写入的动画样式
@@ -692,7 +699,14 @@
                             num = 0
                         }
                         $('.bannerBox .banner .bannerRight .bannerRightBox .desc .left').html(data[num].cname);
-                        $('.bannerBox .banner .bannerRight .bannerRightBox .desc .right').html(data[num].price);
+
+                        if(data[num].price == 0){
+                            $('.bannerBox .banner .bannerRight .bannerRightBox .desc .right').html("Negotiated");
+                        }else{
+                            $('.bannerBox .banner .bannerRight .bannerRightBox .desc .right').html(data[num].price);
+                        }
+
+
                         $('#bannerRightBox').unbind('click').click(function(){
                             localStorage.setItem('goodIdFromCategory',data[num].id);
                             window.location.href = "detail.html?id="+data[num].id;
@@ -771,6 +785,7 @@
 //                        console.log('str='+str);
                         listStr = '<li class="listLi">'+str+'</li>';
                         $('.bannerBox .banner .bannerLeft .listUl').append(listStr);
+                        $('.bannerBox .banner .bannerLeft .listUl .listLi .detailLink:last').hide();
 
                     }
 
@@ -904,6 +919,7 @@
                     }
                     console.log(str);
                     $('.swiper-wrapper').append(str);
+
 
                     //bannerBox：轮播图
                     var mySwiper = new Swiper ('.swiper-container', {

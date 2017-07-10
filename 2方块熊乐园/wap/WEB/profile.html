@@ -542,12 +542,18 @@
                         $('.sellingBox .selling .sellingList').addClass('sellingHeight');
                     }
                     for(var i=0; i<data.length; i++){
+                        var priceStr = '';
+                        if(data[i].price == 0){
+                            priceStr = 'Negotiated';
+                        }else{
+                            priceStr = data[i].price;
+                        }
                         $('.sellingBox .selling .sellingList').append(
                             '<a href="#" class="sellingLink">' +
                             '<img class="goodImg" src='+baseImgSrc+data[i].cimg+'>' +
                             '<div class="row desc">' +
                             '<div class="col-xs-6 col-sm-6 left">'+data[i].title+'</div>' +
-                            '<div class="col-xs-6 col-sm-6 right">'+data[i].price+'</div>' +
+                            '<div class="col-xs-6 col-sm-6 right">'+priceStr+'</div>' +
                             '</div>' +
                             '</a>');
                         $('.sellingBox .selling .sellingList .sellingLink .goodImg').hover(
@@ -596,12 +602,18 @@
                     }
 
                     for(var i=0; i<data.length; i++){
+                        var priceStr = '';
+                        if(data[i].price == 0){
+                            priceStr = 'Negotiated';
+                        }else{
+                            priceStr = data[i].price;
+                        }
                         $('.likeBox .like .likeList').append(
                             '<a href="#" class="likeLink">' +
                             '<img class="goodImg" src='+baseImgSrc+data[i].cimg+'>' +
                             '<div class="row desc">' +
                             '<div class="col-xs-6 col-sm-6 left">'+data[i].title+'</div>' +
-                            '<div class="col-xs-6 col-sm-6 right">'+data[i].price+'</div>' +
+                            '<div class="col-xs-6 col-sm-6 right">'+priceStr+'</div>' +
                             '</div>' +
                             '</a>');
                         $('.likeBox .like .likeList .likeLink .goodImg').hover(
