@@ -318,6 +318,11 @@
             margin-right: 10px;
             border-bottom: 2px solid #FF4720;
         }
+        .detailBox .detail .detailLeft .aboutContent{
+            padding-left: 30px;
+            padding-top: 20px;
+            font-size: 16px;
+        }
         .detailBox .detail .detailLeft .tabToggle .tabLink{
             display: inline-block;
             font-size: 13px;
@@ -700,6 +705,8 @@
                 <div class="tabToggle">
                     <a href="###" class="tabLink active">DETAIL</a><a href="###" class="tabLink tabLink2">COMMENTS</a>
                 </div>
+                <div class="aboutContent" id="detailContent" style="display: none;"></div>
+                <div class="aboutContent" id="commentsContent" style="display: none;"></div>
             </div>
             <!--detailRight-->
             <div class="col-xs-3 col-sm-3 detailRight">
@@ -808,10 +815,11 @@
         //图片预览
         $('#dowebok').viewer({});
 
+
         //tab切换
         $('.detailBox .detail .detailLeft .tabToggle .tabLink').click(function () {
-            $('.detailBox .detail .detailLeft .tabToggle .tabLink').removeClass("active");
-            $(this).addClass("active");
+            var index = $(this).index();
+            $('.detailBox .detail .detailLeft .tabToggle .tabLink').removeClass("active").eq(index).addClass("active");
         });
 
         //获得指定产品的产品信息
@@ -831,6 +839,31 @@
 
                     //修改title
                     $('#detailTitle').html(data.title + data.price +" kalichimall, make money by your second-hand goods.");
+
+
+                    //tab切换
+                    if($('.detailBox .detail .detailLeft .tabToggle .tabLink').eq(0).hasClass('active')){
+                        $('#detailContent').html(data.title);
+                    }
+                    $('.detailBox .detail .detailLeft .tabToggle .tabLink').click(function () {
+                        var index = $(this).index();
+                        $('.detailBox .detail .detailLeft .tabToggle .tabLink').removeClass("active").eq(index).addClass("active");
+                    });
+
+                    //tab切换
+                    $('#detailContent').show().html(data.details);
+                    $('.detailBox .detail .detailLeft .tabToggle .tabLink').unbind('click').click(function () {
+                        var index = $(this).index();
+                        $('.detailBox .detail .detailLeft .tabToggle .tabLink').removeClass("active").eq(index).addClass("active");
+                        if($('.detailBox .detail .detailLeft .tabToggle .tabLink').eq(0).hasClass('active')){
+                            $('#commentsContent').hide();
+                            $('#detailContent').show().html(data.details);
+                        }
+                        if($('.detailBox .detail .detailLeft .tabToggle .tabLink').eq(1).hasClass('active')){
+                            $('#detailContent').hide();
+                            $('#commentsContent').show().html();
+                        }
+                    });
 
 
                     //保存当前商品的发布者uid

@@ -11,7 +11,7 @@ $(function(){
         //publish.html
         $('.publishPopBox').show();
         $('.publishPopBox').css('top', $(window).scrollTop());
-        $('body').css('overflow', 'hidden');
+        //$('body').css('overflow', 'hidden');
 
 
         $('.headerBox .header .headerRight1').show();
@@ -36,7 +36,7 @@ $(function(){
                     console.log("用户已登陆");
                     $('.headerBox .header .headerRight2').show();
 //                        $('.headerBox .header .headerRight .headImgBox .headImg').show().attr('src',baseUrl+"/"+data.logo);
-                    $('.headerBox .header .headerRight .headImgBox .headImg').show().attr('src',baseImgSrc+data.logo);
+                    $('.headerBox .header .headerRight .headImgBox .headImg').show().attr('src',baseImgSrc+data.logo).css({'width':"15px", 'height':"15px", "borderRadius":'15px', "verticalAlign":'-3px'});
                     $('.headerBox .header .headerRight .headImgBox .headImg').attr('onerror',"this.src='http://www.kalichimall.com/gimg/5D4F97F160A824A15B7B4E63F95AAEFD'");
                     //$('.headerBox .header .headerRight .headImgBox .headImg').attr('onerror','../image/index/defaultAvatar.jpg');
 
@@ -74,7 +74,7 @@ $(function(){
                     //publish.html
                     $('.publishPopBox').show();
                     $('.publishPopBox').css('top', $(window).scrollTop());
-                    $('body').css('overflow', 'hidden');
+                    //$('body').css('overflow', 'hidden');
 
                     $('.headerBox .header .headerRight1').show();
                     $('.headerBox .header .headerRight .login, .headerBox .header .headerRight .register').unbind('click').click(function(){
@@ -140,7 +140,9 @@ $(function(){
                             console.log('获取附近商品信息',data);
                             
                             $('.nearbyImgBox .nearbyImg').empty();
+                            var goodIdArr = [];
                             for (var nearby in data){
+                                goodIdArr.push(data[nearby].id);
                                 var str;
                                 if(data[nearby].price == 0){
                                     str = 'Negotiated';
@@ -165,6 +167,12 @@ $(function(){
                                     $(this).siblings('.desc').fadeOut();
                                 }
                             );
+
+                            $('.refreshImgBox .refreshImg .refreshLi .goodImg, .nearbyImgBox .nearbyImg .nearbyLi').unbind('click').click(function () {
+                                var index = $(this).index();
+                                window.location.href = "detail.html?id="+goodIdArr[index];
+                            });
+
                         }else{
                             commonPopFun(data.msg);
                         }
@@ -215,7 +223,9 @@ $(function(){
                                 console.log('url',baseUrl+'/apigateway/getgoods?areaid='+areaIdArr[index]);
                                 console.log('获取附近商品信息',data);
                                 $('.nearbyImgBox .nearbyImg').empty();
+                                var goodIdArr = [];
                                 for (var nearby in data){
+                                    goodIdArr.push(data[nearby].id);
                                     var str;
                                     if(data[nearby].price == 0){
                                         str = 'Negotiated';
@@ -240,6 +250,12 @@ $(function(){
                                         $(this).siblings('.desc').fadeOut();
                                     }
                                 );
+
+                                $('.refreshImgBox .refreshImg .refreshLi .goodImg, .nearbyImgBox .nearbyImg .nearbyLi').unbind('click').click(function () {
+                                    var index = $(this).index();
+                                    window.location.href = "detail.html?id="+goodIdArr[index];
+                                });
+
                             }else{
                                 commonPopFun(data.msg);
                             }
