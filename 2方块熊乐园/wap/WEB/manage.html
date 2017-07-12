@@ -198,6 +198,14 @@
             height: 80px;
             width: 100%;
         }
+        .infoBox .info .infoWrap .infoRight .part1 .headBox .goToEdit{
+            /*cursor: pointer;*/
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom:0;
+            text-align: center;
+        }
         .infoBox .info .infoWrap .infoRight .part1 .headBox .editLink{
             color: #169BD5;
             font-size: 13px;
@@ -334,17 +342,17 @@
 
 
         /*a  upload */
-        .a-upload {
+        /*.a-upload {
             float: left;
             margin-right: 16px;
-            /*padding: 4px 10px;*/
+            !*padding: 4px 10px;*!
             position: absolute;
             left: 0;
             bottom: 0;
             text-align: center;
             cursor: pointer;
             width: 100%;
-            /*border-radius: 4px;*/
+            !*border-radius: 4px;*!
             overflow: hidden;
             display: inline-block;
             *display: inline;
@@ -361,6 +369,110 @@
             opacity: 0;
             filter: alpha(opacity=0);
             cursor: pointer
+        }*/
+
+
+        /*managePopBox弹窗*/
+        .managePopBox{
+            position: absolute;
+            background-color: RGBA(0,0,0,0.6);
+            z-index: 9999;
+            width: 100%;
+            height: 100%;
+        }
+        .managePopBox .managePop{
+            width: 504px;
+            height: 534px;
+            background-color: #fff;
+            margin: 70px auto 0 auto;
+            padding: 12px 16px;
+        }
+
+        .managePopBox .managePop .fileBtn{
+            position: relative;
+        }
+        .managePopBox .managePop .fileBtn .upload{
+            /*float: left;*/
+            width: 127px;
+            height: 35px;
+            line-height:35px;
+            margin-right: 16px;
+            font-size: 13px;
+            color: #fff;
+            background-color: #FF4720;
+            /*padding: 4px 10px;*/
+            position: absolute;
+            left: 0;
+            /*bottom: 0;*/
+            text-align: center;
+            cursor: pointer;
+            /*width: 100%;*/
+            /*border-radius: 4px;*/
+            overflow: hidden;
+            display: inline-block;
+            *display: inline;
+            *zoom: 1;
+        }
+        .managePopBox .managePop .fileBtn .upload input{
+            position: absolute;
+            font-size: 100px;
+            right: 0;
+            top: 0;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            cursor: pointer;
+        }
+        .managePopBox .managePop .warning{
+            padding-top: 40px;
+            font-size: 13px;
+            color: #999;
+            padding-bottom: 5px;
+        }
+        .managePopBox .managePop .imgBox{
+            height: 240px;
+            background-color: #F9F9F9;
+            margin: 0 auto;
+            border: 1px solid #E9EAEC;
+            margin-top: 8px;
+            display: table-cell;
+            vertical-align: middle;
+            text-align: center;
+            width: 504px;
+        }
+        .managePopBox .managePop .imgBox img{
+            width: 150px;
+            height: 150px;
+        }
+        .managePopBox .managePop .recommedTitle{
+            font-size: 14px;
+            color: #666;
+            padding-top: 18px;
+            padding-bottom: 8px;
+        }
+        .managePopBox .managePop .recommendBox{
+            padding-left: 2px;
+        }
+        .managePopBox .managePop .recommendBox .choose{
+            cursor: pointer;
+            width: 50px;
+            margin-right: 6px;
+            margin-bottom: 10px;
+        }
+        .managePopBox .managePop .recommendBox .choose:nth-child(8n){
+            margin-right: 0;
+        }
+        .managePopBox .managePop .save{
+            text-align: center;
+        }
+        .managePopBox .managePop .save .saveBtn{
+            border: none;
+            outline: none;
+            width: 127px;
+            height: 35px;
+            line-height:35px;
+            font-size: 13px;
+            color: #fff;
+            background-color: #FF4720;
         }
 
     </style>
@@ -373,6 +485,38 @@
         <div class="confirmBox">
             <span class="confirmBtn">OK</span>
         </div>
+    </div>
+</section>
+<section class="managePopBox" style="display: none;">
+    <div class="managePop">
+        <div class="fileBtn">
+            <a href="javascript:;" class="upload a-upload a-upload4">Browser...
+                <input type="file" id="upfile4" accept="image/png, image/jpeg" name="file">
+                <span class="showFileName showFileName4"></span>
+            </a>
+        </div>
+        <p class="warning">Support PNG、JPG files.File size should less than 4M.</p>
+        <div class="imgBox"><img src="image/index/headImg.png"/></div>
+        <div class="recommedTitle">Recommends</div>
+        <div class="recommendBox">
+            <img class="choose" src="image/recommend/1.jpg" />
+            <img class="choose" src="image/recommend/1.jpg" />
+            <img class="choose" src="image/recommend/1.jpg" />
+            <img class="choose" src="image/recommend/1.jpg" />
+            <img class="choose" src="image/recommend/1.jpg" />
+            <img class="choose" src="image/recommend/1.jpg" />
+            <img class="choose" src="image/recommend/1.jpg" />
+            <img class="choose" src="image/recommend/1.jpg" />
+            <img class="choose" src="image/recommend/1.jpg" />
+            <img class="choose" src="image/recommend/1.jpg" />
+            <img class="choose" src="image/recommend/1.jpg" />
+            <img class="choose" src="image/recommend/1.jpg" />
+            <img class="choose" src="image/recommend/1.jpg" />
+            <img class="choose" src="image/recommend/1.jpg" />
+            <img class="choose" src="image/recommend/1.jpg" />
+            <img class="choose" src="image/recommend/1.jpg" />
+        </div>
+        <div class="save"><button class="saveBtn">Save</button></div>
     </div>
 </section>
 <section class="container-fluid">
@@ -434,10 +578,11 @@
                             <img class="headImg" src="" style="display: none;">
                             <!--<a class="editLink" href="#"></a>-->
 
-                            <a href="javascript:;" class="a-upload a-upload4">Edit
-                                <input type="file" id="upfile4" name="file">
+                            <!--<a href="javascript:;" class="a-upload a-upload4">Edit
+                                <input type="file" id="upfile4" accept="image/png, image/jpeg" name="file">
                                 <span class="showFileName showFileName4"></span>
-                            </a>
+                            </a>-->
+                            <div class="goToEdit"><a href="###">Edit</a></div>
 
                         </div>
                         <div class="col-xs-12 col-sm-12 attrBox"><span class="attr">Cellphone:&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="value"></span></div>
@@ -523,6 +668,7 @@
 
 
         //获取用户信息（用于展示修改之前的用户信息）
+        var headLogo = '';
         var authInfo = {
             "token":token,
             "timestamp":timestamp
@@ -545,6 +691,75 @@
                     $('#nickName').val(data.nickname);
 
                     $('.infoBox .info .infoWrap .infoRight .part1 .headBox .headImg').show().attr('src', baseImgSrc + data.logo);
+
+                    //managePopBox原头像
+                    $('.managePopBox .managePop .imgBox img').attr('src', baseImgSrc + data.logo);
+
+                    //点击Edit
+                    $('.infoBox .info .infoWrap .infoRight .part1 .headBox .goToEdit a').unbind('click').click(function(){
+                       $('.managePopBox').show();
+                        $('body').css('overflow', 'hidden');
+                    });
+
+
+
+                    //初始头像
+                    headLogo = data.logo;
+                    //修改用户头像
+                    $(".a-upload4").on("change","input[type='file']",function(){
+                        $('.uploadLogo4').hide();
+                        console.log($(this));
+                        console.log($(this).val());
+                        var filePath=$(this).val();
+                        if(filePath.indexOf("jpg")!=-1 || filePath.indexOf("png")!=-1){
+                            $(".fileerrorTip").html("").hide();
+                            var arr=filePath.split('\\');
+                            var fileName=arr[arr.length-1];
+
+                            //上传图片
+                            var fd = new FormData();
+                            fd.append("upload", 1);
+                            console.log($("#upfile4").get(0).files[0]);
+                            fd.append("upfile", $("#upfile4").get(0).files[0]);
+                            $.ajax({
+                                url: "http://www.kalichimall.com/apigateway/upfile",
+                                type: "POST",
+                                processData: false,
+                                contentType: false,
+                                data: fd,
+                                success: function(imgData) {
+                                    if(imgData.status == 200) {
+                                        console.log(imgData.data);
+                                        headLogo = imgData.data;
+                                        $('.managePopBox .managePop .imgBox img').attr('src', baseImgSrc + headLogo);
+                                    }
+                                }
+                            });
+
+                        }else{
+                            $(".showFileName4").html("");
+                            $(".fileerrorTip").html("您未上传文件，或者您上传文件类型有误！").show();
+                            return false
+                        }
+                    });
+
+                    //点击保存
+                    $('.managePopBox .managePop .save .saveBtn').unbind('click').click(function(){
+                        console.log(baseImgSrc + headLogo);
+                        $('.infoBox .info .infoWrap .infoRight .part1 .headBox .headImg').attr('src', baseImgSrc + headLogo);
+                        $('.managePopBox').hide();
+                        $('body').css('overflow', 'auto');
+                    });
+
+
+                    //点击推荐的图片
+                    $('.managePopBox .managePop .recommendBox .choose').unbind('click').click(function(){
+                        var index = $(this).index();
+                        alert(index);
+                    });
+
+
+
                 }else{
                     console.log(data);
                     commonPopFun(data.msg);
@@ -555,45 +770,7 @@
             }
         });
 
-
-        //修改用户信息
-        var headLogo = '';
-        //修改用户头像
-        $(".a-upload4").on("change","input[type='file']",function(){
-            $('.uploadLogo4').hide();
-            var filePath=$(this).val();
-            if(filePath.indexOf("jpg")!=-1 || filePath.indexOf("png")!=-1){
-                $(".fileerrorTip").html("").hide();
-                var arr=filePath.split('\\');
-                var fileName=arr[arr.length-1];
-
-                //上传图片
-                var fd = new FormData();
-                fd.append("upload", 1);
-                console.log($("#upfile4").get(0).files[0]);
-                fd.append("upfile", $("#upfile4").get(0).files[0]);
-                $.ajax({
-                    url: "http://www.kalichimall.com/apigateway/upfile",
-                    type: "POST",
-                    processData: false,
-                    contentType: false,
-                    data: fd,
-                    success: function(imgData) {
-                        if(imgData.status == 200) {
-                            console.log(imgData.data);
-                            headLogo = imgData.data;
-                            $('.infoBox .info .infoWrap .infoRight .part1 .headBox .headImg').attr('src', baseImgSrc + headLogo);
-
-                        }
-                    }
-                });
-
-            }else{
-                $(".showFileName4").html("");
-                $(".fileerrorTip").html("您未上传文件，或者您上传文件类型有误！").show();
-                return false
-            }
-        });
+        
 
         //点击保存：SAVE CHANGES
         var sex = 0;
