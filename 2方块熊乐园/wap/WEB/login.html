@@ -163,7 +163,7 @@
             padding-left: 5px;
         }
         .loginRegisterBox .loginRegister .registerPhone{
-            height: 42px;
+            /*height: 42px;*/
             margin-bottom: 10px;
         }
         .loginRegisterBox .loginRegister .registerPhone .phoneImg{
@@ -237,6 +237,12 @@
         .loginRegisterBox .findPsw a{
             color: #169BD5;
         }
+        #registerTip{
+            display: none;
+            padding-top: 10px;
+            color: red;
+        }
+
 
         /*#drag*/
         #drag{
@@ -331,7 +337,7 @@
                         <span class="gang">|</span>&nbsp;<span class="">REGISTER</span>
                     </div>
                     <div class="col-xs-12 col-sm-12 registerPhone">
-                        <img class="phoneImg" src="image/loginRegister/phoneImg.png"><input id="registerPhone" class="phoneText" type="text" placeholder="Cellphone Number">
+                        <img class="phoneImg" src="image/loginRegister/phoneImg.png"><input id="registerPhone" class="phoneText" type="text" placeholder="Cellphone Number"><span id="registerTip">Cellphone number is not correct.</span>
                     </div>
                     <div class="col-xs-12 col-sm-12 registerPassword">
                         <img class="passwordImg" src="image/loginRegister/passwordImg.png"><input id="registerPassword" class="passwordText" type="text" placeholder="Password">
@@ -434,11 +440,20 @@
         var loginRegisterStatus;
         $('#loginPhone, #loginPassword').on('focus',function () {
             loginRegisterStatus = 0;
-            console.log(loginRegisterStatus);
+//            console.log(loginRegisterStatus);
         });
         $('#registerPhone, #registerPassword').on('focus',function () {
             loginRegisterStatus = 1;
-            console.log(loginRegisterStatus);
+//            console.log(loginRegisterStatus);
+        });
+        //正则验证注册的手机号
+        var myReg = /^((9|09)+\d{8})$/;
+        $('#registerPhone').on('blur', function () {
+            var regText = $.trim($('#registerPhone').val());
+            if(!myReg.test(regText)){
+                $('#registerTip').show();
+            }
+
         });
         document.onkeydown = function(ev){
             ev = ev || event;

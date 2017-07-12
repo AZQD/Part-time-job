@@ -396,6 +396,7 @@
             color: #FF4720;
         }
         .detailBox .detail .detailRight .selling .sellingList{
+            cursor: pointer;
             text-align: center;
             padding-bottom:16px;
         }
@@ -718,23 +719,32 @@
                     <div class="col-xs-12 col-sm-12 name">
 
                     </div>
-                    <div class="col-xs-12 col-sm-12 talk">
+                    <div class="col-xs-12 col-sm-12 talk" style="visibility: hidden;">
                         <a href="###" class="goHome"></a>
                     </div>
                 </div>
                 <div class="row selling">
-                    <p class="col-xs-12 col-sm-12 sellingTitle"><span class="gang">|</span><span class="">PUBLISHED (18)</span></p>
+                    <p class="col-xs-12 col-sm-12 sellingTitle"><span class="gang">|</span><span class="">PUBLISHED (<span id="publishNum"></span>)</span></p>
                     <div class="sellingListBox" id="dowebok">
+                        <!--<div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src="image/detailPage/selling1.jpg"></div>
                         <div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src="image/detailPage/selling1.jpg"></div>
                         <div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src="image/detailPage/selling1.jpg"></div>
-                        <div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src="image/detailPage/selling1.jpg"></div>
-                        <div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src="image/detailPage/selling1.jpg"></div>
+                        <div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src="image/detailPage/selling1.jpg"></div>-->
                     </div>
-                    <div class="col-xs-12 col-sm-12 more"><a href="###" class="moreLink">MORE</a></div>
+                    <div class="col-xs-12 col-sm-12 more" style="display: none;"><a href="###" class="moreLink">MORE</a></div>
                 </div>
                 <div class="row recommend">
                     <p class="col-xs-12 col-sm-12 recommendTitle"><span class="gang">|</span><span class="">精选推荐</span></p>
                     <div class="recommendListBox">
+                        <div class="col-xs-12 col-sm-12 recommendList">
+                            <div class="col-xs-6 col-sm-6 recommendListLeft">
+                                <img src="image/detailPage/recommend1.png">
+                            </div>
+                            <div class="col-xs-6 col-sm-6 recommendListRight">
+                                <p class="desc">美的智能变频空调美的智能变频空调</p>
+                                <p class="price"><span class="num1">2800</span>&nbsp;<span class="num2">元</span></p>
+                            </div>
+                        </div>
                         <div class="col-xs-12 col-sm-12 recommendList">
                             <div class="col-xs-6 col-sm-6 recommendListLeft">
                                 <img src="image/detailPage/recommend1.png">
@@ -871,6 +881,65 @@
                     localStorage.setItem('pubUid',pubUid);
 
 
+                    //获得发布者的售卖信息
+                    //.detailBox .detail .detailRight .selling .sellingListBox
+                    //<div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src="image/detailPage/selling1.jpg"></div>
+                    $.ajax({
+                        type: "get",
+                        url: baseUrl+"/apigateway/getselling_ext?uid="+pubUid+'&start=0&n=',
+                        dataType:"json",
+                        success: function(data){
+                            if(data.status == 200){
+                                data = JSON.parse(data.data);
+                                console.log("售卖信息",data);
+                                $('#publishNum').html(data.length);
+                                var goodIdArr = [];
+                                for(var i=0; i<data.length; i++){
+                                    goodIdArr.push(data[i].id);
+                                }
+                                if((pubUid == 0)){
+                                    for(var i=0; i<data.length; i++){
+                                        $('.detailBox .detail .detailRight .selling .sellingListBox').append(
+                                                '<div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src='+data.cimg+'></div>'
+                                        );
+                                    }
+                                }else{
+                                    if(data.length <= 4){
+                                        for(var i=0; i<data.length; i++){
+                                            $('.detailBox .detail .detailRight .selling .sellingListBox').append(
+                                                    '<div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src='+data.cimg+'></div>'
+                                            );
+                                        }
+                                     }else{
+                                        $('.detailBox .detail .detailRight .selling .more').show();
+                                        for(var i=0; i<4; i++){
+                                            $('.detailBox .detail .detailRight .selling .sellingListBox').append(
+                                                    '<div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src='+data.cimg+'></div>'
+                                            );
+                                        }
+                                    }
+                                }
+
+                                $('.detailBox .detail .detailRight .selling .sellingListBox .sellingList').unbind('click').click(function () {
+                                    var index = $(this).index();
+//                                    alert(goodIdArr[index]);
+                                    window.open("detail.html?id="+goodIdArr[index]);
+                                });
+
+                                $('.detailBox .detail .detailRight .selling .more .moreLink').unbind('click').click(function () {
+                                    window.open("profile.html?pubUid="+pubUid);
+                                });
+                                
+                            }else{
+                                commonPopFun(data.msg);
+                            }
+                        },
+                        error:function(error){
+                            console.log(error);
+                        }
+                    });
+
+
                     var imgs = data.imgs;
                     var imgsArr = imgs.split(',');
                     console.log(imgsArr);
@@ -981,6 +1050,12 @@
                             $('.detailBox .detail .detailRight .goHome').html(data.nickname + '\'s home').click(function(){
                                 window.location.href = 'profile.html?pubUid='+pubUid;
                             });
+
+
+                            //匿名发布隐藏
+                            if(data.id != 0){
+                                $('.detailBox .detail .detailRight .talk').css('visibility', 'inherit');
+                            }
                         },
                         error:function(error){
                             console.log(error);
@@ -1162,6 +1237,8 @@
                 }
             });
         });
+
+
 
 
 
