@@ -654,6 +654,7 @@
             </div>
         </div>
     </aside>-->
+    <iframe id="searchPartIframe" src="searchPart.html" frameborder="0"></iframe>
     <iframe id="footerIframe" src="footer.html" frameborder="0"></iframe>
 </section>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
@@ -690,7 +691,8 @@
 
                     $('#bannerRightBox').unbind('click').click(function(){
                         localStorage.setItem('goodIdFromCategory',data[0].id);
-                        window.location.href = "detail.html?id="+data[0].id;
+                        window.open("detail.html?id="+data[0].id);
+//                        window.location.href = "detail.html?id="+data[0].id;
                     });
                     setInterval(function () {
                         if(num == 0){
@@ -709,7 +711,8 @@
 
                         $('#bannerRightBox').unbind('click').click(function(){
                             localStorage.setItem('goodIdFromCategory',data[num].id);
-                            window.location.href = "detail.html?id="+data[num].id;
+                            window.open("detail.html?id="+data[num].id);
+//                            window.location.href = "detail.html?id="+data[num].id;
                         });
                     }, 4000);
                     $('.bannerBox .banner .bannerRight .bannerRightBox').click(function () {

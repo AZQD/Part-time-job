@@ -45,10 +45,12 @@ $(function(){
 
 
                     $('.headerBox .header .headerRight .headImgBox').unbind('click').click(function(){
-                        window.location.href = "manage.html";
+                        window.open("manage.html");
+                        //window.location.href = "manage.html";
                     });
                     $('.headerBox .header .headerRight .profile').unbind('click').click(function(){//进入profile.html；
-                       window.location.href = "profile.html?pubUid="+data.uid;
+                        window.open("profile.html?pubUid="+data.uid);
+                       //window.location.href = "profile.html?pubUid="+data.uid;
                     });
                     $('.headerBox .header .headerRight .logout').unbind('click').click(function(){//删除token，刷新页面；
 //                            delCookie('token');
@@ -170,7 +172,8 @@ $(function(){
 
                             $('.refreshImgBox .refreshImg .refreshLi .goodImg, .nearbyImgBox .nearbyImg .nearbyLi').unbind('click').click(function () {
                                 var index = $(this).index();
-                                window.location.href = "detail.html?id="+goodIdArr[index];
+                                window.open("detail.html?id="+goodIdArr[index]);
+                                //window.location.href = "detail.html?id="+goodIdArr[index];
                             });
 
                         }else{
@@ -253,7 +256,8 @@ $(function(){
 
                                 $('.refreshImgBox .refreshImg .refreshLi .goodImg, .nearbyImgBox .nearbyImg .nearbyLi').unbind('click').click(function () {
                                     var index = $(this).index();
-                                    window.location.href = "detail.html?id="+goodIdArr[index];
+                                    window.open("detail.html?id="+goodIdArr[index]);
+                                    //window.location.href = "detail.html?id="+goodIdArr[index];
                                 });
 
                             }else{

@@ -550,7 +550,11 @@
         $('.publishPopBox .tipOffBox .confirmBox .laterBtn').unbind('click').click(function(){
             $('.publishPopBox').hide();
             $('body').css('overflow', 'auto');
-            window.history.go(-1);
+            if(getParamByUrl('searchPart') == 'searchPart'){
+                window.close();
+            }else{
+                window.history.go(-1);
+            }
         });
 
         var imgIdAll = '';
@@ -1054,7 +1058,8 @@
                             $('.sortBox .sort .space .changeCid').hide();
 
                             $('.sortBox .sort .partInner3 .completeBtn').click(function(){
-                                window.location.href = "detail.html?id="+data.data;
+                                window.open("detail.html?id="+data.data);
+//                                window.location.href = "detail.html?id="+data.data;
                             });
                         }else{
                             commonPopFun(data.msg);

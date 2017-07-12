@@ -394,6 +394,7 @@
                 dataType:"json",
                 data:JSON.stringify(authInfo),
                 success:function(data){
+                    console.log("登陆",data);
                     if(data.status == 200){
                         data = JSON.parse(data.data);
                         console.log("登陆",data);
@@ -406,7 +407,7 @@
                             window.location.href = "index.html";
                         }
                     }else{
-                        commonPopFun(data.msg);
+                        commonPopFun("Sorry，the cellphone number or password is wrong.  Please check.", "Failed");
                     }
                 },
                 error:function(error){
@@ -475,6 +476,7 @@
                     dataType:"json",
                     data:JSON.stringify(authInfo),
                     success:function(data){
+                        console.log("注册",data);
                         if(data.status == 200){
                             console.log("注册成功",data);
 
@@ -506,7 +508,7 @@
                                             window.location.href = "index.html";
                                         }
                                     }else{
-                                        commonPopFun(data.msg);
+                                        commonPopFun("Sorry，the cellphone number or password is wrong.  Please check.", "Failed");
                                     }
                                 },
                                 error:function(error){
@@ -515,12 +517,15 @@
                             });
 
 
+                        }else if(data.status == 500){
+                            commonPopFun("Sorry, this cellphone number was registered. Please use anther one.", "Failed");
                         }else{
-                            commonPopFun(data.msg);
+                            commonPopFun("Sorry，failed to register. Please try to register later.", "Failed");
                         }
                     },
                     error:function(error){
                         console.log(error);
+                        commonPopFun("Sorry，failed to register. Please try to register later.", "Failed");
                     }
                 });
             }else{

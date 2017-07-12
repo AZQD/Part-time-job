@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/bootstraptc.min.css">
     <link rel="stylesheet" href="css/ppublic.min.css">
     <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/headerBox.css">
     <style type="text/css">
         body{
             overflow: auto;
@@ -219,11 +220,14 @@
         .infoBox .info .infoWrap .infoRight .part2 .form .sell{
             padding-left: 16px;
         }
+        .infoBox .info .infoWrap .infoRight .part2 .form .sell input{
+            vertical-align: -2px;
+        }
         .infoBox .info .infoWrap .infoRight .part2 .form #search{
             width: 202px;
             outline: none;
             border: none;
-            margin-left: 10px;
+            margin-left: 70px;
             border-bottom:1px solid #ccc;
         }
         .infoBox .info .infoWrap .infoRight .part2 .form #search::-webkit-input-placeholder{
@@ -261,7 +265,7 @@
         .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .middle{
             position: relative;
             height: 90px;
-            width: 410px;
+            /*width: 410px;*/
         }
         .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .middle .title{
             padding-left: 18px;
@@ -291,8 +295,9 @@
             vertical-align: -2px;
         }
         .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .right{
-            width: 156px;
-            text-align: center;
+            /*width: 156px;*/
+            height: 94px;
+            text-align: right;
         }
         .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .right img{
             padding-top: 14px;
@@ -302,11 +307,31 @@
         .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .right a{
             font-size: 14px;
             color: #333;
+            padding-left: 12px;
             text-decoration: underline;
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .right .goodStatus{
+
+        }
+        .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .right .editBtn{
+            display: inline-block;
+            width: 70px;
+            height: 28px;
+            line-height:28px;
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+            background-color: #FF4720;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            text-decoration: none;
         }
         .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .right .link2{
             margin-right: 16px;
         }
+
+
+
 
         /*a  upload */
         .a-upload {
@@ -351,6 +376,36 @@
     </div>
 </section>
 <section class="container-fluid">
+
+    <aside class="headerBox">
+        <div class="row header">
+            <div class="col-xs-6 col-sm-6 headerLeft">
+                <span class="lusaka"><!--Lusaka--></span>&nbsp;
+                <span class="change">[Change]</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 headerRight headerRight1" style="display: none;">
+                <span class="space home">Home</span>|
+                <span class="space login">Login</span>|
+                <span class="space register">Register</span>|
+                <a href="help.html" class="space help" target="_blank">Help</a>
+            </div>
+            <div class="col-xs-6 col-sm-6 headerRight headerRight2" style="display: none;">
+                <span class="space home">Home</span>|
+                <span class="headImgBox"><img src="" class="headImg" style="display: none;"><span class="space name"></span>|</span>
+                <span class="space profile">My profile</span>|
+                <span class="space logout">logout</span>|
+                <a href="help.html" class="space help" target="_blank">Help</a>
+            </div>
+            <ul class="changeUl" style="display: none;">
+                <!--<li class="changeLi"><a href="#" class="changeLiLink">Lusaka1</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka2</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka3</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka4</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka5</a></li>
+                <li class="changeLi"><a href="#" class="changeLiLink">Lusaka6</a></li>-->
+            </ul>
+        </div>
+    </aside>
 
     <aside class="searchBox">
         <div class="row search">
@@ -405,10 +460,10 @@
                     </div>
                     <div class="row part part2" style="display: none;">
                         <form action="#" class="form">
-                            <label class="sell"><input name="sell" type="radio" value="" />ALL</label>
-                            <label class="sell"><input name="sell" type="radio" value="" />PUBLISHED</label>
-                            <label class="sell"><input name="sell" type="radio" value="" />FINISHED</label>
-                            <label class="sell"><input name="sell" type="radio" value="" />UNPUBLISH</label>
+                            <label class="sell"><input name="sell" type="radio" value="" />&nbsp;&nbsp;ALL</label>
+                            <label class="sell"><input name="sell" type="radio" value="" />&nbsp;&nbsp;PUBLISHED</label>
+                            <label class="sell"><input name="sell" type="radio" value="" />&nbsp;&nbsp;FINISHED</label>
+                            <label class="sell"><input name="sell" type="radio" value="" />&nbsp;&nbsp;UNPUBLISH</label>
                             <input id="search" name="search" type="text" value="" placeholder="Search..."/>
                         </form>
                         <div class="col-xs-12 col-sm-12 listTitle"><span class="gang">|</span><span><span id="searchName">ALL</span>(<span id="searchLength"></span>)</span></div>
@@ -442,6 +497,7 @@
 <script type="text/javascript" src="js/base64.js"></script>
 <script type="text/javascript" src="js/jsencrypt.js"></script>
 <script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="js/headerBox.js"></script>
 <script type="text/javascript" src="js/searchBoxRight.js"></script>
 <script type="text/javascript">
     $(function(){
@@ -568,14 +624,15 @@
 
                         //修改title
                         $('#manageTitle').html(data.nickname + "'s home. kalichimall, make money by your second-hand goods.");
-                        commonPopFun('CHANGED');
+                        commonPopFun('Your detail has been saved successfully.', 'Successful');
                     }else{
                         console.log(data);
-                        commonPopFun(data.msg);
+                        commonPopFun('Sorry, failed to save your detail. Please try it later.', 'Failed');
                     }
                 },
                 error:function(error){
                     console.log(error);
+                    commonPopFun('Sorry, failed to save your detail. Please try it later.', 'Failed');
                 }
             });
         });
@@ -670,15 +727,17 @@
                         $('.infoBox .info .infoWrap .infoRight .part2 .listUl').empty();
                         for(var i=0; i<data.length; i++){
                             var str = '';
-                            if(data[i].issell == 0){
-                                str = 'OFFLINE';
-                            }else{
-                                str = 'ONLINE';
+                            if(data[i].status == 0){//status=0表示在线
+                                str = '<a href="javascript:void(0);" class="editBtn">Edit</a><br/><a href="###" style="display: none" class="goodStatus unpublish">UNPUBLISH</a><a href="###" style="display: none" class="goodStatus finished">FINISHED</a>';
+                            }else if(data[i].status == 1){//status=1表示下线
+                                str = '<a href="javascript:void(0);" class="editBtn">Edit</a><br/><a href="###" style="display: none" class="goodStatus unpublish">PUBLISH</a><a href="###" style="display: none" class="goodStatus finished">FINISHED</a>';
+                            }else if(data[i].status == 2){//status=2表示完成
+                                str = '';
                             }
                             $('.infoBox .info .infoWrap .infoRight .part2 .listUl').append(
                                 '<li class="row listLi">' +
                                 '<div class="col-xs-2 col-sm-2 left"><img src='+baseImgSrc + data[i].cimg+'></div>' +
-                                '<div class="col-xs-8 col-sm-8 middle">' +
+                                '<div class="col-xs-5 col-sm-5 middle">' +
                                 '<p class="title">'+data[i].title+'</p>' +
                                 '<div class="count">' +
                                 '<img src="image/backManage/view.png">&nbsp;' +
@@ -687,13 +746,21 @@
                                 '<span class="num good">'+data[i].wishs+'</span>' +
 
                                 '</div></div>' +
-                                '<div class="col-xs-2 col-sm-2 right">' +
-                                '<img src="image/backManage/littleImg1.png"><br/>' +
-                                '<a href="#">'+str+'</a>' +
+                                '<div class="col-xs-5 col-sm-5 right">' +
+                                        str+
+//                                '<a href="javascript:void(0);" class="editBtn">Edit</a><br/><a href="###" class="goodStatus published">PUBLISHED</a><a href="###" class="goodStatus unpublish">UNPUBLISH</a><a href="###" class="goodStatus finished">FINISHED</a>' +
                                 '</div>' +
                                 '</li>'
                             );
                         }
+                        $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').hover(
+                                function(){
+                                    $(this).find('.goodStatus').show();
+                                },
+                                function(){
+                                    $(this).find('.goodStatus').hide();
+                                }
+                        );
 
                     }
                 },

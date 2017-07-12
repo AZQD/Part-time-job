@@ -3,35 +3,35 @@
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="35745120-0d98-473a-a863-fcc980a69cf7" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/备注" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/public.js" afterPath="$PROJECT_DIR$/js/public.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/searchBoxRight.js" afterPath="$PROJECT_DIR$/js/searchBoxRight.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/update.sh" afterPath="$PROJECT_DIR$/update.sh" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detail.html" afterPath="$PROJECT_DIR$/detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category.html" afterPath="$PROJECT_DIR$/category.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/help.md" afterPath="$PROJECT_DIR$/help.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile.html" afterPath="$PROJECT_DIR$/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/publish.html" afterPath="$PROJECT_DIR$/publish.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.html" afterPath="$PROJECT_DIR$/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/ppublic.min.css" afterPath="$PROJECT_DIR$/css/ppublic.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/help.html" afterPath="$PROJECT_DIR$/help.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contact.html" afterPath="$PROJECT_DIR$/contact.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reset_password.html" afterPath="$PROJECT_DIR$/reset_password.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manage.html" afterPath="$PROJECT_DIR$/manage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/privacy.html" afterPath="$PROJECT_DIR$/privacy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/searchBoxLeft.js" afterPath="$PROJECT_DIR$/js/searchBoxLeft.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/help.html" afterPath="$PROJECT_DIR$/help.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contact.md" afterPath="$PROJECT_DIR$/contact.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/ppublic.min.css" afterPath="$PROJECT_DIR$/css/ppublic.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/headerBox.js" afterPath="$PROJECT_DIR$/js/headerBox.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/publish.html" afterPath="$PROJECT_DIR$/publish.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/searchBoxLeft.js" afterPath="$PROJECT_DIR$/js/searchBoxLeft.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/drag.js" afterPath="$PROJECT_DIR$/js/drag.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/footer.html" afterPath="$PROJECT_DIR$/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/public.js" afterPath="$PROJECT_DIR$/js/public.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/detail.html" afterPath="$PROJECT_DIR$/detail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.html" afterPath="$PROJECT_DIR$/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/privacy.html" afterPath="$PROJECT_DIR$/privacy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/help.md" afterPath="$PROJECT_DIR$/help.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/searchBoxRight.js" afterPath="$PROJECT_DIR$/js/searchBoxRight.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/profile.html" afterPath="$PROJECT_DIR$/profile.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/image/publish/complete.png" afterPath="$PROJECT_DIR$/image/publish/complete.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/WEB.iml" afterPath="$PROJECT_DIR$/.idea/WEB.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/headerBox.js" afterPath="$PROJECT_DIR$/js/headerBox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/drag.js" afterPath="$PROJECT_DIR$/js/drag.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/category.html" afterPath="$PROJECT_DIR$/category.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/contact.html" afterPath="$PROJECT_DIR$/contact.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/privacy.md" afterPath="$PROJECT_DIR$/privacy.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/footer.html" afterPath="$PROJECT_DIR$/footer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/update.sh" afterPath="$PROJECT_DIR$/update.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/reset_password.html" afterPath="$PROJECT_DIR$/reset_password.html" />
     </list>
     <ignored path="WEB.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -52,20 +52,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="manage.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/manage.html">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.27504554">
-              <caret line="661" column="46" selection-start-line="661" selection-start-column="46" selection-end-line="661" selection-end-column="46" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#aside#1;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#aside#1;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#aside#1;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1499711589866" expanded="true" signature="26978:27999" placeholder="..." />
-                <marker date="1499711589866" expanded="true" signature="27171:27650" placeholder="..." />
-                <marker date="1499711589866" expanded="true" signature="27171:27695" placeholder="..." />
-                <marker date="1499711589866" expanded="true" signature="27302:27650" placeholder="..." />
-              </folding>
+            <state vertical-scroll-proportion="0.031468533">
+              <caret line="713" column="41" selection-start-line="713" selection-start-column="41" selection-end-line="713" selection-end-column="52" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -75,16 +67,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/../../../../../lusaka/infopub/doc/api.txt" />
+        <option value="E:/lusaka/infopub/doc/api.txt" />
         <option value="$PROJECT_DIR$/js/public.js" />
-        <option value="$PROJECT_DIR$/publish.html" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/profile.html" />
-        <option value="$PROJECT_DIR$/css/ppublic.min.css" />
-        <option value="$PROJECT_DIR$/category.html" />
+        <option value="$PROJECT_DIR$/searchPart.html" />
+        <option value="$PROJECT_DIR$/login.html" />
         <option value="$PROJECT_DIR$/manage.html" />
         <option value="$PROJECT_DIR$/detail.html" />
+        <option value="$PROJECT_DIR$/js/searchBoxLeft.js" />
+        <option value="$PROJECT_DIR$/css/ppublic.min.css" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/profile.html" />
+        <option value="$PROJECT_DIR$/publish.html" />
         <option value="$PROJECT_DIR$/js/headerBox.js" />
+        <option value="$PROJECT_DIR$/category.html" />
       </list>
     </option>
   </component>
@@ -96,8 +91,8 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -124,8 +119,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -136,6 +129,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -144,13 +139,15 @@
     <property name="js-jscs-nodeInterpreter" value="D:\Program Files\nodeJs\node.exe" />
     <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Project\Part-time-job\2方块熊乐园\wap\WEB" />
       <recent name="C:\Users\Administrator\Desktop\project\Part-time-job\2方块熊乐园\wap\WEB\image\backManage" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.manage.html">
+  <component name="RunManager" selected="JavaScript Debug.searchPart.html">
     <configuration default="false" name="index.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/WEB/index.html">
       <method />
     </configuration>
@@ -158,6 +155,9 @@
       <method />
     </configuration>
     <configuration default="false" name="category.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/WEB/category.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="searchPart.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/WEB/searchPart.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -208,16 +208,18 @@
       <recursive>false</recursive>
       <method />
     </configuration>
-    <list size="3">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.manage.html" />
       <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.category.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.searchPart.html" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.manage.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.category.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.searchPart.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.manage.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.category.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
   </component>
@@ -236,10 +238,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1376488" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13751318" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -297,22 +299,46 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#aside#1;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#aside#1;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#aside#1;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1499711589866" expanded="true" signature="26978:27999" placeholder="..." />
-            <marker date="1499711589866" expanded="true" signature="27171:27650" placeholder="..." />
-            <marker date="1499711589866" expanded="true" signature="27171:27695" placeholder="..." />
-            <marker date="1499711589866" expanded="true" signature="27302:27650" placeholder="..." />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#aside#2;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#aside#2;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#aside#2;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1499844203075" expanded="true" signature="29637:29650" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="29715:29728" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="29965:29978" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30041:30054" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30391:31182" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30391:31325" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30391:31339" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30391:31369" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30391:31437" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30391:31576" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30584:31108" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30715:31102" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/public.js">
+    <entry file="file://$PROJECT_DIR$/manage.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="137" column="42" selection-start-line="137" selection-start-column="42" selection-end-line="137" selection-end-column="42" />
-          <folding />
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#aside#2;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#aside#2;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#aside#2;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1499844203075" expanded="true" signature="29637:29650" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="29715:29728" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="29965:29978" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30041:30054" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30391:31182" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30391:31325" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30391:31339" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30391:31369" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30391:31437" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30391:31576" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30584:31108" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30715:31102" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -331,43 +357,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.921875">
-          <caret line="403" column="28" selection-start-line="403" selection-start-column="28" selection-end-line="403" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/searchBoxLeft.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.133333">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="7" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1499544573592" expanded="true" signature="1092:1106" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/image/backManage/wishs.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/ppublic.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7723133">
-          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../../../../lusaka/infopub/doc/api.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="378" column="4" selection-start-line="378" selection-start-column="4" selection-end-line="378" selection-end-column="42" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/image/detailPage/remove.png">
@@ -375,56 +367,42 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/publish.html">
+    <entry file="file://$USER_HOME$/Desktop/lusaka/infopub/doc/api.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1023" column="26" selection-start-line="1023" selection-start-column="21" selection-end-line="1023" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#aside#2;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#aside#2;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/searchBoxRight.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0">
-          <caret line="0" column="23" selection-start-line="0" selection-start-column="21" selection-end-line="0" selection-end-column="23" />
+        <state vertical-scroll-proportion="-11.4">
+          <caret line="310" column="45" selection-start-line="310" selection-start-column="45" selection-end-line="310" selection-end-column="45" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/category.html">
+    <entry file="file://$PROJECT_DIR$/css/ppublic.min.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="772" column="26" selection-start-line="772" selection-start-column="23" selection-end-line="772" selection-end-column="26" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#div#0;n#aside#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#ul#0;n#div#0;n#aside#1;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/profile.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="615" column="76" selection-start-line="615" selection-start-column="76" selection-end-line="615" selection-end-column="76" />
+        <state vertical-scroll-proportion="-17.833334">
+          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/contact.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.703125">
-          <caret line="692" column="24" selection-start-line="692" selection-start-column="24" selection-end-line="692" selection-end-column="76" />
+        <state vertical-scroll-proportion="-4.4545455">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/footer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.833334">
+          <caret line="30" column="8" selection-start-line="30" selection-start-column="8" selection-end-line="30" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/detail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="7.84375">
-          <caret line="828" column="14" selection-start-line="828" selection-start-column="10" selection-end-line="828" selection-end-column="14" />
+        <state vertical-scroll-proportion="-5.318182">
+          <caret line="616" column="52" selection-start-line="616" selection-start-column="52" selection-end-line="616" selection-end-column="52" />
           <folding>
             <element signature="n#style#0;n#span#1;n#span#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#0;n#aside#2;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#aside#2;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -433,27 +411,132 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/headerBox.js">
+    <entry file="file://$PROJECT_DIR$/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="253" column="117" selection-start-line="253" selection-start-column="117" selection-end-line="253" selection-end-column="117" />
+        <state vertical-scroll-proportion="-5.318182">
+          <caret line="525" column="42" selection-start-line="525" selection-start-column="42" selection-end-line="525" selection-end-column="42" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/manage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.27504554">
-          <caret line="661" column="46" selection-start-line="661" selection-start-column="46" selection-end-line="661" selection-end-column="46" />
+        <state vertical-scroll-proportion="-5.681818">
+          <caret line="715" column="46" selection-start-line="715" selection-start-column="46" selection-end-line="715" selection-end-column="46" />
           <folding>
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#aside#1;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#aside#1;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#aside#1;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1499711589866" expanded="true" signature="26978:27999" placeholder="..." />
-            <marker date="1499711589866" expanded="true" signature="27171:27650" placeholder="..." />
-            <marker date="1499711589866" expanded="true" signature="27171:27695" placeholder="..." />
-            <marker date="1499711589866" expanded="true" signature="27302:27650" placeholder="..." />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#aside#2;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#aside#2;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#aside#2;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1499844203075" expanded="true" signature="29637:29650" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="29715:29728" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="29965:29978" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30041:30054" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30391:31182" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30391:31325" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30391:31339" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30391:31369" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30391:31437" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30391:31576" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30584:31108" placeholder="..." />
+            <marker date="1499844203075" expanded="true" signature="30715:31102" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/privacy.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/profile.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.181818">
+          <caret line="631" column="52" selection-start-line="631" selection-start-column="41" selection-end-line="631" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/publish.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.181818">
+          <caret line="1060" column="56" selection-start-line="1060" selection-start-column="45" selection-end-line="1060" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#aside#2;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#aside#2;n#section#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reset_password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.909091">
+          <caret line="18" column="21" selection-start-line="18" selection-start-column="21" selection-end-line="18" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/searchPart.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.318182">
+          <caret line="97" column="69" selection-start-line="97" selection-start-column="69" selection-end-line="97" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/headerBox.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.6">
+          <caret line="174" column="56" selection-start-line="174" selection-start-column="45" selection-end-line="174" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/public.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.8">
+          <caret line="163" column="0" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/searchBoxLeft.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.9">
+          <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1499845323605" expanded="true" signature="1092:1106" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/searchBoxRight.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.1">
+          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.7727275">
+          <caret line="643" column="29" selection-start-line="643" selection-start-column="29" selection-end-line="643" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#div#0;n#aside#0;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#ul#0;n#div#0;n#aside#1;n#section#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.031468533">
+          <caret line="713" column="41" selection-start-line="713" selection-start-column="41" selection-end-line="713" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>

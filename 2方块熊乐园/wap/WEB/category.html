@@ -222,7 +222,7 @@
         }
         .tabsBox .tabs .tabsRight .tabBtn{
             width: 70px;
-            height: 25px;
+            height: 29px;
             line-height:25px;
             color: #333;
             font-size: 13px;
@@ -237,20 +237,20 @@
         .tabsBox .tabs .tabsRight .tabBtn1Up:before{
             display: inline-block;
             content: "";
-            border-top: 10px solid black;
-            border-right: 8px solid transparent;
-            border-bottom: 8px solid transparent;
-            border-left: 8px solid transparent;
+            border-top: 8px solid black;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-left: 6px solid transparent;
             position: relative;
-            top: 8px;
+            top: 5px;
         }
         .tabsBox .tabs .tabsRight .tabBtn1Down:before{
             display: inline-block;
             content: "";
-            border-top: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-bottom: 10px solid black;
-            border-left: 8px solid transparent;
+            border-top: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 8px solid black;
+            border-left: 6px solid transparent;
             position: relative;
             top: 0px;
         }
@@ -262,20 +262,20 @@
         .tabsBox .tabs .tabsRight .tabBtn2Up:before{
             display: inline-block;
             content: "";
-            border-top: 10px solid black;
-            border-right: 8px solid transparent;
-            border-bottom: 8px solid transparent;
-            border-left: 8px solid transparent;
+            border-top: 8px solid black;
+            border-right: 6px solid transparent;
+            border-bottom: 6px solid transparent;
+            border-left: 6px solid transparent;
             position: relative;
-            top: 8px;
+            top: 5px;
         }
         .tabsBox .tabs .tabsRight .tabBtn2Down:before{
             display: inline-block;
             content: "";
-            border-top: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-bottom: 10px solid black;
-            border-left: 8px solid transparent;
+            border-top: 6px solid transparent;
+            border-right: 6px solid transparent;
+            border-bottom: 8px solid black;
+            border-left: 6px solid transparent;
             position: relative;
             top: 0px;
         }
@@ -474,7 +474,7 @@
                 <a href="#" class="tabLink">Buyer</a>
             </div>
             <div class="col-xs-6 col-sm-6 tabsRight">
-                <button class="tabBtn tabBtn1 tabBtn1Up">Date</button><button class="tabBtn tabBtn2 tabBtn2Up">Price</button>
+                <button class="tabBtn tabBtn1 tabBtn1Up"> Date</button><button class="tabBtn tabBtn2 tabBtn2Up"> Price</button>
             </div>
         </div>
     </aside>
@@ -617,6 +617,7 @@
         var priceClickNum = 0;
         var dateClickNum = 0;
         $('.tabsBox .tabs .tabsRight .tabBtn1').click(function () {
+            $('.tabsBox .tabs .tabsRight .tabBtn2').removeClass('tabBtn2Up').removeClass('tabBtn2Down');
             orderby = 'date';
             if(dateClickNum%2 == 0){
                 sort = 'desc';
@@ -633,15 +634,16 @@
             getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab);
         });
         $('.tabsBox .tabs .tabsRight .tabBtn2').click(function () {
+            $('.tabsBox .tabs .tabsRight .tabBtn1').removeClass('tabBtn1Up').removeClass('tabBtn1Down');
             orderby = 'price';
-            if(priceClickNum%2 == 0){
+            if(priceClickNum%2 == 1){
                 sort = 'desc';
-                $(this).removeClass('tabBtn2Up');
-                $(this).addClass('tabBtn2Down');
-            }else{
-                sort = 'asc';
                 $(this).removeClass('tabBtn2Down');
                 $(this).addClass('tabBtn2Up');
+            }else{
+                sort = 'asc';
+                $(this).removeClass('tabBtn2Up');
+                $(this).addClass('tabBtn2Down');
             }
             priceClickNum ++;
             console.log(sort);
@@ -837,7 +839,8 @@
                             var index = $(this).index();
                             var goodId = goodIdArr[index];
                             localStorage.setItem('goodIdFromCategory',goodId);
-                            window.location.href = "detail.html?id="+goodId;
+                            window.open("detail.html?id="+goodId);
+//                            window.location.href = "detail.html?id="+goodId;
 
                         });
 
@@ -940,7 +943,7 @@
                 url: baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n=30',
                 dataType:"json",
                 success: function(data){
-                    console.log("url="+baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&start='+startTab+'&n=30');
+                    console.log("url="+baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n=30');
                     if (data.status == 200) {
                         totalCountTab = data.extdata;
 //                        alert(totalCountTab);
@@ -1003,7 +1006,8 @@
                             var index = $(this).index();
                             var goodId = goodIdArr[index];
                             localStorage.setItem('goodIdFromCategory',goodId);
-                            window.location.href = "detail.html?id="+goodId;
+                            window.open("detail.html?id="+goodId);
+//                            window.location.href = "detail.html?id="+goodId;
 
                         });
 

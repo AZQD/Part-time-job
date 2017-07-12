@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>searchPart</title>
+    <meta name="keywords" content="kalichi,mall, kalichimall,vehicle,sedan,suv,digtal,cellphone,computer,watch,bulding,family,house,office,life goods,clothes,shoes,furniture,sell,buy,second,free">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="format-detection"content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <link class="favicon" href="" rel="shortcut icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/bootstraptc.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/ppublic.min.css">
+    <style type="text/css">
+        /*searchBox*/
+        .searchBox .search{
+            width:1200px;
+            height:100px;
+            line-height:100px;
+            margin:0 auto;
+            font-size: 14px;
+            color: #666;
+            background-color: #fff;
+        }
+        .searchBox .search .searchLeft .logo{
+            cursor: pointer;
+            padding-left:16px;
+            width: 325px;
+            height: 51px;
+        }
+        .searchBox .search .searchLeft .change{
+            text-decoration: underline;
+        }
+        .searchBox .search .searchRight{
+            text-align: right;
+        }
+        .searchBox .search .searchRight .ipt{
+            width: 310px;
+            height: 35px;
+            line-height:35px;
+            font-size: 13px;
+            outline: none;
+            text-indent: 10px;
+            letter-spacing: 0;
+            border: 1px solid #FF4720;
+        }
+        .searchBox .search .searchRight .searchImg{
+            cursor: pointer;
+            width:70px;
+            margin-left:-6px;
+        }
+        .searchBox .search .searchRight .searchBtn{
+            width: 127px;
+            height: 35px;
+            line-height:35px;
+            color: #fff;
+            font-size: 13px;
+            border: none;
+            outline: none;
+            background-color: #FF4720;
+            margin-right:42px;
+            position: relative;
+            top:1px;
+        }
+    </style>
+</head>
+<body>
+<aside class="searchBox">
+    <div class="row search">
+        <div class="col-xs-6 col-sm-6 searchLeft">
+            <img class="logo" src="image/index/logo.png">
+        </div>
+        <div class="col-xs-6 col-sm-6 searchRight">
+            <input class="ipt" type="text" placeholder="What dou you need?">
+            <img class="searchImg" src="image/index/search.png">
+            <button class="searchBtn">PUBLISH</button>
+        </div>
+    </div>
+</aside>
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript">
+    //点击图片logo跳转到index页面；
+    $('.searchBox .search .searchLeft .logo').click(function () {
+        window.open('index.html');
+//        window.location.href = 'index.html' + window.location.search;
+    });
+
+    localStorage.removeItem("searchKeyWord");
+    $('.searchBox .search .searchRight .searchImg').unbind('click').click(function () {
+        var searchKeyWord = $.trim($('.searchBox .search .searchRight .ipt').val());
+        if(searchKeyWord != ''){
+            localStorage.setItem('searchOrTab',"search");
+            localStorage.setItem('searchKeyWord',searchKeyWord);
+            window.open("category.html?searchOrTab=search&searchKeyWord="+searchKeyWord);
+//            window.location.href = "category.html?searchOrTab=search&searchKeyWord="+searchKeyWord;
+        }else{
+            //alert('请输入搜索关键词！');
+        }
+    });
+
+    //点击发布
+    $('.searchBox .search .searchRight .searchBtn').unbind('click').click(function () {
+        window.open('publish.html?searchPart=' + "searchPart");
+//        window.location.href = "publish.html";
+    });
+</script>
+</body>
+</html>
