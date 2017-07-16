@@ -117,3 +117,37 @@ function stopLoading2(){
   $(".loading-load2").css("display","none");
   clearInterval(loadingTime2);
 }
+
+//commonPopBox1:第一种弹窗//提示信息，标题；
+function commonPopFun1(dataMsg, title){
+    $('.commonPopBox1').show();
+    $('.commonPopBox1 .commonPop .title').html(title);
+    $('.commonPopBox1 .commonPop .detailTip').html(dataMsg);
+    if($('.commonPopBox1').is(':visible')){
+        $('body').css('overflow', 'hidden');
+    }
+    $('.commonPopBox1 .commonPop .confirmBox .confirmBtn').unbind('click').click(function(){
+        $('.commonPopBox1').hide();
+        $('body').css('overflow', 'auto');
+    });
+}
+
+//commonPopBox2:第二种弹窗：//提示信息，标题，左边按钮名称，右边按钮名称，左边函数名，右边函数名；
+function commonPopFun2(dataMsg, title, leftBtnName, rightBtnName, fun1, fun2){
+    $('.commonPopBox2').show();
+    $('.commonPopBox2 .commonPop .title').html(title);
+    $('.commonPopBox2 .commonPop .detailTip').html(dataMsg);
+    if($('.commonPopBox2').is(':visible')){
+        $('body').css('overflow', 'hidden');
+    }
+    $('.commonPopBox2 .commonPop .confirmBox .confirmBtn1').html(leftBtnName).unbind('click').click(function(){
+        fun1();
+        $('.commonPopBox2').hide();
+        $('body').css('overflow', 'auto');
+    });
+    $('.commonPopBox2 .commonPop .confirmBox .confirmBtn2').html(rightBtnName).unbind('click').click(function(){
+        fun2();
+        $('.commonPopBox2').hide();
+        $('body').css('overflow', 'auto');
+    });
+}

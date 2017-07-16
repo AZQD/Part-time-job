@@ -15,15 +15,33 @@
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
+<section class="commonPopBox1" style="display: none;">
+    <div class="commonPop">
+        <h3 class="title"></h3>
+        <p class="detailTip"></p>
+        <div class="confirmBox">
+            <span class="confirmBtn">OK</span>
+        </div>
+    </div>
+</section>
+<section class="commonPopBox2" style="display: none;">
+    <div class="commonPop">
+        <h3 class="title"></h3>
+        <p class="detailTip"></p>
+        <div class="confirmBox">
+            <span class="confirmBtn confirmBtn1"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="confirmBtn confirmBtn2"></span>
+        </div>
+    </div>
+</section>
 <section class="container">
+
     <aside class="row headerBox">
         <div class="col-xs-4 col-sm-4 left"><img class="logo" src="image/index/logo.png"></div>
         <div class="col-xs-4 col-sm-4 middle">
             <span class="address"></span>
             <ul class="addressUl" style="display: none;">
-                <li class="addressLi">01</li>
-                <li class="addressLi">02</li>
-                <li class="addressLi">03</li>
+                <!--<li class="addressLi">01</li>-->
             </ul>
         </div>
         <div class="col-xs-4 col-sm-4 right"><img class="search" src="image/index/search.png"></div>
@@ -31,10 +49,32 @@
 
     <aside class="row swiper-container">
         <div class="swiper-wrapper">
-            <div class="col-xs-12 col-sm-12 swiper-slide"><a href="javascript:void(0);"><img src="image/index/banner1.png"></a></div>
-            <div class="col-xs-12 col-sm-12 swiper-slide"><a href="javascript:void(0);"><img src="image/index/banner2.png"></a></div>
+            <!--<div class="col-xs-12 col-sm-12 swiper-slide"><a href="javascript:void(0);"><img src="image/index/banner1.png"></a></div>-->
         </div>
-        <div class="swiper-pagination"></div>
+    </aside>
+
+    <aside class="row getBestGoods">
+        <div class="col-xs-12 col-sm-12 bestGoods">
+            <h3 class="bestGoodsTitle">
+                <span>SELLING</span>
+            </h3>
+            <div class="row imgsBox">
+                <!--<div class="col-xs-3 col-sm-3 imgBox"><img src="image/index/bannerRight1.png"></div>-->
+            </div>
+        </div>
+    </aside>
+
+    <aside class="row recentOrNear">
+        <div class="col-xs-6 col-sm-6 title active">RECENTLY</div>
+        <div class="col-xs-6 col-sm-6 title">NEARBY</div>
+        <ul class="row getList">
+            <!--<li class="col-xs-3 col-sm-3 getLi"><img src="image/index/headImg.png"><p class="price"><span>11</span></p></li>-->
+        </ul>
+    </aside>
+
+    <aside class="row infos">
+        <div class="col-xs-6 col-sm-6 part part1"><span>Publish</span></div>
+        <div class="col-xs-6 col-sm-6 part part2"><span>Sign in/Sign up</span></div>
     </aside>
 </section>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
@@ -54,7 +94,6 @@
             type:'get',
             url:baseUrl+"/apigateway/areas",
             success:function(data){
-                console.log(data);
                 if (data.status == 200){
                     data = JSON.parse(data.data);
                     console.log("获得区域信息", data);
@@ -64,27 +103,189 @@
                         areaIdArr.push(data[areas].id);
                         areaNameArr.push(data[areas].name);
                     }
+                    console.log(areaNameArr);
+                    console.log(areaIdArr);
                     if(areaId == null){
+                        localStorage.setItem('areaId', areaIdArr[0]);
+                        localStorage.setItem('areaName', areaNameArr[0]);
                         $('.headerBox .middle .address').html(areaNameArr[0]);
                     }else{
                         $('.headerBox .middle .address').html(areaName);
                     }
 
-                    //点击地址
-                    /*$('.headerBox .middle .address').toggle(
-                            function(){
-                                $('.headerBox .middle .addressUl').show();
-                            },
-                            function(){
-                                $('.headerBox .middle .addressUl').hide();
-                            }
-                    );*/
-                }else{
+                    //动态添加addressUl
+                    for(var i=0; i<areaNameArr.length; i++){
+                        $('.headerBox .middle .addressUl').append('<li class="addressLi">'+areaNameArr[i]+'</li>');
+                    }
 
+                    //点击地址
+                    $('.headerBox .middle .address').unbind('click').click(function(){
+                        $('.headerBox .middle .addressUl').toggle();
+                    });
+                    
+                    //选择地址
+                    $('.headerBox .middle .addressUl .addressLi').unbind('click').click(function(){
+                        var index = $(this).index();
+                        localStorage.setItem('areaId', areaIdArr[index]);
+                        localStorage.setItem('areaName', areaNameArr[index]);
+                        $('.headerBox .middle .address').html(areaNameArr[index]);
+                        $('.headerBox .middle .addressUl').hide();
+                    });
+                    
+                }else{
+                    commonPopFun1(data.msg);
                 }
             },
             error:function(error){
                 console.log(error);
+            }
+        });
+
+        //获得banner
+        $.ajax({
+            type: "get",
+            url: baseUrl + "/apigateway/getbanner?gname=index-top-middle",
+            success: function (data) {
+                if (data.status == 200) {
+                    data = JSON.parse(data.data);
+                    console.log("获得banner",data);
+                    for(var i=0; i<data.length; i++){
+                        $('.swiper-container .swiper-wrapper').append(
+                            '<div class="col-xs-12 col-sm-12 swiper-slide">' +
+                            '<a href='+data[i].target+'><img src='+data[i].imgsrc+' cid='+data[i].cid+'></a>' +
+                            '</div>'
+                        );
+                    }
+                    //bannerBox：轮播图
+                    var mySwiper = new Swiper ('.swiper-container', {
+                        direction: 'horizontal',//水平滑动
+                        loop: true, //循环播放
+                        autoplay: 2000, //自动播放
+                        autoplayDisableOnInteraction: false, //用户操作swiper之后，是否禁止autoplay。默认为true：停止。
+                        pagination: '.swiper-pagination',  // 分页器
+                        speed: 2000
+                    });
+                }else {
+                    commonPopFun1(data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+        //getbestgoods
+        $.ajax({
+            type: "get",
+            url: baseUrl + "/apigateway/getbestgoods",
+            success: function (data) {
+                if (data.status == 200) {
+                    data = JSON.parse(data.data);
+                    console.log("getbestgoods", data);
+                    var imgsLength = data.length;
+                    if(imgsLength>4){
+                        imgsLength = 4;
+                    }
+                    for(var i=0; i<imgsLength; i++){
+                        $('.bestGoods .imgsBox').append(
+                            '<div class="col-xs-3 col-sm-3 imgBox"><img src='+baseUrl+data[i].cimg+' id='+data[i].id+'></div>'
+                        );
+                    }
+                    $('.bestGoods .imgsBox .imgBox img').unbind('click').click(function(){
+                        var index = $(this).index();
+                        window.location.href = 'detail.html?id='+$(this).attr('id');
+                    });
+                } else {
+                    commonPopFun1(data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+
+
+        //recentOrNear
+        recentFun();
+        function recentFun(){
+            $.ajax({
+                type: "get",
+                url: baseUrl + "/apigateway/getgoods?n=8",
+                success: function (data) {
+                    if (data.status == 200) {
+                        data = JSON.parse(data.data);
+                        console.log("recently", data);
+                        $('.recentOrNear .getList').empty();
+                        for(var i=0; i<data.length; i++){
+                            var price = data[i].price;
+                            if(price == 0){
+                                price = 'Negotiated';
+                            }
+                            $('.recentOrNear .getList').append(
+                                    '<li class="col-xs-3 col-sm-3 getLi">' +
+                                    '<img src='+baseImgSrc+data[i].cimg+' id='+data[i].id+'><p class="price"><span>'+price+'</span></p>' +
+                                    '</li>'
+                            );
+                            $('.recentOrNear .getList .getLi img').unbind('click').click(function(){
+                                var index = $(this).index();
+                                window.location.href = 'detail.html?id='+$(this).attr('id');
+                            });
+                        }
+                    } else {
+                        commonPopFun1(data.msg);
+                    }
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            });
+        }
+
+        function nearFun(){
+            var areaId = localStorage.getItem("areaId");
+            var areaName = localStorage.getItem("areaName");
+            $.ajax({
+                type: "get",
+                url: baseUrl + "/apigateway/getgoods?areaid="+areaId,
+                success: function (data) {
+                    if (data.status == 200) {
+                        data = JSON.parse(data.data);
+                        console.log("nearly", data);
+                        $('.recentOrNear .getList').empty();
+                        for(var i=0; i<data.length; i++){
+                            var price = data[i].price;
+                            if(price == 0){
+                                price = 'Negotiated';
+                            }
+                            $('.recentOrNear .getList').append(
+                                    '<li class="col-xs-3 col-sm-3 getLi">' +
+                                    '<img src='+baseImgSrc+data[i].cimg+' id='+data[i].id+'><p class="price"><span>'+price+'</span></p>' +
+                                    '</li>'
+                            );
+                            $('.recentOrNear .getList .getLi img').unbind('click').click(function(){
+                                var index = $(this).index();
+                                window.location.href = 'detail.html?id='+$(this).attr('id');
+                            });
+                        }
+                    } else {
+                        commonPopFun1(data.msg);
+                    }
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            });
+        }
+
+        //recentOrNear切换
+        $('.recentOrNear .title').unbind('click').click(function(){
+            var index = $(this).index();
+            $('.recentOrNear .title').removeClass('active').eq(index).addClass('active');
+            if(index == 0){
+                recentFun();
+            }else{
+                nearFun();
             }
         });
     });
