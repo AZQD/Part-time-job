@@ -369,8 +369,10 @@
                     </a>
                 </div>
                 <div class="col-xs-3 col-sm-3 part2 leftSize">
-                    <div class="col-xs-12 col-sm-12" style="height:50px;"><a href="#" class="number" id="messageNum">134</a></div>
-                    <div class="col-xs-12 col-sm-12"><a href="#" class="sort">MESSAGE</a></div>
+                    <!--<a href="#messageSign" style="display: block; width: 100%;height: 90px;">
+                        <div class="col-xs-12 col-sm-12" style="height:50px;"><span class="number" id="messageNum"></span></div>
+                        <div class="col-xs-12 col-sm-12"><span class="sort">MESSAGE</span></div>
+                    </a>-->
                 </div>
             </div>
             <div class="col-xs-6 col-sm-6 searchRight">
@@ -432,10 +434,25 @@
     </aside>
 
     <aside class="messageBox">
-        <div class="row message">
+        <div class="row message"><!--messageSign-->
             <div class="col-xs-12 col-sm-12 messageTitle">
-                <span class="gang">|</span>&nbsp;<span class="">MESSAGES</span>
+                <a class="gang" name="messageSign">|</a>&nbsp;<span class="">MESSAGES<!--(<span class="messageNum"></span>)--></span>
             </div>
+
+            <!--facebook发布评论-->
+            <!--<div class="fb-comments row" id="fackbookNeedId" data-href="http://www.kalichimall.com:81/detail.html?id=254"></div>-->
+            <div class="fb-comments row" id="fackbookNeedId"></div>
+            <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id
+
+                        = id;
+                js.src = "//connect.facebook.net/en/sdk.js#xfbml=1&version=v2.8&appId=612348248960723";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+
         </div>
     </aside>
 
@@ -448,7 +465,8 @@
 <script type="text/javascript">
     $(function(){
 
-
+        /*facebook发布评论*/
+        $('#fackbookNeedId').attr('data-href', "http://www.kalichimall.com:81/profile.html"+window.location.search);
 
         //搜索
         localStorage.removeItem("searchKeyWord");
@@ -646,6 +664,44 @@
                 console.log(error);
             }
         });
+
+
+        //获得评论信息(支持盖楼)
+        /*var getcommentInfo = {
+            "token":token,			//登录凭证，当action="user" 时必须指定
+            "goodid":"",		//商品ID, 当action="good" 时必须指定
+            "action":"user",	//good 或者 user,指定为good时获得该商品的评论信息，指定为user时获得该用户的评论信息
+            "start":"",			//从第几条开始
+            "num":""			//获得几条,最多20条
+        };
+        $.ajax({
+            type:"POST",
+            url:baseUrl + "/apigateway/getcomment",
+            dataType:"json",
+            data:JSON.stringify(getcommentInfo),
+            success:function(data){
+                //console.log(data);
+                if(data.status == 200){
+                    data = JSON.parse(data.data);
+                    console.log("获得评论信息(支持盖楼)",data);
+                    $('#messageNum').html(data.length);
+                    $('.messageBox .messageNum').html(data.length);
+                }else if(data.status == 501){//token失效
+//                    commonPopFun(data.msg);
+                    $('#messageNum').html(0);
+                    $('.messageBox .messageNum').html(0);
+                }else{
+//                    commonPopFun(data.msg);
+                    $('#messageNum').html(0);
+                    $('.messageBox .messageNum').html(0);
+                }
+            },
+            error:function(error){
+                console.log(error);
+                $('#messageNum').html(0);
+                $('.messageBox .messageNum').html(0);
+            }
+        });*/
 
     });
 </script>

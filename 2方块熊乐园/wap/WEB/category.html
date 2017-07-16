@@ -474,7 +474,7 @@
                 <a href="#" class="tabLink">Buyer</a>
             </div>
             <div class="col-xs-6 col-sm-6 tabsRight">
-                <span class="t"><input type="checkbox"> Has image</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span class="t"><input type="checkbox" id="hasImage"> Has image</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button class="tabBtn tabBtn1 tabBtn1Up"> Date</button><button class="tabBtn tabBtn2 tabBtn2Up"> Price</button>
             </div>
         </div>
@@ -588,10 +588,26 @@
 <script type="text/javascript">
     $(function(){
         var cid;
+
+        var hasImage = '';//默认空字符串，选择hasimage为1，取消选择为0
+        var hasImageClickNum = 0;
+        $('#hasImage').change(function(){
+            if(hasImageClickNum%2 == 0){
+                hasImage = 1;
+                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+            }else {
+                hasImage = 0;
+                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+            }
+            console.log('hasImage', hasImage);
+            hasImageClickNum ++;
+            
+        });
+
         $(".searchBox .search .menuUl").delegate(".menuLi","click",function(){
             cid = getCid;
             tabPageControl();
-            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab);
+            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
         });
 
         //tab切换(Celler/Buyer)
@@ -607,7 +623,7 @@
             $('.tabsBox .tabs .tabsLeft .tabLink').removeClass("active");
             $(this).addClass("active");
             tabPageControl();
-            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab);
+            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
 
         });
 
@@ -632,7 +648,7 @@
             dateClickNum ++;
             console.log(sort);
             tabPageControl();
-            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab);
+            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
         });
         $('.tabsBox .tabs .tabsRight .tabBtn2').click(function () {
             $('.tabsBox .tabs .tabsRight .tabBtn1').removeClass('tabBtn1Up').removeClass('tabBtn1Down');
@@ -649,7 +665,7 @@
             priceClickNum ++;
             console.log(sort);
             tabPageControl();
-            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab);
+            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
         });
         
         
@@ -674,7 +690,7 @@
                 $(this).addClass('active');
                 console.log(pmin,pmax);
                 tabPageControl();
-                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab);
+                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
             });
         });
 
@@ -724,7 +740,7 @@
                                 $(this).addClass('active');
                                 console.log('areaid='+areaid);
                                 tabPageControl();
-                                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab);
+                                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
                             });
                         });
                     }
@@ -749,7 +765,7 @@
             $('.pageControl .nextPage').unbind('click').click(function(){
                 startSearch += 30 ;
                 if(startSearch<=totalCountSearch){
-                    searchFun(searchKeyWord, startSearch);
+                    searchFun(searchKeyWord, startSearch, hasImage);
                 }else{
                     startSearch -= 30 ;
                     alert('已经是最后一页了！');
@@ -758,7 +774,7 @@
             $('.pageControl .lastPage').unbind('click').click(function(){
                 startSearch -= 30 ;
                 if(startSearch >= 0){
-                    searchFun(searchKeyWord, startSearch);
+                    searchFun(searchKeyWord, startSearch, hasImage);
                 }else{
                     startSearch += 30 ;
                     alert('已经是第一页了！');
@@ -767,20 +783,20 @@
         }
 
 
-        function searchFun(searchKeyWord, startSearch){
+        function searchFun(searchKeyWord, startSearch, hasImage){
             if(searchKeyWord == undefined){
                 searchKeyWord = '';
             }
             $('.searchBox .search .searchLeft .second').html(searchKeyWord);//二级标题
             $.ajax({
                 type: "get",
-                url: baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+"&n=30",
+                url: baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+"&n=30&hasImage="+hasImage,
                 dataType:"json",
                 success: function(data){
                     if(data.status == 200){
 
                         console.log("搜索",data);
-                        console.log("搜索url="+baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+"&n=30");
+                        console.log("搜索url="+baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+"&n=30&hasImage="+hasImage);
                         //搜索结果总数
                         totalCountSearch = data.extdata;
                         $('.pageControl').hide();
@@ -862,7 +878,7 @@
             if(searchKeyWord != ''){
                 $('.goodsBox').empty();//清空goodsBox
                 searchPageControl();
-                searchFun(searchKeyWord, startSearch);
+                searchFun(searchKeyWord, startSearch, hasImage);
             }else{
 //                alert('请输入搜索关键词！');
             }
@@ -887,7 +903,7 @@
             $('#categoryTitle').html(searchKeyWord+' kalichimall, make money by your second-hand goods.');
 
             searchPageControl();
-            searchFun(searchKeyWord,startSearch);
+            searchFun(searchKeyWord,startSearch, hasImage);
 
 
 
@@ -902,7 +918,7 @@
 
             $('.searchBox .search .searchLeft .second').html(cidName);//二级标题
             tabPageControl();
-            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab);
+            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
         }
 
 
@@ -913,7 +929,7 @@
                 startTab += 30 ;
                 if(startTab<=totalCountTab){
                     tabPageControl();
-                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab);
+                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
                 }else{
                     startTab -= 30 ;
                     alert('已经是最后一页了！');
@@ -923,7 +939,7 @@
                 startTab -= 30 ;
                 if(startTab >= 0){
                     tabPageControl();
-                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab);
+                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
                 }else{
                     startTab += 30 ;
                     alert('已经是第一页了！');
@@ -931,7 +947,7 @@
             });
         }
 
-        function getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab){
+        function getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage){
             /*
             * ?cid=深层分类id&pmax=400&pmin=300&areaid=区域id&start=&n=&issell=0/1&orderby=price/date&sort=desc/asc
              过滤条件:分类(cid)、价格区间(pmax,pmin)、区域(area)、是否是售卖(issell,等于1则是售卖(celler)，等于0则是需要(buyer), 默认是售卖)、
@@ -941,10 +957,10 @@
             //产品列表查看
             $.ajax({
                 type: "get",
-                url: baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n=30',
+                url: baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n=30&hasImage='+hasImage,
                 dataType:"json",
                 success: function(data){
-                    console.log("url="+baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n=30');
+                    console.log("url="+baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n=30&hasImage='+hasImage);
                     if (data.status == 200) {
                         totalCountTab = data.extdata;
 //                        alert(totalCountTab);
