@@ -1,0 +1,59 @@
+@rem : 16rem;
+
+/*headerBox*/
+body{
+    width:100%;
+}
+.headerBox{
+    height: 40/@rem;
+    line-height: 40/@rem;
+    background-color: #bfa;
+}
+.headerBox .left .logo{
+    width: 100%;
+    padding: 0 2/@rem;
+}
+.headerBox .middle{
+    text-align: center;
+    position: relative;
+}
+.headerBox .middle .address{
+    color: #333333;
+    font-size: 14/@rem;
+}
+.headerBox .middle .address:after{
+    display: inline-block;
+    content: "";
+    border-top: 8/@rem solid black;
+    border-right: 6/@rem solid transparent;
+    border-bottom: 6/@rem solid transparent;
+    border-left: 6/@rem solid transparent;
+    position: relative;
+    top: 8/@rem;
+    left: 2/@rem;
+}
+.headerBox .middle .addressUl{
+    position: absolute;
+    width: 100%;
+    text-align: center;
+}
+.headerBox .middle .addressUl .addressLi{
+    margin: 0 auto;
+    width: 102/@rem;
+    height: 30/@rem;
+    line-height: 30/@rem;
+    font-size: 13/@rem;
+    color: #333333;
+    border: 1/@rem solid #999;
+    border-bottom: none;
+}
+.headerBox .middle .addressUl .addressLi:last-child{
+    border-bottom: 1/@rem solid #ccc;
+}
+.headerBox .right{
+    text-align: right;
+    padding-right:2/@rem;
+}
+.headerBox .right .search{
+    width:30/@rem;
+}
