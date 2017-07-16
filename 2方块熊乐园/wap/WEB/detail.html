@@ -707,7 +707,23 @@
                     <a href="###" class="tabLink active">DETAIL</a><a href="###" class="tabLink tabLink2">COMMENTS</a>
                 </div>
                 <div class="aboutContent" id="detailContent" style="display: none;"></div>
-                <div class="aboutContent" id="commentsContent" style="display: none;"></div>
+                <div class="aboutContent" id="commentsContent" style="display: none;">
+
+                    <!--facebook发布评论-->
+                    <!--<div class="fb-comments row" data-href="http://www.kalichimall.com:81/detail.html?id=254"></div>-->
+                    <div class="fb-comments row" id="fackbookNeedId"></div>
+                    <div id="fb-root"></div>
+                    <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id
+
+                                = id;
+                        js.src = "//connect.facebook.net/en/sdk.js#xfbml=1&version=v2.8&appId=612348248960723";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+
+                </div>
             </div>
             <!--detailRight-->
             <div class="col-xs-3 col-sm-3 detailRight">
@@ -822,6 +838,10 @@
 <script type="text/javascript">
     $(function(){
 
+
+        /*facebook发布评论*/
+        $('#fackbookNeedId').attr('data-href', "http://www.kalichimall.com:81/detail.html"+window.location.search);
+
         //图片预览
         $('#dowebok').viewer({});
 
@@ -871,7 +891,7 @@
                         }
                         if($('.detailBox .detail .detailLeft .tabToggle .tabLink').eq(1).hasClass('active')){
                             $('#detailContent').hide();
-                            $('#commentsContent').show().html();
+                            $('#commentsContent').show();
                         }
                     });
 
