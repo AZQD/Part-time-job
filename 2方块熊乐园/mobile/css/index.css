@@ -1,61 +1,5 @@
-/*headerBox*/
 body {
-  width: 100%;
-}
-.headerBox {
-  height: 2.5rem;
-  line-height: 2.5rem;
-  background-color: #DCDCDC;
-}
-.headerBox .left .logo {
-  width: 100%;
-  padding: 0 0.125rem;
-}
-.headerBox .middle {
-  text-align: center;
   position: relative;
-}
-.headerBox .middle .address {
-  color: #333333;
-  font-size: 0.875rem;
-}
-.headerBox .middle .address:after {
-  display: inline-block;
-  content: "";
-  border-top: 0.5rem solid #000000;
-  border-right: 0.375rem solid transparent;
-  border-bottom: 0.375rem solid transparent;
-  border-left: 0.375rem solid transparent;
-  position: relative;
-  top: 0.375rem;
-  left: 0.125rem;
-}
-.headerBox .middle .addressUl {
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  z-index: 2;
-}
-.headerBox .middle .addressUl .addressLi {
-  margin: 0 auto;
-  width: 6.375rem;
-  height: 1.875rem;
-  line-height: 1.875rem;
-  font-size: 0.8125rem;
-  color: #333333;
-  border: 0.0625rem solid #999999;
-  border-bottom: none;
-  background-color: #fff;
-}
-.headerBox .middle .addressUl .addressLi:last-child {
-  border-bottom: 0.0625rem solid #cccccc;
-}
-.headerBox .right {
-  text-align: right;
-  padding-right: 0.125rem;
-}
-.headerBox .right .search {
-  width: 1.875rem;
 }
 /*swiper-container*/
 .swiper-container {
@@ -108,7 +52,7 @@ body {
 }
 /*recentOrNear*/
 .recentOrNear {
-  margin-bottom: 0.625rem;
+  margin-bottom: 2.625rem;
 }
 .recentOrNear .title {
   height: 2.1875rem;
@@ -151,10 +95,18 @@ body {
 .recentOrNear .getList .getLi .price span {
   display: inline-block;
   width: 100%;
+  font-size: 0.75rem;
   padding-right: 0.3125rem;
   background-color: #FF4720;
 }
 /*infos*/
+.infos {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  box-shadow: 0 0 1.25rem #333333;
+}
 .infos .part {
   line-height: 2.125rem;
   font-size: 0.875rem;
@@ -164,7 +116,7 @@ body {
   border-top: 0.375rem solid #ff4720;
   border-bottom: 0.375rem solid #ff4720;
 }
-.infos .part1 {
+.infos .publish {
   border-right: 0.0625rem solid #ffffff;
 }
 .infos .part span {

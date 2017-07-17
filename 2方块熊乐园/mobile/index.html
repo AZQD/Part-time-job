@@ -38,13 +38,16 @@
 
     <aside class="row headerBox">
         <div class="col-xs-4 col-sm-4 left"><img class="logo" src="image/index/logo.png"></div>
-        <div class="col-xs-4 col-sm-4 middle">
+        <div class="col-xs-4 col-sm-4 indexMiddle">
             <span class="address"></span>
             <ul class="addressUl" style="display: none;">
                 <!--<li class="addressLi">01</li>-->
             </ul>
         </div>
-        <div class="col-xs-4 col-sm-4 right"><img class="search" src="image/index/search.png"></div>
+        <div class="col-xs-4 col-sm-4 right">
+            <img class="search" src="image/index/search.png">
+            <span class="logout" style="display: none;">Logout</span>
+        </div>
     </aside>
 
     <aside class="row swiper-container">
@@ -73,8 +76,9 @@
     </aside>
 
     <aside class="row infos">
-        <div class="col-xs-6 col-sm-6 part part1"><span>Publish</span></div>
-        <div class="col-xs-6 col-sm-6 part part2"><span>Sign in/Sign up</span></div>
+        <div class="col-xs-6 col-sm-6 part publish"><span>Publish</span></div>
+        <div class="col-xs-6 col-sm-6 part signInUp" style="display: block;"><span>Sign in/Sign up</span></div>
+        <div class="col-xs-6 col-sm-6 part profile" style="display: none;"><span>My Profile</span></div>
     </aside>
 </section>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
@@ -82,10 +86,6 @@
 <script type="text/javascript" src="js/public.js"></script>
 <script type="text/javascript">
     $(function(){
-        //点击logo
-        $('.headerBox .left .logo').unbind('click').click(function(){
-            window.location.href = 'index.html' + window.location.search;
-        });
 
         //显示地址列表
         var areaId = localStorage.getItem("areaId");
@@ -108,30 +108,30 @@
                     if(areaId == null){
                         localStorage.setItem('areaId', areaIdArr[0]);
                         localStorage.setItem('areaName', areaNameArr[0]);
-                        $('.headerBox .middle .address').html(areaNameArr[0]);
+                        $('.headerBox .indexMiddle .address').html(areaNameArr[0]);
                     }else{
-                        $('.headerBox .middle .address').html(areaName);
+                        $('.headerBox .indexMiddle .address').html(areaName);
                     }
 
                     //动态添加addressUl
                     for(var i=0; i<areaNameArr.length; i++){
-                        $('.headerBox .middle .addressUl').append('<li class="addressLi">'+areaNameArr[i]+'</li>');
+                        $('.headerBox .indexMiddle .addressUl').append('<li class="addressLi">'+areaNameArr[i]+'</li>');
                     }
 
                     //点击地址
-                    $('.headerBox .middle .address').unbind('click').click(function(){
-                        $('.headerBox .middle .addressUl').toggle();
+                    $('.headerBox .indexMiddle .address').unbind('click').click(function(){
+                        $('.headerBox .indexMiddle .addressUl').toggle();
                     });
-                    
+
                     //选择地址
-                    $('.headerBox .middle .addressUl .addressLi').unbind('click').click(function(){
+                    $('.headerBox .indexMiddle .addressUl .addressLi').unbind('click').click(function(){
                         var index = $(this).index();
                         localStorage.setItem('areaId', areaIdArr[index]);
                         localStorage.setItem('areaName', areaNameArr[index]);
-                        $('.headerBox .middle .address').html(areaNameArr[index]);
-                        $('.headerBox .middle .addressUl').hide();
+                        $('.headerBox .indexMiddle .address').html(areaNameArr[index]);
+                        $('.headerBox .indexMiddle .addressUl').hide();
                     });
-                    
+
                 }else{
                     commonPopFun1(data.msg);
                 }
@@ -216,7 +216,6 @@
                     if (data.status == 200) {
                         data = JSON.parse(data.data);
                         console.log("recently", data);
-                        $('.recentOrNear .getList').empty();
                         for(var i=0; i<data.length; i++){
                             var price = data[i].price;
                             if(price == 0){
@@ -252,7 +251,6 @@
                     if (data.status == 200) {
                         data = JSON.parse(data.data);
                         console.log("nearly", data);
-                        $('.recentOrNear .getList').empty();
                         for(var i=0; i<data.length; i++){
                             var price = data[i].price;
                             if(price == 0){
@@ -280,6 +278,7 @@
 
         //recentOrNear切换
         $('.recentOrNear .title').unbind('click').click(function(){
+            $('.recentOrNear .getList').empty();
             var index = $(this).index();
             $('.recentOrNear .title').removeClass('active').eq(index).addClass('active');
             if(index == 0){
@@ -290,12 +289,16 @@
         });
 
         //点击发布
-        $('.infos .part1').unbind('click').click(function () {
+        $('.infos .publish').unbind('click').click(function () {
             window.location.href = "publish.html";
         });
         //注册/登陆
-        $('.infos .part2').unbind('click').click(function () {
+        $('.infos .signInUp').unbind('click').click(function () {
             window.location.href = "login.html";
+        });
+        //My Profile
+        $('.infos .profile').unbind('click').click(function () {
+            window.location.href = "profile.html";
         });
     });
 </script>

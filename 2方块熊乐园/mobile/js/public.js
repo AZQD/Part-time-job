@@ -157,3 +157,55 @@ $('.favicon').attr('href', 'image/favicon.ico');
 
 var token = localStorage.getItem("token");
 var timestamp=new Date().getTime();//获取时间戳
+
+//判断用户是否登录
+var userInfo;
+if(token == null){
+    console.log("用户未登陆（没有token）");
+}else{
+    var authInfo = {
+        "token":token,
+        "timestamp":timestamp
+    };
+    $.ajax({
+        type: "POST",
+        url: baseUrl + "/apigateway/getuserinfo",
+        dataType:"json",
+        data:JSON.stringify(authInfo),
+        success: function(data){
+            if(data.status == 200){//用户已登陆
+                data = JSON.parse(data.data);
+                userInfo = data;
+                console.log("用户已登陆");
+                console.log("获得用户信息",userInfo);
+
+                //显示logout按钮
+                $('.headerBox .right .logout').show().unbind('click').click(function(){
+                    localStorage.removeItem('token');
+                   window.location.reload();
+                });
+
+                //index.html:显示登录或者profile
+                $('.infos .signInUp').hide();
+                $('.infos .profile').show();
+
+            }else if(data.status == 501){//token失效
+                console.log("用户未登陆（token过期）", data);
+            }else {
+                console.log("登录失败",data);
+            }
+        },
+        error:function(error){
+            console.log(error);
+        }
+    });
+}
+
+//头部logo
+$('.headerBox .left .logo').unbind('click').click(function(){
+    window.location.href = 'index.html';
+});
+//头部搜索按钮
+$('.headerBox .right .search').unbind('click').click(function(){
+   window.location.href = 'search.html';
+});

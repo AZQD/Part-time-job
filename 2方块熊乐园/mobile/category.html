@@ -2,9 +2,595 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title id="categoryTitle"></title>
+    <meta name="keywords" content="kalichi,mall, kalichimall,vehicle,sedan,suv,digtal,cellphone,computer,watch,bulding,family,house,office,life goods,clothes,shoes,furniture,sell,buy,second,free">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="format-detection"content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <link class="favicon" href="" rel="shortcut icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/bootstraptc.min.css">
+    <link rel="stylesheet" href="css/ppublic.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/category.css">
+    <style type="text/css">
+
+    </style>
 </head>
 <body>
-category
+<section class="container">
+
+    <aside class="row headerBox">
+        <div class="col-xs-4 col-sm-4 left"><img class="logo" src="image/index/logo.png"></div>
+        <div class="col-xs-4 col-sm-4 indexMiddle">
+            <span class="address"></span>
+            <ul class="addressUl" style="display: none;">
+                <!--<li class="addressLi">01</li>-->
+            </ul>
+        </div>
+        <div class="col-xs-4 col-sm-4 right">
+            <img class="search" src="image/index/search.png">
+            <span class="logout" style="display: none;">Logout</span>
+        </div>
+    </aside>
+
+    <aside class="selectBox">
+        <div class="row select">
+            <div class="col-xs-12 col-sm-12 selectPrice">
+                <span class="price">PRICE</span>
+                <a href="#" class="selectChoose active">ALL</a>
+                <a href="#" class="selectChoose">0-100</a>
+                <a href="#" class="selectChoose">100-200</a>
+                <a href="#" class="selectChoose">200-500</a>
+                <a href="#" class="selectChoose">500++</a>
+            </div>
+            <div class="col-xs-12 col-sm-12 selectArea">
+                <span class="area">AREA</span>
+                <a href="#" class="selectChoose active">ALL</a>
+                <!--<a href="#" class="selectChoose">Lusaka</a>
+                <a href="#" class="selectChoose">Others</a>-->
+            </div>
+        </div>
+    </aside>
+
+    <aside class="tabsBox">
+        <div class="row tabs">
+
+            <div class="col-xs-4 col-sm-4 tabsLeft">
+                <a href="#" class="tabLink active">Celler</a>
+                <a href="#" class="tabLink">Buyer</a>
+            </div>
+            <div class="col-xs-8 col-sm-8 tabsRight">
+                <span class="t"><input type="checkbox" id="hasImage"> Has image</span>&nbsp;&nbsp;
+                <button class="tabBtn tabBtn1 tabBtn1Up"> Date</button><button class="tabBtn tabBtn2 tabBtn2Up"> Price</button>
+            </div>
+
+        </div>
+    </aside>
+
+    <aside class="goodsBox">
+        <!--有需要打开第一个-->
+        <!--<div class="row goods">
+            <div class="col-xs-3 col-sm-3 goodsLeft">
+                <img src="image/categoryDetail/good1.jpg">
+                <span class="tip">3</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 goodsMiddle">
+                <p class="goodName">iPhone 6, OS is 10.3</p>
+                <p class="goodDesc">Product details</p>
+                <p class="goodDesc">Address Details <span class="goodDate">23/05/2017</span></p>
+            </div>
+            <div class="col-xs-3 col-sm-3 goodsRight">
+                <span class="goodsRight1">ZMW</span><span class="goodsRight2">1205</span>
+            </div>
+        </div>-->
+    </aside>
+    <aside class="pageControl" style="display: none;">
+        <button class="pageBtn lastPage">上一页</button>&nbsp;&nbsp;
+        <button class="pageBtn nextPage">下一页</button>
+    </aside>
+    <aside class="chooseBtn" style="text-align: center;display: none;">
+        <input type="text" class="startNum" placeholder="从第几条开始">
+        <input type="text" class="countNum" placeholder="获得几条数据，最多30条"><br/>
+        <button id="getGoodsBtn">获取列表</button>
+    </aside>
+
+</section>
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript">
+    $(function(){
+
+        var cid;
+
+        var hasImage = '';//默认空字符串，选择hasimage为1，取消选择为0
+        var hasImageClickNum = 0;
+        $('#hasImage').change(function(){
+            if(hasImageClickNum%2 == 0){
+                hasImage = 1;
+                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+            }else {
+                hasImage = 0;
+                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+            }
+            console.log('hasImage', hasImage);
+            hasImageClickNum ++;
+
+        });
+
+
+
+        //tab切换(Celler/Buyer)
+        var issell = 1; //1:celler, 0:buyer
+        $('.tabsBox .tabs .tabsLeft .tabLink').click(function () {
+            var index = $(this).index();
+            if(index ==0){
+                issell = 1;
+            }else{
+                issell = 0;
+            }
+            console.log("issell="+issell);
+            $('.tabsBox .tabs .tabsLeft .tabLink').removeClass("active");
+            $(this).addClass("active");
+            tabPageControl();
+            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+
+        });
+
+        //排序字段(orderby, price 按价格排序，date按时间排序)
+        //排序方式(sort, desc降序、asc升序,  desc 降序 从上往下是降序, asc 升序 从上往下是升序)
+        var orderby = '';
+        var sort = '';
+        var priceClickNum = 0;
+        var dateClickNum = 0;
+        $('.tabsBox .tabs .tabsRight .tabBtn1').click(function () {
+            $('.tabsBox .tabs .tabsRight .tabBtn2').removeClass('tabBtn2Up').removeClass('tabBtn2Down');
+            orderby = 'date';
+            if(dateClickNum%2 == 0){
+                sort = 'desc';
+                $(this).removeClass('tabBtn1Up');
+                $(this).addClass('tabBtn1Down');
+            }else{
+                sort = 'asc';
+                $(this).removeClass('tabBtn1Down');
+                $(this).addClass('tabBtn1Up');
+            }
+            dateClickNum ++;
+            console.log(sort);
+            tabPageControl();
+            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+        });
+        $('.tabsBox .tabs .tabsRight .tabBtn2').click(function () {
+            $('.tabsBox .tabs .tabsRight .tabBtn1').removeClass('tabBtn1Up').removeClass('tabBtn1Down');
+            orderby = 'price';
+            if(priceClickNum%2 == 1){
+                sort = 'desc';
+                $(this).removeClass('tabBtn2Down');
+                $(this).addClass('tabBtn2Up');
+            }else{
+                sort = 'asc';
+                $(this).removeClass('tabBtn2Up');
+                $(this).addClass('tabBtn2Down');
+            }
+            priceClickNum ++;
+            console.log(sort);
+            tabPageControl();
+            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+        });
+
+
+        //定义全局变量
+        var pmin = '';
+        var pmax = '';
+        var areaid = '';
+        $('.selectBox .select .selectPrice').children('.selectChoose').each(function(index){
+            $(this).click(function () {
+                if(index == 0){
+                    pmin = '';pmax = '';
+                }else if(index == 1){
+                    pmin = 0;pmax = 100;
+                }else if(index == 2){
+                    pmin = 100;pmax = 200;
+                }else if(index == 3){
+                    pmin = 200;pmax = 500;
+                }else if(index == 4){
+                    pmin = 500;pmax = '';
+                }
+                $('.selectBox .select .selectPrice .selectChoose').removeClass("active");
+                $(this).addClass('active');
+                console.log(pmin,pmax);
+                tabPageControl();
+                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+            });
+        });
+
+
+
+        //获取地址areaid
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/areas",
+            dataType:"json",
+            success: function(data){
+                if (data.status == 200){
+                    data = JSON.parse(data.data);
+                    console.log("获得区域信息2", data);
+
+
+
+                    var areaIdArr = [];
+                    var areaNameArr = [];
+                    for (var areas in data){
+                        areaIdArr.push(data[areas].id);
+                        areaNameArr.push(data[areas].name);
+                    }
+                    console.log(areaNameArr);
+                    console.log(areaIdArr);
+                    if(areaId == null){
+                        localStorage.setItem('areaId', areaIdArr[0]);
+                        localStorage.setItem('areaName', areaNameArr[0]);
+                        $('.headerBox .indexMiddle .address').html(areaNameArr[0]);
+                    }else{
+                        $('.headerBox .indexMiddle .address').html(areaName);
+                    }
+
+                    //动态添加addressUl
+                    for(var i=0; i<areaNameArr.length; i++){
+                        $('.headerBox .indexMiddle .addressUl').append('<li class="addressLi">'+areaNameArr[i]+'</li>');
+                    }
+
+                    //点击地址
+                    $('.headerBox .indexMiddle .address').unbind('click').click(function(){
+                        $('.headerBox .indexMiddle .addressUl').toggle();
+                    });
+
+                    //选择地址
+                    $('.headerBox .indexMiddle .addressUl .addressLi').unbind('click').click(function(){
+                        var index = $(this).index();
+                        localStorage.setItem('areaId', areaIdArr[index]);
+                        localStorage.setItem('areaName', areaNameArr[index]);
+                        $('.headerBox .indexMiddle .address').html(areaNameArr[index]);
+                        $('.headerBox .indexMiddle .addressUl').hide();
+                        controlAreaId();
+                    });
+
+
+
+
+                    var locationArr1 = [];
+                    var locationArr2 = [];
+                    for (var sort in data){
+                        locationArr1.push(data[sort].name);
+                        locationArr2.push(data[sort].sub);
+                    }
+
+                    controlAreaId();
+                    /*$('.headerBox .indexMiddle .address').click(function(){
+                        controlAreaId();
+                    });*/
+
+                    function controlAreaId(){
+                        var areaIdArr = [];
+//                        areaid = locationArr2[0][0].id;
+                        console.log('**********', areaid);
+                        for(let i=0; i<locationArr1.length; i++){
+                            var strArea = '<span class="area">AREA</span><a href="#" class="selectChoose active">ALL</a>';
+                            if($('.headerBox .indexMiddle .address').html() == locationArr1[i]){
+                                for(var j=0; j<locationArr2[i].length; j++){
+                                    strArea += '<a href="#" class="selectChoose">'+locationArr2[i][j].name+'</a>';
+                                    areaIdArr.push(locationArr2[i][j].id);
+                                }
+                                console.log('strArea',strArea);
+                                $('.selectArea').empty().append(strArea);
+                            }
+                        }
+                        console.log("areaIdArr",areaIdArr);
+
+                        $('.selectBox .select .selectArea').children('.selectChoose').each(function(index){
+                            $(this).click(function () {
+                                areaid = areaIdArr[index-1];
+                                $('.selectBox .select .selectArea .selectChoose').removeClass("active");
+                                $(this).addClass('active');
+                                console.log('areaid='+areaid);
+                                tabPageControl();
+                                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                            });
+                        });
+                    }
+
+                }
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+
+
+
+
+        var totalCountTab = 0;
+        var startTab = 0;
+
+        var totalCountSearch = 0;
+        var startSearch = 0;
+        function searchPageControl(){
+
+            $('.pageControl .nextPage').unbind('click').click(function(){
+                startSearch += 30 ;
+                if(startSearch<=totalCountSearch){
+                    searchFun(searchKeyWord, startSearch, hasImage);
+                }else{
+                    startSearch -= 30 ;
+                    alert('已经是最后一页了！');
+                }
+            });
+            $('.pageControl .lastPage').unbind('click').click(function(){
+                startSearch -= 30 ;
+                if(startSearch >= 0){
+                    searchFun(searchKeyWord, startSearch, hasImage);
+                }else{
+                    startSearch += 30 ;
+                    alert('已经是第一页了！');
+                }
+            });
+        }
+
+
+        function searchFun(searchKeyWord, startSearch, hasImage){
+            if(searchKeyWord == undefined){
+                searchKeyWord = '';
+            }
+            $('.searchBox .search .searchLeft .second').html(searchKeyWord);//二级标题
+            $.ajax({
+                type: "get",
+                url: baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+"&n=30&hasImage="+hasImage,
+                dataType:"json",
+                success: function(data){
+                    if(data.status == 200){
+
+                        console.log("搜索",data);
+                        console.log("搜索url="+baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+"&n=30&hasImage="+hasImage);
+                        //搜索结果总数
+                        totalCountSearch = data.extdata;
+                        $('.pageControl').hide();
+                        if(totalCountSearch > 30){
+                            $('.pageControl').show();
+                        }
+                        data = JSON.parse(data.data);
+                        console.log("搜索",data);
+                        var str = '';
+
+                        var goodIdArr = [];
+                        for (var list in data) {
+                            var imgsLth = 0;
+                            var priceStr = '';
+                            var priceHtml = '';
+                            if(data[list].price == 0){
+                                priceStr = 'Negotiated';
+                                priceHtml = '<span class="goodsRight1"></span><span class="goodsRight2">'+priceStr+'</span>';
+                            }else{
+                                priceStr = data[list].price;
+                                priceHtml = '<span class="goodsRight1">ZMW</span><span class="goodsRight2">'+priceStr+'</span>';
+                            }
+                            goodIdArr.push(data[list].id);
+                            var imgs = data[list].imgs;
+                            if(imgs != null){
+                                imgs = imgs.split(',');
+                                imgsLth = imgs.length;
+                            }
+                            console.log(imgsLth);
+//                            console.log(data[list]);
+                            str += '<div class="row goods">' +
+                                    '<div class="col-xs-3 col-sm-3 goodsLeft">' +
+                                    '<img src='+baseUrl+'/gimg/'+data[list].cimg+'><span class="tip">'+imgsLth+'</span>' +
+                                    '</div>' +
+                                    '<div class="col-xs-6 col-sm-6 goodsMiddle">' +
+                                    '<p class="goodName">'+data[list].contactname+'</p>' +
+                                    '<p class="goodDesc">'+data[list].details+'</p>' +
+                                    '<p class="goodDesc">'+data[list].addr_l1+data[list].addr_l2+data[list].addr_l3+data[list].addr_l4+' ' +
+                                    '<span class="goodDate">'+data[list].pubtime+'</span>' +
+                                    '</p>' +
+                                    '</div>' +
+                                    '<div class="col-xs-3 col-sm-3 goodsRight">'+priceHtml+'</div>' +
+                                    '</div>';
+                        }
+                        $('.goodsBox').empty().append(str);
+
+                        console.log(str == '');
+                        if(str == ''){
+                            $('.goodsBox').empty().append('Sorry,No product found!').css({
+                                'textAlign':'center',
+                                'paddingBottom':'10px'
+                            });
+                        }
+                        console.log($('.goodsBox .goods').length);
+                        //.goodsBox .goods
+                        $('.goodsBox .goods').unbind('click').click(function () {
+                            var index = $(this).index();
+                            var goodId = goodIdArr[index];
+                            localStorage.setItem('goodIdFromCategory',goodId);
+                            window.open("detail.html?id="+goodId);
+//                            window.location.href = "detail.html?id="+goodId;
+
+                        });
+
+                    }else{
+                        commonPopFun(data.msg);
+                    }
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            });
+        }
+
+
+        //用户搜索
+        $('.searchBox .search .searchRight .searchImg').click(function () {
+            var searchKeyWord = $.trim($('.searchBox .search .searchRight .ipt').val());
+            if(searchKeyWord != ''){
+                $('.goodsBox').empty();//清空goodsBox
+                searchPageControl();
+                searchFun(searchKeyWord, startSearch, hasImage);
+            }else{
+//                alert('请输入搜索关键词！');
+            }
+        });
+
+
+
+
+        //通过搜索进入商品列表
+//        var searchOrTab = localStorage.getItem("searchOrTab");
+        var searchOrTab = getParamByUrl('searchOrTab');
+        if(searchOrTab == 'search'){//用户点击搜索进入
+            console.log("用户点击search进入");
+//            var searchKeyWord = localStorage.getItem("searchKeyWord");
+            var searchKeyWord = getParamByUrl('searchKeyWord');
+
+            //修改title
+            $('#categoryTitle').html(searchKeyWord+' kalichimall, make money by your second-hand goods.');
+
+            searchPageControl();
+            searchFun(searchKeyWord,startSearch, hasImage);
+
+
+
+        }else if(searchOrTab == 'tab'){
+            console.log("用户点击tab进入");
+            var cidName = localStorage.getItem("cidName");
+//            cid = localStorage.getItem("cid");
+            cid = getParamByUrl('cid');
+
+            //修改title
+            $('#categoryTitle').html(cidName+' kalichimall, make money by your second-hand goods.');
+
+            $('.searchBox .search .searchLeft .second').html(cidName);//二级标题
+            tabPageControl();
+            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+        }
+
+
+
+
+        function tabPageControl(){
+            $('.pageControl .nextPage').unbind('click').click(function(){
+                startTab += 30 ;
+                if(startTab<=totalCountTab){
+                    tabPageControl();
+                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                }else{
+                    startTab -= 30 ;
+                    alert('已经是最后一页了！');
+                }
+            });
+            $('.pageControl .lastPage').unbind('click').click(function(){
+                startTab -= 30 ;
+                if(startTab >= 0){
+                    tabPageControl();
+                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                }else{
+                    startTab += 30 ;
+                    alert('已经是第一页了！');
+                }
+            });
+        }
+
+        function getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage){
+            /*
+             * ?cid=深层分类id&pmax=400&pmin=300&areaid=区域id&start=&n=&issell=0/1&orderby=price/date&sort=desc/asc
+             过滤条件:分类(cid)、价格区间(pmax,pmin)、区域(area)、是否是售卖(issell,等于1则是售卖(celler)，等于0则是需要(buyer), 默认是售卖)、
+             排序字段(orderby, price 按价格排序，date按时间排序)、排序方式(sort, desc降序、asc升序,  desc 降序 从上往下是降序, asc 升序 从上往下是升序)
+             * */
+            console.log("cid, pmin, pmax, areaid, issell, orderby, sort, start",cid, pmin, pmax, areaid, issell, orderby, sort, startTab);
+            //产品列表查看
+            $.ajax({
+                type: "get",
+                url: baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n=30&hasImage='+hasImage,
+                dataType:"json",
+                success: function(data){
+                    console.log("url="+baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n=30&hasImage='+hasImage);
+                    if (data.status == 200) {
+                        totalCountTab = data.extdata;
+//                        alert(totalCountTab);
+                        $('.pageControl').hide();
+                        if(totalCountTab > 30){
+                            $('.pageControl').show();
+                        }
+                        console.log("产品列表查看",data);
+                        data = JSON.parse(data.data);
+                        console.log("产品列表查看",data);
+                        var str = '';
+                        var goodIdArr = [];
+
+                        for (var list in data) {
+                            var imgsLth = 0;
+                            var priceStr = '';
+                            var priceHtml = '';
+                            if(data[list].price == 0){
+                                priceStr = 'Negotiated';
+                                priceHtml = '<span class="goodsRight1"></span><span class="goodsRight2">'+priceStr+'</span>';
+                            }else{
+                                priceStr = data[list].price;
+                                priceHtml = '<span class="goodsRight1">ZMW</span><span class="goodsRight2">'+priceStr+'</span>';
+                            }
+                            var imgs = data[list].imgs;
+                            if(imgs != null){
+                                imgs = imgs.split(',');
+                                imgsLth = imgs.length;
+                            }
+                            console.log(imgsLth);
+                            goodIdArr.push(data[list].id);
+//                            console.log(data[list]);
+                            str += '<div class="row goods">' +
+                                    '<div class="col-xs-3 col-sm-3 goodsLeft">' +
+                                    '<img src='+baseUrl+'/gimg/'+data[list].cimg+'><span class="tip">'+imgsLth+'</span>' +
+                                    '</div>' +
+                                    '<div class="col-xs-6 col-sm-6 goodsMiddle">' +
+                                    '<p class="goodName">'+data[list].contactname+'</p>' +
+                                    '<p class="goodDesc">'+data[list].details+'</p>' +
+                                    '<p class="goodDesc">'+data[list].addr_l1+data[list].addr_l2+data[list].addr_l3+data[list].addr_l4+' ' +
+                                    '<span class="goodDate">'+data[list].pubtime+'</span>' +
+                                    '</p>' +
+                                    '</div>' +
+                                    '<div class="col-xs-3 col-sm-3 goodsRight">'+priceHtml+'</div>' +
+                                    '</div>';
+                        }
+                        $('.goodsBox').empty().append(str);
+
+                        console.log(str == '');
+
+                        if(str == ''){
+                            $('.goodsBox').empty().append('Sorry, No product found!').css({
+                                'textAlign':'center',
+                                'paddingBottom':'10px'
+                            });
+                        }
+                        console.log($('.goodsBox .goods').length);
+                        //.goodsBox .goods
+                        $('.goodsBox .goods').unbind('click').click(function () {
+                            var index = $(this).index();
+                            var goodId = goodIdArr[index];
+                            localStorage.setItem('goodIdFromCategory',goodId);
+                            window.open("detail.html?id="+goodId);
+//                            window.location.href = "detail.html?id="+goodId;
+
+                        });
+
+
+                    } else {
+                        commonPopFun(data.msg);
+                    }
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            });
+
+        }
+
+    });
+</script>
 </body>
 </html>
