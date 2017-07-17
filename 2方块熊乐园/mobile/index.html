@@ -288,6 +288,15 @@
                 nearFun();
             }
         });
+
+        //点击发布
+        $('.infos .part1').unbind('click').click(function () {
+            window.location.href = "publish.html";
+        });
+        //注册/登陆
+        $('.infos .part2').unbind('click').click(function () {
+            window.location.href = "login.html";
+        });
     });
 </script>
 </body>

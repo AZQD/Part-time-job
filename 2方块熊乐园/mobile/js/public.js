@@ -151,3 +151,9 @@ function commonPopFun2(dataMsg, title, leftBtnName, rightBtnName, fun1, fun2){
         $('body').css('overflow', 'auto');
     });
 }
+
+//favicon
+$('.favicon').attr('href', 'image/favicon.ico');
+
+var token = localStorage.getItem("token");
+var timestamp=new Date().getTime();//获取时间戳

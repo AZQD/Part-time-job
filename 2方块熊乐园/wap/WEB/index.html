@@ -279,7 +279,7 @@
             height: 210px;
         }
         .refreshImgBox .refreshImg .refreshLi{
-            display: none;
+            display: list-item;
             cursor: pointer;
             float: left;
             position: relative;
@@ -540,50 +540,22 @@
             <div class="col-xs-6 col-sm-6 refreshLeft">
                 <span class="refreshName">SOMETHING YOU MAY LIKE</span>
             </div>
-            <div class="col-xs-6 col-sm-6 refreshRight">
+            <!--<div class="col-xs-6 col-sm-6 refreshRight">
                 <img class="refreshImg" src="image/index/refresh.png">
                 <a href="#" class="refreshBtn">REFRESH</a>
-            </div>
+            </div>-->
         </div>
     </aside>
 
     <aside class="refreshImgBox">
         <ul class="refreshImg">
-            <li class="refreshLi">
+            <!--<li class="refreshLi">
                 <img class="goodImg" src="image/index/good1.jpg">
                 <div class="desc row">
                     <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
                     <div class="col-xs-6 col-sm-6 right">1054</div>
                 </div>
-            </li>
-            <li class="refreshLi">
-                <img class="goodImg" src="image/index/good1.jpg">
-                <div class="desc row">
-                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
-                    <div class="col-xs-6 col-sm-6 right">1054</div>
-                </div>
-            </li>
-            <li class="refreshLi">
-                <img class="goodImg" src="image/index/good1.jpg">
-                <div class="desc row">
-                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
-                    <div class="col-xs-6 col-sm-6 right">1054</div>
-                </div>
-            </li>
-            <li class="refreshLi">
-                <img class="goodImg" src="image/index/good1.jpg">
-                <div class="desc row">
-                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
-                    <div class="col-xs-6 col-sm-6 right">1054</div>
-                </div>
-            </li>
-            <li class="refreshLi">
-                <img class="goodImg" src="image/index/good1.jpg">
-                <div class="desc row">
-                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
-                    <div class="col-xs-6 col-sm-6 right">1054</div>
-                </div>
-            </li>
+            </li>-->
         </ul>
     </aside>
 
@@ -919,6 +891,51 @@
                 }
             },
             error: function (error) {
+                console.log(error);
+            }
+        });
+
+
+
+        //.refreshImgBox .refreshImg
+
+        /*
+        * <li class="refreshLi">
+         <img class="goodImg" src="image/index/good1.jpg">
+         <div class="desc row">
+         <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+         <div class="col-xs-6 col-sm-6 right">1054</div>
+         </div>
+         </li>
+        * */
+        //refreshImgBox 其实也就是recently
+        $.ajax({
+            type: "get",
+            url: baseUrl + "/apigateway/getgoods?n=5",
+            success: function (data) {
+                if (data.status == 200) {
+                    data = JSON.parse(data.data);
+                    console.log("recently", data);
+                    for(var i=0; i<data.length; i++){
+                        var price = data[i].price;
+                        if(price == 0){
+                            price = 'Negotiated';
+                        }
+                        $('.refreshImgBox .refreshImg').append(
+                            '<li class="refreshLi">' +
+                            '<img class="goodImg" src='+baseImgSrc+data[i].cimg+'>' +
+                            '<div class="desc row">' +
+                            '<div class="col-xs-6 col-sm-6 left">'+data[i].title+'</div>' +
+                            '<div class="col-xs-6 col-sm-6 right">'+price+'</div>' +
+                            '</div>' +
+                            '</li>'
+                        );
+                    }
+                } else {
+                    commonPopFun1(data.msg);
+                }
+            },
+            error:function(error){
                 console.log(error);
             }
         });
