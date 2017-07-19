@@ -541,9 +541,7 @@
 <script type="text/javascript" src="js/searchBoxRight.js"></script>
 <script type="text/javascript">
     $(function(){
-
         //用户未登录时弹窗
-
         $('.publishPopBox .tipOffBox .confirmBox .loginNowBtn').unbind('click').click(function(){
             window.location.href = "login.html?goLogin="+1;
         });
@@ -574,7 +572,7 @@
                 console.log($("#upfile1").get(0).files[0]);
                 fd.append("upfile", $("#upfile1").get(0).files[0]);
                 $.ajax({
-                    url: "http://www.kalichimall.com/apigateway/upfile",
+                    url: baseUrl+"/apigateway/upfile",
                     type: "POST",
                     processData: false,
                     contentType: false,
@@ -604,7 +602,7 @@
                                     console.log($("#upfile2").get(0).files[0]);
                                     fd.append("upfile", $("#upfile2").get(0).files[0]);
                                     $.ajax({
-                                        url: "http://www.kalichimall.com/apigateway/upfile",
+                                        url: baseUrl+"/apigateway/upfile",
                                         type: "POST",
                                         processData: false,
                                         contentType: false,
@@ -634,7 +632,7 @@
                                                         console.log($("#upfile3").get(0).files[0]);
                                                         fd.append("upfile", $("#upfile3").get(0).files[0]);
                                                         $.ajax({
-                                                            url: "http://www.kalichimall.com/apigateway/upfile",
+                                                            url: baseUrl+"/apigateway/upfile",
                                                             type: "POST",
                                                             processData: false,
                                                             contentType: false,
@@ -663,7 +661,7 @@
                                                                             console.log($("#upfile4").get(0).files[0]);
                                                                             fd.append("upfile", $("#upfile4").get(0).files[0]);
                                                                             $.ajax({
-                                                                                url: "http://www.kalichimall.com/apigateway/upfile",
+                                                                                url: baseUrl+"/apigateway/upfile",
                                                                                 type: "POST",
                                                                                 processData: false,
                                                                                 contentType: false,
@@ -1020,55 +1018,105 @@
 
 
                 //执行提交
-                var pubGoodInfo = {
-                    "token":token, 			//用户登录凭证，如果是匿名发布则留空""
-                    "cid":cid.toString(),				//产品分类ID (需调整)
-                    "issell":issell,		//是否是出售，"1"为出售，"0"为需求
-                    "goodstatus":goodstatus,		//产品新旧,"0","1","2","3","4","5"...
-                    "price":priceText.toString(),			//价格
-                    "title":$('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val(),		//标题
-                    "details":$('.sortBox .sort .partInner2 .partInner2Box .right .detailText').val(),	//产品详情
-                    "addr_l1":addr_l1.toString(),			//一级地址 ID
-                    "addr_l2":addr_l2.toString(),			//二级地址 ID
-                    "addr_l3":"0",			//三级地址 ID
-                    "addr_l4":$('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val(),			//详细地址
-                    "contactname":$('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val(),	//联系人姓名
-                    "phone":$('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(),		//联系人手机
-                    "imgs":imgIdAll				//产品图片ID，图片ID通过图片上传接口获得
-                };
-                console.log("pubGoodInfo", pubGoodInfo);
-                console.log(baseImgSrc+imgIdAll.split(',')[0]);
-                console.log(baseImgSrc+imgIdAll.split(',')[1]);
-                console.log(baseImgSrc+imgIdAll.split(',')[2]);
-                console.log(baseImgSrc+imgIdAll.split(',')[3]);
+                var needUpdate = getParamByUrl('needUpdate');
+                var updatepubcontentId = getParamByUrl('updatepubcontentId');
+                console.log('updatepubcontentId='+updatepubcontentId);
+                if(needUpdate == 1){//编辑商品
+                    var updateGoodInfo = {
+                        "token":token, 			//用户登录凭证，如果是匿名发布则留空""
+                        "id":updatepubcontentId, //需要编辑的商品的id
+                        "cid":cid.toString(),				//产品分类ID (需调整)
+                        "issell":issell,		//是否是出售，"1"为出售，"0"为需求
+                        "goodstatus":goodstatus,		//产品新旧,"0","1","2","3","4","5"...
+                        "price":priceText.toString(),			//价格
+                        "title":$('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val(),		//标题
+                        "details":$('.sortBox .sort .partInner2 .partInner2Box .right .detailText').val(),	//产品详情
+                        "addr_l1":addr_l1.toString(),			//一级地址 ID
+                        "addr_l2":addr_l2.toString(),			//二级地址 ID
+                        "addr_l3":"0",			//三级地址 ID
+                        "addr_l4":$('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val(),			//详细地址
+                        "contactname":$('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val(),	//联系人姓名
+                        "phone":$('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(),		//联系人手机
+                        "imgs":imgIdAll				//产品图片ID，图片ID通过图片上传接口获得
+                    };
+                    console.log("updateGoodInfo", updateGoodInfo);
 
-                $.ajax({
-                    type:"POST",
-                    url:baseUrl + "/apigateway/pubgood",
-                    dataType:"json",
-                    data:JSON.stringify(pubGoodInfo),
-                    success:function(data){
-                        console.log(data);
-                        if(data.status == 200){
+                    $.ajax({
+                        type:"POST",
+                        url:baseUrl + "/apigateway/updatepubcontent",
+                        dataType:"json",
+                        data:JSON.stringify(updateGoodInfo),
+                        success:function(data){
+                            console.log(data);
+                            if(data.status == 200){
 //                                alert(data.status);
-                            //保存id，点击CLICK IT 进入该商品详情页
-                            localStorage.setItem('goodIdFromCategory',data.data);
-                            $('.sortBox .sort .part').removeClass("active").eq(2).addClass("active");
-                            $('.sortBox .sort .partInner').hide().eq(2).show();
-                            $('.sortBox .sort .space .changeCid').hide();
+                                //保存id，点击CLICK IT 进入该商品详情页
+                                localStorage.setItem('goodIdFromCategory',data.data);
+                                $('.sortBox .sort .part').removeClass("active").eq(2).addClass("active");
+                                $('.sortBox .sort .partInner').hide().eq(2).show();
+                                $('.sortBox .sort .space .changeCid').hide();
 
-                            $('.sortBox .sort .partInner3 .completeBtn').click(function(){
-                                window.open("detail.html?id="+data.data);
+                                $('.sortBox .sort .partInner3 .completeBtn').click(function(){
+                                    window.open("detail.html?id="+updatepubcontentId);
 //                                window.location.href = "detail.html?id="+data.data;
-                            });
-                        }else{
-                            commonPopFun(data.msg);
+                                });
+                            }else{
+                                commonPopFun(data.msg);
+                            }
+                        },
+                        error:function(error){
+                            console.log(error);
                         }
-                    },
-                    error:function(error){
-                        console.log(error);
-                    }
-                });
+                    });
+
+                }else{//发布商品
+                    var pubGoodInfo = {
+                        "token":token, 			//用户登录凭证，如果是匿名发布则留空""
+                        "cid":cid.toString(),				//产品分类ID (需调整)
+                        "issell":issell,		//是否是出售，"1"为出售，"0"为需求
+                        "goodstatus":goodstatus,		//产品新旧,"0","1","2","3","4","5"...
+                        "price":priceText.toString(),			//价格
+                        "title":$('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val(),		//标题
+                        "details":$('.sortBox .sort .partInner2 .partInner2Box .right .detailText').val(),	//产品详情
+                        "addr_l1":addr_l1.toString(),			//一级地址 ID
+                        "addr_l2":addr_l2.toString(),			//二级地址 ID
+                        "addr_l3":"0",			//三级地址 ID
+                        "addr_l4":$('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val(),			//详细地址
+                        "contactname":$('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val(),	//联系人姓名
+                        "phone":$('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(),		//联系人手机
+                        "imgs":imgIdAll				//产品图片ID，图片ID通过图片上传接口获得
+                    };
+                    console.log("pubGoodInfo", pubGoodInfo);
+
+                    $.ajax({
+                        type:"POST",
+                        url:baseUrl + "/apigateway/pubgood",
+                        dataType:"json",
+                        data:JSON.stringify(pubGoodInfo),
+                        success:function(data){
+                            console.log(data);
+                            if(data.status == 200){
+//                                alert(data.status);
+                                //保存id，点击CLICK IT 进入该商品详情页
+                                localStorage.setItem('goodIdFromCategory',data.data);
+                                $('.sortBox .sort .part').removeClass("active").eq(2).addClass("active");
+                                $('.sortBox .sort .partInner').hide().eq(2).show();
+                                $('.sortBox .sort .space .changeCid').hide();
+
+                                $('.sortBox .sort .partInner3 .completeBtn').click(function(){
+                                    window.open("detail.html?id="+data.data);
+//                                window.location.href = "detail.html?id="+data.data;
+                                });
+                            }else{
+                                commonPopFun(data.msg);
+                            }
+                        },
+                        error:function(error){
+                            console.log(error);
+                        }
+                    });
+                }
+
 
 
 

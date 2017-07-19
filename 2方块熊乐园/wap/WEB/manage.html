@@ -876,6 +876,7 @@
 
 
         function getuserpubinfo(status, start, number){//status=0表示在线，status=1表示下线，status=2表示完成
+            console.log('status, start, number',status, start, number);
             $.ajax({
                 type: "get",
                 url: baseUrl+"/apigateway/getuserpubinfo?token="+token+"&start="+start+"&n="+number+"&status="+status,
@@ -902,7 +903,11 @@
                         }
 
                         $('.infoBox .info .infoWrap .infoRight .part2 .listUl').empty();
+                        var statusArr = [];
+                        var goodidArr = [];
                         for(var i=0; i<data.length; i++){
+                            statusArr.push(data[i].status);
+                            goodidArr.push(data[i].id);
                             var str = '';
                             if(data[i].status == 0){//status=0表示在线
                                 str = '<a href="javascript:void(0);" class="editBtn">Edit</a><br/><a href="###" style="display: none" class="goodStatus unpublish">UNPUBLISH</a><a href="###" style="display: none" class="goodStatus finished">FINISHED</a>';
@@ -938,6 +943,65 @@
                                     $(this).find('.goodStatus').hide();
                                 }
                         );
+                        
+
+                        //点击unpublish或者publish
+                        $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.unpublish', 'click',function(){
+                            console.log(statusArr);
+                            console.log(goodidArr);
+                            var index = $(this).parents('.listLi').index();
+                            var needStatus;
+                            if(statusArr[index] == 1){
+                                needStatus = 0;
+                            }else if(statusArr[index] == 0){
+                                needStatus = 1;
+                            }
+
+                            //更新发布状态
+                            $.ajax({
+                                type: "get",
+                                url: baseUrl+'/apigateway/updatepubstatus?token='+token+'&status='+needStatus+'&goodid='+goodidArr[index],
+                                dataType:"json",
+                                success: function(data){
+                                    console.log('更新发布状态',data);
+                                },
+                                error:function(error){
+                                    console.log(error);
+                                }
+                            });
+                        });
+
+                        //点击finished
+                        $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.finished', 'click',function(){
+                            console.log(statusArr);
+                            console.log(goodidArr);
+                            var index = $(this).parents('.listLi').index();
+
+                            //更新发布状态
+                            $.ajax({
+                                type: "get",
+                                url: baseUrl+'/apigateway/updatepubstatus?token='+token+'&status='+2+'&goodid='+goodidArr[index],
+                                dataType:"json",
+                                success: function(data){
+                                    console.log('更新发布状态',data);
+                                },
+                                error:function(error){
+                                    console.log(error);
+                                }
+                            });
+                        });
+
+
+                        //点击edit
+                        $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.editBtn', 'click',function(){
+                            console.log(statusArr);
+                            console.log(goodidArr);
+                            var index = $(this).parents('.listLi').index();
+                            window.open('publish.html?needUpdate=1&updatepubcontentId='+goodidArr[index]);
+                            var updatepubcontentId = goodidArr[index];
+                        });
+                        
+                        
 
                     }
                 },
