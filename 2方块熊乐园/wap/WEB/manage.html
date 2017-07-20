@@ -707,6 +707,9 @@
                     headLogo = data.logo;
                     //修改用户头像
                     $(".a-upload4").on("change","input[type='file']",function(){
+
+                        //goOn
+                        $('.managePopBox .managePop .imgBox img').attr('src', '');
                         $('.uploadLogo4').hide();
                         console.log($(this));
                         console.log($(this).val());
@@ -722,7 +725,7 @@
                             console.log($("#upfile4").get(0).files[0]);
                             fd.append("upfile", $("#upfile4").get(0).files[0]);
                             $.ajax({
-                                url: "http://www.kalichimall.com/apigateway/upfile",
+                                url: baseUrl+"/apigateway/upfile",
                                 type: "POST",
                                 processData: false,
                                 contentType: false,

@@ -1,5 +1,10 @@
 /*.searchBox .search .menuUl .menuLi .menuLiLink*/
 /*跳转到index页面*/
+
+if($('.searchBox .search .searchLeft .second').html() == ''){
+    $('.searchBox .search .searchLeft .second').html('...');
+}
+
 $('.searchBox .search .searchLeft .fist').click(function(){
     window.location.href = 'index.html';
 });

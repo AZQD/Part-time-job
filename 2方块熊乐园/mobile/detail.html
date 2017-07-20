@@ -2,9 +2,588 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title id="detailTitle"></title>
+    <meta name="keywords" content="kalichi,mall, kalichimall,vehicle,sedan,suv,digtal,cellphone,computer,watch,bulding,family,house,office,life goods,clothes,shoes,furniture,sell,buy,second,free">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <meta name="format-detection"content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <link class="favicon" href="" rel="shortcut icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/bootstraptc.min.css">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/ppublic.min.css">
+    <link rel="stylesheet" href="css/detail.css">
 </head>
 <body>
-detail
+<section class="container">
+    <aside class="row headerBox">
+        <div class="col-xs-4 col-sm-4 left"><img class="logo" src="image/index/logo.png"></div>
+        <div class="col-xs-4 col-sm-4 indexMiddle">
+            <span class="address"></span>
+            <ul class="addressUl" style="display: none;">
+                <!--<li class="addressLi">01</li>-->
+            </ul>
+        </div>
+        <div class="col-xs-4 col-sm-4 right">
+            <img class="search" src="image/index/search.png">
+            <span class="logout" style="display: none;">Logout</span>
+        </div>
+    </aside>
+
+    <aside class="detailBox">
+        <div class="row detail">
+            <!--detailLeft-->
+            <div class="col-xs-12 col-sm-12 detailLeft">
+                <a href="###" class="tipOff">TIP OFF</a>
+                <h3 class="goodName"></h3>
+                <p class="attr">Add&nbsp;&nbsp;:<span class="addressText"></span></p>
+                <div class="row goodDesc">
+                    <div class="col-xs-12 col-sm-12 goodDescLeft">
+                        <!--<div class="bigImg"><img class="bigImgPic" src="image/detailPage/bigImg1.png"></div>-->
+                        <div class="bigImg"><img class="bigImgPic" src=""></div>
+                        <div class="littleImg row">
+                            <div class="col-xs-2 col-sm-2 leftFlag"><img src="image/detailPage/leftFlag.png"></div>
+                            <div class="img_ulBox">
+                                <ul class="col-xs-8 col-sm-8 img_ul">
+                                    <!--<li class="img_li">
+                                        <img src="image/detailPage/littleImg1.png">
+                                    </li>
+                                    <li class="img_li">
+                                        <img src="image/detailPage/littleImg1.png">
+                                    </li>
+                                    <li class="img_li">
+                                        <img src="image/detailPage/littleImg1.png">
+                                    </li>-->
+                                </ul>
+                            </div>
+                            <div class="col-xs-2 col-sm-2 rightFlag"><img src="image/detailPage/rightFlag.png"></div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 goodDescRight">
+                        <p class="attr attr1">Price:<span id="mianYi"><span class="num1 price"></span>&nbsp;<span class="num2 aboutNum" style="display: none;">ZMW</span></span></p>
+                        <p class="attr">Add&nbsp;&nbsp;:<span class="address"></span></p>
+                        <div class="userBtn">
+                            <a href="javascript:void(0);" class="btnLink btn2 btn3"><img class="likeImg"/><span></span></a>
+                            <ul class="share-buttons">
+                                <li><a href="https://www.facebook.com/sharer/sharer.php?u=编码后的跳转地址&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="social_flat_rounded_rects_svg/Facebook.svg"></a></li>
+                                <li><a href="https://twitter.com/intent/tweet?source=编码后的跳转地址&text=分享文本" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="social_flat_rounded_rects_svg/Twitter.svg"></a></li>
+                                <li><a href="https://plus.google.com/share?url=编码后的跳转地址" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Google+" src="social_flat_rounded_rects_svg/Google+.svg"></a></li>
+
+                            </ul>
+                        </div>
+                    <!--</div>-->
+                </div>
+                <div class="tabToggle">
+                    <a href="###" class="tabLink active">DETAIL</a><a href="###" class="tabLink tabLink2">COMMENTS</a>
+                </div>
+                <div class="aboutContent" id="detailContent" style="display: none;"></div>
+                <div class="aboutContent" id="commentsContent" style="display: none;">
+
+                    <!--facebook发布评论-->
+                    <!--<div class="fb-comments row" data-href="http://www.kalichimall.com:81/detail.html?id=254"></div>-->
+                    <div class="fb-comments row" id="fackbookNeedId"></div>
+                    <div id="fb-root"></div>
+                    <script>(function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0];
+                        if (d.getElementById(id)) return;
+                        js = d.createElement(s); js.id
+
+                                = id;
+                        js.src = "//connect.facebook.net/en/sdk.js#xfbml=1&version=v2.8&appId=612348248960723";
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }(document, 'script', 'facebook-jssdk'));</script>
+
+                </div>
+            </div>
+        </div>
+    </aside>
+
+
+</section>
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript">
+    $(function(){
+
+        //headerBox
+        //显示地址列表
+        var areaId = localStorage.getItem("areaId");
+        var areaName = localStorage.getItem("areaName");
+        $.ajax({
+            type:'get',
+            url:baseUrl+"/apigateway/areas",
+            success:function(data){
+                if (data.status == 200){
+                    data = JSON.parse(data.data);
+                    console.log("获得区域信息", data);
+                    var areaIdArr = [];
+                    var areaNameArr = [];
+                    for (var areas in data){
+                        areaIdArr.push(data[areas].id);
+                        areaNameArr.push(data[areas].name);
+                    }
+                    console.log(areaNameArr);
+                    console.log(areaIdArr);
+                    if(areaId == null){
+                        localStorage.setItem('areaId', areaIdArr[0]);
+                        localStorage.setItem('areaName', areaNameArr[0]);
+                        $('.headerBox .indexMiddle .address').html(areaNameArr[0]);
+                    }else{
+                        $('.headerBox .indexMiddle .address').html(areaName);
+                    }
+
+                    //动态添加addressUl
+                    for(var i=0; i<areaNameArr.length; i++){
+                        $('.headerBox .indexMiddle .addressUl').append('<li class="addressLi">'+areaNameArr[i]+'</li>');
+                    }
+
+                    //点击地址
+                    $('.headerBox .indexMiddle .address').unbind('click').click(function(){
+                        $('.headerBox .indexMiddle .addressUl').toggle();
+                    });
+
+                    //选择地址
+                    $('.headerBox .indexMiddle .addressUl .addressLi').unbind('click').click(function(){
+                        var index = $(this).index();
+                        localStorage.setItem('areaId', areaIdArr[index]);
+                        localStorage.setItem('areaName', areaNameArr[index]);
+                        $('.headerBox .indexMiddle .address').html(areaNameArr[index]);
+                        $('.headerBox .indexMiddle .addressUl').hide();
+                    });
+
+                }else{
+                    commonPopFun1(data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+
+        /*facebook发布评论*/
+        $('#fackbookNeedId').attr('data-href', "http://www.kalichimall.com:81/detail.html"+window.location.search);
+
+
+        //tab切换
+        $('.detailBox .detail .detailLeft .tabToggle .tabLink').click(function () {
+            var index = $(this).index();
+            $('.detailBox .detail .detailLeft .tabToggle .tabLink').removeClass("active").eq(index).addClass("active");
+        });
+
+
+        //获得指定产品的产品信息
+//        var goodIdFromCategory = localStorage.getItem("goodIdFromCategory");
+        var goodIdFromCategory = getParamByUrl('id');
+//        alert(goodIdFromCategory);
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/getgood?id="+goodIdFromCategory,
+//            url: baseUrl+"/apigateway/getgood?id="+4,
+            dataType:"json",
+            success: function(data){
+                if(data.status == 200){
+                    data = JSON.parse(data.data);
+                    console.log("获得指定产品的产品信息",data);
+                    console.log(baseUrl+"/apigateway/getgood?id="+goodIdFromCategory);
+
+                    //修改title
+                    $('#detailTitle').html(data.title + data.price +" kalichimall, make money by your second-hand goods.");
+
+
+                    //tab切换
+                    if($('.detailBox .detail .detailLeft .tabToggle .tabLink').eq(0).hasClass('active')){
+                        $('#detailContent').html(data.title);
+                    }
+                    $('.detailBox .detail .detailLeft .tabToggle .tabLink').click(function () {
+                        var index = $(this).index();
+                        $('.detailBox .detail .detailLeft .tabToggle .tabLink').removeClass("active").eq(index).addClass("active");
+                    });
+
+                    //tab切换
+                    $('#detailContent').show().html(data.details);
+                    $('.detailBox .detail .detailLeft .tabToggle .tabLink').unbind('click').click(function () {
+                        var index = $(this).index();
+                        $('.detailBox .detail .detailLeft .tabToggle .tabLink').removeClass("active").eq(index).addClass("active");
+                        if($('.detailBox .detail .detailLeft .tabToggle .tabLink').eq(0).hasClass('active')){
+                            $('#commentsContent').hide();
+                            $('#detailContent').show().html(data.details);
+                        }
+                        if($('.detailBox .detail .detailLeft .tabToggle .tabLink').eq(1).hasClass('active')){
+                            $('#detailContent').hide();
+                            $('#commentsContent').show();
+                        }
+                    });
+
+
+                    //保存当前商品的发布者uid
+                    var pubUid = data.uid;
+                    localStorage.setItem('pubUid',pubUid);
+
+
+                    //获得发布者的售卖信息
+                    //.detailBox .detail .detailRight .selling .sellingListBox
+                    //<div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src="image/detailPage/selling1.jpg"></div>
+                    $.ajax({
+                        type: "get",
+                        url: baseUrl+"/apigateway/getselling_ext?uid="+pubUid+'&start=0&n=',
+                        dataType:"json",
+                        success: function(data){
+                            if(data.status == 200){
+                                data = JSON.parse(data.data);
+                                console.log("售卖信息",data);
+                                $('#publishNum').html(data.length);
+                                var goodIdArr = [];
+                                for(var i=0; i<data.length; i++){
+                                    goodIdArr.push(data[i].id);
+                                }
+                                if((pubUid == 0)){
+                                    for(var i=0; i<data.length; i++){
+                                        $('.detailBox .detail .detailRight .selling .sellingListBox').append(
+                                                '<div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src='+data.cimg+'></div>'
+                                        );
+                                    }
+                                }else{
+                                    if(data.length <= 4){
+                                        for(var i=0; i<data.length; i++){
+                                            $('.detailBox .detail .detailRight .selling .sellingListBox').append(
+                                                    '<div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src='+data.cimg+'></div>'
+                                            );
+                                        }
+                                    }else{
+                                        $('.detailBox .detail .detailRight .selling .more').show();
+                                        for(var i=0; i<4; i++){
+                                            $('.detailBox .detail .detailRight .selling .sellingListBox').append(
+                                                    '<div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src='+data.cimg+'></div>'
+                                            );
+                                        }
+                                    }
+                                }
+
+                                $('.detailBox .detail .detailRight .selling .sellingListBox .sellingList').unbind('click').click(function () {
+                                    var index = $(this).index();
+//                                    alert(goodIdArr[index]);
+                                    window.open("detail.html?id="+goodIdArr[index]);
+                                });
+
+                                $('.detailBox .detail .detailRight .selling .more .moreLink').unbind('click').click(function () {
+                                    window.open("profile.html?pubUid="+pubUid);
+                                });
+
+                            }else{
+                                commonPopFun(data.msg);
+                            }
+                        },
+                        error:function(error){
+                            console.log(error);
+                        }
+                    });
+
+
+                    var imgs = data.imgs;
+                    var imgsArr = imgs.split(',');
+                    console.log(imgsArr);
+                    for(var i=0; i<imgsArr.length; i++){
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li"><img src='+baseUrl+'/gimg/'+imgsArr[i]+'></li>');
+                    }
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', baseUrl+'/gimg/'+imgsArr[0]);
+                    var moveNum = 0;
+                    var imgsLength = imgsArr.length;
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .leftFlag').click(function(){
+                        if(moveNum != 0){
+                            moveNum --;
+                            $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').animate({'left': -77*moveNum+'px'}, 'ease');
+                        }
+                    });
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .rightFlag').click(function(){
+                        if((imgsLength > 4) && (moveNum<(imgsLength-4))){
+                            moveNum ++;
+                            $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').animate({'left': -82*moveNum+'px'}, 'ease');
+                        }
+                    });
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').click(function(){
+                        var index = $(this).index();
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', $(this).children('img').attr('src'));
+
+                    });
+
+                    //获取title
+                    $('.detailBox .detail .detailLeft .goodName').html(data.title);
+
+                    //locationArr2  地址，3，发布价格
+
+                    //获取地址
+                    var locationArr1 = [];
+                    var locationIdArr1 = [];
+                    var locationArr2 = [];
+                    var addressStr = '';
+                    var addressStr2 = '';
+                    $.ajax({
+                        type: "get",
+                        url: baseUrl+"/apigateway/areas",
+                        dataType:"json",
+                        success: function(data2){
+                            if (data2.status == 200){
+                                data2 = JSON.parse(data2.data);
+                                console.log("获得区域信息2", data2);
+                                var locationArr1 = [];
+                                var locationArr2 = [];
+                                for (var sort in data2){
+                                    locationArr1.push(data2[sort].name);
+                                    locationIdArr1.push(data2[sort].id);
+                                    locationArr2.push(data2[sort].sub);
+                                }
+
+                                console.log('locationArr1',locationArr1);
+                                console.log('locationArr2',locationArr2);
+                                for(let i=0; i<locationArr1.length; i++){
+                                    if(locationIdArr1[i] == data.addr_l1){
+//                                        alert(i);
+                                        console.log(i);
+                                        addressStr += locationArr1[i];
+
+                                        for(var j=0; j<locationArr2[i].length; j++){
+                                            for (var info in locationArr2[i][j]){
+                                                //console.log('locationArr2[i][j][info]',locationArr2[i][j]);
+                                                if(locationArr2[i][j].id == data.addr_l2){
+//                                                    alert(j);
+                                                    addressStr2 = locationArr2[i][j].name;
+                                                }
+                                            }
+                                        }
+
+
+                                    }
+                                }
+//                                $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .attr .address').html(addressStr +' '+addressStr2 +' '+ data.addr_l4);
+                                $('.detailBox .detail .detailLeft .attr .addressText').html(addressStr +' '+addressStr2 +' '+ data.addr_l4);
+
+
+                            }
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    });
+
+
+                    //price
+                    if(data.price == 0){
+                        $('#mianYi').html("Negotiated").css({"color":'#FF4720',"paddingLeft":'8px'});
+                    }else{
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .attr .aboutNum').show();
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .attr .price').html(data.price);
+                    }
+
+
+
+                    //获得商品发布者用户信息
+                    $.ajax({
+                        type: "get",
+                        url: baseUrl+"/apigateway/getuserinfo_pub?uid="+pubUid+"&token="+token,
+                        dataType:"json",
+                        success: function(data){
+                            console.log('获得商品发布者用户信息', data);
+                            data = data.data;
+                            //详情页信息
+                            $('.detailBox .detail .detailRight .userInfo .userInfoImg').show().attr('src',baseImgSrc+data.logo);
+                            $('.detailBox .detail .detailRight .name').html(data.nickname);
+                            $('.detailBox .detail .detailRight .goHome').html(data.nickname + '\'s home').click(function(){
+                                window.location.href = 'profile.html?pubUid='+pubUid;
+                            });
+
+
+                            //匿名发布隐藏
+                            if(data.id != 0){
+                                $('.detailBox .detail .detailRight .talk').css('visibility', 'inherit');
+                            }
+                        },
+                        error:function(error){
+                            console.log(error);
+                        }
+                    });
+
+
+
+
+                }else{
+                    alert(data.status);
+//                    commonPopFun(data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+
+
+        //点击收藏/取消收藏
+
+        //获得收藏信息
+        if(token == null){
+            token = '';
+        }
+        var checkwishInfo = {
+            "token":token,
+            "goodid":4,
+            "timestamp":timestamp
+        };
+        $.ajax({
+            type:"POST",
+            url:baseUrl + "/apigateway/checkwish",
+            dataType:"json",
+            data:JSON.stringify(checkwishInfo),
+            success:function(data){
+                console.log(data);
+                if(data.status == 200){
+                    console.log("检测指定商品是否被当前用户收藏",data);
+                    var isCollect;
+                    if(data.data == 0){
+                        isCollect = false;
+                    }else if(data.data == 1){
+                        isCollect = true;
+                    }
+
+                    if(isCollect == true){//如果默认已经收藏
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 img').attr("src", "image/detailPage/remove.png");
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 span').html("Remove");
+
+                    }else{//如果默认未收藏
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 img').attr("src", "image/detailPage/asMyWish.png");
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 span').html("As my wish");
+                    }
+
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3').click(function () {
+                        if(token == null){
+                            alert('请先登录~');
+                        }else{
+                            if(isCollect == true){//如果默认已经收藏
+                                //删除收藏
+                                var delwishInfo = {
+                                    "token":token, 			//用户登录凭证，必须登录状态
+                                    "goodid":"4",			//产品ID
+                                    "timestamp":timestamp
+                                };
+                                $.ajax({
+                                    type:"POST",
+                                    url:baseUrl + "/apigateway/delwish",
+                                    dataType:"json",
+                                    data:JSON.stringify(delwishInfo),
+                                    success:function(data){
+                                        //console.log(data);
+                                        if(data.status == 200){
+//                    data = JSON.parse(data.data);
+                                            console.log("删除收藏",data);
+                                            isCollect = false;
+                                            $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 img').attr("src", "image/detailPage/asMyWish.png");
+                                            $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 span').html("As my wish");
+                                        }else if(data.status == 501){//token失效
+                                            commonPopFun(data.msg);
+                                        }else{
+                                            commonPopFun(data.msg);
+                                        }
+                                    },
+                                    error:function(error){
+                                        console.log(error);
+                                    }
+                                });
+                            }else{//如果默认未收藏
+                                //提交收藏
+                                var putwishInfo = {
+                                    "token":token, 			//用户登录凭证，必须登录状态
+                                    "goodid":"4",			//产品ID
+                                    "timestamp":timestamp
+                                };
+                                $.ajax({
+                                    type:"POST",
+                                    url:baseUrl + "/apigateway/putwish",
+                                    dataType:"json",
+                                    data:JSON.stringify(putwishInfo),
+                                    success:function(data){
+                                        //console.log(data);
+                                        if(data.status == 200){
+//                    data = JSON.parse(data.data);
+                                            console.log("提交收藏",data);
+                                            $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 img').attr("src", "image/detailPage/remove.png");
+                                            $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 span').html("Remove");
+                                            isCollect = true;
+                                        }else if(data.status == 501){//token失效
+                                            commonPopFun(data.msg);
+                                        }else{
+                                            commonPopFun(data.msg);
+                                        }
+                                    },
+                                    error:function(error){
+                                        console.log(error);
+                                    }
+                                });
+                            }
+                        }
+
+                    });
+
+                }else if(data.status == 501){//token失效
+//                    commonPopFun(data.msg);
+                }else{
+//                    commonPopFun(data.msg);
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+
+
+        ////点击tipOff
+        $('.detailBox .detail .detailLeft .tipOff').click(function(event){
+            event.stopPropagation();
+            $('#tipOffPopBox').show();
+        });
+        $('.tipOffPopBox .tipOffBox').click(function(event){
+            event.stopPropagation();
+        });
+        $('.tipOffPopBox').click(function(event){
+            event.stopPropagation();
+            $('.tipOffPopBox').hide();
+        });
+        $('.tipOffPopBox .tipOffBox .submit .submitBtn').click(function(event){
+            event.stopPropagation();
+            $('.tipOffPopBox').hide();
+            //提交投诉
+            if(token == null){
+                token = '';
+            }
+            var subtipoffInfo = {
+                "token":token, 			//有token,传token,没有就不传了，当做匿名了
+                "goodid":goodIdFromCategory,			//产品ID
+                "content":$('.tipOffPopBox .tipOffBox #detail').val(),			//投诉内容
+                "phonenumber":$('.tipOffPopBox .tipOffBox #content').val(),		//联系电话
+                "timestamp":timestamp			//时间戳
+            };
+            $.ajax({
+                type:"POST",
+                url:baseUrl + "/apigateway/subtipoff",
+                dataType:"json",
+                data:JSON.stringify(subtipoffInfo),
+                success:function(data){
+                    if(data.status == 200){
+                        console.log('提交投诉', data);
+                        commonPopFun(data.data);
+                    }else{
+                        commonPopFun(data.data);
+                    }
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            });
+        });
+
+
+    });
+</script>
 </body>
 </html>

@@ -359,9 +359,27 @@
         .pageControl .pageBtn{
 
         }
+        #dongHua{
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /*background-color: RGBA(0, 0, 0, 0.6);*/
+            /*background-color: #000000;*/
+            /*opacity: .6;*/
+            color: #f00;
+            line-height: 100%;
+            text-align: center;
+            z-index: 999999999;
+        }
+        #dongHua img{
+            width: 50px;
+            height: 50px;
+        }
     </style>
 </head>
 <body>
+<section id="dongHua"><img src="image/categoryDetail/loading.gif" alt=""></section>
 <section class="commonPopBox" style="display: none;">
     <div class="commonPop">
         <h3 class="title"></h3>
@@ -587,17 +605,40 @@
 <!--<script type="text/javascript" src="js/searchBoxLeft.js"></script>-->
 <script type="text/javascript">
     $(function(){
+
+        //loading动画
+        $('#dongHua').css('paddingTop',$('body').height()/2);
+
+        //
+        var lastGetGoodFun;
+        var searchKeyWord;
+
         var cid;
 
         var hasImage = '';//默认空字符串，选择hasimage为1，取消选择为0
         var hasImageClickNum = 0;
         $('#hasImage').change(function(){
+
             if(hasImageClickNum%2 == 0){
                 hasImage = 1;
-                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                if(lastGetGoodFun == 'searchFun'){
+                    searchPageControl();
+                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
+//                    searchFun(searchKeyWord,startSearch, hasImage);
+                }else{
+                    tabPageControl();
+                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                }
             }else {
                 hasImage = 0;
-                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                if(lastGetGoodFun == 'searchFun'){
+                    searchPageControl();
+//                    searchFun(searchKeyWord,startSearch, hasImage);
+                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
+                }else{
+                    tabPageControl();
+                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                }
             }
             console.log('hasImage', hasImage);
             hasImageClickNum ++;
@@ -622,8 +663,14 @@
             console.log("issell="+issell);
             $('.tabsBox .tabs .tabsLeft .tabLink').removeClass("active");
             $(this).addClass("active");
-            tabPageControl();
-            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+            if(lastGetGoodFun == 'searchFun'){
+                searchPageControl();
+//                searchFun(searchKeyWord,startSearch, hasImage);
+                searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
+            }else{
+                tabPageControl();
+                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+            }
 
         });
 
@@ -647,8 +694,14 @@
             }
             dateClickNum ++;
             console.log(sort);
-            tabPageControl();
-            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+            if(lastGetGoodFun == 'searchFun'){
+                searchPageControl();
+//                searchFun(searchKeyWord,startSearch, hasImage);
+                searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
+            }else{
+                tabPageControl();
+                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+            }
         });
         $('.tabsBox .tabs .tabsRight .tabBtn2').click(function () {
             $('.tabsBox .tabs .tabsRight .tabBtn1').removeClass('tabBtn1Up').removeClass('tabBtn1Down');
@@ -664,8 +717,14 @@
             }
             priceClickNum ++;
             console.log(sort);
-            tabPageControl();
-            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+            if(lastGetGoodFun == 'searchFun'){
+                searchPageControl();
+//                searchFun(searchKeyWord,startSearch, hasImage);
+                searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
+            }else{
+                tabPageControl();
+                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+            }
         });
         
         
@@ -689,8 +748,14 @@
                 $('.selectBox .select .selectPrice .selectChoose').removeClass("active");
                 $(this).addClass('active');
                 console.log(pmin,pmax);
-                tabPageControl();
-                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                if(lastGetGoodFun == 'searchFun'){
+                    searchPageControl();
+//                searchFun(searchKeyWord,startSearch, hasImage);
+                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
+                }else{
+                    tabPageControl();
+                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                }
             });
         });
 
@@ -739,8 +804,14 @@
                                 $('.selectBox .select .selectArea .selectChoose').removeClass("active");
                                 $(this).addClass('active');
                                 console.log('areaid='+areaid);
-                                tabPageControl();
-                                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                                if(lastGetGoodFun == 'searchFun'){
+                                    searchPageControl();
+//                searchFun(searchKeyWord,startSearch, hasImage);
+                                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
+                                }else{
+                                    tabPageControl();
+                                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                                }
                             });
                         });
                     }
@@ -765,7 +836,8 @@
             $('.pageControl .nextPage').unbind('click').click(function(){
                 startSearch += 30 ;
                 if(startSearch<=totalCountSearch){
-                    searchFun(searchKeyWord, startSearch, hasImage);
+//                    searchFun(searchKeyWord, startSearch, hasImage);
+                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
                 }else{
                     startSearch -= 30 ;
                     alert('已经是最后一页了！');
@@ -774,7 +846,8 @@
             $('.pageControl .lastPage').unbind('click').click(function(){
                 startSearch -= 30 ;
                 if(startSearch >= 0){
-                    searchFun(searchKeyWord, startSearch, hasImage);
+//                    searchFun(searchKeyWord, startSearch, hasImage);
+                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
                 }else{
                     startSearch += 30 ;
                     alert('已经是第一页了！');
@@ -783,20 +856,24 @@
         }
 
 
-        function searchFun(searchKeyWord, startSearch, hasImage){
+        //cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage
+        function searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage){
+            lastGetGoodFun = 'searchFun';
+            $('#dongHua').show();
+            $('.goodsBox').hide();
             if(searchKeyWord == undefined){
                 searchKeyWord = '';
             }
             $('.searchBox .search .searchLeft .second').html(searchKeyWord);//二级标题
             $.ajax({
                 type: "get",
-                url: baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+"&n=30&hasImage="+hasImage,
+                url: baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+ +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&n=30&hasImage='+hasImage,
                 dataType:"json",
                 success: function(data){
                     if(data.status == 200){
 
                         console.log("搜索",data);
-                        console.log("搜索url="+baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+"&n=30&hasImage="+hasImage);
+                        console.log("搜索url="+baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+ +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&n=30&hasImage='+hasImage);
                         //搜索结果总数
                         totalCountSearch = data.extdata;
                         $('.pageControl').hide();
@@ -841,7 +918,8 @@
                                     '<div class="col-xs-3 col-sm-3 goodsRight">'+priceHtml+'</div>' +
                                     '</div>';
                         }
-                        $('.goodsBox').empty().append(str);
+                        $('.goodsBox').empty().append(str).show();
+                        $('#dongHua').hide();
 
                         console.log(str == '');
                         if(str == ''){
@@ -874,11 +952,12 @@
 
         //用户搜索
         $('.searchBox .search .searchRight .searchImg').click(function () {
-            var searchKeyWord = $.trim($('.searchBox .search .searchRight .ipt').val());
+            searchKeyWord = $.trim($('.searchBox .search .searchRight .ipt').val());
             if(searchKeyWord != ''){
                 $('.goodsBox').empty();//清空goodsBox
                 searchPageControl();
-                searchFun(searchKeyWord, startSearch, hasImage);
+//                searchFun(searchKeyWord, startSearch, hasImage);
+                searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
             }else{
 //                alert('请输入搜索关键词！');
             }
@@ -897,13 +976,14 @@
         if(searchOrTab == 'search'){//用户点击搜索进入
             console.log("用户点击search进入");
 //            var searchKeyWord = localStorage.getItem("searchKeyWord");
-            var searchKeyWord = getParamByUrl('searchKeyWord');
+            searchKeyWord = getParamByUrl('searchKeyWord');
 
             //修改title
             $('#categoryTitle').html(searchKeyWord+' kalichimall, make money by your second-hand goods.');
 
             searchPageControl();
-            searchFun(searchKeyWord,startSearch, hasImage);
+//            searchFun(searchKeyWord,startSearch, hasImage);
+            searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
 
 
 
@@ -948,6 +1028,9 @@
         }
 
         function getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage){
+            lastGetGoodFun = 'getGoods';
+            $('#dongHua').show();
+            $('.goodsBox').hide();
             /*
             * ?cid=深层分类id&pmax=400&pmin=300&areaid=区域id&start=&n=&issell=0/1&orderby=price/date&sort=desc/asc
              过滤条件:分类(cid)、价格区间(pmax,pmin)、区域(area)、是否是售卖(issell,等于1则是售卖(celler)，等于0则是需要(buyer), 默认是售卖)、
@@ -1007,7 +1090,8 @@
                                     '<div class="col-xs-3 col-sm-3 goodsRight">'+priceHtml+'</div>' +
                                     '</div>';
                         }
-                        $('.goodsBox').empty().append(str);
+                        $('.goodsBox').empty().append(str).show();
+                        $('#dongHua').hide();
 
                         console.log(str == '');
 

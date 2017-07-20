@@ -749,7 +749,7 @@
                     </div>
                     <div class="col-xs-12 col-sm-12 more" style="display: none;"><a href="###" class="moreLink">MORE</a></div>
                 </div>
-                <div class="row recommend">
+                <!--<div class="row recommend">
                     <p class="col-xs-12 col-sm-12 recommendTitle"><span class="gang">|</span><span class="">精选推荐</span></p>
                     <div class="recommendListBox">
                         <div class="col-xs-12 col-sm-12 recommendList">
@@ -807,7 +807,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>-->
             </div>
         </div>
     </aside>
@@ -912,7 +912,11 @@
                             if(data.status == 200){
                                 data = JSON.parse(data.data);
                                 console.log("售卖信息",data);
-                                $('#publishNum').html(data.length);
+                                if(data.length>4){
+                                    $('#publishNum').html(4);
+                                }else{
+                                    $('#publishNum').html(data.length);
+                                }
                                 var goodIdArr = [];
                                 for(var i=0; i<data.length; i++){
                                     goodIdArr.push(data[i].id);
@@ -1225,37 +1229,42 @@
             event.stopPropagation();
             $('.tipOffPopBox').hide();
         });
-        $('.tipOffPopBox .tipOffBox .submit .submitBtn').click(function(event){
-            event.stopPropagation();
-            $('.tipOffPopBox').hide();
-            //提交投诉
-            if(token == null){
-                token = '';
-            }
-            var subtipoffInfo = {
-                "token":token, 			//有token,传token,没有就不传了，当做匿名了
-                "goodid":goodIdFromCategory,			//产品ID
-                "content":$('.tipOffPopBox .tipOffBox #detail').val(),			//投诉内容
-                "phonenumber":$('.tipOffPopBox .tipOffBox #content').val(),		//联系电话
-                "timestamp":timestamp			//时间戳
-            };
-            $.ajax({
-                type:"POST",
-                url:baseUrl + "/apigateway/subtipoff",
-                dataType:"json",
-                data:JSON.stringify(subtipoffInfo),
-                success:function(data){
-                    if(data.status == 200){
-                        console.log('提交投诉', data);
-                        commonPopFun(data.data);
-                    }else{
-                        commonPopFun(data.data);
-                    }
-                },
-                error:function(error){
-                    console.log(error);
+        $('.tipOffPopBox .tipOffBox .submit .submitBtn').unbind('click').click(function(event){
+            if($('.tipOffPopBox .tipOffBox #detail').val()){
+                event.stopPropagation();
+                $('.tipOffPopBox').hide();
+                //提交投诉
+                if(token == null){
+                    token = '';
                 }
-            });
+                var subtipoffInfo = {
+                    "token":token, 			//有token,传token,没有就不传了，当做匿名了
+                    "goodid":goodIdFromCategory,			//产品ID
+                    "content":$('.tipOffPopBox .tipOffBox #detail').val(),			//投诉内容
+                    "phonenumber":$('.tipOffPopBox .tipOffBox #content').val(),		//联系电话
+                    "timestamp":timestamp			//时间戳
+                };
+                $.ajax({
+                    type:"POST",
+                    url:baseUrl + "/apigateway/subtipoff",
+                    dataType:"json",
+                    data:JSON.stringify(subtipoffInfo),
+                    success:function(data){
+                        console.log('提交投诉', data);
+                        if(data.status == 200){
+                            console.log('提交投诉', data);
+                            commonPopFun(data.data, 'Successfully');
+                        }else{
+                            commonPopFun(data.msg, 'Failed');
+                        }
+                    },
+                    error:function(error){
+                        console.log(error);
+                    }
+                });
+            }else{
+                $('#detail').css('border', '1px solid red');
+            }
         });
 
 

@@ -538,7 +538,7 @@
     <aside class="refreshBox">
         <div class="row refresh">
             <div class="col-xs-6 col-sm-6 refreshLeft">
-                <span class="refreshName">SOMETHING YOU MAY LIKE</span>
+                <span class="refreshName">RECENTLY</span>
             </div>
             <!--<div class="col-xs-6 col-sm-6 refreshRight">
                 <img class="refreshImg" src="image/index/refresh.png">
@@ -626,7 +626,7 @@
             </div>
         </div>
     </aside>-->
-    <!--<iframe id="searchPartIframe" src="searchPart.html" frameborder="0"></iframe>-->
+    <iframe id="searchPartIframe" src="searchPart.html" frameborder="0"></iframe>
     <iframe id="footerIframe" src="footer.html" frameborder="0"></iframe>
 </section>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
@@ -637,6 +637,9 @@
 <script type="text/javascript">
     $(function(){
         console.log("最新代码");
+
+
+
 
         ////getbestgoods
         $.ajax({
@@ -911,7 +914,7 @@
         //refreshImgBox 其实也就是recently
         $.ajax({
             type: "get",
-            url: baseUrl + "/apigateway/getgoods?n=5",
+            url: baseUrl + "/apigateway/getgoods?n=10",
             success: function (data) {
                 if (data.status == 200) {
                     data = JSON.parse(data.data);
