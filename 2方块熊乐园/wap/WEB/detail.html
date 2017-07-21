@@ -568,7 +568,7 @@
 <section class="tipOffPopBox" id="tipOffPopBox" style="display: none;">
 <div class="tipOffBox">
     <div class="">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="labelDetail" for="detail"><span class="title">Details</span><span class="tip">*</span></label>&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label id="labelDetail" for="detail"><span class="title">Detail</span><span class="tip">*</span></label>&nbsp;&nbsp;
         <textarea name="" id="detail" cols="30" rows="10"></textarea>
     </div>
     <div class="content">
@@ -955,7 +955,7 @@
                                 });
                                 
                             }else{
-                                commonPopFun(data.msg);
+                                commonPopFun(data.msg, 'Failed');
                             }
                         },
                         error:function(error){
@@ -1090,7 +1090,7 @@
 
 
                 }else{
-                    commonPopFun(data.msg);
+                    commonPopFun(data.msg, 'Failed');
                 }
             },
             error:function(error){
@@ -1159,10 +1159,8 @@
                                             isCollect = false;
                                             $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 img').attr("src", "image/detailPage/asMyWish.png");
                                             $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 span').html("As my wish");
-                                        }else if(data.status == 501){//token失效
-                                            commonPopFun(data.msg);
                                         }else{
-                                            commonPopFun(data.msg);
+                                            commonPopFun(data.msg, 'Failed');
                                         }
                                     },
                                     error:function(error){
@@ -1189,10 +1187,8 @@
                                             $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 img').attr("src", "image/detailPage/remove.png");
                                             $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 span').html("Remove");
                                             isCollect = true;
-                                        }else if(data.status == 501){//token失效
-                                            commonPopFun(data.msg);
                                         }else{
-                                            commonPopFun(data.msg);
+                                            commonPopFun(data.msg, 'Failed');
                                         }
                                     },
                                     error:function(error){
@@ -1204,10 +1200,8 @@
 
                     });
 
-                }else if(data.status == 501){//token失效
-//                    commonPopFun(data.msg);
                 }else{
-//                    commonPopFun(data.msg);
+//                    commonPopFun(data.msg, 'Failed');
                 }
             },
             error:function(error){

@@ -823,7 +823,7 @@
 
 
                 }else{
-                    commonPopFun(data.msg);
+                    commonPopFun(data.msg, 'Failed');
                 }
             },
             error:function(error){
@@ -971,7 +971,7 @@
             }else{
                 priceRight = false;
 
-                commonPopFun("价格范围在0-100000000之间,且为数字！");
+                commonPopFun("价格范围在0-100000000之间,且为数字！", 'Failed');
 
                 priceText = 0;
                 $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val('');
@@ -1061,7 +1061,7 @@
 //                                window.location.href = "detail.html?id="+data.data;
                                 });
                             }else{
-                                commonPopFun(data.msg);
+                                commonPopFun(data.msg, 'Failed');
                             }
                         },
                         error:function(error){
@@ -1108,7 +1108,7 @@
 //                                window.location.href = "detail.html?id="+data.data;
                                 });
                             }else{
-                                commonPopFun(data.msg);
+                                commonPopFun(data.msg, "Failed");
                             }
                         },
                         error:function(error){
@@ -1139,7 +1139,7 @@
                 if((($('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val() == '') && (priceRight == false))){
                     $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').css('border','1px solid #f00');
                 }
-                commonPopFun("填写完整信息才能发布");
+                commonPopFun("填写完整信息才能发布","Failed");
             }
             
         });

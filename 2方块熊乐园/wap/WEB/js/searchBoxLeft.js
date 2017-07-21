@@ -81,7 +81,7 @@ $.ajax({
             );*/
 
         }else{
-            commonPopFun(data.msg);
+            commonPopFun(data.msg, "Failed");
         }
     },
     error:function(error){

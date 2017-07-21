@@ -904,13 +904,19 @@
                             }
                             console.log(imgsLth);
 //                            console.log(data[list]);
+
+                            var detailsText = data[list].details;
+                            if(detailsText.length>200){
+                                detailsText = detailsText.substring(0, 180) + '...';
+                            }
+
                             str += '<div class="row goods">' +
                                     '<div class="col-xs-3 col-sm-3 goodsLeft">' +
                                     '<img src='+baseUrl+'/gimg/'+data[list].cimg+'><span class="tip">'+imgsLth+'</span>' +
                                     '</div>' +
                                     '<div class="col-xs-6 col-sm-6 goodsMiddle">' +
                                     '<p class="goodName">'+data[list].contactname+'</p>' +
-                                    '<p class="goodDesc">'+data[list].details+'</p>' +
+                                    '<p class="goodDesc">'+detailsText+'</p>' +
                                     '<p class="goodDesc">'+data[list].addr_l1+data[list].addr_l2+data[list].addr_l3+data[list].addr_l4+' ' +
                                     '<span class="goodDate">'+data[list].pubtime+'</span>' +
                                     '</p>' +
@@ -940,7 +946,7 @@
                         });
 
                     }else{
-                        commonPopFun(data.msg);
+                        commonPopFun(data.msg, 'Failed');
                     }
                 },
                 error:function(error){
@@ -1076,13 +1082,19 @@
                             console.log(imgsLth);
                             goodIdArr.push(data[list].id);
 //                            console.log(data[list]);
+
+                            var detailsText = data[list].details;
+                            if(detailsText.length>200){
+                                detailsText = detailsText.substring(0, 180) + '...';
+                            }
+
                             str += '<div class="row goods">' +
                                     '<div class="col-xs-3 col-sm-3 goodsLeft">' +
                                     '<img src='+baseUrl+'/gimg/'+data[list].cimg+'><span class="tip">'+imgsLth+'</span>' +
                                     '</div>' +
                                     '<div class="col-xs-6 col-sm-6 goodsMiddle">' +
                                     '<p class="goodName">'+data[list].contactname+'</p>' +
-                                    '<p class="goodDesc">'+data[list].details+'</p>' +
+                                    '<p class="goodDesc">'+detailsText+'</p>' +
                                     '<p class="goodDesc">'+data[list].addr_l1+data[list].addr_l2+data[list].addr_l3+data[list].addr_l4+' ' +
                                     '<span class="goodDate">'+data[list].pubtime+'</span>' +
                                     '</p>' +
@@ -1114,7 +1126,7 @@
 
 
                     } else {
-                        commonPopFun(data.msg);
+                        commonPopFun(data.msg,'Failed');
                     }
                 },
                 error:function(error){

@@ -374,6 +374,11 @@
         $('.searchBox .search .searchLeft .logo').click(function () {
             window.location.href = 'index.html';
         });
+        
+        //显示用户上次登录的账号：
+        if(localStorage.getItem('loginPhone') != null){
+            $('#loginPhone').val(localStorage.getItem('loginPhone'));
+        }
 
         var b = new Base64_new();
         var publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC5jmTSO5V9ILlphRYdfFk4M2Rko/Ur22h43SxkFcGcj9Vkuew5P65XJPQtJesvY37UmU7zXWsqT/i4Evo2gaYu9Eu/fgutkP9KE4yKh4Ruk/pYC+hyNFVIK21kl4o8cfV9cKumydj2WXgmuywX8UQiVIfbKuvEAw+RVvPjBt9UqQIDAQAB";
@@ -383,6 +388,7 @@
 
 
         function loginFun(){
+            localStorage.setItem('loginPhone', $.trim($('#loginPhone').val()));
             var loginPhone = b.encode($.trim($('#loginPhone').val()));
             var loginPassword = b.encode($.trim($('#loginPassword').val()));
             var authKey = encrypt.encrypt("user="+ loginPhone +"&pass="+ loginPassword);//获取密钥

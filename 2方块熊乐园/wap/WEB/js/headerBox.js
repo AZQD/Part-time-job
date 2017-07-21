@@ -170,7 +170,7 @@ $(function(){
                                 }
                             );
 
-                            $('.refreshImgBox .refreshImg .refreshLi .goodImg, .nearbyImgBox .nearbyImg .nearbyLi').unbind('click').click(function () {
+                            $('.nearbyImgBox .nearbyImg .nearbyLi').unbind('click').click(function () {
                                 var index = $(this).index();
                                 window.open("detail.html?id="+goodIdArr[index]);
                                 //window.location.href = "detail.html?id="+goodIdArr[index];

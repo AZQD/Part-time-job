@@ -316,8 +316,8 @@
 
         /*nearbyBox*/
         .nearbyBox{
-            /*background-color: #F2F2F2;*/
-            /*padding-top:10px;*/
+            background-color: #F2F2F2;
+            padding-top:10px;
         }
         .nearbyBox .nearby{
             width:1200px;
@@ -626,7 +626,7 @@
             </div>
         </div>
     </aside>-->
-    <iframe id="searchPartIframe" src="searchPart.html" frameborder="0"></iframe>
+    <!--<iframe id="searchPartIframe" src="searchPart.html" frameborder="0"></iframe>-->
     <iframe id="footerIframe" src="footer.html" frameborder="0"></iframe>
 </section>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
@@ -637,8 +637,6 @@
 <script type="text/javascript">
     $(function(){
         console.log("最新代码");
-
-
 
 
         ////getbestgoods
@@ -823,7 +821,7 @@
 
 
                 }else{
-                    commonPopFun(data.msg);
+                    commonPopFun(data.msg, 'Failed');
                 }
             },
             error:function(error){
@@ -890,7 +888,7 @@
                     });
 
                 }else{
-                    commonPopFun(data.msg);
+                    commonPopFun(data.msg, 'Failed');
                 }
             },
             error: function (error) {
@@ -919,7 +917,9 @@
                 if (data.status == 200) {
                     data = JSON.parse(data.data);
                     console.log("recently", data);
+                    var recentlyIdArr = [];
                     for(var i=0; i<data.length; i++){
+                        recentlyIdArr.push(data[i].id);
                         var price = data[i].price;
                         if(price == 0){
                             price = 'Negotiated';
@@ -934,8 +934,15 @@
                             '</li>'
                         );
                     }
+
+                    $('.refreshImgBox .refreshImg .refreshLi').unbind('click').click(function () {
+                        var index = $(this).index();
+                        window.open("detail.html?id="+recentlyIdArr[index]);
+                        //window.location.href = "detail.html?id="+goodIdArr[index];
+                    });
+
                 } else {
-                    commonPopFun1(data.msg);
+                    commonPopFun1(data.msg, 'Failed');
                 }
             },
             error:function(error){
