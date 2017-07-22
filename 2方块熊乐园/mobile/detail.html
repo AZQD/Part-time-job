@@ -15,6 +15,31 @@
     <link rel="stylesheet" href="css/detail.css">
 </head>
 <body>
+
+<section class="commonPopBox1" style="display: none;">
+    <div class="commonPop">
+        <h3 class="title"></h3>
+        <p class="detailTip"></p>
+        <div class="confirmBox">
+            <span class="confirmBtn">OK</span>
+        </div>
+    </div>
+</section>
+<section class="tipOffPopBox" id="tipOffPopBox" style="display: none;">
+    <div class="tipOffBox">
+        <div class="">
+            <label id="labelDetail" for="detail"><span class="title">Detail</span><span class="tip">*</span></label>&nbsp;&nbsp;
+            <textarea name="" id="detail" cols="30" rows="10"></textarea>
+        </div>
+        <div class="content">
+            <span class="title">Cellphone</span>&nbsp;&nbsp;&nbsp;&nbsp;<input id="content" type="text" PLACEHOLDER="Your Cellphone Number">
+        </div>
+        <div class="submit">
+            <button class="submitBtn">Submit</button>
+        </div>
+    </div>
+</section>
+
 <section class="container">
     <aside class="row headerBox">
         <div class="col-xs-4 col-sm-4 left"><img class="logo" src="image/index/logo.png"></div>
@@ -34,13 +59,23 @@
         <div class="row detail">
             <!--detailLeft-->
             <div class="col-xs-12 col-sm-12 detailLeft">
-                <a href="###" class="tipOff">TIP OFF</a>
+                <img class="headImg" src="" alt="" style="display: none;">
                 <h3 class="goodName"></h3>
-                <p class="attr">Add&nbsp;&nbsp;:<span class="addressText"></span></p>
+                <p class="attr"><span class="addressText"></span></p>
                 <div class="row goodDesc">
                     <div class="col-xs-12 col-sm-12 goodDescLeft">
                         <!--<div class="bigImg"><img class="bigImgPic" src="image/detailPage/bigImg1.png"></div>-->
-                        <div class="bigImg"><img class="bigImgPic" src=""></div>
+                        <div class="bigImg row">
+                            <a href="###" class="tipOff">TIP OFF</a>
+                            <img class="bigImgPic" src="" style="visibility: hidden;">
+                            <div class="col-xs-4 col-sm-4 aboutPrice"><span class="thePrice" style="display: none;"><span class="thePriceNum">100</span>ZMW</span></div>
+                            <div class="col-xs-8 col-sm-8 aboutShare">
+                                <a href="javascript:void(0);" class="btnLink btn2 btn3"><img class="likeImg"/>&nbsp;<span></span></a>&nbsp;
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=编码后的跳转地址&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="social_flat_rounded_rects_svg/Facebook.svg"></a>
+                                <a href="https://twitter.com/intent/tweet?source=编码后的跳转地址&text=分享文本" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="social_flat_rounded_rects_svg/Twitter.svg"></a>
+                                <a href="https://plus.google.com/share?url=编码后的跳转地址" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Google+" src="social_flat_rounded_rects_svg/Google+.svg"></a>
+                            </div>
+                        </div>
                         <div class="littleImg row">
                             <div class="col-xs-2 col-sm-2 leftFlag"><img src="image/detailPage/leftFlag.png"></div>
                             <div class="img_ulBox">
@@ -59,19 +94,6 @@
                             <div class="col-xs-2 col-sm-2 rightFlag"><img src="image/detailPage/rightFlag.png"></div>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-12 goodDescRight">
-                        <p class="attr attr1">Price:<span id="mianYi"><span class="num1 price"></span>&nbsp;<span class="num2 aboutNum" style="display: none;">ZMW</span></span></p>
-                        <p class="attr">Add&nbsp;&nbsp;:<span class="address"></span></p>
-                        <div class="userBtn">
-                            <a href="javascript:void(0);" class="btnLink btn2 btn3"><img class="likeImg"/><span></span></a>
-                            <ul class="share-buttons">
-                                <li><a href="https://www.facebook.com/sharer/sharer.php?u=编码后的跳转地址&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="social_flat_rounded_rects_svg/Facebook.svg"></a></li>
-                                <li><a href="https://twitter.com/intent/tweet?source=编码后的跳转地址&text=分享文本" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="social_flat_rounded_rects_svg/Twitter.svg"></a></li>
-                                <li><a href="https://plus.google.com/share?url=编码后的跳转地址" target="_blank" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Google+" src="social_flat_rounded_rects_svg/Google+.svg"></a></li>
-
-                            </ul>
-                        </div>
-                    <!--</div>-->
                 </div>
                 <div class="tabToggle">
                     <a href="###" class="tabLink active">DETAIL</a><a href="###" class="tabLink tabLink2">COMMENTS</a>
@@ -96,6 +118,13 @@
                 </div>
             </div>
         </div>
+    </aside>
+
+
+    <aside class="row infos">
+        <div class="col-xs-6 col-sm-6 part publish"><span>Publish</span></div>
+        <div class="col-xs-6 col-sm-6 part signInUp" style="display: block;"><span>Sign in/Sign up</span></div>
+        <div class="col-xs-6 col-sm-6 part profile" style="display: none;"><span>My Profile</span></div>
     </aside>
 
 
@@ -222,7 +251,7 @@
                     localStorage.setItem('pubUid',pubUid);
 
 
-                    //获得发布者的售卖信息
+                    /*//获得发布者的售卖信息
                     //.detailBox .detail .detailRight .selling .sellingListBox
                     //<div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src="image/detailPage/selling1.jpg"></div>
                     $.ajax({
@@ -278,7 +307,7 @@
                         error:function(error){
                             console.log(error);
                         }
-                    });
+                    });*/
 
 
                     var imgs = data.imgs;
@@ -287,7 +316,7 @@
                     for(var i=0; i<imgsArr.length; i++){
                         $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li"><img src='+baseUrl+'/gimg/'+imgsArr[i]+'></li>');
                     }
-                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', baseUrl+'/gimg/'+imgsArr[0]);
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('visibility','inherit').attr('src', baseUrl+'/gimg/'+imgsArr[0]);
                     var moveNum = 0;
                     var imgsLength = imgsArr.length;
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .leftFlag').click(function(){
@@ -356,7 +385,6 @@
 
                                     }
                                 }
-//                                $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .attr .address').html(addressStr +' '+addressStr2 +' '+ data.addr_l4);
                                 $('.detailBox .detail .detailLeft .attr .addressText').html(addressStr +' '+addressStr2 +' '+ data.addr_l4);
 
 
@@ -370,10 +398,11 @@
 
                     //price
                     if(data.price == 0){
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .thePrice').show().html("Negotiated").css({"color":'#FF4720'});
                         $('#mianYi').html("Negotiated").css({"color":'#FF4720',"paddingLeft":'8px'});
                     }else{
-                        $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .attr .aboutNum').show();
-                        $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .attr .price').html(data.price);
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .thePrice').show();
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .thePrice .thePriceNum').html(data.price);
                     }
 
 
@@ -387,17 +416,20 @@
                             console.log('获得商品发布者用户信息', data);
                             data = data.data;
                             //详情页信息
-                            $('.detailBox .detail .detailRight .userInfo .userInfoImg').show().attr('src',baseImgSrc+data.logo);
+                            $('.detailBox .detail .detailLeft .headImg').show().attr('src',baseImgSrc+data.logo).click(function(){
+                                window.location.href = 'profile.html?pubUid='+pubUid;
+                            });
+                            /*$('.detailBox .detail .detailRight .userInfo .userInfoImg').show().attr('src',baseImgSrc+data.logo);
                             $('.detailBox .detail .detailRight .name').html(data.nickname);
                             $('.detailBox .detail .detailRight .goHome').html(data.nickname + '\'s home').click(function(){
                                 window.location.href = 'profile.html?pubUid='+pubUid;
-                            });
+                            });*/
 
 
                             //匿名发布隐藏
-                            if(data.id != 0){
+                            /*if(data.id != 0){
                                 $('.detailBox .detail .detailRight .talk').css('visibility', 'inherit');
-                            }
+                            }*/
                         },
                         error:function(error){
                             console.log(error);
@@ -447,15 +479,15 @@
                     }
 
                     if(isCollect == true){//如果默认已经收藏
-                        $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 img').attr("src", "image/detailPage/remove.png");
-                        $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 span').html("Remove");
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 img').attr("src", "image/detailPage/remove.png");
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 span').html("Remove");
 
                     }else{//如果默认未收藏
-                        $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 img').attr("src", "image/detailPage/asMyWish.png");
-                        $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 span').html("As my wish");
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 img').attr("src", "image/detailPage/asMyWish.png");
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 span').html("As my wish");
                     }
 
-                    $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3').click(function () {
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3').click(function () {
                         if(token == null){
                             alert('请先登录~');
                         }else{
@@ -477,8 +509,8 @@
 //                    data = JSON.parse(data.data);
                                             console.log("删除收藏",data);
                                             isCollect = false;
-                                            $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 img').attr("src", "image/detailPage/asMyWish.png");
-                                            $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 span').html("As my wish");
+                                            $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 img').attr("src", "image/detailPage/asMyWish.png");
+                                            $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 span').html("As my wish");
                                         }else if(data.status == 501){//token失效
                                             commonPopFun(data.msg);
                                         }else{
@@ -506,8 +538,8 @@
                                         if(data.status == 200){
 //                    data = JSON.parse(data.data);
                                             console.log("提交收藏",data);
-                                            $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 img').attr("src", "image/detailPage/remove.png");
-                                            $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3 span').html("Remove");
+                                            $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 img').attr("src", "image/detailPage/remove.png");
+                                            $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 span').html("Remove");
                                             isCollect = true;
                                         }else if(data.status == 501){//token失效
                                             commonPopFun(data.msg);
@@ -538,7 +570,7 @@
 
 
         ////点击tipOff
-        $('.detailBox .detail .detailLeft .tipOff').click(function(event){
+        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .tipOff').click(function(event){
             event.stopPropagation();
             $('#tipOffPopBox').show();
         });
@@ -547,39 +579,61 @@
         });
         $('.tipOffPopBox').click(function(event){
             event.stopPropagation();
-            $('.tipOffPopBox').hide();
+//            $('.tipOffPopBox').hide();
         });
         $('.tipOffPopBox .tipOffBox .submit .submitBtn').click(function(event){
             event.stopPropagation();
-            $('.tipOffPopBox').hide();
-            //提交投诉
-            if(token == null){
-                token = '';
-            }
-            var subtipoffInfo = {
-                "token":token, 			//有token,传token,没有就不传了，当做匿名了
-                "goodid":goodIdFromCategory,			//产品ID
-                "content":$('.tipOffPopBox .tipOffBox #detail').val(),			//投诉内容
-                "phonenumber":$('.tipOffPopBox .tipOffBox #content').val(),		//联系电话
-                "timestamp":timestamp			//时间戳
-            };
-            $.ajax({
-                type:"POST",
-                url:baseUrl + "/apigateway/subtipoff",
-                dataType:"json",
-                data:JSON.stringify(subtipoffInfo),
-                success:function(data){
-                    if(data.status == 200){
-                        console.log('提交投诉', data);
-                        commonPopFun(data.data);
-                    }else{
-                        commonPopFun(data.data);
-                    }
-                },
-                error:function(error){
-                    console.log(error);
+            if($('.tipOffPopBox .tipOffBox #detail').val() != ''){
+                $('.tipOffPopBox').hide();
+                //提交投诉
+                if(token == null){
+                    token = '';
                 }
-            });
+                var subtipoffInfo = {
+                    "token":token, 			//有token,传token,没有就不传了，当做匿名了
+                    "goodid":goodIdFromCategory,			//产品ID
+                    "content":$('.tipOffPopBox .tipOffBox #detail').val(),			//投诉内容
+                    "phonenumber":$('.tipOffPopBox .tipOffBox #content').val(),		//联系电话
+                    "timestamp":timestamp			//时间戳
+                };
+                console.log(subtipoffInfo);
+                $.ajax({
+                    type:"POST",
+                    url:baseUrl + "/apigateway/subtipoff",
+                    dataType:"json",
+                    data:JSON.stringify(subtipoffInfo),
+                    success:function(data){
+                        console.log(data);
+                        if(data.status == 200){
+                            console.log('提交投诉', data);
+                            commonPopFun1(data.data,'Successfully');
+                        }else{
+                            commonPopFun1(data.msg, 'Failed');
+                        }
+                    },
+                    error:function(error){
+                        console.log(error);
+                    }
+                });
+            }else{
+                $('.tipOffPopBox .tipOffBox #detail').css('border', '1px solid red');
+            }
+        });
+
+
+
+        //infos
+        //点击发布
+        $('.infos .publish').unbind('click').click(function () {
+            window.location.href = "publish.html";
+        });
+        //注册/登陆
+        $('.infos .signInUp').unbind('click').click(function () {
+            window.location.href = "login.html";
+        });
+        //My Profile
+        $('.infos .profile').unbind('click').click(function () {
+            window.location.href = "profile.html";
         });
 
 

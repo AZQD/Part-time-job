@@ -185,7 +185,7 @@ if(token == null){
                    window.location.reload();
                 });
 
-                //index.html:显示登录或者profile
+                //index.html、detail.html:显示登录或者profile
                 $('.infos .signInUp').hide();
                 $('.infos .profile').show();
 
