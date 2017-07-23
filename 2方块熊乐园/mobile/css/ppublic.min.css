@@ -105,6 +105,11 @@ body {
     text-align: center;
     position: relative;
 }
+.headerBox .manageMiddle {
+    font-size: 1rem;
+    color: #333333;
+    text-align: center;
+}
 .headerBox .indexMiddle .address {
     color: #333333;
     font-size: 0.875rem;

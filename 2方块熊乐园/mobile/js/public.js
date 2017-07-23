@@ -189,6 +189,12 @@ if(token == null){
                 $('.infos .signInUp').hide();
                 $('.infos .profile').show();
 
+                //manage.html:
+                $('.headerBox .manageMiddle').unbind('click').click(function(){//进入profile.html
+                    //window.open("profile.html?pubUid="+data.uid);
+                    window.location.href = "profile.html?pubUid="+data.uid;
+                });
+
             }else if(data.status == 501){//token失效
                 console.log("用户未登陆（token过期）", data);
             }else {

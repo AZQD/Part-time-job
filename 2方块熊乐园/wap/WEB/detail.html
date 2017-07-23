@@ -942,21 +942,21 @@
                                 if((pubUid == 0)){
                                     for(var i=0; i<data.length; i++){
                                         $('.detailBox .detail .detailRight .selling .sellingListBox').append(
-                                                '<div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src='+data.cimg+'></div>'
+                                                '<div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src='+baseImgSrc+data[i].cimg+'></div>'
                                         );
                                     }
                                 }else{
                                     if(data.length <= 4){
                                         for(var i=0; i<data.length; i++){
                                             $('.detailBox .detail .detailRight .selling .sellingListBox').append(
-                                                    '<div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src='+data.cimg+'></div>'
+                                                    '<div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src='+baseImgSrc+data[i].cimg+'></div>'
                                             );
                                         }
                                      }else{
                                         $('.detailBox .detail .detailRight .selling .more').show();
                                         for(var i=0; i<4; i++){
                                             $('.detailBox .detail .detailRight .selling .sellingListBox').append(
-                                                    '<div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src='+data.cimg+'></div>'
+                                                    '<div class="col-xs-6 col-sm-6 sellingList"><img class="sellingImg" src='+baseImgSrc+data[i].cimg+'></div>'
                                             );
                                         }
                                     }
@@ -1097,6 +1097,8 @@
                             //匿名发布隐藏
                             if(data.id != 0){
                                 $('.detailBox .detail .detailRight .talk').css('visibility', 'inherit');
+                            }
+                            if(data.id == 0){
                                 if($('.searchBox .search .searchLeft .second').html() == ''){
                                     $('.searchBox .search .searchLeft .second').html('...');
                                 }
