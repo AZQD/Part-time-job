@@ -308,6 +308,12 @@
             *display: inline;
             *zoom: 1
         }
+        .a-upload .closeImg{
+            width: 28px;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
 
         .a-upload  input {
             position: absolute;
@@ -457,7 +463,7 @@
                     </div>
                     <div class="col-xs-3 col-sm-3 left"></div>
                     <div class="col-xs-9 col-sm-9 right">
-                        <a href="#" class="btn goodstatus">Brand New</a><a href="#" class="btn goodstatus active">New</a><a href="#" class="btn goodstatus">As New</a><a href="#" class="btn goodstatus">A Half New</a>
+                        <a href="#" class="btn goodstatus active">Brand New</a><a href="#" class="btn goodstatus">New</a><a href="#" class="btn goodstatus">As New</a><a href="#" class="btn goodstatus">A Half New</a>
                     </div>
                     <!--<div class="col-xs-12 col-sm-12" style="padding-left: 190px;padding-bottom: 20px;">
                         <select name="selectCid" id="selectCid">
@@ -500,18 +506,22 @@
                             <a href="javascript:;" class="a-upload a-upload1">
                                 <input type="file" accept="image/png, image/jpeg" id="upfile1" name="file"><img class="uploadLogo uploadLogo1" src="image/publish/upload.png">
                                 <span class="showFileName showFileName1"></span>
+                                <img class="closeImg closeImg1" style="display: none;" src="image/publish/close.jpg"/>
                             </a>
                             <a href="javascript:;" class="a-upload a-upload2" style="display: none;">
                                 <input type="file" accept="image/png, image/jpeg" id="upfile2" name="file"><img class="uploadLogo uploadLogo2" src="image/publish/upload.png">
                                 <span class="showFileName showFileName2"></span>
+                                <img class="closeImg closeImg2" style="display: none;" src="image/publish/close.jpg"/>
                             </a>
                             <a href="javascript:;" class="a-upload a-upload3" style="display: none;">
                                 <input type="file" accept="image/png, image/jpeg" id="upfile3" name="file"><img class="uploadLogo uploadLogo3" src="image/publish/upload.png">
                                 <span class="showFileName showFileName3"></span>
+                                <img class="closeImg closeImg3" style="display: none;" src="image/publish/close.jpg"/>
                             </a>
                             <a href="javascript:;" class="a-upload a-upload4" style="display: none;">
                                 <input type="file" accept="image/png, image/jpeg" id="upfile4" name="file"><img class="uploadLogo uploadLogo4" src="image/publish/upload.png">
                                 <span class="showFileName showFileName4"></span>
+                                <img class="closeImg closeImg4" style="display: none;" src="image/publish/close.jpg"/>
                             </a>
                         </div>
                     </div>
@@ -555,7 +565,11 @@
             }
         });
 
-        var imgIdAll = '';
+        var imgIdAll1 = '';
+        var imgIdAll2 = '';
+        var imgIdAll3 = '';
+        var imgIdAll4 = '';
+        var totalImgIdAll = '';
         $(".a-upload1").on("change","input[type='file']",function(){
             $(".a-upload2").show();
             $('.uploadLogo1').hide();
@@ -579,11 +593,33 @@
                     data: fd,
                     success: function(imgData) {
                         if(imgData.status == 200) {
+                            var extdata1 = imgData.extdata;
+                            $('.a-upload .closeImg1').show().unbind('click').click(function(){
+                                
+                                $.ajax({
+                                    type: "get",
+                                    url: baseUrl+"/apigateway/dimg?id="+extdata1,
+                                    dataType:"json",
+                                    success: function(data){
+                                        console.log("删除图片1成功！",data);
+                                    },
+                                    error:function(error){
+                                        console.log(error);
+                                    }
+                                });
+                                
+                                $(".a-upload2").hide();
+                                $('.uploadLogo1').show();
+                                $(".showFileName1").html('');
+                                totalImgIdAll = '';
+                                console.log("totalImgIdAll="+totalImgIdAll);
+                            });
                             $(".showFileName1").html(fileName);
                             console.log(imgData);
                             console.log(imgData.data);
-                            imgIdAll = imgData.data;
-                            console.log("imgIdAll="+imgIdAll);
+                            imgIdAll1 = imgData.data;
+                            totalImgIdAll = imgIdAll1;
+                            console.log("totalImgIdAll="+totalImgIdAll);
 
 
                             $(".a-upload2").on("change","input[type='file']",function(){
@@ -609,11 +645,35 @@
                                         data: fd,
                                         success: function(imgData) {
                                             if(imgData.status == 200) {
+                                                var extdata2 = imgData.extdata;
+                                                $('.a-upload .closeImg2').show().unbind('click').click(function(){
+
+                                                    $.ajax({
+                                                        type: "get",
+                                                        url: baseUrl+"/apigateway/dimg?id="+extdata2,
+                                                        dataType:"json",
+                                                        success: function(data){
+                                                            console.log("删除图片2成功！",data);
+                                                        },
+                                                        error:function(error){
+                                                            console.log(error);
+                                                        }
+                                                    });
+
+                                                    $(".a-upload3").hide();
+                                                    $('.uploadLogo2').show();
+                                                    $(".showFileName2").html('');
+                                                    imgIdAll2 = '';
+                                                    totalImgIdAll = imgIdAll1;
+                                                    console.log("totalImgIdAll="+totalImgIdAll);
+                                                });
+
                                                 $(".showFileName2").html(fileName);
                                                 console.log(imgData);
                                                 console.log(imgData.data);
-                                                imgIdAll = imgIdAll+','+imgData.data;
-                                                console.log("imgIdAll="+imgIdAll);
+                                                imgIdAll2 = imgData.data;
+                                                totalImgIdAll = imgIdAll1+','+imgIdAll2;
+                                                console.log("totalImgIdAll="+totalImgIdAll);
 
 
                                                 $(".a-upload3").on("change","input[type='file']",function(){
@@ -639,11 +699,36 @@
                                                             data: fd,
                                                             success: function(imgData) {
                                                                 if(imgData.status == 200) {
+
+                                                                    var extdata3 = imgData.extdata;
+                                                                    $('.a-upload .closeImg3').show().unbind('click').click(function(){
+
+                                                                        $.ajax({
+                                                                            type: "get",
+                                                                            url: baseUrl+"/apigateway/dimg?id="+extdata3,
+                                                                            dataType:"json",
+                                                                            success: function(data){
+                                                                                console.log("删除图片3成功！",data);
+                                                                            },
+                                                                            error:function(error){
+                                                                                console.log(error);
+                                                                            }
+                                                                        });
+
+                                                                        $(".a-upload4").hide();
+                                                                        $('.uploadLogo3').show();
+                                                                        $(".showFileName3").html('');
+                                                                        imgIdAll3 = '';
+                                                                        totalImgIdAll = imgIdAll1+','+imgIdAll2;
+                                                                        console.log("totalImgIdAll="+totalImgIdAll);
+                                                                    });
+
                                                                     $(".showFileName3").html(fileName);
                                                                     console.log(imgData);
                                                                     console.log(imgData.data);
-                                                                    imgIdAll = imgIdAll+','+imgData.data;
-                                                                    console.log("imgIdAll="+imgIdAll);
+                                                                    imgIdAll3 = imgData.data;
+                                                                    totalImgIdAll = imgIdAll1+','+imgIdAll2+','+imgIdAll3;
+                                                                    console.log("totalImgIdAll="+totalImgIdAll);
 
 
                                                                     $(".a-upload4").on("change","input[type='file']",function(){
@@ -668,11 +753,35 @@
                                                                                 data: fd,
                                                                                 success: function(imgData) {
                                                                                     if(imgData.status == 200) {
+
+                                                                                        var extdata4 = imgData.extdata;
+                                                                                        $('.a-upload .closeImg4').show().unbind('click').click(function(){
+
+                                                                                            $.ajax({
+                                                                                                type: "get",
+                                                                                                url: baseUrl+"/apigateway/dimg?id="+extdata4,
+                                                                                                dataType:"json",
+                                                                                                success: function(data){
+                                                                                                    console.log("删除图片4成功！",data);
+                                                                                                },
+                                                                                                error:function(error){
+                                                                                                    console.log(error);
+                                                                                                }
+                                                                                            });
+
+                                                                                            $('.uploadLogo4').show();
+                                                                                            $(".showFileName4").html('');
+                                                                                            imgIdAll4 = '';
+                                                                                            totalImgIdAll = imgIdAll1+','+imgIdAll2+','+imgIdAll3;
+                                                                                            console.log("totalImgIdAll="+totalImgIdAll);
+                                                                                        });
+
                                                                                         $(".showFileName4").html(fileName);
                                                                                         console.log(imgData);
                                                                                         console.log(imgData.data);
-                                                                                        imgIdAll = imgIdAll+','+imgData.data;
-                                                                                        console.log("imgIdAll="+imgIdAll);
+                                                                                        imgIdAll4 = imgData.data;
+                                                                                        totalImgIdAll = imgIdAll1+','+imgIdAll2+','+imgIdAll3+','+imgIdAll4;
+                                                                                        console.log("totalImgIdAll="+totalImgIdAll);
                                                                                     }
                                                                                 }
                                                                             });
@@ -952,7 +1061,7 @@
                     goodstatus = index;
                 }
             });
-//            alert(goodstatus);
+            console.log(goodstatus);
             goodstatus = goodstatus.toString();
         });
 
@@ -979,14 +1088,57 @@
             console.log(priceText);
         });
         $('.sortBox .sort .partInner2 .partInner2Box .right .negotiated').click(function(){
+
             priceRight = true;
             priceText = 0;
-            $(this).addClass('active');
+            if($('.sortBox .sort .partInner2 .partInner2Box .right .priceText').is(':hidden')){
+                $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val('').show();
+                $(this).removeClass('active');
+            }else{
+                $(this).addClass('active');
 //            $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').hide();
-            $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val('').hide();
+                $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val('').hide();
+            }
+
+
+
             console.log(priceText);
         });
 
+
+        //如果是用户编辑发布，则保存相应信息
+        var needUpdate = getParamByUrl('needUpdate');
+        var updatepubcontentId = getParamByUrl('updatepubcontentId');
+        if(needUpdate == 1){
+            $.ajax({
+                type: "get",
+                url: baseUrl+"/apigateway/getgood?id="+updatepubcontentId,
+                dataType:"json",
+                success: function(data){
+                    if(data.status == 200){
+                        data = JSON.parse(data.data);
+                        console.log("获得指定产品的产品信息",data);
+
+
+                        issell = data.issell;
+                        $('.sortBox .sort .partInner2 .partInner2Box .right .issell').removeClass('active').eq(issell).addClass('active');
+
+                        goodstatus = data.goodstatus;
+                        $('.sortBox .sort .partInner2 .partInner2Box .right .issell').removeClass('active').eq(goodstatus).addClass('active');
+
+                        $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val(data.price);
+                        $('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val(data.title);
+                        $('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val(data.addr_l4);
+                        $('.sortBox .sort .partInner2 .partInner2Box .right .detailText').val(data.details);
+                    }else{
+                        commonPopFun(data.msg, 'Failed');
+                    }
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            });
+        }
 
 
         $('.sortBox .sort .partInner2 .partInner2Box .publishBtn').click(function(){
@@ -1018,10 +1170,8 @@
 
 
                 //执行提交
-                var needUpdate = getParamByUrl('needUpdate');
-                var updatepubcontentId = getParamByUrl('updatepubcontentId');
-                console.log('updatepubcontentId='+updatepubcontentId);
                 if(needUpdate == 1){//编辑商品
+
                     var updateGoodInfo = {
                         "token":token, 			//用户登录凭证，如果是匿名发布则留空""
                         "id":updatepubcontentId, //需要编辑的商品的id

@@ -235,8 +235,11 @@
         .detailBox .detail .detailLeft .goodDesc .goodDescRight .attr .address{
             padding-left:8px;
         }
+        .detailBox .detail .detailLeft .goodDesc .goodDescRight .attr .quality{
+            padding-left:8px;
+        }
         .detailBox .detail .detailLeft .goodDesc .goodDescRight .attr{
-            color: #999;
+            color: #333;
             font-weight: bold;
             font-size: 18px;
             margin-left:28px;
@@ -685,8 +688,9 @@
                         </div>
                     </div>
                     <div class="col-xs-5 col-sm-5 goodDescRight">
-                        <p class="attr attr1">Price:<span id="mianYi"><span class="num1 price"></span>&nbsp;<span class="num2 aboutNum" style="display: none;">ZMW</span></span></p>
-                        <p class="attr">Add&nbsp;&nbsp;:<span class="address"></span></p>
+                        <p class="attr attr1">&nbsp;&nbsp;&nbsp;Price&nbsp;:<span id="mianYi"><span class="num1 price"></span>&nbsp;<span class="num2 aboutNum" style="display: none;">ZMW</span></span></p>
+                        <p class="attr">Quality&nbsp;:<span class="quality"></span></p>
+                        <p class="attr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add&nbsp;:<span class="address"></span></p>
                         <div class="userBtn">
                             <ul class="share-buttons">
                                 <li><a href="https://www.facebook.com/sharer/sharer.php?u=编码后的跳转地址&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="social_flat_rounded_rects_svg/Facebook.svg"></a></li>
@@ -839,6 +843,7 @@
     $(function(){
 
 
+
         /*facebook发布评论*/
         $('#fackbookNeedId').attr('data-href', "http://www.kalichimall.com:81/detail.html"+window.location.search);
 
@@ -866,6 +871,19 @@
                     data = JSON.parse(data.data);
                     console.log("获得指定产品的产品信息",data);
                     console.log(baseUrl+"/apigateway/getgood?id="+goodIdFromCategory);
+
+                    //aboutQuality
+                    var aboutQuality = '';
+                    if(data.goodstatus == 0){
+                        aboutQuality = 'Brand New';
+                    }else if(data.goodstatus == 1){
+                        aboutQuality = 'New';
+                    }else if(data.goodstatus == 2){
+                        aboutQuality = 'As New';
+                    }else if(data.goodstatus == 3){
+                        aboutQuality = 'A Half New';
+                    }
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .attr .quality').html(aboutQuality);
 
                     //修改title
                     $('#detailTitle').html(data.title + data.price +" kalichimall, make money by your second-hand goods.");
@@ -1079,6 +1097,9 @@
                             //匿名发布隐藏
                             if(data.id != 0){
                                 $('.detailBox .detail .detailRight .talk').css('visibility', 'inherit');
+                                if($('.searchBox .search .searchLeft .second').html() == ''){
+                                    $('.searchBox .search .searchLeft .second').html('...');
+                                }
                             }
                         },
                         error:function(error){

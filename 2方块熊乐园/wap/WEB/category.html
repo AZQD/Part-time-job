@@ -162,7 +162,7 @@
             font-weight: bold;
             padding-left:28px;
             display: inline-block;
-            width:74px;
+            width:92px;
             text-align: center;
         }
         .selectBox .select .selectPrice a{
@@ -172,13 +172,29 @@
         .selectBox .select .selectPrice .active{
             color: #FF4720;
         }
+        .selectBox .select .selectQuality .quality{
+            font-size: 16px;
+            color: #333333;
+            font-weight: bold;
+            padding-left:28px;
+            display: inline-block;
+            width:92px;
+            text-align: center;
+        }
+        .selectBox .select .selectQuality a{
+            padding-left:16px;
+            color: #999;
+        }
+        .selectBox .select .selectQuality .active{
+            color: #FF4720;
+        }
         .selectBox .select .selectArea .area{
             font-size: 16px;
             color: #333333;
             font-weight: bold;
             padding-left:28px;
             display: inline-block;
-            width:74px;
+            width:95px;
             text-align: center;
         }
         .selectBox .select .selectArea a{
@@ -342,6 +358,11 @@
         .goodsBox .goods .goodsRight2{
             font-size: 24px;
             color: red;
+            padding-right: 40px;
+        }
+        .goodsBox .goods .aboutQuality{
+            font-size: 20px;
+            color: red;
         }
 
         #footerIframe{
@@ -476,6 +497,16 @@
                 <a href="#" class="selectChoose">200-500</a>
                 <a href="#" class="selectChoose">500++</a>
             </div>
+
+            <div class="col-xs-12 col-sm-12 selectQuality">
+                <span class="quality">QUALITY</span>
+                <a href="#" class="selectChoose active">ALL</a>
+                <a href="#" class="selectChoose">Brand New</a>
+                <a href="#" class="selectChoose">New</a>
+                <a href="#" class="selectChoose">As New</a>
+                <a href="#" class="selectChoose">A Half New</a>
+            </div>
+
             <div class="col-xs-12 col-sm-12 selectArea">
                 <span class="area">AREA</span>
                 <a href="#" class="selectChoose active">ALL</a>
@@ -623,21 +654,21 @@
                 hasImage = 1;
                 if(lastGetGoodFun == 'searchFun'){
                     searchPageControl();
-                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
+                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
 //                    searchFun(searchKeyWord,startSearch, hasImage);
                 }else{
                     tabPageControl();
-                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
                 }
             }else {
                 hasImage = 0;
                 if(lastGetGoodFun == 'searchFun'){
                     searchPageControl();
 //                    searchFun(searchKeyWord,startSearch, hasImage);
-                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
+                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
                 }else{
                     tabPageControl();
-                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
                 }
             }
             console.log('hasImage', hasImage);
@@ -648,7 +679,7 @@
         $(".searchBox .search .menuUl").delegate(".menuLi","click",function(){
             cid = getCid;
             tabPageControl();
-            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
         });
 
         //tab切换(Celler/Buyer)
@@ -666,10 +697,10 @@
             if(lastGetGoodFun == 'searchFun'){
                 searchPageControl();
 //                searchFun(searchKeyWord,startSearch, hasImage);
-                searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
+                searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
             }else{
                 tabPageControl();
-                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
             }
 
         });
@@ -697,10 +728,10 @@
             if(lastGetGoodFun == 'searchFun'){
                 searchPageControl();
 //                searchFun(searchKeyWord,startSearch, hasImage);
-                searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
+                searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
             }else{
                 tabPageControl();
-                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
             }
         });
         $('.tabsBox .tabs .tabsRight .tabBtn2').click(function () {
@@ -720,10 +751,10 @@
             if(lastGetGoodFun == 'searchFun'){
                 searchPageControl();
 //                searchFun(searchKeyWord,startSearch, hasImage);
-                searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
+                searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
             }else{
                 tabPageControl();
-                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
             }
         });
         
@@ -751,10 +782,39 @@
                 if(lastGetGoodFun == 'searchFun'){
                     searchPageControl();
 //                searchFun(searchKeyWord,startSearch, hasImage);
-                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
+                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
                 }else{
                     tabPageControl();
-                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
+                }
+            });
+        });
+
+        //定义全局变量
+        var goodstatus = '';
+        $('.selectBox .select .selectQuality').children('.selectChoose').each(function(index){
+            $(this).click(function () {
+                if(index == 0){
+                    goodstatus = '';
+                }else if(index == 1){
+                    goodstatus = 0;
+                }else if(index == 2){
+                    goodstatus = 1;
+                }else if(index == 3){
+                    goodstatus = 2;
+                }else if(index == 4){
+                    goodstatus = 3;
+                }
+                $('.selectBox .select .selectQuality .selectChoose').removeClass("active");
+                $(this).addClass('active');
+                console.log(goodstatus);
+                if(lastGetGoodFun == 'searchFun'){
+                    searchPageControl();
+//                searchFun(searchKeyWord,startSearch, hasImage);
+                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
+                }else{
+                    tabPageControl();
+                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
                 }
             });
         });
@@ -807,10 +867,10 @@
                                 if(lastGetGoodFun == 'searchFun'){
                                     searchPageControl();
 //                searchFun(searchKeyWord,startSearch, hasImage);
-                                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
+                                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
                                 }else{
                                     tabPageControl();
-                                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
                                 }
                             });
                         });
@@ -837,7 +897,7 @@
                 startSearch += 30 ;
                 if(startSearch<=totalCountSearch){
 //                    searchFun(searchKeyWord, startSearch, hasImage);
-                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
+                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
                 }else{
                     startSearch -= 30 ;
                     alert('已经是最后一页了！');
@@ -847,7 +907,7 @@
                 startSearch -= 30 ;
                 if(startSearch >= 0){
 //                    searchFun(searchKeyWord, startSearch, hasImage);
-                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
+                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
                 }else{
                     startSearch += 30 ;
                     alert('已经是第一页了！');
@@ -857,7 +917,7 @@
 
 
         //cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage
-        function searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage){
+        function searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus){
             lastGetGoodFun = 'searchFun';
             $('#dongHua').show();
             $('.goodsBox').hide();
@@ -867,13 +927,13 @@
             $('.searchBox .search .searchLeft .second').html(searchKeyWord);//二级标题
             $.ajax({
                 type: "get",
-                url: baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+ +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&n=30&hasImage='+hasImage,
+                url: baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+ +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&n=30&hasImage='+hasImage +'&goodstatus='+ goodstatus,
                 dataType:"json",
                 success: function(data){
                     if(data.status == 200){
 
                         console.log("搜索",data);
-                        console.log("搜索url="+baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+ +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&n=30&hasImage='+hasImage);
+                        console.log("搜索url="+baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+ +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&n=30&hasImage='+hasImage +'&goodstatus='+ goodstatus);
                         //搜索结果总数
                         totalCountSearch = data.extdata;
                         $('.pageControl').hide();
@@ -962,12 +1022,39 @@
             if(searchKeyWord != ''){
                 $('.goodsBox').empty();//清空goodsBox
                 searchPageControl();
-//                searchFun(searchKeyWord, startSearch, hasImage);
-                searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
+                searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
             }else{
 //                alert('请输入搜索关键词！');
             }
         });
+
+        var searchStatus = 0;
+        $('.searchBox .search .searchRight .ipt').on('focus',function () {
+            searchStatus = 1;
+        });
+        $('.searchBox .search .searchRight .ipt').on('blur',function () {
+            searchStatus = 0;
+        });
+        document.onkeydown = function(ev){
+            ev = ev || event;
+            console.log(ev.keyCode);
+            if(ev.keyCode == 13){
+                if(searchStatus == 1){ //按enter搜索
+                    searchKeyWord = $.trim($('.searchBox .search .searchRight .ipt').val());
+                    if(searchKeyWord != ''){
+                        $('.goodsBox').empty();//清空goodsBox
+                        searchPageControl();
+//                searchFun(searchKeyWord, startSearch, hasImage);
+                        searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
+                    }else{
+//                alert('请输入搜索关键词！');
+                    }
+                }
+                return false;
+            }
+        };
+
+
         //点击发布
         $('.searchBox .search .searchRight .searchBtn').unbind('click').click(function () {
             window.location.href = "publish.html";
@@ -989,7 +1076,7 @@
 
             searchPageControl();
 //            searchFun(searchKeyWord,startSearch, hasImage);
-            searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage);
+            searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
 
 
 
@@ -1004,7 +1091,7 @@
 
             $('.searchBox .search .searchLeft .second').html(cidName);//二级标题
             tabPageControl();
-            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
         }
 
 
@@ -1015,7 +1102,7 @@
                 startTab += 30 ;
                 if(startTab<=totalCountTab){
                     tabPageControl();
-                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
                 }else{
                     startTab -= 30 ;
                     alert('已经是最后一页了！');
@@ -1025,7 +1112,7 @@
                 startTab -= 30 ;
                 if(startTab >= 0){
                     tabPageControl();
-                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage);
+                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
                 }else{
                     startTab += 30 ;
                     alert('已经是第一页了！');
@@ -1033,7 +1120,7 @@
             });
         }
 
-        function getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage){
+        function getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus){
             lastGetGoodFun = 'getGoods';
             $('#dongHua').show();
             $('.goodsBox').hide();
@@ -1046,10 +1133,10 @@
             //产品列表查看
             $.ajax({
                 type: "get",
-                url: baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n=30&hasImage='+hasImage,
+                url: baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n=30&hasImage='+hasImage +'&goodstatus='+ goodstatus,
                 dataType:"json",
                 success: function(data){
-                    console.log("url="+baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n=30&hasImage='+hasImage);
+                    console.log("url="+baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n=30&hasImage='+hasImage +'&goodstatus='+ goodstatus);
                     if (data.status == 200) {
                         totalCountTab = data.extdata;
 //                        alert(totalCountTab);
@@ -1087,6 +1174,17 @@
                             if(detailsText.length>200){
                                 detailsText = detailsText.substring(0, 180) + '...';
                             }
+                            //aboutQuality
+                            var aboutQuality = '';
+                            if(data[list].goodstatus == 0){
+                                aboutQuality = 'Brand New';
+                            }else if(data[list].goodstatus == 1){
+                                aboutQuality = 'New';
+                            }else if(data[list].goodstatus == 2){
+                                aboutQuality = 'As New';
+                            }else if(data[list].goodstatus == 3){
+                                aboutQuality = 'A Half New';
+                            }
 
                             str += '<div class="row goods">' +
                                     '<div class="col-xs-3 col-sm-3 goodsLeft">' +
@@ -1099,7 +1197,7 @@
                                     '<span class="goodDate">'+data[list].pubtime+'</span>' +
                                     '</p>' +
                                     '</div>' +
-                                    '<div class="col-xs-3 col-sm-3 goodsRight">'+priceHtml+'</div>' +
+                                    '<div class="col-xs-3 col-sm-3 goodsRight">'+priceHtml+'<span class="aboutQuality">'+aboutQuality+'</span></div>' +
                                     '</div>';
                         }
                         $('.goodsBox').empty().append(str).show();
