@@ -290,6 +290,7 @@
             /*overflow: hidden;*/
             /*border: 1px solid red;*/
             /*line-height: 200px;*/
+            background: url("image/index/logo.png") no-repeat center center;
         }
         .refreshImgBox .refreshImg .refreshLi .goodImg{
             width:200px;
@@ -456,8 +457,8 @@
         </div>
     </aside>
 
-    <aside class="searchBox">
-        <div class="row search">
+    <aside class="searchBox row">
+        <div class="row search col-xs-12 col-sm-12">
             <div class="col-xs-6 col-sm-6 searchLeft">
                 <img class="logo" src="image/index/logo.png">
             </div>
@@ -930,8 +931,8 @@
                             price = 'Negotiated';
                         }
                         $('.refreshImgBox .refreshImg').append(
-                            '<li class="refreshLi">' +
-                            '<img class="goodImg" src='+baseImgSrc+data[i].cimg+'>' +
+                            '<li class="refreshLi" style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center">' +
+//                            '<img class="goodImg" src='+baseImgSrc+data[i].cimg+'><div class="desc row">' +
                             '<div class="desc row">' +
                             '<div class="col-xs-6 col-sm-6 left">'+data[i].title+'</div>' +
                             '<div class="col-xs-6 col-sm-6 right">'+price+'</div>' +
@@ -939,6 +940,9 @@
                             '</li>'
                         );
                     }
+                    $('.refreshImgBox .refreshImg .refreshLi .goodImg').css({
+//                        marginTop:200-
+                    });
 
                     $('.refreshImgBox .refreshImg .refreshLi').unbind('click').click(function () {
                         var index = $(this).index();

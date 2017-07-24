@@ -152,8 +152,9 @@ $(function(){
                                     str = data[nearby].price;
                                 }
                                 $('.nearbyImgBox .nearbyImg').append('' +
-                                    '<li class="nearbyLi">' +
-                                    '<img class="goodImg" src='+baseUrl+'/gimg/'+data[nearby].imgs+'>' +
+                                    //'<li class="nearbyLi">' +
+                                    '<li class="nearbyLi" style="background: url('+baseImgSrc+data[nearby].imgs+') no-repeat center center">' +
+                                    //'<img class="goodImg" src='+baseUrl+'/gimg/'+data[nearby].imgs+'>' +
                                     '<div class="desc row">' +
                                     '<div class="col-xs-6 col-sm-6 left">'+data[nearby].title+'</div>' +
                                     '<div class="col-xs-6 col-sm-6 right">'+str+'</div>' +
@@ -236,8 +237,9 @@ $(function(){
                                         str = data[nearby].price;
                                     }
                                     $('.nearbyImgBox .nearbyImg').append('' +
-                                        '<li class="nearbyLi">' +
-                                        '<img class="goodImg" src='+baseUrl+'/gimg/'+data[nearby].imgs+'>' +
+                                            //'<li class="nearbyLi">' +
+                                        '<li class="nearbyLi" style="background: url('+baseImgSrc+data[nearby].imgs+') no-repeat center center">' +
+                                            //'<img class="goodImg" src='+baseUrl+'/gimg/'+data[nearby].imgs+'>' +
                                         '<div class="desc row">' +
                                         '<div class="col-xs-6 col-sm-6 left">'+data[nearby].title+'</div>' +
                                         '<div class="col-xs-6 col-sm-6 right">'+str+'</div>' +

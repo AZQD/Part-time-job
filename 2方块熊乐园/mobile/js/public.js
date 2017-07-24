@@ -195,6 +195,12 @@ if(token == null){
                     window.location.href = "profile.html?pubUid="+data.uid;
                 });
 
+                //profile.html:
+                $('.headerBox .profileMiddle').unbind('click').click(function(){
+                    //window.open("profile.html?pubUid="+data.uid);
+                    window.location.href = "index.html";
+                });
+
             }else if(data.status == 501){//token失效
                 console.log("用户未登陆（token过期）", data);
             }else {
