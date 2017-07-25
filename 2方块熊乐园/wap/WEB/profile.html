@@ -375,9 +375,10 @@
                     </a>-->
                 </div>
             </div>
-            <div class="col-xs-6 col-sm-6 searchRight">
+            <div class="col-xs-6 col-sm-6 searchRight" style="position: relative;">
                 <input class="ipt" type="text" placeholder="What dou you need?">
                 <img class="searchImg" src="image/index/search.png">
+                <marquee style="position: absolute;left: 50px;bottom: 12px;width: 507px;height: 20px;line-height: 20px;" id="aboutmarquee"></marquee>
             </div>
         </div>
     </aside>
@@ -464,6 +465,23 @@
 <script type="text/javascript" src="js/headerBox.js"></script>
 <script type="text/javascript">
     $(function(){
+
+        //getmarquee
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/getmarquee",
+            dataType:"json",
+            success: function(data){
+                if(data.status ==200){
+                    console.log('getmarquee',data);
+                    $('#aboutmarquee').html(data.data);
+                }
+
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
 
         /*facebook发布评论*/
         $('#fackbookNeedId').attr('data-href', "http://www.kalichimall.com:81/profile.html"+window.location.search);

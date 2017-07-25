@@ -33,8 +33,12 @@
                 if(_x > 0 && _x <= maxWidth){
                     handler.css({'left': _x});
                     drag_bg.css({'width': _x});
-                }else if(_x > maxWidth){  //鼠标指针移动距离达到最大时清空事件
+                }else if(_x > maxWidth && maxWidth==252){  //鼠标指针移动距离达到最大时清空事件
                     dragOk();
+                    handler.css({'left': 252});
+                    drag_bg.css({'width': 252});
+                    $(document).unbind('mousemove');
+                    $(document).unbind('mouseup');
                 }
             }
         }).mouseup(function(e){

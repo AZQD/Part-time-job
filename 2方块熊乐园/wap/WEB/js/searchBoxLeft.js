@@ -44,7 +44,7 @@ $.ajax({
             });
             var search = $('.searchBox .search').offset().left;
             var searchUlLeft = $('.searchBox .search .searchLeft .second').offset().left;
-            $('.searchBox .search .menuUl').css('left', searchUlLeft);
+            $('.searchBox .search .menuUl').css('left', searchUlLeft-76);
             $('.searchBox .search .searchLeft .second').hover(function () {
                 $('.searchBox .search .menuUl').show();
             },function(){

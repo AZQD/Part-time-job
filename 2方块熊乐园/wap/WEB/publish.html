@@ -430,6 +430,7 @@
                 <input class="ipt" type="text" placeholder="What dou you need?">
                 <img class="searchImg" src="image/index/search.png">
                 <button class="searchBtn">PUBLISH</button>
+                <marquee style="position: absolute;left: 50px;bottom: 6px;width: 507px;height: 20px;line-height: 20px;" id="aboutmarquee"></marquee>
             </div>
         </div>
     </aside>
@@ -551,6 +552,25 @@
 <script type="text/javascript" src="js/searchBoxRight.js"></script>
 <script type="text/javascript">
     $(function(){
+
+        //getmarquee
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/getmarquee",
+            dataType:"json",
+            success: function(data){
+                if(data.status ==200){
+                    console.log('getmarquee',data);
+                    $('#aboutmarquee').html(data.data);
+                }
+
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+
         //用户未登录时弹窗
         $('.publishPopBox .tipOffBox .confirmBox .loginNowBtn').unbind('click').click(function(){
             window.location.href = "login.html?goLogin="+1;
@@ -1141,6 +1161,7 @@
         }
 
 
+        var publishClick = true;
         $('.sortBox .sort .partInner2 .partInner2Box .publishBtn').click(function(){
             if(priceRight && ($('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val() !='')
             && ($('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val() !='')
@@ -1172,52 +1193,55 @@
                 //执行提交
                 if(needUpdate == 1){//编辑商品
 
-                    var updateGoodInfo = {
-                        "token":token, 			//用户登录凭证，如果是匿名发布则留空""
-                        "id":updatepubcontentId, //需要编辑的商品的id
-                        "cid":cid.toString(),				//产品分类ID (需调整)
-                        "issell":issell,		//是否是出售，"1"为出售，"0"为需求
-                        "goodstatus":goodstatus,		//产品新旧,"0","1","2","3","4","5"...
-                        "price":priceText.toString(),			//价格
-                        "title":$('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val(),		//标题
-                        "details":$('.sortBox .sort .partInner2 .partInner2Box .right .detailText').val(),	//产品详情
-                        "addr_l1":addr_l1.toString(),			//一级地址 ID
-                        "addr_l2":addr_l2.toString(),			//二级地址 ID
-                        "addr_l3":"0",			//三级地址 ID
-                        "addr_l4":$('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val(),			//详细地址
-                        "contactname":$('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val(),	//联系人姓名
-                        "phone":$('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(),		//联系人手机
-                        "imgs":totalImgIdAll				//产品图片ID，图片ID通过图片上传接口获得
-                    };
-                    console.log("updateGoodInfo", updateGoodInfo);
+                    if(publishClick){
+                        publishClick = false;
+                        var updateGoodInfo = {
+                            "token":token, 			//用户登录凭证，如果是匿名发布则留空""
+                            "id":updatepubcontentId, //需要编辑的商品的id
+                            "cid":cid.toString(),				//产品分类ID (需调整)
+                            "issell":issell,		//是否是出售，"1"为出售，"0"为需求
+                            "goodstatus":goodstatus,		//产品新旧,"0","1","2","3","4","5"...
+                            "price":priceText.toString(),			//价格
+                            "title":$('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val(),		//标题
+                            "details":$('.sortBox .sort .partInner2 .partInner2Box .right .detailText').val(),	//产品详情
+                            "addr_l1":addr_l1.toString(),			//一级地址 ID
+                            "addr_l2":addr_l2.toString(),			//二级地址 ID
+                            "addr_l3":"0",			//三级地址 ID
+                            "addr_l4":$('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val(),			//详细地址
+                            "contactname":$('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val(),	//联系人姓名
+                            "phone":$('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(),		//联系人手机
+                            "imgs":totalImgIdAll				//产品图片ID，图片ID通过图片上传接口获得
+                        };
+                        console.log("updateGoodInfo", updateGoodInfo);
 
-                    $.ajax({
-                        type:"POST",
-                        url:baseUrl + "/apigateway/updatepubcontent",
-                        dataType:"json",
-                        data:JSON.stringify(updateGoodInfo),
-                        success:function(data){
-                            console.log(data);
-                            if(data.status == 200){
+                        $.ajax({
+                            type:"POST",
+                            url:baseUrl + "/apigateway/updatepubcontent",
+                            dataType:"json",
+                            data:JSON.stringify(updateGoodInfo),
+                            success:function(data){
+                                console.log(data);
+                                if(data.status == 200){
 //                                alert(data.status);
-                                //保存id，点击CLICK IT 进入该商品详情页
-                                localStorage.setItem('goodIdFromCategory',data.data);
-                                $('.sortBox .sort .part').removeClass("active").eq(2).addClass("active");
-                                $('.sortBox .sort .partInner').hide().eq(2).show();
-                                $('.sortBox .sort .space .changeCid').hide();
+                                    //保存id，点击CLICK IT 进入该商品详情页
+                                    localStorage.setItem('goodIdFromCategory',data.data);
+                                    $('.sortBox .sort .part').removeClass("active").eq(2).addClass("active");
+                                    $('.sortBox .sort .partInner').hide().eq(2).show();
+                                    $('.sortBox .sort .space .changeCid').hide();
 
-                                $('.sortBox .sort .partInner3 .completeBtn').click(function(){
-                                    window.open("detail.html?id="+updatepubcontentId);
+                                    $('.sortBox .sort .partInner3 .completeBtn').click(function(){
+                                        window.open("detail.html?id="+updatepubcontentId);
 //                                window.location.href = "detail.html?id="+data.data;
-                                });
-                            }else{
-                                commonPopFun(data.msg, 'Failed');
+                                    });
+                                }else{
+                                    commonPopFun(data.msg, 'Failed');
+                                }
+                            },
+                            error:function(error){
+                                console.log(error);
                             }
-                        },
-                        error:function(error){
-                            console.log(error);
-                        }
-                    });
+                        });
+                    }
 
                 }else{//发布商品
                     var pubGoodInfo = {

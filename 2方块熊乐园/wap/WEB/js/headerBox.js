@@ -162,12 +162,12 @@ $(function(){
                                     '</li>');
                             }
                             /*refreshImgBox，nearbyImgBox：hover图片动效*/
-                            $('.refreshImgBox .refreshImg .refreshLi .goodImg, .nearbyImgBox .nearbyImg .nearbyLi .goodImg').hover(
+                            $(' .nearbyImgBox .nearbyImg .nearbyLi').hover(
                                 function(){
-                                    $(this).siblings('.desc').fadeIn();
+                                    $(this).children('.desc').fadeIn();
                                 },
                                 function(){
-                                    $(this).siblings('.desc').fadeOut();
+                                    $(this).children('.desc').fadeOut();
                                 }
                             );
 
