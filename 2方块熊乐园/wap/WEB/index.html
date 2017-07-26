@@ -250,6 +250,96 @@
         }
 
         /*refreshBox*/
+        .hotBox{
+            background-color: #F2F2F2;
+            padding-top:10px;
+        }
+        .hotBox .refresh{
+            width:1200px;
+            margin:0 auto;
+            padding:8px 0;
+        }
+        .hotBox .refresh .refreshLeft .refreshName{
+            font-weight:bold;
+            font-size: 18px;
+            color: #333;
+            border-left:2px solid #FF4720;
+            padding-left:8px;
+        }
+        .hotBox .refresh .refreshRight{
+            padding-right:30px;
+            text-align: right;
+        }
+        .hotBox .refresh .refreshRight .refreshImg{
+            width:20px;
+            vertical-align: -4px;
+        }
+        .hotBox .refresh .refreshRight .refreshBtn{
+            color: #999;
+            font-size: 16px;
+            text-decoration: underline;
+        }
+
+        /*refreshImgBox*/
+        .hotImgBox{
+            /*background-color: #F2F2F2;*/
+        }
+        .hotImgBox .refreshImg{
+            width:1200px;
+            margin:0 auto;
+            overflow: hidden;
+            /*height: 210px;*/
+        }
+        .hotImgBox .refreshImg .refreshLi{
+            display: list-item;
+            cursor: pointer;
+            float: left;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            margin-bottom: 16px;
+            margin-right: 50px;
+            /*overflow: hidden;*/
+            /*border: 1px solid red;*/
+            /*line-height: 200px;*/
+            background: url("image/index/logo.png") no-repeat center center;
+        }
+        .hotImgBox .refreshImg .refreshLi:nth-child(5n){
+            margin-right: 0;
+        }
+        .hotImgBox .refreshImg .refreshLi .goodImg{
+            width:200px;
+            height:200px;
+            /*min-width: 200px;*/
+            /*min-height: 200px;*/
+            border: 1px solid #FF4720;
+        }
+        .hotImgBox .refreshImg .refreshLi .desc{
+            display: none;
+            position: absolute;
+            width:200px;
+            left:-20px;
+            bottom:0;
+            padding:0 6px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 16px;
+            color: #fff;
+            margin-left:20px;
+            background-color: #FC2C1A;
+        }
+        .hotImgBox .refreshImg .refreshLi .desc .left{
+            font-weight: bold;
+        }
+        .hotImgBox .refreshImg .refreshLi .desc .right{
+            text-align: right;
+        }
+
+
+
+
+        /*refreshBox*/
         .refreshBox{
             background-color: #F2F2F2;
             padding-top:10px;
@@ -335,6 +425,10 @@
         .refreshImgBox .refreshImg .refreshLi .desc .right{
             text-align: right;
         }
+
+
+
+
 
         /*nearbyBox*/
         .nearbyBox{
@@ -566,6 +660,30 @@
         </div>
     </aside>
 
+    <aside class="hotBox">
+        <div class="row refresh">
+            <div class="col-xs-6 col-sm-6 refreshLeft">
+                <span class="refreshName">HOT</span>
+            </div>
+            <!--<div class="col-xs-6 col-sm-6 refreshRight">
+                <img class="refreshImg" src="image/index/refresh.png">
+                <a href="#" class="refreshBtn">REFRESH</a>
+            </div>-->
+        </div>
+    </aside>
+
+    <aside class="hotImgBox">
+        <ul class="refreshImg">
+            <!--<li class="refreshLi">
+                <img class="goodImg" src="image/index/good1.jpg">
+                <div class="desc row">
+                    <div class="col-xs-6 col-sm-6 left">iPhone 5s</div>
+                    <div class="col-xs-6 col-sm-6 right">1054</div>
+                </div>
+            </li>-->
+        </ul>
+    </aside>
+
     <aside class="refreshBox">
         <div class="row refresh">
             <div class="col-xs-6 col-sm-6 refreshLeft">
@@ -771,11 +889,26 @@
             window.location.href = 'index.html' + window.location.search;
         });
 
+        //hotBox显示效果
+        $('.hotImgBox .refreshImg .refreshLi').fadeIn(1000).show();
+//        $('.refreshImgBox .refreshImg .refreshLi').slideDown(1000).show();
+
         //refreshBox显示效果
         $('.refreshImgBox .refreshImg .refreshLi').fadeIn(1000).show();
 //        $('.refreshImgBox .refreshImg .refreshLi').slideDown(1000).show();
 
 
+
+
+        /*hotImgBox：hover图片动效*/
+        $('.hotImgBox .refreshImg .refreshLi').hover(
+                function(){
+                    $(this).children('.desc').fadeIn();
+                },
+                function(){
+                    $(this).children('.desc').fadeOut();
+                }
+        );
 
 
         /*refreshImgBox，nearbyImgBox：hover图片动效*/
@@ -1025,6 +1158,86 @@
                 console.log(error);
             }
         });
+
+
+
+
+
+
+
+
+        //hotImgBox 其实也就是recently
+        $.ajax({
+            type: "get",
+            url: baseUrl + "/apigateway/gethotgoods?n=10",
+            success: function (data) {
+                if (data.status == 200) {
+                    data = JSON.parse(data.data);
+                    console.log("获得最热的商品信息", data);
+                    var recentlyIdArr = [];
+                    for(var i=0; i<data.length; i++){
+                        recentlyIdArr.push(data[i].id);
+                        var price = data[i].price;
+                        if(price == 0){
+                            price = 'Negotiated';
+                        }
+                        $('.hotImgBox .refreshImg').append(
+                                '<li class="refreshLi" style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center">' +
+//                            '<img class="goodImg" src='+baseImgSrc+data[i].cimg+'><div class="desc row">' +
+                                '<div class="desc row">' +
+                                '<div class="col-xs-6 col-sm-6 left">'+data[i].title+'</div>' +
+                                '<div class="col-xs-6 col-sm-6 right"><img style="vertical-align: -2px;margin-left: 1px;" src="image/index/views.png">'+data[i].views+'</div>' +
+                                '</div>' +
+                                '</li>'
+                        );
+                    }
+
+                    $('.hotImgBox .refreshImg .refreshLi').unbind('click').click(function () {
+                        var index = $(this).index();
+                        window.open("detail.html?id="+recentlyIdArr[index]);
+                        //window.location.href = "detail.html?id="+goodIdArr[index];
+                    });
+
+                    $('.hotImgBox .refreshImg .refreshLi').hover(
+                            function(){
+                                $(this).children('.desc').fadeIn();
+                            },
+                            function(){
+                                $(this).children('.desc').fadeOut();
+                            }
+                    );
+
+
+                } else {
+                    commonPopFun1(data.msg, 'Failed');
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+
+
+        //获得最热的商品信息
+        /*$.ajax({
+            type: "get",
+            url: baseUrl + "/apigateway/gethotgoods?n=10",
+            success: function (data) {
+                if (data.status == 200) {
+                    data = JSON.parse(data.data);
+                    console.log("获得最热的商品信息", data);
+
+                } else {
+                    commonPopFun(data.msg, 'Failed');
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });*/
+
+
 
 
     });
