@@ -176,10 +176,25 @@ function commonPopFun(dataMsg, title){
     }
 }
 
+//设置menuUl的left值
+if($('.searchBox .search .searchLeft .second').length == 0){//没有menuUl
 
-$('.searchBox .search').css('marginLeft','75px');
+}else {
+    var secondLeft = $('.searchBox .search .searchLeft .second').offset().left;
+    $('.searchBox .search .menuUl').css('left', secondLeft);
+}
 
 
+//$('.searchBox .search').css('marginLeft','75px');
+//搜索aside居中
+if($(window).width()>1200){
+    $('.searchBox .search').css('marginLeft',($(window).width()-1200)/2);
+}
+$(window).resize(function(ev){
+    if($(window).width()>1200){
+        $('.searchBox .search').css('marginLeft',($(window).width()-1200)/2);
+    }
+});
 
 //用户商品列表页展示地址：
 var yijidizhiIdArr = [];
