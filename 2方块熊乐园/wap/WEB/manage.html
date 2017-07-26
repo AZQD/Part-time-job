@@ -315,7 +315,7 @@
         .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .right a{
             font-size: 14px;
             color: #333;
-            padding-left: 12px;
+            /*padding-left: 12px;*/
             text-decoration: underline;
         }
         .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .right .goodStatus{
@@ -475,6 +475,50 @@
             background-color: #FF4720;
         }
 
+
+        /*commonPopBox2*/
+        .commonPopBox2{
+            position: absolute;
+            background-color: RGBA(0,0,0,0.6);
+            z-index: 9999;
+            /*width: 100%;*/
+            /*height: 100%;*/
+        }
+        .commonPopBox2 .commonPop{
+            width: 372px;
+            background-color: #fff;
+            margin: 0 auto;
+            margin-top: 150px;
+        }
+        .commonPopBox2 .commonPop .title{
+            height: 37px;
+            line-height:37px;
+            padding-left: 12px;
+            font-size: 13px;
+            background-color: rgba(204, 204, 204, 1);
+        }
+        .commonPopBox2 .commonPop .detailTip{
+            text-align: justify;
+            padding:32px 40px;
+            font-size: 14px;
+        }
+        .commonPopBox2 .commonPop .confirmBox{
+            font-size: 13px;
+            padding:12px 40px;
+            text-align: center;
+        }
+        .commonPopBox2 .commonPop .confirmBox .confirmBtn{
+            cursor: pointer;
+            width: 127px;
+            height: 35px;
+            line-height:35px;
+            background-color: rgba(255, 79, 13, 1);
+            color: #fff;
+            text-align: center;
+        }
+        .commonPopBox2 .commonPop .confirmBox .confirmBtn1{
+            margin-right:36px;
+        }
     </style>
 </head>
 <body>
@@ -487,6 +531,15 @@
         </div>
     </div>
 </section>
+<section class="commonPopBox2" style="display: none;">
+    <div class="commonPop">
+        <h3 class="title"></h3>
+        <p class="detailTip"></p>
+        <div class="confirmBox">
+            <span class="confirmBtn confirmBtn1">YES</span><span class="confirmBtn confirmBtn2">NO</span>
+        </div>
+    </div>
+</section>
 <section class="managePopBox" style="display: none;">
     <div class="managePop">
         <div class="fileBtn">
@@ -496,7 +549,10 @@
             </a>
         </div>
         <p class="warning">Support PNG、JPG files.File size should less than 4M.</p>
-        <div class="imgBox"><img src="image/index/headImg.png"/></div>
+        <div class="imgBox">
+            <img class="headImgPic" src=""/>
+            <span class="loadingText" style="display: none;">loading...</span>
+        </div>
         <div class="recommedTitle">Recommends</div>
         <div class="recommendBox">
             <!--<img class="choose" src="image/recommend/1.jpg" />
@@ -551,15 +607,16 @@
         </div>
     </aside>
 
-    <aside class="searchBox">
-        <div class="row search">
+    <aside class="searchBox row">
+        <div class="row search col-xs-12 col-sm-12">
             <div class="col-xs-6 col-sm-6 searchLeft">
                 <img class="logo" src="image/index/logo.png">
             </div>
-            <div class="col-xs-6 col-sm-6 searchRight">
+            <div class="col-xs-6 col-sm-6 searchRight" style="position: relative;">
                 <input class="ipt" type="text" placeholder="What dou you need?">
                 <img class="searchImg" src="image/index/search.png">
                 <button class="searchBtn">PUBLISH</button>
+                <marquee style="position: absolute;left: 50px;bottom: 6px;width: 507px;height: 20px;line-height: 20px;" id="aboutmarquee"></marquee>
             </div>
         </div>
     </aside>
@@ -570,7 +627,7 @@
                 <div class="col-xs-3 col-sm-3 infoLeft">
                     <div class="infoLeftTitle"><a href="###" class="active">Profile</a></div>
                     <div class="infoLeftTitle"><a href="###">Products</a></div>
-                    <div class="infoLeftTitle"><a href="###">Messages</a></div>
+                    <!--<div class="infoLeftTitle"><a href="###">Messages</a></div>-->
                 </div>
                 <div class="col-xs-9 col-sm-9 infoRight">
                     <div class="part part1" style="display: block;">
@@ -604,11 +661,11 @@
                         <div class="col-xs-12 col-sm-12 attrBox"><a href="###" class="resetLink">RESET PASSWARD</a></div>
                     </div>
                     <div class="row part part2" style="display: none;">
-                        <form action="#" class="form">
-                            <label class="sell"><input name="sell" type="radio" value="" />&nbsp;&nbsp;ALL</label>
-                            <label class="sell"><input name="sell" type="radio" value="" />&nbsp;&nbsp;PUBLISHED</label>
-                            <label class="sell"><input name="sell" type="radio" value="" />&nbsp;&nbsp;FINISHED</label>
-                            <label class="sell"><input name="sell" type="radio" value="" />&nbsp;&nbsp;UNPUBLISH</label>
+                        <form action="#" class="form" style="position: relative;left: -80px;">
+                            <label  style="visibility: hidden;" class="sell"><input name="sell" type="radio" checked value="" />&nbsp;&nbsp;ALL</label>
+                            <label class="sell"><input name="sell" type="radio" value="" />&nbsp;&nbsp;Published</label>
+                            <label class="sell"><input name="sell" type="radio" value="" />&nbsp;&nbsp;Finished</label>
+                            <label class="sell"><input name="sell" type="radio" value="" />&nbsp;&nbsp;Offline</label>
                             <input id="search" name="search" type="text" value="" placeholder="Search..."/>
                         </form>
                         <div class="col-xs-12 col-sm-12 listTitle"><span class="gang">|</span><span><span id="searchName">ALL</span>(<span id="searchLength"></span>)</span></div>
@@ -647,6 +704,67 @@
 <script type="text/javascript">
     $(function(){
 
+
+        //getmarquee
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/getmarquee",
+            dataType:"json",
+            success: function(data){
+                if(data.status ==200){
+                    console.log('getmarquee',data);
+                    $('#aboutmarquee').html(data.data);
+                }
+
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+        //commonPopBox2
+        /*
+         * $('.commonPopBox2').show();
+         $('.commonPopBox2 .commonPop .title').html();
+         $('.commonPopBox2 .commonPop .detailTip').html();
+         * */
+        $('.commonPopBox2').css({
+            'width':$(window).width(),
+            'height':$(window).height(),
+            'top':$(window).scrollTop()
+        });
+//$('.commonPopBox2').show();
+        /*if($('.commonPopBox2').is(':visible')){
+         $('body').css('overflow', 'hidden');
+         }*/
+
+        function commonPopFun2(dataMsg, title, func){
+            $('.commonPopBox2').css({
+                'width':$(window).width(),
+                'height':$(window).height(),
+                'top':$(window).scrollTop()
+            });
+            $('.commonPopBox2').show();
+            $('.commonPopBox2 .commonPop .title').html(title);
+            $('.commonPopBox2 .commonPop .detailTip').html(dataMsg);
+            if($('.commonPopBox2').is(':visible')){
+                $('body').css('overflow', 'hidden');
+            }
+
+            $('.commonPopBox2 .commonPop .confirmBox .confirmBtn1').unbind('click').click(function(){
+                $('.commonPopBox2').hide();
+                $('body').css('overflow', 'auto');
+                func();
+            });
+
+            $('.commonPopBox2 .commonPop .confirmBox .confirmBtn2').unbind('click').click(function(){
+                $('.commonPopBox2').hide();
+                $('body').css('overflow', 'auto');
+            });
+        }
+
+
+
         //点击图片logo跳转到index页面；
         $('.searchBox .search .searchLeft .logo').click(function () {
             window.location.href = 'index.html' + window.location.search;
@@ -660,7 +778,7 @@
             $('.infoBox .info .infoWrap .infoRight .part').hide().eq(index).show();
         });
 
-        //跳转都忘记密码页
+        //跳转到忘记密码页
         $('.infoBox .info .infoWrap .infoRight .part1 .attrBox .forget').click(function(){
             window.location.href = 'reset_password.html';
         });
@@ -707,6 +825,11 @@
                     headLogo = data.logo;
                     //修改用户头像
                     $(".a-upload4").on("change","input[type='file']",function(){
+
+                        //goOn
+                        $('.managePopBox .managePop .imgBox img').attr('src', 'image/index/loading.gif');
+//                        $('.managePopBox .managePop .imgBox .headImgPic').hide();
+//                        $('.managePopBox .managePop .imgBox .loadingText').show();
                         $('.uploadLogo4').hide();
                         console.log($(this));
                         console.log($(this).val());
@@ -722,7 +845,7 @@
                             console.log($("#upfile4").get(0).files[0]);
                             fd.append("upfile", $("#upfile4").get(0).files[0]);
                             $.ajax({
-                                url: "http://www.kalichimall.com/apigateway/upfile",
+                                url: baseUrl+"/apigateway/upfile",
                                 type: "POST",
                                 processData: false,
                                 contentType: false,
@@ -731,7 +854,12 @@
                                     if(imgData.status == 200) {
                                         console.log(imgData.data);
                                         headLogo = imgData.data;
-                                        $('.managePopBox .managePop .imgBox img').attr('src', baseImgSrc + headLogo);
+                                        var thisSrc = baseImgSrc + headLogo;
+                                        setTimeout(function(){
+                                            $('.managePopBox .managePop .imgBox .headImgPic').attr('src', thisSrc);
+                                        }, 1000);
+//                                        $('.managePopBox .managePop .imgBox .loadingText').hide();
+//                                        $('.managePopBox .managePop .imgBox .headImgPic').show();
                                     }
                                 }
                             });
@@ -762,7 +890,7 @@
 
                 }else{
                     console.log(data);
-                    commonPopFun(data.msg);
+                    commonPopFun(data.msg, 'Failed');
                 }
             },
             error:function(error){
@@ -843,9 +971,9 @@
                         if(data.status == 200){
 //                    data = JSON.parse(data.data);
                             console.log("重置密码",data);
-                            commonPopFun('CHANGED');
+                            commonPopFun('Your password is changed successfully', 'Successfully');
                         }else{
-                            commonPopFun(data.msg);
+                            commonPopFun(data.msg, 'Failed');
                         }
                     },
                     error:function(error){
@@ -853,7 +981,7 @@
                     }
                 });
             }else{
-                commonPopFun('两次输入密码不一致');
+                commonPopFun('Sorry, failed to change your password. Please try it later.', 'Failed');
             }
         });
 
@@ -876,6 +1004,7 @@
 
 
         function getuserpubinfo(status, start, number){//status=0表示在线，status=1表示下线，status=2表示完成
+            console.log('status, start, number',status, start, number);
             $.ajax({
                 type: "get",
                 url: baseUrl+"/apigateway/getuserpubinfo?token="+token+"&start="+start+"&n="+number+"&status="+status,
@@ -888,26 +1017,33 @@
 
 
                         if(status === 0){
-                            $('#searchName').html('PUBLISHED');
+                            $('#searchName').html('Published');
                             $('#searchLength').html(data.length);
                         }else if(status == 1){
-                            $('#searchName').html('UNPUBLISH');
+                            $('#searchName').html('Offline');
                             $('#searchLength').html(data.length);
                         }else if(status == 2){
-                            $('#searchName').html('FINISHED');
+                            $('#searchName').html('Finished');
                             $('#searchLength').html(data.length);
                         }else{
-                            $('#searchName').html('ALL');
+                            $('#searchName').html('All');
                             $('#searchLength').html(data.length);
                         }
 
                         $('.infoBox .info .infoWrap .infoRight .part2 .listUl').empty();
+                        var statusArr = [];
+                        var goodidArr = [];
+
+
                         for(var i=0; i<data.length; i++){
+                            statusArr.push(data[i].status);
+                            goodidArr.push(data[i].id);
+
                             var str = '';
                             if(data[i].status == 0){//status=0表示在线
-                                str = '<a href="javascript:void(0);" class="editBtn">Edit</a><br/><a href="###" style="display: none" class="goodStatus unpublish">UNPUBLISH</a><a href="###" style="display: none" class="goodStatus finished">FINISHED</a>';
+                                str = '<a href="javascript:void(0);" class="editBtn">Edit</a><br/><a href="###" style="display: none" class="goodStatus unpublish">Offline</a><a href="###" style="display: none" class="goodStatus finished">Finished</a>';
                             }else if(data[i].status == 1){//status=1表示下线
-                                str = '<a href="javascript:void(0);" class="editBtn">Edit</a><br/><a href="###" style="display: none" class="goodStatus unpublish">PUBLISH</a><a href="###" style="display: none" class="goodStatus finished">FINISHED</a>';
+                                str = '<a href="javascript:void(0);" class="editBtn">Edit</a><br/><a href="###" style="display: none" class="goodStatus unpublish">Publish</a><a href="###" style="display: none" class="goodStatus finished">Finished</a>';
                             }else if(data[i].status == 2){//status=2表示完成
                                 str = '';
                             }
@@ -938,6 +1074,95 @@
                                     $(this).find('.goodStatus').hide();
                                 }
                         );
+                        
+
+                        //点击unpublish或者publish
+                        $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.unpublish', 'click',function(){
+                            console.log(statusArr);
+                            console.log(goodidArr);
+                            var index = $(this).parents('.listLi').index();
+                            var needStatus;
+                            if(statusArr[index] == 1){//下线
+                                needStatus = 0;
+                                aboutPublish();
+                            }else if(statusArr[index] == 0){
+                                needStatus = 1;
+                                commonPopFun2('Are you sure to offline this message?', 'Kalichimall',aboutPublish );
+                            }
+
+                            //更新发布状态
+                            function aboutPublish(){
+                                $.ajax({
+                                    type: "get",
+                                    url: baseUrl+'/apigateway/updatepubstatus?token='+token+'&status='+needStatus+'&goodid='+goodidArr[index],
+                                    dataType:"json",
+                                    success: function(data){
+                                        if(data.status ==200){
+                                            console.log('更新发布状态',data);
+                                            window.location.reload();
+                                        }else{
+                                            commonPopFun(data.data, 'Failed');
+                                        }
+                                    },
+                                    error:function(error){
+                                        console.log(error);
+                                    }
+                                });
+                            }
+                        });
+
+                        //点击finished
+                        $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.finished', 'click',function(){
+                            console.log(statusArr);
+                            console.log(goodidArr);
+                            var index = $(this).parents('.listLi').index();
+
+                            commonPopFun2('This message will not be edited later; are you sure to set it to be finished?','Kalichimall', finishedFun);
+
+
+                            //更新发布状态
+                            function finishedFun(){
+                                $.ajax({
+                                 type: "get",
+                                 url: baseUrl+'/apigateway/updatepubstatus?token='+token+'&status='+2+'&goodid='+goodidArr[index],
+                                 dataType:"json",
+                                 success: function(data){
+                                     if(data.status ==200){
+                                         console.log('更新发布状态',data);
+                                         window.location.reload();
+                                     }else{
+                                         commonPopFun(data.data, 'Failed');
+                                     }
+                                 },
+                                 error:function(error){
+                                 console.log(error);
+                                 }
+                                 });
+                            }
+                        });
+
+
+                        //点击edit
+                        $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.editBtn', 'click',function(){
+                            console.log(statusArr);
+                            console.log(goodidArr);
+                            var index = $(this).parents('.listLi').index();
+                            window.open('publish.html?needUpdate=1&updatepubcontentId='+goodidArr[index]);
+                            var updatepubcontentId = goodidArr[index];
+                        });
+                        
+                        //.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .left
+                        $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.left','click', function(){
+                            var index = $(this).parents('.listLi').index();
+                            window.open("detail.html?id="+goodidArr[index]);
+                        });
+                        //.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .middle
+                        $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.middle','click', function(){
+                            var index = $(this).parents('.listLi').index();
+                            window.open("detail.html?id="+goodidArr[index]);
+                        });
+                        
+                        
 
                     }
                 },

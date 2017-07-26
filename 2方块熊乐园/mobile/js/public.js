@@ -185,9 +185,21 @@ if(token == null){
                    window.location.reload();
                 });
 
-                //index.html:显示登录或者profile
+                //index.html、detail.html:显示登录或者profile
                 $('.infos .signInUp').hide();
                 $('.infos .profile').show();
+
+                //manage.html:
+                $('.headerBox .manageMiddle').unbind('click').click(function(){//进入profile.html
+                    //window.open("profile.html?pubUid="+data.uid);
+                    window.location.href = "profile.html?pubUid="+data.uid;
+                });
+
+                //profile.html:
+                $('.headerBox .profileMiddle').unbind('click').click(function(){
+                    //window.open("profile.html?pubUid="+data.uid);
+                    window.location.href = "index.html";
+                });
 
             }else if(data.status == 501){//token失效
                 console.log("用户未登陆（token过期）", data);

@@ -1,5 +1,6 @@
 #<center>Help</center>
 
+<iframe id="searchPartIframe" src="searchPart.html" frameborder="0"></iframe>
 
 Welcome to kalichimall,you can sell or buy second hand items & New items on our website hope you have a very wonderful experience.
 

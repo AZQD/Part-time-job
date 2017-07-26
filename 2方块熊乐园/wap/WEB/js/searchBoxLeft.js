@@ -1,5 +1,8 @@
 /*.searchBox .search .menuUl .menuLi .menuLiLink*/
 /*跳转到index页面*/
+
+
+
 $('.searchBox .search .searchLeft .fist').click(function(){
     window.location.href = 'index.html';
 });
@@ -41,7 +44,7 @@ $.ajax({
             });
             var search = $('.searchBox .search').offset().left;
             var searchUlLeft = $('.searchBox .search .searchLeft .second').offset().left;
-            $('.searchBox .search .menuUl').css('left', searchUlLeft);
+            $('.searchBox .search .menuUl').css('left', searchUlLeft-76);
             $('.searchBox .search .searchLeft .second').hover(function () {
                 $('.searchBox .search .menuUl').show();
             },function(){
@@ -76,7 +79,7 @@ $.ajax({
             );*/
 
         }else{
-            commonPopFun(data.msg);
+            commonPopFun(data.msg, "Failed");
         }
     },
     error:function(error){

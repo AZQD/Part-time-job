@@ -152,8 +152,9 @@ $(function(){
                                     str = data[nearby].price;
                                 }
                                 $('.nearbyImgBox .nearbyImg').append('' +
-                                    '<li class="nearbyLi">' +
-                                    '<img class="goodImg" src='+baseUrl+'/gimg/'+data[nearby].imgs+'>' +
+                                    //'<li class="nearbyLi">' +
+                                    '<li class="nearbyLi" style="background: url('+baseImgSrc+data[nearby].imgs+') no-repeat center center">' +
+                                    //'<img class="goodImg" src='+baseUrl+'/gimg/'+data[nearby].imgs+'>' +
                                     '<div class="desc row">' +
                                     '<div class="col-xs-6 col-sm-6 left">'+data[nearby].title+'</div>' +
                                     '<div class="col-xs-6 col-sm-6 right">'+str+'</div>' +
@@ -161,16 +162,16 @@ $(function(){
                                     '</li>');
                             }
                             /*refreshImgBox，nearbyImgBox：hover图片动效*/
-                            $('.refreshImgBox .refreshImg .refreshLi .goodImg, .nearbyImgBox .nearbyImg .nearbyLi .goodImg').hover(
+                            $(' .nearbyImgBox .nearbyImg .nearbyLi').hover(
                                 function(){
-                                    $(this).siblings('.desc').fadeIn();
+                                    $(this).children('.desc').fadeIn();
                                 },
                                 function(){
-                                    $(this).siblings('.desc').fadeOut();
+                                    $(this).children('.desc').fadeOut();
                                 }
                             );
 
-                            $('.refreshImgBox .refreshImg .refreshLi .goodImg, .nearbyImgBox .nearbyImg .nearbyLi').unbind('click').click(function () {
+                            $('.nearbyImgBox .nearbyImg .nearbyLi').unbind('click').click(function () {
                                 var index = $(this).index();
                                 window.open("detail.html?id="+goodIdArr[index]);
                                 //window.location.href = "detail.html?id="+goodIdArr[index];
@@ -236,8 +237,9 @@ $(function(){
                                         str = data[nearby].price;
                                     }
                                     $('.nearbyImgBox .nearbyImg').append('' +
-                                        '<li class="nearbyLi">' +
-                                        '<img class="goodImg" src='+baseUrl+'/gimg/'+data[nearby].imgs+'>' +
+                                            //'<li class="nearbyLi">' +
+                                        '<li class="nearbyLi" style="background: url('+baseImgSrc+data[nearby].imgs+') no-repeat center center">' +
+                                            //'<img class="goodImg" src='+baseUrl+'/gimg/'+data[nearby].imgs+'>' +
                                         '<div class="desc row">' +
                                         '<div class="col-xs-6 col-sm-6 left">'+data[nearby].title+'</div>' +
                                         '<div class="col-xs-6 col-sm-6 right">'+str+'</div>' +

@@ -246,7 +246,7 @@
             var areaName = localStorage.getItem("areaName");
             $.ajax({
                 type: "get",
-                url: baseUrl + "/apigateway/getgoods?areaid="+areaId,
+                url: baseUrl + "/apigateway/getgoods?areaid="+areaId +'&n=10',
                 success: function (data) {
                     if (data.status == 200) {
                         data = JSON.parse(data.data);
