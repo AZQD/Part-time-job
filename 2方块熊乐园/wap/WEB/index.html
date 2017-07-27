@@ -1123,11 +1123,17 @@
                         if(price == 0){
                             price = 'Negotiated';
                         }
+
+                        var thisTitle = data[i].title;
+                        if(thisTitle.length>9){
+                            thisTitle = thisTitle.substring(0,9) + "...";
+                        }
+
                         $('.refreshImgBox .refreshImg').append(
                             '<li class="refreshLi" style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center">' +
 //                            '<img class="goodImg" src='+baseImgSrc+data[i].cimg+'><div class="desc row">' +
                             '<div class="desc row">' +
-                            '<div class="col-xs-6 col-sm-6 left">'+data[i].title+'</div>' +
+                            '<div class="col-xs-6 col-sm-6 left">'+thisTitle+'</div>' +
                             '<div class="col-xs-6 col-sm-6 right">'+price+'</div>' +
                             '</div>' +
                             '</li>'
@@ -1181,11 +1187,15 @@
                         if(price == 0){
                             price = 'Negotiated';
                         }
+                        var thisTitle = data[i].title;
+                        if(thisTitle.length>9){
+                            thisTitle = thisTitle.substring(0,9) + "...";
+                        }
                         $('.hotImgBox .refreshImg').append(
                                 '<li class="refreshLi" style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center">' +
 //                            '<img class="goodImg" src='+baseImgSrc+data[i].cimg+'><div class="desc row">' +
                                 '<div class="desc row">' +
-                                '<div class="col-xs-6 col-sm-6 left">'+data[i].title+'</div>' +
+                                '<div class="col-xs-6 col-sm-6 left">'+thisTitle+'</div>' +
                                 '<div class="col-xs-6 col-sm-6 right"><img style="vertical-align: -2px;margin-left: 1px;" src="image/index/views.png">'+data[i].views+'</div>' +
                                 '</div>' +
                                 '</li>'
