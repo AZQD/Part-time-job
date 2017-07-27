@@ -151,12 +151,18 @@ $(function(){
                                 }else{
                                     str = data[nearby].price;
                                 }
+
+                                var thisTitle = data[nearby].title;
+                                if(thisTitle.length>9){
+                                    thisTitle = thisTitle.substring(0,9) + "...";
+                                }
+
                                 $('.nearbyImgBox .nearbyImg').append('' +
                                     //'<li class="nearbyLi">' +
                                     '<li class="nearbyLi" style="background: url('+baseImgSrc+data[nearby].imgs+') no-repeat center center">' +
                                     //'<img class="goodImg" src='+baseUrl+'/gimg/'+data[nearby].imgs+'>' +
                                     '<div class="desc row">' +
-                                    '<div class="col-xs-6 col-sm-6 left">'+data[nearby].title+'</div>' +
+                                    '<div class="col-xs-6 col-sm-6 left">'+thisTitle+'</div>' +
                                     '<div class="col-xs-6 col-sm-6 right">'+str+'</div>' +
                                     '</div>' +
                                     '</li>');
@@ -236,12 +242,18 @@ $(function(){
                                     }else{
                                         str = data[nearby].price;
                                     }
+
+                                    var thisTitle = data[nearby].title;
+                                    if(thisTitle.length>9){
+                                        thisTitle = thisTitle.substring(0,9) + "...";
+                                    }
+
                                     $('.nearbyImgBox .nearbyImg').append('' +
                                             //'<li class="nearbyLi">' +
                                         '<li class="nearbyLi" style="background: url('+baseImgSrc+data[nearby].imgs+') no-repeat center center">' +
                                             //'<img class="goodImg" src='+baseUrl+'/gimg/'+data[nearby].imgs+'>' +
                                         '<div class="desc row">' +
-                                        '<div class="col-xs-6 col-sm-6 left">'+data[nearby].title+'</div>' +
+                                        '<div class="col-xs-6 col-sm-6 left">'+thisTitle+'</div>' +
                                         '<div class="col-xs-6 col-sm-6 right">'+str+'</div>' +
                                         '</div>' +
                                         '</li>');
