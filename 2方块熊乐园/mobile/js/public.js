@@ -162,6 +162,11 @@ var timestamp=new Date().getTime();//获取时间戳
 var userInfo;
 if(token == null){
     console.log("用户未登陆（没有token）");
+
+    //publish.html
+    $('.publishPopBox').show();
+    $('.publishPopBox').css('top', $(window).scrollTop());
+
 }else{
     var authInfo = {
         "token":token,
@@ -201,8 +206,17 @@ if(token == null){
                     window.location.href = "index.html";
                 });
 
+                //publish.html:登录之后默认显示用户昵称和手机号
+                $('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val(data.nickname);
+                $('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(data.phone);
+
             }else if(data.status == 501){//token失效
                 console.log("用户未登陆（token过期）", data);
+
+                //publish.html
+                $('.publishPopBox').show();
+                $('.publishPopBox').css('top', $(window).scrollTop());
+
             }else {
                 console.log("登录失败",data);
             }
