@@ -701,11 +701,29 @@
             
         });
 
+        //一级菜单
         $(".searchBox .search .menuUl").delegate(".menuLi","click",function(){
+            /*console.log($(this));
             cid = getCid;
             tabPageControl();
-            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
+            getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);*/
         });
+
+        //二级菜单
+        setInterval(function(){
+            if(categoryErJiCidBtn == true){
+                categoryErJiCidBtn = false;
+                cid = categoryErJiCid;
+                tabPageControl();
+                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
+            }
+        }, 100);
+
+        //
+
+
+
+
 
         //tab切换(Celler/Buyer)
         var issell = 1; //1:celler, 0:buyer
@@ -734,6 +752,7 @@
         //排序方式(sort, desc降序、asc升序,  desc 降序 从上往下是降序, asc 升序 从上往下是升序)
         var orderby = '';
         var sort = '';
+        var needSort = '';//为了解决选择区域时的bug
         var priceClickNum = 0;
         var dateClickNum = 0;
         $('.tabsBox .tabs .tabsRight .tabBtn1').click(function () {
@@ -750,6 +769,7 @@
             }
             dateClickNum ++;
             console.log(sort);
+            needSort = sort;
             if(lastGetGoodFun == 'searchFun'){
                 searchPageControl();
 //                searchFun(searchKeyWord,startSearch, hasImage);
@@ -773,6 +793,7 @@
             }
             priceClickNum ++;
             console.log(sort);
+            needSort = sort;
             if(lastGetGoodFun == 'searchFun'){
                 searchPageControl();
 //                searchFun(searchKeyWord,startSearch, hasImage);
@@ -892,10 +913,10 @@
                                 if(lastGetGoodFun == 'searchFun'){
                                     searchPageControl();
 //                searchFun(searchKeyWord,startSearch, hasImage);
-                                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
+                                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, needSort, hasImage, goodstatus);
                                 }else{
                                     tabPageControl();
-                                    getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
+                                    getGoods(cid, pmin, pmax, areaid, issell, orderby, needSort, startTab, hasImage, goodstatus);
                                 }
                             });
                         });
@@ -1066,6 +1087,7 @@
                 }
             });
         }
+        
 
 
         //用户搜索

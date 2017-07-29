@@ -1,5 +1,9 @@
 var baseUrl = "http://www.kalichimall.com:81";
 var baseImgSrc = baseUrl+"/gimg/";
+
+var categoryErJiCid;
+var categoryErJiCidBtn = false;
+
 function getParamByUrl(paramKey){
   var url=window.location.search.substring(1);
   var arr=url.split("&");
