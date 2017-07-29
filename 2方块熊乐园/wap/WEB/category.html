@@ -332,6 +332,9 @@
             right:0;
             bottom:0;
         }
+        .goodsMiddle{
+            text-align: left;
+        }
         .goodsBox .goods .goodsMiddle .goodName{
             font-size: 16px;
             color: #3366FF;
@@ -1200,6 +1203,9 @@
                         }
                         aaaa.push(bbbb);
                     }
+                    console.log('mmmmm', daLeiCidArr);
+                    console.log('mmmmm', daLeiIntervalArr);
+                    console.log('mmmmm', daLeiSubArr);
                     var daLeiIndex;
                     cid = localStorage.getItem('cid');
 //                    alert('cid='+cid);
@@ -1214,6 +1220,8 @@
                         }
                     }
 
+                    console.log('8888888888888',daLeiIntervalArr);
+                    console.log('8888888888888',daLeiIndex);
                     console.log('8888888888888',daLeiIntervalArr[daLeiIndex]);
                     $('.selectBox .select .selectPrice').empty();
                     $('.selectBox .select .selectPrice').append('<span class="price">PRICE</span><a href="#" class="selectChoose active">ALL</a>');
