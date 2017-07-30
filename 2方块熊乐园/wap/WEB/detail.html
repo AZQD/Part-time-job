@@ -1198,7 +1198,7 @@
         }
         var checkwishInfo = {
             "token":token,
-            "goodid":4,
+            "goodid":getParamByUrl('id'),
             "timestamp":timestamp
         };
         $.ajax({
@@ -1234,7 +1234,7 @@
                                 //删除收藏
                                 var delwishInfo = {
                                     "token":token, 			//用户登录凭证，必须登录状态
-                                    "goodid":"4",			//产品ID
+                                    "goodid":getParamByUrl('id'),			//产品ID
                                     "timestamp":timestamp
                                 };
                                 $.ajax({
@@ -1262,7 +1262,7 @@
                                 //提交收藏
                                 var putwishInfo = {
                                     "token":token, 			//用户登录凭证，必须登录状态
-                                    "goodid":"4",			//产品ID
+                                    "goodid":getParamByUrl('id'),			//产品ID
                                     "timestamp":timestamp
                                 };
                                 $.ajax({
