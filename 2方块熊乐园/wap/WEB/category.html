@@ -367,6 +367,7 @@
         .goodsBox .goods .aboutQuality{
             font-size: 20px;
             color: red;
+            min-width: 100px;
         }
 
         #footerIframe{
@@ -970,7 +971,15 @@
             if(searchKeyWord == undefined){
                 searchKeyWord = '';
             }
-            $('.searchBox .search .searchLeft .second').html(searchKeyWord);//二级标题
+            if(window.localStorage.getItem('clickBanner') == 1){
+                if(getParamByUrl('cid') == 2){
+                    $('.searchBox .search .searchLeft .second').html('Vehicles');//二级标题
+                }else if(getParamByUrl('cid') == 5){
+                    $('.searchBox .search .searchLeft .second').html('Life Goods');//二级标题
+                }
+            }else {
+                $('.searchBox .search .searchLeft .second').html(searchKeyWord);//二级标题
+            }
             $.ajax({
                 type: "get",
                 url: baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+ +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&n=30&hasImage='+hasImage +'&goodstatus='+ goodstatus,
@@ -1017,6 +1026,17 @@
                                 detailsText = detailsText.substring(0, 180) + '...';
                             }
 
+                            //aboutQuality
+                            var aboutQuality = '';
+                            if(data[list].goodstatus == 0){
+                                aboutQuality = 'Brand New';
+                            }else if(data[list].goodstatus == 1){
+                                aboutQuality = 'New';
+                            }else if(data[list].goodstatus == 2){
+                                aboutQuality = 'As New';
+                            }else if(data[list].goodstatus == 3){
+                                aboutQuality = 'A Half New';
+                            }
 
 
 
@@ -1054,7 +1074,7 @@
                                     '<span class="goodDate">'+data[list].pubtime+'</span>' +
                                     '</p>' +
                                     '</div>' +
-                                    '<div class="col-xs-3 col-sm-3 goodsRight">'+priceHtml+'</div>' +
+                                    '<div class="col-xs-3 col-sm-3 goodsRight">'+priceHtml+'<span class="aboutQuality">'+aboutQuality+'</span></div>' +
                                     '</div>';
                         }
                         $('.goodsBox').empty().append(str).show();
@@ -1163,7 +1183,16 @@
             //修改title
             $('#categoryTitle').html(cidName+' kalichimall, make money by your second-hand goods.');
 
-            $('.searchBox .search .searchLeft .second').html(cidName);//二级标题
+            if(window.localStorage.getItem('clickBanner') == 1){
+                if(getParamByUrl('cid') == 2){
+                    $('.searchBox .search .searchLeft .second').html('Vehicles');//二级标题
+                }else if(getParamByUrl('cid') == 5){
+                    $('.searchBox .search .searchLeft .second').html('Life Goods');//二级标题
+                }
+            }else {
+                $('.searchBox .search .searchLeft .second').html(cidName);//二级标题
+            }
+
             tabPageControl();
             getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
         }

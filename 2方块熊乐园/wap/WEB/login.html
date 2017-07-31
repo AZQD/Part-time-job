@@ -472,13 +472,39 @@
         });
         //正则验证注册的手机号
         var myReg = /^((9|09)+\d{8})$/;
+        var canRegister = true;
         $('#registerPhone').on('blur', function () {
             var regText = $.trim($('#registerPhone').val());
             if(!myReg.test(regText)){
+                canRegister = false;
                 $('#registerTip').show();
+
+                $('#registerPhone').unbind('blur').bind('input propertychange', function () {
+                    var regText = $.trim($('#registerPhone').val());
+                    if(!myReg.test(regText)){
+                        canRegister = false;
+                        $('#registerTip').show();
+                    }else{
+                        canRegister = true;
+                        $('#registerTip').hide();
+                    }
+
+                });
+
+            }else{
+                canRegister = true;
             }
 
         });
+        /*$('#registerPhone').bind('input propertychange', function () {
+            var regText = $.trim($('#registerPhone').val());
+            if(!myReg.test(regText)){
+                $('#registerTip').show();
+            }else{
+                $('#registerTip').hide();
+            }
+
+        });*/
         document.onkeydown = function(ev){
             ev = ev || event;
             console.log(ev.keyCode);
@@ -508,7 +534,7 @@
                 "reg":reg,
                 "timestamp":timestamp
             };
-            if(dragText == 'OK'){
+            if((dragText == 'OK') && (canRegister == true)){
                 $.ajax({
                     type:"POST",
                     url:baseUrl + "/apigateway/reg",

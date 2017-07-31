@@ -792,6 +792,7 @@
 <script type="text/javascript">
     $(function(){
 
+        window.localStorage.removeItem('clickBanner');
         //getmarquee
         $.ajax({
             type: "get",
@@ -1087,17 +1088,20 @@
                     });
 
                     $('.swiper-slide').click(function(){
+                        window.localStorage.setItem('clickBanner',1);
                         var index = $(this).index();
                         if(index%2 == 0){
                             localStorage.setItem('searchOrTab',"tab");
                             localStorage.setItem('cidName',bannerNeedCidName[0]);
                             localStorage.setItem('cid',bannerNeedCid[0]);
-                            window.location.href = "category.html?searchOrTab=tab&cid="+bannerNeedCid[0];
+//                            window.location.href = "category.html?searchOrTab=tab&cid="+bannerNeedCid[0];
+                            window.location.href = data[0].target;
                         }else if(index%2 == 1){
                             localStorage.setItem('searchOrTab',"tab");
                             localStorage.setItem('cidName',bannerNeedCidName[3]);
                             localStorage.setItem('cid',bannerNeedCid[3]);
-                            window.location.href = "category.html?searchOrTab=tab&cid="+bannerNeedCid[3];
+//                            window.location.href = "category.html?searchOrTab=tab&cid="+bannerNeedCid[3];
+                            window.location.href = data[1].target;
                         }
                     });
 

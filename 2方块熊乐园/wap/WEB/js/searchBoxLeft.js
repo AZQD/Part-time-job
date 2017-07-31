@@ -30,6 +30,9 @@ $.ajax({
                 for (var detail in details){
                     str += '<li class="twoLi" cid='+details[detail].cid+' cidName='+details[detail].name+'><a href="###" class="twoLiLink">'+details[detail].name+'</a></li>';
                 }
+                if(data[sort].name != 'Others'){
+                    str += '<li class="twoLi" cid='+data[sort].cid+' cidName='+data[sort].name+'><a href="###" class="twoLiLink">'+data[sort].name+'</a></li>';
+                }
                 listStr = '<li class="menuLi"><a href="#" class="menuLiLink">'+data[sort].name+'</a><ul class="twoUl" style="display: none;">'+str+'</ul></li>';
                 $('.searchBox .search .menuUl').append(listStr);
             }
@@ -83,30 +86,31 @@ $.ajax({
             //二级菜单
 
             if(getParamByUrl('searchOrTab') != 'false'){//hover可以显示category.html的二级类别
-                $('.searchBox .search .menuUl .menuLi').hover(
-                    function(){
-                        $(this).children('.twoUl').show();
-                        $(this).find('.twoLi').unbind('click').click(function (event) {
-                            event.stopPropagation();
-                            //alert($(this).attr('cidName'));
-                            $('.searchBox .search .menuUl').hide();
-                            $('.searchBox .search .searchLeft .second').text($(this).children('.twoLiLink').text());
 
-                            //在category.html页面有个定时器，实时监听变化
-                            categoryErJiCid = $(this).attr('cid');
-                            categoryErJiCidBtn = true;
-
-
-                            localStorage.setItem('cid',$(this).attr('cid'));
-                            localStorage.setItem('cidName',$(this).attr('cidName'));
-
-                        });
-                    },
-                    function(){
-                        $(this).children('.twoUl').hide();
-                    }
-                );
             }
+            $('.searchBox .search .menuUl .menuLi').hover(
+                function(){
+                    $(this).children('.twoUl').show();
+                    $(this).find('.twoLi').unbind('click').click(function (event) {
+                        event.stopPropagation();
+                        //alert($(this).attr('cidName'));
+                        $('.searchBox .search .menuUl').hide();
+                        $('.searchBox .search .searchLeft .second').text($(this).children('.twoLiLink').text());
+
+                        //在category.html页面有个定时器，实时监听变化
+                        categoryErJiCid = $(this).attr('cid');
+                        categoryErJiCidBtn = true;
+
+
+                        localStorage.setItem('cid',$(this).attr('cid'));
+                        localStorage.setItem('cidName',$(this).attr('cidName'));
+
+                    });
+                },
+                function(){
+                    $(this).children('.twoUl').hide();
+                }
+            );
 
         }else{
             commonPopFun(data.msg, "Failed");
