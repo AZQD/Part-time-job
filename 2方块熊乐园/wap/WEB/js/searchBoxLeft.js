@@ -29,6 +29,7 @@ $.ajax({
                 var details = data[sort].sub;
 				
 				str += '<li class="twoLi" cid='+data[sort].cid+' cidName='+data[sort].name+'><a href="###" class="twoLiLink">ALL</a></li>';
+                //console.log('000000000', data[sort].name);
                 for (var detail in details){
                     str += '<li class="twoLi" cid='+details[detail].cid+' cidName='+details[detail].name+'><a href="###" class="twoLiLink">'+details[detail].name+'</a></li>';
                 }
@@ -93,12 +94,19 @@ $.ajax({
                     $(this).children('.twoUl').show();
                     $(this).find('.twoLi').unbind('click').click(function (event) {
                         event.stopPropagation();
-                        alert($(this).attr('cidName'));
+                        //alert($(this).attr('cidName'));
                         $('.searchBox .search .menuUl').hide();
-						if(data[sort].name != 'ALL'){
-							alert(2);
-						}	
-                        $('.searchBox .search .searchLeft .second').text($(this).children('.twoLiLink').text());
+                        //alert(data[sort].name);
+						if(data[sort].name == 'Others'){
+                            //alert($(this).attr('cidName'));
+                            var cidName = $(this).attr('cidName');
+                            if(cidName == 'Life'){
+                                cidName = 'Life Goods';
+                            }
+                            $('.searchBox .search .searchLeft .second').text(cidName);
+						}else {
+                            $('.searchBox .search .searchLeft .second').text($(this).children('.twoLiLink').text());
+                        }
 
                         //在category.html页面有个定时器，实时监听变化
                         categoryErJiCid = $(this).attr('cid');

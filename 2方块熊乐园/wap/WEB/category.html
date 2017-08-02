@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/headerBox.css">
     <link rel="stylesheet" href="css/bottomBox.css">
+    <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="js/swiper.min.js"></script>
+    <script type="text/javascript" src="js/public.js"></script>
     <style type="text/css">
         body{
             overflow: auto;
@@ -634,9 +637,8 @@
     </aside>-->
     <iframe id="footerIframe" src="footer.html" frameborder="0"></iframe>
 </section>
-<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
-<script type="text/javascript" src="js/swiper.min.js"></script>
-<script type="text/javascript" src="js/public.js"></script>
+
+
 <script type="text/javascript" src="js/headerBox.js"></script>
 <script type="text/javascript" src="js/searchBoxLeft.js"></script>
 <!--<script type="text/javascript" src="js/searchBoxLeft.js"></script>-->
@@ -1259,14 +1261,17 @@
                     console.log('mmmmm', daLeiSubArr);
                     var daLeiIndex;
                     cid = localStorage.getItem('cid');
-//                    alert('cid='+cid);
+                    if(cid == undefined){
+                        cid = getParamByUrl('cid');
+                    }
                     console.log('aaaaaaaaaaaaaaa', aaaa);
                     for(var m=0; m<aaaa.length; m++){
                         
                         for(var n=0; n<aaaa[m].length; n++){
+                            console.log('aaa[m][n]', aaaa[m][n]);
                             if(aaaa[m][n] == cid){
                                 daLeiIndex = m;
-//                                alert(daLeiIndex);
+                                console.log('7777777777777',daLeiIndex);
                             }
                         }
                     }
@@ -1350,11 +1355,13 @@
                         }
                         console.log("产品列表查看",data);
                         data = JSON.parse(data.data);
-                        console.log("产品列表查看",data);
+                        console.log("产品列表查看888",data);
+                        ;
                         var str = '';
                         var goodIdArr = [];
 
                         for (var list in data) {
+
                             var imgsLth = 0;
                             var priceStr = '';
                             var priceHtml = '';
@@ -1396,9 +1403,11 @@
                             var yijiName,erjiName;
 
                             console.log('yijidizhiIdArr',yijidizhiIdArr);
+
                             for(var i=0; i<yijidizhiIdArr.length; i++){
                                 if(yijidizhiIdArr[i] == data[list].addr_l1){
                                     thisIndex = i;
+//                                    alert(thisIndex);
                                     yijiName = yijidizhiNameArr[i];
                                 }
                             }
@@ -1409,6 +1418,7 @@
                                     erjiName = erjidizhiArr[thisIndex][k].name;
                                 }
                             };
+                            console.log('88888888888');
 
 
 
