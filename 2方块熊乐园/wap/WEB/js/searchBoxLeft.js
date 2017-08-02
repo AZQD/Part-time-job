@@ -27,12 +27,12 @@ $.ajax({
                 var str = '';
                 var listStr = '';
                 var details = data[sort].sub;
+				
+				str += '<li class="twoLi" cid='+data[sort].cid+' cidName='+data[sort].name+'><a href="###" class="twoLiLink">ALL</a></li>';
                 for (var detail in details){
                     str += '<li class="twoLi" cid='+details[detail].cid+' cidName='+details[detail].name+'><a href="###" class="twoLiLink">'+details[detail].name+'</a></li>';
                 }
-                if(data[sort].name != 'Others'){
-                    str += '<li class="twoLi" cid='+data[sort].cid+' cidName='+data[sort].name+'><a href="###" class="twoLiLink">'+data[sort].name+'</a></li>';
-                }
+                
                 listStr = '<li class="menuLi"><a href="#" class="menuLiLink">'+data[sort].name+'</a><ul class="twoUl" style="display: none;">'+str+'</ul></li>';
                 $('.searchBox .search .menuUl').append(listStr);
             }
@@ -93,8 +93,11 @@ $.ajax({
                     $(this).children('.twoUl').show();
                     $(this).find('.twoLi').unbind('click').click(function (event) {
                         event.stopPropagation();
-                        //alert($(this).attr('cidName'));
+                        alert($(this).attr('cidName'));
                         $('.searchBox .search .menuUl').hide();
+						if(data[sort].name != 'ALL'){
+							alert(2);
+						}	
                         $('.searchBox .search .searchLeft .second').text($(this).children('.twoLiLink').text());
 
                         //在category.html页面有个定时器，实时监听变化
