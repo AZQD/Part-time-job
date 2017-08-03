@@ -990,6 +990,14 @@
                     console.log('locationArr1',locationArr1);
                     console.log('locationArr2',locationArr2);
                     $('#location1').append(str1);
+
+                    //不显示默认地址
+                    $('#location1 option').each(function (index) {
+                        if($('#location1 option').eq(index).html() == ''){
+                            $(this).hide();
+                        }
+                    });
+                    
                     addr_l1 = locationArr1Id[0];
                     addr_l2 = locationArr2[0][0].id;
                     console.log(addr_l1);

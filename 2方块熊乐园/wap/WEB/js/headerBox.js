@@ -116,6 +116,7 @@ $(function(){
                     /*<li class="changeLi"><a href="#" class="changeLiLink">Lusaka6</a></li>
                      *
                      * .headerBox .header .changeUl .changeLi*/
+                    
                     changeLiStr += '<li class="changeLi"><a href="#" class="changeLiLink">'+ data[areas].name +'</a></li>';
                     areaIdArr.push(data[areas].id);
                     areaNameArr.push(data[areas].name);
@@ -193,6 +194,13 @@ $(function(){
                 });
 
                 $('.headerBox .header .changeUl').append(changeLiStr);
+
+                //不显示默认地址
+                $('.headerBox .header .changeUl .changeLi').each(function(index){
+                    if($('.headerBox .header .changeUl .changeLi').eq(index).children('.changeLiLink').html() == ''){
+                        $(this).hide();
+                    }
+                });
                 /*//初始显示地址
                 if(areaId){
                     alert(areaId);
