@@ -381,11 +381,18 @@
             height: 100%;
         }
         .managePopBox .managePop{
+            position: relative;
             width: 504px;
             height: 534px;
             background-color: #fff;
             margin: 70px auto 0 auto;
             padding: 12px 16px;
+        }
+        .managePopBox .managePop .manageCloseBtn{
+            position: absolute;
+            right: 12px;
+            top: 12px;
+            width: 36px;
         }
 
         .managePopBox .managePop .fileBtn{
@@ -542,6 +549,7 @@
 </section>
 <section class="managePopBox" style="display: none;">
     <div class="managePop">
+        <img class="manageCloseBtn" src="image/backManage/closeBtn.png">
         <div class="fileBtn">
             <a href="javascript:;" class="upload a-upload a-upload4">Browser...
                 <input type="file" id="upfile4" accept="image/png, image/jpeg" name="file">
@@ -813,11 +821,19 @@
                     //managePopBox原头像
                     $('.managePopBox .managePop .imgBox img').attr('src', baseImgSrc + data.logo);
 
+
                     //点击Edit
                     $('.infoBox .info .infoWrap .infoRight .part1 .headBox .goToEdit a').unbind('click').click(function(){
                        $('.managePopBox').show();
                         $('body').css('overflow', 'hidden');
                     });
+
+                    //右上角X
+                    $('.managePopBox .managePop .manageCloseBtn').unbind('click').click(function(){
+                       $('.managePopBox').hide();
+                        $('body').css('overflow', 'auto');
+                    });
+
 
 
 
@@ -872,6 +888,7 @@
                     });
 
                     //点击保存
+                    var sex = 0;
                     $('.managePopBox .managePop .save .saveBtn').unbind('click').click(function(){
                         console.log(baseImgSrc + headLogo);
                         $('.infoBox .info .infoWrap .infoRight .part1 .headBox .headImg').attr('src', baseImgSrc + headLogo);
@@ -1220,6 +1237,46 @@
                         $('.infoBox .info .infoWrap .infoRight .part1 .headBox .headImg').attr('src', baseImgSrc + headLogo);
                         $('.managePopBox').hide();
                         $('body').css('overflow', 'auto');
+
+                        //先保存一遍用户信息
+                        if ($('.infoBox .info .infoWrap .infoRight .part1 .attrBox .gender').get(0).checked) {
+                            sex = 1;
+                        }
+                        if ($('.infoBox .info .infoWrap .infoRight .part1 .attrBox .gender').get(1).checked) {
+                            sex = 2;
+                        }
+                        console.log(sex);
+                        var changeuserinfo = {
+                            "token":token,
+                            "sex":sex.toString(),
+                            "logo":headLogo,
+                            "nickname":$('#nickName').val()
+                        };
+                        $.ajax({
+                            type:"POST",
+                            url:baseUrl + "/apigateway/changeuserinfo",
+                            dataType:"json",
+                            data:JSON.stringify(changeuserinfo),
+                            success:function(data){
+                                console.log(data);
+                                if(data.status == 200){
+                                    console.log("修改用户信息",data);
+                                    console.log("changeuserinfo",changeuserinfo);
+
+                                    //修改title
+                                    $('#manageTitle').html(data.nickname + "'s home. kalichimall, make money by your second-hand goods.");
+//                                    commonPopFun('Your detail has been saved successfully.', 'Successful');
+                                }else{
+                                    console.log(data);
+//                                    commonPopFun('Sorry, failed to save your detail. Please try it later.', 'Failed');
+                                }
+                            },
+                            error:function(error){
+                                console.log(error);
+//                                commonPopFun('Sorry, failed to save your detail. Please try it later.', 'Failed');
+                            }
+                        });
+
                     });
 
                 }else{
