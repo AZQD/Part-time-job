@@ -187,14 +187,15 @@
         .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg{
             background-color: #F9F9F9;
             text-align: center;
-            margin-bottom: 18px;
+            /*margin-bottom: 18px;*/
+            height: 350px;
         }
         .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic{
-            width:461px;
-            height:345px;
+            /*width:461px;*/
+            /*height:345px;*/
         }
         .detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg{
-
+            margin-top: 18px;
         }
         .detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .leftFlag{
             text-align: center;
@@ -669,7 +670,7 @@
                 <div class="row goodDesc">
                     <div class="col-xs-7 col-sm-7 goodDescLeft">
                         <!--<div class="bigImg"><img class="bigImgPic" src="image/detailPage/bigImg1.png"></div>-->
-                        <div class="bigImg"><img class="bigImgPic" src=""></div>
+                        <div class="bigImg"><img style="opacity:0;" src="" class="bigImgPic" ></div>
                         <div class="littleImg row">
                             <div class="col-xs-2 col-sm-2 leftFlag"><img src="image/detailPage/leftFlag.png"></div>
                             <div class="img_ulBox">
@@ -1054,10 +1055,52 @@
                     var imgsArr = imgs.split(',');
                     console.log(imgsArr);
                     for(var i=0; i<imgsArr.length; i++){
-                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li" style="background: url('+baseImgSrc+imgsArr[i]+') no-repeat center center"><img style="opacity: 0;" src='+baseUrl+'/gimg/'+imgsArr[i]+'></li>');
+
+                        //获取图片的真实宽高
+                        var real_width,real_height,
+                                im = document.createElement('img');
+                        im.src= baseImgSrc+imgsArr[i];
+//                                real_width  = im.width,
+//                                real_height = im.height;
+
+                        if(im.width>im.height){
+                            $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('' +
+                                    '<li class="img_li" style="background: url('+baseImgSrc+imgsArr[i]+') no-repeat center center;background-size: 100% auto;">' +
+                                    '<img style="opacity: 0;" src='+baseUrl+'/gimg/'+imgsArr[i]+'>' +
+                                    '</li>');
+                        }else{
+                            $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('' +
+                                    '<li class="img_li" style="background: url('+baseImgSrc+imgsArr[i]+') no-repeat center center;background-size: auto 100%;">' +
+                                    '<img style="opacity: 0;" src='+baseUrl+'/gimg/'+imgsArr[i]+'>' +
+                                    '</li>');
+                        }
+
                     }
-//                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', baseUrl+'/gimg/'+imgsArr[0]);
-                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('background', 'url('+baseImgSrc+imgsArr[0]+') no-repeat center center');
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', baseUrl+'/gimg/'+imgsArr[0]);
+
+//                    alert(hei);
+                    var timer = setInterval(function(){
+                        if($('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').width() != 0){
+                            clearInterval(timer);
+                            var bigImgPicHeight = $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').height();
+                            var bigImgPicWidth = $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').width();
+//                            alert(bigImgPicWidth);
+//                            alert(bigImgPicHeight);
+                            if(bigImgPicWidth >= bigImgPicHeight){
+                                $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg').css({
+                                    'background': 'url('+baseImgSrc+imgsArr[0]+') no-repeat center center',
+//                                    'backgroundSize': '100% auto',
+                                    'backgroundSize': 'auto 100%'
+                                });
+                            }else{
+                                $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg').css({
+                                    'background': 'url('+baseImgSrc+imgsArr[0]+') no-repeat center center',
+                                    'backgroundSize': 'auto 100%'
+                                });
+                            }
+                        }
+                    }, 100);
+
                     var moveNum = 0;
                     var imgsLength = imgsArr.length;
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .leftFlag').click(function(){
@@ -1075,7 +1118,26 @@
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').click(function(){
                         var index = $(this).index();
 //                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', $(this).children('img').attr('src'));
-                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('background', 'url('+$(this).children('img').attr('src')+') no-repeat center center');
+//                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('background', 'url('+$(this).children('img').attr('src')+') no-repeat center center');
+
+                        //获取图片的真实宽高
+                        var real_width,real_height,
+                            im = document.createElement('img');
+                        im.src= $(this).children('img').attr('src'),
+                            real_width  = im.width,
+                            real_height = im.height;
+                        if(real_width>=real_height){
+                            $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg').css({
+                                'background': 'url('+$(this).children('img').attr('src')+') no-repeat center center',
+//                                'backgroundSize': '100% auto',
+                                'backgroundSize': 'auto 100%'
+                            });
+                        }else{
+                            $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg').css({
+                                'background': 'url('+$(this).children('img').attr('src')+') no-repeat center center',
+                            'backgroundSize': 'auto 100%'
+                            });
+                        }
 
                     });
 
