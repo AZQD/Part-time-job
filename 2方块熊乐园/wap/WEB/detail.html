@@ -1054,9 +1054,10 @@
                     var imgsArr = imgs.split(',');
                     console.log(imgsArr);
                     for(var i=0; i<imgsArr.length; i++){
-                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li"><img src='+baseUrl+'/gimg/'+imgsArr[i]+'></li>');
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li" style="background: url('+baseImgSrc+imgsArr[i]+') no-repeat center center"><img style="opacity: 0;" src='+baseUrl+'/gimg/'+imgsArr[i]+'></li>');
                     }
-                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', baseUrl+'/gimg/'+imgsArr[0]);
+//                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', baseUrl+'/gimg/'+imgsArr[0]);
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('background', 'url('+baseImgSrc+imgsArr[0]+') no-repeat center center');
                     var moveNum = 0;
                     var imgsLength = imgsArr.length;
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .leftFlag').click(function(){
@@ -1073,7 +1074,8 @@
                     });
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').click(function(){
                         var index = $(this).index();
-                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', $(this).children('img').attr('src'));
+//                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', $(this).children('img').attr('src'));
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('background', 'url('+$(this).children('img').attr('src')+') no-repeat center center');
 
                     });
 

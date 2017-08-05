@@ -220,6 +220,27 @@
             font-size: 14px;
             color: #333;
             text-align: center;
+            overflow: hidden;
+        }
+        .sortBox .sort .partInner2 .partInner2Box .right .imagesBox .nowHaveImg{
+            border: 1px solid #999;
+            float: left;
+            margin-right: 16px;
+            width: 150px;
+            height: 150px;
+            line-height: 150px;
+            position: relative;
+            cursor: pointer;
+            color: #888;
+            overflow: hidden;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .sortBox .sort .partInner2 .partInner2Box .right .imagesBox .nowHaveImg .closeNowHaveImg{
+            width: 20px;
+            position: absolute;
+            right: 0;
+            top: 0;
         }
         .sortBox .sort .partInner2 .partInner2Box .right .imagesBox .upload{
             height: 30px;
@@ -306,10 +327,11 @@
             overflow: hidden;
             display: inline-block;
             *display: inline;
-            *zoom: 1
+            *zoom: 1;
+            margin-bottom: 20px;
         }
         .a-upload .closeImg{
-            width: 28px;
+            width: 20px;
             position: absolute;
             right: 0;
             top: 0;
@@ -500,29 +522,32 @@
                         <textarea class="detailText" name="detailText" id="detailText" cols="30" rows="10"></textarea>
                     </div>
                     <div class="col-xs-3 col-sm-3 left">IMAGES</div>
-                    <div class="col-xs-9 col-sm-9 right">
+                    <div class="col-xs-9 col-sm-9 right" style="margin-bottom: 0;">
                         <div class="imagesBox">
+                            <!--<div class="nowHaveImg" style="background: url('image/index/headImg.png') no-repeat center center"></div>-->
+                            <!--<img style="width: 150px;height: 150px;position: relative;left: 0;" src="image/index/logo.png" alt="">-->
+                            <!--<img style="width: 150px;height: 150px;position: relative;left: 0;" src="image/index/logo.png" alt="">-->
                             <!--<p class="upload">Upload Image</p>-->
                             <!--<input type="file" id="upfile">-->
                             <a href="javascript:;" class="a-upload a-upload1">
                                 <input type="file" accept="image/png, image/jpeg" id="upfile1" name="file"><img class="uploadLogo uploadLogo1" src="image/publish/upload.png">
                                 <span class="showFileName showFileName1"></span>
-                                <img class="closeImg closeImg1" style="display: none;" src="image/publish/close.jpg"/>
+                                <img class="closeImg closeImg1" style="display: none;" src="image/publish/close.png"/>
                             </a>
                             <a href="javascript:;" class="a-upload a-upload2" style="display: none;">
                                 <input type="file" accept="image/png, image/jpeg" id="upfile2" name="file"><img class="uploadLogo uploadLogo2" src="image/publish/upload.png">
                                 <span class="showFileName showFileName2"></span>
-                                <img class="closeImg closeImg2" style="display: none;" src="image/publish/close.jpg"/>
+                                <img class="closeImg closeImg2" style="display: none;" src="image/publish/close.png"/>
                             </a>
                             <a href="javascript:;" class="a-upload a-upload3" style="display: none;">
                                 <input type="file" accept="image/png, image/jpeg" id="upfile3" name="file"><img class="uploadLogo uploadLogo3" src="image/publish/upload.png">
                                 <span class="showFileName showFileName3"></span>
-                                <img class="closeImg closeImg3" style="display: none;" src="image/publish/close.jpg"/>
+                                <img class="closeImg closeImg3" style="display: none;" src="image/publish/close.png"/>
                             </a>
                             <a href="javascript:;" class="a-upload a-upload4" style="display: none;">
                                 <input type="file" accept="image/png, image/jpeg" id="upfile4" name="file"><img class="uploadLogo uploadLogo4" src="image/publish/upload.png">
                                 <span class="showFileName showFileName4"></span>
-                                <img class="closeImg closeImg4" style="display: none;" src="image/publish/close.jpg"/>
+                                <img class="closeImg closeImg4" style="display: none;" src="image/publish/close.png"/>
                             </a>
                         </div>
                     </div>
@@ -552,6 +577,12 @@
 <script type="text/javascript" src="js/searchBoxRight.js"></script>
 <script type="text/javascript">
     $(function(){
+
+
+        //JavaScript通过元素的索引号删除数组中的元素
+        function RemoveValByIndex(arr, index) {
+            arr.splice(index, 1);
+        }
 
         //getmarquee
         $.ajax({
@@ -590,6 +621,8 @@
         var imgIdAll3 = '';
         var imgIdAll4 = '';
         var totalImgIdAll = '';
+        var updateOldImgArr = [];
+        var updateNewImgArr = [];
         $(".a-upload1").on("change","input[type='file']",function(){
             $(".a-upload2").show();
             $('.uploadLogo1').hide();
@@ -633,6 +666,9 @@
                                 $(".showFileName1").html('');
                                 totalImgIdAll = '';
                                 console.log("totalImgIdAll="+totalImgIdAll);
+
+                                RemoveValByIndex(updateNewImgArr, 0);
+                                console.log('updateNewImgArr',updateNewImgArr);
                             });
                             $(".showFileName1").html(fileName);
                             console.log(imgData);
@@ -640,6 +676,9 @@
                             imgIdAll1 = imgData.data;
                             totalImgIdAll = imgIdAll1;
                             console.log("totalImgIdAll="+totalImgIdAll);
+
+                            updateNewImgArr.push(imgData.data);
+                            console.log('updateNewImgArr',updateNewImgArr);
 
 
                             $(".a-upload2").on("change","input[type='file']",function(){
@@ -686,6 +725,10 @@
                                                     imgIdAll2 = '';
                                                     totalImgIdAll = imgIdAll1;
                                                     console.log("totalImgIdAll="+totalImgIdAll);
+
+                                                    RemoveValByIndex(updateNewImgArr, 1);
+                                                    console.log('updateNewImgArr',updateNewImgArr);
+
                                                 });
 
                                                 $(".showFileName2").html(fileName);
@@ -694,6 +737,9 @@
                                                 imgIdAll2 = imgData.data;
                                                 totalImgIdAll = imgIdAll1+','+imgIdAll2;
                                                 console.log("totalImgIdAll="+totalImgIdAll);
+
+                                                updateNewImgArr.push(imgData.data);
+                                                console.log('updateNewImgArr',updateNewImgArr);
 
 
                                                 $(".a-upload3").on("change","input[type='file']",function(){
@@ -741,6 +787,10 @@
                                                                         imgIdAll3 = '';
                                                                         totalImgIdAll = imgIdAll1+','+imgIdAll2;
                                                                         console.log("totalImgIdAll="+totalImgIdAll);
+
+                                                                        RemoveValByIndex(updateNewImgArr, 2);
+                                                                        console.log('updateNewImgArr',updateNewImgArr);
+
                                                                     });
 
                                                                     $(".showFileName3").html(fileName);
@@ -749,6 +799,9 @@
                                                                     imgIdAll3 = imgData.data;
                                                                     totalImgIdAll = imgIdAll1+','+imgIdAll2+','+imgIdAll3;
                                                                     console.log("totalImgIdAll="+totalImgIdAll);
+
+                                                                    updateNewImgArr.push(imgData.data);
+                                                                    console.log('updateNewImgArr',updateNewImgArr);
 
 
                                                                     $(".a-upload4").on("change","input[type='file']",function(){
@@ -794,6 +847,10 @@
                                                                                             imgIdAll4 = '';
                                                                                             totalImgIdAll = imgIdAll1+','+imgIdAll2+','+imgIdAll3;
                                                                                             console.log("totalImgIdAll="+totalImgIdAll);
+
+                                                                                            RemoveValByIndex(updateNewImgArr, 3);
+                                                                                            console.log('updateNewImgArr',updateNewImgArr);
+
                                                                                         });
 
                                                                                         $(".showFileName4").html(fileName);
@@ -802,6 +859,9 @@
                                                                                         imgIdAll4 = imgData.data;
                                                                                         totalImgIdAll = imgIdAll1+','+imgIdAll2+','+imgIdAll3+','+imgIdAll4;
                                                                                         console.log("totalImgIdAll="+totalImgIdAll);
+
+                                                                                        updateNewImgArr.push(imgData.data);
+                                                                                        console.log('updateNewImgArr',updateNewImgArr);
                                                                                     }
                                                                                 }
                                                                             });
@@ -1108,7 +1168,7 @@
             }else{
                 priceRight = false;
 
-                commonPopFun("价格范围在0-100000000之间,且为数字！", 'Failed');
+                commonPopFun("The price should be in the range of 0 to 100000000", 'Failed');
 
                 priceText = 0;
                 $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val('');
@@ -1136,6 +1196,7 @@
 
         //如果是用户编辑发布，则保存相应信息
         var needUpdate = getParamByUrl('needUpdate');
+        var updateOldNum = [];//已有图片的下标
         var updatepubcontentId = getParamByUrl('updatepubcontentId');
         if(needUpdate == 1){
             $.ajax({
@@ -1146,6 +1207,29 @@
                     if(data.status == 200){
                         data = JSON.parse(data.data);
                         console.log("获得指定产品的产品信息",data);
+
+                        //获取用户已发布的图片信息
+                        updateOldImgArr = data.imgs.split(',');
+                        for(var i=0; i<updateOldImgArr.length; i++){
+                            $('.sortBox .sort .partInner2 .partInner2Box .right .imagesBox').prepend(
+                                    '<div class="nowHaveImg" style="background: url('+baseImgSrc+updateOldImgArr[i]+') no-repeat center center"><img class="closeNowHaveImg" src="image/publish/close.png"/></div>'
+                            );
+                        }
+
+                        $('.sortBox .sort .partInner2 .partInner2Box .right .imagesBox .nowHaveImg').delegate('.closeNowHaveImg','click', function(){
+                            var index = $(this).parents('.nowHaveImg').index();
+                            updateOldNum.push(index);
+                            updateOldNum = updateOldNum.sort(function(a, b){
+//                                return a - b; //正序
+                                //return 0; //不改变顺序
+                                return b - a; //逆序
+                            });
+                            console.log('updateOldNum',updateOldNum);
+                            $('.sortBox .sort .partInner2 .partInner2Box .right .imagesBox .nowHaveImg').eq(index).hide();
+                        });
+
+//                     ;
+
 
 
                         issell = data.issell;
@@ -1186,7 +1270,7 @@
 
         var publishClick = true;
         $('.sortBox .sort .partInner2 .partInner2Box .publishBtn').click(function(){
-            if(priceRight && ($('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val() !='')
+            if((needUpdate == 1 || priceRight) && ($('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val() !='')
             && ($('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val() !='')
             && ($('.sortBox .sort .partInner2 .partInner2Box .right .detailText').val() !='')
             && ($('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val() !='')
@@ -1216,6 +1300,19 @@
                 //执行提交
                 if(needUpdate == 1){//编辑商品
 
+                    for(var i=0; i<updateOldNum.length; i++){
+                        RemoveValByIndex(updateOldImgArr, i);
+                    }
+                    var updateTotalImgIdAll = updateOldImgArr.concat(updateNewImgArr);
+                    console.log('updateTotalImgIdAll',updateTotalImgIdAll);
+                    var updateTotalImgIdStr = '';
+                    for(var i=0; i<updateTotalImgIdAll.length; i++){
+                        var aa = updateTotalImgIdAll[i]+',';
+                        updateTotalImgIdStr+=aa;
+                    }
+                    updateTotalImgIdStr = updateTotalImgIdStr.slice(0, -1);
+                    console.log('updateTotalImgIdStr', updateTotalImgIdStr);
+
                     if(publishClick){
                         publishClick = false;
                         var updateGoodInfo = {
@@ -1233,7 +1330,7 @@
                             "addr_l4":$('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val(),			//详细地址
                             "contactname":$('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val(),	//联系人姓名
                             "phone":$('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(),		//联系人手机
-                            "imgs":totalImgIdAll				//产品图片ID，图片ID通过图片上传接口获得
+                            "imgs":updateTotalImgIdStr				//产品图片ID，图片ID通过图片上传接口获得
                         };
                         console.log("updateGoodInfo", updateGoodInfo);
 
@@ -1336,7 +1433,7 @@
                 if((($('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val() == '') && (priceRight == false))){
                     $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').css('border','1px solid #f00');
                 }
-                commonPopFun("填写完整信息才能发布","Failed");
+                commonPopFun("Please complete all of the details to publish","Failed");
             }
             
         });

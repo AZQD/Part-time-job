@@ -1058,15 +1058,15 @@
 
                             var str = '';
                             if(data[i].status == 0){//status=0表示在线
-                                str = '<a href="javascript:void(0);" class="editBtn">Edit</a><br/><a href="###" style="display: none" class="goodStatus unpublish">Offline</a><a href="###" style="display: none" class="goodStatus finished">Finished</a>';
+                                str = '<a href="javascript:void(0);" class="editBtn">Edit</a><br/><a href="###" style="display: none" class="goodStatus unpublish">Offline</a>&nbsp;&nbsp;<a href="###" style="display: none" class="goodStatus finished">Finished</a>';
                             }else if(data[i].status == 1){//status=1表示下线
-                                str = '<a href="javascript:void(0);" class="editBtn">Edit</a><br/><a href="###" style="display: none" class="goodStatus unpublish">Publish</a><a href="###" style="display: none" class="goodStatus finished">Finished</a>';
+                                str = '<a href="javascript:void(0);" class="editBtn">Edit</a><br/><a href="###" style="display: none" class="goodStatus unpublish">Publish</a>&nbsp;&nbsp;<a href="###" style="display: none" class="goodStatus finished">Finished</a>';
                             }else if(data[i].status == 2){//status=2表示完成
                                 str = '';
                             }
                             $('.infoBox .info .infoWrap .infoRight .part2 .listUl').append(
                                 '<li class="row listLi">' +
-                                '<div class="col-xs-2 col-sm-2 left"><img src='+baseImgSrc + data[i].cimg+'></div>' +
+                                '<div class="col-xs-2 col-sm-2 left" style="background: url('+baseImgSrc + data[i].cimg+') no-repeat center center"><img style="opacity: 0;" src='+baseImgSrc + data[i].cimg+'></div>' +
                                 '<div class="col-xs-5 col-sm-5 middle">' +
                                 '<p class="title">'+data[i].title+'</p>' +
                                 '<div class="count">' +
