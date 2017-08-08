@@ -239,6 +239,9 @@
         .detailBox .detail .detailLeft .goodDesc .goodDescRight .attr .quality{
             padding-left:8px;
         }
+        .detailBox .detail .detailLeft .goodDesc .goodDescRight .attr .view{
+            padding-left:8px;
+        }
         .detailBox .detail .detailLeft .goodDesc .goodDescRight .attr{
             color: #333;
             font-weight: bold;
@@ -264,6 +267,37 @@
             left:0;
             bottom:-22px;
             padding-left: 38px;
+        }
+        .detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .getPhone{
+            background-color: #F2F2F2;
+            margin-right: 10px;
+            border-bottom: 2px solid #FF4720;
+            margin-bottom: 26px;
+        }
+        .detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .getPhone .left{
+            font-size: 20px;
+            height: 31px;
+            line-height:31px;
+            font-weight: bold;
+        }
+        .detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .getPhone .left .leftImg{
+            width: 15px;
+            height: 20px;
+            margin-right: 8px;
+            margin-left: 10px;
+            vertical-align: -2px;
+        }
+        .detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .getPhone .right{
+            height: 31px;
+            line-height:31px;
+            text-align: right;
+            padding-right: 10px;
+        }
+        .detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .getPhone .right .rightText{
+            font-size: 12px;
+            text-decoration: underline;
+            color: #FF4720;
+            cursor: pointer;
         }
         .detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btnLink{
             margin-right: 10px;
@@ -691,12 +725,17 @@
                     </div>
                     <div class="col-xs-5 col-sm-5 goodDescRight">
                         <p class="attr attr1">&nbsp;&nbsp;&nbsp;Price&nbsp;:<span id="mianYi"><span class="num1 price"></span>&nbsp;<span class="num2 aboutNum" style="display: none;">ZMW</span></span></p>
+                        <p class="attr">&nbsp;&nbsp;&nbsp;&nbsp;View&nbsp;:<span class="view"></span></p>
                         <p class="attr">Quality&nbsp;:<span class="quality"></span></p>
                         <p class="attr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Add&nbsp;:<span class="address"></span></p>
                         <div class="userBtn">
-                            <div class="row">
-                                <div class="col-xs-6 col-sm-6"><img src="image/detailPage/sms.png"><span class="">hello</span></div>
-                                <div class="col-xs-6 col-sm-6">1</div>
+                            <div class="row getPhone">
+                                <div class="col-xs-6 col-sm-6 left">
+                                    <img class="leftImg" src="image/detailPage/cellphone.png"><span class="leftText">098888xxxx</span>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 right">
+                                    <span class="rightText">Login to get celphone</span>
+                                </div>
                             </div>
                             <ul class="share-buttons">
                                 <li><a href="https://www.facebook.com/sharer/sharer.php?u=编码后的跳转地址&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="social_flat_rounded_rects_svg/Facebook.svg"></a></li>
@@ -859,6 +898,11 @@
 <script type="text/javascript" src="js/searchBoxRight.js"></script>
 <script type="text/javascript">
     $(function(){
+        
+        //
+        $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .getPhone .right .rightText').unbind('click').click(function(){
+            window.location.href = 'login.html';
+        });
 
 
         //getmarquee
@@ -896,6 +940,7 @@
 //        var goodIdFromCategory = localStorage.getItem("goodIdFromCategory");
         var goodIdFromCategory = getParamByUrl('id');
 //        alert(goodIdFromCategory);
+        var getGoodPhone = '';
         $.ajax({
             type: "get",
             url: baseUrl+"/apigateway/getgood?id="+goodIdFromCategory,
@@ -906,7 +951,10 @@
                     data = JSON.parse(data.data);
                     console.log("获得指定产品的产品信息",data);
                     console.log(baseUrl+"/apigateway/getgood?id="+goodIdFromCategory);
+                    getGoodPhone = data.phone;
 
+
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .attr .view').html(data.views);
 
 
                     var nowGoodCid = data.cid;
@@ -1277,6 +1325,7 @@
             success:function(data){
                 console.log(data);
                 if(data.status == 200){
+
                     console.log("检测指定商品是否被当前用户收藏",data);
                     var isCollect;
                     if(data.data == 0){
@@ -1296,7 +1345,7 @@
 
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .btn3').click(function () {
                         if(token == null){
-                            alert('请先登录~');
+//                            alert('请先登录~');
                         }else{
                             if(isCollect == true){//如果默认已经收藏
                                 //删除收藏
@@ -1358,6 +1407,14 @@
                         }
 
                     });
+
+                    var timer = setInterval(function(){
+                        if(getGoodPhone != ''){
+                            clearInterval(timer);
+                            $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .getPhone .left .leftText').html(getGoodPhone);
+                            $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .getPhone .right .rightText').hide();
+                        }
+                    }, 100);
 
                 }else{
 //                    commonPopFun(data.msg, 'Failed');
