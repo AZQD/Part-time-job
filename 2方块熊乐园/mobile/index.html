@@ -68,8 +68,9 @@
     </aside>
 
     <aside class="row recentOrNear">
-        <div class="col-xs-6 col-sm-6 title active">RECENTLY</div>
-        <div class="col-xs-6 col-sm-6 title">NEARBY</div>
+        <div class="col-xs-4 col-sm-4 title active">HOT</div>
+        <div class="col-xs-4 col-sm-4 title">RECENTLY</div>
+        <div class="col-xs-4 col-sm-4 title">NEARBY</div>
         <ul class="row getList">
             <!--<li class="col-xs-3 col-sm-3 getLi"><img src="image/index/headImg.png"><p class="price"><span>11</span></p></li>-->
         </ul>
@@ -132,6 +133,13 @@
                         $('.headerBox .indexMiddle .addressUl').hide();
                     });
 
+                    //不显示默认地址
+                    $('.headerBox .indexMiddle .addressUl .addressLi').each(function(index){
+                        if($('.headerBox .indexMiddle .addressUl .addressLi').eq(index).html() == ''){
+                            $(this).hide();
+                        }
+                    });
+
                 }else{
                     commonPopFun1(data.msg);
                 }
@@ -177,7 +185,7 @@
         //getbestgoods
         $.ajax({
             type: "get",
-            url: baseUrl + "/apigateway/getbestgoods",
+            url: baseUrl + "/apigateway/getbestgoods?n=4",
             success: function (data) {
                 if (data.status == 200) {
                     data = JSON.parse(data.data);
@@ -204,14 +212,47 @@
             }
         });
 
+        //HOT
+        hotFun();
+        function hotFun(){
+            $.ajax({
+                type: "get",
+                url: baseUrl + "/apigateway/gethotgoods?n=",
+                success: function (data) {
+                    if (data.status == 200) {
+                        data = JSON.parse(data.data);
+                        console.log("gethotgoods", data);
+                        for(var i=0; i<data.length; i++){
+                            var price = data[i].price;
+                            if(price == 0){
+                                price = 'Negotiated';
+                            }
+                            $('.recentOrNear .getList').append(
+                                    '<li class="col-xs-3 col-sm-3 getLi">' +
+                                    '<img src='+baseImgSrc+data[i].cimg+' id='+data[i].id+'><p class="price"><span>'+price+'</span></p>' +
+                                    '</li>'
+                            );
+                            $('.recentOrNear .getList .getLi img').unbind('click').click(function(){
+                                var index = $(this).index();
+                                window.location.href = 'detail.html?id='+$(this).attr('id');
+                            });
+                        }
+                    } else {
+                        commonPopFun1(data.msg);
+                    }
+                },
+                error:function(error){
+                    console.log(error);
+                }
+            });
+        }
 
 
         //recentOrNear
-        recentFun();
         function recentFun(){
             $.ajax({
                 type: "get",
-                url: baseUrl + "/apigateway/getgoods?n=8",
+                url: baseUrl + "/apigateway/getgoods?n=",
                 success: function (data) {
                     if (data.status == 200) {
                         data = JSON.parse(data.data);
@@ -246,7 +287,7 @@
             var areaName = localStorage.getItem("areaName");
             $.ajax({
                 type: "get",
-                url: baseUrl + "/apigateway/getgoods?areaid="+areaId +'&n=10',
+                url: baseUrl + "/apigateway/getgoods?areaid="+areaId +'&n=',
                 success: function (data) {
                     if (data.status == 200) {
                         data = JSON.parse(data.data);
@@ -282,6 +323,8 @@
             var index = $(this).index();
             $('.recentOrNear .title').removeClass('active').eq(index).addClass('active');
             if(index == 0){
+                hotFun();
+            }else if(index == 1){
                 recentFun();
             }else{
                 nearFun();

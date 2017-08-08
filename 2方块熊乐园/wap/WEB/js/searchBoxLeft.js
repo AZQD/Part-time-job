@@ -103,6 +103,9 @@ $.ajax({
                             if(cidName == 'Life'){
                                 cidName = 'Life Goods';
                             }
+                            if(cidName == 'Family'){
+                                cidName = 'Family House';
+                            }
                             $('.searchBox .search .searchLeft .second').text(cidName);
 						}else {
                             $('.searchBox .search .searchLeft .second').text($(this).children('.twoLiLink').text());
@@ -115,6 +118,11 @@ $.ajax({
 
                         localStorage.setItem('cid',$(this).attr('cid'));
                         localStorage.setItem('cidName',$(this).attr('cidName'));
+
+                        //detail.html页面点击之后跳转到category.html
+                        if((getParamByUrl('id')) != 'false'){
+                            window.open("category.html?searchOrTab=tab&cid="+$(this).attr('cid'));
+                        }
 
                     });
                 },

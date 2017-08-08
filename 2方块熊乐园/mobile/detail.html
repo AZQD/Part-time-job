@@ -191,6 +191,13 @@
                         $('.headerBox .indexMiddle .addressUl').hide();
                     });
 
+                    //不显示默认地址
+                    $('.headerBox .indexMiddle .addressUl .addressLi').each(function(index){
+                        if($('.headerBox .indexMiddle .addressUl .addressLi').eq(index).html() == ''){
+                            $(this).hide();
+                        }
+                    });
+
                 }else{
                     commonPopFun1(data.msg);
                 }

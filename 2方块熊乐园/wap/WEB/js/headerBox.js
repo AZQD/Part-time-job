@@ -195,7 +195,13 @@ $(function(){
                     }
                 });
 
+
+
+
+
                 $('.headerBox .header .changeUl').append(changeLiStr);
+
+
 
                 //不显示默认地址
                 $('.headerBox .header .changeUl .changeLi').each(function(index){
@@ -229,6 +235,7 @@ $(function(){
                 });
                 $('.headerBox .header .changeUl .changeLi').click(function () {
                     var index = $(this).index();
+                    index = index-1;
                     localStorage.setItem('areaId',areaIdArr[index].toString());
                     localStorage.setItem('areaName',areaNameArr[index]);
 

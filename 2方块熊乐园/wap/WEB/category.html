@@ -425,8 +425,8 @@
             </div>
             <div class="col-xs-6 col-sm-6 headerRight headerRight1" style="display: none;">
                 <span class="space home">Home</span>|
-                <span class="space login">Login</span>|
-                <span class="space register">Register</span>|
+                <span class="space login">Sign in</span>|
+                <span class="space register">Sign up</span>|
                 <a href="help.html" class="space help" target="_blank">Help</a>
             </div>
             <div class="col-xs-6 col-sm-6 headerRight headerRight2" style="display: none;">
@@ -878,16 +878,63 @@
                     data = JSON.parse(data.data);
                     console.log("获得区域信息2", data);
                     var locationArr1 = [];
+                    var locationArrId1 = [];
                     var locationArr2 = [];
                     for (var sort in data){
                         locationArr1.push(data[sort].name);
+                        locationArrId1.push(data[sort].id);
                         locationArr2.push(data[sort].sub);
                     }
 
                     controlAreaId();
                     $('.headerBox .header .changeUl .changeLi').click(function(){
-                        controlAreaId();
+                        var index = $(this).index();
+                        //当点击除ALL之外的其他地址时执行
+                        if(index>0){
+                            controlAreaId();
+                        }
                     });
+
+                    //点击addressAll
+                    $('.headerBox .header .changeUl').prepend('<div id="addressAll" style="text-align: center;border-bottom: 1px solid #999">ALL</div>');
+                    $('#addressAll').hover(
+                            function () {
+                                $(this).css('color','#FF4720');
+                            },
+                            function () {
+                                $(this).css('color','#666');
+                            }
+                    );
+
+                    //点击addressAll
+
+                    $('#addressAll').unbind('click').click(function(){
+                        $('.headerBox .header .headerLeft .lusaka').text('ALL');
+                        var strAllArea = '<span class="area">AREA</span><a href="#" nowAreaid="" class="selectChoose active">ALL</a>';
+                        for(var j=0; j<locationArrId1.length; j++){
+                            strAllArea += '<a href="#" class="selectChoose" nowAreaid='+locationArrId1[j]+'>'+locationArr1[j]+'</a>';
+                        }
+                        $('.selectArea').empty().append(strAllArea);
+
+                        $('.selectBox .select .selectArea').children('.selectChoose').each(function(index){
+                            $(this).click(function () {
+                                areaid = $(this).attr('nowAreaid');
+                                $('.selectBox .select .selectArea .selectChoose').removeClass("active");
+                                $(this).addClass('active');
+                                console.log('areaid='+areaid);
+                                if(lastGetGoodFun == 'searchFun'){
+                                    searchPageControl();
+//                searchFun(searchKeyWord,startSearch, hasImage);
+                                    searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, needSort, hasImage, goodstatus);
+                                }else{
+                                    tabPageControl();
+                                    getGoods(cid, pmin, pmax, areaid, issell, orderby, needSort, startTab, hasImage, goodstatus);
+                                }
+                            });
+                        });
+
+                    });
+
 
                     function controlAreaId(){
                         var areaIdArr = [];
