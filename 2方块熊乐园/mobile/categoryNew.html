@@ -189,6 +189,18 @@
 <script type="text/javascript">
     $(function(){
 
+        //点击发布
+        $('.infos .publish').unbind('click').click(function () {
+            window.location.href = "publish.html";
+        });
+        //注册/登陆
+        $('.infos .signInUp').unbind('click').click(function () {
+            window.location.href = "login.html";
+        });
+        /*//My Profile
+         $('.infos .profile').unbind('click').click(function () {
+         window.location.href = "profile.html";
+         });*/
 
         //头部显示地址列表
         var areaId = localStorage.getItem("areaId");
