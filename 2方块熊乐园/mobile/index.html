@@ -196,10 +196,12 @@
                     }
                     for(var i=0; i<imgsLength; i++){
                         $('.bestGoods .imgsBox').append(
-                            '<div class="col-xs-3 col-sm-3 imgBox"><img src='+baseUrl+data[i].cimg+' id='+data[i].id+'></div>'
+//                            '<div class="col-xs-3 col-sm-3 imgBox"><img src='+baseUrl+data[i].cimg+' id='+data[i].id+'></div>'
+                            '<div class="col-xs-3 col-sm-3 imgBox" id='+data[i].id+' style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center">' +
+                            '</div>'
                         );
                     }
-                    $('.bestGoods .imgsBox .imgBox img').unbind('click').click(function(){
+                    $('.bestGoods .imgsBox .imgBox').unbind('click').click(function(){
                         var index = $(this).index();
                         window.location.href = 'detail.html?id='+$(this).attr('id');
                     });
@@ -228,11 +230,12 @@
                                 price = 'Negotiated';
                             }
                             $('.recentOrNear .getList').append(
-                                    '<li class="col-xs-3 col-sm-3 getLi">' +
-                                    '<img src='+baseImgSrc+data[i].cimg+' id='+data[i].id+'><p class="price"><span>'+price+'</span></p>' +
+                                    '<li class="col-xs-3 col-sm-3 getLi" id='+data[i].id+' style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center">' +
+//                                    '<img src='+baseImgSrc+data[i].cimg+' id='+data[i].id+'><p class="price"><span>'+price+'</span></p>' +
+                                    '<p class="price"><span>'+price+'</span></p>' +
                                     '</li>'
                             );
-                            $('.recentOrNear .getList .getLi img').unbind('click').click(function(){
+                            $('.recentOrNear .getList .getLi').unbind('click').click(function(){
                                 var index = $(this).index();
                                 window.location.href = 'detail.html?id='+$(this).attr('id');
                             });
@@ -263,11 +266,12 @@
                                 price = 'Negotiated';
                             }
                             $('.recentOrNear .getList').append(
-                                    '<li class="col-xs-3 col-sm-3 getLi">' +
-                                    '<img src='+baseImgSrc+data[i].cimg+' id='+data[i].id+'><p class="price"><span>'+price+'</span></p>' +
+                                    '<li class="col-xs-3 col-sm-3 getLi" id='+data[i].id+' style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center">' +
+//                                    '<img src='+baseImgSrc+data[i].cimg+' id='+data[i].id+'><p class="price"><span>'+price+'</span></p>' +
+                                    '<p class="price"><span>'+price+'</span></p>' +
                                     '</li>'
                             );
-                            $('.recentOrNear .getList .getLi img').unbind('click').click(function(){
+                            $('.recentOrNear .getList .getLi').unbind('click').click(function(){
                                 var index = $(this).index();
                                 window.location.href = 'detail.html?id='+$(this).attr('id');
                             });
@@ -298,11 +302,12 @@
                                 price = 'Negotiated';
                             }
                             $('.recentOrNear .getList').append(
-                                    '<li class="col-xs-3 col-sm-3 getLi">' +
-                                    '<img src='+baseImgSrc+data[i].cimg+' id='+data[i].id+'><p class="price"><span>'+price+'</span></p>' +
+                                    '<li class="col-xs-3 col-sm-3 getLi" id='+data[i].id+' style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center">' +
+//                                    '<img src='+baseImgSrc+data[i].cimg+' id='+data[i].id+'><p class="price"><span>'+price+'</span></p>' +
+                                    '<p class="price"><span>'+price+'</span></p>' +
                                     '</li>'
                             );
-                            $('.recentOrNear .getList .getLi img').unbind('click').click(function(){
+                            $('.recentOrNear .getList .getLi').unbind('click').click(function(){
                                 var index = $(this).index();
                                 window.location.href = 'detail.html?id='+$(this).attr('id');
                             });
@@ -339,10 +344,10 @@
         $('.infos .signInUp').unbind('click').click(function () {
             window.location.href = "login.html";
         });
-        //My Profile
+        /*//My Profile
         $('.infos .profile').unbind('click').click(function () {
             window.location.href = "profile.html";
-        });
+        });*/
     });
 </script>
 </body>

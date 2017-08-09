@@ -1,0 +1,265 @@
+/*selectBox*/
+.selectBox .select {
+  margin: 0 auto;
+  padding: 18px 0;
+  line-height: 32px;
+}
+.selectBox .select .selectPrice {
+  padding-left: 16px;
+}
+.selectBox .select .selectPrice .price {
+  font-size: 16px;
+  color: #333333;
+  font-weight: bold;
+  display: inline-block;
+  text-align: right;
+}
+.selectBox .select .selectPrice a {
+  padding-left: 20px;
+  color: #999;
+}
+.selectBox .select .selectPrice .active {
+  color: #FF4720;
+}
+.selectBox .select .selectQuality {
+  padding-left: 16px;
+}
+.selectBox .select .selectQuality .quality {
+  font-size: 16px;
+  color: #333333;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+}
+.selectBox .select .selectQuality a {
+  padding-left: 16px;
+  color: #999;
+}
+.selectBox .select .selectQuality .active {
+  color: #FF4720;
+}
+.selectBox .select .selectArea {
+  padding-left: 16px;
+}
+.selectBox .select .selectArea .area {
+  font-size: 16px;
+  color: #333333;
+  font-weight: bold;
+  display: inline-block;
+  text-align: right;
+  margin-right: 4px;
+}
+.selectBox .select .selectArea a {
+  padding-left: 18px;
+  color: #999;
+}
+.selectBox .select .selectArea .active {
+  color: #FF4720;
+}
+/*tabsBox*/
+.tabsBox {
+  background-color: #F2F2F2;
+}
+.tabsBox .tabs {
+  margin: 0 auto;
+  border-bottom: 2px solid #FF4720;
+}
+.tabsBox .tabs .tabsLeft {
+  font-size: 0;
+}
+.tabsBox .tabs .tabsLeft .tabLink {
+  display: inline-block;
+  width: 56px;
+  height: 28px;
+  line-height: 28px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 13px;
+  color: #333;
+  border-radius: 5px 5px 0 0;
+}
+.tabsBox .tabs .tabsLeft .active {
+  background-color: #FF4720;
+  color: #fff;
+}
+.tabsBox .tabs .tabsRight {
+  text-align: right;
+}
+.tabsBox .tabs .tabsRight .tabBtn {
+  width: 50px;
+  height: 24px;
+  line-height: 25px;
+  color: #333;
+  font-size: 13px;
+  outline: none;
+  background-color: #ffffff;
+  margin-top: 10px;
+  border: 1px solid #333;
+}
+.tabsBox .tabs .tabsRight .tabBtn1 {
+  border-radius: 5px 0 0 5px;
+}
+.tabsBox .tabs .tabsRight .tabBtn1Up:before {
+  display: inline-block;
+  content: "";
+  border-top: 8px solid black;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid transparent;
+  position: relative;
+  top: 5px;
+}
+.tabsBox .tabs .tabsRight .tabBtn1Down:before {
+  display: inline-block;
+  content: "";
+  border-top: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 8px solid black;
+  border-left: 6px solid transparent;
+  position: relative;
+  top: 0px;
+}
+.tabsBox .tabs .tabsRight .tabBtn2 {
+  margin-right: 16px;
+  border-radius: 0 5px 5px 0;
+  border-left: 0;
+}
+.tabsBox .tabs .tabsRight .tabBtn2Up:before {
+  display: inline-block;
+  content: "";
+  border-top: 8px solid black;
+  border-right: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid transparent;
+  position: relative;
+  top: 5px;
+}
+.tabsBox .tabs .tabsRight .tabBtn2Down:before {
+  display: inline-block;
+  content: "";
+  border-top: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 8px solid black;
+  border-left: 6px solid transparent;
+  position: relative;
+  top: 0px;
+}
+/*goodsBox*/
+.goodsBox {
+  margin-top: 10px;
+  margin-bottom: 46px;
+}
+.goodsBox .goods {
+  cursor: pointer;
+  margin: 0 auto;
+  /*background-color: #baf;*/
+  padding: 10px;
+  border-bottom: 1px solid #666;
+}
+.goodsBox .goods .goodsLeft {
+  width: 80px;
+  height: 80px;
+  position: relative;
+  margin-right: 6px;
+}
+.goodsBox .goods .goodsLeft img {
+  width: 100%;
+  height: 100%;
+}
+.goodsBox .goods .goodsLeft .tip {
+  display: inline-block;
+  width: 23px;
+  height: 18px;
+  line-height: 18px;
+  color: #ffffff;
+  font-size: 13px;
+  text-align: center;
+  background-color: #FF4720;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.goodsMiddle {
+  text-align: left;
+}
+.goodsBox .goods .goodsMiddle .goodName {
+  font-size: 16px;
+  color: #3366FF;
+  font-weight: bold;
+}
+.goodsBox .goods .goodsMiddle .goodDesc {
+  font-size: 14px;
+  color: #999;
+}
+.goodsBox .goods .goodsMiddle .goodDate {
+  color: #333;
+}
+.goodsBox .goods .goodsRight {
+  height: 100px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 18px;
+}
+.goodsBox .goods .goodsRight1 {
+  font-size: 13px;
+  color: #999999;
+}
+.goodsBox .goods .goodsRight2 {
+  font-size: 18px;
+  color: red;
+}
+.goodsBox .goods .aboutQuality {
+  font-size: 18px;
+  color: red;
+  min-width: 100px;
+}
+#footerIframe {
+  width: 100%;
+  margin-bottom: -5px;
+  background-color: #F2F2F2;
+}
+/*pageControl*/
+.pageControl {
+  text-align: center;
+  padding: 10px 0;
+}
+#dongHua {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /*background-color: RGBA(0, 0, 0, 0.6);*/
+  /*background-color: #000000;*/
+  /*opacity: .6;*/
+  color: #f00;
+  line-height: 100%;
+  text-align: center;
+  z-index: 999999999;
+}
+#dongHua img {
+  width: 50px;
+  height: 50px;
+}
+/*infos*/
+.infos {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  box-shadow: 0 0 1.25rem #333333;
+}
+.infos .part {
+  line-height: 2.125rem;
+  font-size: 0.875rem;
+  color: #fff;
+  text-align: center;
+  background-color: #FF4720;
+  border-top: 0.375rem solid #ff4720;
+  border-bottom: 0.375rem solid #ff4720;
+}
+.infos .publish {
+  border-right: 0.0625rem solid #ffffff;
+}
+.infos .part span {
+  text-decoration: underline;
+}

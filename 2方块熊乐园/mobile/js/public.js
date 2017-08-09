@@ -1,4 +1,4 @@
-var baseUrl = "http://www.kalichimall.com:81";
+var baseUrl = "http://www.kalichimall.com";
 var baseImgSrc = baseUrl+"/gimg/";
 function getParamByUrl(paramKey){
   var url=window.location.search.substring(1);
@@ -194,6 +194,11 @@ if(token == null){
                 $('.infos .signInUp').hide();
                 $('.infos .profile').show();
 
+                //index.html
+                $('.infos .profile').unbind('click').click(function () {
+                    window.location.href = "profile.html?pubUid="+data.uid;
+                });
+
                 //manage.html:
                 $('.headerBox .manageMiddle').unbind('click').click(function(){//进入profile.html
                     //window.open("profile.html?pubUid="+data.uid);
@@ -234,4 +239,48 @@ $('.headerBox .left .logo').unbind('click').click(function(){
 //头部搜索按钮
 $('.headerBox .right .search').unbind('click').click(function(){
    window.location.href = 'search.html';
+});
+
+
+
+var categoryErJiCid;
+var categoryErJiCidBtn = false;
+
+//用户商品列表页展示地址：
+var yijidizhiIdArr = [];
+var yijidizhiNameArr = [];
+var erjidizhiArr = [];
+var erjidizhiNameArr = [];
+//获取地址id
+
+$.ajax({
+    type: "get",
+    url: baseUrl+"/apigateway/areas",
+    dataType:"json",
+    success: function(data){
+        if (data.status == 200){
+            data = JSON.parse(data.data);
+            console.log("获得区域信息2", data);
+            var locationArr1 = [];
+            var locationArr1Id = [];
+            var locationArr2 = [];
+            for (var sort in data){
+                yijidizhiIdArr.push(data[sort].id);
+                yijidizhiNameArr.push(data[sort].name);
+                erjidizhiArr.push(data[sort].sub);
+            }
+            console.log('yijidizhiIdArr',yijidizhiIdArr);
+            console.log('yijidizhiNameArr',yijidizhiNameArr);
+            console.log('erjidizhiArr',erjidizhiArr);
+            console.log('erjidizhiArr,7',erjidizhiArr[7]);
+//                    addr_l1 = locationArr1Id[data[list].addr_l1];
+//                    addr_l2 = locationArr2[data[list].addr_l1][data[list].addr_l2].id;
+//                    console.log(addr_l1);
+//                    console.log(addr_l2);
+
+        }
+    },
+    error: function (error) {
+        console.log(error);
+    }
 });
