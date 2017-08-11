@@ -73,7 +73,9 @@
 
         /*tabsBox*/
         .tabsBox{
-            min-width: 1200px;
+            /*min-width: 1200px;*/
+            width: 1200px;
+            margin: 0 auto;
             background-color: #F2F2F2;
         }
         .tabsBox .tabs{
@@ -259,6 +261,8 @@
         .hotBox{
             background-color: #F2F2F2;
             padding-top:10px;
+            width: 1200px;
+            margin: 0 auto;
         }
         .hotBox .refresh{
             width:1200px;
@@ -349,6 +353,8 @@
         .refreshBox{
             background-color: #F2F2F2;
             padding-top:10px;
+            width: 1200px;
+            margin: 0 auto;
         }
         .refreshBox .refresh{
             width:1200px;
@@ -440,6 +446,8 @@
         .nearbyBox{
             background-color: #F2F2F2;
             padding-top:10px;
+            width: 1200px;
+            margin: 0 auto;
         }
         .nearbyBox .nearby{
             width:1200px;
@@ -1074,7 +1082,7 @@
                     * */
                     var str = '';
                     for(var i=0; i<data.length; i++){
-                        str += '<div class="col-xs-12 col-sm-12 swiper-slide"><a href='+data[i].target+'><img class="bannerImg" src='+data[i].imgsrc+' alt='+data[i].name+'></a></div>';
+                        str += '<div class="col-xs-12 col-sm-12 swiper-slide"><a style="display: inline-block;" /*href='+data[i].target+'*/><img class="bannerImg" src='+data[i].imgsrc+' alt='+data[i].name+'></a></div>';
                     }
                     console.log(str);
                     $('.swiper-wrapper').append(str);
@@ -1093,19 +1101,22 @@
                     $('.swiper-slide').click(function(){
                         window.localStorage.setItem('clickBanner',1);
                         var index = $(this).index();
-                        if(index%2 == 0){
+                        alert(index);
+                        if(index == 1 || index == 5){
+
                             localStorage.setItem('searchOrTab',"tab");
                             localStorage.setItem('cidName',bannerNeedCidName[0]);
                             localStorage.setItem('cid',bannerNeedCid[0]);
 //                            window.location.href = "category.html?searchOrTab=tab&cid="+bannerNeedCid[0];
-                            window.location.href = data[0].target;
-                        }else if(index%2 == 1){
+//                            window.location.href = data[0].target;
+                            window.location.href = $(this).attr('link');
+                        }/*else if(index%2 == 1){
                             localStorage.setItem('searchOrTab',"tab");
                             localStorage.setItem('cidName',bannerNeedCidName[3]);
                             localStorage.setItem('cid',bannerNeedCid[3]);
 //                            window.location.href = "category.html?searchOrTab=tab&cid="+bannerNeedCid[3];
                             window.location.href = data[1].target;
-                        }
+                        }*/
                     });
 
                 }else{
@@ -1160,6 +1171,11 @@
                             '</div>' +
                             '</li>'
                         );
+
+                        if($(window).width()>=1200){
+                            $('.searchBox .search').css('marginLeft',($(window).width()-1200)/2);
+                        }
+
                     }
 
                     $('.refreshImgBox .refreshImg .refreshLi').unbind('click').click(function () {
@@ -1222,6 +1238,11 @@
                                 '</div>' +
                                 '</li>'
                         );
+
+                        if($(window).width()>=1200){
+                            $('.searchBox .search').css('marginLeft',($(window).width()-1200)/2);
+                        }
+
                     }
 
                     $('.hotImgBox .refreshImg .refreshLi').unbind('click').click(function () {

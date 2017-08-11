@@ -169,6 +169,11 @@ $(function(){
                                     '<div class="col-xs-6 col-sm-6 right">'+str+'</div>' +
                                     '</div>' +
                                     '</li>');
+
+                                if($(window).width()>=1200){
+                                    $('.searchBox .search').css('marginLeft',($(window).width()-1200)/2);
+                                }
+
                             }
                             /*refreshImgBox，nearbyImgBox：hover图片动效*/
                             $(' .nearbyImgBox .nearbyImg .nearbyLi').hover(
@@ -274,6 +279,11 @@ $(function(){
                                         '<div class="col-xs-6 col-sm-6 right">'+str+'</div>' +
                                         '</div>' +
                                         '</li>');
+
+                                    if($(window).width()>=1200){
+                                        $('.searchBox .search').css('marginLeft',($(window).width()-1200)/2);
+                                    }
+
                                 }
                                 /*refreshImgBox，nearbyImgBox：hover图片动效*/
                                 $('.refreshImgBox .refreshImg .refreshLi .goodImg, .nearbyImgBox .nearbyImg .nearbyLi .goodImg').hover(

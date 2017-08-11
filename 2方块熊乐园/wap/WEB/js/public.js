@@ -191,7 +191,7 @@ if($('.searchBox .search .searchLeft .second').length == 0){//没有menuUl
 
 //$('.searchBox .search').css('marginLeft','75px');
 //搜索aside居中
-if($(window).width()>1200){
+if($(window).width()>=1200){
     $('.searchBox .search').css('marginLeft',($(window).width()-1200)/2);
 }
 $(window).resize(function(ev){
