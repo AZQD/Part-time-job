@@ -79,7 +79,7 @@
     <aside class="row infos">
         <div class="col-xs-6 col-sm-6 part publish"><span>Publish</span></div>
         <div class="col-xs-6 col-sm-6 part signInUp" style="display: block;"><span>Sign in/Sign up</span></div>
-        <div class="col-xs-6 col-sm-6 part profile" style="display: none;"><span>My Profile</span></div>
+        <div class="col-xs-6 col-sm-6 part profile" style="display: none;"><span>My Manage</span></div>
     </aside>
 </section>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
@@ -152,7 +152,7 @@
         //获得banner
         $.ajax({
             type: "get",
-            url: baseUrl + "/apigateway/getbanner?gname=index-top-middle",
+            url: baseUrl + "/apigateway/getbanner?gname=mobile-index-top-middle",
             success: function (data) {
                 if (data.status == 200) {
                     data = JSON.parse(data.data);
@@ -160,10 +160,13 @@
                     for(var i=0; i<data.length; i++){
                         $('.swiper-container .swiper-wrapper').append(
                             '<div class="col-xs-12 col-sm-12 swiper-slide">' +
-                            '<a href='+data[i].target+'><img src='+data[i].imgsrc+' cid='+data[i].cid+'></a>' +
+                            '<a href="#" hrefs='+data[i].target+'><img src='+data[i].imgsrc+' cid='+data[i].cid+'></a>' +
                             '</div>'
                         );
                     }
+                    $('.swiper-container .swiper-wrapper .swiper-slide').unbind('click').click(function(){
+                       window.location.href = $(this).children('a').attr('hrefs');
+                    });
                     //bannerBox：轮播图
                     var mySwiper = new Swiper ('.swiper-container', {
                         direction: 'horizontal',//水平滑动

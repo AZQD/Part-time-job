@@ -1,50 +1,68 @@
 /*selectBox*/
 .selectBox .select {
-  /*width:1200/@rem;*/
   margin: 0 auto;
-  padding: 18px 0;
+  padding: 1.125rem 0;
   line-height: 2rem;
+}
+.selectBox .select .selectPrice {
+  padding-left: 1rem;
 }
 .selectBox .select .selectPrice .price {
   font-size: 1rem;
   color: #333333;
   font-weight: bold;
   display: inline-block;
-  width: 3.5rem;
-  text-align: center;
+  text-align: right;
 }
 .selectBox .select .selectPrice a {
-  padding-left: 0.5rem;
+  padding-left: 1.25rem;
   color: #999;
 }
 .selectBox .select .selectPrice .active {
   color: #FF4720;
+}
+.selectBox .select .selectQuality {
+  padding-left: 1rem;
+}
+.selectBox .select .selectQuality .quality {
+  font-size: 1rem;
+  color: #333333;
+  font-weight: bold;
+  display: inline-block;
+  text-align: center;
+}
+.selectBox .select .selectQuality a {
+  padding-left: 1rem;
+  color: #999;
+}
+.selectBox .select .selectQuality .active {
+  color: #FF4720;
+}
+.selectBox .select .selectArea {
+  padding-left: 1rem;
 }
 .selectBox .select .selectArea .area {
   font-size: 1rem;
   color: #333333;
   font-weight: bold;
   display: inline-block;
-  width: 3.5rem;
-  text-align: center;
+  text-align: right;
+  margin-right: 0.25rem;
 }
 .selectBox .select .selectArea a {
-  padding-left: 0.5rem;
+  padding-left: 1.125rem;
   color: #999;
-  display: inline-block;
 }
 .selectBox .select .selectArea .active {
   color: #FF4720;
 }
 /*tabsBox*/
 .tabsBox {
-  /*min-width: 1200/@rem;*/
   background-color: #F2F2F2;
 }
 .tabsBox .tabs {
-  /*width:1200/@rem;*/
   margin: 0 auto;
-  border-bottom: 2px solid #FF4720;
+  border-bottom: 0.125rem solid #ff4720;
 }
 .tabsBox .tabs .tabsLeft {
   font-size: 0;
@@ -52,13 +70,13 @@
 .tabsBox .tabs .tabsLeft .tabLink {
   display: inline-block;
   width: 3.5rem;
-  line-height: 1.5rem;
+  height: 1.75rem;
+  line-height: 1.75rem;
   margin-top: 0.625rem;
   text-align: center;
   font-size: 0.8125rem;
   color: #333;
-  padding: 2px 0;
-  border-radius: 5px 5px 0 0;
+  border-radius: 0.3125rem 0.3125rem 0 0;
 }
 .tabsBox .tabs .tabsLeft .active {
   background-color: #FF4720;
@@ -66,83 +84,83 @@
 }
 .tabsBox .tabs .tabsRight {
   text-align: right;
-  /*padding-bottom: 4/@rem;*/
 }
 .tabsBox .tabs .tabsRight .tabBtn {
   width: 3.125rem;
   height: 1.5rem;
-  line-height: 1.5rem;
+  line-height: 1.5625rem;
   color: #333;
   font-size: 0.8125rem;
   outline: none;
   background-color: #ffffff;
   margin-top: 0.625rem;
-  border: 1px solid #333;
+  border: 0.0625rem solid #333333;
 }
 .tabsBox .tabs .tabsRight .tabBtn1 {
-  border-radius: 5px 0 0 0.3125rem;
+  border-radius: 0.3125rem 0 0 0.3125rem;
 }
 .tabsBox .tabs .tabsRight .tabBtn1Up:before {
   display: inline-block;
   content: "";
-  border-top: 6px solid black;
-  border-right: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  border-left: 4px solid transparent;
+  border-top: 0.5rem solid #000000;
+  border-right: 0.375rem solid transparent;
+  border-bottom: 0.375rem solid transparent;
+  border-left: 0.375rem solid transparent;
   position: relative;
-  top: 0.1875rem;
+  top: 0.3125rem;
 }
 .tabsBox .tabs .tabsRight .tabBtn1Down:before {
   display: inline-block;
   content: "";
-  border-top: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-bottom: 6px solid black;
-  border-left: 4px solid transparent;
+  border-top: 0.375rem solid transparent;
+  border-right: 0.375rem solid transparent;
+  border-bottom: 0.5rem solid #000000;
+  border-left: 0.375rem solid transparent;
   position: relative;
-  top: -0.125rem;
+  top: 0rem;
 }
 .tabsBox .tabs .tabsRight .tabBtn2 {
-  margin-right: 0.5rem;
-  border-radius: 0 5px 5px 0;
+  margin-right: 1rem;
+  border-radius: 0 0.3125rem 0.3125rem 0;
   border-left: 0;
 }
 .tabsBox .tabs .tabsRight .tabBtn2Up:before {
   display: inline-block;
   content: "";
-  border-top: 6px solid black;
-  border-right: 4px solid transparent;
-  border-bottom: 4px solid transparent;
-  border-left: 4px solid transparent;
+  border-top: 0.5rem solid #000000;
+  border-right: 0.375rem solid transparent;
+  border-bottom: 0.375rem solid transparent;
+  border-left: 0.375rem solid transparent;
   position: relative;
-  top: 0.1875rem;
+  top: 0.3125rem;
 }
 .tabsBox .tabs .tabsRight .tabBtn2Down:before {
   display: inline-block;
   content: "";
-  border-top: 4px solid transparent;
-  border-right: 4px solid transparent;
-  border-bottom: 6px solid black;
-  border-left: 4px solid transparent;
+  border-top: 0.375rem solid transparent;
+  border-right: 0.375rem solid transparent;
+  border-bottom: 0.5rem solid #000000;
+  border-left: 0.375rem solid transparent;
   position: relative;
-  top: -0.125rem;
+  top: 0rem;
 }
 /*goodsBox*/
 .goodsBox {
   margin-top: 0.625rem;
+  margin-bottom: 2.875rem;
 }
 .goodsBox .goods {
   cursor: pointer;
-  /*width:1200/@rem;*/
   margin: 0 auto;
   /*background-color: #baf;*/
-  padding: 0.375rem;
-  border-bottom: 1px solid #666;
+  padding: 0.625rem;
+  border-bottom: 0.0625rem solid #666666;
 }
 .goodsBox .goods .goodsLeft {
   width: 5rem;
   height: 5rem;
   position: relative;
+  margin-right: 0.375rem;
 }
 .goodsBox .goods .goodsLeft img {
   width: 100%;
@@ -161,8 +179,8 @@
   right: 0;
   bottom: 0;
 }
-.goodsBox .goods .goodsMiddle {
-  padding-left: 0.375rem;
+.goodsMiddle {
+  text-align: left;
 }
 .goodsBox .goods .goodsMiddle .goodName {
   font-size: 1rem;
@@ -172,22 +190,132 @@
 .goodsBox .goods .goodsMiddle .goodDesc {
   font-size: 0.875rem;
   color: #999;
-  /*padding-top:10/@rem;*/
 }
 .goodsBox .goods .goodsMiddle .goodDate {
   color: #333;
 }
 .goodsBox .goods .goodsRight {
-  height: 5rem;
-  line-height: 5rem;
+  height: 6.25rem;
   font-weight: bold;
-  text-align: right;
+  text-align: center;
+  padding-top: 1.125rem;
 }
 .goodsBox .goods .goodsRight1 {
   font-size: 0.8125rem;
   color: #999999;
 }
 .goodsBox .goods .goodsRight2 {
-  font-size: 1rem;
+  font-size: 1.125rem;
   color: red;
+}
+.goodsBox .goods .aboutQuality {
+  font-size: 1.125rem;
+  color: red;
+  min-width: 6.25rem;
+}
+#footerIframe {
+  width: 100%;
+  margin-bottom: -0.3125rem;
+  background-color: #F2F2F2;
+}
+/*pageControl*/
+.pageControl {
+  text-align: center;
+  padding: 0.625rem 0;
+}
+#dongHua {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /*background-color: RGBA(0, 0, 0, 0.6);*/
+  /*background-color: #000000;*/
+  /*opacity: .6;*/
+  color: #f00;
+  line-height: 100%;
+  text-align: center;
+  z-index: 999999999;
+}
+#dongHua img {
+  width: 3.125rem;
+  height: 3.125rem;
+}
+/*infos*/
+.infos {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  box-shadow: 0 0 1.25rem #333333;
+}
+.infos .part {
+  line-height: 2.125rem;
+  font-size: 0.875rem;
+  color: #fff;
+  text-align: center;
+  background-color: #FF4720;
+  border-top: 0.375rem solid #ff4720;
+  border-bottom: 0.375rem solid #ff4720;
+}
+.infos .publish {
+  border-right: 0.0625rem solid #ffffff;
+}
+.infos .part span {
+  text-decoration: underline;
+}
+/*产品类别展示*/
+/*classifyBox*/
+.classifyBoxWrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.classifyBox {
+  background-color: #fff;
+  margin-top: 135px;
+}
+.classifyBox .classifyLi {
+  padding: 0 1.25rem;
+}
+.classifyBox .classifyLi .firstName {
+  text-align: right;
+  padding-right: 1.25rem;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 1.125rem;
+  color: #333;
+  font-weight: bold;
+}
+.classifyBox .classifyLi .secondNames {
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  color: #666;
+  border-left: 0.0625rem solid #999999;
+}
+.classifyBox .classifyLi .secondNames .secondName {
+  height: 2rem;
+  line-height: 2rem;
+  padding-right: 0.625rem;
+  text-decoration: underline;
+}
+.headerBox .categoryMiddle {
+  text-align: center;
+}
+.headerBox .categoryMiddle .categoryMiddleCidName {
+  color: #333333;
+  font-size: 0.875rem;
+}
+.headerBox .categoryMiddle .categoryMiddleCidName:after {
+  display: inline-block;
+  content: "";
+  border-top: 0.5rem solid #000000;
+  border-right: 0.375rem solid transparent;
+  border-bottom: 0.375rem solid transparent;
+  border-left: 0.375rem solid transparent;
+  position: relative;
+  top: 0.375rem;
+  left: 0.125rem;
 }

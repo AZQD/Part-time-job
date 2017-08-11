@@ -1,4 +1,4 @@
-var baseUrl = "http://www.kalichimall.com";
+var baseUrl = "http://www.kalichimall.com:81";
 var baseImgSrc = baseUrl+"/gimg/";
 
 var categoryErJiCid;

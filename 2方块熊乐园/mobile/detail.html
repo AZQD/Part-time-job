@@ -59,6 +59,17 @@
         <div class="row detail">
             <!--detailLeft-->
             <div class="col-xs-12 col-sm-12 detailLeft">
+
+                <!--显示手机号-->
+                <div class="row getPhone">
+                    <div class="col-xs-12 col-sm-12 left">
+                        <img class="leftImg" src="image/detailPage/cellphone.png"><span class="leftText">098888xxxx</span>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 right">
+                        <span class="rightText">Login to get celphone</span>
+                    </div>
+                </div>
+
                 <img class="headImg" src="" alt="" style="display: none;">
                 <h3 class="goodName"></h3>
                 <p class="attr"><span class="addressText"></span></p>
@@ -68,6 +79,7 @@
                         <div class="bigImg row">
                             <a href="###" class="tipOff">TIP OFF</a>
                             <img class="bigImgPic" src="" style="visibility: hidden;">
+                            <img class="bigImgbg" src="image/detailPage/bigImgbg.png"/>
                             <div class="col-xs-4 col-sm-4 aboutPrice"><span class="thePrice" style="display: none;"><span class="thePriceNum">100</span>ZMW</span></div>
                             <div class="col-xs-8 col-sm-8 aboutShare">
                                 <a href="javascript:void(0);" class="btnLink btn2 btn3"><img class="likeImg"/>&nbsp;<span></span></a>&nbsp;
@@ -95,8 +107,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="tabToggle">
-                    <a href="###" class="tabLink active">DETAIL</a><a href="###" class="tabLink tabLink2">COMMENTS</a>
+                <div class="row tabToggle">
+                    <a href="###" class="col-xs-6 col-sm-6 tabLink active">DETAIL</a>
+                    <a href="###" class="col-xs-6 col-sm-6 tabLink tabLink2">COMMENTS</a>
                 </div>
                 <div class="aboutContent" id="detailContent" style="display: none;"></div>
                 <div class="aboutContent" id="commentsContent" style="display: none;">
@@ -134,7 +147,7 @@
     <aside class="row infos">
         <div class="col-xs-6 col-sm-6 part publish"><span>Publish</span></div>
         <div class="col-xs-6 col-sm-6 part signInUp" style="display: block;"><span>Sign in/Sign up</span></div>
-        <div class="col-xs-6 col-sm-6 part profile" style="display: none;"><span>My Profile</span></div>
+        <div class="col-xs-6 col-sm-6 part profile" style="display: none;"><span>My Manage</span></div>
     </aside>
 
 
@@ -144,6 +157,10 @@
 <script type="text/javascript" src="js/public.js"></script>
 <script type="text/javascript">
     $(function(){
+
+        $('.detailBox .detail .detailLeft .getPhone .right .rightText').unbind('click').click(function(){
+            window.location.href = 'login.html';
+        });
 
         //headerBox
         //显示地址列表
@@ -222,6 +239,7 @@
         //获得指定产品的产品信息
 //        var goodIdFromCategory = localStorage.getItem("goodIdFromCategory");
         var goodIdFromCategory = getParamByUrl('id');
+        var getGoodPhone = '';
 //        alert(goodIdFromCategory);
         $.ajax({
             type: "get",
@@ -233,6 +251,7 @@
                     data = JSON.parse(data.data);
                     console.log("获得指定产品的产品信息",data);
                     console.log(baseUrl+"/apigateway/getgood?id="+goodIdFromCategory);
+                    getGoodPhone = data.phone;
 
                     //修改title
                     $('#detailTitle').html(data.title + data.price +" kalichimall, make money by your second-hand goods.");
@@ -572,6 +591,15 @@
                         }
 
                     });
+
+                    //如果用户登录了，显示完整的手机号
+                    var timer = setInterval(function(){
+                        if(getGoodPhone != ''){
+                            clearInterval(timer);
+                            $('.detailBox .detail .detailLeft .getPhone .left .leftText').html(getGoodPhone);
+                            $('.detailBox .detail .detailLeft .getPhone .right .rightText').hide();
+                        }
+                    }, 100);
 
                 }else if(data.status == 501){//token失效
 //                    commonPopFun(data.msg);

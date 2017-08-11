@@ -5,6 +5,7 @@
   color: #666;
   background-color: #fff;
   margin-top: 2.8125rem;
+  margin-bottom: 4.5rem;
 }
 .searchBox .search {
   text-align: center;
@@ -67,4 +68,29 @@
 }
 .bestGoods .imgsBox .imgBox img {
   width: 100%;
+}
+/*classifyBox*/
+.classifyBox .classifyLi {
+  padding: 0 1.25rem;
+}
+.classifyBox .classifyLi .firstName {
+  text-align: right;
+  padding-right: 1.25rem;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 1.125rem;
+  color: #333;
+  font-weight: bold;
+}
+.classifyBox .classifyLi .secondNames {
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  color: #666;
+  border-left: 0.0625rem solid #999999;
+}
+.classifyBox .classifyLi .secondNames .secondName {
+  height: 2rem;
+  line-height: 2rem;
+  padding-right: 0.625rem;
+  text-decoration: underline;
 }

@@ -13,20 +13,35 @@
     <link rel="stylesheet" href="css/ppublic.min.css">
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/category.css">
-    <style type="text/css">
-
-    </style>
 </head>
 <body>
+<section id="dongHua"><img src="image/categoryDetail/loading.gif" alt=""></section>
+<section class="commonPopBox1" style="display: none;">
+    <div class="commonPop">
+        <h3 class="title"></h3>
+        <p class="detailTip"></p>
+        <div class="confirmBox">
+            <span class="confirmBtn">OK</span>
+        </div>
+    </div>
+</section>
+<section class="commonPopBox2" style="display: none;">
+    <div class="commonPop">
+        <h3 class="title"></h3>
+        <p class="detailTip"></p>
+        <div class="confirmBox">
+            <span class="confirmBtn confirmBtn1"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="confirmBtn confirmBtn2"></span>
+        </div>
+    </div>
+</section>
+
 <section class="container">
 
     <aside class="row headerBox">
         <div class="col-xs-4 col-sm-4 left"><img class="logo" src="image/index/logo.png"></div>
-        <div class="col-xs-4 col-sm-4 indexMiddle">
-            <span class="address"></span>
-            <ul class="addressUl" style="display: none;">
-                <!--<li class="addressLi">01</li>-->
-            </ul>
+        <div class="col-xs-4 col-sm-4 categoryMiddle">
+            <span class="categoryMiddleCidName"></span>
         </div>
         <div class="col-xs-4 col-sm-4 right">
             <img class="search" src="image/index/search.png">
@@ -39,11 +54,21 @@
             <div class="col-xs-12 col-sm-12 selectPrice">
                 <span class="price">PRICE</span>
                 <a href="#" class="selectChoose active">ALL</a>
-                <a href="#" class="selectChoose">0-100</a>
+                <!--<a href="#" class="selectChoose">0-100</a>
                 <a href="#" class="selectChoose">100-200</a>
                 <a href="#" class="selectChoose">200-500</a>
-                <a href="#" class="selectChoose">500++</a>
+                <a href="#" class="selectChoose">500++</a>-->
             </div>
+
+            <div class="col-xs-12 col-sm-12 selectQuality">
+                <span class="quality">QUALITY</span>
+                <a href="#" class="selectChoose active">ALL</a>
+                <a href="#" class="selectChoose">Brand New</a>
+                <a href="#" class="selectChoose">New</a>
+                <a href="#" class="selectChoose">As New</a>
+                <a href="#" class="selectChoose">A Half New</a>
+            </div>
+
             <div class="col-xs-12 col-sm-12 selectArea">
                 <span class="area">AREA</span>
                 <a href="#" class="selectChoose active">ALL</a>
@@ -55,22 +80,76 @@
 
     <aside class="tabsBox">
         <div class="row tabs">
-
             <div class="col-xs-4 col-sm-4 tabsLeft">
-                <a href="#" class="tabLink active">Celler</a>
+                <a href="#" class="tabLink active">Seller</a>
                 <a href="#" class="tabLink">Buyer</a>
             </div>
             <div class="col-xs-8 col-sm-8 tabsRight">
-                <span class="t"><input type="checkbox" id="hasImage"> Has image</span>&nbsp;&nbsp;
+                <span class="t"><input type="checkbox" id="hasImage"> Has image</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button class="tabBtn tabBtn1 tabBtn1Up"> Date</button><button class="tabBtn tabBtn2 tabBtn2Up"> Price</button>
             </div>
-
         </div>
     </aside>
 
     <aside class="goodsBox">
         <!--有需要打开第一个-->
         <!--<div class="row goods">
+            <div class="col-xs-3 col-sm-3 goodsLeft">
+                <img src="image/categoryDetail/good1.jpg">
+                <span class="tip">3</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 goodsMiddle">
+                <p class="goodName">iPhone 6, OS is 10.3</p>
+                <p class="goodDesc">Product details</p>
+                <p class="goodDesc">Address Details <span class="goodDate">23/05/2017</span></p>
+            </div>
+            <div class="col-xs-3 col-sm-3 goodsRight">
+                <span class="goodsRight1">ZMW</span><span class="goodsRight2">1205</span>
+            </div>
+        </div>-->
+        <!--<div class="row goods">
+            <div class="col-xs-3 col-sm-3 goodsLeft">
+                <img src="image/categoryDetail/good1.jpg">
+                <span class="tip">3</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 goodsMiddle">
+                <p class="goodName">iPhone 6, OS is 10.3</p>
+                <p class="goodDesc">Product details</p>
+                <p class="goodDesc">Address Details <span class="goodDate">23/05/2017</span></p>
+            </div>
+            <div class="col-xs-3 col-sm-3 goodsRight">
+                <span class="goodsRight1">ZMW</span><span class="goodsRight2">1205</span>
+            </div>
+        </div>
+        <div class="row goods">
+            <div class="col-xs-3 col-sm-3 goodsLeft">
+                <img src="image/categoryDetail/good1.jpg">
+                <span class="tip">3</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 goodsMiddle">
+                <p class="goodName">iPhone 6, OS is 10.3</p>
+                <p class="goodDesc">Product details</p>
+                <p class="goodDesc">Address Details <span class="goodDate">23/05/2017</span></p>
+            </div>
+            <div class="col-xs-3 col-sm-3 goodsRight">
+                <span class="goodsRight1">ZMW</span><span class="goodsRight2">1205</span>
+            </div>
+        </div>
+        <div class="row goods">
+            <div class="col-xs-3 col-sm-3 goodsLeft">
+                <img src="image/categoryDetail/good1.jpg">
+                <span class="tip">3</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 goodsMiddle">
+                <p class="goodName">iPhone 6, OS is 10.3</p>
+                <p class="goodDesc">Product details</p>
+                <p class="goodDesc">Address Details <span class="goodDate">23/05/2017</span></p>
+            </div>
+            <div class="col-xs-3 col-sm-3 goodsRight">
+                <span class="goodsRight1">ZMW</span><span class="goodsRight2">1205</span>
+            </div>
+        </div>
+        <div class="row goods">
             <div class="col-xs-3 col-sm-3 goodsLeft">
                 <img src="image/categoryDetail/good1.jpg">
                 <span class="tip">3</span>
@@ -95,12 +174,103 @@
         <button id="getGoodsBtn">获取列表</button>
     </aside>
 
+    <aside class="row infos">
+        <div class="col-xs-6 col-sm-6 part publish"><span>Publish</span></div>
+        <div class="col-xs-6 col-sm-6 part signInUp" style="display: block;"><span>Sign in/Sign up</span></div>
+        <div class="col-xs-6 col-sm-6 part profile" style="display: none;"><span>My Manage</span></div>
+    </aside>
+
+    <!--二级菜单-->
+    <div class="classifyBoxWrap" style="display: none;">
+        <aside class="row classifyBox">
+            <!--<div class="classifyLi">
+                <div class="col-xs-4 col-sm-4 firstName">Electronic</div>
+                <div class="col-xs-8 col-sm-8 secondNames">
+                    <span class="secondName">secondName</span>
+                    <span class="secondName">secondName</span>
+                    <span class="secondName">secondName</span>
+                </div>
+            </div>-->
+        </aside>
+    </div>
+
 </section>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
 <script type="text/javascript" src="js/swiper.min.js"></script>
 <script type="text/javascript" src="js/public.js"></script>
 <script type="text/javascript">
     $(function(){
+
+        //头部中间位置显示内容
+        var categoryMiddleCidName;
+        if(getParamByUrl('searchOrTab') == 'tab'){
+            categoryMiddleCidName = window.localStorage.getItem('mobileCidName');
+            if(categoryMiddleCidName == 'Life'){
+                categoryMiddleCidName = 'Life Goods';
+            }
+            if(categoryMiddleCidName == 'Family'){
+                categoryMiddleCidName = 'Family House';
+            }
+            $('.headerBox .categoryMiddle .categoryMiddleCidName').html(categoryMiddleCidName);
+        }else if(getParamByUrl('searchOrTab') == 'search'){
+            categoryMiddleCidName = window.localStorage.getItem('searchKeyWord');
+            $('.headerBox .categoryMiddle .categoryMiddleCidName').html(categoryMiddleCidName);
+        }
+        //点击展示二级菜单
+        $('.headerBox .categoryMiddle').unbind('click').click(function(){
+           $('.classifyBoxWrap').show();
+        });
+
+        //取消冒泡
+        $('.classifyBoxWrap .classifyBox').unbind('click').click(function(ev){
+            ev.stopPropagation();
+        });
+        //点击空白处隐藏
+        $('.classifyBoxWrap').unbind('click').click(function(){
+            $('.classifyBoxWrap').hide();
+        });
+
+
+        //产品分类显示
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/categorys",
+            dataType:"json",
+            success: function(data){
+                if(data.status == 200){
+                    data = JSON.parse(data.data);
+                    console.log("获得产品分类",data);
+
+                    for(var i=0; i<data.length-1; i++){
+                        var secondStr = '';
+                        for(var j=0; j<data[i].sub.length; j++){
+                            secondStr+='<span class="secondName" cid='+data[i].sub[j].cid+' cidName='+data[i].sub[j].name+'>'+data[i].sub[j].name+'</span>';
+                        }
+                        $('.classifyBox').append('' +
+                                '<div class="classifyLi">' +
+                                '<div class="col-xs-4 col-sm-4 firstName" cid='+data[i].cid+' cidName='+data[i].name+'>'+data[i].name+'</div>' +
+                                '<div class="col-xs-8 col-sm-8 secondNames">' +
+                                secondStr+
+                                '</div>' +
+                                '</div>');
+                    }
+                    $('.classifyBox .classifyLi').eq(0).children().css('color','#FF4F0D');
+
+                    //点击事件
+                    $('.classifyBox .classifyLi .firstName,.classifyBox .classifyLi .secondName').unbind('click').click(function(){
+                        window.localStorage.setItem('mobileCidName', $(this).attr('cidName'));
+                        window.location.href = 'category.html?searchOrTab=tab&cid='+$(this).attr('cid');
+                    });
+
+                }else{
+                    commonPopFun1(data.msg, 'Failed');
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+
+        });
 
         //点击发布
         $('.infos .publish').unbind('click').click(function () {
@@ -110,8 +280,12 @@
         $('.infos .signInUp').unbind('click').click(function () {
             window.location.href = "login.html";
         });
+        /*//My Profile
+         $('.infos .profile').unbind('click').click(function () {
+         window.location.href = "profile.html";
+         });*/
 
-        //显示地址列表
+        //头部显示地址列表
         var areaId = localStorage.getItem("areaId");
         var areaName = localStorage.getItem("areaName");
         $.ajax({
@@ -121,6 +295,14 @@
                 if (data.status == 200){
                     data = JSON.parse(data.data);
                     console.log("获得区域信息", data);
+                    var locationArr1 = [];
+                    var locationArrId1 = [];
+                    var locationArr2 = [];
+                    for (var sort in data){
+                        locationArr1.push(data[sort].name);
+                        locationArrId1.push(data[sort].id);
+                        locationArr2.push(data[sort].sub);
+                    }
                     var areaIdArr = [];
                     var areaNameArr = [];
                     for (var areas in data){
@@ -147,14 +329,73 @@
                         $('.headerBox .indexMiddle .addressUl').toggle();
                     });
 
+                    $('.headerBox .indexMiddle .addressUl').prepend('<div id="addressAll" style="text-align: center;width: 6.375rem;height: 1.875rem;line-height:1.875rem;border: 1px solid #999;border-bottom: none;margin:0 auto;">ALL</div>');
+
+
+                    $('#addressAll').unbind('click').click(function(){
+                        $('.headerBox .indexMiddle .address').text('ALL');
+                        $('.headerBox .indexMiddle .addressUl').hide();
+
+                        var strAllArea = '<span class="area">AREA</span><a href="#" nowAreaid="" class="selectChoose active">ALL</a>';
+                        for(var j=0; j<locationArrId1.length; j++){
+                            strAllArea += '<a href="#" class="selectChoose" nowAreaid='+locationArrId1[j]+'>'+locationArr1[j]+'</a>';
+                        }
+                        $('.selectArea').empty().append(strAllArea);
+
+                        $('.selectBox .select .selectArea').children('.selectChoose').each(function(index){
+                            $(this).click(function () {
+                                areaid = $(this).attr('nowAreaid');
+                                $('.selectBox .select .selectArea .selectChoose').removeClass("active");
+                                $(this).addClass('active');
+                                console.log('areaid='+areaid);
+                                tabPageControl();
+                                getGoods(cid, pmin, pmax, areaid, issell, orderby, needSort, startTab, hasImage, goodstatus);
+                            });
+                        });
+
+                    });
+
                     //选择地址
+                    controlAreaId2();
                     $('.headerBox .indexMiddle .addressUl .addressLi').unbind('click').click(function(){
                         var index = $(this).index();
+                        index = index-1;
                         localStorage.setItem('areaId', areaIdArr[index]);
                         localStorage.setItem('areaName', areaNameArr[index]);
                         $('.headerBox .indexMiddle .address').html(areaNameArr[index]);
                         $('.headerBox .indexMiddle .addressUl').hide();
+
+                        controlAreaId2();
+
                     });
+
+                    function controlAreaId2(){
+                        var areaIdArr2 = [];
+//                        areaid = locationArr2[0][0].id;
+                        console.log('**********', areaid);
+                        for(let i=0; i<locationArr1.length; i++){
+                            var strArea = '<span class="area">AREA</span><a href="#" class="selectChoose active">ALL</a>';
+                            if($('.headerBox .indexMiddle .address').html() == locationArr1[i]){
+                                for(var j=0; j<locationArr2[i].length; j++){
+                                    strArea += '<a href="#" class="selectChoose">'+locationArr2[i][j].name+'</a>';
+                                    areaIdArr2.push(locationArr2[i][j].id);
+                                }
+                                $('.selectArea').empty().append(strArea);
+                            }
+                        }
+                        console.log("areaIdArr2",areaIdArr2);
+
+                        $('.selectBox .select .selectArea').children('.selectChoose').each(function(index){
+                            $(this).click(function () {
+                                areaid = areaIdArr2[index-1];
+                                $('.selectBox .select .selectArea .selectChoose').removeClass("active");
+                                $(this).addClass('active');
+                                console.log('areaid='+areaid);
+                                tabPageControl();
+                                getGoods(cid, pmin, pmax, areaid, issell, orderby, needSort, startTab, hasImage, goodstatus);
+                            });
+                        });
+                    }
 
                     //不显示默认地址
                     $('.headerBox .indexMiddle .addressUl .addressLi').each(function(index){
@@ -166,24 +407,6 @@
                 }else{
                     commonPopFun1(data.msg);
                 }
-            },
-            error:function(error){
-                console.log(error);
-            }
-        });
-
-
-        //getmarquee
-        $.ajax({
-            type: "get",
-            url: baseUrl+"/apigateway/getmarquee",
-            dataType:"json",
-            success: function(data){
-                if(data.status ==200){
-                    console.log('getmarquee',data);
-                    $('#aboutmarquee').html(data.data);
-                }
-
             },
             error:function(error){
                 console.log(error);
@@ -437,7 +660,7 @@
 
                     //点击addressAll
 
-                    $('#addressAll').unbind('click').click(function(){
+                    /*$('#addressAll').unbind('click').click(function(){
                         $('.headerBox .header .headerLeft .lusaka').text('ALL');
                         var strAllArea = '<span class="area">AREA</span><a href="#" nowAreaid="" class="selectChoose active">ALL</a>';
                         for(var j=0; j<locationArrId1.length; j++){
@@ -462,7 +685,7 @@
                             });
                         });
 
-                    });
+                    });*/
 
 
                     function controlAreaId(){
@@ -598,8 +821,8 @@
 //                            console.log(data[list]);
 
                             var detailsText = data[list].details;
-                            if(detailsText.length>200){
-                                detailsText = detailsText.substring(0, 180) + '...';
+                            if(detailsText.length>22){
+                                detailsText = detailsText.substring(0, 22) + '...';
                             }
 
                             //aboutQuality
@@ -640,8 +863,8 @@
                             };
                             console.log('erjiName',erjiName);
                             str += '<div class="row goods">' +
-                                    '<div class="col-xs-3 col-sm-3 goodsLeft">' +
-                                    '<img src='+baseUrl+'/gimg/'+data[list].cimg+'><span class="tip">'+imgsLth+'</span>' +
+                                    '<div class="col-xs-3 col-sm-3 goodsLeft" style="background: url('+baseImgSrc+data[list].cimg+') no-repeat center center">' +
+                                    '<span class="tip">'+imgsLth+'</span>' +
                                     '</div>' +
                                     '<div class="col-xs-6 col-sm-6 goodsMiddle">' +
                                     '<p class="goodName">'+data[list].contactname+'</p>' +
@@ -956,8 +1179,8 @@
 //                            console.log(data[list]);
 
                             var detailsText = data[list].details;
-                            if(detailsText.length>200){
-                                detailsText = detailsText.substring(0, 180) + '...';
+                            if(detailsText.length>22){
+                                detailsText = detailsText.substring(0, 22) + '...';
                             }
                             //aboutQuality
                             var aboutQuality = '';

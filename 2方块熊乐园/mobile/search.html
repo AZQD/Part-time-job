@@ -26,6 +26,18 @@
         </div>
     </aside>
 
+    <!--二级菜单-->
+    <aside class="row classifyBox">
+        <!--<div class="classifyLi">
+            <div class="col-xs-4 col-sm-4 firstName">Electronic</div>
+            <div class="col-xs-8 col-sm-8 secondNames">
+                <span class="secondName">secondName</span>
+                <span class="secondName">secondName</span>
+                <span class="secondName">secondName</span>
+            </div>
+        </div>-->
+    </aside>
+
     <aside class="row getBestGoods">
         <div class="col-xs-12 col-sm-12 bestGoods">
             <h3 class="bestGoodsTitle">
@@ -43,6 +55,49 @@
 <script type="text/javascript">
     $(function(){
 
+
+        //产品分类显示
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/categorys",
+            dataType:"json",
+            success: function(data){
+                if(data.status == 200){
+                    data = JSON.parse(data.data);
+                    console.log("获得产品分类",data);
+
+                    for(var i=0; i<data.length-1; i++){
+                        var secondStr = '';
+                        for(var j=0; j<data[i].sub.length; j++){
+                            secondStr+='<span class="secondName" cid='+data[i].sub[j].cid+' cidName='+data[i].sub[j].name+'>'+data[i].sub[j].name+'</span>';
+                        }
+                        $('.classifyBox').append('' +
+                                '<div class="classifyLi">' +
+                                '<div class="col-xs-4 col-sm-4 firstName" cid='+data[i].cid+' cidName='+data[i].name+'>'+data[i].name+'</div>' +
+                                '<div class="col-xs-8 col-sm-8 secondNames">' +
+                                secondStr+
+                                '</div>' +
+                                '</div>');
+                    }
+                    $('.classifyBox .classifyLi').eq(0).children().css('color','#FF4F0D');
+
+                    //点击事件
+                    $('.classifyBox .classifyLi .firstName,.classifyBox .classifyLi .secondName').unbind('click').click(function(){
+                        window.localStorage.setItem('mobileCidName', $(this).attr('cidName'));
+                        window.location.href = 'category.html?searchOrTab=tab&cid='+$(this).attr('cid');
+                    });
+
+                }else{
+                    commonPopFun1(data.msg, 'Failed');
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+
+        });
+
+
         //搜索
         function searchBoxRightFun(){
             var searchKeyWord = $.trim($('.searchBox .search .ipt').val());
@@ -50,7 +105,7 @@
                 localStorage.setItem('searchOrTab',"search");
                 localStorage.setItem('searchKeyWord',searchKeyWord);
                 window.location.href = "category.html?searchOrTab=search&searchKeyWord="+searchKeyWord;
-                //    window.location.href = "category.html?searchOrTab=tab&cid="+cid;
+                //    window.location.href = "categoryOld.html?searchOrTab=tab&cid="+cid;
             }else{
                 //alert('请输入搜索关键词！');
             }

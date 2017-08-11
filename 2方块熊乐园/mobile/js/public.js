@@ -196,7 +196,8 @@ if(token == null){
 
                 //index.html
                 $('.infos .profile').unbind('click').click(function () {
-                    window.location.href = "profile.html?pubUid="+data.uid;
+                    //window.location.href = "profile.html?pubUid="+data.uid;//调整了
+                    window.location.href = 'manage.html';
                 });
 
                 //manage.html:
