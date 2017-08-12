@@ -1,6 +1,5 @@
 @rem : 16rem;
 
-
 /*sortBox*/
 .sortBox{
 
@@ -88,11 +87,8 @@
   height: 35/@rem;
   line-height:35/@rem;
   text-align: right;
-  //width: 60/@rem;
+  width: 60/@rem;
   padding-right: 2/@rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .sortBox .sort .partInner2 .partInner2Box .right{
   padding-bottom: 20/@rem;
@@ -121,7 +117,7 @@
   border: 1/@rem solid #999;
 }
 .sortBox .sort .partInner2 .partInner2Box .right .titleText{
-  width: 98%;
+  width: 100%;
   height: 35/@rem;
   line-height:35/@rem;
   margin-right: 10/@rem;
@@ -136,23 +132,19 @@
   font-size: 13/@rem;
 }
 .sortBox .sort .partInner2 .partInner2Box .right .locationText{
-  width: 100/@rem;
+  width: 125/@rem;
   height: 35/@rem;
   line-height:35/@rem;
   font-size: 13/@rem;
   border: 1/@rem solid #999;
 }
 .sortBox .sort .partInner2 .partInner2Box .right .detailText{
-  width: 98%;
+  width: 100%;
   height: 133/@rem;
   font-size: 13/@rem;
   border: 1/@rem solid #999;
   onresize:none;
   outline: none;
-}
-.sortBox .sort .partInner2 .partInner2Box .imagesBoxWrap{
-  max-height: 330/@rem;
-  overflow: hidden;
 }
 .sortBox .sort .partInner2 .partInner2Box .right .imagesBox{
   /*width: 150/@rem;*/
@@ -163,26 +155,10 @@
 }
 
 
-/*新增*/
-.sortBox .sort .partInner2 .partInner2Box .right .imagesBox .nowHaveImg{
-  border: 1/@rem solid #999;
-  float: left;
-  margin-right: 6/@rem;
-  width: 145/@rem;
-  height: 145/@rem;
-  line-height: 145/@rem;
-  position: relative;
-  cursor: pointer;
-  color: #888;
-  overflow: hidden;
-  display: inline-block;
-  margin-bottom: 20/@rem;
-}
-.sortBox .sort .partInner2 .partInner2Box .right .imagesBox .nowHaveImg .closeNowHaveImg{
-  width: 20/@rem;
-  position: absolute;
-  right: 0;
-  top: 0;
+.sortBox .sort .partInner2 .partInner2Box .right .imagesBox .upload{
+  height: 30/@rem;
+  line-height:30/@rem;
+  background-color: #E6E6E6;
 }
 .sortBox .sort .partInner2 .partInner2Box .right .imagesBox .uploadLogo{
   width: 88/@rem;
@@ -190,7 +166,7 @@
   /*margin-top: 24/@rem;*/
 }
 .sortBox .sort .partInner2 .partInner2Box .right .contactText{
-  width: 142/@rem;
+  width: 150/@rem;
   height: 35/@rem;
   line-height:35/@rem;
   font-size: 13/@rem;
@@ -198,7 +174,7 @@
   border: 1/@rem solid #999;
 }
 .sortBox .sort .partInner2 .partInner2Box .right .contactText:last-child{
-  margin-right:0;
+  margin-right: 0;
 }
 .sortBox .sort .partInner2 .partInner2Box .publishBtn{
   text-align: center;
@@ -214,79 +190,6 @@
   margin-right: 10/@rem;
   background-color: #FF4720;
 }
-
-.sortBox .sort .partInner3{
-  text-align: center;
-}
-.sortBox .sort .partInner3 .complete{
-  padding-top: 60/@rem;
-}
-.sortBox .sort .partInner3 .complete .completeImg{
-  width: 180/@rem;
-  height: 180/@rem;
-}
-.sortBox .sort .partInner3 .published{
-  color: #666666;
-  font-size: 14/@rem;
-  padding-bottom: 12/@rem;
-}
-.sortBox .sort .partInner3 .completeBtn{
-  padding-bottom: 10/@rem;
-  font-size: 13/@rem;
-}
-.sortBox .sort .partInner3 .completeBtn .completeLink{
-  display: inline-block;
-  width: 283/@rem;
-  height: 35/@rem;
-  line-height:35/@rem;
-  color: #fff;
-  text-align: center;
-  background-color: #FF4720;
-}
-
-
-#selectCid{
-  width: 127/@rem;
-  height: 35/@rem;
-}
-
-
-/*a  upload */
-.a-upload {
-  border: 1/@rem solid #999;
-  float: left;
-  margin-right: 6/@rem;
-  width: 145/@rem;
-  /*padding: 4/@rem 10/@rem;*/
-  height: 145/@rem;
-  line-height: 145/@rem;
-  position: relative;
-  cursor: pointer;
-  color: #888;
-  /*border-radius: 4/@rem;*/
-  overflow: hidden;
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  margin-bottom: 20/@rem;
-}
-.a-upload .closeImg{
-  width: 20/@rem;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.a-upload  input {
-  position: absolute;
-  font-size: 100/@rem;
-  right: 0;
-  top: 0;
-  opacity: 0;
-  filter: alpha(opacity=0);
-  cursor: pointer
-}
-
 
 /*publishPopBox弹窗*/
 .publishPopBox{
@@ -329,4 +232,43 @@
 }
 .publishPopBox .tipOffBox .confirmBox .loginNowBtn{
   margin-right: 36/@rem;
+}
+
+
+/*a  upload */
+.a-upload {
+  border: 1/@rem solid #999;
+  float: left;
+  margin-right: 16/@rem;
+  width: 148/@rem;
+  /*padding: 4/@rem 10/@rem;*/
+  height: 140/@rem;
+  line-height: 140/@rem;
+  position: relative;
+  cursor: pointer;
+  color: #888;
+  /*border-radius: 4/@rem;*/
+  overflow: hidden;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1
+}
+.a-upload:nth-child(2n){
+  margin-right: 0;
+}
+.a-upload .closeImg{
+  width: 28/@rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.a-upload  input {
+  position: absolute;
+  font-size: 100/@rem;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  cursor: pointer
 }

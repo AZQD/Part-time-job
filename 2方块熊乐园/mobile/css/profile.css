@@ -100,6 +100,11 @@ body {
   margin-bottom: 0.625rem;
   padding: 0 0.5rem;
 }
+.sellingBox .selling .sellingList .sellingLink .goodImgWrap {
+  display: inline-block;
+  width: 4.8125rem;
+  height: 4.8125rem;
+}
 .sellingBox .selling .sellingList .sellingLink .goodImg {
   width: 4.8125rem;
   height: 4.8125rem;
@@ -170,6 +175,11 @@ body {
   position: relative;
   margin-bottom: 0.625rem;
   text-align: center;
+}
+.likeBox .like .likeList .likeLink .goodImgWrap {
+  display: inline-block;
+  width: 4.8125rem;
+  height: 4.8125rem;
 }
 .likeBox .like .likeList .likeLink .goodImg {
   width: 4.8125rem;

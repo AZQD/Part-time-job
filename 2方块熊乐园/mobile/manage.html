@@ -101,7 +101,7 @@
                         </div>
                         <div class="col-xs-12 col-sm-12 attrBox"><span class="attr">Cellphone:&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="value"></span></div>
                         <div class="col-xs-12 col-sm-12 attrBox"><span class="attr">Nickname:&nbsp;&nbsp;&nbsp;&nbsp;</span><input type="text" id="nickName" class="nikeNameIpt"></div>
-                        <div class="col-xs-12 col-sm-12 attrBox" style="width:400px;">
+                        <div class="col-xs-12 col-sm-12 attrBox" style="width:270px;">
                             <form action="#">
                                 <span class="attr">Gender:</span>
                                 <label><input type="radio" class="gender" name="gender" value="">Male</label>
@@ -335,13 +335,15 @@
                         $('.infoBox .info .infoWrap .infoRight .part1 .headBox .headImg').attr('src', baseImgSrc + headLogo);
                         $('.managePopBox').hide();
                         $('body').css('overflow', 'auto');
+
+
                     });
 
 
                     //点击推荐的图片
                     $('.managePopBox .managePop .recommendBox .choose').unbind('click').click(function(){
                         var index = $(this).index();
-                        alert(index);
+//                        alert(index);
                     });
 
 
@@ -387,7 +389,7 @@
 
                         //修改title
                         $('#manageTitle').html(data.nickname + "'s home. kalichimall, make money by your second-hand goods.");
-                        commonPopFun1('Your detail has been saved successfully.', 'Successful');
+                        commonPopFun1('Your detail has been saved successfully.', 'Successfully');
                     }else{
                         console.log(data);
                         commonPopFun1('Sorry, failed to save your detail. Please try it later.', 'Failed');
@@ -507,7 +509,9 @@
                             }
                             $('.infoBox .info .infoWrap .infoRight .part2 .listUl').append(
                                     '<li class="row listLi">' +
-                                    '<div class="col-xs-4 col-sm-4 left"><img src='+baseImgSrc + data[i].cimg+'></div>' +
+                                    '<div class="col-xs-4 col-sm-4 left">' +
+                                    '<span style="display:inline-block;height:100%;background: url('+baseImgSrc+data[i].cimg+') no-repeat center center"><img style="opacity: 0;" src='+baseImgSrc + data[i].cimg+'></span>' +
+                                    '</div>' +
                                     '<div class="col-xs-4 col-sm-4 middle">' +
                                     '<p class="title">'+data[i].title+'</p>' +
                                     '<div class="count">' +
@@ -605,19 +609,22 @@
                             console.log(statusArr);
                             console.log(goodidArr);
                             var index = $(this).parents('.listLi').index();
-                            window.open('publish.html?needUpdate=1&updatepubcontentId='+goodidArr[index]);
+                            window.location.href = 'publish.html?needUpdate=1&updatepubcontentId='+goodidArr[index];
+//                            window.open('publish.html?needUpdate=1&updatepubcontentId='+goodidArr[index]);
                             var updatepubcontentId = goodidArr[index];
                         });
 
                         //.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .left
                         $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.left','click', function(){
                             var index = $(this).parents('.listLi').index();
-                            window.open("detail.html?id="+goodidArr[index]);
+                            window.location.href = "detail.html?id="+goodidArr[index];
+//                            window.open("detail.html?id="+goodidArr[index]);
                         });
                         //.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .middle
                         $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.middle','click', function(){
                             var index = $(this).parents('.listLi').index();
-                            window.open("detail.html?id="+goodidArr[index]);
+                            window.location.href = "detail.html?id="+goodidArr[index];
+//                            window.open("detail.html?id="+goodidArr[index]);
                         });
 
 
@@ -678,6 +685,39 @@
                         $('.infoBox .info .infoWrap .infoRight .part1 .headBox .headImg').attr('src', baseImgSrc + headLogo);
                         $('.managePopBox').hide();
                         $('body').css('overflow', 'auto');
+
+
+                        var changeuserinfo = {
+                            "token":token,
+                            "sex":sex.toString(),
+                            "logo":headLogo,
+                            "nickname":$('#nickName').val()
+                        };
+                        $.ajax({
+                            type:"POST",
+                            url:baseUrl + "/apigateway/changeuserinfo",
+                            dataType:"json",
+                            data:JSON.stringify(changeuserinfo),
+                            success:function(data){
+                                console.log(data);
+                                if(data.status == 200){
+                                    console.log("修改用户信息",data);
+                                    console.log("changeuserinfo",changeuserinfo);
+
+                                    //修改title
+                                    $('#manageTitle').html(data.nickname + "'s home. kalichimall, make money by your second-hand goods.");
+//                                    commonPopFun1('Your detail has been saved successfully.', 'Successfully');
+                                }else{
+                                    console.log(data);
+//                                    commonPopFun1('Sorry, failed to save your detail. Please try it later.', 'Failed');
+                                }
+                            },
+                            error:function(error){
+                                console.log(error);
+//                                commonPopFun1('Sorry, failed to save your detail. Please try it later.', 'Failed');
+                            }
+                        });
+
                     });
 
                 }else{

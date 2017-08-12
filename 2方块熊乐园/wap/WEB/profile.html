@@ -622,8 +622,8 @@
                             priceStr = data[i].price;
                         }
                         $('.sellingBox .selling .sellingList').append(
-                            '<a href="#" class="sellingLink">' +
-                            '<img  style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center" class="goodImg" src='+''+'>' +
+                            '<a href="#" class="sellingLink"  style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center" >' +
+                            '<img  style="opacity:0;background: url('+baseImgSrc+data[i].cimg+') no-repeat center center" class="goodImg" src='+''+'>' +
                             '<div class="row desc">' +
                             '<div class="col-xs-6 col-sm-6 left">'+data[i].title+'</div>' +
                             '<div class="col-xs-6 col-sm-6 right">'+priceStr+'</div>' +
@@ -683,9 +683,9 @@
                             priceStr = data[i].price;
                         }
                         $('.likeBox .like .likeList').append(
-                            '<a href="#" class="likeLink">' +
+                            '<a href="#" class="likeLink" style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center">' +
 //                            '<img class="goodImg" src='+baseImgSrc+data[i].cimg+'>' +
-                            '<img  style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center" class="goodImg" src='+''+'>' +
+                            '<img  style="opacity:0;background: url('+baseImgSrc+data[i].cimg+') no-repeat center center" class="goodImg" src='+''+'>' +
                             '<div class="row desc">' +
                             '<div class="col-xs-6 col-sm-6 left">'+data[i].title+'</div>' +
                             '<div class="col-xs-6 col-sm-6 right">'+priceStr+'</div>' +

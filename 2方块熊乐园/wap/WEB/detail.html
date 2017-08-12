@@ -189,6 +189,7 @@
             text-align: center;
             /*margin-bottom: 18px;*/
             height: 350px;
+            overflow: hidden;
         }
         .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic{
             /*width:461px;*/
@@ -735,7 +736,7 @@
                         <div class="userBtn">
                             <div class="row getPhone">
                                 <div class="col-xs-6 col-sm-6 left">
-                                    <img class="leftImg" src="image/detailPage/cellphone.png"><span class="leftText">098888xxxx</span>
+                                    <img class="leftImg" src="image/detailPage/cellphone.png"><span class="leftText"></span>
                                 </div>
                                 <div class="col-xs-6 col-sm-6 right">
                                     <span class="rightText">Login to get celphone</span>
@@ -776,7 +777,7 @@
                         fjs.parentNode.insertBefore(js, fjs);
                     }(document, 'script', 'facebook-jssdk'));</script>-->
 
-
+                    <!--.detailBox .detail .detailLeft .aboutContent-->
                     <div id="disqus_thread"></div>
                     <script>
                         (function() { // DON'T EDIT BELOW THIS LINE
@@ -902,6 +903,14 @@
 <script type="text/javascript" src="js/searchBoxRight.js"></script>
 <script type="text/javascript">
     $(function(){
+
+
+        //tab切换
+        $('.detailBox .detail .detailLeft .tabToggle .tabLink').click(function () {
+            alert(1);
+            var index = $(this).index();
+            $('.detailBox .detail .detailLeft .tabToggle .tabLink').removeClass("active").eq(index).addClass("active");
+        });
         
         //
         $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .getPhone .right .rightText').unbind('click').click(function(){
@@ -938,11 +947,7 @@
         $('#dowebok').viewer({});
 
 
-        //tab切换
-        $('.detailBox .detail .detailLeft .tabToggle .tabLink').click(function () {
-            var index = $(this).index();
-            $('.detailBox .detail .detailLeft .tabToggle .tabLink').removeClass("active").eq(index).addClass("active");
-        });
+
 
         //获得指定产品的产品信息
 //        var goodIdFromCategory = localStorage.getItem("goodIdFromCategory");
@@ -1059,11 +1064,12 @@
                             if(data.status == 200){
                                 data = JSON.parse(data.data);
                                 console.log("售卖信息",data);
-                                if(data.length>4){
+                                $('#publishNum').html(data.length);
+                                /*if(data.length>4){
                                     $('#publishNum').html(4);
                                 }else{
                                     $('#publishNum').html(data.length);
-                                }
+                                }*/
                                 var goodIdArr = [];
                                 for(var i=0; i<data.length; i++){
                                     goodIdArr.push(data[i].id);
@@ -1283,6 +1289,9 @@
                             if(nickname == ''){
                                 nickname = data.phone;
                             }
+
+                            $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .getPhone .left .leftText').html(data.phone);
+
                             $('.detailBox .detail .detailRight .userInfo .userInfoImg').show().attr('src',baseImgSrc+data.logo);
                             $('.detailBox .detail .detailRight .name').html(data.nickname.substring(0,6)+'xxxx');
                             $('.detailBox .detail .detailRight .goHome').html(data.nickname.substring(0,6)+'xxxx' + '\'s home').click(function(){
@@ -1424,7 +1433,7 @@
                     var timer = setInterval(function(){
                         if(getGoodPhone != ''){
                             clearInterval(timer);
-                            $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .getPhone .left .leftText').html(getGoodPhone);
+//                            $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .getPhone .left .leftText').html(getGoodPhone);
                             $('.detailBox .detail .detailLeft .goodDesc .goodDescRight .userBtn .getPhone .right .rightText').hide();
                         }
                     }, 100);

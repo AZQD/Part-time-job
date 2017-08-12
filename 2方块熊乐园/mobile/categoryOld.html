@@ -114,7 +114,7 @@
         });
         //注册/登陆
         $('.infos .signInUp').unbind('click').click(function () {
-            window.location.href = "login.html";
+            window.location.href = "login.html?goLogin="+1;
         });
 
         //显示地址列表
@@ -170,7 +170,7 @@
                     });
 
                 }else{
-                    commonPopFun1(data.msg);
+                    commonPopFun1(data.msg, 'Failed');
                 }
             },
             error:function(error){
@@ -675,13 +675,13 @@
                             var index = $(this).index();
                             var goodId = goodIdArr[index];
                             localStorage.setItem('goodIdFromCategory',goodId);
-                            window.open("detail.html?id="+goodId);
-//                            window.location.href = "detail.html?id="+goodId;
+//                            window.open("detail.html?id="+goodId);
+                            window.location.href = "detail.html?id="+goodId;
 
                         });
 
                     }else{
-                        commonPopFun(data.msg, 'Failed');
+                        commonPopFun1(data.msg, 'Failed');
                     }
                 },
                 error:function(error){
@@ -1034,14 +1034,14 @@
                             var index = $(this).index();
                             var goodId = goodIdArr[index];
                             localStorage.setItem('goodIdFromCategory',goodId);
-                            window.open("detail.html?id="+goodId);
-//                            window.location.href = "detail.html?id="+goodId;
+//                            window.open("detail.html?id="+goodId);
+                            window.location.href = "detail.html?id="+goodId;
 
                         });
 
 
                     } else {
-                        commonPopFun(data.msg,'Failed');
+                        commonPopFun1(data.msg,'Failed');
                     }
                 },
                 error:function(error){

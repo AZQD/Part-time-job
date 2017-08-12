@@ -78,10 +78,8 @@
   height: 2.1875rem;
   line-height: 2.1875rem;
   text-align: right;
+  width: 3.75rem;
   padding-right: 0.125rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 .sortBox .sort .partInner2 .partInner2Box .right {
   padding-bottom: 1.25rem;
@@ -110,7 +108,7 @@
   border: 0.0625rem solid #999999;
 }
 .sortBox .sort .partInner2 .partInner2Box .right .titleText {
-  width: 98%;
+  width: 100%;
   height: 2.1875rem;
   line-height: 2.1875rem;
   margin-right: 0.625rem;
@@ -125,23 +123,19 @@
   font-size: 0.8125rem;
 }
 .sortBox .sort .partInner2 .partInner2Box .right .locationText {
-  width: 6.25rem;
+  width: 7.8125rem;
   height: 2.1875rem;
   line-height: 2.1875rem;
   font-size: 0.8125rem;
   border: 0.0625rem solid #999999;
 }
 .sortBox .sort .partInner2 .partInner2Box .right .detailText {
-  width: 98%;
+  width: 100%;
   height: 8.3125rem;
   font-size: 0.8125rem;
   border: 0.0625rem solid #999999;
   onresize: none;
   outline: none;
-}
-.sortBox .sort .partInner2 .partInner2Box .imagesBoxWrap {
-  max-height: 20.625rem;
-  overflow: hidden;
 }
 .sortBox .sort .partInner2 .partInner2Box .right .imagesBox {
   /*width: 150/@rem;*/
@@ -150,26 +144,10 @@
   color: #333;
   text-align: center;
 }
-/*新增*/
-.sortBox .sort .partInner2 .partInner2Box .right .imagesBox .nowHaveImg {
-  border: 0.0625rem solid #999999;
-  float: left;
-  margin-right: 0.375rem;
-  width: 9.0625rem;
-  height: 9.0625rem;
-  line-height: 9.0625rem;
-  position: relative;
-  cursor: pointer;
-  color: #888;
-  overflow: hidden;
-  display: inline-block;
-  margin-bottom: 1.25rem;
-}
-.sortBox .sort .partInner2 .partInner2Box .right .imagesBox .nowHaveImg .closeNowHaveImg {
-  width: 1.25rem;
-  position: absolute;
-  right: 0;
-  top: 0;
+.sortBox .sort .partInner2 .partInner2Box .right .imagesBox .upload {
+  height: 1.875rem;
+  line-height: 1.875rem;
+  background-color: #E6E6E6;
 }
 .sortBox .sort .partInner2 .partInner2Box .right .imagesBox .uploadLogo {
   width: 5.5rem;
@@ -177,7 +155,7 @@
   /*margin-top: 24/@rem;*/
 }
 .sortBox .sort .partInner2 .partInner2Box .right .contactText {
-  width: 8.875rem;
+  width: 9.375rem;
   height: 2.1875rem;
   line-height: 2.1875rem;
   font-size: 0.8125rem;
@@ -200,72 +178,6 @@
   text-align: center;
   margin-right: 0.625rem;
   background-color: #FF4720;
-}
-.sortBox .sort .partInner3 {
-  text-align: center;
-}
-.sortBox .sort .partInner3 .complete {
-  padding-top: 3.75rem;
-}
-.sortBox .sort .partInner3 .complete .completeImg {
-  width: 11.25rem;
-  height: 11.25rem;
-}
-.sortBox .sort .partInner3 .published {
-  color: #666666;
-  font-size: 0.875rem;
-  padding-bottom: 0.75rem;
-}
-.sortBox .sort .partInner3 .completeBtn {
-  padding-bottom: 0.625rem;
-  font-size: 0.8125rem;
-}
-.sortBox .sort .partInner3 .completeBtn .completeLink {
-  display: inline-block;
-  width: 17.6875rem;
-  height: 2.1875rem;
-  line-height: 2.1875rem;
-  color: #fff;
-  text-align: center;
-  background-color: #FF4720;
-}
-#selectCid {
-  width: 7.9375rem;
-  height: 2.1875rem;
-}
-/*a  upload */
-.a-upload {
-  border: 0.0625rem solid #999999;
-  float: left;
-  margin-right: 0.375rem;
-  width: 9.0625rem;
-  /*padding: 4/@rem 10/@rem;*/
-  height: 9.0625rem;
-  line-height: 9.0625rem;
-  position: relative;
-  cursor: pointer;
-  color: #888;
-  /*border-radius: 4/@rem;*/
-  overflow: hidden;
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  margin-bottom: 1.25rem;
-}
-.a-upload .closeImg {
-  width: 1.25rem;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-.a-upload input {
-  position: absolute;
-  font-size: 6.25rem;
-  right: 0;
-  top: 0;
-  opacity: 0;
-  filter: alpha(opacity=0);
-  cursor: pointer;
 }
 /*publishPopBox弹窗*/
 .publishPopBox {
@@ -308,4 +220,40 @@
 }
 .publishPopBox .tipOffBox .confirmBox .loginNowBtn {
   margin-right: 2.25rem;
+}
+/*a  upload */
+.a-upload {
+  border: 0.0625rem solid #999999;
+  float: left;
+  margin-right: 1rem;
+  width: 9.25rem;
+  /*padding: 4/@rem 10/@rem;*/
+  height: 8.75rem;
+  line-height: 8.75rem;
+  position: relative;
+  cursor: pointer;
+  color: #888;
+  /*border-radius: 4/@rem;*/
+  overflow: hidden;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.a-upload:nth-child(2n) {
+  margin-right: 0;
+}
+.a-upload .closeImg {
+  width: 1.75rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.a-upload input {
+  position: absolute;
+  font-size: 6.25rem;
+  right: 0;
+  top: 0;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  cursor: pointer;
 }

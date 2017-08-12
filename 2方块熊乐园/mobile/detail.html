@@ -63,7 +63,7 @@
                 <!--显示手机号-->
                 <div class="row getPhone">
                     <div class="col-xs-12 col-sm-12 left">
-                        <img class="leftImg" src="image/detailPage/cellphone.png"><span class="leftText">098888xxxx</span>
+                        <img class="leftImg" src="image/detailPage/cellphone.png"><span class="leftText"></span>
                     </div>
                     <div class="col-xs-12 col-sm-12 right">
                         <span class="rightText">Login to get celphone</span>
@@ -78,7 +78,7 @@
                         <!--<div class="bigImg"><img class="bigImgPic" src="image/detailPage/bigImg1.png"></div>-->
                         <div class="bigImg row">
                             <a href="###" class="tipOff">TIP OFF</a>
-                            <img class="bigImgPic" src="" style="visibility: hidden;">
+                            <span class="bigImgPicWrap"><img class="bigImgPic" src="" style="opacity:0;visibility: hidden;"></span>
                             <img class="bigImgbg" src="image/detailPage/bigImgbg.png"/>
                             <div class="col-xs-4 col-sm-4 aboutPrice"><span class="thePrice" style="display: none;"><span class="thePriceNum">100</span>ZMW</span></div>
                             <div class="col-xs-8 col-sm-8 aboutShare">
@@ -159,7 +159,7 @@
     $(function(){
 
         $('.detailBox .detail .detailLeft .getPhone .right .rightText').unbind('click').click(function(){
-            window.location.href = 'login.html';
+            window.location.href = "login.html?goLogin="+1;
         });
 
         //headerBox
@@ -216,7 +216,7 @@
                     });
 
                 }else{
-                    commonPopFun1(data.msg);
+                    commonPopFun1(data.msg, 'Failed');
                 }
             },
             error:function(error){
@@ -337,7 +337,7 @@
                                 });
 
                             }else{
-                                commonPopFun(data.msg);
+                                commonPopFun1(data.msg, 'Failed');
                             }
                         },
                         error:function(error){
@@ -350,9 +350,10 @@
                     var imgsArr = imgs.split(',');
                     console.log(imgsArr);
                     for(var i=0; i<imgsArr.length; i++){
-                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li"><img src='+baseUrl+'/gimg/'+imgsArr[i]+'></li>');
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li" style="background: url('+baseImgSrc+imgsArr[0]+') no-repeat center center"><img style="opacity:0;" src='+baseUrl+'/gimg/'+imgsArr[i]+'></li>');
                     }
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('visibility','inherit').attr('src', baseUrl+'/gimg/'+imgsArr[0]);
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('background','url('+baseImgSrc+imgsArr[0]+') no-repeat center center');
                     var moveNum = 0;
                     var imgsLength = imgsArr.length;
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .leftFlag').click(function(){
@@ -369,7 +370,9 @@
                     });
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').click(function(){
                         var index = $(this).index();
+                        var src = $(this).children('img').attr('src');
                         $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', $(this).children('img').attr('src'));
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('background','url('+$(this).children('img').attr('src')+') no-repeat center center');
 
                     });
 
@@ -451,6 +454,10 @@
                         success: function(data){
                             console.log('获得商品发布者用户信息', data);
                             data = data.data;
+
+                            //显示用户手机号
+                            $('.detailBox .detail .detailLeft .getPhone .left .leftText').html(data.phone);
+
                             //详情页信息
                             $('.detailBox .detail .detailLeft .headImg').show().attr('src',baseImgSrc+data.logo).click(function(){
                                 window.location.href = 'profile.html?pubUid='+pubUid;
@@ -476,8 +483,7 @@
 
 
                 }else{
-                    alert(data.status);
-//                    commonPopFun(data.msg);
+                    commonPopFun1(data.msg, 'Failed');
                 }
             },
             error:function(error){
@@ -548,9 +554,9 @@
                                             $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 img').attr("src", "image/detailPage/asMyWish.png");
                                             $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 span').html("As my wish");
                                         }else if(data.status == 501){//token失效
-                                            commonPopFun(data.msg);
+                                            commonPopFun1(data.msg, 'Failed');
                                         }else{
-                                            commonPopFun(data.msg);
+                                            commonPopFun1(data.msg, 'Failed');
                                         }
                                     },
                                     error:function(error){
@@ -578,9 +584,9 @@
                                             $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 span').html("Remove");
                                             isCollect = true;
                                         }else if(data.status == 501){//token失效
-                                            commonPopFun(data.msg);
+                                            commonPopFun1(data.msg, 'Failed');
                                         }else{
-                                            commonPopFun(data.msg);
+                                            commonPopFun1(data.msg, 'Failed');
                                         }
                                     },
                                     error:function(error){
@@ -596,15 +602,15 @@
                     var timer = setInterval(function(){
                         if(getGoodPhone != ''){
                             clearInterval(timer);
-                            $('.detailBox .detail .detailLeft .getPhone .left .leftText').html(getGoodPhone);
+//                            $('.detailBox .detail .detailLeft .getPhone .left .leftText').html(getGoodPhone);
                             $('.detailBox .detail .detailLeft .getPhone .right .rightText').hide();
                         }
                     }, 100);
 
                 }else if(data.status == 501){//token失效
-//                    commonPopFun(data.msg);
+//                    commonPopFun1(data.msg, 'Failed');
                 }else{
-//                    commonPopFun(data.msg);
+//                    commonPopFun1(data.msg, 'Failed');
                 }
             },
             error:function(error){
@@ -674,7 +680,7 @@
         });
         //注册/登陆
         $('.infos .signInUp').unbind('click').click(function () {
-            window.location.href = "login.html";
+            window.location.href = "login.html?goLogin="+1;
         });
         /*//My Profile
         $('.infos .profile').unbind('click').click(function () {

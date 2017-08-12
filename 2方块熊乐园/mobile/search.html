@@ -141,7 +141,7 @@
                         window.location.href = 'detail.html?id='+$(this).attr('id');
                     });
                 } else {
-                    commonPopFun1(data.msg);
+                    commonPopFun1(data.msg, 'Failed');
                 }
             },
             error:function(error){
