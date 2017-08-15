@@ -1,0 +1,47 @@
+/*runWinBox*/
+.runWinBox .runWin {
+  width: 100%;
+}
+/*updateNewsBox*/
+.updateNewsBox {
+  position: relative;
+}
+.updateNewsBox .updateNews {
+  width: 100%;
+}
+.updateNewsBox .tips {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  bottom: 0.875rem;
+  font-size: 0.875rem;
+  color: #333333;
+  font-family: "微软雅黑";
+}
+/*addWeChatBox*/
+.addWeChatBox {
+  text-align: center;
+}
+.addWeChatBox .title {
+  color: #b85e13;
+  font-size: 1.0625rem;
+  font-family: 'STHupo';
+  font-weight: bold;
+}
+.addWeChatBox .erWeiMa {
+  width: 7.625rem;
+}
+.addWeChatBox .touchBtn {
+  outline: none;
+  border: none;
+  width: 15.125rem;
+  height: 48px;
+  line-height: 48px;
+  color: #010005;
+  font-size: 18px;
+  font-family: 'HYk1gj';
+  font-weight: bold;
+  text-indent: 60px;
+  background: url("../image/touchBtn.png") no-repeat center center;
+  background-size: 100% 100%;
+}
