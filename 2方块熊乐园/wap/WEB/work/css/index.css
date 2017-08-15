@@ -2,6 +2,10 @@
 .runWinBox .runWin {
   width: 100%;
 }
+.middleBox {
+  background: url("../image/middleBg.png") no-repeat;
+  background-size: 100% auto;
+}
 /*updateNewsBox*/
 .updateNewsBox {
   position: relative;
@@ -27,6 +31,8 @@
   font-size: 1.0625rem;
   font-family: 'STHupo';
   font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 .addWeChatBox .erWeiMa {
   width: 7.625rem;
@@ -44,4 +50,211 @@
   text-indent: 60px;
   background: url("../image/touchBtn.png") no-repeat center center;
   background-size: 100% 100%;
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+.addWeChatBox .copy {
+  color: #333333;
+  font-size: 0.9375rem;
+  font-family: '微软雅黑';
+}
+.shareTitleBox {
+  margin: 0 5px;
+  text-align: center;
+  color: #333333;
+  font-size: 1.0625rem;
+  font-family: 'HYk1gj';
+  font-weight: bold;
+  height: 16px;
+  line-height: 16px;
+  background: url("../image/titleBg.png") no-repeat center;
+  background-size: 100% auto;
+  margin-top: 16px;
+  margin-bottom: 28px;
+}
+/*ziXunBox*/
+.ziXunBox {
+  margin: 0 24px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 12px 26px 15px 26px;
+}
+.ziXunBox .computer {
+  text-align: center;
+}
+.ziXunBox .computer .computerImg {
+  width: 202px;
+}
+.ziXunBox .reverse {
+  color: #333333;
+  font-size: 1.0625rem;
+  font-family: 'HYk1gj';
+  margin-top: 25px;
+  margin-bottom: 14px;
+  font-weight: bold;
+}
+.ziXunBox .desc {
+  color: #333333;
+  font-size: 0.875rem;
+  font-family: '微软雅黑';
+  line-height: 20px;
+}
+.ziXunBox .yuJi {
+  color: #fff;
+  font-size: 1.0625rem;
+  font-family: 'HYk1gj';
+  line-height: 31px;
+  height: 31px;
+  width: 248px;
+  background-color: #EA3B41;
+  margin-top: 10px;
+}
+/*sourceBox*/
+.sourceBox {
+  text-align: center;
+  margin: 0 50px;
+  font-size: 0.625rem;
+  font-family: 'Microsoft Yahei';
+  line-height: 20px;
+  color: #333333;
+}
+/*fuLiTitleBox*/
+.fuLiTitleBox {
+  margin: 0 5px;
+  text-align: center;
+  color: #333333;
+  font-size: 1.0625rem;
+  font-family: 'HYk1gj';
+  font-weight: bold;
+  height: 16px;
+  line-height: 16px;
+  background: url("../image/titleBg.png") no-repeat center;
+  background-size: 100% auto;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+/*proPersonBox*/
+.proPersonBox {
+  text-align: center;
+  color: #333333;
+  font-size: 0.875rem;
+  font-family: '微软雅黑';
+}
+/*fuLiBox*/
+.fuLiBox {
+  margin: 0 24px;
+}
+.fuLiBox .fuLiWrap:nth-child(2n) {
+  padding-left: 16px;
+  margin-top: 20px;
+}
+.fuLiBox .fuLiWrap:nth-child(2n+1) {
+  padding-right: 16px;
+  margin-top: 20px;
+}
+.fuLiBox .info {
+  padding-top: 16px;
+  border-radius: 4px;
+  text-align: center;
+  border: 1px solid #EA3B41;
+}
+.fuLiBox .info .imgBox {
+  margin: 0 auto;
+  text-align: center;
+  width: 70px;
+  height: 70px;
+  line-height: 66px;
+  border-radius: 70px;
+  background-color: #EA3B41;
+}
+.fuLiBox .info .imgBox .fuLiImg {
+  width: 38px;
+}
+.fuLiBox .info .fuLiDesc {
+  text-align: center;
+  color: #333333;
+  font-size: 1.0625rem;
+  font-family: 'HYk1gj';
+  font-weight: bold;
+  padding: 8px 0;
+}
+/*exampleTitleBox*/
+.exampleTitleBox {
+  margin: 0 5px;
+  text-align: center;
+  color: #333333;
+  font-size: 1.0625rem;
+  font-family: 'HYk1gj';
+  font-weight: bold;
+  height: 16px;
+  line-height: 16px;
+  background: url("../image/titleBg.png") no-repeat center;
+  background-size: 100% auto;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+/*tableData*/
+#tableData {
+  text-align: center;
+  font-family: '微软雅黑';
+  margin: 0 auto;
+}
+#tableData th {
+  width: 66px;
+  height: 26px;
+  line-height: 26px;
+  color: #fff;
+  font-size: 13px;
+  background-color: #EA3B41;
+  border-right: 1px solid #fff;
+}
+#tableData td {
+  width: 66px;
+  height: 20px;
+  color: #333;
+  line-height: 20px;
+  font-size: 11px;
+  border-right: 1px solid #fff;
+}
+#tableData tr:nth-child(2n) td {
+  background-color: #FFB790;
+}
+#tableData tr:nth-child(2n+1) td {
+  background-color: #FFD2B9;
+}
+#tableData tr td:last-child {
+  color: #eb060e;
+}
+/*bottomBox*/
+.bottomBox {
+  margin: 0 5px;
+  text-align: center;
+  font-family: '微软雅黑';
+  background: url("../image/bottomBg.png") no-repeat center center;
+  background-size: 100% 100%;
+}
+.bottomBox .company {
+  color: #333;
+  font-size: 0.625rem;
+}
+.bottomBox .warning {
+  color: #151515;
+  font-size: 0.5rem;
+  height: 14px;
+}
+.bottomBox .warning .warningText {
+  background-color: #A0A0A0;
+  padding: 0 20px;
+  border-radius: 7px;
+}
+.bottomBox .desc {
+  font-size: 0.5rem;
+  color: #333;
+}
+.bottomBox .desc1 {
+  padding: 0 18px;
+  border-bottom: 1px solid #A0A0A0;
+}
+.bottomBox .desc2 {
+  padding: 0 32px;
 }
