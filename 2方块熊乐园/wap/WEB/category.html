@@ -1314,10 +1314,11 @@
                     console.log('mmmmm', daLeiSubArr);
                     var daLeiIndex;
                     cid = localStorage.getItem('cid');
-                    console.log('说的话佛山的', cid);
+
                     if(cid == undefined){
                         cid = getParamByUrl('cid');
                     }
+                    console.log('说的话佛山的', cid);
                     console.log('aaaaaaaaaaaaaaa', aaaa);
                     for(var m=0; m<aaaa.length; m++){
                         
@@ -1335,33 +1336,38 @@
                     console.log('8888888888888',daLeiIntervalArr[daLeiIndex]);
                     $('.selectBox .select .selectPrice').empty();
                     $('.selectBox .select .selectPrice').append('<span class="price">PRICE</span><a href="#" class="selectChoose active">ALL</a>');
-                    for(var i=0; i<daLeiIntervalArr[daLeiIndex].length; i++){
-                        var thisMin = daLeiIntervalArr[daLeiIndex][i].min;
-                        var thisMax = daLeiIntervalArr[daLeiIndex][i].max;
-                        thisMax= '-'+thisMax;
-                        if(thisMax == '-undefined'){
-                            thisMax = '++';
-                        }
-
-                        $('.selectBox .select .selectPrice').append('<a href="#" class="selectChoose">'+thisMin+thisMax+'</a>');
-
-                        $('.selectBox .select .selectPrice').children('.selectChoose').unbind('click').click(function(){
-                           var index = $(this).index();
-                            if(index==1){
-                                getGoods(cid, '', '', areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
-                            }else{
-                                var pmin = daLeiIntervalArr[daLeiIndex][index-2].min;
-                                var pmax = daLeiIntervalArr[daLeiIndex][index-2].max;
-                                if(pmax == undefined){
-                                    pmax = '';
+                    
+//                    alert(daLeiIndex == undefined);
+                    var timer = setInterval(function(){
+                        if(daLeiIndex != undefined){
+                            clearInterval(timer);
+                            for(var i=0; i<daLeiIntervalArr[daLeiIndex].length; i++){
+                                var thisMin = daLeiIntervalArr[daLeiIndex][i].min;
+                                var thisMax = daLeiIntervalArr[daLeiIndex][i].max;
+                                thisMax= '-'+thisMax;
+                                if(thisMax == '-undefined'){
+                                    thisMax = '++';
                                 }
-                                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
+
+                                $('.selectBox .select .selectPrice').append('<a href="#" class="selectChoose">'+thisMin+thisMax+'</a>');
+
+                                $('.selectBox .select .selectPrice').children('.selectChoose').unbind('click').click(function(){
+                                    var index = $(this).index();
+                                    if(index==1){
+                                        getGoods(cid, '', '', areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
+                                    }else{
+                                        var pmin = daLeiIntervalArr[daLeiIndex][index-2].min;
+                                        var pmax = daLeiIntervalArr[daLeiIndex][index-2].max;
+                                        if(pmax == undefined){
+                                            pmax = '';
+                                        }
+                                        getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
+                                    }
+                                });
                             }
-                        });
+                        }
+                    }, 100);
 
-
-
-                    }
 
 
                 }
