@@ -4,7 +4,8 @@
 }
 .middleBox {
   background: url("../image/middleBg.png") no-repeat;
-  background-size: 100% auto;
+  background-size: 100% 100%;
+  padding-bottom: 0.75rem;
 }
 /*updateNewsBox*/
 .updateNewsBox {
@@ -31,8 +32,8 @@
   font-size: 1.0625rem;
   font-family: 'STHupo';
   font-weight: bold;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 0.625rem;
+  padding-bottom: 0.625rem;
 }
 .addWeChatBox .erWeiMa {
   width: 7.625rem;
@@ -41,17 +42,23 @@
   outline: none;
   border: none;
   width: 15.125rem;
-  height: 48px;
-  line-height: 48px;
+  height: 3rem;
+  line-height: 3rem;
   color: #010005;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-family: 'HYk1gj';
   font-weight: bold;
-  text-indent: 60px;
+  text-indent: 6.25rem;
   background: url("../image/touchBtn.png") no-repeat center center;
   background-size: 100% 100%;
-  margin-top: 5px;
-  margin-bottom: 15px;
+  margin-top: 0.3125rem;
+  margin-bottom: 0.9375rem;
+}
+.addWeChatBox .touchBtn .copyCode {
+  outline: none;
+  border: none;
+  width: 8.5rem;
+  background-color: transparent;
 }
 .addWeChatBox .copy {
   color: #333333;
@@ -59,79 +66,80 @@
   font-family: '微软雅黑';
 }
 .shareTitleBox {
-  margin: 0 5px;
+  margin: 0 0.3125rem;
   text-align: center;
   color: #333333;
   font-size: 1.0625rem;
   font-family: 'HYk1gj';
   font-weight: bold;
-  height: 16px;
-  line-height: 16px;
+  height: 1rem;
+  line-height: 1rem;
   background: url("../image/titleBg.png") no-repeat center;
   background-size: 100% auto;
-  margin-top: 16px;
-  margin-bottom: 28px;
+  margin-top: 1rem;
+  margin-bottom: 1.75rem;
 }
 /*ziXunBox*/
 .ziXunBox {
-  margin: 0 24px;
+  margin: 0 1.5rem;
   background-color: #fff;
-  border-radius: 5px;
-  padding: 12px 26px 15px 26px;
+  border-radius: 0.3125rem;
+  padding: 0.75rem 1.625rem 0.9375rem 1.625rem;
 }
 .ziXunBox .computer {
   text-align: center;
 }
 .ziXunBox .computer .computerImg {
-  width: 202px;
+  width: 12.625rem;
 }
 .ziXunBox .reverse {
   color: #333333;
   font-size: 1.0625rem;
   font-family: 'HYk1gj';
-  margin-top: 25px;
-  margin-bottom: 14px;
+  margin-top: 1.5625rem;
+  margin-bottom: 0.875rem;
   font-weight: bold;
 }
 .ziXunBox .desc {
   color: #333333;
   font-size: 0.875rem;
   font-family: '微软雅黑';
-  line-height: 20px;
+  line-height: 1.25rem;
 }
 .ziXunBox .yuJi {
   color: #fff;
   font-size: 1.0625rem;
   font-family: 'HYk1gj';
-  line-height: 31px;
-  height: 31px;
-  width: 248px;
+  line-height: 1.9375rem;
+  height: 1.9375rem;
+  width: 15.5rem;
   background-color: #EA3B41;
-  margin-top: 10px;
+  margin-top: 0.625rem;
+  text-indent: 0.8125rem;
 }
 /*sourceBox*/
 .sourceBox {
   text-align: center;
-  margin: 0 50px;
+  margin: 0 3.125rem;
   font-size: 0.625rem;
   font-family: 'Microsoft Yahei';
-  line-height: 20px;
+  line-height: 1.25rem;
   color: #333333;
 }
 /*fuLiTitleBox*/
 .fuLiTitleBox {
-  margin: 0 5px;
+  margin: 0 0.3125rem;
   text-align: center;
   color: #333333;
   font-size: 1.0625rem;
   font-family: 'HYk1gj';
   font-weight: bold;
-  height: 16px;
-  line-height: 16px;
+  height: 1rem;
+  line-height: 1rem;
   background: url("../image/titleBg.png") no-repeat center;
   background-size: 100% auto;
-  margin-top: 20px;
-  margin-bottom: 12px;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 /*proPersonBox*/
 .proPersonBox {
@@ -142,33 +150,33 @@
 }
 /*fuLiBox*/
 .fuLiBox {
-  margin: 0 24px;
+  margin: 0 1.5rem;
 }
 .fuLiBox .fuLiWrap:nth-child(2n) {
-  padding-left: 16px;
-  margin-top: 20px;
+  padding-left: 1rem;
+  margin-top: 1.25rem;
 }
 .fuLiBox .fuLiWrap:nth-child(2n+1) {
-  padding-right: 16px;
-  margin-top: 20px;
+  padding-right: 1rem;
+  margin-top: 1.25rem;
 }
 .fuLiBox .info {
-  padding-top: 16px;
-  border-radius: 4px;
+  padding-top: 1rem;
+  border-radius: 0.25rem;
   text-align: center;
-  border: 1px solid #EA3B41;
+  border: 0.0625rem solid #ea3b41;
 }
 .fuLiBox .info .imgBox {
   margin: 0 auto;
   text-align: center;
-  width: 70px;
-  height: 70px;
-  line-height: 66px;
-  border-radius: 70px;
+  width: 4.375rem;
+  height: 4.375rem;
+  line-height: 4.125rem;
+  border-radius: 4.375rem;
   background-color: #EA3B41;
 }
 .fuLiBox .info .imgBox .fuLiImg {
-  width: 38px;
+  width: 2.375rem;
 }
 .fuLiBox .info .fuLiDesc {
   text-align: center;
@@ -176,22 +184,22 @@
   font-size: 1.0625rem;
   font-family: 'HYk1gj';
   font-weight: bold;
-  padding: 8px 0;
+  padding: 0.5rem 0;
 }
 /*exampleTitleBox*/
 .exampleTitleBox {
-  margin: 0 5px;
+  margin: 0 0.3125rem;
   text-align: center;
   color: #333333;
   font-size: 1.0625rem;
   font-family: 'HYk1gj';
   font-weight: bold;
-  height: 16px;
-  line-height: 16px;
+  height: 1rem;
+  line-height: 1rem;
   background: url("../image/titleBg.png") no-repeat center;
   background-size: 100% auto;
-  margin-top: 20px;
-  margin-bottom: 12px;
+  margin-top: 1.6875rem;
+  margin-bottom: 1.375rem;
 }
 /*tableData*/
 #tableData {
@@ -200,21 +208,21 @@
   margin: 0 auto;
 }
 #tableData th {
-  width: 66px;
-  height: 26px;
-  line-height: 26px;
+  width: 4.125rem;
+  height: 1.625rem;
+  line-height: 1.625rem;
   color: #fff;
-  font-size: 13px;
+  font-size: 0.8125rem;
   background-color: #EA3B41;
-  border-right: 1px solid #fff;
+  border-right: 0.0625rem solid #ffffff;
 }
 #tableData td {
-  width: 66px;
-  height: 20px;
+  width: 4.125rem;
+  height: 1.25rem;
   color: #333;
-  line-height: 20px;
-  font-size: 11px;
-  border-right: 1px solid #fff;
+  line-height: 1.25rem;
+  font-size: 0.6875rem;
+  border-right: 0.0625rem solid #ffffff;
 }
 #tableData tr:nth-child(2n) td {
   background-color: #FFB790;
@@ -225,9 +233,20 @@
 #tableData tr td:last-child {
   color: #eb060e;
 }
+/*sourceBox2*/
+.sourceBox2 {
+  text-align: center;
+  margin: 0 3.125rem;
+  font-size: 0.625rem;
+  font-family: 'Microsoft Yahei';
+  line-height: 1.25rem;
+  color: #333333;
+  padding-top: 0.25rem;
+  padding-bottom: 0.5rem;
+}
 /*bottomBox*/
 .bottomBox {
-  margin: 0 5px;
+  padding: 0 0.3125rem;
   text-align: center;
   font-family: '微软雅黑';
   background: url("../image/bottomBg.png") no-repeat center center;
@@ -236,25 +255,28 @@
 .bottomBox .company {
   color: #333;
   font-size: 0.625rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0.625rem;
 }
 .bottomBox .warning {
   color: #151515;
   font-size: 0.5rem;
-  height: 14px;
 }
 .bottomBox .warning .warningText {
   background-color: #A0A0A0;
-  padding: 0 20px;
-  border-radius: 7px;
+  padding: 0 1.25rem;
+  border-radius: 0.4375rem;
+  height: 0.875rem;
+  line-height: 0.875rem;
 }
 .bottomBox .desc {
   font-size: 0.5rem;
   color: #333;
 }
 .bottomBox .desc1 {
-  padding: 0 18px;
-  border-bottom: 1px solid #A0A0A0;
+  padding: 0.5rem 1.125rem;
+  border-bottom: 0.0625rem solid #a0a0a0;
 }
 .bottomBox .desc2 {
-  padding: 0 32px;
+  padding: 0.3125rem 2rem 1.6875rem 2rem;
 }
