@@ -19,6 +19,7 @@ touchBtn1.addEventListener("touchend",function(ev){
     var Url1=document.getElementById("copyCode1");
     Url1.select(); // 选择对象
     document.execCommand("Copy"); // 执行浏览器复制命令
+    alert('复制成功，小助在等你哦');
     document.documentElement.style.webkitUserSelect = 'none';
     document.documentElement.style.webkitTouchCallout = 'none';
 });
@@ -41,6 +42,7 @@ touchBtn2.addEventListener("touchend",function(ev){
     var Url1=document.getElementById("copyCode2");
     Url1.select(); // 选择对象
     document.execCommand("Copy"); // 执行浏览器复制命令
+    alert('复制成功，小助在等你哦');
     document.documentElement.style.webkitUserSelect = 'none';
     document.documentElement.style.webkitTouchCallout = 'none';
 });
@@ -63,6 +65,7 @@ touchBtn3.addEventListener("touchend",function(ev){
     var Url1=document.getElementById("copyCode3");
     Url1.select(); // 选择对象
     document.execCommand("Copy"); // 执行浏览器复制命令
+    alert('复制成功，小助在等你哦');
     document.documentElement.style.webkitUserSelect = 'none';
     document.documentElement.style.webkitTouchCallout = 'none';
 });
