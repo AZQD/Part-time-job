@@ -79,7 +79,7 @@
     <aside class="row infos">
         <div class="col-xs-6 col-sm-6 part publish"><span>Publish</span></div>
         <div class="col-xs-6 col-sm-6 part signInUp" style="display: block;"><span>Sign in/Sign up</span></div>
-        <div class="col-xs-6 col-sm-6 part profile" style="display: none;"><span>My Manage</span></div>
+        <div class="col-xs-6 col-sm-6 part profile" style="display: none;"><span>My Profile</span></div>
     </aside>
 </section>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
@@ -133,7 +133,7 @@
                         $('.headerBox .indexMiddle .addressUl').hide();
                     });
 
-                    //不显示默认地址
+                    //不显示默认地址(空字符串)
                     $('.headerBox .indexMiddle .addressUl .addressLi').each(function(index){
                         if($('.headerBox .indexMiddle .addressUl .addressLi').eq(index).html() == ''){
                             $(this).hide();
@@ -200,7 +200,7 @@
                     for(var i=0; i<imgsLength; i++){
                         $('.bestGoods .imgsBox').append(
 //                            '<div class="col-xs-3 col-sm-3 imgBox"><img src='+baseUrl+data[i].cimg+' id='+data[i].id+'></div>'
-                            '<div class="col-xs-3 col-sm-3 imgBox" id='+data[i].id+' style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center">' +
+                            '<div class="col-xs-3 col-sm-3 imgBox" id='+data[i].id+' style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center;background-size:100% auto;">' +
                             '</div>'
                         );
                     }
@@ -233,7 +233,7 @@
                                 price = 'Negotiated';
                             }
                             $('.recentOrNear .getList').append(
-                                    '<li class="col-xs-3 col-sm-3 getLi" id='+data[i].id+' style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center">' +
+                                    '<li class="col-xs-3 col-sm-3 getLi" id='+data[i].id+' style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center;background-size:100% auto;">' +
 //                                    '<img src='+baseImgSrc+data[i].cimg+' id='+data[i].id+'><p class="price"><span>'+price+'</span></p>' +
                                     '<p class="price"><span>'+price+'</span></p>' +
                                     '</li>'
@@ -269,7 +269,7 @@
                                 price = 'Negotiated';
                             }
                             $('.recentOrNear .getList').append(
-                                    '<li class="col-xs-3 col-sm-3 getLi" id='+data[i].id+' style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center">' +
+                                    '<li class="col-xs-3 col-sm-3 getLi" id='+data[i].id+' style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center;background-size:100% auto;">' +
 //                                    '<img src='+baseImgSrc+data[i].cimg+' id='+data[i].id+'><p class="price"><span>'+price+'</span></p>' +
                                     '<p class="price"><span>'+price+'</span></p>' +
                                     '</li>'
@@ -305,7 +305,7 @@
                                 price = 'Negotiated';
                             }
                             $('.recentOrNear .getList').append(
-                                    '<li class="col-xs-3 col-sm-3 getLi" id='+data[i].id+' style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center">' +
+                                    '<li class="col-xs-3 col-sm-3 getLi" id='+data[i].id+' style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center;background-size:100% auto;">' +
 //                                    '<img src='+baseImgSrc+data[i].cimg+' id='+data[i].id+'><p class="price"><span>'+price+'</span></p>' +
                                     '<p class="price"><span>'+price+'</span></p>' +
                                     '</li>'

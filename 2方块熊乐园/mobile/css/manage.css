@@ -320,7 +320,7 @@
   margin-right: 0.375rem;
   margin-bottom: 0.625rem;
 }
-.managePopBox .managePop .recommendBox .choose:nth-child(8n) {
+.managePopBox .managePop .recommendBox .choose:nth-child(6n) {
   margin-right: 0;
 }
 .managePopBox .managePop .save {
@@ -345,13 +345,11 @@
   box-shadow: 0 0 1.25rem #333333;
 }
 .infos .part {
-  line-height: 2.125rem;
+  line-height: 2.875rem;
   font-size: 0.875rem;
   color: #FF500D;
   text-align: center;
   background-color: #fff;
-  border-top: 0.375rem solid #ffffff;
-  border-bottom: 0.375rem solid #ffffff;
   border-right: 0.0625rem solid #cccccc;
 }
 .infos .part:last-child {

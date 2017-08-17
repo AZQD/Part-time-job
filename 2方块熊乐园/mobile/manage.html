@@ -178,15 +178,7 @@
 <script type="text/javascript">
     $(function(){
 
-        $('.infos .tabs').unbind('click').click(function(){
-            var index = $(this).index();
-            $('.infos .tabs').removeClass('active').eq(index).addClass('active');
-            $('.infoBox .info .infoWrap .infoRight .part').hide().eq(index).show();
-        });
-        //myHome
-        $('.infos .myHome').unbind('click').click(function () {
-            window.location.href = "index.html";
-        });
+
 
 
 
@@ -260,6 +252,16 @@
                     console.log("获得用户信息",data);
                     console.log("用户已登陆");
 
+                    $('.infos .tabs').unbind('click').click(function(){
+                        var index = $(this).index();
+                        $('.infos .tabs').removeClass('active').eq(index).addClass('active');
+                        $('.infoBox .info .infoWrap .infoRight .part').hide().eq(index).show();
+                    });
+                    //myHome
+                    $('.infos .myHome').unbind('click').click(function () {
+                        window.location.href = "profile.html?pubUid="+data.uid;
+                    });
+
                     //修改title
                     $('#manageTitle').html(data.nickname + "'s home. kalichimall, make money by your second-hand goods.");
 
@@ -273,8 +275,15 @@
 
                     //点击Edit
                     $('.infoBox .info .infoWrap .infoRight .part1 .headBox .goToEdit').unbind('click').click(function(){
-                        $('.managePopBox').show();
+                        $('.managePopBox').show().css('top',$(document).scrollTop());//滚动条的高度
                         $('body').css('overflow', 'hidden');
+                    });
+                    $('.managePopBox').unbind('click').click(function(ev){
+                       ev.stopPropagation();
+                        $('.managePopBox').hide();
+                    });
+                    $('.managePopBox .managePop').unbind('click').click(function(ev){
+                        ev.stopPropagation();
                     });
 
 

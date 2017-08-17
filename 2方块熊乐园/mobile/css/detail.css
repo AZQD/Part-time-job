@@ -104,6 +104,16 @@
   height: 2.625rem;
   padding: 0 1.40625rem;
 }
+.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bgColor {
+  width: 100%;
+  height: 2.625rem;
+  padding: 0 1.40625rem;
+}
+.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bgColor .bgColorInner {
+  width: 100%;
+  height: 100%;
+  background-color: #93908E;
+}
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare img {
   width: 2rem;
 }
@@ -119,14 +129,13 @@
   text-decoration: underline;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutPrice {
-  height: 2rem;
   position: absolute;
   left: 0.625rem;
-  bottom: 0.625rem;
+  bottom: 0.4375rem;
   text-align: left;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .thePrice {
-  font-size: 0.8125rem;
+  font-size: 1.125rem;
   color: #333;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .thePrice .thePriceNum {

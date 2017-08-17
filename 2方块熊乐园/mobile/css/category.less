@@ -162,7 +162,7 @@
 
 /*goodsBox*/
 .goodsBox{
-  margin-top:10/@rem;
+  //margin-top:10/@rem;
   margin-bottom: 46/@rem;
 }
 .goodsBox .goods{
@@ -203,17 +203,25 @@
   font-size: 16/@rem;
   color: #3366FF;
   font-weight:bold;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 .goodsBox .goods .goodsMiddle .goodDesc{
   font-size: 14/@rem;
   color: #999;
   //padding-top:10/@rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .goodsBox .goods .goodsMiddle .goodDate{
   color: #333;
 }
 .goodsBox .goods .goodsRight{
-  height: 100/@rem;
+  //height: 100/@rem;
   //line-height: 100/@rem;
   font-weight: bold;
   text-align: center;
@@ -225,12 +233,12 @@
   color: #999999;
 }
 .goodsBox .goods .goodsRight2{
-  font-size: 18/@rem;
+  font-size: 17/@rem;
   color: red;
   //padding-right: 40/@rem;
 }
 .goodsBox .goods .aboutQuality{
-  font-size: 18/@rem;
+  font-size: 17/@rem;
   color: red;
   min-width: 100/@rem;
 }
@@ -314,7 +322,7 @@
 
 .classifyBox .classifyLi .firstName{
   text-align: right;
-  padding-right: 20/@rem;
+  padding-right: 16/@rem;
   height: 32/@rem;
   line-height: 32/@rem;
   font-size: 18/@rem;

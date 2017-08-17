@@ -130,8 +130,8 @@ $(function(){
                 console.log(areaId);
                 //areaId = areaId.toString();
                 if(areaId == null){
-                    $('.headerBox .header .headerLeft .lusaka').html(areaNameArr[4]);
-                    areaId = areaIdArr[4];
+                    $('.headerBox .header .headerLeft .lusaka').html(areaNameArr[0]);
+                    areaId = areaIdArr[0];
                 }else{
                     $('.headerBox .header .headerLeft .lusaka').html(areaName);
                 }

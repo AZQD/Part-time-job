@@ -79,7 +79,8 @@
                         <div class="bigImg row">
                             <a href="###" class="tipOff">TIP OFF</a>
                             <span class="bigImgPicWrap"><img class="bigImgPic" src="" style="opacity:0;visibility: hidden;"></span>
-                            <img class="bigImgbg" src="image/detailPage/bigImgbg.png"/>
+                            <img style="display: none;" class="bigImgbg" src="image/detailPage/bigImgbg.png"/>
+                            <span class="bgColor"><span class="bgColorInner"></span></span>
                             <div class="col-xs-4 col-sm-4 aboutPrice"><span class="thePrice" style="display: none;"><span class="thePriceNum">100</span>ZMW</span></div>
                             <div class="col-xs-8 col-sm-8 aboutShare">
                                 <a href="javascript:void(0);" class="btnLink btn2 btn3"><img class="likeImg"/>&nbsp;<span></span></a>&nbsp;
@@ -350,7 +351,7 @@
                     var imgsArr = imgs.split(',');
                     console.log(imgsArr);
                     for(var i=0; i<imgsArr.length; i++){
-                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li" style="background: url('+baseImgSrc+imgsArr[0]+') no-repeat center center"><img style="opacity:0;" src='+baseUrl+'/gimg/'+imgsArr[i]+'></li>');
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li" style="background: url('+baseImgSrc+imgsArr[0]+') no-repeat center center;background-size:100% auto;"><img style="opacity:0;" src='+baseUrl+'/gimg/'+imgsArr[i]+'></li>');
                     }
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('visibility','inherit').attr('src', baseUrl+'/gimg/'+imgsArr[0]);
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('background','url('+baseImgSrc+imgsArr[0]+') no-repeat center center');
