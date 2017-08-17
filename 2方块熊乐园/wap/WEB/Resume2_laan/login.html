@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Expires" content="-1">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--<link href="img/logo.png" rel="shortcut icon" type="image/x-icon"/>-->
+    <title>HTML5</title>
+    <link type="text/css" href="css/cssreset.css" rel="stylesheet">
+    <link type="text/css" href="css/login.css" rel="stylesheet">
+    <link type="text/css" href="fonts/Chinese.css" rel="stylesheet">
+    <link type="text/css" href="fonts/English.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="welcome"><span>Welcome to your home page !</span></div>
+
+    <div class="login">
+        <div class="logo">
+            <img src="img/logo.png" alt="">
+            <span>登录用户账号</span>
+            <img src="img/cancle.png" alt="">
+        </div>
+        <form action="resume.html" method="">
+            <label for="userName">账&emsp;号:</label>
+            <input type="text" name="userName" id="userName" class="inp" value="手机/邮箱/用户名"><br/>
+            <label for="password">密&emsp;码:</label>
+            <input type="text" name="password" id="password" class="inp" value="密码"><br/>
+            <input type="submit" id="submit" value="登录">
+        </form>
+    </div>
+
+<script type="text/javascript">
+
+    var inputs = getEleByClass('inp');
+    for(var i = 0; i< inputs.length; i++){
+
+        inputs[i].onfocus = function(){
+            if(this.value == this.defaultValue){
+                this.value = "";
+                this.style.color = "black";
+            }
+        };
+        inputs[i].onblur = function(){
+            if(this.value == ""){
+                this.value = this.defaultValue;
+                this.style.color = "";
+            }
+        };
+
+    }
+
+
+
+    //获取class
+    function getEleByClass(cn){
+        //顶一个数组，用来保存结果
+        var result = [];
+        //定义一个正则表达式检查是否包含指定的class
+        // \b单词\b
+        var reg = new RegExp("\\b"+cn+"\\b");
+        //查询所有的元素
+        var allEles = document.all;
+        //遍历所有的元素
+        for(var i=0 ; i<allEles.length ; i++){
+            //判断当前的元素的className属性是否和cn匹配
+            var className = allEles[i].className;
+            //判断className和cn是否相等
+            if(reg.test(className)){
+                //将元素添加到结果中
+                result.push(allEles[i]);
+            }
+        }
+        return result;
+    }
+
+
+
+</script>
+</body>
+</html>
