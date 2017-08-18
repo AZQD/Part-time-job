@@ -221,11 +221,15 @@
             /*width: 236px;*/
             width: 100%;
             height: 236px;
-            animation-name: donghua;
+            /*animation-name: donghua;
             animation-duration: 3s;
             animation-timing-function: ease;
             animation-iteration-count: infinite;
-            animation-direction: alternate;
+            animation-direction: alternate;*/
+        }
+        .bannerBox .banner .bannerRight .bannerRightBox .bannerRightBoxImg{
+            width: 100%;
+            height: 100%;
         }
         /*@keyframes donghua {
             0%{
@@ -668,6 +672,7 @@
                 </h3>
                 <div id="bannerRightBox" class="bannerRightBox" style="display: block;">
                     <!--<img class="bannerRightBoxImg" src="image/index/bannerRight1.png">-->
+                    <img class="bannerRightBoxImg" src="" style="display: none;">
                     <div class="desc row">
                         <div class="col-xs-6 col-sm-6 left"></div>
                         <div class="col-xs-6 col-sm-6 right"></div>
@@ -849,15 +854,51 @@
                 if(data.status == 200){
                     data = JSON.parse(data.data);
                     console.log("getbestgoods",data);
-                    var num = 0;
+                    
+                    /*$('.bannerRightBox .bannerRightBoxImg').attr('src', baseImgSrc+data[0].cimg).show();
+                    $('.bannerBox .banner .bannerRight .bannerRightBox .desc .left').html(data[0].cname);
+                    if(data[0].price == 0){
+                        $('.bannerBox .banner .bannerRight .bannerRightBox .desc .right').html("Negotiated");
+                    }else{
+                        $('.bannerBox .banner .bannerRight .bannerRightBox .desc .right').html(data[0].price);
+                    }*/
+                    var bestGoodsLen = data.length;
+                    var thisSrcIndex = 0;
+                    setInterval(function(){
+                        console.log('thisSrcIndex='+thisSrcIndex);
+                        console.log(bestGoodsLen);
+
+                        $('.bannerBox .banner .bannerRight .bannerRightBox .desc .left').html(data[thisSrcIndex].cname);
+                        if(data[thisSrcIndex].price == 0){
+                            $('.bannerBox .banner .bannerRight .bannerRightBox .desc .right').html("Negotiated");
+                        }else{
+                            $('.bannerBox .banner .bannerRight .bannerRightBox .desc .right').html(data[thisSrcIndex].price);
+                        }
+
+                        $('.bannerRightBox .bannerRightBoxImg').attr('src', baseImgSrc+data[thisSrcIndex].cimg).stop(true).fadeIn(1000).delay(3000).fadeOut(1000);
+                        $('.bannerRightBox .bannerRightBoxImg').attr('id', data[thisSrcIndex].id);
+
+                        thisSrcIndex++;
+                        if(thisSrcIndex == bestGoodsLen){
+                            thisSrcIndex = 0;
+                        }
+
+                    }, 5000);
+
+                    $('.bannerRightBox .bannerRightBoxImg').unbind('click').click(function(){
+                        localStorage.setItem('goodIdFromCategory',$(this).attr('id'));
+                        window.open("detail.html?id="+$(this).attr('id'));
+                    });
+
+                    /*var num = 0;
                     $('.bannerBox .banner .bannerRight .bannerRightBox .desc .left').html(data[0].cname);
                     if(data[num].price == 0){
                         $('.bannerBox .banner .bannerRight .bannerRightBox .desc .right').html("Negotiated");
                     }else{
                         $('.bannerBox .banner .bannerRight .bannerRightBox .desc .right').html(data[0].price);
-                    }
+                    }*/
 
-                    var tt = document.styleSheets[0];
+                    /*var tt = document.styleSheets[0];
                     tt.deleteRule(6);//清除之前写入的动画样式
                     console.log(tt);
                     tt.insertRule("@keyframes donghua{" +
@@ -892,7 +933,7 @@
                     }, 3000);
                     $('.bannerBox .banner .bannerRight .bannerRightBox').click(function () {
                         console.log(data[num].id);
-                    });
+                    });*/
                 }
             },
             error:function(error){
@@ -1082,7 +1123,7 @@
                     * */
                     var str = '';
                     for(var i=0; i<data.length; i++){
-                        str += '<div class="col-xs-12 col-sm-12 swiper-slide"><a href="#" hrefs='+data[i].target+'><img class="bannerImg" src='+data[i].imgsrc+' alt='+data[i].name+'></a></div>';
+                        str += '<div class="col-xs-12 col-sm-12 swiper-slide"><a href="#" name='+data[i].name+' hrefs='+data[i].target+'><img class="bannerImg" src='+data[i].imgsrc+' alt='+data[i].name+'></a></div>';
                     }
                     console.log(str);
                     $('.swiper-wrapper').append(str);
@@ -1102,7 +1143,21 @@
                         window.localStorage.setItem('clickBanner',1);
                         var index = $(this).index();
 //                        alert(index);
-                        if(index == 1 || index == 5){//回到主页
+                        var hrefs= $(this).children('a').attr('hrefs');
+                        var cidName= $(this).children('a').attr('name');
+                        var cid = getParamByStr(hrefs, 'cid');
+                        if(cid == 'false'){//进入主页
+                            window.location.href = hrefs;
+                        }else{//进入category.html
+                            localStorage.setItem('searchOrTab',"tab");
+                            localStorage.setItem('cidName',cidName);
+                            localStorage.setItem('cid',cid);
+                            window.location.href = hrefs;
+                        }
+//                        alert(hrefs);
+//                        alert(cidName);
+//                        alert(cid);
+                        /*if(index == 1 || index == 5){//回到主页
                             window.location.href = $(this).children('a').attr('hrefs');
                         }else if(index ==2){//Life Goods
                             localStorage.setItem('searchOrTab',"tab");
@@ -1123,21 +1178,6 @@
                             localStorage.setItem('cid',bannerNeedCid[0]);
                             window.location.href = $(this).children('a').attr('hrefs');
 //                            window.location.href = 'category.html?searchOrTab=tab&cid=21';
-                        }
-                       /* if(index == 1 || index == 5){
-
-                            localStorage.setItem('searchOrTab',"tab");
-                            localStorage.setItem('cidName',bannerNeedCidName[0]);
-                            localStorage.setItem('cid',bannerNeedCid[0]);
-//                            window.location.href = "category.html?searchOrTab=tab&cid="+bannerNeedCid[0];
-//                            window.location.href = data[0].target;
-                            window.location.href = $(this).attr('link');
-                        }else if(index%2 == 1){
-                            localStorage.setItem('searchOrTab',"tab");
-                            localStorage.setItem('cidName',bannerNeedCidName[3]);
-                            localStorage.setItem('cid',bannerNeedCid[3]);
-//                            window.location.href = "category.html?searchOrTab=tab&cid="+bannerNeedCid[3];
-                            window.location.href = data[1].target;
                         }*/
                     });
 

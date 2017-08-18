@@ -1,4 +1,4 @@
-var baseUrl = "http://www.kalichimall.com:81";
+var baseUrl = "http://www.kalichimall.com";
 var baseImgSrc = baseUrl+"/gimg/";
 
 var categoryErJiCid;
@@ -18,6 +18,21 @@ function getParamByUrl(paramKey){
       }
   }
    return "false";
+}
+function getParamByStr(url, paramKey){
+    //var url=window.location.search.substring(1);
+    var arr=url.split("&");
+    var result=[];
+    for(var i=0;i < arr.length;i++){
+        var param=arr[i].split("=");
+        if(paramKey == param[0]){
+            if(paramKey=="webver"){
+                return  parseInt(param[1]);
+            }
+            return  param[1];
+        }
+    }
+    return "false";
 }
 function removeParamByUrl(paramKey){
   var url=window.location.search.substring(1);
