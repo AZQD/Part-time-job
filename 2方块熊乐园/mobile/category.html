@@ -49,6 +49,31 @@
         </div>
     </aside>
 
+    <aside class="toggleSortBox">
+        <div class="row toggleSort">
+            <div class="tab col-xs-4 col-sm-4"><span class="text">Prices</span></div>
+            <div class="tab col-xs-4 col-sm-4"><span class="text">Quality</span></div>
+            <div class="tab col-xs-4 col-sm-4"><span class="text">Area</span></div>
+        </div>
+        <div class="row toggleList" style="">
+            <ul class="col-xs-4 col-sm-4 uls priceUl">
+                <li class="">ALL</li>
+                <li class="">1</li>
+                <li class="">1</li>
+            </ul>
+            <ul class="col-xs-4 col-sm-4 uls qualityUl">
+                <li class="">ALL</li>
+                <li class="">1</li>
+                <li class="">1</li>
+            </ul>
+            <ul class="col-xs-4 col-sm-4 uls areaUl">
+                <li class="">ALL</li>
+                <li class="">1</li>
+                <li class="">1</li>
+            </ul>
+        </div>
+    </aside>
+
     <aside class="selectBox">
         <div class="row select">
             <div class="col-xs-12 col-sm-12 selectPrice">
@@ -401,6 +426,7 @@
                     $('.headerBox .indexMiddle .addressUl .addressLi').each(function(index){
                         if($('.headerBox .indexMiddle .addressUl .addressLi').eq(index).html() == ''){
                             $(this).hide();
+                            $('.headerBox .indexMiddle .addressUl .addressLi').eq(index-1).css('borderBottom','1px solid #333333');
                         }
                     });
 
@@ -416,7 +442,7 @@
 
 
         //loading动画
-        $('#dongHua').css('paddingTop',$('body').height()/2);
+        $('#dongHua').css('marginTop',$('body').height()/2);
 
         //
         var lastGetGoodFun;
@@ -1105,9 +1131,16 @@
                                         getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
                                     }
                                 });
+
+
+                                //新增
+                                $('.toggleSortBox .toggleList .priceUl').append('<li>'+thisMin+thisMax+'</li>');
+
                             }
                         }
                     }, 100);
+
+
 
 
                 }

@@ -1,3 +1,66 @@
+/*toggleSortBox*/
+.toggleSortBox {
+  margin-bottom: 0.3125rem;
+}
+.toggleSortBox .toggleSort {
+  padding: 0.25rem 0;
+  border-top: 0.125rem solid #ff4720;
+  background-color: #DCDCDC;
+}
+.toggleSortBox .toggleSort .tab {
+  text-align: center;
+  border-right: 0.0625rem solid #333333;
+}
+.toggleSortBox .toggleSort .tab:last-child {
+  border-right: none;
+}
+.toggleSortBox .toggleSort .tab .text {
+  font-size: 1rem;
+  color: #333333;
+  font-weight: bold;
+}
+.toggleSortBox .toggleSort .tab .text:after {
+  display: inline-block;
+  content: "";
+  border-top: 0.5rem solid #000000;
+  border-right: 0.375rem solid transparent;
+  border-bottom: 0.375rem solid transparent;
+  border-left: 0.375rem solid transparent;
+  position: relative;
+  top: 0.375rem;
+  left: 0.125rem;
+}
+.toggleSortBox .toggleList {
+  position: relative;
+}
+.toggleSortBox .toggleList .uls {
+  position: absolute;
+  top: 0;
+  text-align: center;
+  border-bottom: 0.0625rem solid #999999;
+}
+.toggleSortBox .toggleList .uls li {
+  height: 1.875rem;
+  line-height: 1.875rem;
+  font-size: 0.8125rem;
+  color: #333333;
+  border: 0.0625rem solid #999999;
+  border-bottom: none;
+  background-color: #fff;
+}
+.toggleSortBox .toggleList .priceUl {
+  left: 0;
+}
+.toggleSortBox .toggleList .qualityUl {
+  left: 33.33333%;
+}
+.toggleSortBox .toggleList .qualityUl li {
+  border-left: none;
+  border-right: none;
+}
+.toggleSortBox .toggleList .areaUl {
+  left: 66.66666%;
+}
 /*selectBox*/
 .selectBox .select {
   margin: 0 auto;
@@ -312,7 +375,7 @@
 }
 .headerBox .categoryMiddle .categoryMiddleCidName {
   color: #333333;
-  font-size: 0.875rem;
+  font-size: 1.125rem;
 }
 .headerBox .categoryMiddle .categoryMiddleCidName:after {
   display: inline-block;

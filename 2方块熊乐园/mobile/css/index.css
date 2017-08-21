@@ -75,11 +75,11 @@ body {
 .recentOrNear .getList .getLi {
   margin-top: 0.625rem;
   padding: 0 0.5rem;
-  width: 23%;
+  width: 31%;
   margin-left: 1%;
   margin-right: 1%;
   position: relative;
-  height: 4.875rem;
+  height: 7.25rem;
 }
 .recentOrNear .getList .getLi img {
   width: 100%;
