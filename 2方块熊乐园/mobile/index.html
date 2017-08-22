@@ -9,6 +9,8 @@
     <meta name="format-detection"content="telephone=no"/>
     <meta name="format-detection" content="email=no"/>
     <link class="favicon" href="" rel="shortcut icon" type="image/x-icon"/>
+    <link rel="stylesheet" href="css/addtohomescreen.css">
+    <link rel="apple-touch-icon" href="image/kalichimall.png"/>
     <link rel="stylesheet" href="css/bootstraptc.min.css">
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/ppublic.min.css">
@@ -82,11 +84,19 @@
         <div class="col-xs-6 col-sm-6 part profile" style="display: none;"><span>My Profile</span></div>
     </aside>
 </section>
+<script type="text/javascript" src="js/addtohomescreen.js"></script>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
 <script type="text/javascript" src="js/swiper.min.js"></script>
 <script type="text/javascript" src="js/public.js"></script>
 <script type="text/javascript">
     $(function(){
+//        addToHomescreen();
+
+        addToHomescreen({
+//        startDelay: 5, //开始的间隔
+//        skipFirstVisit: true, //首次跳过出现
+//            maxDisplayCount: 20 //最多出现次数
+        });
 
         //显示地址列表
         var areaId = localStorage.getItem("areaId");
@@ -234,7 +244,7 @@
                                 price = 'Negotiated';
                             }
                             $('.recentOrNear .getList').append(
-                                    '<li class="col-xs-4 col-sm-4 getLi" id='+data[i].id+' style="background: url('+baseImgSrc+data[i].cimg+') no-repeat center center;background-size:100% auto;">' +
+                                    '<li class="col-xs-4 col-sm-4 getLi" id='+data[i].id+' style="background: url('+baseImgSrc+data[i].cimg+'/'+20+') no-repeat center center;background-size:100% auto;">' +
 //                                    '<img src='+baseImgSrc+data[i].cimg+' id='+data[i].id+'><p class="price"><span>'+price+'</span></p>' +
                                     '<p class="price"><span>'+price+'</span></p>' +
                                     '</li>'

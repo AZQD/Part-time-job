@@ -265,6 +265,9 @@ body {
 .infos .publish {
   border-right: 0.0625rem solid #ffffff;
 }
+.infos .goToHome {
+  border-left: 0.0625rem solid #ffffff;
+}
 .infos .part span {
   text-decoration: underline;
 }

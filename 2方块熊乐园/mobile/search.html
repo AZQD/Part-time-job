@@ -66,7 +66,7 @@
                     data = JSON.parse(data.data);
                     console.log("获得产品分类",data);
 
-                    for(var i=0; i<data.length-1; i++){
+                    for(var i=0; i<data.length; i++){
                         var secondStr = '';
                         for(var j=0; j<data[i].sub.length; j++){
                             secondStr+='<span class="secondName" cid='+data[i].sub[j].cid+' cidName='+data[i].sub[j].name+'>'+data[i].sub[j].name+'</span>';

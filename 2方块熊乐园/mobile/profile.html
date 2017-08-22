@@ -151,9 +151,10 @@
 
 
     <aside class="row infos">
-        <div class="col-xs-6 col-sm-6 part publish"><span>Publish</span></div>
-        <div class="col-xs-6 col-sm-6 part signInUp" style="display: block;"><span>Sign in/Sign up</span></div>
-        <div class="col-xs-6 col-sm-6 part profile" style="display: none;"><span>My Profile</span></div>
+        <div class="col-xs-4 col-sm-4 part publish"><span>Publish</span></div>
+        <div class="col-xs-4 col-sm-4 part signInUp" style="display: block;"><span>Sign in/Sign up</span></div>
+        <div class="col-xs-4 col-sm-4 part profile" style="display: none;"><span>My Profile</span></div>
+        <div class="col-xs-4 col-sm-4 part goToHome" style="display: block;"><span>My MyHome</span></div>
     </aside>
 
 </section>
@@ -171,10 +172,10 @@
         $('.infos .signInUp').unbind('click').click(function () {
             window.location.href = "login.html?goLogin="+1;
         });
-        /*//My Profile
-        $('.infos .profile').unbind('click').click(function () {
-            window.location.href = "profile.html";
-        });*/
+        //My Profile
+        $('.infos .goToHome').unbind('click').click(function () {
+            window.location.href = "index.html";
+        });
 
         /*facebook发布评论*/
         $('#fackbookNeedId').attr('data-href', "http://www.kalichimall.com:81/profile.html"+window.location.search);
