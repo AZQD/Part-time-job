@@ -40,18 +40,44 @@
 <section class="container">
 
     <aside class="row headerBox">
+
+
+        <div class="col-xs-4 col-sm-4 left"><img class="sort" src="image/index/sort.png"></div>
         <div class="col-xs-4 col-sm-4 left"><img class="logo" src="image/index/logo.png"></div>
-        <div class="col-xs-4 col-sm-4 indexMiddle">
-            <span class="address"></span>
+
+        <div class="col-xs-4 col-sm-4 indexMiddle" style="text-align: right;">
+            <span class="address address2"><img style="width: 1.8rem;" src="image/index/address.png" alt=""></span>
             <ul class="addressUl" style="display: none;">
                 <!--<li class="addressLi">01</li>-->
             </ul>
+            <img class="search" src="image/index/search.png" style="width: 3rem;position: relative;top: -0.25rem;margin-right: 0.125rem;">
         </div>
-        <div class="col-xs-4 col-sm-4 right">
+
+        <div class="col-xs-4 col-sm-4 right" style="display: none;">
             <img class="search" src="image/index/search.png">
             <span class="logout" style="display: none;">Logout</span>
         </div>
     </aside>
+
+
+    <!--新增-->
+    <!--二级菜单-->
+    <aside class="row classifyBox" style="margin-top: 2.5rem;">
+        <!--<div class="classifyLi">
+            <div class="col-xs-4 col-sm-4 firstName">Electronic</div>
+            <div class="col-xs-8 col-sm-8 secondNames">
+                <span class="secondName">secondName</span>
+                <span class="secondName">secondName</span>
+                <span class="secondName">secondName</span>
+            </div>
+        </div>-->
+        <div class="col-xs-12 col-sm-12 eachClass">
+            <span class="eachClassName" cid="" cidName="">ALL</span>
+        </div>
+    </aside>
+
+
+
 
     <aside class="row swiper-container">
         <div class="swiper-wrapper">
@@ -91,6 +117,66 @@
 <script type="text/javascript" src="js/public.js"></script>
 <script type="text/javascript">
     $(function(){
+        
+        //.headerBox .indexMiddle .address2
+        $('.headerBox .indexMiddle .search').unbind('click').click(function(){
+           window.location.href = 'search.html';
+        });
+
+        //新增
+        //产品分类显示
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/categorys",
+            dataType:"json",
+            success: function(data){
+                if(data.status == 200){
+                    data = JSON.parse(data.data);
+                    console.log("获得产品分类",data);
+
+                    for(var i=0; i<data.length; i++){
+
+                        var firstStr = '<span class="eachClassName" cid='+data[i].cid+' cidName='+data[i].name+'>'+data[i].name+'</span>'+':';
+                        var secondStr = '';
+                        for(var j=0; j<data[i].sub.length; j++){
+                            secondStr+='<span class="eachClassName" cid='+data[i].sub[j].cid+' cidName='+data[i].sub[j].name+'>'+data[i].sub[j].name+'</span>';
+                        }
+                        $('.classifyBox').append('' +
+                                '<div class="col-xs-12 col-sm-12 eachClass">'+firstStr+secondStr+'</div>');
+                    }
+
+                    $('.headerBox .left .sort').unbind('click').click(function(){
+                        $('.classifyBox').toggle();
+                        if($('.classifyBox').is(":visible")){
+                            $('.swiper-container').css('marginTop',0);
+                        }else{
+                            $('.swiper-container').css('marginTop','2.5rem');
+                        }
+                    });
+
+                    //点击事件
+                    $('.classifyBox .eachClass .eachClassName').unbind('click').click(function(){
+                        window.localStorage.setItem('mobileCidName', $(this).attr('cidName'));
+                        window.location.href = 'category.html?searchOrTab=tab&cid='+$(this).attr('cid');
+                    });
+
+                }else{
+                    commonPopFun1(data.msg, 'Failed');
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+
+        });
+
+
+
+
+
+
+
+
 //        addToHomescreen();
 
         addToHomescreen({
@@ -120,9 +206,9 @@
                     if(areaId == null){
                         localStorage.setItem('areaId', areaIdArr[0]);
                         localStorage.setItem('areaName', areaNameArr[0]);
-                        $('.headerBox .indexMiddle .address').html(areaNameArr[0]);
+//                        $('.headerBox .indexMiddle .address').html(areaNameArr[0]);
                     }else{
-                        $('.headerBox .indexMiddle .address').html(areaName);
+//                        $('.headerBox .indexMiddle .address').html(areaName);
                     }
 
                     //动态添加addressUl
@@ -140,7 +226,7 @@
                         var index = $(this).index();
                         localStorage.setItem('areaId', areaIdArr[index]);
                         localStorage.setItem('areaName', areaNameArr[index]);
-                        $('.headerBox .indexMiddle .address').html(areaNameArr[index]);
+//                        $('.headerBox .indexMiddle .address').html(areaNameArr[index]);
                         $('.headerBox .indexMiddle .addressUl').hide();
                     });
 
@@ -148,7 +234,7 @@
                     $('.headerBox .indexMiddle .addressUl .addressLi').each(function(index){
                         if($('.headerBox .indexMiddle .addressUl .addressLi').eq(index).html() == ''){
                             $(this).hide();
-                            $('.headerBox .indexMiddle .addressUl .addressLi').eq(index-1).css('borderBottom','1px solid #333333');
+                            $('.headerBox .indexMiddle .addressUl .addressLi').eq(index-1).css('borderBottom','1px solid #999');
                         }
                     });
 

@@ -95,15 +95,24 @@ body {
     height: 2.5rem;
     line-height: 2.5rem;
     background-color: #DCDCDC;
+    position: fixed;
+    z-index: 9;
 }
 .headerBox .left .logo {
     width: 100%;
     padding: 0 0.375rem;
 }
+.headerBox .left .sort {
+    /*width: 100%;*/
+    width:1.4rem;
+    margin: 0 0.375rem;
+    padding-bottom: 0.2rem;
+}
 
 .headerBox .indexMiddle {
     text-align: center;
     position: relative;
+    height: 2.5rem;
 }
 .headerBox .manageMiddle, .headerBox .profileMiddle, .headerBox .publishMiddle{
     font-size: 1rem;
@@ -124,6 +133,12 @@ body {
     position: relative;
     top: 0.325rem;
     left: 0.125rem;
+}
+.headerBox .indexMiddle .address2{
+    /*padding-left:3.4rem;*/
+}
+.headerBox .indexMiddle .address2:after{
+    display: none;
 }
 .headerBox .indexMiddle .addressUl {
     position: absolute;
@@ -151,8 +166,10 @@ body {
     padding-right: 0.125rem;
 }
 .headerBox .right .search {
-    width: 1.875rem;
-    vertical-align: -0.5625rem;
+    width: 3rem;
+    /*vertical-align: -0.625rem;*/
+    position: relative;
+    top:-0.25rem;
 }
 .headerBox .right .logout {
     text-decoration: underline;

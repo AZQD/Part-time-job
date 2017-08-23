@@ -27,6 +27,7 @@
 </section>
 <section class="tipOffPopBox" id="tipOffPopBox" style="display: none;">
     <div class="tipOffBox">
+        <img class="closeTipOff" src="image/detailPage/close.png" alt="">
         <div class="">
             <label id="labelDetail" for="detail"><span class="title">Detail</span><span class="tip">*</span></label>&nbsp;&nbsp;
             <textarea name="" id="detail" cols="30" rows="10"></textarea>
@@ -55,7 +56,7 @@
         </div>
     </aside>
 
-    <aside class="detailBox">
+    <aside class="detailBox" style="margin-top: 2.5rem;">
         <div class="row detail">
             <!--detailLeft-->
             <div class="col-xs-12 col-sm-12 detailLeft">
@@ -627,6 +628,13 @@
             event.stopPropagation();
             $('#tipOffPopBox').show();
         });
+
+        ////新增 关闭tipOff
+        $('.tipOffPopBox .tipOffBox .closeTipOff').click(function(event){
+            event.stopPropagation();
+            $('#tipOffPopBox').hide();
+        });
+
         $('.tipOffPopBox .tipOffBox').click(function(event){
             event.stopPropagation();
         });

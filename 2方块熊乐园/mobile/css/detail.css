@@ -88,11 +88,11 @@
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .tipOff {
   position: absolute;
-  right: 0.625rem;
-  top: 0.3125rem;
+  right: 0.875rem;
   color: #FF500D;
   font-size: 0.875rem;
   text-decoration: underline;
+  z-index: 9999;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic {
   width: 88%;
@@ -270,6 +270,13 @@ ul.share-buttons img {
   margin: 0 auto;
   margin-top: 9.375rem;
   padding: 1.875rem 1.5rem;
+  position: relative;
+}
+.tipOffPopBox .tipOffBox .closeTipOff {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1.5625rem;
 }
 .tipOffPopBox .tipOffBox .title {
   font-size: 1.125rem;

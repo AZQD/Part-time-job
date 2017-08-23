@@ -49,7 +49,7 @@
         </div>
     </aside>
 
-    <aside class="toggleSortBox">
+    <aside class="toggleSortBox" style="margin-top: 2.5rem;">
         <div class="row toggleSort">
             <div class="tab col-xs-4 col-sm-4 pricesTab"><span class="text pricesText">Prices</span></div>
             <div class="tab col-xs-4 col-sm-4 qualityTab"><span class="text qualityText">Quality</span></div>
@@ -323,7 +323,7 @@
 
                     //新增
                     $('.toggleSortBox .toggleSort .areaTab').unbind('click').click(function(){
-                        $('.toggleSortBox .toggleList .areaUl').show();
+                        $('.toggleSortBox .toggleList .areaUl').toggle();
                     });
                     for (var sort in data){
                         if(data[sort].name){
@@ -674,7 +674,7 @@
 
         //新增
         $('.toggleSortBox .toggleSort .qualityTab').unbind('click').click(function(){
-            $('.toggleSortBox .toggleList .qualityUl').show();
+            $('.toggleSortBox .toggleList .qualityUl').toggle();
         });
 
         $('.toggleSortBox .toggleList .qualityUl li').unbind('click').click(function(){
@@ -1189,7 +1189,7 @@
                             }
 
                             $('.toggleSortBox .toggleSort .pricesTab').unbind('click').click(function(){
-                                $('.toggleSortBox .toggleList .priceUl').show();
+                                $('.toggleSortBox .toggleList .priceUl').toggle();
                             });
                             
                             //取消冒泡

@@ -187,10 +187,13 @@ if(token == null){
                 console.log("获得用户信息",userInfo);
 
                 //显示logout按钮
-                $('.headerBox .right .logout').show().unbind('click').click(function(){
+                //不显示：新增需求
+                /*$('.headerBox .right .logout').show().unbind('click').click(function(){
                     localStorage.removeItem('token');
                    window.location.reload();
-                });
+                });*/
+                //manage.html
+                $('.infoBox .info .infoWrap .infoRight .part1 .logoutBox').show();
 
                 //index.html、detail.html:显示登录或者profile
                 $('.infos .signInUp').hide();

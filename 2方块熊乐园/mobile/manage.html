@@ -83,7 +83,7 @@
         </div>
     </aside>
 
-    <aside class="infoBox">
+    <aside class="infoBox" style="margin-top: 2.5rem;">
         <div class="info">
             <div class="row infoWrap">
                 <div class="col-xs-12 col-sm-12 infoRight">
@@ -116,6 +116,13 @@
                         <div class="col-xs-12 col-sm-12 attrBox"><span class="attr attr2">New password:</span><input id="newpass" type="text" class="nikeNameIpt"></div>
                         <div class="col-xs-12 col-sm-12 attrBox"><span class="attr attr2">Verify  password:</span><input id="verifypass" type="text" class="nikeNameIpt"></div>
                         <div class="col-xs-12 col-sm-12 attrBox attrBoxReset"><a href="###" class="resetLink">RESET PASSWARD</a></div>
+
+
+                        <!--新增登出-->
+                        <div class="logoutBox" style="display: none;">
+                            <div class="col-xs-12 col-sm-12 logoutName"><span class="logoutText">logout</span></div>
+                            <div class="col-xs-12 col-sm-12 attrBox attrBoxReset"><a href="###" class="logoutLink">LOGOUT</a></div>
+                        </div>
                     </div>
                     <div class="row part part2" style="display: none;">
                         <form action="#" class="form">
@@ -177,6 +184,12 @@
 <script type="text/javascript" src="js/public.js"></script>
 <script type="text/javascript">
     $(function(){
+
+        //点击登出
+        $('.infoBox .info .infoWrap .infoRight .part1 .attrBox .logoutLink').unbind('click').click(function(){
+            localStorage.removeItem('token');
+            window.location.href = 'index.html';
+        });
 
 
 

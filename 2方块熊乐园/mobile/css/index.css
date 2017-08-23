@@ -126,3 +126,14 @@ body {
 .infos .part span {
   text-decoration: underline;
 }
+/*classifyBox*/
+.classifyBox .eachClass {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 2rem;
+  border-top: 0.0625rem solid #999999;
+}
+.classifyBox .eachClass .eachClassName {
+  padding-left: 0.625rem;
+  text-decoration: underline;
+}
