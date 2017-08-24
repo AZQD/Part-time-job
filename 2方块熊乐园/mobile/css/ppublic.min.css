@@ -145,6 +145,7 @@ body {
     width: 100%;
     text-align: center;
     z-index: 2;
+    top: 2.5rem;
 }
 .headerBox .indexMiddle .addressUl .addressLi {
     margin: 0 auto;

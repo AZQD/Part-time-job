@@ -154,7 +154,7 @@
         <div class="col-xs-4 col-sm-4 part publish"><span>Publish</span></div>
         <div class="col-xs-4 col-sm-4 part signInUp" style="display: block;"><span>Sign in/Sign up</span></div>
         <div class="col-xs-4 col-sm-4 part profile" style="display: none;"><span>My Profile</span></div>
-        <div class="col-xs-4 col-sm-4 part goToHome" style="display: block;"><span>My MyHome</span></div>
+        <div class="col-xs-4 col-sm-4 part goToHome" style="display: block;"><span>My Home</span></div>
     </aside>
 
 </section>
@@ -194,7 +194,8 @@
                 console.log('发布者用户信息', data);
                 data = data.data;
 
-                $('.headerBox .profileMiddle').html(data.nickname+'\' Home');
+//                $('.headerBox .profileMiddle').html(data.nickname+'\' Home');
+                $('.headerBox .profileMiddle').html(data.nickname);
 
                 //修改title
                 $('#profileTitle').html(data.nickname + "'s home. kalichimall, make money by your second-hand goods.");

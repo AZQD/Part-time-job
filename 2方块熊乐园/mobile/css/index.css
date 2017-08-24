@@ -5,6 +5,7 @@ body {
 .swiper-container {
   height: 10rem;
   width: 100%;
+  margin-top: 2.5rem;
 }
 .swiper-container .swiper-wrapper {
   width: 100%;
@@ -54,7 +55,7 @@ body {
 }
 /*recentOrNear*/
 .recentOrNear {
-  margin-bottom: 3rem;
+  margin-bottom: 3.75rem;
 }
 .recentOrNear .title {
   height: 2.1875rem;
@@ -127,6 +128,13 @@ body {
   text-decoration: underline;
 }
 /*classifyBox*/
+.classifyBox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 2.5rem;
+  background-color: #fff;
+}
 .classifyBox .eachClass {
   font-size: 0.875rem;
   color: #666;

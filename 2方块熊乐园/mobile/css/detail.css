@@ -92,7 +92,7 @@
   color: #FF500D;
   font-size: 0.875rem;
   text-decoration: underline;
-  z-index: 9999;
+  z-index: 1;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic {
   width: 88%;
@@ -151,6 +151,9 @@
   display: inline-block;
   text-align: right;
 }
+.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg {
+  padding-left: 0.125rem;
+}
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .leftFlag {
   text-align: center;
   width: 1.875rem;
@@ -184,7 +187,6 @@
 .detailBox .detail .detailLeft .tabToggle {
   background-color: #F2F2F2;
   margin-top: 1.75rem;
-  margin-right: 0.625rem;
   border-bottom: 0.125rem solid #ff4720;
 }
 .detailBox .detail .detailLeft .aboutContent {
