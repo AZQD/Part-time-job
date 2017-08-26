@@ -10,8 +10,14 @@
     <meta name="format-detection" content="email=no"/>
     <link class="favicon" href="" rel="shortcut icon" type="image/x-icon"/>
     <link rel="stylesheet" href="css/addtohomescreen.css">
-    <!--<link rel="app-touch-icon-precomposed" href="image/kalichimall.png"/>-->
-    <link rel="app-touch-icon-precomposed" href=""/>
+    <!--<link rel="app-touch-icon-precomposed" href="image/index/icon.png"/>-->
+    <!--<link rel="app-touch-icon-precomposed" href=""/>-->
+
+    <meta name="apple-mobile-web-app-title" content="Add to Home">
+    <link rel="shortcut icon" sizes="16x16" href="image/index/favicon.ico">
+    <link rel="shortcut icon" sizes="196x196" href="image/index/icon.png">
+    <link rel="apple-touch-icon-precomposed" href="image/index/icon.png">
+
     <link rel="stylesheet" href="css/bootstraptc.min.css">
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/ppublic.min.css">
@@ -118,7 +124,26 @@
 <script type="text/javascript" src="js/swiper.min.js"></script>
 <script type="text/javascript" src="js/public.js"></script>
 <script type="text/javascript">
+
+    function deviceType() {
+        for (var e = new Array("Android", "iPhone", "Windows Phone", "iPod", "BlackBerry", "MeeGo", "SymbianOS"), i = navigator.userAgent, n = e.length, s = 0; n > s; s++)
+            if (i.indexOf(e[s]) >= 0) return "isMobile";
+        return "isPC"
+    }
+    //    alert(deviceType());
+    if(deviceType() == 'isMobile'){
+//        window.location.href = 'mobile/index.html';
+    }else if(deviceType() == 'isPC'){
+        window.location.href = '../WEB/index.html';
+    }
+
     $(function(){
+
+        //重点：点击除div之外的任意位置隐藏div
+        $(document).unbind('click').click(function(){
+            $('.classifyBox').slideUp();//类别列表
+            $('.headerBox .indexMiddle .addressUl').slideUp();//地址列表
+        });
         
         //.headerBox .indexMiddle .address2
         $('.headerBox .indexMiddle .search').unbind('click').click(function(){
@@ -149,14 +174,17 @@
 
                     $('.classifyBox .eachClass').eq(1).children().css('color','#FF4F0D');
 
-                    $('.headerBox .left .sort').unbind('click').click(function(){
+                    $('.headerBox .left .sort').unbind('click').click(function(ev){
+                        ev.stopPropagation();
                         $('.classifyBox').slideToggle();
+                        $('.headerBox .indexMiddle .addressUl').slideUp();//地址列表
                         /*if($('.classifyBox').is(":visible")){
                             $('.swiper-container').css('marginTop',0);
                         }else{
                             $('.swiper-container').css('marginTop','2.5rem');
                         }*/
                     });
+
 
                     //点击事件
                     $('.classifyBox .eachClass .eachClassName').unbind('click').click(function(){
@@ -221,9 +249,13 @@
                     }
 
                     //点击地址
-                    $('.headerBox .indexMiddle .address').unbind('click').click(function(){
+                    $('.headerBox .indexMiddle .address').unbind('click').click(function(ev){
+                        ev.stopPropagation();
                         $('.headerBox .indexMiddle .addressUl').slideToggle();
+                        $('.classifyBox').slideUp();//类别列表
                     });
+
+
 
                     //选择地址
                     $('.headerBox .indexMiddle .addressUl .addressLi').unbind('click').click(function(){

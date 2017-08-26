@@ -82,8 +82,8 @@
                             <span class="bigImgPicWrap"><img class="bigImgPic" src="" style="opacity:0;visibility: hidden;"></span>
                             <img style="display: none;" class="bigImgbg" src="image/detailPage/bigImgbg.png"/>
                             <span class="bgColor"><span class="bgColorInner"></span></span>
-                            <div class="col-xs-6 col-sm-6 aboutPrice"><span class="thePrice" style="display: none;"><span class="thePriceNum">100</span>ZMW</span></div>
-                            <div class="col-xs-6 col-sm-6 aboutShare">
+                            <div class="col-xs-5 col-sm-5 aboutPrice"><span class="thePrice" style="display: none;"><span class="thePriceNum">100</span>ZMW</span></div>
+                            <div class="col-xs-7 col-sm-7 aboutShare">
                                 <a href="javascript:void(0);" class="btnLink btn2 btn3"><img class="likeImg"/>&nbsp;<span></span></a>&nbsp;
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=编码后的跳转地址&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="social_flat_rounded_rects_svg/Facebook.svg"></a>
                                 <a href="https://twitter.com/intent/tweet?source=编码后的跳转地址&text=分享文本" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="social_flat_rounded_rects_svg/Twitter.svg"></a>
@@ -91,9 +91,9 @@
                             </div>
                         </div>
                         <div class="littleImg row">
-                            <div class="col-xs-2 col-sm-2 leftFlag"><img src="image/detailPage/leftFlag.png"></div>
-                            <div class="img_ulBox">
-                                <ul class="col-xs-8 col-sm-8 img_ul">
+                            <div class="leftFlag"><img src="image/detailPage/leftFlag.png"></div>
+                            <div class="col-xs-12 col-sm-12 img_ulBox">
+                                <ul class="img_ul">
                                     <!--<li class="img_li">
                                         <img src="image/detailPage/littleImg1.png">
                                     </li>
@@ -105,7 +105,7 @@
                                     </li>-->
                                 </ul>
                             </div>
-                            <div class="col-xs-2 col-sm-2 rightFlag"><img src="image/detailPage/rightFlag.png"></div>
+                            <div class="rightFlag"><img src="image/detailPage/rightFlag.png"></div>
                         </div>
                     </div>
                 </div>
@@ -197,8 +197,13 @@
                     }
 
                     //点击地址
-                    $('.headerBox .indexMiddle .address').unbind('click').click(function(){
-                        $('.headerBox .indexMiddle .addressUl').toggle();
+                    $('.headerBox .indexMiddle .address').unbind('click').click(function(ev){
+                        ev.stopPropagation();
+                        $('.headerBox .indexMiddle .addressUl').slideToggle();
+                    });
+                    //重点：点击除div之外的任意位置隐藏div
+                    $(document).unbind('click').click(function(){
+                        $('.headerBox .indexMiddle .addressUl').slideUp();//地址列表
                     });
 
                     //选择地址
@@ -353,7 +358,7 @@
                     var imgsArr = imgs.split(',');
                     console.log(imgsArr);
                     for(var i=0; i<imgsArr.length; i++){
-                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li" style="background: url('+baseImgSrc+imgsArr[0]+') no-repeat center center;background-size:100% auto;"><img style="opacity:0;" src='+baseUrl+'/gimg/'+imgsArr[i]+'></li>');
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li" style="background: url('+baseImgSrc+imgsArr[i]+') no-repeat center center;background-size:100% auto;"><img style="opacity:0;" src='+baseUrl+'/gimg/'+imgsArr[i]+'></li>');
                     }
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('visibility','inherit').attr('src', baseUrl+'/gimg/'+imgsArr[0]);
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('background','url('+baseImgSrc+imgsArr[0]+') no-repeat center center');

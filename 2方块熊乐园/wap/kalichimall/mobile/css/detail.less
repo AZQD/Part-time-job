@@ -177,29 +177,42 @@
 
 
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg{
-  padding-left: 2/@rem;
+  position: relative;
+  //padding-left: 2/@rem;
+  height:80/@rem;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .leftFlag{
-  text-align: center;
-  width:30/@rem;
+  position: absolute;
+  left: -1/@rem;
+  //text-align: center;
+  //width:30/@rem;
+}
+.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .leftFlag img{
+  width: 1rem;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .rightFlag{
-  width:30/@rem;
-  text-align: right;
+  //width:30/@rem;
+  //text-align: center;
   //margin-left: 308/@rem;
-  margin-left: 19rem;
+  //margin-left: 19rem;
+  position: absolute;
+  right: -1/@rem;
+}
+.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .rightFlag img{
+  width: 1rem;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ulBox{
-  width:320/@rem;
+  //width:320/@rem;
   overflow: hidden;
   /*width:10000/@rem;*/
   position: absolute;
   height: 80/@rem;
-  margin-left: 26/@rem;
+  //margin-left: 29/@rem;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul{
   width:10000/@rem;
   position: absolute;
+  left:19/@rem;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li{
   cursor: pointer;
@@ -207,7 +220,7 @@
   margin:0 2/@rem;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul img{
-  width:78/@rem;
+  width:80/@rem;
   height:80/@rem;
 }
 
@@ -218,8 +231,8 @@
   border-bottom: 2/@rem solid #FF4720;
 }
 .detailBox .detail .detailLeft .aboutContent{
-  padding-left: 30/@rem;
-  padding-top: 10/@rem;
+  //padding-left: 30/@rem;
+  //padding-top: 10/@rem;
   font-size: 16/@rem;
 }
 .detailBox .detail .detailLeft .tabToggle .tabLink{

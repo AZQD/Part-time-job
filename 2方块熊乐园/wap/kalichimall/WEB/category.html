@@ -387,7 +387,16 @@
             padding:10px 0;
         }
         .pageControl .pageBtn{
-
+            outline: none;
+            border: none;
+            width: 48px;
+            height: 24px;
+            line-height: 24px;
+            border-radius: 4px;
+            color: #333;
+            font-size: 14px;
+            font-weight: bold;
+            background-color: #FF4720;
         }
         #dongHua{
             display: none;
@@ -647,6 +656,7 @@
 <script type="text/javascript">
     $(function(){
 
+        var eachPageMaxSize = 30;//每页显示最多数量
 
         //getmarquee
         $.ajax({
@@ -992,23 +1002,25 @@
         function searchPageControl(){
 
             $('.pageControl .nextPage').unbind('click').click(function(){
-                startSearch += 30 ;
+                startSearch += eachPageMaxSize ;
                 if(startSearch<=totalCountSearch){
 //                    searchFun(searchKeyWord, startSearch, hasImage);
                     searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
                 }else{
-                    startSearch -= 30 ;
-                    alert('已经是最后一页了！');
+                    startSearch -= eachPageMaxSize ;
+//                    alert('已经是最后一页了！');
+                    commonPopFun('This is last page', 'Failed');
                 }
             });
             $('.pageControl .lastPage').unbind('click').click(function(){
-                startSearch -= 30 ;
+                startSearch -= eachPageMaxSize ;
                 if(startSearch >= 0){
 //                    searchFun(searchKeyWord, startSearch, hasImage);
                     searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
                 }else{
-                    startSearch += 30 ;
-                    alert('已经是第一页了！');
+                    startSearch += eachPageMaxSize ;
+//                    alert('已经是第一页了！');
+                    commonPopFun('This is first page', 'Failed');
                 }
             });
         }
@@ -1035,17 +1047,17 @@
             }
             $.ajax({
                 type: "get",
-                url: baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+ +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&n=30&hasImage='+hasImage +'&goodstatus='+ goodstatus,
+                url: baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&n='+eachPageMaxSize+'&hasImage='+hasImage +'&goodstatus='+ goodstatus,
                 dataType:"json",
                 success: function(data){
                     if(data.status == 200){
 
                         console.log("搜索",data);
-                        console.log("搜索url="+baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+ +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&n=30&hasImage='+hasImage +'&goodstatus='+ goodstatus);
+                        console.log("搜索url="+baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&n='+eachPageMaxSize+'&hasImage='+hasImage +'&goodstatus='+ goodstatus);
                         //搜索结果总数
                         totalCountSearch = data.extdata;
                         $('.pageControl').hide();
-                        if(totalCountSearch > 30){
+                        if(totalCountSearch > eachPageMaxSize){
                             $('.pageControl').show();
                         }
                         data = JSON.parse(data.data);
@@ -1257,23 +1269,25 @@
 
         function tabPageControl(){
             $('.pageControl .nextPage').unbind('click').click(function(){
-                startTab += 30 ;
+                startTab += eachPageMaxSize ;
                 if(startTab<=totalCountTab){
                     tabPageControl();
                     getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
                 }else{
-                    startTab -= 30 ;
-                    alert('已经是最后一页了！');
+                    startTab -= eachPageMaxSize ;
+//                    alert('已经是最后一页了！');
+                    commonPopFun('This is last page', 'Failed');
                 }
             });
             $('.pageControl .lastPage').unbind('click').click(function(){
-                startTab -= 30 ;
+                startTab -= eachPageMaxSize ;
                 if(startTab >= 0){
                     tabPageControl();
                     getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
                 }else{
-                    startTab += 30 ;
-                    alert('已经是第一页了！');
+                    startTab += eachPageMaxSize ;
+//                    alert('已经是第一页了！');
+                    commonPopFun('This is first page', 'Failed');
                 }
             });
         }
@@ -1402,15 +1416,15 @@
             //产品列表查看
             $.ajax({
                 type: "get",
-                url: baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n=30&hasImage='+hasImage +'&goodstatus='+ goodstatus,
+                url: baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n='+eachPageMaxSize+'&hasImage='+hasImage +'&goodstatus='+ goodstatus,
                 dataType:"json",
                 success: function(data){
-                    console.log("url="+baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n=30&hasImage='+hasImage +'&goodstatus='+ goodstatus);
+                    console.log("url="+baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n='+eachPageMaxSize+'&hasImage='+hasImage +'&goodstatus='+ goodstatus);
                     if (data.status == 200) {
                         totalCountTab = data.extdata;
 //                        alert(totalCountTab);
                         $('.pageControl').hide();
-                        if(totalCountTab > 30){
+                        if(totalCountTab > eachPageMaxSize){
                             $('.pageControl').show();
                         }
                         console.log("产品列表查看",data);

@@ -289,6 +289,18 @@
   text-align: center;
   padding: 0.625rem 0;
 }
+.pageControl .pageBtn {
+  outline: none;
+  border: none;
+  width: 3rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  border-radius: 0.25rem;
+  color: #333;
+  font-size: 0.875rem;
+  font-weight: bold;
+  background-color: #FF4720;
+}
 #dongHua {
   display: none;
   position: absolute;
@@ -397,6 +409,6 @@
   border-bottom: 0.375rem solid transparent;
   border-left: 0.375rem solid transparent;
   position: relative;
-  top: 0.375rem;
+  top: 0.275rem;
   left: 0.125rem;
 }

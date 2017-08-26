@@ -806,6 +806,19 @@
 <script type="text/javascript" src="js/headerBox.js"></script>
 <script type="text/javascript" src="js/searchBoxRight.js"></script>
 <script type="text/javascript">
+
+    function deviceType() {
+        for (var e = new Array("Android", "iPhone", "Windows Phone", "iPod", "BlackBerry", "MeeGo", "SymbianOS"), i = navigator.userAgent, n = e.length, s = 0; n > s; s++)
+            if (i.indexOf(e[s]) >= 0) return "isMobile";
+        return "isPC"
+    }
+    //    alert(deviceType());
+    if(deviceType() == 'isMobile'){
+        window.location.href = '../mobile/index.html';
+    }else if(deviceType() == 'isPC'){
+//        window.location.href = 'WEB/index.html';
+    }
+
     $(function(){
 
         window.localStorage.removeItem('clickBanner');

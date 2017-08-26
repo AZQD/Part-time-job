@@ -12,21 +12,36 @@
     <link rel="stylesheet" href="css/bootstraptc.min.css">
     <link rel="stylesheet" href="css/ppublic.min.css">
     <link rel="stylesheet" href="css/swiper.min.css">
-    <link rel="stylesheet" href="css/categoryOld.css">
-    <style type="text/css">
-
-    </style>
+    <link rel="stylesheet" href="css/category.css">
 </head>
 <body>
+<section id="dongHua"><img src="image/categoryDetail/loading.gif" alt=""></section>
+<section class="commonPopBox1" style="display: none;">
+    <div class="commonPop">
+        <h3 class="title"></h3>
+        <p class="detailTip"></p>
+        <div class="confirmBox">
+            <span class="confirmBtn">OK</span>
+        </div>
+    </div>
+</section>
+<section class="commonPopBox2" style="display: none;">
+    <div class="commonPop">
+        <h3 class="title"></h3>
+        <p class="detailTip"></p>
+        <div class="confirmBox">
+            <span class="confirmBtn confirmBtn1"></span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span class="confirmBtn confirmBtn2"></span>
+        </div>
+    </div>
+</section>
+
 <section class="container">
 
     <aside class="row headerBox">
         <div class="col-xs-4 col-sm-4 left"><img class="logo" src="image/index/logo.png"></div>
-        <div class="col-xs-4 col-sm-4 indexMiddle">
-            <span class="address"></span>
-            <ul class="addressUl" style="display: none;">
-                <!--<li class="addressLi">01</li>-->
-            </ul>
+        <div class="col-xs-4 col-sm-4 categoryMiddle">
+            <span class="categoryMiddleCidName"></span>
         </div>
         <div class="col-xs-4 col-sm-4 right">
             <img class="search" src="image/index/search.png">
@@ -34,37 +49,68 @@
         </div>
     </aside>
 
-    <aside class="selectBox">
+    <aside class="toggleSortBox" style="margin-top: 2.5rem;">
+        <div class="row toggleSort">
+            <div class="tab col-xs-4 col-sm-4 pricesTab"><span class="text pricesText">Prices</span></div>
+            <div class="tab col-xs-4 col-sm-4 qualityTab"><span class="text qualityText">Quality</span></div>
+            <div class="tab col-xs-4 col-sm-4 areaTab"><span class="text areaText">Area</span></div>
+        </div>
+        <div class="row toggleList" style="">
+            <ul class="col-xs-4 col-sm-4 uls priceUl" style="display: none;">
+                <li class="" min="" max="">ALL</li>
+            </ul>
+            <ul class="col-xs-4 col-sm-4 uls qualityUl" style="display: none;">
+                <li class="" goodstatus="">ALL</li>
+                <li class="" goodstatus="0">Brand New</li>
+                <li class="" goodstatus="1">New</li>
+                <li class="" goodstatus="2">As New</li>
+                <li class="" goodstatus="3">A Half New</li>
+            </ul>
+            <ul class="col-xs-4 col-sm-4 uls areaUl" style="display: none;">
+                <li class="" areaid="">ALL</li>
+            </ul>
+        </div>
+    </aside>
+
+    <!--<aside class="selectBox">
         <div class="row select">
             <div class="col-xs-12 col-sm-12 selectPrice">
                 <span class="price">PRICE</span>
                 <a href="#" class="selectChoose active">ALL</a>
-                <a href="#" class="selectChoose">0-100</a>
+                &lt;!&ndash;<a href="#" class="selectChoose">0-100</a>
                 <a href="#" class="selectChoose">100-200</a>
                 <a href="#" class="selectChoose">200-500</a>
-                <a href="#" class="selectChoose">500++</a>
+                <a href="#" class="selectChoose">500++</a>&ndash;&gt;
             </div>
+
+            <div class="col-xs-12 col-sm-12 selectQuality">
+                <span class="quality">QUALITY</span>
+                <a href="#" class="selectChoose active">ALL</a>
+                <a href="#" class="selectChoose">Brand New</a>
+                <a href="#" class="selectChoose">New</a>
+                <a href="#" class="selectChoose">As New</a>
+                <a href="#" class="selectChoose">A Half New</a>
+            </div>
+
             <div class="col-xs-12 col-sm-12 selectArea">
                 <span class="area">AREA</span>
                 <a href="#" class="selectChoose active">ALL</a>
-                <!--<a href="#" class="selectChoose">Lusaka</a>
-                <a href="#" class="selectChoose">Others</a>-->
+                &lt;!&ndash;<a href="#" class="selectChoose">Lusaka</a>
+                <a href="#" class="selectChoose">Others</a>&ndash;&gt;
             </div>
         </div>
-    </aside>
+    </aside>-->
 
     <aside class="tabsBox">
         <div class="row tabs">
-
             <div class="col-xs-4 col-sm-4 tabsLeft">
-                <a href="#" class="tabLink active">Celler</a>
+                <a href="#" class="tabLink active">Seller</a>
                 <a href="#" class="tabLink">Buyer</a>
             </div>
             <div class="col-xs-8 col-sm-8 tabsRight">
-                <span class="t"><input type="checkbox" id="hasImage"> Has image</span>&nbsp;&nbsp;
+                <span class="t"><input type="checkbox" id="hasImage"> Has image</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <button class="tabBtn tabBtn1 tabBtn1Up"> Date</button><button class="tabBtn tabBtn2 tabBtn2Up"> Price</button>
             </div>
-
         </div>
     </aside>
 
@@ -84,22 +130,82 @@
                 <span class="goodsRight1">ZMW</span><span class="goodsRight2">1205</span>
             </div>
         </div>-->
+        <!--<div class="row goods">
+            <div class="col-xs-3 col-sm-3 goodsLeft">
+                <img src="image/categoryDetail/good1.jpg">
+                <span class="tip">3</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 goodsMiddle">
+                <p class="goodName">iPhone 6, OS is 10.3</p>
+                <p class="goodDesc">Product details</p>
+                <p class="goodDesc">Address Details <span class="goodDate">23/05/2017</span></p>
+            </div>
+            <div class="col-xs-3 col-sm-3 goodsRight">
+                <span class="goodsRight1">ZMW</span><span class="goodsRight2">1205</span>
+            </div>
+        </div>
+        <div class="row goods">
+            <div class="col-xs-3 col-sm-3 goodsLeft">
+                <img src="image/categoryDetail/good1.jpg">
+                <span class="tip">3</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 goodsMiddle">
+                <p class="goodName">iPhone 6, OS is 10.3</p>
+                <p class="goodDesc">Product details</p>
+                <p class="goodDesc">Address Details <span class="goodDate">23/05/2017</span></p>
+            </div>
+            <div class="col-xs-3 col-sm-3 goodsRight">
+                <span class="goodsRight1">ZMW</span><span class="goodsRight2">1205</span>
+            </div>
+        </div>
+        <div class="row goods">
+            <div class="col-xs-3 col-sm-3 goodsLeft">
+                <img src="image/categoryDetail/good1.jpg">
+                <span class="tip">3</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 goodsMiddle">
+                <p class="goodName">iPhone 6, OS is 10.3</p>
+                <p class="goodDesc">Product details</p>
+                <p class="goodDesc">Address Details <span class="goodDate">23/05/2017</span></p>
+            </div>
+            <div class="col-xs-3 col-sm-3 goodsRight">
+                <span class="goodsRight1">ZMW</span><span class="goodsRight2">1205</span>
+            </div>
+        </div>
+        <div class="row goods">
+            <div class="col-xs-3 col-sm-3 goodsLeft">
+                <img src="image/categoryDetail/good1.jpg">
+                <span class="tip">3</span>
+            </div>
+            <div class="col-xs-6 col-sm-6 goodsMiddle">
+                <p class="goodName">iPhone 6, OS is 10.3</p>
+                <p class="goodDesc">Product details</p>
+                <p class="goodDesc">Address Details <span class="goodDate">23/05/2017</span></p>
+            </div>
+            <div class="col-xs-3 col-sm-3 goodsRight">
+                <span class="goodsRight1">ZMW</span><span class="goodsRight2">1205</span>
+            </div>
+        </div>-->
     </aside>
     <aside class="pageControl" style="display: none;">
         <button class="pageBtn lastPage">Last</button>&nbsp;&nbsp;
         <button class="pageBtn nextPage">Next</button>
     </aside>
-    <aside class="chooseBtn" style="text-align: center;display: none;">
-        <input type="text" class="startNum" placeholder="从第几条开始">
-        <input type="text" class="countNum" placeholder="获得几条数据，最多30条"><br/>
-        <button id="getGoodsBtn">获取列表</button>
-    </aside>
 
     <aside class="row infos">
         <div class="col-xs-6 col-sm-6 part publish"><span>Publish</span></div>
         <div class="col-xs-6 col-sm-6 part signInUp" style="display: block;"><span>Sign in/Sign up</span></div>
-        <div class="col-xs-6 col-sm-6 part profile manage" style="display: none;"><span>My Manage</span></div>
+        <div class="col-xs-6 col-sm-6 part profile" style="display: none;"><span>My Manage</span></div>
     </aside>
+
+    <!--二级菜单-->
+    <div class="classifyBoxWrap" style="display: none;">
+        <aside class="row classifyBox">
+            <div class="col-xs-12 col-sm-12 eachClass">
+                <span class="eachClassName" cid="" cidName="">ALL</span>
+            </div>
+        </aside>
+    </div>
 
 </section>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
@@ -107,6 +213,106 @@
 <script type="text/javascript" src="js/public.js"></script>
 <script type="text/javascript">
     $(function(){
+
+        var eachPageMaxSize = 30;//每页显示最多数量
+
+        //重点：点击除div之外的任意位置隐藏div
+        $(document).unbind('click').click(function(){
+            $('.classifyBoxWrap').slideUp();//类别列表
+            $('.toggleSortBox .toggleList .priceUl').slideUp();//价格列表
+            $('.toggleSortBox .toggleList .qualityUl').slideUp();//质量列表
+            $('.toggleSortBox .toggleList .areaUl').slideUp();//地址列表
+        });
+
+        //头部中间位置显示内容
+        var categoryMiddleCidName;
+        if(getParamByUrl('searchOrTab') == 'tab'){
+            var linkCid = getParamByUrl('cid');
+            categoryMiddleCidName = window.localStorage.getItem('mobileCidName');
+            if(linkCid == 21){
+                categoryMiddleCidName = "Students";
+            }else if(linkCid == 2){
+                categoryMiddleCidName = "Vehicles";
+            }else if(linkCid == 3){
+                categoryMiddleCidName = "Digtals";
+            }else if(linkCid == 4){
+                categoryMiddleCidName = "Buildings";
+            }else if(linkCid == 5){
+                categoryMiddleCidName = 'Life Goods';
+            }else if(linkCid == 1){
+                categoryMiddleCidName = "Others";
+            }
+            if(categoryMiddleCidName == 'Family'){
+                categoryMiddleCidName = 'Family House';
+            }
+            $('.headerBox .categoryMiddle .categoryMiddleCidName').html(categoryMiddleCidName);
+        }else if(getParamByUrl('searchOrTab') == 'search'){
+            categoryMiddleCidName = window.localStorage.getItem('searchKeyWord');
+            $('.headerBox .categoryMiddle .categoryMiddleCidName').html(categoryMiddleCidName);
+        }
+
+
+
+        //产品分类显示
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/categorys",
+            dataType:"json",
+            success: function(data){
+                if(data.status == 200){
+                    data = JSON.parse(data.data);
+                    console.log("获得产品分类",data);
+
+                    for(var i=0; i<data.length; i++){
+
+                        var firstStr = '<span class="eachClassName" cid='+data[i].cid+' cidName='+data[i].name+'>'+data[i].name+'</span>'+':';
+                        var secondStr = '';
+                        for(var j=0; j<data[i].sub.length; j++){
+                            secondStr+='<span class="eachClassName" cid='+data[i].sub[j].cid+' cidName='+data[i].sub[j].name+'>'+data[i].sub[j].name+'</span>';
+                        }
+                        $('.classifyBox').append('' +
+                                '<div class="col-xs-12 col-sm-12 eachClass">'+firstStr+secondStr+'</div>');
+                    }
+
+//                    $('.classifyBox .eachClass').eq(1).children().css('color','#FF4F0D');
+
+                    /*$('.headerBox .left .sort').unbind('click').click(function(){
+                        $('.classifyBox').slideToggle();
+                    });*/
+
+                    //点击事件
+                    $('.classifyBox .eachClass .eachClassName').unbind('click').click(function(){
+                        window.localStorage.setItem('mobileCidName', $(this).attr('cidName'));
+                        window.location.href = 'category.html?searchOrTab=tab&cid='+$(this).attr('cid');
+                    });
+
+                    //点击展示二级菜单
+                    $('.headerBox .categoryMiddle').unbind('click').click(function(ev){
+                        ev.stopPropagation();
+                        $('.classifyBoxWrap').slideToggle();
+                        $('.toggleSortBox .toggleList .priceUl').slideUp();//价格列表
+                        $('.toggleSortBox .toggleList .qualityUl').slideUp();//质量列表
+                        $('.toggleSortBox .toggleList .areaUl').slideUp();//地址列表
+                    });
+
+                    //取消冒泡
+                    $('.classifyBoxWrap .classifyBox').unbind('click').click(function(ev){
+                        ev.stopPropagation();
+                    });
+                    //点击空白处隐藏
+                    $('.classifyBoxWrap').unbind('click').click(function(){
+                        $('.classifyBoxWrap').hide();
+                    });
+
+                }else{
+                    commonPopFun1(data.msg, 'Failed');
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+
+        });
 
         //点击发布
         $('.infos .publish').unbind('click').click(function () {
@@ -116,8 +322,12 @@
         $('.infos .signInUp').unbind('click').click(function () {
             window.location.href = "login.html?goLogin="+1;
         });
+        /*//My Profile
+         $('.infos .profile').unbind('click').click(function () {
+         window.location.href = "profile.html";
+         });*/
 
-        //显示地址列表
+        //头部显示地址列表
         var areaId = localStorage.getItem("areaId");
         var areaName = localStorage.getItem("areaName");
         $.ajax({
@@ -127,6 +337,48 @@
                 if (data.status == 200){
                     data = JSON.parse(data.data);
                     console.log("获得区域信息", data);
+
+
+
+                    //新增
+                    $('.toggleSortBox .toggleSort .areaTab').unbind('click').click(function(ev){
+                        ev.stopPropagation();
+                        $('.toggleSortBox .toggleList .areaUl').slideToggle();
+                        $('.classifyBoxWrap').slideUp();//类别列表
+                        $('.toggleSortBox .toggleList .priceUl').slideUp();//价格列表
+                        $('.toggleSortBox .toggleList .qualityUl').slideUp();//质量列表
+                    });
+                    for (var sort in data){
+                        if(data[sort].name){
+                            $('.toggleSortBox .toggleList .areaUl').append(
+                                    '<li areaid='+data[sort].id+'>'+data[sort].name+'</li>'
+                            );
+                        }
+                    }
+                    $('.toggleSortBox .toggleList .areaUl li').unbind('click').click(function(){
+                        $('.toggleSortBox .toggleSort .tab .areaText').html($(this).html());
+                        areaid = $(this).attr('areaid');
+                        if(lastGetGoodFun == 'searchFun'){
+                            searchPageControl();
+//                searchFun(searchKeyWord,startSearch, hasImage);
+                            searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, needSort, hasImage, goodstatus);
+                        }else{
+                            tabPageControl();
+                            getGoods(cid, pmin, pmax, areaid, issell, orderby, needSort, startTab, hasImage, goodstatus);
+                        }
+                        $('.toggleSortBox .toggleList .areaUl').hide();
+                    });
+
+
+
+                    var locationArr1 = [];
+                    var locationArrId1 = [];
+                    var locationArr2 = [];
+                    for (var sort in data){
+                        locationArr1.push(data[sort].name);
+                        locationArrId1.push(data[sort].id);
+                        locationArr2.push(data[sort].sub);
+                    }
                     var areaIdArr = [];
                     var areaNameArr = [];
                     for (var areas in data){
@@ -150,22 +402,82 @@
 
                     //点击地址
                     $('.headerBox .indexMiddle .address').unbind('click').click(function(){
-                        $('.headerBox .indexMiddle .addressUl').toggle();
+                        $('.headerBox .indexMiddle .addressUl').slideToggle();
+                    });
+
+                    $('.headerBox .indexMiddle .addressUl').prepend('<div id="addressAll" style="text-align: center;width: 6.375rem;height: 1.875rem;line-height:1.875rem;border: 1px solid #999;border-bottom: none;margin:0 auto;">ALL</div>');
+
+
+                    $('#addressAll').unbind('click').click(function(){
+                        $('.headerBox .indexMiddle .address').text('ALL');
+                        $('.headerBox .indexMiddle .addressUl').hide();
+
+                        var strAllArea = '<span class="area">AREA</span><a href="#" nowAreaid="" class="selectChoose active">ALL</a>';
+                        for(var j=0; j<locationArrId1.length; j++){
+                            strAllArea += '<a href="#" class="selectChoose" nowAreaid='+locationArrId1[j]+'>'+locationArr1[j]+'</a>';
+                        }
+                        $('.selectArea').empty().append(strAllArea);
+
+                        $('.selectBox .select .selectArea').children('.selectChoose').each(function(index){
+                            $(this).click(function () {
+                                areaid = $(this).attr('nowAreaid');
+                                $('.selectBox .select .selectArea .selectChoose').removeClass("active");
+                                $(this).addClass('active');
+                                console.log('areaid='+areaid);
+                                tabPageControl();
+                                getGoods(cid, pmin, pmax, areaid, issell, orderby, needSort, startTab, hasImage, goodstatus);
+                            });
+                        });
+
                     });
 
                     //选择地址
+                    controlAreaId2();
                     $('.headerBox .indexMiddle .addressUl .addressLi').unbind('click').click(function(){
                         var index = $(this).index();
+                        index = index-1;
                         localStorage.setItem('areaId', areaIdArr[index]);
                         localStorage.setItem('areaName', areaNameArr[index]);
                         $('.headerBox .indexMiddle .address').html(areaNameArr[index]);
                         $('.headerBox .indexMiddle .addressUl').hide();
+
+                        controlAreaId2();
+
                     });
+
+                    function controlAreaId2(){
+                        var areaIdArr2 = [];
+//                        areaid = locationArr2[0][0].id;
+                        console.log('**********', areaid);
+                        for(let i=0; i<locationArr1.length; i++){
+                            var strArea = '<span class="area">AREA</span><a href="#" class="selectChoose active">ALL</a>';
+                            if($('.headerBox .indexMiddle .address').html() == locationArr1[i]){
+                                for(var j=0; j<locationArr2[i].length; j++){
+                                    strArea += '<a href="#" class="selectChoose">'+locationArr2[i][j].name+'</a>';
+                                    areaIdArr2.push(locationArr2[i][j].id);
+                                }
+                                $('.selectArea').empty().append(strArea);
+                            }
+                        }
+                        console.log("areaIdArr2",areaIdArr2);
+
+                        $('.selectBox .select .selectArea').children('.selectChoose').each(function(index){
+                            $(this).click(function () {
+                                areaid = areaIdArr2[index-1];
+                                $('.selectBox .select .selectArea .selectChoose').removeClass("active");
+                                $(this).addClass('active');
+                                console.log('areaid='+areaid);
+                                tabPageControl();
+                                getGoods(cid, pmin, pmax, areaid, issell, orderby, needSort, startTab, hasImage, goodstatus);
+                            });
+                        });
+                    }
 
                     //不显示默认地址
                     $('.headerBox .indexMiddle .addressUl .addressLi').each(function(index){
                         if($('.headerBox .indexMiddle .addressUl .addressLi').eq(index).html() == ''){
                             $(this).hide();
+                            $('.headerBox .indexMiddle .addressUl .addressLi').eq(index-1).css('borderBottom','1px solid #333333');
                         }
                     });
 
@@ -179,27 +491,9 @@
         });
 
 
-        //getmarquee
-        $.ajax({
-            type: "get",
-            url: baseUrl+"/apigateway/getmarquee",
-            dataType:"json",
-            success: function(data){
-                if(data.status ==200){
-                    console.log('getmarquee',data);
-                    $('#aboutmarquee').html(data.data);
-                }
-
-            },
-            error:function(error){
-                console.log(error);
-            }
-        });
-
-
 
         //loading动画
-        $('#dongHua').css('paddingTop',$('body').height()/2);
+        $('#dongHua').css('marginTop',$('body').height()/2);
 
         //
         var lastGetGoodFun;
@@ -401,6 +695,31 @@
             });
         });
 
+        //新增
+        $('.toggleSortBox .toggleSort .qualityTab').unbind('click').click(function(ev){
+            ev.stopPropagation();
+            $('.toggleSortBox .toggleList .qualityUl').slideToggle();
+            $('.classifyBoxWrap').slideUp();//类别列表
+            $('.toggleSortBox .toggleList .priceUl').slideUp();//价格列表
+            $('.toggleSortBox .toggleList .areaUl').slideUp();//地址列表
+        });
+
+        $('.toggleSortBox .toggleList .qualityUl li').unbind('click').click(function(){
+            $('.toggleSortBox .toggleSort .tab .qualityText').html($(this).html());
+           var index = $(this).index();
+//            alert($(this).attr('goodstatus'));
+            goodstatus = $(this).attr('goodstatus');
+            if(lastGetGoodFun == 'searchFun'){
+                searchPageControl();
+//                searchFun(searchKeyWord,startSearch, hasImage);
+                searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
+            }else{
+                tabPageControl();
+                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
+            }
+            $('.toggleSortBox .toggleList .qualityUl').hide();
+        });
+
 
 
         //获取地址areaid
@@ -443,7 +762,7 @@
 
                     //点击addressAll
 
-                    $('#addressAll').unbind('click').click(function(){
+                    /*$('#addressAll').unbind('click').click(function(){
                         $('.headerBox .header .headerLeft .lusaka').text('ALL');
                         var strAllArea = '<span class="area">AREA</span><a href="#" nowAreaid="" class="selectChoose active">ALL</a>';
                         for(var j=0; j<locationArrId1.length; j++){
@@ -468,7 +787,7 @@
                             });
                         });
 
-                    });
+                    });*/
 
 
                     function controlAreaId(){
@@ -523,23 +842,25 @@
         function searchPageControl(){
 
             $('.pageControl .nextPage').unbind('click').click(function(){
-                startSearch += 30 ;
+                startSearch += eachPageMaxSize ;
                 if(startSearch<=totalCountSearch){
 //                    searchFun(searchKeyWord, startSearch, hasImage);
                     searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
                 }else{
-                    startSearch -= 30 ;
-                    alert('已经是最后一页了！');
+                    startSearch -= eachPageMaxSize ;
+//                    alert('已经是最后一页了！');
+                    commonPopFun1('This is last page','Kalichimall');
                 }
             });
             $('.pageControl .lastPage').unbind('click').click(function(){
-                startSearch -= 30 ;
+                startSearch -= eachPageMaxSize ;
                 if(startSearch >= 0){
 //                    searchFun(searchKeyWord, startSearch, hasImage);
                     searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
                 }else{
-                    startSearch += 30 ;
-                    alert('已经是第一页了！');
+                    startSearch += eachPageMaxSize ;
+//                    alert('已经是第一页了！');
+                    commonPopFun1('This is first page','Kalichimall');
                 }
             });
         }
@@ -564,17 +885,17 @@
             }
             $.ajax({
                 type: "get",
-                url: baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+ +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&n=30&hasImage='+hasImage +'&goodstatus='+ goodstatus,
+                url: baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&n='+eachPageMaxSize+'&hasImage='+hasImage +'&goodstatus='+ goodstatus,
                 dataType:"json",
                 success: function(data){
                     if(data.status == 200){
 
                         console.log("搜索",data);
-                        console.log("搜索url="+baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+ +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&n=30&hasImage='+hasImage +'&goodstatus='+ goodstatus);
+                        console.log("搜索url="+baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&n='+eachPageMaxSize+'&hasImage='+hasImage +'&goodstatus='+ goodstatus);
                         //搜索结果总数
                         totalCountSearch = data.extdata;
                         $('.pageControl').hide();
-                        if(totalCountSearch > 30){
+                        if(totalCountSearch > eachPageMaxSize){
                             $('.pageControl').show();
                         }
                         data = JSON.parse(data.data);
@@ -604,8 +925,8 @@
 //                            console.log(data[list]);
 
                             var detailsText = data[list].details;
-                            if(detailsText.length>200){
-                                detailsText = detailsText.substring(0, 180) + '...';
+                            if(detailsText.length>22){
+                                detailsText = detailsText.substring(0, 22) + '...';
                             }
 
                             //aboutQuality
@@ -646,11 +967,11 @@
                             };
                             console.log('erjiName',erjiName);
                             str += '<div class="row goods">' +
-                                    '<div class="col-xs-3 col-sm-3 goodsLeft">' +
-                                    '<img src='+baseUrl+'/gimg/'+data[list].cimg+'><span class="tip">'+imgsLth+'</span>' +
+                                    '<div class="col-xs-3 col-sm-3 goodsLeft" style="background: url('+baseImgSrc+data[list].cimg+') no-repeat center center;background-size:100% auto;">' +
+                                    '<span class="tip">'+imgsLth+'</span>' +
                                     '</div>' +
                                     '<div class="col-xs-6 col-sm-6 goodsMiddle">' +
-                                    '<p class="goodName">'+data[list].contactname+'</p>' +
+                                    '<p class="goodName">'+data[list].title+'</p>' +
                                     '<p class="goodDesc">'+detailsText+'</p>' +
                                     '<p class="goodDesc">'+yijiName+" "+erjiName+" "+data[list].addr_l3+" "+data[list].addr_l4+' ' +
                                     '<span class="goodDate">'+data[list].pubtime+'</span>' +
@@ -675,13 +996,13 @@
                             var index = $(this).index();
                             var goodId = goodIdArr[index];
                             localStorage.setItem('goodIdFromCategory',goodId);
-//                            window.open("detail.html?id="+goodId);
-                            window.location.href = "detail.html?id="+goodId;
+//                            window.location.href = "detail.html?id="+goodId;
+                            window.open("detail.html?id="+goodId);
 
                         });
 
                     }else{
-                        commonPopFun1(data.msg, 'Failed');
+                        commonPopFun(data.msg, 'Failed');
                     }
                 },
                 error:function(error){
@@ -784,23 +1105,25 @@
 
         function tabPageControl(){
             $('.pageControl .nextPage').unbind('click').click(function(){
-                startTab += 30 ;
+                startTab += eachPageMaxSize ;
                 if(startTab<=totalCountTab){
                     tabPageControl();
                     getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
                 }else{
-                    startTab -= 30 ;
-                    alert('已经是最后一页了！');
+                    startTab -= eachPageMaxSize ;
+//                    alert('已经是最后一页了！');
+                    commonPopFun1('This is last page','Kalichimall');
                 }
             });
             $('.pageControl .lastPage').unbind('click').click(function(){
-                startTab -= 30 ;
+                startTab -= eachPageMaxSize ;
                 if(startTab >= 0){
                     tabPageControl();
                     getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
                 }else{
-                    startTab += 30 ;
-                    alert('已经是第一页了！');
+                    startTab += eachPageMaxSize ;
+//                    alert('已经是第一页了！');
+                    commonPopFun1('This is first page','Kalichimall');
                 }
             });
         }
@@ -861,33 +1184,67 @@
                     console.log('8888888888888',daLeiIntervalArr[daLeiIndex]);
                     $('.selectBox .select .selectPrice').empty();
                     $('.selectBox .select .selectPrice').append('<span class="price">PRICE</span><a href="#" class="selectChoose active">ALL</a>');
-                    for(var i=0; i<daLeiIntervalArr[daLeiIndex].length; i++){
-                        var thisMin = daLeiIntervalArr[daLeiIndex][i].min;
-                        var thisMax = daLeiIntervalArr[daLeiIndex][i].max;
-                        thisMax= '-'+thisMax;
-                        if(thisMax == '-undefined'){
-                            thisMax = '++';
-                        }
 
-                        $('.selectBox .select .selectPrice').append('<a href="#" class="selectChoose">'+thisMin+thisMax+'</a>');
-
-                        $('.selectBox .select .selectPrice').children('.selectChoose').unbind('click').click(function(){
-                            var index = $(this).index();
-                            if(index==1){
-                                getGoods(cid, '', '', areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
-                            }else{
-                                var pmin = daLeiIntervalArr[daLeiIndex][index-2].min;
-                                var pmax = daLeiIntervalArr[daLeiIndex][index-2].max;
-                                if(pmax == undefined){
-                                    pmax = '';
+                    var timer = setInterval(function(){
+                        if(daLeiIndex != undefined){
+                            clearInterval(timer);
+                            for(var i=0; i<daLeiIntervalArr[daLeiIndex].length; i++){
+                                var thisMin = daLeiIntervalArr[daLeiIndex][i].min;
+                                var thisMax = daLeiIntervalArr[daLeiIndex][i].max;
+                                thisMax= '-'+thisMax;
+                                if(thisMax == '-undefined'){
+                                    thisMax = '++';
                                 }
-                                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
+
+                                $('.selectBox .select .selectPrice').append('<a href="#" class="selectChoose">'+thisMin+thisMax+'</a>');
+
+                                $('.selectBox .select .selectPrice').children('.selectChoose').unbind('click').click(function(){
+                                    var index = $(this).index();
+                                    if(index==1){
+                                        getGoods(cid, '', '', areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
+                                    }else{
+                                        var pmin = daLeiIntervalArr[daLeiIndex][index-2].min;
+                                        var pmax = daLeiIntervalArr[daLeiIndex][index-2].max;
+                                        if(pmax == undefined){
+                                            pmax = '';
+                                        }
+                                        getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
+                                    }
+                                });
+
+
+                                //新增
+                                $('.toggleSortBox .toggleList .priceUl').append('<li min='+daLeiIntervalArr[daLeiIndex][i].min+' max='+daLeiIntervalArr[daLeiIndex][i].max+'>' +
+                                        ''+thisMin+thisMax+'' +
+                                        '</li>');
                             }
-                        });
+
+                            $('.toggleSortBox .toggleSort .pricesTab').unbind('click').click(function(ev){
+                                ev.stopPropagation();
+                                $('.toggleSortBox .toggleList .priceUl').slideToggle();
+                                $('.classifyBoxWrap').slideUp();//类别列表
+                                $('.toggleSortBox .toggleList .qualityUl').slideUp();//质量列表
+                                $('.toggleSortBox .toggleList .areaUl').slideUp();//地址列表
+                            });
+                            
+                            //取消冒泡
+                            $('.toggleSortBox .toggleList .priceUl').unbind('click').click(function(ev){
+                                ev.stopPropagation();
+                            });
+                            //点击price中的li
+                            $('.toggleSortBox .toggleList .priceUl li').unbind('click').click(function(ev){
+                                $('.toggleSortBox .toggleSort .tab .pricesText').html($(this).html());//修改显示文本
+                                ev.stopPropagation();
+                                pmin = $(this).attr('min');
+                                pmax = $(this).attr('max');
+                                console.log(pmin,pmax);
+                                getGoods(cid, pmin, pmax, areaid, issell, orderby, sort, startTab, hasImage, goodstatus);
+                                $('.toggleSortBox .toggleList .priceUl').hide();
+                            });
+                        }
+                    }, 100);
 
 
-
-                    }
 
 
                 }
@@ -922,15 +1279,15 @@
             //产品列表查看
             $.ajax({
                 type: "get",
-                url: baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n=30&hasImage='+hasImage +'&goodstatus='+ goodstatus,
+                url: baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n='+eachPageMaxSize+'&hasImage='+hasImage +'&goodstatus='+ goodstatus,
                 dataType:"json",
                 success: function(data){
-                    console.log("url="+baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n=30&hasImage='+hasImage +'&goodstatus='+ goodstatus);
+                    console.log("url="+baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n='+eachPageMaxSize+'&hasImage='+hasImage +'&goodstatus='+ goodstatus);
                     if (data.status == 200) {
                         totalCountTab = data.extdata;
 //                        alert(totalCountTab);
                         $('.pageControl').hide();
-                        if(totalCountTab > 30){
+                        if(totalCountTab > eachPageMaxSize){
                             $('.pageControl').show();
                         }
                         console.log("产品列表查看",data);
@@ -962,8 +1319,8 @@
 //                            console.log(data[list]);
 
                             var detailsText = data[list].details;
-                            if(detailsText.length>200){
-                                detailsText = detailsText.substring(0, 180) + '...';
+                            if(detailsText.length>22){
+                                detailsText = detailsText.substring(0, 22) + '...';
                             }
                             //aboutQuality
                             var aboutQuality = '';
@@ -1004,11 +1361,11 @@
 
 
                             str += '<div class="row goods">' +
-                                    '<div class="col-xs-3 col-sm-3 goodsLeft" style="background: url('+baseImgSrc+data[list].cimg+') no-repeat center center">' +
+                                    '<div class="col-xs-3 col-sm-3 goodsLeft" style="background: url('+baseImgSrc+data[list].cimg+') no-repeat center center;background-size:100% auto;">' +
                                     '<span class="tip">'+imgsLth+'</span>' +
                                     '</div>' +
                                     '<div class="col-xs-6 col-sm-6 goodsMiddle">' +
-                                    '<p class="goodName">'+data[list].contactname+'</p>' +
+                                    '<p class="goodName">'+data[list].title+'</p>' +
                                     '<p class="goodDesc">'+detailsText+'</p>' +
                                     '<p class="goodDesc">'+yijiName+" "+erjiName+" "+data[list].addr_l3+" "+data[list].addr_l4+' ' +
                                     '<span class="goodDate">'+data[list].pubtime+'</span>' +
@@ -1034,8 +1391,8 @@
                             var index = $(this).index();
                             var goodId = goodIdArr[index];
                             localStorage.setItem('goodIdFromCategory',goodId);
-//                            window.open("detail.html?id="+goodId);
-                            window.location.href = "detail.html?id="+goodId;
+                            window.open("detail.html?id="+goodId);
+//                            window.location.href = "detail.html?id="+goodId;
 
                         });
 
