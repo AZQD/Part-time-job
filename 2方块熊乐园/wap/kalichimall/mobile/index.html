@@ -85,6 +85,12 @@
 
 
 
+    <aside style="margin-top: 2.5rem;height: 1.5rem;">
+        <marquee style="height: 1.5rem;line-height: 1.5rem;" id="aboutmarquee"></marquee>
+    </aside>
+
+
+
 
 
     <aside class="row swiper-container">
@@ -138,6 +144,28 @@
     }
 
     $(function(){
+
+
+        //增加跑马灯
+        //getmarquee
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/getmarquee",
+            dataType:"json",
+            success: function(data){
+                if(data.status ==200){
+                    console.log('getmarquee',data);
+                    $('#aboutmarquee').html(data.data);
+                }
+
+            },
+            error:function(error){
+                console.log(error);
+            }
+        });
+
+
+
 
         //重点：点击除div之外的任意位置隐藏div
         $(document).unbind('click').click(function(){
