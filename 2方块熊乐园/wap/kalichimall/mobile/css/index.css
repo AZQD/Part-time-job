@@ -127,20 +127,48 @@ body {
   text-decoration: underline;
 }
 /*classifyBox*/
-.classifyBox {
-  display: none;
+/*
+.classifyBox{
+  //margin-top:40/@rem;
+  //display: none;
   position: fixed;
   z-index: 9999;
-  top: 2.5rem;
+  top: 40/@rem;
   background-color: #fff;
 }
-.classifyBox .eachClass {
+.classifyBox .eachClass{
   font-size: 0.875rem;
   color: #666;
+  //height: 2rem;
   line-height: 2rem;
-  border-top: 0.0625rem solid #999999;
+  border-top: 1/@rem solid #999999;
 }
-.classifyBox .eachClass .eachClassName {
+.classifyBox .eachClass .eachClassName{
   padding-left: 0.625rem;
+  text-decoration: underline;
+}*/
+.classifyBox {
+  margin-top: 2.875rem;
+  background-color: #fff;
+}
+.classifyBox .classifyLi .firstName {
+  text-align: right;
+  padding-right: 1rem;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 1rem;
+  color: #333;
+  font-weight: bold;
+}
+.classifyBox .classifyLi .secondNames {
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  color: #666;
+  border-left: 0.0625rem solid #999999;
+}
+.classifyBox .classifyLi .secondNames .secondName {
+  height: 2rem;
+  line-height: 2rem;
+  padding-right: 0.625rem;
   text-decoration: underline;
 }

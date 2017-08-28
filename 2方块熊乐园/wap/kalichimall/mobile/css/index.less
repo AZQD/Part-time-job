@@ -140,9 +140,10 @@ body{
 
 
 /*classifyBox*/
+/*
 .classifyBox{
   //margin-top:40/@rem;
-  display: none;
+  //display: none;
   position: fixed;
   z-index: 9999;
   top: 40/@rem;
@@ -157,5 +158,39 @@ body{
 }
 .classifyBox .eachClass .eachClassName{
   padding-left: 0.625rem;
+  text-decoration: underline;
+}*/
+
+
+
+.classifyBox{
+  margin-top:46/@rem;
+  //margin-bottom:126/@rem;
+  background-color: #fff;
+}
+.classifyBox .classifyLi{
+  //padding: 0 20/@rem;
+}
+
+.classifyBox .classifyLi .firstName{
+  text-align: right;
+  padding-right: 16/@rem;
+  height: 32/@rem;
+  line-height: 32/@rem;
+  font-size: 16/@rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.classifyBox .classifyLi .secondNames{
+  padding-left: 20/@rem;
+  font-size: 14/@rem;
+  color: #666;
+  border-left: 1/@rem solid #999;
+}
+.classifyBox .classifyLi .secondNames .secondName{
+  height: 32/@rem;
+  line-height: 32/@rem;
+  padding-right: 10/@rem;
   text-decoration: underline;
 }
