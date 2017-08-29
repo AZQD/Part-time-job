@@ -234,6 +234,8 @@ body {
 .messageBox .message {
   margin: 0 auto;
   padding-bottom: 0.625rem;
+  padding-left: 0.3125rem;
+  padding-right: 0.3125rem;
 }
 .messageBox .message .messageTitle {
   font-size: 1.125rem;
@@ -243,7 +245,6 @@ body {
 }
 .messageBox .message .messageTitle .gang {
   color: #FF4720;
-  padding-left: 0.3125rem;
 }
 /*infos*/
 .infos {

@@ -123,6 +123,8 @@
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 {
   font-size: 0.975rem;
   color: #1E1E1E;
+  position: relative;
+  top: 0.1875rem;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 span {
   text-decoration: underline;
@@ -196,6 +198,8 @@
 }
 .detailBox .detail .detailLeft .aboutContent {
   font-size: 1rem;
+  text-align: justify;
+  padding: 0 0.3125rem;
 }
 .detailBox .detail .detailLeft .tabToggle .tabLink {
   display: inline-block;

@@ -67,7 +67,7 @@
 
         <!--新增-->
         <!--二级菜单-->
-        <aside class="row classifyBox">
+        <aside class="row classifyBox" style="display: block;">
             <div class="classifyLi">
                 <div class="col-xs-3 col-sm-3 firstName">ALL</div>
                 <div class="col-xs-9 col-sm-9 secondNames">
@@ -240,7 +240,7 @@
                     data = JSON.parse(data.data);
                     console.log("获得产品分类", data);
 
-                    for (var i = 0; i < data.length; i++) {
+                    for (var i = 0; i < data.length-1; i++) {
                         var secondStr = '';
                         for (var j = 0; j < data[i].sub.length; j++) {
                             secondStr += '<span class="secondName" cid=' + data[i].sub[j].cid + ' cidName=' + data[i].sub[j].name + '>' + data[i].sub[j].name + '</span>';
@@ -259,6 +259,12 @@
                     $('.classifyBox .classifyLi .firstName,.classifyBox .classifyLi .secondName').unbind('click').click(function () {
                         window.localStorage.setItem('mobileCidName', $(this).attr('cidName'));
                         window.location.href = 'category.html?searchOrTab=tab&cid=' + $(this).attr('cid');
+                    });
+
+                    $('.headerBox .left .sort').unbind('click').click(function(ev){
+                        ev.stopPropagation();
+                        $('.classifyBox').slideToggle();
+                        $('.headerBox .indexMiddle .addressUl').slideUp();//地址列表
                     });
 
                 } else {
@@ -430,7 +436,17 @@
                     if (data.status == 200) {
                         data = JSON.parse(data.data);
                         console.log("gethotgoods", data);
-                        for(var i=0; i<data.length; i++){
+
+                        var needLength = data.length;
+                        if(needLength>3){
+                            if(needLength%3==1){
+                                needLength = needLength - 1;
+                            }else if(needLength%3==2){
+                                needLength = needLength - 2;
+                            }
+                        }
+
+                        for(var i=0; i<needLength; i++){
                             var price = data[i].price;
                             if(price == 0){
                                 price = 'Negotiated';
@@ -466,7 +482,17 @@
                     if (data.status == 200) {
                         data = JSON.parse(data.data);
                         console.log("recently", data);
-                        for(var i=0; i<data.length; i++){
+
+                        var needLength = data.length;
+                        if(needLength>3){
+                            if(needLength%3==1){
+                                needLength = needLength - 1;
+                            }else if(needLength%3==2){
+                                needLength = needLength - 2;
+                            }
+                        }
+
+                        for(var i=0; i<needLength; i++){
                             var price = data[i].price;
                             if(price == 0){
                                 price = 'Negotiated';
@@ -502,7 +528,17 @@
                     if (data.status == 200) {
                         data = JSON.parse(data.data);
                         console.log("nearly", data);
-                        for(var i=0; i<data.length; i++){
+
+                        var needLength = data.length;
+                        if(needLength>3){
+                            if(needLength%3==1){
+                                needLength = needLength - 1;
+                            }else if(needLength%3==2){
+                                needLength = needLength - 2;
+                            }
+                        }
+
+                        for(var i=0; i<needLength; i++){
                             var price = data[i].price;
                             if(price == 0){
                                 price = 'Negotiated';
