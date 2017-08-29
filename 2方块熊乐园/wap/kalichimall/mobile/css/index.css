@@ -54,7 +54,7 @@ body {
 }
 /*recentOrNear*/
 .recentOrNear {
-  margin-bottom: 3.75rem;
+  margin-bottom: 2.875rem;
 }
 .recentOrNear .title {
   height: 2.1875rem;
@@ -112,8 +112,8 @@ body {
   box-shadow: 0 0 1.25rem #333333;
 }
 .infos .part {
-  line-height: 2.125rem;
-  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-size: 0.8125rem;
   color: #fff;
   text-align: center;
   background-color: #FF4720;
@@ -148,7 +148,9 @@ body {
   text-decoration: underline;
 }*/
 .classifyBox {
-  margin-top: 2.875rem;
+  position: fixed;
+  z-index: 9999;
+  top: 2.5rem;
   background-color: #fff;
 }
 .classifyBox .classifyLi .firstName {
@@ -164,6 +166,8 @@ body {
   padding-left: 1.25rem;
   font-size: 0.875rem;
   color: #666;
+  min-height: 2rem;
+  line-height: 2rem;
   border-left: 0.0625rem solid #999999;
 }
 .classifyBox .classifyLi .secondNames .secondName {

@@ -1,4 +1,4 @@
-var baseUrl = "http://www.kalichimall.com";
+var baseUrl = "http://www.kalichimall.com:81";
 var baseImgSrc = baseUrl+"/gimg/";
 function getParamByUrl(paramKey){
   var url=window.location.search.substring(1);
@@ -198,6 +198,7 @@ if(token == null){
                 //index.html、detail.html:显示登录或者profile
                 $('.infos .signInUp').hide();
                 $('.infos .profile').show();
+                $('.infos .goToProfile').show();
 
                 //index.html
                 $('.infos .profile').unbind('click').click(function () {

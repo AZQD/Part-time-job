@@ -64,7 +64,7 @@
                         <span class="gang">|</span>&nbsp;<span class="">SIGN UP</span>
                     </div>
                     <div class="col-xs-12 col-sm-12 registerPhone">
-                        <img class="phoneImg" src="image/loginRegister/phoneImg.png"><input id="registerPhone" class="phoneText" type="text" placeholder="Cellphone Number"><span id="registerTip">Cellphone number is not correct.</span>
+                        <img class="phoneImg" src="image/loginRegister/phoneImg.png"><input id="registerPhone" class="phoneText" type="text" placeholder="Cellphone Number(09xxxxxxxx)"><span id="registerTip">Cellphone number is not correct.</span>
                     </div>
                     <div class="col-xs-12 col-sm-12 registerPassword">
                         <img class="passwordImg" src="image/loginRegister/passwordImg.png"><input id="registerPassword" class="passwordText" type="text" placeholder="Password">
@@ -145,7 +145,7 @@
                             window.location.href = "index.html";
                         }
                     }else{
-                        commonPopFun1("Sorry，the cellphone number or password is wrong.  Please check.", "Failed");
+                        commonPopFun1("Sorry,the cellphone number or password is wrong. Please check.", "Failed");
                     }
                 },
                 error:function(error){
@@ -180,10 +180,27 @@
         });
         //正则验证注册的手机号
         var myReg = /^((9|09)+\d{8})$/;
+        var canRegister = true;
         $('#registerPhone').on('blur', function () {
             var regText = $.trim($('#registerPhone').val());
             if(!myReg.test(regText)){
+                canRegister = false;
                 $('#registerTip').show();
+
+                $('#registerPhone').unbind('blur').bind('input propertychange', function () {
+                    var regText = $.trim($('#registerPhone').val());
+                    if(!myReg.test(regText)){
+                        canRegister = false;
+                        $('#registerTip').show();
+                    }else{
+                        canRegister = true;
+                        $('#registerTip').hide();
+                    }
+
+                });
+
+            }else{
+                canRegister = true;
             }
 
         });
@@ -255,7 +272,7 @@
                                             window.location.href = "index.html";
                                         }
                                     }else{
-                                        commonPopFun1("Sorry，the cellphone number or password is wrong.  Please check.", "Failed");
+                                        commonPopFun1("Sorry,the cellphone number or password is wrong. Please check.", "Failed");
                                     }
                                 },
                                 error:function(error){
@@ -265,14 +282,14 @@
 
 
                         }else if(data.status == 500){
-                            commonPopFun1("Sorry, this cellphone number was registered. Please use anther one.", "Failed");
+                            commonPopFun1("Sorry,this cellphone number was registered. Please use anther one.", "Failed");
                         }else{
-                            commonPopFun1("Sorry，failed to register. Please try to register later.", "Failed");
+                            commonPopFun1("Sorry,failed to register. Please try to register later.", "Failed");
                         }
                     },
                     error:function(error){
                         console.log(error);
-                        commonPopFun1("Sorry，failed to register. Please try to register later.", "Failed");
+                        commonPopFun1("Sorry,failed to register. Please try to register later.", "Failed");
                     }
                 });
             }else{

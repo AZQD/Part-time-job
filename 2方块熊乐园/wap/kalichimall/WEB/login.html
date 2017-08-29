@@ -437,7 +437,7 @@
                             window.location.href = "index.html";
                         }
                     }else{
-                        commonPopFun("Sorry，the cellphone number or password is wrong.  Please check.", "Failed");
+                        commonPopFun("Sorry,the cellphone number or password is wrong.Please check.", "Failed");
                     }
                 },
                 error:function(error){
@@ -573,7 +573,7 @@
                                             window.location.href = "index.html";
                                         }
                                     }else{
-                                        commonPopFun("Sorry，the cellphone number or password is wrong.  Please check.", "Failed");
+                                        commonPopFun("Sorry,the cellphone number or password is wrong.Please check.", "Failed");
                                     }
                                 },
                                 error:function(error){
@@ -583,14 +583,14 @@
 
 
                         }else if(data.status == 500){
-                            commonPopFun("Sorry, this cellphone number was registered. Please use anther one.", "Failed");
+                            commonPopFun("Sorry,this cellphone number was registered. Please use anther one.", "Failed");
                         }else{
-                            commonPopFun("Sorry，failed to register. Please try to register later.", "Failed");
+                            commonPopFun("Sorry,failed to register. Please try to register later.", "Failed");
                         }
                     },
                     error:function(error){
                         console.log(error);
-                        commonPopFun("Sorry，failed to register. Please try to register later.", "Failed");
+                        commonPopFun("Sorry,failed to register. Please try to register later.", "Failed");
                     }
                 });
             }else{

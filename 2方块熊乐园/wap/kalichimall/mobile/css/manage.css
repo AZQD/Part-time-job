@@ -1,6 +1,6 @@
 .infoBox .info .infoWrap .infoRight {
   position: relative;
-  margin-bottom: 4.125rem;
+  margin-bottom: 10.375rem;
 }
 .infoBox .info .infoWrap .infoRight .part1 {
   padding-top: 1.875rem;
@@ -179,6 +179,7 @@
 }
 .infoBox .info .infoWrap .infoRight .part2 .listUl {
   background-color: #F2F2F2;
+  margin-bottom: 2.5rem;
 }
 .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi {
   color: #333;
@@ -367,8 +368,9 @@
   box-shadow: 0 0 1.25rem #333333;
 }
 .infos .part {
-  line-height: 2.875rem;
-  font-size: 0.875rem;
+  padding: 0.3125rem 0;
+  line-height: 1.25rem;
+  font-size: 0.8125rem;
   color: #FF500D;
   text-align: center;
   background-color: #fff;

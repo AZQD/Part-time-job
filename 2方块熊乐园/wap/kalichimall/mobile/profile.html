@@ -162,10 +162,10 @@
 
 
     <aside class="row infos">
-        <div class="col-xs-4 col-sm-4 part publish"><span>Publish</span></div>
-        <div class="col-xs-4 col-sm-4 part signInUp" style="display: block;"><span>Sign in/Sign up</span></div>
-        <div class="col-xs-4 col-sm-4 part profile" style="display: none;"><span>My Profile</span></div>
-        <div class="col-xs-4 col-sm-4 part goToHome" style="display: block;"><span>My Home</span></div>
+        <div class="col-xs-6 col-sm-6 part publish"><span>Publish</span></div>
+        <div class="col-xs-6 col-sm-6 part signInUp" style="display: block;"><span>Sign in/Sign up</span></div>
+        <div class="col-xs-6 col-sm-6 part goToProfile" style="display: none;"><span>My Profile</span></div>
+        <!--<div class="col-xs-4 col-sm-4 part goToHome" style="display: block;"><span>My Home</span></div>-->
     </aside>
 
 </section>
@@ -184,8 +184,9 @@
             window.location.href = "login.html?goLogin="+1;
         });
         //My Profile
-        $('.infos .goToHome').unbind('click').click(function () {
-            window.location.href = "index.html";
+
+        $('.infos .goToProfile').unbind('click').click(function () {
+            window.location.href = "manage.html";
         });
 
         /*facebook发布评论*/
