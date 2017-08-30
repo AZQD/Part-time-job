@@ -271,13 +271,12 @@
   color: #999999;
 }
 .goodsBox .goods .goodsRight2 {
-  font-size: 1.0625rem;
+  font-size: 1rem;
   color: red;
 }
 .goodsBox .goods .aboutQuality {
-  font-size: 1.0625rem;
+  font-size: 1rem;
   color: red;
-  min-width: 6.25rem;
 }
 #footerIframe {
   width: 100%;
@@ -357,15 +356,15 @@
 }
 .classifyBox .classifyLi .firstName {
   text-align: right;
-  padding-right: 1rem;
+  padding-right: 0.9375rem;
   height: 2rem;
   line-height: 2rem;
-  font-size: 1rem;
+  font-size: 0.9375rem;
   color: #333;
   font-weight: bold;
 }
 .classifyBox .classifyLi .secondNames {
-  padding-left: 1.25rem;
+  padding-left: 1.125rem;
   font-size: 0.875rem;
   color: #666;
   border-left: 0.0625rem solid #999999;
