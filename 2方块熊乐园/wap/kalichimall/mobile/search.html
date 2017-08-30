@@ -27,16 +27,6 @@
     </aside>
 
     <!--二级菜单-->
-    <!--<aside class="row classifyBox">
-        &lt;!&ndash;<div class="classifyLi">
-            <div class="col-xs-4 col-sm-4 firstName">Electronic</div>
-            <div class="col-xs-8 col-sm-8 secondNames">
-                <span class="secondName">secondName</span>
-                <span class="secondName">secondName</span>
-                <span class="secondName">secondName</span>
-            </div>
-        </div>&ndash;&gt;
-    </aside>-->
     <aside class="row classifyBox">
         <!--<div class="classifyLi">
             <div class="col-xs-4 col-sm-4 firstName">Electronic</div>
@@ -47,6 +37,16 @@
             </div>
         </div>-->
     </aside>
+    <!--<aside class="row classifyBox">
+        &lt;!&ndash;<div class="classifyLi">
+            <div class="col-xs-4 col-sm-4 firstName">Electronic</div>
+            <div class="col-xs-8 col-sm-8 secondNames">
+                <span class="secondName">secondName</span>
+                <span class="secondName">secondName</span>
+                <span class="secondName">secondName</span>
+            </div>
+        </div>&ndash;&gt;
+    </aside>-->
 
     <aside class="row getBestGoods">
         <div class="col-xs-12 col-sm-12 bestGoods">
@@ -66,7 +66,7 @@
     $(function(){
 
         //新增
-        //产品分类显示
+        /*//产品分类显示
         $.ajax({
             type: "get",
             url: baseUrl+"/apigateway/categorys",
@@ -89,14 +89,14 @@
 
                     $('.classifyBox .eachClass').eq(0).children().css('color','#FF4F0D');
 
-                    /*$('.headerBox .left .sort').unbind('click').click(function(){
+                    /!*$('.headerBox .left .sort').unbind('click').click(function(){
                         $('.classifyBox').slideToggle();
                         /!*if($('.classifyBox').is(":visible")){
                          $('.swiper-container').css('marginTop',0);
                          }else{
                          $('.swiper-container').css('marginTop','2.5rem');
                          }*!/
-                    });*/
+                    });*!/
 
                     //点击事件
                     $('.classifyBox .eachClass .eachClassName').unbind('click').click(function(){
@@ -112,10 +112,10 @@
                 console.log(error);
             }
 
-        });
+        });*/
 
 
-        /*//产品分类显示
+        //产品分类显示
         $.ajax({
             type: "get",
             url: baseUrl+"/apigateway/categorys",
@@ -125,7 +125,8 @@
                     data = JSON.parse(data.data);
                     console.log("获得产品分类",data);
 
-                    for(var i=0; i<data.length; i++){
+//                    for(var i=0; i<data.length; i++){
+                    for(var i=0; i<1; i++){
                         var secondStr = '';
                         for(var j=0; j<data[i].sub.length; j++){
                             secondStr+='<span class="secondName" cid='+data[i].sub[j].cid+' cidName='+data[i].sub[j].name+'>'+data[i].sub[j].name+'</span>';
@@ -154,7 +155,7 @@
                 console.log(error);
             }
 
-        });*/
+        });
 
 
         //搜索

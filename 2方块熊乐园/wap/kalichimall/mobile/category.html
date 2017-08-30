@@ -890,116 +890,122 @@
                 success: function(data){
                     if(data.status == 200){
 
-                        console.log("搜索",data);
-                        console.log("搜索url="+baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&n='+eachPageMaxSize+'&hasImage='+hasImage +'&goodstatus='+ goodstatus);
-                        //搜索结果总数
-                        totalCountSearch = data.extdata;
-                        $('.pageControl').hide();
-                        if(totalCountSearch > eachPageMaxSize){
-                            $('.pageControl').show();
-                        }
-                        data = JSON.parse(data.data);
-                        console.log("搜索",data);
-                        var str = '';
+                        var searchTimer = setInterval(function(){
+                            if(yijidizhiIdArr.length != 0){
+                                clearInterval(searchTimer);
 
-                        var goodIdArr = [];
-                        for (var list in data) {
-                            var imgsLth = 0;
-                            var priceStr = '';
-                            var priceHtml = '';
-                            if(data[list].price == 0){
-                                priceStr = 'Negotiated';
-                                priceHtml = '<span class="goodsRight1"></span><span class="goodsRight2">'+priceStr+'</span>';
-                            }else{
-                                priceStr = data[list].price;
-                                priceHtml = '<span class="goodsRight1">ZMW</span><span class="goodsRight2">'+priceStr+'</span>';
-                            }
-                            goodIdArr.push(data[list].id);
-                            var imgs = data[list].imgs;
-                            if(imgs != null){
-                                imgs = imgs.split(',');
-                                imgsLth = imgs.length;
-                            }
-                            console.log('111111',data[list].addr_l1);
-                            console.log(imgsLth);
+                                totalCountSearch = data.extdata;
+                                console.log("搜索",data);
+                                console.log("搜索url="+baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&n='+eachPageMaxSize+'&hasImage='+hasImage +'&goodstatus='+ goodstatus);
+
+                                data = JSON.parse(data.data);
+                                console.log("搜索",data);
+                                var str = '';
+
+                                var goodIdArr = [];
+                                for (var list in data) {
+                                    var imgsLth = 0;
+                                    var priceStr = '';
+                                    var priceHtml = '';
+                                    if(data[list].price == 0){
+                                        priceStr = 'Negotiated';
+                                        priceHtml = '<span class="goodsRight1"></span><span class="goodsRight2">'+priceStr+'</span>';
+                                    }else{
+                                        priceStr = data[list].price;
+                                        priceHtml = '<span class="goodsRight1">ZMW</span><span class="goodsRight2">'+priceStr+'</span>';
+                                    }
+                                    goodIdArr.push(data[list].id);
+                                    var imgs = data[list].imgs;
+                                    if(imgs != null){
+                                        imgs = imgs.split(',');
+                                        imgsLth = imgs.length;
+                                    }
+                                    console.log('111111',data[list].addr_l1);
+                                    console.log(imgsLth);
 //                            console.log(data[list]);
 
-                            var detailsText = data[list].details;
-                            if(detailsText.length>22){
-                                detailsText = detailsText.substring(0, 22) + '...';
-                            }
+                                    var detailsText = data[list].details;
+                                    if(detailsText.length>22){
+                                        detailsText = detailsText.substring(0, 22) + '...';
+                                    }
 
-                            //aboutQuality
-                            var aboutQuality = '';
-                            if(data[list].goodstatus == 0){
-                                aboutQuality = 'Brand New';
-                            }else if(data[list].goodstatus == 1){
-                                aboutQuality = 'New';
-                            }else if(data[list].goodstatus == 2){
-                                aboutQuality = 'As New';
-                            }else if(data[list].goodstatus == 3){
-                                aboutQuality = 'A Half New';
-                            }
-
-
+                                    //aboutQuality
+                                    var aboutQuality = '';
+                                    if(data[list].goodstatus == 0){
+                                        aboutQuality = 'Brand New';
+                                    }else if(data[list].goodstatus == 1){
+                                        aboutQuality = 'New';
+                                    }else if(data[list].goodstatus == 2){
+                                        aboutQuality = 'As New';
+                                    }else if(data[list].goodstatus == 3){
+                                        aboutQuality = 'A Half New';
+                                    }
 
 
 
 
 
+                                    var thisIndex;
+                                    var yijiName,erjiName;
 
-                            var thisIndex;
-                            var yijiName,erjiName;
+                                    console.log('yijidizhiIdArr',yijidizhiIdArr);
+                                    for(var i=0; i<yijidizhiIdArr.length; i++){
+                                        if(yijidizhiIdArr[i] == data[list].addr_l1){
+                                            thisIndex = i;
+                                            yijiName = yijidizhiNameArr[i];
+                                        }
+                                    }
+                                    console.log('yijiName',yijiName);
 
-                            console.log('yijidizhiIdArr',yijidizhiIdArr);
-                            for(var i=0; i<yijidizhiIdArr.length; i++){
-                                if(yijidizhiIdArr[i] == data[list].addr_l1){
-                                    thisIndex = i;
-                                    yijiName = yijidizhiNameArr[i];
+                                    for(var k=0; k<erjidizhiArr[thisIndex].length; k++){
+                                        if(erjidizhiArr[thisIndex][k].id == data[list].addr_l2){
+                                            erjiName = erjidizhiArr[thisIndex][k].name;
+                                        }
+                                    };
+                                    console.log('erjiName',erjiName);
+                                    str += '<div class="row goods">' +
+                                            '<div class="col-xs-3 col-sm-3 goodsLeft" style="background: url('+baseImgSrc+data[list].cimg+') no-repeat center center;background-size:100% auto;">' +
+                                            '<span class="tip">'+imgsLth+'</span>' +
+                                            '</div>' +
+                                            '<div class="col-xs-6 col-sm-6 goodsMiddle">' +
+                                            '<p class="goodName">'+data[list].title+'</p>' +
+                                            '<p class="goodDesc">'+detailsText+'</p>' +
+                                            '<p class="goodDesc">'+yijiName+" "+erjiName+" "+data[list].addr_l3+" "+data[list].addr_l4+' ' +
+                                            '<span class="goodDate">'+data[list].pubtime+'</span>' +
+                                            '</p>' +
+                                            '</div>' +
+                                            '<div class="col-xs-3 col-sm-3 goodsRight">'+priceHtml+'<span class="aboutQuality">'+aboutQuality+'</span></div>' +
+                                            '</div>';
                                 }
-                            }
-                            console.log('yijiName',yijiName);
+                                $('.goodsBox').empty().append(str).show();
+                                $('#dongHua').hide();
 
-                            for(var k=0; k<erjidizhiArr[thisIndex].length; k++){
-                                if(erjidizhiArr[thisIndex][k].id == data[list].addr_l2){
-                                    erjiName = erjidizhiArr[thisIndex][k].name;
+                                //搜索结果总数
+                                if(totalCountSearch > eachPageMaxSize){
+                                    $('.pageControl').show();
                                 }
-                            };
-                            console.log('erjiName',erjiName);
-                            str += '<div class="row goods">' +
-                                    '<div class="col-xs-3 col-sm-3 goodsLeft" style="background: url('+baseImgSrc+data[list].cimg+') no-repeat center center;background-size:100% auto;">' +
-                                    '<span class="tip">'+imgsLth+'</span>' +
-                                    '</div>' +
-                                    '<div class="col-xs-6 col-sm-6 goodsMiddle">' +
-                                    '<p class="goodName">'+data[list].title+'</p>' +
-                                    '<p class="goodDesc">'+detailsText+'</p>' +
-                                    '<p class="goodDesc">'+yijiName+" "+erjiName+" "+data[list].addr_l3+" "+data[list].addr_l4+' ' +
-                                    '<span class="goodDate">'+data[list].pubtime+'</span>' +
-                                    '</p>' +
-                                    '</div>' +
-                                    '<div class="col-xs-3 col-sm-3 goodsRight">'+priceHtml+'<span class="aboutQuality">'+aboutQuality+'</span></div>' +
-                                    '</div>';
-                        }
-                        $('.goodsBox').empty().append(str).show();
-                        $('#dongHua').hide();
 
-                        console.log(str == '');
-                        if(str == ''){
-                            $('.goodsBox').empty().append('Sorry,No product found!').css({
-                                'textAlign':'center',
-                                'paddingBottom':'10px'
-                            });
-                        }
-                        console.log($('.goodsBox .goods').length);
-                        //.goodsBox .goods
-                        $('.goodsBox .goods').unbind('click').click(function () {
-                            var index = $(this).index();
-                            var goodId = goodIdArr[index];
-                            localStorage.setItem('goodIdFromCategory',goodId);
+                                console.log(str == '');
+                                if(str == ''){
+                                    $('.goodsBox').empty().append('Sorry,No product found!').css({
+                                        'textAlign':'center',
+                                        'paddingBottom':'10px'
+                                    });
+                                }
+                                console.log($('.goodsBox .goods').length);
+                                //.goodsBox .goods
+                                $('.goodsBox .goods').unbind('click').click(function () {
+                                    var index = $(this).index();
+                                    var goodId = goodIdArr[index];
+                                    localStorage.setItem('goodIdFromCategory',goodId);
 //                            window.location.href = "detail.html?id="+goodId;
-                            window.open("detail.html?id="+goodId);
+                                    window.open("detail.html?id="+goodId);
 
-                        });
+                                });
+
+                            }
+                        }, 100);
+
 
                     }else{
                         commonPopFun(data.msg, 'Failed');
@@ -1284,117 +1290,127 @@
                 success: function(data){
                     console.log("url="+baseUrl+'/apigateway/getgoods?'+'cid='+ cid +'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&start='+startTab+'&n='+eachPageMaxSize+'&hasImage='+hasImage +'&goodstatus='+ goodstatus);
                     if (data.status == 200) {
-                        totalCountTab = data.extdata;
-//                        alert(totalCountTab);
-                        $('.pageControl').hide();
-                        if(totalCountTab > eachPageMaxSize){
-                            $('.pageControl').show();
-                        }
-                        console.log("产品列表查看",data);
-                        data = JSON.parse(data.data);
-                        console.log("产品列表查看888",data);
-                        ;
-                        var str = '';
-                        var goodIdArr = [];
 
-                        for (var list in data) {
 
-                            var imgsLth = 0;
-                            var priceStr = '';
-                            var priceHtml = '';
-                            if(data[list].price == 0){
-                                priceStr = 'Negotiated';
-                                priceHtml = '<span class="goodsRight1"></span><span class="goodsRight2">'+priceStr+'</span>';
-                            }else{
-                                priceStr = data[list].price;
-                                priceHtml = '<span class="goodsRight1">ZMW</span><span class="goodsRight2">'+priceStr+'</span>';
-                            }
-                            var imgs = data[list].imgs;
-                            if(imgs != null){
-                                imgs = imgs.split(',');
-                                imgsLth = imgs.length;
-                            }
-                            console.log(imgsLth);
-                            goodIdArr.push(data[list].id);
+                        var getGoodsTimer = setInterval(function(){
+                            if(yijidizhiIdArr.length != 0){
+                                clearInterval(getGoodsTimer);
+
+                                totalCountTab = data.extdata;
+                                console.log("产品列表查看",data);
+                                data = JSON.parse(data.data);
+                                console.log("产品列表查看888",data);
+                                ;
+                                var str = '';
+                                var goodIdArr = [];
+
+                                for (var list in data) {
+
+                                    var imgsLth = 0;
+                                    var priceStr = '';
+                                    var priceHtml = '';
+                                    if(data[list].price == 0){
+                                        priceStr = 'Negotiated';
+                                        priceHtml = '<span class="goodsRight1"></span><span class="goodsRight2">'+priceStr+'</span>';
+                                    }else{
+                                        priceStr = data[list].price;
+                                        priceHtml = '<span class="goodsRight1">ZMW</span><span class="goodsRight2">'+priceStr+'</span>';
+                                    }
+                                    var imgs = data[list].imgs;
+                                    if(imgs != null){
+                                        imgs = imgs.split(',');
+                                        imgsLth = imgs.length;
+                                    }
+                                    console.log(imgsLth);
+                                    goodIdArr.push(data[list].id);
 //                            console.log(data[list]);
 
-                            var detailsText = data[list].details;
-                            if(detailsText.length>22){
-                                detailsText = detailsText.substring(0, 22) + '...';
-                            }
-                            //aboutQuality
-                            var aboutQuality = '';
-                            if(data[list].goodstatus == 0){
-                                aboutQuality = 'Brand New';
-                            }else if(data[list].goodstatus == 1){
-                                aboutQuality = 'New';
-                            }else if(data[list].goodstatus == 2){
-                                aboutQuality = 'As New';
-                            }else if(data[list].goodstatus == 3){
-                                aboutQuality = 'A Half New';
-                            }
+                                    var detailsText = data[list].details;
+                                    if(detailsText.length>22){
+                                        detailsText = detailsText.substring(0, 22) + '...';
+                                    }
+                                    //aboutQuality
+                                    var aboutQuality = '';
+                                    if(data[list].goodstatus == 0){
+                                        aboutQuality = 'Brand New';
+                                    }else if(data[list].goodstatus == 1){
+                                        aboutQuality = 'New';
+                                    }else if(data[list].goodstatus == 2){
+                                        aboutQuality = 'As New';
+                                    }else if(data[list].goodstatus == 3){
+                                        aboutQuality = 'A Half New';
+                                    }
 
 
 
-                            var thisIndex;
-                            var yijiName,erjiName;
+                                    var thisIndex;
+                                    var yijiName,erjiName;
 
-                            console.log('yijidizhiIdArr',yijidizhiIdArr);
+                                    console.log('yijidizhiIdArr',yijidizhiIdArr);
 
-                            for(var i=0; i<yijidizhiIdArr.length; i++){
-                                if(yijidizhiIdArr[i] == data[list].addr_l1){
-                                    thisIndex = i;
+                                    for(var i=0; i<yijidizhiIdArr.length; i++){
+                                        if(yijidizhiIdArr[i] == data[list].addr_l1){
+                                            thisIndex = i;
 //                                    alert(thisIndex);
-                                    yijiName = yijidizhiNameArr[i];
+                                            yijiName = yijidizhiNameArr[i];
+                                        }
+                                    }
+                                    console.log('yijiName',yijiName);
+
+                                    for(var k=0; k<erjidizhiArr[thisIndex].length; k++){
+                                        if(erjidizhiArr[thisIndex][k].id == data[list].addr_l2){
+                                            erjiName = erjidizhiArr[thisIndex][k].name;
+                                        }
+                                    };
+                                    console.log('88888888888');
+
+
+
+
+                                    str += '<div class="row goods">' +
+                                            '<div class="col-xs-3 col-sm-3 goodsLeft" style="background: url('+baseImgSrc+data[list].cimg+') no-repeat center center;background-size:100% auto;">' +
+                                            '<span class="tip">'+imgsLth+'</span>' +
+                                            '</div>' +
+                                            '<div class="col-xs-6 col-sm-6 goodsMiddle">' +
+                                            '<p class="goodName">'+data[list].title+'</p>' +
+                                            '<p class="goodDesc">'+detailsText+'</p>' +
+                                            '<p class="goodDesc">'+yijiName+" "+erjiName+" "+data[list].addr_l3+" "+data[list].addr_l4+' ' +
+                                            '<span class="goodDate">'+data[list].pubtime+'</span>' +
+                                            '</p>' +
+                                            '</div>' +
+                                            '<div class="col-xs-3 col-sm-3 goodsRight">'+priceHtml+'<span class="aboutQuality">'+aboutQuality+'</span></div>' +
+                                            '</div>';
                                 }
-                            }
-                            console.log('yijiName',yijiName);
+                                $('.goodsBox').empty().append(str).show();
+                                $('#dongHua').hide();
 
-                            for(var k=0; k<erjidizhiArr[thisIndex].length; k++){
-                                if(erjidizhiArr[thisIndex][k].id == data[list].addr_l2){
-                                    erjiName = erjidizhiArr[thisIndex][k].name;
+
+                                $('.pageControl').hide();
+                                if(totalCountTab > eachPageMaxSize){
+                                    $('.pageControl').show();
                                 }
-                            };
-                            console.log('88888888888');
 
+                                console.log(str == '');
 
-
-
-                            str += '<div class="row goods">' +
-                                    '<div class="col-xs-3 col-sm-3 goodsLeft" style="background: url('+baseImgSrc+data[list].cimg+') no-repeat center center;background-size:100% auto;">' +
-                                    '<span class="tip">'+imgsLth+'</span>' +
-                                    '</div>' +
-                                    '<div class="col-xs-6 col-sm-6 goodsMiddle">' +
-                                    '<p class="goodName">'+data[list].title+'</p>' +
-                                    '<p class="goodDesc">'+detailsText+'</p>' +
-                                    '<p class="goodDesc">'+yijiName+" "+erjiName+" "+data[list].addr_l3+" "+data[list].addr_l4+' ' +
-                                    '<span class="goodDate">'+data[list].pubtime+'</span>' +
-                                    '</p>' +
-                                    '</div>' +
-                                    '<div class="col-xs-3 col-sm-3 goodsRight">'+priceHtml+'<span class="aboutQuality">'+aboutQuality+'</span></div>' +
-                                    '</div>';
-                        }
-                        $('.goodsBox').empty().append(str).show();
-                        $('#dongHua').hide();
-
-                        console.log(str == '');
-
-                        if(str == ''){
-                            $('.goodsBox').empty().append('Sorry, No product found!').css({
-                                'textAlign':'center',
-                                'paddingBottom':'10px'
-                            });
-                        }
-                        console.log($('.goodsBox .goods').length);
-                        //.goodsBox .goods
-                        $('.goodsBox .goods').unbind('click').click(function () {
-                            var index = $(this).index();
-                            var goodId = goodIdArr[index];
-                            localStorage.setItem('goodIdFromCategory',goodId);
-                            window.open("detail.html?id="+goodId);
+                                if(str == ''){
+                                    $('.goodsBox').empty().append('Sorry, No product found!').css({
+                                        'textAlign':'center',
+                                        'paddingBottom':'10px'
+                                    });
+                                }
+                                console.log($('.goodsBox .goods').length);
+                                //.goodsBox .goods
+                                $('.goodsBox .goods').unbind('click').click(function () {
+                                    var index = $(this).index();
+                                    var goodId = goodIdArr[index];
+                                    localStorage.setItem('goodIdFromCategory',goodId);
+                                    window.open("detail.html?id="+goodId);
 //                            window.location.href = "detail.html?id="+goodId;
 
-                        });
+                                });
+
+                            }
+                        }, 100);
 
 
                     } else {

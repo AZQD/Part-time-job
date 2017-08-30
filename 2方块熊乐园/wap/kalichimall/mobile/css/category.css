@@ -288,7 +288,7 @@
 .pageControl {
   text-align: center;
   padding: 0.625rem 0;
-  margin-bottom: 2.5rem;
+  margin-bottom: 3.125rem;
 }
 .pageControl .pageBtn {
   outline: none;
@@ -328,13 +328,12 @@
   box-shadow: 0 0 1.25rem #333333;
 }
 .infos .part {
-  line-height: 1.25rem;
-  font-size: 0.8125rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  font-size: 0.875rem;
   color: #fff;
   text-align: center;
   background-color: #FF4720;
-  border-top: 0.375rem solid #ff4720;
-  border-bottom: 0.375rem solid #ff4720;
 }
 .infos .publish {
   border-right: 0.0625rem solid #ffffff;
