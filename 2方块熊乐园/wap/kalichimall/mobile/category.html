@@ -894,6 +894,7 @@
                             if(yijidizhiIdArr.length != 0){
                                 clearInterval(searchTimer);
 
+                                totalCountSearch = data.extdata;
                                 console.log("搜索",data);
                                 console.log("搜索url="+baseUrl+"/apigateway/search?key="+searchKeyWord+"&start="+startSearch+'&pmin='+ pmin +'&pmax='+ pmax +'&areaid='+ areaid +'&issell='+ issell +'&orderby='+ orderby +'&sort='+ sort +'&n='+eachPageMaxSize+'&hasImage='+hasImage +'&goodstatus='+ goodstatus);
 
@@ -980,7 +981,6 @@
                                 $('#dongHua').hide();
 
                                 //搜索结果总数
-                                totalCountSearch = data.extdata;
                                 if(totalCountSearch > eachPageMaxSize){
                                     $('.pageControl').show();
                                 }
@@ -1296,7 +1296,7 @@
                             if(yijidizhiIdArr.length != 0){
                                 clearInterval(getGoodsTimer);
 
-
+                                totalCountTab = data.extdata;
                                 console.log("产品列表查看",data);
                                 data = JSON.parse(data.data);
                                 console.log("产品列表查看888",data);
@@ -1384,8 +1384,7 @@
                                 $('.goodsBox').empty().append(str).show();
                                 $('#dongHua').hide();
 
-                                totalCountTab = data.extdata;
-//                        alert(totalCountTab);
+
                                 $('.pageControl').hide();
                                 if(totalCountTab > eachPageMaxSize){
                                     $('.pageControl').show();

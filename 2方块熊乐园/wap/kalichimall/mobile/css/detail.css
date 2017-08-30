@@ -1,6 +1,6 @@
 /*detailBox*/
 .detailBox {
-  margin-bottom: 4rem;
+  margin-bottom: 3.75rem;
 }
 .detailBox .detail {
   margin: 0 auto;
@@ -57,12 +57,13 @@
   font-size: 1.125rem;
   font-weight: bold;
   padding-left: 0.625rem;
-  padding-right: 11.625rem;
+  padding-right: 12rem;
   line-height: 1.875rem;
   min-height: 1.875rem;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  padding-top: 0.25rem;
 }
 .detailBox .detail .detailLeft .attr {
   color: #999;
@@ -70,14 +71,14 @@
   font-weight: bold;
   padding-left: 0.625rem;
   padding-bottom: 0.625rem;
-  padding-right: 11.625rem;
+  padding-right: 12rem;
   min-height: 1.875rem;
 }
 .detailBox .detail .detailLeft .attr .addressText {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
-  width: 9.375rem;
+  width: 10.3125rem;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg {
   background-color: #F9F9F9;
@@ -248,13 +249,12 @@ ul.share-buttons img {
   box-shadow: 0 0 1.25rem #333333;
 }
 .infos .part {
-  line-height: 1.25rem;
-  font-size: 0.8125rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  font-size: 0.875rem;
   color: #fff;
   text-align: center;
   background-color: #FF4720;
-  border-top: 0.375rem solid #ff4720;
-  border-bottom: 0.375rem solid #ff4720;
 }
 .infos .publish {
   border-right: 0.0625rem solid #ffffff;
