@@ -146,12 +146,18 @@ body {
   padding-left: 0.625rem;
   text-decoration: underline;
 }*/
-.classifyBox {
+.classifyBoxWrap {
   position: fixed;
-  z-index: 9999;
   top: 2.5rem;
+  left: 0;
   background-color: #fff;
+  z-index: 999;
   box-shadow: 0 0.125rem 0.375rem #999999;
+}
+.classifyBox {
+  background-color: #fff;
+  position: relative;
+  left: 0.3125rem;
 }
 .classifyBox .classifyLi .firstName {
   text-align: right;

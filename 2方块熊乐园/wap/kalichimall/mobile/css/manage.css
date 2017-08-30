@@ -1,6 +1,5 @@
 .infoBox .info .infoWrap .infoRight {
   position: relative;
-  margin-bottom: 10.375rem;
 }
 .infoBox .info .infoWrap .infoRight .part1 {
   padding-top: 1.875rem;
@@ -85,7 +84,7 @@
 }
 .infoBox .info .infoWrap .infoRight .part1 .passwordBox {
   margin-left: 0.625rem;
-  margin-top: 7.875rem;
+  margin-top: 4.125rem;
   font-size: 0.875rem;
   border-bottom: 0.0625rem dashed #666666;
 }
@@ -95,9 +94,12 @@
   font-weight: bold;
   text-decoration: underline;
 }
+.infoBox .info .infoWrap .infoRight .part1 .logoutBox {
+  margin-bottom: 4.125rem;
+}
 .infoBox .info .infoWrap .infoRight .part1 .logoutName {
   margin-left: 0.625rem;
-  margin-top: 6.625rem;
+  margin-top: 4.125rem;
   font-size: 0.875rem;
   border-bottom: 0.0625rem dashed #666666;
 }

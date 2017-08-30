@@ -119,7 +119,7 @@
 
 
                         <!--新增登出-->
-                        <div class="logoutBox" style="display: none;">
+                        <div class="row logoutBox" style="display: none;">
                             <div class="col-xs-12 col-sm-12 logoutName"><span class="logoutText">logout</span></div>
                             <div class="col-xs-12 col-sm-12 attrBox attrBoxReset"><a href="###" class="logoutLink">LOGOUT</a></div>
                         </div>
@@ -639,14 +639,14 @@
                         //.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .left
                         $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.left','click', function(){
                             var index = $(this).parents('.listLi').index();
-                            window.location.href = "detail.html?id="+goodidArr[index];
-//                            window.open("detail.html?id="+goodidArr[index]);
+//                            window.location.href = "detail.html?id="+goodidArr[index];
+                            window.open("detail.html?id="+goodidArr[index]);
                         });
                         //.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .middle
                         $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.middle','click', function(){
                             var index = $(this).parents('.listLi').index();
-                            window.location.href = "detail.html?id="+goodidArr[index];
-//                            window.open("detail.html?id="+goodidArr[index]);
+//                            window.location.href = "detail.html?id="+goodidArr[index];
+                            window.open("detail.html?id="+goodidArr[index]);
                         });
 
 

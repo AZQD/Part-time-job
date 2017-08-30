@@ -133,8 +133,8 @@
                         }
                         $('.classifyBox').append('' +
                                 '<div class="classifyLi">' +
-                                '<div class="col-xs-4 col-sm-4 firstName" cid='+data[i].cid+' cidName='+data[i].name+'>'+data[i].name+'</div>' +
-                                '<div class="col-xs-8 col-sm-8 secondNames">' +
+                                '<div class="col-xs-3 col-sm-3 firstName" cid='+data[i].cid+' cidName='+data[i].name+'>'+data[i].name+'</div>' +
+                                '<div class="col-xs-9 col-sm-9 secondNames">' +
                                 secondStr+
                                 '</div>' +
                                 '</div>');
@@ -198,7 +198,8 @@
                     }
                     $('.bestGoods .imgsBox .imgBox').unbind('click').click(function(){
                         var index = $(this).index();
-                        window.location.href = 'detail.html?id='+$(this).attr('id');
+//                        window.location.href = 'detail.html?id='+$(this).attr('id');
+                        window.open('detail.html?id='+$(this).attr('id'));
                     });
                 } else {
                     commonPopFun1(data.msg, 'Failed');

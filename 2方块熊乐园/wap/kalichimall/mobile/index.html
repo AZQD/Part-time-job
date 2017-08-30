@@ -69,17 +69,20 @@
 
     <!--新增-->
     <!--二级菜单-->
-    <aside class="row classifyBox" style="display: none;">
-        <div class="classifyLi">
-            <div class="col-xs-3 col-sm-3 firstName" cid="" cidName="ALL">ALL</div>
-            <div class="col-xs-9 col-sm-9 secondNames" style="height: 2rem;">
+    <div class="classifyBoxWrap">
+        <aside class="row classifyBox" style="display: none;">
+            <div class="classifyLi">
+                <div class="col-xs-3 col-sm-3 firstName" cid="" cidName="ALL">ALL</div>
+                <div class="col-xs-9 col-sm-9 secondNames" style="height: 2rem;">
 
+                </div>
             </div>
-        </div>
-        <!--<div class="col-xs-12 col-sm-12 eachClass">
-            <span class="eachClassName" cid="" cidName="">ALL</span>
-        </div>-->
-    </aside>
+            <!--<div class="col-xs-12 col-sm-12 eachClass">
+                <span class="eachClassName" cid="" cidName="">ALL</span>
+            </div>-->
+        </aside>
+    </div>
+
 
 
 
@@ -241,7 +244,7 @@
                     data = JSON.parse(data.data);
                     console.log("获得产品分类", data);
 
-                    for (var i = 0; i < data.length-1; i++) {
+                    for (var i = 0; i < data.length; i++) {
                         var secondStr = '';
                         for (var j = 0; j < data[i].sub.length; j++) {
                             secondStr += '<span class="secondName" cid=' + data[i].sub[j].cid + ' cidName=' + data[i].sub[j].name + '>' + data[i].sub[j].name + '</span>';

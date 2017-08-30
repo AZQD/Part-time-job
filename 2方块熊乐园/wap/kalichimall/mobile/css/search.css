@@ -73,9 +73,8 @@
 /*classifyBox*/
 .classifyBox {
   margin-bottom: 7.875rem;
-}
-.classifyBox .classifyLi {
-  padding: 0 1.25rem;
+  position: relative;
+  left: 1rem;
 }
 .classifyBox .classifyLi .firstName {
   text-align: right;

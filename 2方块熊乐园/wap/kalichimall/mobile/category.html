@@ -195,17 +195,40 @@
     <aside class="row infos">
         <div class="col-xs-6 col-sm-6 part publish"><span>Publish</span></div>
         <div class="col-xs-6 col-sm-6 part signInUp" style="display: block;"><span>Sign in/Sign up</span></div>
-        <div class="col-xs-6 col-sm-6 part profile" style="display: none;"><span>My Manage</span></div>
+        <div class="col-xs-6 col-sm-6 part profile" style="display: none;"><span>My Home</span></div>
     </aside>
 
     <!--二级菜单-->
-    <div class="classifyBoxWrap" style="display: none;">
+    <!--<div class="classifyBoxWrap" style="display: none;">
         <aside class="row classifyBox">
             <div class="col-xs-12 col-sm-12 eachClass">
                 <span class="eachClassName" cid="" cidName="ALL">ALL</span>
             </div>
         </aside>
+    </div>-->
+
+    <div class="classifyBoxWrap" style="display: none;">
+        <aside class="row classifyBox">
+
+            <div class="classifyLi">
+                <div class="col-xs-3 col-sm-3 firstName" cid="" cidName="ALL">ALL</div>
+                <div class="col-xs-9 col-sm-9 secondNames" style="height: 2rem;">
+
+                </div>
+            </div>
+        </aside>
     </div>
+
+    <!--<aside class="row classifyBox">
+        &lt;!&ndash;<div class="classifyLi">
+            <div class="col-xs-4 col-sm-4 firstName">Electronic</div>
+            <div class="col-xs-8 col-sm-8 secondNames">
+                <span class="secondName">secondName</span>
+                <span class="secondName">secondName</span>
+                <span class="secondName">secondName</span>
+            </div>
+        </div>&ndash;&gt;
+    </aside>-->
 
 </section>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
@@ -252,8 +275,60 @@
         }
 
 
-
         //产品分类显示
+        $.ajax({
+            type: "get",
+            url: baseUrl+"/apigateway/categorys",
+            dataType:"json",
+            success: function(data){
+                if(data.status == 200){
+                    data = JSON.parse(data.data);
+                    console.log("获得产品分类",data);
+
+                    for(var i=0; i<data.length; i++){
+//                    for(var i=0; i<1; i++){
+                        var secondStr = '';
+                        for(var j=0; j<data[i].sub.length; j++){
+                            secondStr+='<span class="secondName" cid='+data[i].sub[j].cid+' cidName='+data[i].sub[j].name+'>'+data[i].sub[j].name+'</span>';
+                        }
+                        $('.classifyBox').append('' +
+                                '<div class="classifyLi">' +
+                                '<div class="col-xs-3 col-sm-3 firstName" cid='+data[i].cid+' cidName='+data[i].name+'>'+data[i].name+'</div>' +
+                                '<div class="col-xs-9 col-sm-9 secondNames">' +
+                                secondStr+
+                                '</div>' +
+                                '</div>');
+                    }
+                    $('.classifyBox .classifyLi').eq(1).children().css('color','#FF4F0D');
+
+                    //点击展示二级菜单
+                    $('.headerBox .categoryMiddle').unbind('click').click(function(ev){
+                        ev.stopPropagation();
+                        $('.classifyBoxWrap').slideToggle();
+                        $('.toggleSortBox .toggleList .priceUl').slideUp();//价格列表
+                        $('.toggleSortBox .toggleList .qualityUl').slideUp();//质量列表
+                        $('.toggleSortBox .toggleList .areaUl').slideUp();//地址列表
+                    });
+
+                    //点击事件
+                    $('.classifyBox .classifyLi .firstName,.classifyBox .classifyLi .secondName').unbind('click').click(function(){
+                        window.localStorage.setItem('mobileCidName', $(this).attr('cidName'));
+                        window.location.href = 'category.html?searchOrTab=tab&cid='+$(this).attr('cid');
+                    });
+
+                }else{
+                    commonPopFun1(data.msg, 'Failed');
+                }
+            },
+            error:function(error){
+                console.log(error);
+            }
+
+        });
+
+
+
+        /*//产品分类显示
         $.ajax({
             type: "get",
             url: baseUrl+"/apigateway/categorys",
@@ -276,9 +351,9 @@
 
 //                    $('.classifyBox .eachClass').eq(1).children().css('color','#FF4F0D');
 
-                    /*$('.headerBox .left .sort').unbind('click').click(function(){
+                    /!*$('.headerBox .left .sort').unbind('click').click(function(){
                         $('.classifyBox').slideToggle();
-                    });*/
+                    });*!/
 
                     //点击事件
                     $('.classifyBox .eachClass .eachClassName').unbind('click').click(function(){
@@ -312,7 +387,7 @@
                 console.log(error);
             }
 
-        });
+        });*/
 
         //点击发布
         $('.infos .publish').unbind('click').click(function () {
