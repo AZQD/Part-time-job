@@ -147,10 +147,12 @@
 
 
     <aside class="row infos">
-        <div class="col-xs-6 col-sm-6 part publish"><span>Publish</span></div>
-        <div class="col-xs-6 col-sm-6 part signInUp" style="display: block;"><span>Sign in/Sign up</span></div>
-        <div class="col-xs-6 col-sm-6 part profile" style="display: none;"><span>My Manage</span></div>
+        <div class="col-xs-6 col-sm-6 part detailPublish"><span>Publish</span></div>
+        <div class="col-xs-6 col-sm-6 part detailSignInUp" style="display: block;"><span>Sign in/Sign up</span></div>
+        <div class="col-xs-6 col-sm-6 part detailProfile" style="display: none;"><span>My Manage</span></div>
     </aside>
+
+
 
 
 </section>
@@ -255,6 +257,7 @@
 //            url: baseUrl+"/apigateway/getgood?id="+4,
             dataType:"json",
             success: function(data){
+                console.log('获得指定产品的产品信息',data);
                 if(data.status == 200){
                     data = JSON.parse(data.data);
                     console.log("获得指定产品的产品信息",data);
@@ -354,14 +357,22 @@
                     });*/
 
 
+
+
+
+//                    alert($('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap .bigImgPic').width());
+
+
                     var imgs = data.imgs;
                     var imgsArr = imgs.split(',');
-                    console.log(imgsArr);
+
+
                     for(var i=0; i<imgsArr.length; i++){
                         $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li" style="background: url('+baseImgSrc+imgsArr[i]+') no-repeat center center;background-size:100% auto;"><img style="opacity:0;" src='+baseUrl+'/gimg/'+imgsArr[i]+'></li>');
                     }
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('visibility','inherit').attr('src', baseUrl+'/gimg/'+imgsArr[0]);
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('background','url('+baseImgSrc+imgsArr[0]+') no-repeat center center');
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('backgroundSize','100%');
                     var moveNum = 0;
                     var imgsLength = imgsArr.length;
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .leftFlag').click(function(){
@@ -381,6 +392,7 @@
                         var src = $(this).children('img').attr('src');
                         $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', $(this).children('img').attr('src'));
                         $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('background','url('+$(this).children('img').attr('src')+') no-repeat center center');
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('backgroundSize','100%');
 
                     });
 
@@ -509,7 +521,7 @@
         }
         var checkwishInfo = {
             "token":token,
-            "goodid":4,
+            "goodid":getParamByUrl('id'),
             "timestamp":timestamp
         };
         $.ajax({
@@ -534,7 +546,7 @@
 
                     }else{//如果默认未收藏
                         $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 img').attr("src", "image/detailPage/asMyWish.png");
-                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 span').html("As my wish");
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 span').html("As my favorite");
                     }
 
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3').click(function () {
@@ -545,7 +557,7 @@
                                 //删除收藏
                                 var delwishInfo = {
                                     "token":token, 			//用户登录凭证，必须登录状态
-                                    "goodid":"4",			//产品ID
+                                    "goodid":getParamByUrl('id'),			//产品ID
                                     "timestamp":timestamp
                                 };
                                 $.ajax({
@@ -560,7 +572,7 @@
                                             console.log("删除收藏",data);
                                             isCollect = false;
                                             $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 img').attr("src", "image/detailPage/asMyWish.png");
-                                            $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 span').html("As my wish");
+                                            $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3 span').html("As my favorite");
                                         }else if(data.status == 501){//token失效
                                             commonPopFun1(data.msg, 'Failed');
                                         }else{
@@ -575,7 +587,7 @@
                                 //提交收藏
                                 var putwishInfo = {
                                     "token":token, 			//用户登录凭证，必须登录状态
-                                    "goodid":"4",			//产品ID
+                                    "goodid":getParamByUrl('id'),			//产品ID
                                     "timestamp":timestamp
                                 };
                                 $.ajax({
@@ -632,12 +644,14 @@
         $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .tipOff').click(function(event){
             event.stopPropagation();
             $('#tipOffPopBox').show();
+            $('body').css('overflow', 'hidden');
         });
 
         ////新增 关闭tipOff
         $('.tipOffPopBox .tipOffBox .closeTipOff').click(function(event){
             event.stopPropagation();
             $('#tipOffPopBox').hide();
+            $('body').css('overflow', 'auto');
         });
 
         $('.tipOffPopBox .tipOffBox').click(function(event){
@@ -685,22 +699,6 @@
                 $('.tipOffPopBox .tipOffBox #detail').css('border', '1px solid red');
             }
         });
-
-
-
-        //infos
-        //点击发布
-        $('.infos .publish').unbind('click').click(function () {
-            window.location.href = "publish.html";
-        });
-        //注册/登陆
-        $('.infos .signInUp').unbind('click').click(function () {
-            window.location.href = "login.html?goLogin="+1;
-        });
-        /*//My Profile
-        $('.infos .profile').unbind('click').click(function () {
-            window.location.href = "profile.html";
-        });*/
 
 
     });

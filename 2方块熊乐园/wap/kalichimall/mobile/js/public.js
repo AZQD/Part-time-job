@@ -163,6 +163,7 @@ var timestamp=new Date().getTime();//获取时间戳
 //判断用户是否登录
 var userInfo;
 if(token == null){
+    bottomBtnControlNotLogin();
     console.log("用户未登陆（没有token）");
 
     //publish.html
@@ -181,10 +182,13 @@ if(token == null){
         data:JSON.stringify(authInfo),
         success: function(data){
             if(data.status == 200){//用户已登陆
+
                 data = JSON.parse(data.data);
                 userInfo = data;
                 console.log("用户已登陆");
                 console.log("获得用户信息",userInfo);
+
+                bottomBtnControlHasLogin(data.uid);
 
                 //显示logout按钮
                 //不显示：新增需求
@@ -195,16 +199,9 @@ if(token == null){
                 //manage.html
                 $('.infoBox .info .infoWrap .infoRight .part1 .logoutBox').show();
 
-                //index.html、detail.html:显示登录或者profile
-                $('.infos .signInUp').hide();
-                $('.infos .profile').show();
-                $('.infos .goToProfile').show();
 
-                //index.html
-                $('.infos .profile').unbind('click').click(function () {
-                    window.location.href = "profile.html?pubUid="+data.uid;//调整了
-                    //window.location.href = 'profile.html';
-                });
+
+
 
                 //manage.html:
                 $('.headerBox .manageMiddle').unbind('click').click(function(){//进入profile.html
@@ -223,6 +220,9 @@ if(token == null){
                 $('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val(data.phone);
 
             }else if(data.status == 501){//token失效
+
+                bottomBtnControlNotLogin();
+
                 console.log("用户未登陆（token过期）", data);
 
                 //publish.html
@@ -230,14 +230,98 @@ if(token == null){
                 $('.publishPopBox').css('top', $(window).scrollTop());
 
             }else {
+
+                bottomBtnControlNotLogin();
+
                 console.log("登录失败",data);
             }
         },
         error:function(error){
+
+            bottomBtnControlNotLogin();
+
             console.log(error);
         }
     });
 }
+
+
+
+//底部按钮控制（如果用户未登录）
+function bottomBtnControlNotLogin(){
+    //index.html
+    $('.infos .indexPublish').unbind('click').click(function () {
+        window.location.href = "publish.html";
+    });
+    $('.infos .indexSignInUp').unbind('click').click(function () {
+        window.location.href = "login.html?goLogin="+1;
+    });
+
+    //category.html
+    $('.infos .categoryPublish').unbind('click').click(function () {
+        window.location.href = "publish.html";
+    });
+    $('.infos .categorySignInUp').unbind('click').click(function () {
+        window.location.href = "login.html?goLogin="+1;
+    });
+
+    //detail.html
+    $('.infos .detailPublish').unbind('click').click(function () {
+        window.location.href = "publish.html";
+    });
+    $('.infos .detailSignInUp').unbind('click').click(function () {
+        window.location.href = "login.html?goLogin="+1;
+    });
+
+    //profile.html
+    $('.infos .profilePublish').unbind('click').click(function () {
+        window.location.href = "publish.html";
+    });
+    $('.infos .profileSignInUp').unbind('click').click(function () {
+        window.location.href = "login.html?goLogin="+1;
+    });
+}
+
+//底部按钮控制（如果用户已登录）
+function bottomBtnControlHasLogin(uid){
+    //index.html
+    $('.infos .indexPublish').unbind('click').click(function () {
+        window.location.href = "publish.html";
+    });
+    $('.infos .indexSignInUp').hide();
+    $('.infos .indexProfile').show().unbind('click').click(function () {
+        window.location.href = "profile.html?pubUid="+uid;
+    });
+
+    //category.html
+    $('.infos .categoryPublish').unbind('click').click(function () {
+        window.location.href = "publish.html";
+    });
+    $('.infos .categorySignInUp').hide();
+    $('.infos .categoryProfile').show().unbind('click').click(function () {
+        window.location.href = "profile.html?pubUid="+uid;
+    });
+
+    //detail.html
+    $('.infos .detailPublish').unbind('click').click(function () {
+        window.location.href = "publish.html";
+    });
+    $('.infos .detailSignInUp').hide();
+    $('.infos .detailProfile').show().unbind('click').click(function () {
+        window.location.href = "profile.html?pubUid="+uid;
+    });
+
+    //profile.html
+    $('.infos .profilePublish').unbind('click').click(function () {
+        window.location.href = "publish.html";
+    });
+    $('.infos .profileSignInUp').hide();
+    $('.infos .profileManage').show().unbind('click').click(function () {
+        window.location.href = "manage.html";
+    });
+}
+
+
 
 //头部logo
 $('.headerBox .left .logo').unbind('click').click(function(){

@@ -122,9 +122,9 @@
     </aside>
 
     <aside class="row infos">
-        <div class="col-xs-6 col-sm-6 part publish"><span>Publish</span></div>
-        <div class="col-xs-6 col-sm-6 part signInUp" style="display: block;"><span>Sign in/Sign up</span></div>
-        <div class="col-xs-6 col-sm-6 part profile" style="display: none;"><span>My Home</span></div>
+        <div class="col-xs-6 col-sm-6 part indexPublish"><span>Publish</span></div>
+        <div class="col-xs-6 col-sm-6 part indexSignInUp" style="display: block;"><span>Sign in/Sign up</span></div>
+        <div class="col-xs-6 col-sm-6 part indexProfile" style="display: none;"><span>My Home</span></div>
     </aside>
 </section>
 <script type="text/javascript" src="js/addtohomescreen.js"></script>
@@ -452,6 +452,7 @@
                             }
                         }
 
+                        $('.recentOrNear .getList').empty();
                         for(var i=0; i<needLength; i++){
                             var price = data[i].price;
                             if(price == 0){
@@ -488,6 +489,7 @@
                     if (data.status == 200) {
                         data = JSON.parse(data.data);
                         console.log("recently", data);
+                        console.log("recently", data.length);
 
                         var needLength = data.length;
                         if(needLength>3){
@@ -498,6 +500,7 @@
                             }
                         }
 
+                        $('.recentOrNear .getList').empty();
                         for(var i=0; i<needLength; i++){
                             var price = data[i].price;
                             if(price == 0){
@@ -543,7 +546,7 @@
                                 needLength = needLength - 2;
                             }
                         }
-
+                        $('.recentOrNear .getList').empty();
                         for(var i=0; i<needLength; i++){
                             var price = data[i].price;
                             if(price == 0){
@@ -572,7 +575,7 @@
 
         //recentOrNear切换
         $('.recentOrNear .title').unbind('click').click(function(){
-            $('.recentOrNear .getList').empty();
+//            $('.recentOrNear .getList').empty();
             var index = $(this).index();
             $('.recentOrNear .title').removeClass('active').eq(index).addClass('active');
             if(index == 0){
@@ -583,19 +586,6 @@
                 nearFun();
             }
         });
-
-        //点击发布
-        $('.infos .publish').unbind('click').click(function () {
-            window.location.href = "publish.html";
-        });
-        //注册/登陆
-        $('.infos .signInUp').unbind('click').click(function () {
-            window.location.href = "login.html?goLogin="+1;
-        });
-        /*//My Profile
-        $('.infos .profile').unbind('click').click(function () {
-            window.location.href = "profile.html";
-        });*/
     });
 </script>
 </body>

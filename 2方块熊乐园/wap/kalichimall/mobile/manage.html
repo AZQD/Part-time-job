@@ -169,9 +169,8 @@
     </aside>
 
     <aside class="row infos">
-        <div class="col-xs-4 col-sm-4 part tabs profiles active"><span>My Profile</span></div>
-        <div class="col-xs-4 col-sm-4 part tabs product"><span>Products</span></div>
-        <!--<div class="col-xs-4 col-sm-4 part tabs message"><span>Messages</span></div>-->
+        <div class="col-xs-4 col-sm-4 part tabs active"><span>My Profile</span></div>
+        <div class="col-xs-4 col-sm-4 part tabs"><span>Products</span></div>
         <div class="col-xs-4 col-sm-4 part myHome"><span>My Home</span></div>
     </aside>
 
@@ -225,6 +224,12 @@
                 $('body').css('overflow', 'auto');
             });
         }*/
+
+        if(getCookie('showSecondPart') == 1){
+            $('.infos .tabs').removeClass('active').eq(1).addClass('active');
+            $('.infoBox .info .infoWrap .infoRight .part').hide().eq(1).show();
+            delCookie('showSecondPart');
+        }
 
 
 
@@ -571,7 +576,11 @@
                                 aboutPublish();
                             }else if(statusArr[index] == 0){
                                 needStatus = 1;
-                                commonPopFun2('Are you sure to offline this message?', 'Kalichimall',aboutPublish );
+                                commonPopFun2('Are you sure to offline this message?', 'Kalichimall', 'YES', 'No', aboutPublish ,fun2);
+                            }
+
+                            function fun2(){
+
                             }
 
                             //更新发布状态
@@ -583,6 +592,7 @@
                                     success: function(data){
                                         if(data.status ==200){
                                             console.log('更新发布状态',data);
+                                            setCookie('showSecondPart', 1, 1);//刷新页面之后显示第二部分内容
                                             window.location.reload();
                                         }else{
                                             commonPopFun1(data.data, 'Failed');
@@ -601,8 +611,12 @@
                             console.log(goodidArr);
                             var index = $(this).parents('.listLi').index();
 
-                            commonPopFun2('This message will not be edited later; are you sure to set it to be finished?','Kalichimall', finishedFun);
+                            commonPopFun2('This message will not be edited later; are you sure to set it to be finished?','Kalichimall', 'YES', 'No', finishedFun, fun2);
 
+
+                            function fun2(){
+
+                            }
 
                             //更新发布状态
                             function finishedFun(){
@@ -613,6 +627,7 @@
                                     success: function(data){
                                         if(data.status ==200){
                                             console.log('更新发布状态',data);
+                                            setCookie('showSecondPart', 1, 1);//刷新页面之后显示第二部分内容
                                             window.location.reload();
                                         }else{
                                             commonPopFun1(data.data, 'Failed');

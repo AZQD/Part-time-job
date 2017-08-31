@@ -162,9 +162,9 @@
 
 
     <aside class="row infos">
-        <div class="col-xs-6 col-sm-6 part publish"><span>Publish</span></div>
-        <div class="col-xs-6 col-sm-6 part signInUp" style="display: block;"><span>Sign in/Sign up</span></div>
-        <div class="col-xs-6 col-sm-6 part goToProfile" style="display: none;"><span>My Profile</span></div>
+        <div class="col-xs-6 col-sm-6 part profilePublish"><span>Publish</span></div>
+        <div class="col-xs-6 col-sm-6 part profileSignInUp" style="display: block;"><span>Sign in/Sign up</span></div>
+        <div class="col-xs-6 col-sm-6 part profileManage" style="display: none;"><span>My Profile</span></div>
         <!--<div class="col-xs-4 col-sm-4 part goToHome" style="display: block;"><span>My Home</span></div>-->
     </aside>
 
@@ -175,19 +175,6 @@
 <script type="text/javascript">
     $(function(){
 
-        //点击发布
-        $('.infos .publish').unbind('click').click(function () {
-            window.location.href = "publish.html";
-        });
-        //注册/登陆
-        $('.infos .signInUp').unbind('click').click(function () {
-            window.location.href = "login.html?goLogin="+1;
-        });
-        //My Profile
-
-        $('.infos .goToProfile').unbind('click').click(function () {
-            window.location.href = "manage.html";
-        });
 
         /*facebook发布评论*/
         $('#fackbookNeedId').attr('data-href', "http://www.kalichimall.com:81/profile.html"+window.location.search);

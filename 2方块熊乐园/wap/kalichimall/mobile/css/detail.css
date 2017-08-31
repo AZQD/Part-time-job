@@ -256,7 +256,7 @@ ul.share-buttons img {
   text-align: center;
   background-color: #FF4720;
 }
-.infos .publish {
+.infos .detailPublish {
   border-right: 0.0625rem solid #ffffff;
 }
 .infos .part span {
@@ -332,4 +332,11 @@ ul.share-buttons img {
   background-color: #FF4720;
   color: #fff;
   font-size: 0.8125rem;
+}
+#bigImgSize {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: -999;
+  opacity: 0;
 }

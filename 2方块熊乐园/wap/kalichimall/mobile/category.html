@@ -193,9 +193,9 @@
     </aside>
 
     <aside class="row infos">
-        <div class="col-xs-6 col-sm-6 part publish"><span>Publish</span></div>
-        <div class="col-xs-6 col-sm-6 part signInUp" style="display: block;"><span>Sign in/Sign up</span></div>
-        <div class="col-xs-6 col-sm-6 part profile" style="display: none;"><span>My Home</span></div>
+        <div class="col-xs-6 col-sm-6 part categoryPublish"><span>Publish</span></div>
+        <div class="col-xs-6 col-sm-6 part categorySignInUp" style="display: block;"><span>Sign in/Sign up</span></div>
+        <div class="col-xs-6 col-sm-6 part categoryProfile" style="display: none;"><span>My Home</span></div>
     </aside>
 
     <!--二级菜单-->
@@ -389,18 +389,7 @@
 
         });*/
 
-        //点击发布
-        $('.infos .publish').unbind('click').click(function () {
-            window.location.href = "publish.html";
-        });
-        //注册/登陆
-        $('.infos .signInUp').unbind('click').click(function () {
-            window.location.href = "login.html?goLogin="+1;
-        });
-        /*//My Profile
-         $('.infos .profile').unbind('click').click(function () {
-         window.location.href = "profile.html";
-         });*/
+
 
         //头部显示地址列表
         var areaId = localStorage.getItem("areaId");
@@ -1046,7 +1035,7 @@
                                             '<p class="goodName">'+data[list].title+'</p>' +
                                             '<p class="goodDesc">'+detailsText+'</p>' +
                                             '<p class="goodDesc">'+yijiName+" "+erjiName+" "+data[list].addr_l3+" "+data[list].addr_l4+' ' +
-                                            '<span class="goodDate">'+data[list].pubtime+'</span>' +
+                                            '<div class="goodDate">'+data[list].pubtime+'</div>' +
                                             '</p>' +
                                             '</div>' +
                                             '<div class="col-xs-3 col-sm-3 goodsRight">'+priceHtml+'<span class="aboutQuality">'+aboutQuality+'</span></div>' +
@@ -1057,6 +1046,7 @@
 
                                 //搜索结果总数
                                 if(totalCountSearch > eachPageMaxSize){
+                                    $('.goodsBox').css('marginBottom', '0.5rem');
                                     $('.pageControl').show();
                                 }
 
@@ -1450,7 +1440,7 @@
                                             '<p class="goodName">'+data[list].title+'</p>' +
                                             '<p class="goodDesc">'+detailsText+'</p>' +
                                             '<p class="goodDesc">'+yijiName+" "+erjiName+" "+data[list].addr_l3+" "+data[list].addr_l4+' ' +
-                                            '<span class="goodDate">'+data[list].pubtime+'</span>' +
+                                            '<div class="goodDate">'+data[list].pubtime+'</div>' +
                                             '</p>' +
                                             '</div>' +
                                             '<div class="col-xs-3 col-sm-3 goodsRight">'+priceHtml+'<span class="aboutQuality">'+aboutQuality+'</span></div>' +
@@ -1462,6 +1452,7 @@
 
                                 $('.pageControl').hide();
                                 if(totalCountTab > eachPageMaxSize){
+                                    $('.goodsBox').css('marginBottom', '0.5rem');
                                     $('.pageControl').show();
                                 }
 

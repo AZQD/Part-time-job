@@ -206,7 +206,7 @@
 }
 /*goodsBox*/
 .goodsBox {
-  margin-bottom: 0.5rem;
+  margin-bottom: 3.75rem;
 }
 .goodsBox .goods {
   cursor: pointer;
@@ -255,7 +255,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
 .goodsBox .goods .goodsMiddle .goodDate {
@@ -334,7 +334,7 @@
   text-align: center;
   background-color: #FF4720;
 }
-.infos .publish {
+.infos .categoryPublish {
   border-right: 0.0625rem solid #ffffff;
 }
 .infos .part span {

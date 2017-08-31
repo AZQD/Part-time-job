@@ -772,6 +772,12 @@
         }
 
 
+        if(getCookie('showSecondPart') == 1){
+            $('.infoBox .info .infoWrap .infoLeft .infoLeftTitle').children("a").removeClass("active").eq(1).addClass('active');
+            $('.infoBox .info .infoWrap .infoRight .part').hide().eq(1).show();
+            delCookie('showSecondPart');
+        }
+
 
         //点击图片logo跳转到index页面；
         $('.searchBox .search .searchLeft .logo').click(function () {
@@ -1116,6 +1122,7 @@
                                     success: function(data){
                                         if(data.status ==200){
                                             console.log('更新发布状态',data);
+                                            setCookie('showSecondPart', 1, 1);//刷新页面之后显示第二部分内容
                                             window.location.reload();
                                         }else{
                                             commonPopFun(data.data, 'Failed');
@@ -1146,6 +1153,7 @@
                                  success: function(data){
                                      if(data.status ==200){
                                          console.log('更新发布状态',data);
+                                         setCookie('showSecondPart', 1, 1);//刷新页面之后显示第二部分内容
                                          window.location.reload();
                                      }else{
                                          commonPopFun(data.data, 'Failed');
