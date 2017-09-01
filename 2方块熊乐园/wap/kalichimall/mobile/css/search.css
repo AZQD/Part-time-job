@@ -18,7 +18,7 @@
   outline: none;
   text-indent: 0.625rem;
   letter-spacing: 0;
-  border: 0.0625rem solid #ff4720;
+  border: 1px solid #FF4720;
 }
 .searchBox .search .searchBtn {
   width: 4.375rem;
@@ -89,7 +89,7 @@
   padding-left: 1.25rem;
   font-size: 0.875rem;
   color: #666;
-  border-left: 0.0625rem solid #999999;
+  border-left: 1px solid #999;
 }
 .classifyBox .classifyLi .secondNames .secondName {
   height: 2rem;
@@ -107,8 +107,8 @@
   color: #666;
   //height: 2rem;
   line-height: 2rem;
-  border-top: 1/@rem solid #999999;
-  border-bottom: 1/@rem solid #999999;
+  border-top: 1px solid #999999;
+  border-bottom: 1px solid #999999;
 }
 .classifyBox .eachClass .eachClassName{
   padding-left: 0.625rem;

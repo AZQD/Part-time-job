@@ -40,7 +40,7 @@
   padding-top: 1.25rem;
 }
 .sortBox .sort .partInner1 .partInner1Left {
-  border-right: 0.0625rem solid #999999;
+  border-right: 1px solid #999;
   font-size: 1.5rem;
   font-weight: bold;
   text-align: right;
@@ -107,7 +107,7 @@
   line-height: 2.1875rem;
   margin-right: 0.625rem;
   font-size: 0.8125rem;
-  border: 0.0625rem solid #999999;
+  border: 1px solid #999;
 }
 .sortBox .sort .partInner2 .partInner2Box .right .titleText {
   width: 98%;
@@ -115,7 +115,7 @@
   line-height: 2.1875rem;
   margin-right: 0.625rem;
   font-size: 0.8125rem;
-  border: 0.0625rem solid #999999;
+  border: 1px solid #999;
 }
 .sortBox .sort .partInner2 .partInner2Box .right .location {
   height: 2.1875rem;
@@ -129,13 +129,13 @@
   height: 2.1875rem;
   line-height: 2.1875rem;
   font-size: 0.8125rem;
-  border: 0.0625rem solid #999999;
+  border: 1px solid #999;
 }
 .sortBox .sort .partInner2 .partInner2Box .right .detailText {
   width: 98%;
   height: 8.3125rem;
   font-size: 0.8125rem;
-  border: 0.0625rem solid #999999;
+  border: 1px solid #999;
   onresize: none;
   outline: none;
 }
@@ -152,7 +152,7 @@
 }
 /*新增*/
 .sortBox .sort .partInner2 .partInner2Box .right .imagesBox .nowHaveImg {
-  border: 0.0625rem solid #999999;
+  border: 1px solid #999;
   float: left;
   margin-right: 0.375rem;
   width: 9.0625rem;
@@ -182,7 +182,7 @@
   line-height: 2.1875rem;
   font-size: 0.8125rem;
   margin-right: 0.625rem;
-  border: 0.0625rem solid #999999;
+  border: 1px solid #999;
 }
 .sortBox .sort .partInner2 .partInner2Box .right .contactText:last-child {
   margin-right: 0;
@@ -235,7 +235,7 @@
 }
 /*a  upload */
 .a-upload {
-  border: 0.0625rem solid #999999;
+  border: 1px solid #999;
   float: left;
   margin-right: 0.375rem;
   width: 9.0625rem;

@@ -43,7 +43,7 @@ body {
 .searchBox .search .searchLeft .part2 .sort {
   font-size: 0.875rem;
   color: #FF4720;
-  border-top: 0.0625rem solid #ff4720;
+  border-top: 1px solid #FF4720;
 }
 /*publishBox*/
 .publishBox .publish {
@@ -56,7 +56,7 @@ body {
   resize: none;
   outline: none;
   padding: 0.3125rem;
-  border: 0.0625rem solid #999999;
+  border: 1px solid #999;
 }
 .publishBox .publish .publishBtnBox {
   text-align: right;
@@ -108,7 +108,7 @@ body {
 .sellingBox .selling .sellingList .sellingLink .goodImg {
   width: 4.8125rem;
   height: 4.8125rem;
-  border: 0.0625rem solid #ff4720;
+  border: 1px solid #FF4720;
 }
 .sellingBox .selling .sellingList .sellingLink .desc {
   display: none;
@@ -184,7 +184,7 @@ body {
 .likeBox .like .likeList .likeLink .goodImg {
   width: 4.8125rem;
   height: 4.8125rem;
-  border: 0.0625rem solid #ff4720;
+  border: 1px solid #FF4720;
 }
 .likeBox .like .likeList .likeLink .desc {
   display: none;
@@ -263,10 +263,10 @@ body {
   background-color: #FF4720;
 }
 .infos .profilePublish {
-  border-right: 0.0625rem solid #ffffff;
+  border-right: 1px solid #fff;
 }
 .infos .goToHome {
-  border-left: 0.0625rem solid #ffffff;
+  border-left: 1px solid #fff;
 }
 .infos .part span {
   text-decoration: underline;

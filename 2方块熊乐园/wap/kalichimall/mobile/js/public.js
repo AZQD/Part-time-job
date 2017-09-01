@@ -1,5 +1,6 @@
 var baseUrl = "http://www.kalichimall.com:81";
 var baseImgSrc = baseUrl+"/gimg/";
+
 function getParamByUrl(paramKey){
   var url=window.location.search.substring(1);
   var arr=url.split("&");
@@ -323,14 +324,6 @@ function bottomBtnControlHasLogin(uid){
 
 
 
-//头部logo
-$('.headerBox .left .logo').unbind('click').click(function(){
-    window.location.href = 'index.html';
-});
-//头部搜索按钮
-$('.headerBox .right .search').unbind('click').click(function(){
-   window.location.href = 'search.html';
-});
 
 
 
@@ -375,3 +368,22 @@ $.ajax({
         console.log(error);
     }
 });
+
+//5-20的随机数
+var mathRandomArr = [];
+var mathRandomResult = 1;
+for(var i=0; i<5; i++){
+    mathRandomArr[i] = Math.floor(Math.random()*15+5);
+    for(var j=0; j<i; j++){
+        //遍历i之前的所有项，进行对比
+        if(mathRandomArr[i] == mathRandomArr[j]){
+            i--;
+        }
+    }
+}
+for(var i=0; i<mathRandomArr.length; i++){
+    mathRandomResult*=mathRandomArr[i];
+}
+console.log(mathRandomResult);
+
+

@@ -36,7 +36,7 @@
   height: 2.625rem;
   line-height: 2.625rem;
   outline: none;
-  border: 0.0625rem solid #dddddd;
+  border: 1px solid #ddd;
   text-indent: 0.3125rem;
 }
 .loginRegisterBox .loginRegister .loginPassword {
@@ -52,7 +52,7 @@
   height: 2.625rem;
   line-height: 2.625rem;
   outline: none;
-  border: 0.0625rem solid #dddddd;
+  border: 1px solid #ddd;
   text-indent: 0.3125rem;
 }
 .loginRegisterBox .loginRegister .loginBtn {
@@ -105,7 +105,7 @@
   height: 2.625rem;
   line-height: 2.625rem;
   outline: none;
-  border: 0.0625rem solid #dddddd;
+  border: 1px solid #ddd;
   text-indent: 0.3125rem;
 }
 .loginRegisterBox .loginRegister .registerPassword {
@@ -121,7 +121,7 @@
   height: 2.625rem;
   line-height: 2.625rem;
   outline: none;
-  border: 0.0625rem solid #dddddd;
+  border: 1px solid #ddd;
   text-indent: 0.3125rem;
 }
 .loginRegisterBox .loginRegister .registerDrag {

@@ -109,6 +109,7 @@ $(function(){
                 console.log("获得区域信息", data);
                 var areaIdArr = [];
                 var areaNameArr = [];
+                //var changeLiStr = '<li class="changeLi"><a href="#" class="changeLiLink">ALL</a></li>';
                 var changeLiStr = '';
 
                 for (var areas in data) {
@@ -240,7 +241,7 @@ $(function(){
                 });
                 $('.headerBox .header .changeUl .changeLi').click(function () {
                     var index = $(this).index();
-                    index = index-1;
+                    //index = index - 1;
                     localStorage.setItem('areaId',areaIdArr[index].toString());
                     localStorage.setItem('areaName',areaNameArr[index]);
 

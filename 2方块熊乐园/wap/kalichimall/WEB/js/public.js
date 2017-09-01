@@ -254,6 +254,22 @@ $.ajax({
     }
 });
 
+//5-20的随机数
+var mathRandomArr = [];
+var mathRandomResult = 1;
+for(var i=0; i<5; i++){
+    mathRandomArr[i] = Math.floor(Math.random()*15+5);
+    for(var j=0; j<i; j++){
+        //遍历i之前的所有项，进行对比
+        if(mathRandomArr[i] == mathRandomArr[j]){
+            i--;
+        }
+    }
+}
+for(var i=0; i<mathRandomArr.length; i++){
+    mathRandomResult*=mathRandomArr[i];
+}
+console.log(mathRandomResult);
 
 
 

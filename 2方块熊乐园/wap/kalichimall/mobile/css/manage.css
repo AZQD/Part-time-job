@@ -41,7 +41,7 @@
   width: 9.875rem;
   font-size: 0.8125rem;
   color: #999999;
-  border: 0.0625rem solid #666666;
+  border: 1px solid #666;
 }
 .infoBox .info .infoWrap .infoRight .part1 .attrBox .gender {
   margin-left: 2rem;
@@ -86,7 +86,7 @@
   margin-left: 0.625rem;
   margin-top: 4.125rem;
   font-size: 0.875rem;
-  border-bottom: 0.0625rem dashed #666666;
+  border-bottom: 1px dashed #666;
 }
 .infoBox .info .infoWrap .infoRight .part1 .passwordBox .password {
   line-height: 1.25rem;
@@ -101,7 +101,7 @@
   margin-left: 0.625rem;
   margin-top: 4.125rem;
   font-size: 0.875rem;
-  border-bottom: 0.0625rem dashed #666666;
+  border-bottom: 1px dashed #666;
 }
 .infoBox .info .infoWrap .infoRight .part1 .logoutName .logoutText {
   line-height: 1.25rem;
@@ -163,7 +163,7 @@
   width: 3.75rem;
   outline: none;
   border: none;
-  border-bottom: 0.0625rem solid #cccccc;
+  border-bottom: 1px solid #ccc;
   margin-left: 0.5rem;
 }
 .infoBox .info .infoWrap .infoRight .part2 .form #search::-webkit-input-placeholder {
@@ -188,7 +188,7 @@
   font-size: 0.875rem;
   font-weight: bold;
   padding: 0.375rem;
-  border-bottom: 0.0625rem solid #797979;
+  border-bottom: 1px solid #797979;
 }
 .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .left {
   text-align: center;
@@ -318,7 +318,7 @@
 .managePopBox .managePop .imgBox {
   background-color: #F9F9F9;
   margin: 0 auto;
-  border: 0.0625rem solid #e9eaec;
+  border: 1px solid #E9EAEC;
   margin-top: 0.5rem;
   display: table-cell;
   vertical-align: middle;
@@ -376,7 +376,7 @@
   color: #FF500D;
   text-align: center;
   background-color: #fff;
-  border-right: 0.0625rem solid #cccccc;
+  border-right: 1px solid #ccc;
 }
 .infos .part:last-child {
   border-right: none;

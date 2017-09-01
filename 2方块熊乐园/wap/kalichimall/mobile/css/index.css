@@ -26,7 +26,7 @@ body {
   height: 1.375rem;
   position: relative;
   margin-bottom: 0.625rem;
-  border-bottom: 0.0625rem solid #333333;
+  border-bottom: 1px solid #333;
 }
 .bestGoods .bestGoodsTitle span {
   position: absolute;
@@ -84,7 +84,7 @@ body {
 .recentOrNear .getList .getLi img {
   width: 100%;
   height: 4.875rem;
-  border: 0.0625rem solid #ff4720;
+  border: 1px solid #FF4720;
 }
 .recentOrNear .getList .getLi .price {
   position: absolute;
@@ -120,7 +120,7 @@ body {
   background-color: #FF4720;
 }
 .infos .indexPublish {
-  border-right: 0.0625rem solid #ffffff;
+  border-right: 1px solid #fff;
 }
 .infos .part span {
   text-decoration: underline;
@@ -140,7 +140,7 @@ body {
   color: #666;
   //height: 2rem;
   line-height: 2rem;
-  border-top: 1/@rem solid #999999;
+  border-top: 1px solid #999999;
 }
 .classifyBox .eachClass .eachClassName{
   padding-left: 0.625rem;
@@ -164,7 +164,7 @@ body {
   padding-right: 0.9375rem;
   height: 2rem;
   line-height: 2rem;
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   color: #333;
   font-weight: bold;
 }
@@ -173,7 +173,7 @@ body {
   font-size: 0.875rem;
   color: #666;
   line-height: 2rem;
-  border-left: 0.0625rem solid #999999;
+  border-left: 1px solid #999;
 }
 .classifyBox .classifyLi .secondNames .secondName {
   height: 2rem;
