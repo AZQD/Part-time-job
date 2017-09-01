@@ -12,8 +12,8 @@
 }
 .searchBox .search .ipt {
   width: 13.125rem;
-  height: 2.1875rem;
-  line-height: 2.1875rem;
+  height: 2.125rem;
+  line-height: 2.25rem;
   font-size: 0.8125rem;
   outline: none;
   text-indent: 0.625rem;
@@ -22,8 +22,8 @@
 }
 .searchBox .search .searchBtn {
   width: 4.375rem;
-  height: 2.1875rem;
-  line-height: 2.1875rem;
+  height: 2.25rem;
+  line-height: 2.25rem;
   color: #fff;
   font-size: 0.8125rem;
   border: none;

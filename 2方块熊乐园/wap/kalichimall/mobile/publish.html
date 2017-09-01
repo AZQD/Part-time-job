@@ -194,7 +194,12 @@
         var totalImgIdAll = '';
         var updateOldImgArr = [];
         var updateNewImgArr = [];
+        var uploadSuccess1 = true;
+        var uploadSuccess2 = true;
+        var uploadSuccess3 = true;
+        var uploadSuccess4 = true;
         $(".a-upload1").on("change","input[type='file']",function(){
+            uploadSuccess1 = false;
             $(".a-upload2").show();
             $('.uploadLogo1').hide();
             var filePath=$(this).val();
@@ -217,9 +222,10 @@
                     data: fd,
                     success: function(imgData) {
                         if(imgData.status == 200) {
+                            uploadSuccess1 = true;
                             var extdata1 = imgData.extdata;
                             $('.a-upload .closeImg1').show().unbind('click').click(function(){
-
+                                uploadSuccess1 = true;
                                 $.ajax({
                                     type: "get",
                                     url: baseUrl+"/apigateway/dimg?id="+extdata1,
@@ -253,6 +259,7 @@
 
 
                             $(".a-upload2").on("change","input[type='file']",function(){
+                                uploadSuccess2 = false;
                                 $(".a-upload3").show();
                                 $('.uploadLogo2').hide();
                                 var filePath=$(this).val();
@@ -275,9 +282,10 @@
                                         data: fd,
                                         success: function(imgData) {
                                             if(imgData.status == 200) {
+                                                uploadSuccess2 = true;
                                                 var extdata2 = imgData.extdata;
                                                 $('.a-upload .closeImg2').show().unbind('click').click(function(){
-
+                                                    uploadSuccess2 = true;
                                                     $.ajax({
                                                         type: "get",
                                                         url: baseUrl+"/apigateway/dimg?id="+extdata2,
@@ -314,6 +322,7 @@
 
 
                                                 $(".a-upload3").on("change","input[type='file']",function(){
+                                                    uploadSuccess3 = false;
                                                     $(".a-upload4").show();
                                                     $('.uploadLogo3').hide();
                                                     var filePath=$(this).val();
@@ -336,10 +345,10 @@
                                                             data: fd,
                                                             success: function(imgData) {
                                                                 if(imgData.status == 200) {
-
+                                                                    uploadSuccess3 = true;
                                                                     var extdata3 = imgData.extdata;
                                                                     $('.a-upload .closeImg3').show().unbind('click').click(function(){
-
+                                                                        uploadSuccess3 = true;
                                                                         $.ajax({
                                                                             type: "get",
                                                                             url: baseUrl+"/apigateway/dimg?id="+extdata3,
@@ -376,6 +385,7 @@
 
 
                                                                     $(".a-upload4").on("change","input[type='file']",function(){
+                                                                        uploadSuccess4 = false;
                                                                         $('.uploadLogo4').hide();
                                                                         var filePath=$(this).val();
                                                                         if(filePath.indexOf("jpg")!=-1 || filePath.indexOf("png")!=-1){
@@ -397,10 +407,10 @@
                                                                                 data: fd,
                                                                                 success: function(imgData) {
                                                                                     if(imgData.status == 200) {
-
+                                                                                        uploadSuccess4 = true;
                                                                                         var extdata4 = imgData.extdata;
                                                                                         $('.a-upload .closeImg4').show().unbind('click').click(function(){
-
+                                                                                            uploadSuccess4 = true;
                                                                                             $.ajax({
                                                                                                 type: "get",
                                                                                                 url: baseUrl+"/apigateway/dimg?id="+extdata4,
@@ -838,6 +848,10 @@
                     && ($('.sortBox .sort .partInner2 .partInner2Box .right .detailText').val() !='')
                     && ($('.sortBox .sort .partInner2 .partInner2Box .right .contactName').val() !='')
                     && ($('.sortBox .sort .partInner2 .partInner2Box .right .contactPhone').val() !='')
+                    && uploadSuccess1
+                    && uploadSuccess2
+                    && uploadSuccess3
+                    && uploadSuccess4
             ){
 
 

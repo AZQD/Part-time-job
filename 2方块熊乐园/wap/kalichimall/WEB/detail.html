@@ -710,7 +710,12 @@
                 <div class="row goodDesc">
                     <div class="col-xs-7 col-sm-7 goodDescLeft">
                         <!--<div class="bigImg"><img class="bigImgPic" src="image/detailPage/bigImg1.png"></div>-->
-                        <div class="bigImg"><img style="opacity:0;" src="" class="bigImgPic" ></div>
+                        <div class="bigImg" style="position: relative;">
+                            <div class="bigImgPicWrapBg" style="display:none; width: 100%;height: 100%;line-height: 20.625rem;position: absolute;background: RGBA(0,0,0,0.4);">
+                                <span style="color: #333;font-size: 40px;font-weight: bold;">offline</span>
+                            </div>
+                            <img style="opacity:0;" src="" class="bigImgPic" >
+                        </div>
                         <div class="littleImg row">
                             <div class="col-xs-2 col-sm-2 leftFlag"><img src="image/detailPage/leftFlag.png"></div>
                             <div class="img_ulBox">
@@ -1130,14 +1135,24 @@
 //                                real_width  = im.width,
 //                                real_height = im.height;
 
+                        var showLittleImgBgStr = '';
+                        if((data.status == 1) || (data.status == 2)){
+                            $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrapBg').show();
+                            showLittleImgBgStr = '<div class="isShowLittleImgBg" style="width: 100%;height: 100%;line-height:80px; position: absolute;text-align:center;background: RGBA(0,0,0,0.4);">' +
+                                    '<span style="color: #333;font-size: 20px;font-weight: bold;">offline</span>' +
+                                    '</div>';
+                        }
+
                         if(im.width>im.height){
                             $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('' +
-                                    '<li class="img_li" style="background: url('+baseImgSrc+imgsArr[i]+') no-repeat center center;background-size: 100% auto;">' +
+                                    '<li class="img_li" style="position:relative; background: url('+baseImgSrc+imgsArr[i]+') no-repeat center center;background-size: 100% auto;">' +
+                                    showLittleImgBgStr+
                                     '<img style="opacity: 0;" src='+baseUrl+'/gimg/'+imgsArr[i]+'>' +
                                     '</li>');
                         }else{
                             $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('' +
-                                    '<li class="img_li" style="background: url('+baseImgSrc+imgsArr[i]+') no-repeat center center;background-size: auto 100%;">' +
+                                    '<li class="img_li" style="position:relative; background: url('+baseImgSrc+imgsArr[i]+') no-repeat center center;background-size: auto 100%;">' +
+                                    showLittleImgBgStr+
                                     '<img style="opacity: 0;" src='+baseUrl+'/gimg/'+imgsArr[i]+'>' +
                                     '</li>');
                         }

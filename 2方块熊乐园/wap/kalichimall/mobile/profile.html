@@ -200,11 +200,11 @@
                 $('#profileTitle').html(data.nickname + "'s home. kalichimall, make money by your second-hand goods.");
 
                 //详情页信息
-                $('.searchBox .search .searchLeft .part1 .headImg img').show().attr('src',baseImgSrc+data.logo).click(function(){
-//                    alert("跳转");
+                $('.searchBox .search .searchLeft .part1 .headImg img').show().attr('src',baseImgSrc+data.logo);
+                        /*.click(function(){
 //                    window.location.href = 'manage.html?pubUid='+pubUid;
                     window.location.href = 'manage.html';
-                });
+                });*/
                 $('.searchBox .search .searchLeft .part1 .name').html(data.nickname);
             },
             error:function(error){

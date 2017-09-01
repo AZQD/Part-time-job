@@ -79,11 +79,16 @@
                         <!--<div class="bigImg"><img class="bigImgPic" src="image/detailPage/bigImg1.png"></div>-->
                         <div class="bigImg row">
                             <a href="###" class="tipOff">Tip-off</a>
-                            <span class="bigImgPicWrap"><img class="bigImgPic" src="" style="opacity:0;visibility: hidden;"></span>
+                            <span class="bigImgPicWrap" style="position: relative;">
+                                <div class="bigImgPicWrapBg" style="display:none; width: 100%;height: 100%;line-height: 20.625rem;position: absolute;background: RGBA(0,0,0,0.4);">
+                                    <span style="color: #333;font-size: 40px;font-weight: bold;">offline</span>
+                                </div>
+                                <img class="bigImgPic" src="" style="opacity:0;visibility: hidden;">
+                            </span>
                             <img style="display: none;" class="bigImgbg" src="image/detailPage/bigImgbg.png"/>
                             <span class="bgColor"><span class="bgColorInner"></span></span>
                             <div class="col-xs-5 col-sm-5 aboutPrice"><span class="thePrice" style="display: none;"><span class="thePriceNum">100</span>ZMW</span></div>
-                            <div class="col-xs-7 col-sm-7 aboutShare">
+                            <div class="col-xs-9 col-sm-9 aboutShare">
                                 <a href="javascript:void(0);" class="btnLink btn2 btn3"><img class="likeImg"/>&nbsp;<span></span></a>&nbsp;
                                 <a href="https://www.facebook.com/sharer/sharer.php?u=编码后的跳转地址&t=" title="Share on Facebook" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(document.URL) + '&t=' + encodeURIComponent(document.URL)); return false;"><img alt="Share on Facebook" src="social_flat_rounded_rects_svg/Facebook.svg"></a>
                                 <a href="https://twitter.com/intent/tweet?source=编码后的跳转地址&text=分享文本" target="_blank" title="Tweet" onclick="window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent(document.title) + ':%20'  + encodeURIComponent(document.URL)); return false;"><img alt="Tweet" src="social_flat_rounded_rects_svg/Twitter.svg"></a>
@@ -149,7 +154,7 @@
     <aside class="row infos">
         <div class="col-xs-6 col-sm-6 part detailPublish"><span>Publish</span></div>
         <div class="col-xs-6 col-sm-6 part detailSignInUp" style="display: block;"><span>Sign in/Sign up</span></div>
-        <div class="col-xs-6 col-sm-6 part detailProfile" style="display: none;"><span>My Manage</span></div>
+        <div class="col-xs-6 col-sm-6 part detailProfile" style="display: none;"><span>My Home</span></div>
     </aside>
 
 
@@ -367,9 +372,26 @@
                     var imgsArr = imgs.split(',');
 
 
-                    for(var i=0; i<imgsArr.length; i++){
-                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li" style="background: url('+baseImgSrc+imgsArr[i]+') no-repeat center center;background-size:100% auto;"><img style="opacity:0;" src='+baseUrl+'/gimg/'+imgsArr[i]+'></li>');
+
+
+                    //大图、小图背景是否变暗
+                    var ShowLittleImgBgStr = '';
+                    if((data.status == 1) || (data.status == 2)){
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrapBg').show();
+                        ShowLittleImgBgStr = '<div class="isShowLittleImgBg" style="width: 100%;height: 100%;line-height:5rem;position: absolute;text-align:center;background: RGBA(0,0,0,0.4);">' +
+                                '<span style="color: #333;font-size: 20px;font-weight: bold;">offline</span>' +
+                                '</div>';
                     }
+
+
+                    for(var i=0; i<imgsArr.length; i++){
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li" style="position:relative; background: url('+baseImgSrc+imgsArr[i]+') no-repeat center center;background-size:100% auto;">' +
+                                ShowLittleImgBgStr+
+                                '<img style="opacity:0;" src='+baseUrl+'/gimg/'+imgsArr[i]+'>' +
+                                '</li>');
+                    }
+
+
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('visibility','inherit').attr('src', baseUrl+'/gimg/'+imgsArr[0]);
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('background','url('+baseImgSrc+imgsArr[0]+') no-repeat center center');
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('backgroundSize','100%');
@@ -639,6 +661,7 @@
         });
 
 
+        $('.tipOffPopBox .tipOffBox').css('top',($(window).height() - $(".tipOffPopBox .tipOffBox").height())/2.6);
 
         ////点击tipOff
         $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .tipOff').click(function(event){
