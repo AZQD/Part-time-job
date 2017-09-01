@@ -115,7 +115,7 @@
   background-color: #ccc;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare img {
-  width: 1.625rem;
+  width: 1.25rem;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .likeImg {
   width: 1.125rem;
@@ -142,15 +142,13 @@
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .thePrice .thePriceNum {
   font-weight: bold;
-  font-size: 1.25rem;
   color: #f00;
   position: relative;
-  top: 0.0625rem;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare {
   position: absolute;
   right: 0.625rem;
-  bottom: 0.4375rem;
+  bottom: 0.625rem;
   display: inline-block;
   text-align: right;
 }
@@ -279,6 +277,12 @@ ul.share-buttons img {
   margin: 0 auto;
   padding: 1.875rem 1.5rem;
   position: relative;
+  top: 16%;
+}
+@media screen and (min-width: 375px) {
+  .tipOffPopBox .tipOffBox {
+    top: 20%;
+  }
 }
 .tipOffPopBox .tipOffBox .closeTipOff {
   position: absolute;
