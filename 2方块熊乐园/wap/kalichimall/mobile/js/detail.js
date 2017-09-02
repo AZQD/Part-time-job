@@ -1,12 +1,4 @@
 $(function(){
-    //头部logo
-    $('.headerBox .left .logo').unbind('click').click(function(){
-        window.location.href = 'index.html';
-    });
-//头部搜索按钮
-    $('.headerBox .right .search').unbind('click').click(function(){
-        window.location.href = 'search.html';
-    });
 
     $('.detailBox .detail .detailLeft .getPhone .right .rightText').unbind('click').click(function(){
         window.location.href = "login.html?goLogin="+1;
@@ -218,6 +210,7 @@ $(function(){
                 //大图、小图背景是否变暗
                 var ShowLittleImgBgStr = '';
                 if((data.status == 1) || (data.status == 2)){
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3').hide();
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrapBg').show();
                     ShowLittleImgBgStr = '<div class="isShowLittleImgBg" style="width: 100%;height: 100%;line-height:5rem;position: absolute;text-align:center;background: RGBA(0,0,0,0.4);">' +
                         '<span style="color: #FF4720;font-size: 1.4rem;font-weight: bold;">offline</span>' +
@@ -225,16 +218,22 @@ $(function(){
                 }
 
 
-                for(var i=0; i<imgsArr.length; i++){
+                /*for(var i=0; i<imgsArr.length; i++){
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li" style="position:relative; background: url('+baseImgSrc+imgsArr[i]+') no-repeat center center;background-size:100% auto;">' +
                         ShowLittleImgBgStr+
                         '<img style="opacity:0;" src='+baseUrl+'/gimg/'+imgsArr[i]+'>' +
+                        '</li>');
+                }*/
+                for(var i=0; i<imgsArr.length; i++){
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li" style="position:relative; ">' +
+                        ShowLittleImgBgStr+
+                        '<img style="" src='+baseUrl+'/gimg/'+imgsArr[i]+'>' +
                         '</li>');
                 }
 
 
                 $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('visibility','inherit').attr('src', baseUrl+'/gimg/'+imgsArr[0]);
-                $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('background','url('+baseImgSrc+imgsArr[0]+') no-repeat center center');
+                //$('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('background','url('+baseImgSrc+imgsArr[0]+') no-repeat center center');
 //                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('backgroundSize','100%');
                 var moveNum = 0;
                 var imgsLength = imgsArr.length;
@@ -254,7 +253,7 @@ $(function(){
                     var index = $(this).index();
                     var src = $(this).children('img').attr('src');
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', $(this).children('img').attr('src'));
-                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('background','url('+$(this).children('img').attr('src')+') no-repeat center center');
+                    //$('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('background','url('+$(this).children('img').attr('src')+') no-repeat center center');
 //                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('backgroundSize','100%');
 
                 });

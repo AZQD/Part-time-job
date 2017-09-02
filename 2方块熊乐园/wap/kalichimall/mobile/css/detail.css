@@ -80,6 +80,12 @@
   white-space: nowrap;
   width: 10.3125rem;
 }
+.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap {
+  width: 20.625rem;
+  height: 20.625rem;
+  line-height: 20.625rem;
+  overflow: hidden;
+}
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg {
   background-color: #F9F9F9;
   text-align: center;
@@ -96,9 +102,8 @@
   z-index: 1;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic {
-  width: 88%;
-  width: 20.625rem;
-  height: 20.625rem;
+  max-width: 20.625rem;
+  max-height: 20.625rem;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgbg {
   width: 100%;
@@ -133,7 +138,7 @@
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutPrice {
   position: absolute;
   left: 0.3125rem;
-  bottom: 0.4375rem;
+  bottom: 0.1875rem;
   text-align: left;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .thePrice {
@@ -148,7 +153,7 @@
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare {
   position: absolute;
   right: 0.625rem;
-  bottom: 0.5rem;
+  bottom: 0.1875rem;
   display: inline-block;
   text-align: right;
 }
@@ -185,10 +190,14 @@
   cursor: pointer;
   float: left;
   margin: 0 0.125rem;
-}
-.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul img {
   width: 5rem;
   height: 5rem;
+  text-align: center;
+  line-height: 5rem;
+}
+.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul img {
+  max-width: 5rem;
+  max-height: 5rem;
 }
 .detailBox .detail .detailLeft .tabToggle {
   background-color: #F2F2F2;

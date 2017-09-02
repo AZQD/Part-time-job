@@ -12,14 +12,6 @@ if(deviceType() == 'isMobile'){
 
 
 $(function(){
-    //头部logo
-    $('.headerBox .left .logo').unbind('click').click(function(){
-        window.location.href = 'index.html';
-    });
-//头部搜索按钮
-    $('.headerBox .right .search').unbind('click').click(function(){
-        window.location.href = 'search.html';
-    });
 
 
     //增加跑马灯

@@ -93,6 +93,12 @@
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft{
   //width:540/@rem;
 }
+.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap{
+  width:330/@rem;
+  height:330/@rem;
+  line-height:330/@rem;
+  overflow: hidden;
+}
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg{
   background-color: #F9F9F9;
   text-align: center;
@@ -112,9 +118,9 @@
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic{
   //width:461/@rem;
   //height:345/@rem;
-  width: 88%;
-  width: 330/@rem;
-  height: 330/@rem;
+  //width: 88%;
+  max-width: 330/@rem;
+  max-height: 330/@rem;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgbg{
   //width:461/@rem;
@@ -155,7 +161,7 @@
   //height: 32/@rem;
   position: absolute;
   left: 5/@rem;
-  bottom: 7/@rem;
+  bottom: 3/@rem;
   text-align: left;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .thePrice{
@@ -173,7 +179,7 @@
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare{
   position: absolute;
   right: 10/@rem;
-  bottom: 8/@rem;
+  bottom: 3/@rem;
   display: inline-block;
   text-align: right;
 }
@@ -221,10 +227,14 @@
   cursor: pointer;
   float: left;
   margin:0 2/@rem;
-}
-.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul img{
   width:80/@rem;
   height:80/@rem;
+  text-align: center;
+  line-height:80/@rem;
+}
+.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul img{
+  max-width:80/@rem;
+  max-height:80/@rem;
 }
 
 .detailBox .detail .detailLeft .tabToggle{

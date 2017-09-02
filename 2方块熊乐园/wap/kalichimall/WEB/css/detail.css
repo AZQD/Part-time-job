@@ -171,12 +171,16 @@ body{
     background-color: #F9F9F9;
     text-align: center;
     /*margin-bottom: 18px;*/
+    width: 540px;
     height: 350px;
+    line-height:350px;
     overflow: hidden;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic{
     /*width:461px;*/
     /*height:345px;*/
+    max-width: 540px;
+    max-height: 350px;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg{
     margin-top: 18px;
@@ -206,10 +210,14 @@ body{
     cursor: pointer;
     float: left;
     margin:0 2px;
-}
-.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul img{
     width:107px;
     height:80px;
+    text-align: center;
+    line-height: 80px;
+}
+.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul img{
+    max-width:107px;
+    max-height:80px;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescRight{
     /*background-color: pink;*/

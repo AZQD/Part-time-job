@@ -233,7 +233,7 @@ $(function(){
                             '</div>';
                     }
 
-                    if(im.width>im.height){
+                    /*if(im.width>im.height){
                         $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('' +
                             '<li class="img_li" style="position:relative; background: url('+baseImgSrc+imgsArr[i]+') no-repeat center center;background-size: 100% auto;">' +
                             showLittleImgBgStr+
@@ -244,6 +244,19 @@ $(function(){
                             '<li class="img_li" style="position:relative; background: url('+baseImgSrc+imgsArr[i]+') no-repeat center center;background-size: auto 100%;">' +
                             showLittleImgBgStr+
                             '<img style="opacity: 0;" src='+baseUrl+'/gimg/'+imgsArr[i]+'>' +
+                            '</li>');
+                    }*/
+                    if(im.width>im.height){
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('' +
+                            '<li class="img_li" style="position:relative;">' +
+                            showLittleImgBgStr+
+                            '<img style="" src='+baseUrl+'/gimg/'+imgsArr[i]+'>' +
+                            '</li>');
+                    }else{
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('' +
+                            '<li class="img_li" style="position:relative;">' +
+                            showLittleImgBgStr+
+                            '<img style="" src='+baseUrl+'/gimg/'+imgsArr[i]+'>' +
                             '</li>');
                     }
 
@@ -258,7 +271,7 @@ $(function(){
                         var bigImgPicWidth = $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').width();
 //                            alert(bigImgPicWidth);
 //                            alert(bigImgPicHeight);
-                        if(bigImgPicWidth >= bigImgPicHeight){
+                        /*if(bigImgPicWidth >= bigImgPicHeight){
                             $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg').css({
                                 'background': 'url('+baseImgSrc+imgsArr[0]+') no-repeat center center',
 //                                    'backgroundSize': '100% auto',
@@ -269,7 +282,7 @@ $(function(){
                                 'background': 'url('+baseImgSrc+imgsArr[0]+') no-repeat center center',
                                 'backgroundSize': 'auto 100%'
                             });
-                        }
+                        }*/
                     }
                 }, 100);
 
@@ -289,7 +302,7 @@ $(function(){
                 });
                 $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').click(function(){
                     var index = $(this).index();
-//                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', $(this).children('img').attr('src'));
+                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', $(this).children('img').attr('src'));
 //                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('background', 'url('+$(this).children('img').attr('src')+') no-repeat center center');
 
                     //获取图片的真实宽高
@@ -298,7 +311,7 @@ $(function(){
                     im.src= $(this).children('img').attr('src'),
                         real_width  = im.width,
                         real_height = im.height;
-                    if(real_width>=real_height){
+                    /*if(real_width>=real_height){
                         $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg').css({
                             'background': 'url('+$(this).children('img').attr('src')+') no-repeat center center',
 //                                'backgroundSize': '100% auto',
@@ -309,7 +322,7 @@ $(function(){
                             'background': 'url('+$(this).children('img').attr('src')+') no-repeat center center',
                             'backgroundSize': 'auto 100%'
                         });
-                    }
+                    }*/
 
                 });
 
