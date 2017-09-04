@@ -70,9 +70,7 @@
   font-size: 0.875rem;
   font-weight: bold;
   padding-left: 0.625rem;
-  padding-bottom: 0.625rem;
   padding-right: 12rem;
-  min-height: 1.875rem;
 }
 .detailBox .detail .detailLeft .attr .addressText {
   text-overflow: ellipsis;
@@ -101,6 +99,14 @@
   text-decoration: underline;
   z-index: 1;
 }
+.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .newOrOld {
+  position: absolute;
+  left: 0.625rem;
+  z-index: 1;
+  color: #999;
+  font-size: 0.875rem;
+  font-weight: bold;
+}
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic {
   max-width: 20.625rem;
   max-height: 20.625rem;
@@ -120,7 +126,7 @@
   background-color: #ccc;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare img {
-  width: 1.5625rem;
+  width: 1.6875rem;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .likeImg {
   width: 1.125rem;
@@ -286,11 +292,11 @@ ul.share-buttons img {
   margin: 0 auto;
   padding: 1.875rem 1.5rem;
   position: relative;
-  top: 16%;
+  top: 12%;
 }
 @media screen and (min-width: 375px) {
   .tipOffPopBox .tipOffBox {
-    top: 20%;
+    top: 16%;
   }
 }
 .tipOffPopBox .tipOffBox .closeTipOff {

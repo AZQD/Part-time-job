@@ -261,7 +261,30 @@ $(function(){
                     }
 
                 }
+
+                //切换大图的左右按钮
                 $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', baseUrl+'/gimg/'+imgsArr[0]);
+                $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').eq(0).css('background', 'RGBA(0,0,0,0.4)');
+                var thisImg = 0;
+                $('#nextBigPic').unbind('click').click(function(){
+                    thisImg ++;
+                    clickBigImgBtn();
+                });
+                $('#lastBigPic').unbind('click').click(function(){
+                    thisImg --;
+                    clickBigImgBtn();
+                });
+                function clickBigImgBtn(){
+                    if(thisImg == imgsArr.length){
+                        thisImg = 0;
+                    }
+                    if(thisImg == -1){
+                        thisImg = imgsArr.length-1;
+                    }
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('visibility','inherit').attr('src', baseUrl+'/gimg/'+imgsArr[thisImg]);
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').css('background', '');
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').eq(thisImg).css('background', 'RGBA(0,0,0,0.4)');
+                }
 
 //                    alert(hei);
                 var timer = setInterval(function(){
@@ -302,8 +325,13 @@ $(function(){
                 });
                 $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').click(function(){
                     var index = $(this).index();
+                    thisImg = index;
                         $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', $(this).children('img').attr('src'));
 //                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('background', 'url('+$(this).children('img').attr('src')+') no-repeat center center');
+
+                    //新增
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').css('background', '');
+                    $(this).css('background', 'RGBA(0,0,0,0.4)');
 
                     //获取图片的真实宽高
                     var real_width,real_height,

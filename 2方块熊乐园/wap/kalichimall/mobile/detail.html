@@ -51,10 +51,10 @@
     <aside class="row headerBox">
         <div class="col-xs-4 col-sm-4 left"><img class="logo" src="image/index/logo.png"></div>
         <div class="col-xs-4 col-sm-4 indexMiddle">
-            <span class="address"></span>
+            <!--<span class="address"></span>
             <ul class="addressUl" style="display: none;">
-                <!--<li class="addressLi">01</li>-->
-            </ul>
+                &lt;!&ndash;<li class="addressLi">01</li>&ndash;&gt;
+            </ul>-->
         </div>
         <div class="col-xs-4 col-sm-4 right">
             <img class="search" src="image/index/search.png">
@@ -84,6 +84,7 @@
                     <div class="col-xs-12 col-sm-12 goodDescLeft">
                         <!--<div class="bigImg"><img class="bigImgPic" src="image/detailPage/bigImg1.png"></div>-->
                         <div class="bigImg row">
+                            <a href="javascript:void(0);" class="newOrOld"></a>
                             <a href="###" class="tipOff">Tip-off</a>
                             <!--图片作为背景-->
                             <!--<span class="bigImgPicWrap" style="position: relative;">
@@ -93,6 +94,8 @@
                                 <img class="bigImgPic" src="" style="opacity:0;visibility: hidden;">
                             </span>-->
                             <span class="bigImgPicWrap" style="position: relative;">
+                                <img id="lastBigPic" src="image/detailPage/lastPic.png" style="position: absolute;left: 0; top: calc(50% - 12px);" alt="">
+                                <img id="nextBigPic" src="image/detailPage/lastPic.png" style="position: absolute;right: 0; top: calc(50% - 12px);" alt="">
                                 <div class="bigImgPicWrapBg" style="display:none; width: 100%;height: 100%;line-height: 20.625rem;position: absolute;background: RGBA(0,0,0,0.4);">
                                     <span style="color: #FF4720;font-size: 5.5rem;font-weight: bold;">offline</span>
                                 </div>

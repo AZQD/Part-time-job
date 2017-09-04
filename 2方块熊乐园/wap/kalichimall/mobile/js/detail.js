@@ -102,6 +102,19 @@ $(function(){
                 console.log(baseUrl+"/apigateway/getgood?id="+goodIdFromCategory);
                 getGoodPhone = data.phone;
 
+                //新增（产品新旧）
+                var newOrOld = '';
+                if(data.goodstatus == 0){
+                    newOrOld = 'Brand New';
+                }else if(data.goodstatus == 1){
+                    newOrOld = 'New';
+                }else if(data.goodstatus == 2){
+                    newOrOld = 'As New';
+                }else if(data.goodstatus == 3){
+                    newOrOld = 'A Half New';
+                }
+                $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .newOrOld').html(newOrOld);
+
                 //修改title
                 $('#detailTitle').html(data.title + data.price +" kalichimall, make money by your second-hand goods.");
 
@@ -232,7 +245,29 @@ $(function(){
                 }
 
 
+                //切换大图的左右按钮
                 $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('visibility','inherit').attr('src', baseUrl+'/gimg/'+imgsArr[0]);
+                $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').eq(0).css('background', 'RGBA(0,0,0,0.4)');
+                var thisImg = 0;
+                $('#nextBigPic').unbind('click').click(function(){
+                    thisImg ++;
+                    clickBigImgBtn();
+                });
+                $('#lastBigPic').unbind('click').click(function(){
+                    thisImg --;
+                    clickBigImgBtn();
+                });
+                function clickBigImgBtn(){
+                    if(thisImg == imgsArr.length){
+                        thisImg = 0;
+                    }
+                    if(thisImg == -1){
+                        thisImg = imgsArr.length-1;
+                    }
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('visibility','inherit').attr('src', baseUrl+'/gimg/'+imgsArr[thisImg]);
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').css('background', '');
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').eq(thisImg).css('background', 'RGBA(0,0,0,0.4)');
+                }
                 //$('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('background','url('+baseImgSrc+imgsArr[0]+') no-repeat center center');
 //                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('backgroundSize','100%');
                 var moveNum = 0;
@@ -251,8 +286,14 @@ $(function(){
                 });
                 $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').click(function(){
                     var index = $(this).index();
+                    thisImg = index;
                     var src = $(this).children('img').attr('src');
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', $(this).children('img').attr('src'));
+
+                    //新增
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').css('background', '');
+                    $(this).css('background', 'RGBA(0,0,0,0.4)');
+
                     //$('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('background','url('+$(this).children('img').attr('src')+') no-repeat center center');
 //                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('backgroundSize','100%');
 

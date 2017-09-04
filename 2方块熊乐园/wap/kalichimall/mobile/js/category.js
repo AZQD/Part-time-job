@@ -1020,6 +1020,36 @@ $(function(){
                 $('.selectBox .select .selectPrice').empty();
                 $('.selectBox .select .selectPrice').append('<span class="price">PRICE</span><a href="#" class="selectChoose active">ALL</a>');
 
+
+                //如果是搜索，点击价格更新列表
+                $('.toggleSortBox .toggleSort .pricesTab').unbind('click').click(function(ev){
+                    ev.stopPropagation();
+                    $('.toggleSortBox .toggleList .priceUl').slideToggle();
+                    $('.classifyBoxWrap').slideUp();//类别列表
+                    $('.toggleSortBox .toggleList .qualityUl').slideUp();//质量列表
+                    $('.toggleSortBox .toggleList .areaUl').slideUp();//地址列表
+                });
+                //取消冒泡
+                $('.toggleSortBox .toggleList .priceUl').unbind('click').click(function(ev){
+                    ev.stopPropagation();
+                });
+                //点击price中的li
+                $('.toggleSortBox .toggleList .priceUl li').unbind('click').click(function(ev){
+                    $('.toggleSortBox .toggleSort .tab .pricesText').html($(this).html());//修改显示文本
+                    ev.stopPropagation();
+                    pmin = $(this).attr('min');
+                    pmax = $(this).attr('max');
+                    console.log(pmin,pmax);
+                    if(getParamByUrl('searchOrTab') == 'search'){//用户点击搜索进入
+                        searchKeyWord = getParamByUrl('searchKeyWord');
+                        searchPageControl();
+                        searchFun(searchKeyWord, startSearch, pmin, pmax, areaid, issell, orderby, sort, hasImage, goodstatus);
+                    }
+                    $('.toggleSortBox .toggleList .priceUl').hide();
+                });
+
+
+
                 var timer = setInterval(function(){
                     if(daLeiIndex != undefined){
                         clearInterval(timer);

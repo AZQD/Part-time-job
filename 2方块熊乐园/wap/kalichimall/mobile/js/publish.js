@@ -80,6 +80,7 @@ $(function(){
                             $(".a-upload2").hide();
                             $('.uploadLogo1').show();
                             $(".showFileName1").html('');
+                            $('.a-upload1Add').hide();
                             totalImgIdAll = '';
                             console.log("totalImgIdAll="+totalImgIdAll);
 
@@ -93,8 +94,13 @@ $(function(){
                         totalImgIdAll = imgIdAll1;
                         console.log("totalImgIdAll="+totalImgIdAll);
 
+
+
                         updateNewImgArr.push(imgData.data);
                         console.log('updateNewImgArr',updateNewImgArr);
+
+                        //新增（显示上传的图片）
+                        $('.a-upload1Add').show().attr('src', baseImgSrc+imgData.data);
 
 
                         $(".a-upload2").on("change","input[type='file']",function(){
@@ -140,6 +146,7 @@ $(function(){
                                                 $(".a-upload3").hide();
                                                 $('.uploadLogo2').show();
                                                 $(".showFileName2").html('');
+                                                $('.a-upload2Add').hide();
                                                 imgIdAll2 = '';
                                                 totalImgIdAll = imgIdAll1;
                                                 console.log("totalImgIdAll="+totalImgIdAll);
@@ -158,6 +165,9 @@ $(function(){
 
                                             updateNewImgArr.push(imgData.data);
                                             console.log('updateNewImgArr',updateNewImgArr);
+
+                                            //新增（显示上传的图片）
+                                            $('.a-upload2Add').show().attr('src', baseImgSrc+imgData.data);
 
 
                                             $(".a-upload3").on("change","input[type='file']",function(){
@@ -203,6 +213,7 @@ $(function(){
                                                                     $(".a-upload4").hide();
                                                                     $('.uploadLogo3').show();
                                                                     $(".showFileName3").html('');
+                                                                    $('.a-upload3Add').hide();
                                                                     imgIdAll3 = '';
                                                                     totalImgIdAll = imgIdAll1+','+imgIdAll2;
                                                                     console.log("totalImgIdAll="+totalImgIdAll);
@@ -221,6 +232,9 @@ $(function(){
 
                                                                 updateNewImgArr.push(imgData.data);
                                                                 console.log('updateNewImgArr',updateNewImgArr);
+
+                                                                //新增（显示上传的图片）
+                                                                $('.a-upload3Add').show().attr('src', baseImgSrc+imgData.data);
 
 
                                                                 $(".a-upload4").on("change","input[type='file']",function(){
@@ -264,6 +278,7 @@ $(function(){
 
                                                                                         $('.uploadLogo4').show();
                                                                                         $(".showFileName4").html('');
+                                                                                        $('.a-upload4Add').hide();
                                                                                         imgIdAll4 = '';
                                                                                         totalImgIdAll = imgIdAll1+','+imgIdAll2+','+imgIdAll3;
                                                                                         console.log("totalImgIdAll="+totalImgIdAll);
@@ -282,6 +297,9 @@ $(function(){
 
                                                                                     updateNewImgArr.push(imgData.data);
                                                                                     console.log('updateNewImgArr',updateNewImgArr);
+
+                                                                                    //新增（显示上传的图片）
+                                                                                    $('.a-upload4Add').show().attr('src', baseImgSrc+imgData.data);
                                                                                 }
                                                                             }
                                                                         });
