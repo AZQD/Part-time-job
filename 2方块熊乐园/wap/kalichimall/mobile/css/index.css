@@ -1,5 +1,6 @@
 body {
   position: relative;
+  background-color: #EBEBEB;
 }
 /*swiper-container*/
 .swiper-container {
@@ -54,7 +55,8 @@ body {
 }
 /*recentOrNear*/
 .recentOrNear {
-  margin-bottom: 3.75rem;
+  padding-bottom: 0.625rem;
+  border-bottom: 0.125rem solid #ff4720;
 }
 .recentOrNear .title {
   height: 2.1875rem;
@@ -102,6 +104,20 @@ body {
   font-size: 0.75rem;
   padding-right: 0.3125rem;
   background-color: #FF4720;
+}
+/*contactBox*/
+.contactBox {
+  line-height: 1.75rem;
+  margin-bottom: 3.125rem;
+  text-align: center;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  color: #333;
+  border-bottom: 1px dotted #FF4720;
+}
+.contactBox a {
+  color: #333;
+  text-decoration: underline;
 }
 /*infos*/
 .infos {

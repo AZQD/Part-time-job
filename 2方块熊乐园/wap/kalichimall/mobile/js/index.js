@@ -12,6 +12,11 @@ if(deviceType() == 'isMobile'){
 
 
 $(function(){
+    
+    //跳转到积分页面
+    $('.headerBox .left .shopping').unbind('click').click(function(){
+       window.location.href = 'pre-sales.html';
+    });
 
 
     //增加跑马灯

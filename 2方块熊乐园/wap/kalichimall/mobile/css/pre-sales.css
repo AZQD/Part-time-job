@@ -1,0 +1,227 @@
+.headerBox .right {
+  position: relative;
+}
+.headerBox .right #preSalesIpt {
+  border: none;
+  outline: none;
+  width: 4.375rem;
+  height: 1.75rem;
+  line-height: 1.75rem;
+  margin-bottom: 0.3125rem;
+  background-color: #E4ACA8;
+}
+.headerBox .right #preSalesSearchBtn {
+  width: 3rem;
+  /* vertical-align: -0.625rem; */
+  position: absolute;
+  top: -0.4rem;
+  right: 2rem;
+}
+.headerBox .right #preSalesSort {
+  width: 1.4rem;
+  margin: 0 0.375rem;
+  padding-bottom: 0.25rem;
+}
+/*classifyBox*/
+.classifyBoxWrap {
+  position: fixed;
+  top: 2.5rem;
+  left: 0;
+  background-color: #fff;
+  z-index: 999;
+  box-shadow: 0 0.125rem 0.375rem #999999;
+}
+.classifyBox {
+  background-color: #fff;
+  position: relative;
+  left: 0.3125rem;
+}
+.classifyBox .classifyLi .firstName {
+  text-align: right;
+  padding-right: 0.9375rem;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 0.875rem;
+  color: #333;
+  font-weight: bold;
+}
+.classifyBox .classifyLi .secondNames {
+  padding-left: 1.125rem;
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 2rem;
+  border-left: 1px solid #999;
+}
+.classifyBox .classifyLi .secondNames .secondName {
+  height: 2rem;
+  line-height: 2rem;
+  padding-right: 0.625rem;
+  text-decoration: underline;
+}
+/*rulesBox*/
+.rulesBox {
+  border: 1px solid #FF4720;
+  background-color: #F2F2F2;
+  text-align: center;
+}
+/*toggleSortBox*/
+.toggleSortBox .toggleSort {
+  padding: 0.25rem 0;
+  border-bottom: 0.125rem solid #ff4720;
+  background-color: #F1DCDC;
+}
+.toggleSortBox .toggleSort .tab {
+  text-align: center;
+  border-right: 1px solid #333;
+}
+.toggleSortBox .toggleSort .tab:last-child {
+  border-right: none;
+}
+.toggleSortBox .toggleSort .tab .text {
+  font-size: 0.875rem;
+  color: #333333;
+  font-weight: bold;
+}
+.toggleSortBox .toggleSort .tab .text:after {
+  display: inline-block;
+  content: "";
+  border-top: 0.5rem solid #000000;
+  border-right: 0.375rem solid transparent;
+  border-bottom: 0.375rem solid transparent;
+  border-left: 0.375rem solid transparent;
+  position: relative;
+  top: 0.375rem;
+  left: 0.125rem;
+}
+.toggleSortBox .toggleList {
+  position: relative;
+}
+.toggleSortBox .toggleList .uls {
+  position: absolute;
+  top: 0;
+  z-index: 9;
+  text-align: center;
+  border-bottom: 0.0625rem solid #999999;
+}
+.toggleSortBox .toggleList .uls li {
+  height: 1.875rem;
+  line-height: 1.875rem;
+  font-size: 0.8125rem;
+  color: #333333;
+  border: 0.0625rem solid #999999;
+  border-bottom: none;
+  background-color: #fff;
+}
+.toggleSortBox .toggleList .hotUl {
+  left: 0;
+}
+.toggleSortBox .toggleList .newUl {
+  left: 33.33333%;
+}
+.toggleSortBox .toggleList .pricesUl {
+  left: 66.66666%;
+}
+/*goodsBox*/
+.goodsBox {
+  margin-bottom: 3.75rem;
+  background-color: #F2F2F2;
+}
+.goodsBox .goods {
+  cursor: pointer;
+  margin: 0 auto;
+  /*background-color: #baf;*/
+  padding: 0.625rem;
+  border-bottom: 1px dotted #666;
+}
+.goodsBox .goods:last-child {
+  border-bottom: 0;
+}
+.goodsBox .goods .goodsLeft {
+  height: 5rem;
+}
+.goodsBox .goods .goodsLeft img {
+  width: 100%;
+  height: 100%;
+  padding-right: 1.25rem;
+}
+.goodsMiddle {
+  text-align: left;
+}
+.goodsBox .goods .goodsMiddle .goodDesc {
+  font-size: 0.875rem;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.goodsBox .goods .goodsRight {
+  text-align: center;
+  padding-top: 1.125rem;
+}
+.goodsBox .goods .goodsRight1 {
+  font-size: 0.75rem;
+  color: #fff;
+  height: 1.875rem;
+  line-height: 1.875rem;
+  padding: 0 1rem;
+  background-color: #ff4720;
+  border-radius: 0.25rem;
+}
+/*tableData*/
+.tableBox {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 3.75rem;
+}
+#tableData {
+  text-align: center;
+  font-family: '微软雅黑';
+  width: 100%;
+  border-left: 0.0625rem solid #666666;
+  border-right: 0.0625rem solid #666666;
+}
+#tableData tr {
+  border-top: 0.0625rem solid #666666;
+}
+#tableData tr:last-child {
+  border-bottom: 0.0625rem solid #666666;
+}
+#tableData th {
+  width: 4.125rem;
+  height: 1.625rem;
+  line-height: 1.625rem;
+  color: #FF4720;
+  font-size: 0.75rem;
+}
+#tableData td {
+  width: 4.125rem;
+  height: 1.25rem;
+  color: #333;
+  line-height: 1.25rem;
+  font-size: 0.75rem;
+}
+/*infos*/
+.infos {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  box-shadow: 0 0 1.25rem #333333;
+}
+.infos .part {
+  height: 2.5rem;
+  line-height: 2.5rem;
+  font-size: 0.875rem;
+  color: #fff;
+  text-align: center;
+  background-color: #FF4720;
+}
+.infos .preSalesPublish {
+  border-right: 1px solid #fff;
+}
+.infos .part span {
+  text-decoration: underline;
+}

@@ -281,6 +281,14 @@ function bottomBtnControlNotLogin(){
     $('.infos .profileSignInUp').unbind('click').click(function () {
         window.location.href = "login.html?goLogin="+1;
     });
+
+    //pre-sales.html
+    $('.infos .preSalesPublish').unbind('click').click(function () {
+        window.location.href = "publish.html";
+    });
+    $('.infos .preSalesSignInUp').unbind('click').click(function () {
+        window.location.href = "login.html?goLogin="+1;
+    });
 }
 
 //底部按钮控制（如果用户已登录）
@@ -319,6 +327,15 @@ function bottomBtnControlHasLogin(uid){
     $('.infos .profileSignInUp').hide();
     $('.infos .profileManage').show().unbind('click').click(function () {
         window.location.href = "manage.html";
+    });
+
+    //pre-sales.html
+    $('.infos .preSalesPublish').unbind('click').click(function () {
+        window.location.href = "publish.html";
+    });
+    $('.infos .preSalesSignInUp').hide();
+    $('.infos .preSalesProfile').show().unbind('click').click(function () {
+        window.location.href = "profile.html?pubUid="+uid;
     });
 }
 
