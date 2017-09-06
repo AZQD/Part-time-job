@@ -290,13 +290,13 @@ ul.share-buttons img {
   height: 22.8125rem;
   background-color: #fff;
   margin: 0 auto;
+  margin-top: 3.75rem;
   padding: 1.875rem 1.5rem;
   position: relative;
-  top: 12%;
 }
 @media screen and (min-width: 375px) {
   .tipOffPopBox .tipOffBox {
-    top: 16%;
+    margin-top: 6.25rem;
   }
 }
 .tipOffPopBox .tipOffBox .closeTipOff {

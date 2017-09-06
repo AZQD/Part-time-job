@@ -248,13 +248,13 @@ $(function(){
                     }*/
                     if(im.width>im.height){
                         $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('' +
-                            '<li class="img_li" style="position:relative;">' +
+                            '<li class="img_li" style="position:relative;"><div class="img_liBg" style="display:none;position: absolute;width: 100%;height: 100%;background: RGBA(0,0,0,0.1);"></div>' +
                             showLittleImgBgStr+
                             '<img style="" src='+baseUrl+'/gimg/'+imgsArr[i]+'>' +
                             '</li>');
                     }else{
                         $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('' +
-                            '<li class="img_li" style="position:relative;">' +
+                            '<li class="img_li" style="position:relative;"><div class="img_liBg" style="display:none;position: absolute;width: 100%;height: 100%;background: RGBA(0,0,0,0.1);"></div>' +
                             showLittleImgBgStr+
                             '<img style="" src='+baseUrl+'/gimg/'+imgsArr[i]+'>' +
                             '</li>');
@@ -264,7 +264,7 @@ $(function(){
 
                 //切换大图的左右按钮
                 $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', baseUrl+'/gimg/'+imgsArr[0]);
-                $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').eq(0).css('background', 'RGBA(0,0,0,0.4)');
+                $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').eq(0).children('.img_liBg').show();
                 var thisImg = 0;
                 $('#nextBigPic').unbind('click').click(function(){
                     thisImg ++;
@@ -282,8 +282,8 @@ $(function(){
                         thisImg = imgsArr.length-1;
                     }
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('visibility','inherit').attr('src', baseUrl+'/gimg/'+imgsArr[thisImg]);
-                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').css('background', '');
-                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').eq(thisImg).css('background', 'RGBA(0,0,0,0.4)');
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').children('.img_liBg').hide();
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').eq(thisImg).children('.img_liBg').show();
                 }
 
 //                    alert(hei);
@@ -330,8 +330,8 @@ $(function(){
 //                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('background', 'url('+$(this).children('img').attr('src')+') no-repeat center center');
 
                     //新增
-                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').css('background', '');
-                    $(this).css('background', 'RGBA(0,0,0,0.4)');
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').children('.img_liBg').hide();
+                    $(this).children('.img_liBg').show();
 
                     //获取图片的真实宽高
                     var real_width,real_height,

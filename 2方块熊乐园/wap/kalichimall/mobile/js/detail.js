@@ -238,7 +238,7 @@ $(function(){
                         '</li>');
                 }*/
                 for(var i=0; i<imgsArr.length; i++){
-                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li" style="position:relative; ">' +
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul').append('<li class="img_li" style="position:relative; "><div class="img_liBg" style="display:none;position: absolute;width: 100%;height: 100%;background: RGBA(0,0,0,0.1);"></div>' +
                         ShowLittleImgBgStr+
                         '<img style="" src='+baseUrl+'/gimg/'+imgsArr[i]+'>' +
                         '</li>');
@@ -247,7 +247,7 @@ $(function(){
 
                 //切换大图的左右按钮
                 $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('visibility','inherit').attr('src', baseUrl+'/gimg/'+imgsArr[0]);
-                $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').eq(0).css('background', 'RGBA(0,0,0,0.4)');
+                $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').eq(0).children('.img_liBg').show();
                 var thisImg = 0;
                 $('#nextBigPic').unbind('click').click(function(){
                     thisImg ++;
@@ -265,8 +265,8 @@ $(function(){
                         thisImg = imgsArr.length-1;
                     }
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').css('visibility','inherit').attr('src', baseUrl+'/gimg/'+imgsArr[thisImg]);
-                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').css('background', '');
-                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').eq(thisImg).css('background', 'RGBA(0,0,0,0.4)');
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').children('.img_liBg').hide();
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').eq(thisImg).children('.img_liBg').show();
                 }
                 //$('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('background','url('+baseImgSrc+imgsArr[0]+') no-repeat center center');
 //                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('backgroundSize','100%');
@@ -291,8 +291,8 @@ $(function(){
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic').attr('src', $(this).children('img').attr('src'));
 
                     //新增
-                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').css('background', '');
-                    $(this).css('background', 'RGBA(0,0,0,0.4)');
+                    $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul .img_li').children('.img_liBg').hide();
+                    $(this).children('.img_liBg').show();
 
                     //$('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('background','url('+$(this).children('img').attr('src')+') no-repeat center center');
 //                        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap').css('backgroundSize','100%');

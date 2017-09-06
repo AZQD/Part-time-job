@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>Title</title>
+    <style type="text/css">
+        #box1{
+            width: 10rem;
+            height: 10rem;
+            line-height:10rem;
+            text-align: center;
+            background: fuchsia;
+        }
+        #ipt{
+            text-indent: 1rem;
+        }
+    </style>
+</head>
+<body>
+<div id="box1">box1</div>
+<hr/>
+<div id="clickBox1">click弹窗</div>
+<hr/>
+<div id="clickBox2">click跳转</div>
+<hr/>
+<input type="text" id="ipt" placeholder="input">
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('#clickBox1').unbind('click').click(function(){
+            alert(2);
+        });
+        $('#clickBox2').unbind('click').click(function(){
+            window.location.href = 'index.html';
+        });
+    });
+</script>
+</body>
+</html>
