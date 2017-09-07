@@ -12,6 +12,22 @@ if(deviceType() == 'isMobile'){
 
 
 $(function(){
+
+    //积分面板
+    $('.showPointBox .showPoint .close, .showPointBox .showPoint .ok').unbind('click').click(function(){
+       $('.showPointBox').hide();
+        $('body, html').css('overflow', 'auto');
+        //新增：提示一天登陆一次奖励一个积分
+        setCookie('indexShowJiFenBox', 1, 1);
+    });
+
+    //跳转到积分兑换界面
+    $('.showPointBox .showPoint .desc2').unbind('click').click(function(){
+        window.location.href = 'pre-sales.html';
+        //新增：提示一天登陆一次奖励一个积分
+        setCookie('indexShowJiFenBox', 1, 1);
+    });
+
     
     //跳转到积分页面
     $('.headerBox .left .shopping').unbind('click').click(function(){

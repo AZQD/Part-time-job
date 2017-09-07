@@ -124,6 +124,22 @@
   border: 1px solid #ddd;
   text-indent: 0.3125rem;
 }
+.loginRegisterBox .loginRegister .registerName {
+  height: 2.625rem;
+  margin-bottom: 0.625rem;
+}
+.loginRegisterBox .loginRegister .registerName .nameImg {
+  width: 2.625rem;
+  height: 2.625rem;
+}
+.loginRegisterBox .loginRegister .registerName .nameText {
+  width: 15.5rem;
+  height: 2.625rem;
+  line-height: 2.625rem;
+  outline: none;
+  border: 1px solid #ddd;
+  text-indent: 0.3125rem;
+}
 .loginRegisterBox .loginRegister .registerDrag {
   position: relative;
   height: 2.1875rem;

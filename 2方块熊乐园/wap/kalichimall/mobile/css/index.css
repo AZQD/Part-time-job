@@ -197,3 +197,53 @@ body {
   padding-right: 0.625rem;
   text-decoration: underline;
 }
+/*showPointBox*/
+.showPointBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 999;
+}
+.showPointBox .showPoint {
+  width: 100%;
+  height: 16.875rem;
+  margin-top: 9.375rem;
+  background: url("../image/index/jiFen.png") no-repeat center;
+  background-size: 100%;
+  text-align: center;
+  position: relative;
+}
+.showPointBox .showPoint .title {
+  font-size: 1.75rem;
+  color: #1E1E1E;
+  padding-top: 4.125rem;
+}
+.showPointBox .showPoint .desc1 {
+  font-size: 1rem;
+  color: #CCCCCC;
+  padding-top: 2rem;
+}
+.showPointBox .showPoint .desc2 {
+  font-size: 1rem;
+  color: #CCCCCC;
+  text-decoration: underline;
+}
+.showPointBox .showPoint .ok {
+  display: inline-block;
+  width: 4rem;
+  height: 1.25rem;
+  line-height: 0.625rem;
+  border-radius: 1.25rem;
+  font-size: 1rem;
+  color: #CCCCCC;
+  outline: none;
+  border: 1px solid #CCCCCC;
+  background: #FF4720;
+  margin-top: 1.5rem;
+}
+.showPointBox .showPoint .close {
+  position: absolute;
+  top: 0;
+  right: 5.625rem;
+  width: 1.5625rem;
+}

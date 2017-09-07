@@ -4,9 +4,9 @@ $(function(){
     $('.headerBox .right #preSalesSearchBtn').unbind('click').click(function(){
         var searchKeyWord = $.trim($('.headerBox .right #preSalesIpt').val());
        if(searchKeyWord != ''){
-           localStorage.setItem('searchOrTab',"search");
-           localStorage.setItem('searchKeyWord',searchKeyWord);
-           window.location.href = "category.html?searchOrTab=search&searchKeyWord="+searchKeyWord;
+           //localStorage.setItem('searchOrTab',"search");
+           //localStorage.setItem('searchKeyWord',searchKeyWord);
+           //window.location.href = "category.html?searchOrTab=search&searchKeyWord="+searchKeyWord;
        }
     });
 
@@ -14,12 +14,12 @@ $(function(){
     //重点：点击除div之外的任意位置隐藏div
     $(document).unbind('click').click(function(){
         $('.classifyBox').slideUp();//分类列表
-        $('.toggleSortBox .toggleList .hotUl').slideUp();//hot列表
-        $('.toggleSortBox .toggleList .newUl').slideUp();//new列表
-        $('.toggleSortBox .toggleList .pricesUl').slideUp();//price列表
+        //$('.toggleSortBox .toggleList .hotUl').slideUp();//hot列表
+        //$('.toggleSortBox .toggleList .newUl').slideUp();//new列表
+        //$('.toggleSortBox .toggleList .pricesUl').slideUp();//price列表
     });
 
-    //点击hot列表
+    /*//点击hot列表
     $('.toggleSortBox .toggleSort .hotTab').unbind('click').click(function(ev){
         ev.stopPropagation();
         $('.classifyBox').slideUp();//分类列表
@@ -44,7 +44,7 @@ $(function(){
         $('.toggleSortBox .toggleList .hotUl').slideUp();//hot列表
         $('.toggleSortBox .toggleList .newUl').slideUp();//new列表
         $('.toggleSortBox .toggleList .pricesUl').slideToggle();//price列表
-    });
+    });*/
 
 
     //产品分类显示
@@ -75,9 +75,9 @@ $(function(){
                 $('.headerBox .right #preSalesSort').unbind('click').click(function(ev){
                     ev.stopPropagation();
                     $('.classifyBox').slideToggle();//分类列表
-                    $('.toggleSortBox .toggleList .hotUl').slideUp();//hot列表
+                    /*$('.toggleSortBox .toggleList .hotUl').slideUp();//hot列表
                     $('.toggleSortBox .toggleList .newUl').slideUp();//new列表
-                    $('.toggleSortBox .toggleList .pricesUl').slideUp();//price列表
+                    $('.toggleSortBox .toggleList .pricesUl').slideUp();//price列表*/
                 });
 
                 //点击事件

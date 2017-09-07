@@ -184,6 +184,12 @@ if(token == null){
         success: function(data){
             if(data.status == 200){//用户已登陆
 
+                //首页是否有积分提示 : 如果有cookie，并且是index.html页面
+                if(getCookie('indexShowJiFenBox') != 1){
+                    $('body, html').css('overflow', 'hidden');
+                    $('.showPointBox').show();
+                }
+
                 data = JSON.parse(data.data);
                 userInfo = data;
                 console.log("用户已登陆");
@@ -289,6 +295,14 @@ function bottomBtnControlNotLogin(){
     $('.infos .preSalesSignInUp').unbind('click').click(function () {
         window.location.href = "login.html?goLogin="+1;
     });
+
+    //points_lottery.html
+    $('.infos .pointsLotteryPublish').unbind('click').click(function () {
+        window.location.href = "publish.html";
+    });
+    $('.infos .pointsLotterySignInUp').unbind('click').click(function () {
+        window.location.href = "login.html?goLogin="+1;
+    });
 }
 
 //底部按钮控制（如果用户已登录）
@@ -335,6 +349,15 @@ function bottomBtnControlHasLogin(uid){
     });
     $('.infos .preSalesSignInUp').hide();
     $('.infos .preSalesProfile').show().unbind('click').click(function () {
+        window.location.href = "profile.html?pubUid="+uid;
+    });
+
+    //points_lottery.html
+    $('.infos .pointsLotteryPublish').unbind('click').click(function () {
+        window.location.href = "publish.html";
+    });
+    $('.infos .pointsLotterySignInUp').hide();
+    $('.infos .pointsLotteryProfile').show().unbind('click').click(function () {
         window.location.href = "profile.html?pubUid="+uid;
     });
 }

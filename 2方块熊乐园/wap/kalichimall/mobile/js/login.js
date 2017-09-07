@@ -40,6 +40,9 @@ $(function(){
                     console.log("登陆",data);
                     var token = data.token;
                     localStorage.setItem('token',token);//设置本地存储
+
+
+
                     if(getParamByUrl('goLogin') == 1){
                         //跳转到上个页面
                         window.history.go(-1);
@@ -126,7 +129,8 @@ $(function(){
         var dragText = $('#drag .drag_text').text();
         var registerPhone = b.encode($.trim($('#registerPhone').val()));
         var registerPassword = b.encode($.trim($('#registerPassword').val()));
-        var reg = encrypt.encrypt("user="+ registerPhone +"&pass="+ registerPassword +"&nickname="+ registerPhone);//获取密钥
+        var registerName = b.encode($.trim($('#registerName').val()));
+        var reg = encrypt.encrypt("user="+ registerPhone +"&pass="+ registerPassword +"&nickname="+ registerName);//获取密钥
         var timestamp=new Date().getTime();//获取时间戳
 //            console.log(registerPhone);
 //            console.log(registerPassword);
