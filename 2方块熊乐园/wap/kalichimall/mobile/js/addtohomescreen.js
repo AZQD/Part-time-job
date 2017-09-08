@@ -584,7 +584,8 @@ ath.Class.prototype = {
 		// Enable closing after 1 second
 		if ( !this.options.mandatory ) {
 			setTimeout(function () {
-				that.element.addEventListener('click', that, true);
+				//调整：暂时禁止自动消失
+				//that.element.addEventListener('click', that, true);
 			}, 1000);
 		}
 

@@ -15,6 +15,40 @@ body {
 .swiper-container .swiper-wrapper .swiper-slide img {
   width: 100%;
 }
+/*messageBox*/
+.messageBox {
+  background-color: #bfa;
+  position: relative;
+}
+.messageBox .msgTip {
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+}
+.messageBox .msgTip .msgImg {
+  padding: 0 0.3125rem;
+  width: 2.25rem;
+}
+.messageBox .msgTip .msgNum {
+  position: absolute;
+  display: inline-block;
+  right: -15px;
+  top: -15px;
+  width: 15px;
+  height: 15px;
+  line-height: 15px;
+  text-align: center;
+  background-color: #FF4720;
+  border-radius: 15px;
+}
+.messageBox .msgDetails {
+  color: #333333;
+  font-size: 0.8125rem;
+  border-left: 1px solid #333;
+  margin-left: 40px;
+  text-align: justify;
+  padding: 0 8px;
+}
 /*bestGoods*/
 .bestGoods {
   padding-top: 0.375rem;
