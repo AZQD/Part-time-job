@@ -4,6 +4,7 @@ body {
 }
 /*swiper-container*/
 .swiper-container {
+  height: 6.5625rem;
   width: 100%;
 }
 .swiper-container .swiper-wrapper {
@@ -14,6 +15,7 @@ body {
 }
 .swiper-container .swiper-wrapper .swiper-slide img {
   width: 100%;
+  height: 6.5625rem;
 }
 /*messageBox*/
 .messageBox {
@@ -286,4 +288,5 @@ body {
   top: 0;
   right: 5.625rem;
   width: 1.5625rem;
+  background-color: #fff;
 }

@@ -255,13 +255,13 @@
   width: 20/@rem;
   letter-spacing: 0;
 }
-#tableData .number{
+#tableData .numberWrap{
   display: inline-block;
   width: 36/@rem;
   height:20/@rem;
   line-height:16/@rem;
   text-align: center;
-  font-size: 13px;
+  font-size: 13/@rem;
   color: #333333;
   border: 2/@rem solid #FF4720;
   border-radius: 5/@rem;
@@ -272,6 +272,7 @@
   width: 20/@rem;
   letter-spacing: 0;
 }
+
 
 /*infos*/
 .infos{
@@ -319,4 +320,11 @@
   color: #333333;
   font-size: 16/@rem;
   font-weight: bold;
+}
+
+/*H5页面 绝对定位元素被软键盘弹出时顶起*/
+@media (max-height: 400px) {
+  .tableBox,.infos {
+    display: none;
+  }
 }

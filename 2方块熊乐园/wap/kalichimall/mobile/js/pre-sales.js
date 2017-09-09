@@ -1,5 +1,37 @@
 $(function(){
 
+    //PRE-ORDER
+    var countNum = 0;//初始化购物车数量
+    $('.goodsBox .goods .goodsRight1').unbind('click').click(function(){
+        countNum++;
+       $('.infos .shopCartBox .count').show().children('.countNum').html(countNum);
+        //下面代码需要想tableBox中append
+    });
+
+    //点击reduce
+    $('#tableData .goodItem').delegate('.reduce', 'click', function(){
+        var nowNumber = $(this).siblings('.numberWrap').children('.number').html();
+        if(nowNumber == 1){
+            alert('受不了了，宝贝不能再减少了哦！');
+        }else{
+            nowNumber--;
+            $(this).siblings('.numberWrap').children('.number').html(nowNumber);
+        }
+    });
+
+    //点击add
+    $('#tableData .goodItem').delegate('.add', 'click', function(){
+        var nowNumber = $(this).siblings('.numberWrap').children('.number').html();
+        nowNumber++;
+        $(this).siblings('.numberWrap').children('.number').html(nowNumber);
+    });
+    
+    //点击remove
+    $('#tableData .goodItem').delegate('.remove', 'click', function(){
+        $(this).parent().parent('.goodItem').remove();
+    });
+
+
     //点击购物车图片弹出
     $('.shopCartBox').unbind('click').click(function(){
         $('.tableBox').slideToggle();

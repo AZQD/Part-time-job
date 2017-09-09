@@ -70,6 +70,12 @@
 .bestGoods .imgsBox .imgBox img {
   width: 100%;
 }
+/*H5页面 绝对定位元素被软键盘弹出时顶起*/
+@media (max-height: 400px) {
+  .bestGoods {
+    display: none;
+  }
+}
 /*classifyBox*/
 .classifyBox {
   margin-bottom: 7.875rem;
