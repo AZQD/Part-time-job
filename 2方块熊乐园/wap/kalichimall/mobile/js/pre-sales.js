@@ -1,5 +1,10 @@
 $(function(){
 
+    //点击购物车图片弹出
+    $('.shopCartBox').unbind('click').click(function(){
+        $('.tableBox').slideToggle();
+    });
+
     //点击搜索
     $('.headerBox .right #preSalesSearchBtn').unbind('click').click(function(){
         var searchKeyWord = $.trim($('.headerBox .right #preSalesIpt').val());

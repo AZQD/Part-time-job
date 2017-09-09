@@ -25,8 +25,10 @@ body{
 
 /*messageBox*/
 .messageBox{
-  background-color: #bfa;
+  background-color: #fff;
   position: relative;
+  overflow: hidden;
+  padding: 5/@rem 0;
 }
 .messageBox .msgTip{
   position: absolute;
@@ -40,22 +42,29 @@ body{
 .messageBox .msgTip .msgNum{
   position: absolute;
   display: inline-block;
-  right: -15px;
-  top: -15px;
-  width: 15px;
-  height: 15px;
-  line-height:15px;
+  right: -5/@rem;
+  top: -5/@rem;
+  width: 15/@rem;
+  height: 15/@rem;
+  line-height:15/@rem;
   text-align: center;
   background-color: #FF4720;
-  border-radius: 15px;
+  border-radius: 15/@rem;
 }
-.messageBox .msgDetails{
+
+.messageBox #msgBox{
+  overflow: hidden;
+  height: 30/@rem;
+  border-left: 1px solid #333;
+  margin-left: 42/@rem;
+  text-align: justify;
+  padding: 0 8/@rem;
+}
+.messageBox .adList li{
+  height: 30/@rem;
+  line-height:15/@rem;
   color: #333333;
   font-size: 13/@rem;
-  border-left: 1px solid #333;
-  margin-left: 40px;
-  text-align: justify;
-  padding: 0 8px;
 }
 
 

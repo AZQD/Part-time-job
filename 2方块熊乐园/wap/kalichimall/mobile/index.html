@@ -103,7 +103,7 @@
 
 
 
-    <aside style="margin-top: 2.5rem;height: 1.5rem;">
+    <aside style="margin-top: 2.5rem;height: 1.5rem;display: none;">
         <marquee style="background:#fff; height: 1.5rem;line-height: 1.5rem;" id="aboutmarquee"></marquee>
     </aside>
 
@@ -111,7 +111,7 @@
 
 
 
-    <aside class="row swiper-container">
+    <aside class="row swiper-container" style="margin-top: 2.5rem;">
         <div class="swiper-wrapper">
             <!--<div class="col-xs-12 col-sm-12 swiper-slide"><a href="javascript:void(0);"><img src="image/index/banner1.png"></a></div>-->
         </div>
@@ -123,11 +123,24 @@
             <img class="msgImg" src="image/index/message.png" alt="">
             <span class="msgNum">1</span>
         </div>
-        <div class="msgDetails">
-            To add this web app to the home screen open the browser option menu and tap on
-            Add to homescreen.
+        <div id="msgBox">
+            <ul class="adList">
+                <li>
+                    To add this web app to the home screen open the browser option menu and tap on
+                    Add to homescreen.
+                </li>
+                <li>
+                    To2 add this web app to the home screen open the browser option menu and tap on
+                    Add to homescreen.
+                </li>
+            </ul>
         </div>
+
+
+
     </aside>
+
+
 
     <aside class="row getBestGoods">
         <div class="col-xs-12 col-sm-12 bestGoods">

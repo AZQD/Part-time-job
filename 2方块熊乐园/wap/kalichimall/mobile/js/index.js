@@ -13,6 +13,35 @@ if(deviceType() == 'isMobile'){
 
 $(function(){
 
+    //banner下的消息动画
+    var msgBox = document.getElementById('msgBox');
+    msgBox.innerHTML+=msgBox.innerHTML;//克隆一份一样的内容
+
+    //获取html根标签的font-size值
+    var fontSize = $('html').css('fontSize');
+    startScroll(msgBox,1.875*parseInt(fontSize),100,1500);
+
+    function startScroll(obj,height,speed,delay){
+        obj.timer=setInterval(function (){
+            if(obj.scrollTop % height==0){
+                clearInterval(obj.timer);
+                setTimeout(function (){startScroll(obj,height,speed,delay)},delay);
+            }else{
+                obj.scrollTop++;
+                //console.log(obj.scrollTop);
+
+                if(obj.scrollTop >= obj.scrollHeight/2){
+                    obj.scrollTop =0;
+
+                }
+            }
+        },speed);
+        obj.scrollTop++;
+    }
+
+
+
+
     //积分面板
     $('.showPointBox .showPoint .close, .showPointBox .showPoint .ok').unbind('click').click(function(){
        $('.showPointBox').hide();

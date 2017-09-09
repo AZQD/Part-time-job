@@ -9,6 +9,7 @@
   line-height: 1.75rem;
   margin-bottom: 0.25rem;
   background-color: #E4ACA8;
+  padding-right: 1.75rem;
 }
 .headerBox .right #preSalesSearchBtn {
   width: 3rem;
@@ -63,6 +64,8 @@
   border: 1px solid #FF4720;
   background-color: #F2F2F2;
   text-align: center;
+  height: 5.625rem;
+  line-height: 5.625rem;
 }
 /*toggleSortBox*/
 .toggleSortBox .toggleSort {
@@ -174,7 +177,8 @@
   position: fixed;
   width: 100%;
   left: 0;
-  bottom: 3.75rem;
+  bottom: 4.125rem;
+  background-color: #fff;
 }
 #tableData {
   text-align: center;
@@ -202,6 +206,31 @@
   color: #333;
   line-height: 1.25rem;
   font-size: 0.75rem;
+  padding: 0.25rem 0;
+}
+#tableData .remove {
+  width: 1.625rem;
+}
+#tableData .reduce {
+  width: 1.25rem;
+  letter-spacing: 0;
+}
+#tableData .number {
+  display: inline-block;
+  width: 2.25rem;
+  height: 1.25rem;
+  line-height: 1rem;
+  text-align: center;
+  font-size: 13px;
+  color: #333333;
+  border: 0.125rem solid #ff4720;
+  border-radius: 0.3125rem;
+  letter-spacing: 0;
+  vertical-align: -0.125rem;
+}
+#tableData .add {
+  width: 1.25rem;
+  letter-spacing: 0;
 }
 /*infos*/
 .infos {
