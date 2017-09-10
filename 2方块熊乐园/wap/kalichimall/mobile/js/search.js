@@ -78,7 +78,8 @@ $(function(){
 
                 //点击事件
                 $('.classifyBox .classifyLi .firstName,.classifyBox .classifyLi .secondName').unbind('click').click(function(){
-                    window.localStorage.setItem('mobileCidName', $(this).attr('cidName'));
+                    //window.localStorage.setItem('mobileCidName', $(this).attr('cidName'));
+                    setCookie('mobileCidName', $(this).attr('cidName'), 1);
                     window.location.href = 'category.html?searchOrTab=tab&cid='+$(this).attr('cid');
                 });
 
@@ -97,8 +98,10 @@ $(function(){
     function searchBoxRightFun(){
         var searchKeyWord = $.trim($('.searchBox .search .ipt').val());
         if(searchKeyWord != ''){
-            localStorage.setItem('searchOrTab',"search");
-            localStorage.setItem('searchKeyWord',searchKeyWord);
+            //localStorage.setItem('searchOrTab',"search");
+            setCookie('searchOrTab',"search", 1);
+            //localStorage.setItem('searchKeyWord',searchKeyWord);
+            setCookie('searchKeyWord',searchKeyWord, 1);
             window.location.href = "category.html?searchOrTab=search&searchKeyWord="+searchKeyWord;
             //    window.location.href = "categoryOld.html?searchOrTab=tab&cid="+cid;
         }else{

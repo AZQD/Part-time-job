@@ -184,7 +184,8 @@ $(function(){
 
                 //点击事件
                 $('.classifyBox .classifyLi .firstName,.classifyBox .classifyLi .secondName').unbind('click').click(function () {
-                    window.localStorage.setItem('mobileCidName', $(this).attr('cidName'));
+                    //window.localStorage.setItem('mobileCidName', $(this).attr('cidName'));
+                    setCookie('mobileCidName', $(this).attr('cidName'), 1);
                     window.location.href = 'category.html?searchOrTab=tab&cid=' + $(this).attr('cid');
                 });
 
@@ -215,8 +216,10 @@ $(function(){
     });
 
     //显示地址列表
-    var areaId = localStorage.getItem("areaId");
-    var areaName = localStorage.getItem("areaName");
+    //var areaId = localStorage.getItem("areaId");
+    var areaId = getCookie("areaId");
+    //var areaName = localStorage.getItem("areaName");
+    var areaName = getCookie("areaName");
     $.ajax({
         type:'get',
         url:baseUrl+"/apigateway/areas",
@@ -233,8 +236,10 @@ $(function(){
                 console.log(areaNameArr);
                 console.log(areaIdArr);
                 if(areaId == null){
-                    localStorage.setItem('areaId', areaIdArr[0]);
-                    localStorage.setItem('areaName', areaNameArr[0]);
+                    //localStorage.setItem('areaId', areaIdArr[0]);
+                    setCookie('areaId', areaIdArr[0], 1);
+                    //localStorage.setItem('areaName', areaNameArr[0]);
+                    setCookie('areaName', areaNameArr[0], 1);
 //                        $('.headerBox .indexMiddle .address').html(areaNameArr[0]);
                 }else{
 //                        $('.headerBox .indexMiddle .address').html(areaName);
@@ -257,8 +262,10 @@ $(function(){
                 //选择地址
                 $('.headerBox .indexMiddle .addressUl .addressLi').unbind('click').click(function(){
                     var index = $(this).index();
-                    localStorage.setItem('areaId', areaIdArr[index]);
-                    localStorage.setItem('areaName', areaNameArr[index]);
+                    //localStorage.setItem('areaId', areaIdArr[index]);
+                    setCookie('areaId', areaIdArr[index], 1);
+                    //localStorage.setItem('areaName', areaNameArr[index]);
+                    setCookie('areaName', areaNameArr[index], 1);
 //                        $('.headerBox .indexMiddle .address').html(areaNameArr[index]);
                     $('.headerBox .indexMiddle .addressUl').hide();
 
@@ -449,8 +456,10 @@ $(function(){
     }
 
     function nearFun(){
-        var areaId = localStorage.getItem("areaId");
-        var areaName = localStorage.getItem("areaName");
+        //var areaId = localStorage.getItem("areaId");
+        var areaId = getCookie("areaId");
+        //var areaName = localStorage.getItem("areaName");
+        var areaName = getCookie("areaName");
         $.ajax({
             type: "get",
             url: baseUrl + "/apigateway/getgoods?areaid="+areaId +'&n=',

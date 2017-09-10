@@ -14,7 +14,8 @@ $(function(){
     var categoryMiddleCidName;
     if(getParamByUrl('searchOrTab') == 'tab'){
         var linkCid = getParamByUrl('cid');
-        categoryMiddleCidName = window.localStorage.getItem('mobileCidName');
+        //categoryMiddleCidName = window.localStorage.getItem('mobileCidName');
+        categoryMiddleCidName = getCookie('mobileCidName');
         if(linkCid == 21){
             categoryMiddleCidName = "Students";
         }else if(linkCid == 2){
@@ -33,7 +34,8 @@ $(function(){
         }
         $('.headerBox .categoryMiddle .categoryMiddleCidName').html(categoryMiddleCidName);
     }else if(getParamByUrl('searchOrTab') == 'search'){
-        categoryMiddleCidName = window.localStorage.getItem('searchKeyWord');
+        //categoryMiddleCidName = window.localStorage.getItem('searchKeyWord');
+        categoryMiddleCidName = getCookie('searchKeyWord');
         $('.headerBox .categoryMiddle .categoryMiddleCidName').html(categoryMiddleCidName);
     }
 
@@ -75,7 +77,8 @@ $(function(){
 
                 //点击事件
                 $('.classifyBox .classifyLi .firstName,.classifyBox .classifyLi .secondName').unbind('click').click(function(){
-                    window.localStorage.setItem('mobileCidName', $(this).attr('cidName'));
+                    //window.localStorage.setItem('mobileCidName', $(this).attr('cidName'));
+                    setCookie('mobileCidName', $(this).attr('cidName'), 1);
                     window.location.href = 'category.html?searchOrTab=tab&cid='+$(this).attr('cid');
                 });
 
@@ -155,8 +158,10 @@ $(function(){
 
 
     //头部显示地址列表
-    var areaId = localStorage.getItem("areaId");
-    var areaName = localStorage.getItem("areaName");
+    //var areaId = localStorage.getItem("areaId");
+    var areaId = getCookie("areaId");
+    //var areaName = localStorage.getItem("areaName");
+    var areaName = getCookie("areaName");
     $.ajax({
         type:'get',
         url:baseUrl+"/apigateway/areas",
@@ -215,8 +220,10 @@ $(function(){
                 console.log(areaNameArr);
                 console.log(areaIdArr);
                 if(areaId == null){
-                    localStorage.setItem('areaId', areaIdArr[0]);
-                    localStorage.setItem('areaName', areaNameArr[0]);
+                    //localStorage.setItem('areaId', areaIdArr[0]);
+                    setCookie('areaId', areaIdArr[0], 1);
+                    //localStorage.setItem('areaName', areaNameArr[0]);
+                    setCookie('areaName', areaNameArr[0], 1);
                     $('.headerBox .indexMiddle .address').html(areaNameArr[0]);
                 }else{
                     $('.headerBox .indexMiddle .address').html(areaName);
@@ -263,8 +270,10 @@ $(function(){
                 $('.headerBox .indexMiddle .addressUl .addressLi').unbind('click').click(function(){
                     var index = $(this).index();
                     index = index-1;
-                    localStorage.setItem('areaId', areaIdArr[index]);
-                    localStorage.setItem('areaName', areaNameArr[index]);
+                    //localStorage.setItem('areaId', areaIdArr[index]);
+                    setCookie('areaId', areaIdArr[index], 1);
+                    //localStorage.setItem('areaName', areaNameArr[index]);
+                    setCookie('areaName', areaNameArr[index], 1);
                     $('.headerBox .indexMiddle .address').html(areaNameArr[index]);
                     $('.headerBox .indexMiddle .addressUl').hide();
 
@@ -702,7 +711,8 @@ $(function(){
         if(searchKeyWord == undefined){
             searchKeyWord = '';
         }
-        if(window.localStorage.getItem('clickBanner') == 1){
+        //if(window.localStorage.getItem('clickBanner') == 1){
+        if(getCookie('clickBanner') == 1){
             if(getParamByUrl('cid') == 2){
                 $('.searchBox .search .searchLeft .second').html('Vehicles');//二级标题
             }else if(getParamByUrl('cid') == 5){
@@ -826,7 +836,8 @@ $(function(){
                             $('.goodsBox .goods').unbind('click').click(function () {
                                 var index = $(this).index();
                                 var goodId = goodIdArr[index];
-                                localStorage.setItem('goodIdFromCategory',goodId);
+                                //localStorage.setItem('goodIdFromCategory',goodId);
+                                setCookie('goodIdFromCategory',goodId, 1);
 //                            window.location.href = "detail.html?id="+goodId;
                                 window.open("detail.html?id="+goodId);
 
@@ -914,14 +925,16 @@ $(function(){
 
     }else if(searchOrTab == 'tab'){
         console.log("用户点击tab进入");
-        var cidName = localStorage.getItem("cidName");
+        //var cidName = localStorage.getItem("cidName");
+        var cidName = getCookie("cidName");
 //            cid = localStorage.getItem("cid");
         cid = getParamByUrl('cid');
 
         //修改title
         $('#categoryTitle').html(cidName+' kalichimall, make money by your second-hand goods.');
 
-        if(window.localStorage.getItem('clickBanner') == 1){
+        //if(window.localStorage.getItem('clickBanner') == 1){
+        if(getCookie('clickBanner') == 1){
             if(getParamByUrl('cid') == 2){
                 $('.searchBox .search .searchLeft .second').html('Vehicles');//二级标题
             }else if(getParamByUrl('cid') == 5){
@@ -998,7 +1011,8 @@ $(function(){
                 console.log('mmmmm', daLeiIntervalArr);
                 console.log('mmmmm', daLeiSubArr);
                 var daLeiIndex;
-                cid = localStorage.getItem('cid');
+                //cid = localStorage.getItem('cid');
+                cid = getCookie('cid');
                 if(cid == undefined){
                     cid = getParamByUrl('cid');
                 }
@@ -1263,7 +1277,8 @@ $(function(){
                             $('.goodsBox .goods').unbind('click').click(function () {
                                 var index = $(this).index();
                                 var goodId = goodIdArr[index];
-                                localStorage.setItem('goodIdFromCategory',goodId);
+                                //localStorage.setItem('goodIdFromCategory',goodId);
+                                setCookie('goodIdFromCategory',goodId, 1);
                                 window.open("detail.html?id="+goodId);
 //                            window.location.href = "detail.html?id="+goodId;
 

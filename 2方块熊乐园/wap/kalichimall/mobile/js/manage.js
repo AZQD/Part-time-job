@@ -3,7 +3,8 @@ $(function(){
 
     //点击登出
     $('.infoBox .info .infoWrap .infoRight .part1 .attrBox .logoutLink').unbind('click').click(function(){
-        localStorage.removeItem('token');
+        //localStorage.removeItem('token');
+        delCookie('token');
         window.location.href = 'index.html';
     });
 

@@ -730,8 +730,8 @@ $(function(){
             }
 
 
-            var token = localStorage.getItem("token");
-            console.log('localStorage.getItem("token")',localStorage.getItem("token"));
+            //var token = localStorage.getItem("token");
+            var token = getCookie("token");
             token=(token == null)?"":token;
 
 
@@ -782,7 +782,8 @@ $(function(){
                             if(data.status == 200){
 //                                alert(data.status);
                                 //保存id，点击CLICK IT 进入该商品详情页
-                                localStorage.setItem('goodIdFromCategory',data.data);
+                                //localStorage.setItem('goodIdFromCategory',data.data);
+                                setCookie('goodIdFromCategory',data.data, 1);
 
 
                                 $('.commonPopBox1').show().css('top',$(document).scrollTop());//滚动条的高度
@@ -837,7 +838,8 @@ $(function(){
                         if(data.status == 200){
 //                                alert(data.status);
                             //保存id，点击CLICK IT 进入该商品详情页
-                            localStorage.setItem('goodIdFromCategory',data.data);
+                            //localStorage.setItem('goodIdFromCategory',data.data);
+                            setCookie('goodIdFromCategory',data.data, 1);
 
                             $('.commonPopBox1').show().css('top',$(document).scrollTop());//滚动条的高度
                             $('.commonPopBox1 .commonPop .title').html('Successfully');

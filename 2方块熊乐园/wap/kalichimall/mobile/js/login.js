@@ -39,7 +39,8 @@ $(function(){
                     data = JSON.parse(data.data);
                     console.log("登陆",data);
                     var token = data.token;
-                    localStorage.setItem('token',token);//设置本地存储
+                    //localStorage.setItem('token',token);//设置本地存储
+                    setCookie('token',token, 1);//设置本地存储
 
 
 
@@ -170,7 +171,8 @@ $(function(){
                                     data = JSON.parse(data.data);
 
                                     var token = data.token;
-                                    localStorage.setItem('token',token);//设置本地存储
+                                    //localStorage.setItem('token',token);//设置本地存储
+                                    setCookie('token',token, 1);//设置本地存储
                                     if(getParamByUrl('goLogin') == 1){
                                         //跳转到上个页面
                                         window.history.go(-1);

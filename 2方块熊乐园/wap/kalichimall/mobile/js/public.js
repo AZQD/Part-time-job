@@ -158,7 +158,8 @@ function commonPopFun2(dataMsg, title, leftBtnName, rightBtnName, fun1, fun2){
 //favicon
 $('.favicon').attr('href', 'image/favicon.ico');
 
-var token = localStorage.getItem("token");
+//var token = localStorage.getItem("token");
+var token = getCookie("token");
 var timestamp=new Date().getTime();//获取时间戳
 
 //判断用户是否登录
