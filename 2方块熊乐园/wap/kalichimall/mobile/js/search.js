@@ -103,9 +103,6 @@ $(function(){
             //localStorage.setItem('searchKeyWord',searchKeyWord);
             setCookie('searchKeyWord',searchKeyWord, 1);
             window.location.href = "category.html?searchOrTab=search&searchKeyWord="+searchKeyWord;
-            //    window.location.href = "categoryOld.html?searchOrTab=tab&cid="+cid;
-        }else{
-            //alert('请输入搜索关键词！');
         }
     }
 

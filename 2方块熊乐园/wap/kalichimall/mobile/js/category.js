@@ -288,7 +288,7 @@ $(function(){
                     for(let i=0; i<locationArr1.length; i++){
                         var strArea = '<span class="area">AREA</span><a href="#" class="selectChoose active">ALL</a>';
                         if($('.headerBox .indexMiddle .address').html() == locationArr1[i]){
-                            alert(i);
+                            //alert(i);
                             for(var j=0; j<locationArr2[i].length; j++){
                                 strArea += '<a href="#" class="selectChoose">'+locationArr2[i][j].name+'</a>';
                                 areaIdArr2.push(locationArr2[i][j].id);
@@ -708,7 +708,7 @@ $(function(){
         lastGetGoodFun = 'searchFun';
         $('#dongHua').show();
         $('.goodsBox').hide();
-        if(searchKeyWord == undefined){
+        if(searchKeyWord == undefined || searchKeyWord == 'false'){
             searchKeyWord = '';
         }
         //if(window.localStorage.getItem('clickBanner') == 1){
@@ -1013,7 +1013,7 @@ $(function(){
                 var daLeiIndex;
                 //cid = localStorage.getItem('cid');
                 cid = getCookie('cid');
-                if(cid == undefined){
+                if(cid == ''){
                     cid = getParamByUrl('cid');
                 }
                 console.log('aaaaaaaaaaaaaaa', aaaa);

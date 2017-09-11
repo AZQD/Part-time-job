@@ -19,10 +19,11 @@ body {
 }
 /*messageBox*/
 .messageBox {
-  background-color: #fff;
+  background-color: #FBFBFB;
   position: relative;
   overflow: hidden;
   padding: 0.3125rem 0;
+  border-top: 0.25rem solid #e9e9e9;
 }
 .messageBox .msgTip {
   position: absolute;
