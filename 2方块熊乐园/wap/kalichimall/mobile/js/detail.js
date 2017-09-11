@@ -335,24 +335,26 @@ $(function(){
 
                             console.log('locationArr1',locationArr1);
                             console.log('locationArr2',locationArr2);
-                            for(let i=0; i<locationArr1.length; i++){
-                                if(locationIdArr1[i] == data.addr_l1){
+                            for(var i=0; i<locationArr1.length; i++){
+                                (function(i){
+                                    if(locationIdArr1[i] == data.addr_l1){
 //                                        alert(i);
-                                    console.log(i);
-                                    addressStr += locationArr1[i];
+                                        console.log(i);
+                                        addressStr += locationArr1[i];
 
-                                    for(var j=0; j<locationArr2[i].length; j++){
-                                        for (var info in locationArr2[i][j]){
-                                            //console.log('locationArr2[i][j][info]',locationArr2[i][j]);
-                                            if(locationArr2[i][j].id == data.addr_l2){
+                                        for(var j=0; j<locationArr2[i].length; j++){
+                                            for (var info in locationArr2[i][j]){
+                                                //console.log('locationArr2[i][j][info]',locationArr2[i][j]);
+                                                if(locationArr2[i][j].id == data.addr_l2){
 //                                                    alert(j);
-                                                addressStr2 = locationArr2[i][j].name;
+                                                    addressStr2 = locationArr2[i][j].name;
+                                                }
                                             }
                                         }
+
+
                                     }
-
-
-                                }
+                                })(i);
                             }
                             $('.detailBox .detail .detailLeft .attr .addressText').html(addressStr +' '+addressStr2 +' '+ data.addr_l4);
 

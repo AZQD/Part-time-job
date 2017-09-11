@@ -285,16 +285,18 @@ $(function(){
                     var areaIdArr2 = [];
 //                        areaid = locationArr2[0][0].id;
                     console.log('**********', areaid);
-                    for(let i=0; i<locationArr1.length; i++){
-                        var strArea = '<span class="area">AREA</span><a href="#" class="selectChoose active">ALL</a>';
-                        if($('.headerBox .indexMiddle .address').html() == locationArr1[i]){
-                            //alert(i);
-                            for(var j=0; j<locationArr2[i].length; j++){
-                                strArea += '<a href="#" class="selectChoose">'+locationArr2[i][j].name+'</a>';
-                                areaIdArr2.push(locationArr2[i][j].id);
+                    for(var i=0; i<locationArr1.length; i++){
+                        (function(i){
+                            var strArea = '<span class="area">AREA</span><a href="#" class="selectChoose active">ALL</a>';
+                            if($('.headerBox .indexMiddle .address').html() == locationArr1[i]){
+                                //alert(i);
+                                for(var j=0; j<locationArr2[i].length; j++){
+                                    strArea += '<a href="#" class="selectChoose">'+locationArr2[i][j].name+'</a>';
+                                    areaIdArr2.push(locationArr2[i][j].id);
+                                }
+                                $('.selectArea').empty().append(strArea);
                             }
-                            $('.selectArea').empty().append(strArea);
-                        }
+                        })(i);
                     }
                     console.log("areaIdArr2",areaIdArr2);
 
@@ -631,15 +633,17 @@ $(function(){
                     var areaIdArr = [];
 //                        areaid = locationArr2[0][0].id;
                     console.log('**********', areaid);
-                    for(let i=0; i<locationArr1.length; i++){
-                        var strArea = '<span class="area">AREA</span><a href="#" class="selectChoose active">ALL</a>';
-                        if($('.headerBox .header .headerLeft .lusaka').html() == locationArr1[i]){
-                            for(var j=0; j<locationArr2[i].length; j++){
-                                strArea += '<a href="#" class="selectChoose">'+locationArr2[i][j].name+'</a>';
-                                areaIdArr.push(locationArr2[i][j].id);
+                    for(var i=0; i<locationArr1.length; i++){
+                        (function(i){
+                            var strArea = '<span class="area">AREA</span><a href="#" class="selectChoose active">ALL</a>';
+                            if($('.headerBox .header .headerLeft .lusaka').html() == locationArr1[i]){
+                                for(var j=0; j<locationArr2[i].length; j++){
+                                    strArea += '<a href="#" class="selectChoose">'+locationArr2[i][j].name+'</a>';
+                                    areaIdArr.push(locationArr2[i][j].id);
+                                }
+                                $('.selectArea').empty().append(strArea);
                             }
-                            $('.selectArea').empty().append(strArea);
-                        }
+                        })(i);
                     }
                     console.log("areaIdArr",areaIdArr);
 

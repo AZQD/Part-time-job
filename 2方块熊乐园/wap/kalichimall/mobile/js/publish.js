@@ -501,49 +501,56 @@ $(function(){
                 $('#location1').change(function (){
                     str3 = '';
                     $('#location2').empty();
-                    for(let i=0; i<locationArr1.length; i++){
-                        if($('#location1 option:selected').html() == locationArr1[i]){
-                            console.log(i);
-                            addr_l1 = locationArr1Id[i];
-                            console.log('addr_l1='+addr_l1);
+                    for(var i=0; i<locationArr1.length; i++){
+                        (function(i){
+                            if($('#location1 option:selected').html() == locationArr1[i]){
+                                console.log(i);
+                                addr_l1 = locationArr1Id[i];
+                                console.log('addr_l1='+addr_l1);
 
-                            for(var j=0; j<locationArr2[i].length; j++){
-                                str3 = "<option>"+locationArr2[i][j].name+"</option>";
-                                $('#location2').append(str3);
-                                if($('#location2 option:selected').html() == locationArr2[i][j].name){
-                                    addr_l2 = locationArr2[i][j].id;
-                                    console.log('addr_l2='+addr_l2);
+                                for(var j=0; j<locationArr2[i].length; j++){
+                                    str3 = "<option>"+locationArr2[i][j].name+"</option>";
+                                    $('#location2').append(str3);
+                                    if($('#location2 option:selected').html() == locationArr2[i][j].name){
+                                        addr_l2 = locationArr2[i][j].id;
+                                        console.log('addr_l2='+addr_l2);
+                                    }
                                 }
+
+
                             }
+                        })(i);
 
-
-                        }
                     }
                 });
                 var clickBtn = 0;
                 $('#location2').change(function (){
 
-                    for(let i=0; i<locationArr1.length; i++){
-                        if($('#location1 option:selected').html() == locationArr1[i]){
-                            addr_l1 = locationArr1Id[i];
-                            console.log('addr_l1='+addr_l1);
+                    for(var i=0; i<locationArr1.length; i++){
+                        (function(i){
+                            if($('#location1 option:selected').html() == locationArr1[i]){
+                                addr_l1 = locationArr1Id[i];
+                                console.log('addr_l1='+addr_l1);
 
 //                                $('#location2').empty();
-                            for(let j=0; j<locationArr2[i].length; j++){
+                                for(var j=0; j<locationArr2[i].length; j++){
+                                    (function(j){
+                                        str3 = "<option>"+locationArr2[i][j].name+"</option>";
+                                        if(clickBtn == 0){
+                                            clickBtn++;
+                                            $('#location2').append(str3);
+                                        }
+                                        if($('#location2 option:selected').html() == locationArr2[i][j].name){
+                                            addr_l2 = locationArr2[i][j].id;
+                                            console.log('addr_l2='+addr_l2);
+                                        }
+                                    })(j);
 
-                                str3 = "<option>"+locationArr2[i][j].name+"</option>";
-                                if(clickBtn == 0){
-                                    clickBtn++;
-                                    $('#location2').append(str3);
                                 }
-                                if($('#location2 option:selected').html() == locationArr2[i][j].name){
-                                    addr_l2 = locationArr2[i][j].id;
-                                    console.log('addr_l2='+addr_l2);
-                                }
+
+
                             }
-
-
-                        }
+                        })(i);
                     }
                 });
             }
