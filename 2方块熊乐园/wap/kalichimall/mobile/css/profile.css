@@ -255,9 +255,8 @@ body {
   box-shadow: 0 0 1.25rem #333333;
 }
 .infos .part {
-  height: 2.5rem;
-  line-height: 2.5rem;
   font-size: 0.875rem;
+  padding: 0.625rem 0;
   color: #fff;
   text-align: center;
   background-color: #FF4720;

@@ -81,7 +81,6 @@
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrap {
   width: 20.625rem;
   height: 20.625rem;
-  line-height: 20.625rem;
   overflow: hidden;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg {
@@ -108,6 +107,8 @@
   font-weight: bold;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic {
+  position: relative;
+  top: 25%;
   max-width: 20.625rem;
   max-height: 20.625rem;
 }
@@ -219,8 +220,7 @@
   display: inline-block;
   font-size: 0.8125rem;
   text-align: center;
-  height: 2.8125rem;
-  line-height: 2.8125rem;
+  padding: 0.75rem 0;
   color: #333;
   /*border: 1px solid #999;*/
   background-color: #F2F2F2;
@@ -262,9 +262,8 @@ ul.share-buttons img {
   box-shadow: 0 0 1.25rem #333333;
 }
 .infos .part {
-  height: 2.5rem;
-  line-height: 2.5rem;
   font-size: 0.875rem;
+  padding: 0.625rem 0;
   color: #fff;
   text-align: center;
   background-color: #FF4720;
@@ -290,7 +289,7 @@ ul.share-buttons img {
   height: 22.8125rem;
   background-color: #fff;
   margin: 0 auto;
-  margin-top: 3.75rem;
+  margin-top: 3.125rem;
   padding: 1.875rem 1.5rem;
   position: relative;
 }

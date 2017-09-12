@@ -131,8 +131,8 @@
   display: inline-block;
   width: 3.5rem;
   height: 1.75rem;
-  line-height: 1.75rem;
   margin-top: 0.625rem;
+  padding-top: 0.375rem;
   text-align: center;
   font-size: 0.8125rem;
   color: #333;
@@ -327,11 +327,10 @@
   box-shadow: 0 0 1.25rem #333333;
 }
 .infos .part {
-  height: 2.5rem;
-  line-height: 2.5rem;
   font-size: 0.875rem;
   color: #fff;
   text-align: center;
+  padding: 0.625rem 0;
   background-color: #FF4720;
 }
 .infos .categoryPublish {
@@ -391,6 +390,7 @@
 }*/
 .headerBox .categoryMiddle {
   text-align: center;
+  padding-top: 0.375rem;
 }
 .headerBox .categoryMiddle .categoryMiddleCidName {
   color: #333333;

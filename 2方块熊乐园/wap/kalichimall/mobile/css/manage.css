@@ -49,8 +49,7 @@
 .infoBox .info .infoWrap .infoRight .part1 .attrBox .saveLink {
   display: inline-block;
   width: 10rem;
-  height: 2.1875rem;
-  line-height: 2.1875rem;
+  padding: 0.375rem 0;
   color: #fff;
   text-align: center;
   margin-top: 1.5rem;
@@ -59,8 +58,7 @@
 .infoBox .info .infoWrap .infoRight .part1 .attrBox .resetLink {
   display: inline-block;
   width: 10rem;
-  height: 2.1875rem;
-  line-height: 2.1875rem;
+  padding: 0.375rem 0;
   color: #fff;
   text-align: center;
   margin-top: 0.625rem;
@@ -69,8 +67,7 @@
 .infoBox .info .infoWrap .infoRight .part1 .attrBox .logoutLink {
   display: inline-block;
   width: 10rem;
-  height: 2.1875rem;
-  line-height: 2.1875rem;
+  padding: 0.375rem 0;
   color: #fff;
   text-align: center;
   margin-top: 0.625rem;
@@ -249,8 +246,7 @@
 .infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .right .editBtn {
   display: inline-block;
   width: 4.375rem;
-  height: 1.75rem;
-  line-height: 1.75rem;
+  padding: 0.25rem 0;
   text-align: center;
   font-size: 0.875rem;
   color: #fff;
@@ -370,9 +366,8 @@
   box-shadow: 0 0 1.25rem #333333;
 }
 .infos .part {
-  height: 2.5rem;
-  line-height: 2.5rem;
   font-size: 0.875rem;
+  padding: 0.625rem 0;
   color: #FF500D;
   text-align: center;
   background-color: #fff;

@@ -37,7 +37,6 @@
   line-height: 2.625rem;
   outline: none;
   border: 1px solid #ddd;
-  text-indent: 0.3125rem;
 }
 .loginRegisterBox .loginRegister .loginPassword {
   height: 2.625rem;
@@ -53,15 +52,13 @@
   line-height: 2.625rem;
   outline: none;
   border: 1px solid #ddd;
-  text-indent: 0.3125rem;
 }
 .loginRegisterBox .loginRegister .loginBtn {
   cursor: pointer;
   font-size: 0.8125rem;
   color: #fff;
-  height: 2.1875rem;
-  line-height: 2.1875rem;
   text-align: center;
+  padding: 0.5625rem 0;
   background-color: #FF4720;
 }
 .loginRegisterBox .loginRegister #goToRegister {
@@ -106,7 +103,6 @@
   line-height: 2.625rem;
   outline: none;
   border: 1px solid #ddd;
-  text-indent: 0.3125rem;
 }
 .loginRegisterBox .loginRegister .registerPassword {
   height: 2.625rem;
@@ -122,7 +118,6 @@
   line-height: 2.625rem;
   outline: none;
   border: 1px solid #ddd;
-  text-indent: 0.3125rem;
 }
 .loginRegisterBox .loginRegister .registerName {
   height: 2.625rem;
@@ -138,7 +133,6 @@
   line-height: 2.625rem;
   outline: none;
   border: 1px solid #ddd;
-  text-indent: 0.3125rem;
 }
 .loginRegisterBox .loginRegister .registerDrag {
   position: relative;
@@ -194,7 +188,6 @@
   background-color: #e8e8e8;
   width: 18.125rem;
   height: 2.125rem;
-  line-height: 2.125rem;
   text-align: center;
 }
 #drag .handler {
@@ -228,6 +221,7 @@
   position: absolute;
   top: 0rem;
   width: 18.75rem;
+  padding-top: 0.3125rem;
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;

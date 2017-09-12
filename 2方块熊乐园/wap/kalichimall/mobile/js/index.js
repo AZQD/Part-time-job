@@ -12,6 +12,36 @@ if(deviceType() == 'isMobile'){
 
 
 $(function(){
+    //首次进入kalichimall网站，弹出一个新消息提示框提示用户免费
+    if(getCookie('tipUserFree') == ''){
+        setCookie('tipUserFree', 1, 1);
+        commonPopFun1('Welcome to Kalichimall! You can buy or sell second hand items & new items on our website which is ALL FOR FREE! It also includes a guarantee that No extra charge will be charged! Come and create your account for FREE! Hope you have a very wonderful experience!', 'NOTICE');
+    }
+
+    
+    //点击跑马灯中的checkMsg
+    $('.messageBox .adList #checkPoint').unbind('click').click(function(){
+       window.location.href = 'points_lottery.html';
+    });
+
+    //getcount:获取浏览总数
+    $.ajax({
+        type: "get",
+        url: baseUrl+"/apigateway/getcount",
+        dataType:"json",
+        success: function(data){
+            if(data.status ==200){
+                data = JSON.parse(data.data);
+                console.log('getcount',data);
+                $('#totalUsers').html(data.tuser);
+                $('#totalProduct').html(data.tgoods);
+            }
+
+        },
+        error:function(error){
+            console.log(error);
+        }
+    });
 
     //banner下的消息动画
     var msgBox = document.getElementById('msgBox');

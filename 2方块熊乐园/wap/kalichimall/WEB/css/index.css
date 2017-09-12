@@ -94,6 +94,28 @@ body{
 .tabsBox .tabs #totalUsers{
     padding-right: 16px;
 }
+.tabsBox .tabs .messageBox{
+    position: relative;
+    display: inline-block;
+}
+.tabsBox .tabs .msgImg{
+    width: 28px;
+    margin-left: 5px;
+    vertical-align: -5px;
+}
+.tabsBox .tabs .messageBox .msgNum{
+    position: absolute;
+    right:-5px;
+    top:5px;
+    color: #333;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    line-height: 14px;
+    background: #FF4720;
+    border-radius: 14px;
+    text-align: center;
+}
 .tabsBox .tabs span{
     font-size: 16px;
     color: #FF4720;
