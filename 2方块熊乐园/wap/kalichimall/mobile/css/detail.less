@@ -313,6 +313,7 @@ ul.share-buttons img{
   width: 100%;
   left: 0;
   bottom:0;
+  z-index: 1;
   box-shadow: 0 0 20/@rem #333;
 }
 .infos .part{
@@ -339,7 +340,7 @@ ul.share-buttons img{
   background-color: RGBA(0,0,0,0.6);
   /*background-color: #000000;*/
   /*opacity: .6;*/
-  z-index: 9999;
+  z-index: 999999;
   width: 100%;
   height: 100%;
   padding: 0 20/@rem;
@@ -357,6 +358,14 @@ ul.share-buttons img{
   .tipOffPopBox .tipOffBox{
     //top: 16%;
     margin-top: 100/@rem;
+  }
+}
+@media (max-height: 400px) {
+  .tipOffPopBox .tipOffBox {
+    margin-top: 0;
+  }
+  .infos {
+    display: none;
   }
 }
 .tipOffPopBox .tipOffBox .closeTipOff{

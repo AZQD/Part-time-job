@@ -21,7 +21,7 @@ $(function(){
 
 function startScroll(obj,height,speed,delay){
     obj.timer=setInterval(function (){
-        if(obj.scrollTop % height==0){
+        if(obj.scrollTop % Math.floor(height)==0){
             clearInterval(obj.timer);
             setTimeout(function (){startScroll(obj,height,speed,delay)},delay);
         }else{

@@ -90,6 +90,52 @@ input,textarea{
     text-align: center;
 }
 
+/*commonPopBox3弹窗*/
+.commonPopBox3 {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+}
+.commonPopBox3 .commonPop {
+    width: 20.9375rem;
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: 9.375rem;
+}
+.commonPopBox3 .commonPop .title {
+    /*height: 2.3125rem;*/
+    /*line-height: 2.3125rem;*/
+    color: #000;
+    font-weight: bold;
+    padding: 0.625rem 0;
+    padding-left: 0.75rem;
+    font-size: 0.875rem;
+    background-color: #FF4720;
+}
+.commonPopBox3 .commonPop .detailTip {
+    text-align: justify;
+    /*padding: 2rem 2.5rem;*/
+    padding: 1.2rem;
+    font-size: 0.875rem;
+}
+.commonPopBox3 .commonPop .confirmBox {
+    font-size: 0.8125rem;
+    padding: 0 2.5rem 0.75rem 2.5rem;
+    text-align: center;
+}
+.commonPopBox3 .commonPop .confirmBox .confirmBtn {
+    cursor: pointer;
+    width: 7.9375rem;
+    /*height: 2.1875rem;*/
+    /*line-height: 2.1875rem;*/
+    padding: 0.5rem 0;
+    background-color: #ff4f0d;
+    color: #fff;
+    text-align: center;
+}
+
 
 /*headerBox*/
 body {

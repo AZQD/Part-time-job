@@ -121,7 +121,7 @@ $(function(){
                 //点击Edit
                 $('.infoBox .info .infoWrap .infoRight .part1 .headBox .goToEdit').unbind('click').click(function(){
                     $('.managePopBox').show().css('top',$(document).scrollTop());//滚动条的高度
-                    $('body').css('overflow', 'hidden');
+                    $('body, html').css('overflow', 'hidden');
                 });
                 $('.managePopBox').unbind('click').click(function(ev){
                     ev.stopPropagation();
@@ -188,7 +188,7 @@ $(function(){
                     console.log(baseImgSrc + headLogo);
                     $('.infoBox .info .infoWrap .infoRight .part1 .headBox .headImg').attr('src', baseImgSrc + headLogo);
                     $('.managePopBox').hide();
-                    $('body').css('overflow', 'auto');
+                    $('body, html').css('overflow', 'auto');
 
 
                 });
@@ -548,7 +548,7 @@ $(function(){
                     console.log(baseImgSrc + headLogo);
                     $('.infoBox .info .infoWrap .infoRight .part1 .headBox .headImg').attr('src', baseImgSrc + headLogo);
                     $('.managePopBox').hide();
-                    $('body').css('overflow', 'auto');
+                    $('body, html').css('overflow', 'auto');
 
 
                     var changeuserinfo = {

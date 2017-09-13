@@ -11,14 +11,14 @@ $(function(){
 
     //用户未登录时弹窗
     if($('.publishPopBox').is(":visible")){
-        $('html,body').css('overflow', 'hidden');
+        $('body, html').css('overflow', 'hidden');
     }
     $('.publishPopBox .tipOffBox .confirmBox .loginNowBtn').unbind('click').click(function(){
         window.location.href = "login.html?goLogin="+1;
     });
     $('.publishPopBox .tipOffBox .confirmBox .laterBtn').unbind('click').click(function(){
         $('.publishPopBox').hide();
-        $('html,body').css('overflow', 'auto');
+        $('body, html').css('overflow', 'auto');
         if(getParamByUrl('searchPart') == 'searchPart'){
             window.close();
         }else{
@@ -46,7 +46,7 @@ $(function(){
             $(".fileerrorTip").html("").hide();
             var arr=filePath.split('\\');
             var fileName=arr[arr.length-1];
-            $(".showFileName1").html("uploading");
+            $(".showFileName1").html("uploading").css('paddingTop','4rem');
 
             //上传图片
             var fd = new FormData();
@@ -112,7 +112,7 @@ $(function(){
                                 $(".fileerrorTip").html("").hide();
                                 var arr=filePath.split('\\');
                                 var fileName=arr[arr.length-1];
-                                $(".showFileName2").html("uploading");
+                                $(".showFileName2").html("uploading").css('paddingTop','4rem');
 
                                 //上传图片
                                 var fd = new FormData();
@@ -179,7 +179,7 @@ $(function(){
                                                     $(".fileerrorTip").html("").hide();
                                                     var arr=filePath.split('\\');
                                                     var fileName=arr[arr.length-1];
-                                                    $(".showFileName3").html("uploading");
+                                                    $(".showFileName3").html("uploading").css('paddingTop','4rem');
 
                                                     //上传图片
                                                     var fd = new FormData();
@@ -245,7 +245,7 @@ $(function(){
                                                                         $(".fileerrorTip").html("").hide();
                                                                         var arr=filePath.split('\\');
                                                                         var fileName=arr[arr.length-1];
-                                                                        $(".showFileName4").html("uploading");
+                                                                        $(".showFileName4").html("uploading").css('paddingTop','4rem');
 
                                                                         //上传图片
                                                                         var fd = new FormData();
@@ -797,7 +797,7 @@ $(function(){
                                 $('.commonPopBox1 .commonPop .title').html('Successfully');
                                 $('.commonPopBox1 .commonPop .detailTip').html('Your message has published.');
                                 if($('.commonPopBox1').is(':visible')){
-                                    $('body').css('overflow', 'hidden');
+                                    $('body, html').css('overflow', 'hidden');
                                 }
                                 $('.commonPopBox1 .commonPop .confirmBox .confirmBtn').html('Check this message').unbind('click').click(function(){
 //                                        window.location.href = "detail.html?id="+updatepubcontentId;
@@ -852,7 +852,7 @@ $(function(){
                             $('.commonPopBox1 .commonPop .title').html('Successfully');
                             $('.commonPopBox1 .commonPop .detailTip').html('Your message has published.');
                             if($('.commonPopBox1').is(':visible')){
-                                $('body').css('overflow', 'hidden');
+                                $('body, html').css('overflow', 'hidden');
                             }
                             $('.commonPopBox1 .commonPop .confirmBox .confirmBtn').html('Check this message').unbind('click').click(function(){
                                 window.location.href = "detail.html?id="+data.data;

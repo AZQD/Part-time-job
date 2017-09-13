@@ -126,11 +126,11 @@ function commonPopFun1(dataMsg, title){
     $('.commonPopBox1 .commonPop .title').html(title);
     $('.commonPopBox1 .commonPop .detailTip').html(dataMsg);
     if($('.commonPopBox1').is(':visible')){
-        $('body').css('overflow', 'hidden');
+        $('body, html').css('overflow', 'hidden');
     }
     $('.commonPopBox1 .commonPop .confirmBox .confirmBtn').unbind('click').click(function(){
         $('.commonPopBox1').hide();
-        $('body').css('overflow', 'auto');
+        $('body, html').css('overflow', 'auto');
     });
 }
 
@@ -141,17 +141,17 @@ function commonPopFun2(dataMsg, title, leftBtnName, rightBtnName, fun1, fun2){
     $('.commonPopBox2 .commonPop .title').html(title);
     $('.commonPopBox2 .commonPop .detailTip').html(dataMsg);
     if($('.commonPopBox2').is(':visible')){
-        $('body').css('overflow', 'hidden');
+        $('body, html').css('overflow', 'hidden');
     }
     $('.commonPopBox2 .commonPop .confirmBox .confirmBtn1').html(leftBtnName).unbind('click').click(function(){
         fun1();
         $('.commonPopBox2').hide();
-        $('body').css('overflow', 'auto');
+        $('body, html').css('overflow', 'auto');
     });
     $('.commonPopBox2 .commonPop .confirmBox .confirmBtn2').html(rightBtnName).unbind('click').click(function(){
         fun2();
         $('.commonPopBox2').hide();
-        $('body').css('overflow', 'auto');
+        $('body, html').css('overflow', 'auto');
     });
 }
 

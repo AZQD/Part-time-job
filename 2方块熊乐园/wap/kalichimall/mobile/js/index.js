@@ -10,12 +10,30 @@ if(deviceType() == 'isMobile'){
     window.location.href = '../WEB/index.html';
 }
 
+//commonPopBox3:第一种弹窗//提示信息，标题；
+function commonPopFun3(dataMsg, title){
+    var top = $(document).scrollTop();
+    $('.commonPopBox3').show().css('top',top);//滚动条的高度
+    $('.commonPopBox3 .commonPop .title').html(title);
+    $('.commonPopBox3 .commonPop .detailTip').html(dataMsg);
+    if($('.commonPopBox3').is(':visible')){
+        $('body, html').css('overflow', 'hidden');
+    }
+    $('.commonPopBox3 .commonPop .confirmBox .confirmBtn').unbind('click').click(function(){
+        $('.commonPopBox3').hide();
+        $('body, html').css('overflow', 'auto');
+    });
+}
+
 
 $(function(){
     //首次进入kalichimall网站，弹出一个新消息提示框提示用户免费
     if(getCookie('tipUserFree') == ''){
         setCookie('tipUserFree', 1, 1);
-        commonPopFun1('Welcome to Kalichimall! You can buy or sell second hand items & new items on our website which is ALL FOR FREE! It also includes a guarantee that No extra charge will be charged! Come and create your account for FREE! Hope you have a very wonderful experience!', 'NOTICE');
+        var str1 = '<span style="color: #FF4720;text-decoration: underline;">ALL FOR FREE</span>';
+        var str2 = '<span style="color: #FF4720;text-decoration: underline;">No extra charge will be charged</span>';
+        var str3 = '<span style="color: #FF4720;text-decoration: underline;">FREE</span>';
+        commonPopFun3('Welcome to Kalichimall! You can buy or sell second hand items & new items on our website which is '+str1+'! It also includes a guarantee that '+str2+'! Come and create your account for '+str3+'! Hope you have a very wonderful experience!', 'NOTICE');
     }
 
     
@@ -53,7 +71,8 @@ $(function(){
 
     function startScroll(obj,height,speed,delay){
         obj.timer=setInterval(function (){
-            if(obj.scrollTop % height==0){
+            if(obj.scrollTop % Math.floor(height)==0){
+            //if(obj.scrollTop - height < 0){
                 clearInterval(obj.timer);
                 setTimeout(function (){startScroll(obj,height,speed,delay)},delay);
             }else{
@@ -62,7 +81,6 @@ $(function(){
 
                 if(obj.scrollTop >= obj.scrollHeight/2){
                     obj.scrollTop =0;
-
                 }
             }
         },speed);

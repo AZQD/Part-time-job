@@ -1,5 +1,16 @@
 $(function(){
 
+    //opera mini
+    try {
+     window.localStorage.foobar = "foobar";
+     } catch (_) {
+     //alert("请取消浏览器无痕浏览再购买哦~");
+        //显示底部收藏等信息
+        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutPrice').css('bottom', '0.95rem');
+        $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare').css('bottom', '0.75rem');
+     }
+
+
     $('.detailBox .detail .detailLeft .getPhone .right .rightText').unbind('click').click(function(){
         window.location.href = "login.html?goLogin="+1;
     });
@@ -557,14 +568,21 @@ $(function(){
     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .tipOff').click(function(event){
         event.stopPropagation();
         $('#tipOffPopBox').show();
-        $('body').css('overflow', 'hidden');
+        $('body, html').css('overflow', 'hidden');
     });
+
+    /*$('#content').bind('focus', function() {
+        $('body, html').css('overflow', 'auto');
+    });
+    $('#content').bind('blur', function() {
+        $('body, html').css('overflow', 'hidden');
+    });*/
 
     ////新增 关闭tipOff
     $('.tipOffPopBox .tipOffBox .closeTipOff').click(function(event){
         event.stopPropagation();
         $('#tipOffPopBox').hide();
-        $('body').css('overflow', 'auto');
+        $('body, html').css('overflow', 'auto');
     });
 
     $('.tipOffPopBox .tipOffBox').click(function(event){
