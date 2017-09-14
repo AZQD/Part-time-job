@@ -200,11 +200,17 @@
   width: 5rem;
   height: 5rem;
   text-align: center;
-  line-height: 5rem;
+  position: relative;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .littleImg .img_ul img {
   max-width: 5rem;
   max-height: 5rem;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 .detailBox .detail .detailLeft .tabToggle {
   background-color: #F2F2F2;

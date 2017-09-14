@@ -29,6 +29,15 @@ function commonPopFun3(dataMsg, title){
 $(function(){
     //首次进入kalichimall网站，弹出一个新消息提示框提示用户免费
     if(getCookie('tipUserFree') == ''){
+        userFreeFun();
+    }
+    //点击跑马灯图标以后，弹出一个新消息提示框提示用户免费
+    $('.messageBox .msgTip').unbind('click').click(function(){
+        userFreeFun();
+    });
+
+    //弹出一个新消息提示框提示用户免费
+    function userFreeFun(){
         setCookie('tipUserFree', 1, 1);
         var str1 = '<span style="color: #FF4720;text-decoration: underline;">ALL FOR FREE</span>';
         var str2 = '<span style="color: #FF4720;text-decoration: underline;">No extra charge will be charged</span>';
@@ -310,6 +319,7 @@ $(function(){
                 //选择地址
                 $('.headerBox .indexMiddle .addressUl .addressLi').unbind('click').click(function(){
                     var index = $(this).index();
+                    alert(index);
                     //localStorage.setItem('areaId', areaIdArr[index]);
                     setCookie('areaId', areaIdArr[index], 1);
                     //localStorage.setItem('areaName', areaNameArr[index]);

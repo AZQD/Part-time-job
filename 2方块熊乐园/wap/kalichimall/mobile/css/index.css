@@ -42,8 +42,8 @@ body {
   width: 0.9375rem;
   height: 0.9375rem;
   text-align: center;
-  background-color: #FF4720;
-  border-radius: 0.9375rem;
+  background: url("../image/index/roundBg.png") no-repeat center;
+  background-size: 100% 100%;
 }
 .messageBox .msgTip .msgNum .msgNumText {
   position: relative;
@@ -53,7 +53,7 @@ body {
   overflow: hidden;
   height: 1.875rem;
   border-left: 1px solid #999;
-  margin-left: 2.625rem;
+  margin-left: 3rem;
   text-align: justify;
   padding: 0 0.5rem;
 }

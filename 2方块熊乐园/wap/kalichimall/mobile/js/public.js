@@ -185,11 +185,11 @@ if(token == null){
         success: function(data){
             if(data.status == 200){//用户已登陆
 
-                //首页是否有积分提示 : 如果有cookie，并且是index.html页面
-                if(getCookie('indexShowJiFenBox') != 1){
+                //首页是否有积分提示 : 如果有cookie，并且是index.html页面(积分功能滞后，这个面板先不显示)
+                /*if((getCookie('indexShowJiFenBox') != 1) && (window.location.href.substr(-10) == 'index.html')){
                     $('body, html').css('overflow', 'hidden');
                     $('.showPointBox').show();
-                }
+                }*/
 
                 data = JSON.parse(data.data);
                 userInfo = data;
