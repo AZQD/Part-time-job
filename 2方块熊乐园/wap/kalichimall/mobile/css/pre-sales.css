@@ -10,6 +10,7 @@
   margin-bottom: 0.25rem;
   background-color: #E4ACA8;
   padding-right: 1.75rem;
+  margin-top: 0.375rem;
 }
 .headerBox .right #preSalesSearchBtn {
   width: 3rem;
@@ -21,7 +22,7 @@
 .headerBox .right #preSalesSort {
   width: 1.4rem;
   margin: 0 0.375rem;
-  padding-bottom: 0.25rem;
+  padding-top: 0.25rem;
 }
 /*classifyBox*/
 .classifyBoxWrap {

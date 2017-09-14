@@ -39,7 +39,7 @@ $(function(){
     
     //点击跑马灯中的checkMsg
     $('.messageBox .adList #checkPoint').unbind('click').click(function(){
-       window.location.href = 'points_lottery.html';
+       //window.location.href = 'points_lottery.html';
     });
 
     //getcount:获取浏览总数
