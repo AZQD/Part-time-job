@@ -220,7 +220,7 @@ body {
     background-color: #fff;
 }
 .headerBox .indexMiddle .addressUl .addressLi:last-child {
-    border-bottom: 0.0625rem solid #cccccc;
+    border-bottom: 1px solid #cccccc;
 }
 
 .headerBox .right {

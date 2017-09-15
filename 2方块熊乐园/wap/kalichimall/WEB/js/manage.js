@@ -368,7 +368,7 @@ $(function(){
                         }
                         $('.infoBox .info .infoWrap .infoRight .part2 .listUl').append(
                             '<li class="row listLi">' +
-                            '<div class="col-xs-2 col-sm-2 left" style="background: url('+baseImgSrc + data[i].cimg+') no-repeat center center"><img style="opacity: 0;" src='+baseImgSrc + data[i].cimg+'></div>' +
+                            '<div class="col-xs-2 col-sm-2 left" style="background: url('+baseImgSrc + data[i].cimg+') no-repeat center center;background-size: 100% auto;"><img style="opacity: 0;" src='+baseImgSrc + data[i].cimg+'></div>' +
                             '<div class="col-xs-5 col-sm-5 middle">' +
                             '<p class="title">'+data[i].title+'</p>' +
                             '<div class="count">' +

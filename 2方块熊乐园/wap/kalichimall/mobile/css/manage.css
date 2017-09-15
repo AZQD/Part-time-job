@@ -277,8 +277,7 @@
 .managePopBox .managePop .fileBtn .upload {
   /*float: left;*/
   width: 7.9375rem;
-  height: 2.1875rem;
-  line-height: 2.1875rem;
+  padding: 0.5rem 0;
   margin-right: 1rem;
   font-size: 0.8125rem;
   color: #fff;
@@ -351,8 +350,7 @@
   border: none;
   outline: none;
   width: 7.9375rem;
-  height: 2.1875rem;
-  line-height: 2.1875rem;
+  padding: 0.5rem 0;
   font-size: 0.8125rem;
   color: #fff;
   background-color: #FF4720;

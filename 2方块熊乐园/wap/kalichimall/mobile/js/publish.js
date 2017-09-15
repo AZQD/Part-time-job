@@ -11,14 +11,20 @@ $(function(){
 
     //用户未登录时弹窗
     if($('.publishPopBox').is(":visible")){
-        $('body, html').css('overflow', 'hidden');
+        $('body, html').css({
+            'overflow': 'hidden',
+            'height':'100%'
+        });
     }
     $('.publishPopBox .tipOffBox .confirmBox .loginNowBtn').unbind('click').click(function(){
         window.location.href = "login.html?goLogin="+1;
     });
     $('.publishPopBox .tipOffBox .confirmBox .laterBtn').unbind('click').click(function(){
         $('.publishPopBox').hide();
-        $('body, html').css('overflow', 'auto');
+        $('body, html').css({
+            'overflow': 'auto',
+            'height':'auto'
+        });
         if(getParamByUrl('searchPart') == 'searchPart'){
             window.close();
         }else{
@@ -797,7 +803,10 @@ $(function(){
                                 $('.commonPopBox1 .commonPop .title').html('Successfully');
                                 $('.commonPopBox1 .commonPop .detailTip').html('Your message has published.');
                                 if($('.commonPopBox1').is(':visible')){
-                                    $('body, html').css('overflow', 'hidden');
+                                    $('body, html').css({
+                                        'overflow': 'hidden',
+                                        'height':'100%'
+                                    });
                                 }
                                 $('.commonPopBox1 .commonPop .confirmBox .confirmBtn').html('Check this message').unbind('click').click(function(){
 //                                        window.location.href = "detail.html?id="+updatepubcontentId;
@@ -852,7 +861,10 @@ $(function(){
                             $('.commonPopBox1 .commonPop .title').html('Successfully');
                             $('.commonPopBox1 .commonPop .detailTip').html('Your message has published.');
                             if($('.commonPopBox1').is(':visible')){
-                                $('body, html').css('overflow', 'hidden');
+                                $('body, html').css({
+                                    'overflow': 'hidden',
+                                    'height':'100%'
+                                });
                             }
                             $('.commonPopBox1 .commonPop .confirmBox .confirmBtn').html('Check this message').unbind('click').click(function(){
                                 window.location.href = "detail.html?id="+data.data;

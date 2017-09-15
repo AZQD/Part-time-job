@@ -94,6 +94,7 @@ $(function(){
                     $('.infoBox .info .infoWrap .infoRight .part1 .attrBox .genderMale').attr('checked', 'checked');
                 }else if(data.sex == 2){
                     $('.infoBox .info .infoWrap .infoRight .part1 .attrBox .genderFemale').attr('checked', 'checked');
+                    //$('#testRadio').attr('checked', 'checked');
                 }
 
 
@@ -121,7 +122,10 @@ $(function(){
                 //点击Edit
                 $('.infoBox .info .infoWrap .infoRight .part1 .headBox .goToEdit').unbind('click').click(function(){
                     $('.managePopBox').show().css('top',$(document).scrollTop());//滚动条的高度
-                    $('body, html').css('overflow', 'hidden');
+                    $('body, html').css({
+                        'overflow': 'hidden',
+                        'height':'100%'
+                    });
                 });
                 $('.managePopBox').unbind('click').click(function(ev){
                     ev.stopPropagation();
@@ -188,7 +192,10 @@ $(function(){
                     console.log(baseImgSrc + headLogo);
                     $('.infoBox .info .infoWrap .infoRight .part1 .headBox .headImg').attr('src', baseImgSrc + headLogo);
                     $('.managePopBox').hide();
-                    $('body, html').css('overflow', 'auto');
+                    $('body, html').css({
+                        'overflow': 'auto',
+                        'height':'auto'
+                    });
 
 
                 });
@@ -548,7 +555,10 @@ $(function(){
                     console.log(baseImgSrc + headLogo);
                     $('.infoBox .info .infoWrap .infoRight .part1 .headBox .headImg').attr('src', baseImgSrc + headLogo);
                     $('.managePopBox').hide();
-                    $('body, html').css('overflow', 'auto');
+                    $('body, html').css({
+                        'overflow': 'auto',
+                        'height':'auto'
+                    });
 
 
                     var changeuserinfo = {

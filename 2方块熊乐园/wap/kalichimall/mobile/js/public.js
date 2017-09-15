@@ -126,11 +126,17 @@ function commonPopFun1(dataMsg, title){
     $('.commonPopBox1 .commonPop .title').html(title);
     $('.commonPopBox1 .commonPop .detailTip').html(dataMsg);
     if($('.commonPopBox1').is(':visible')){
-        $('body, html').css('overflow', 'hidden');
+        $('body, html').css({
+            'overflow': 'hidden',
+            'height':'100%'
+        });
     }
     $('.commonPopBox1 .commonPop .confirmBox .confirmBtn').unbind('click').click(function(){
         $('.commonPopBox1').hide();
-        $('body, html').css('overflow', 'auto');
+        $('body, html').css({
+            'overflow': 'auto',
+            'height':'auto'
+        });
     });
 }
 
@@ -141,17 +147,26 @@ function commonPopFun2(dataMsg, title, leftBtnName, rightBtnName, fun1, fun2){
     $('.commonPopBox2 .commonPop .title').html(title);
     $('.commonPopBox2 .commonPop .detailTip').html(dataMsg);
     if($('.commonPopBox2').is(':visible')){
-        $('body, html').css('overflow', 'hidden');
+        $('body, html').css({
+            'overflow': 'hidden',
+            'height':'100%'
+        });
     }
     $('.commonPopBox2 .commonPop .confirmBox .confirmBtn1').html(leftBtnName).unbind('click').click(function(){
         fun1();
         $('.commonPopBox2').hide();
-        $('body, html').css('overflow', 'auto');
+        $('body, html').css({
+            'overflow': 'auto',
+            'height':'auto'
+        });
     });
     $('.commonPopBox2 .commonPop .confirmBox .confirmBtn2').html(rightBtnName).unbind('click').click(function(){
         fun2();
         $('.commonPopBox2').hide();
-        $('body, html').css('overflow', 'auto');
+        $('body, html').css({
+            'overflow': 'auto',
+            'height':'auto'
+        });
     });
 }
 
@@ -187,7 +202,10 @@ if(token == null){
 
                 //首页是否有积分提示 : 如果有cookie，并且是index.html页面(积分功能滞后，这个面板先不显示)
                 /*if((getCookie('indexShowJiFenBox') != 1) && (window.location.href.substr(-10) == 'index.html')){
-                    $('body, html').css('overflow', 'hidden');
+                    $('body, html').css({
+                        'overflow': 'hidden',
+                        'height': '100%'
+                    });
                     $('.showPointBox').show();
                 }*/
 

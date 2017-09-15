@@ -29,6 +29,9 @@ body {
   position: absolute;
   left: 0;
   top: 0.5rem;
+  border-right: 1px solid #999;
+  padding-top: 0.125rem;
+  padding-right: 0.75rem;
 }
 .messageBox .msgTip .msgImg {
   padding: 0 0.3125rem;
@@ -37,22 +40,23 @@ body {
 .messageBox .msgTip .msgNum {
   position: absolute;
   display: inline-block;
-  right: -0.3125rem;
+  right: 0.4375rem;
   top: -0.3125rem;
   width: 0.9375rem;
   height: 0.9375rem;
   text-align: center;
   background: url("../image/index/roundBg.png") no-repeat center;
   background-size: 100% 100%;
+  font-size: 0.75rem;
 }
 .messageBox .msgTip .msgNum .msgNumText {
   position: relative;
-  top: -0.125rem;
+  height: 100%;
+  top: -0.0625rem;
 }
 .messageBox #msgBox {
   overflow: hidden;
   height: 1.875rem;
-  border-left: 1px solid #999;
   margin-left: 3rem;
   text-align: justify;
   padding: 0 0.5rem;

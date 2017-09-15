@@ -15,6 +15,11 @@
         #ipt{
             text-indent: 1rem;
         }
+        .box2{
+            width: 100px;
+            height: 1000px;
+            background-color: red;
+        }
     </style>
 </head>
 <body>
@@ -25,6 +30,14 @@
 <div id="clickBox2">click跳转</div>
 <hr/>
 <input type="text" id="ipt" placeholder="input">
+<input type="radio" checked>
+<form action="">
+    <input type="radio" checked>
+</form>
+<input type="radio" id="radio1">
+<input type="radio" id="radio2">
+<input type="radio" id="radio3">
+<div class="box2"></div>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
 <script type="text/javascript">
     $(function(){
@@ -33,6 +46,22 @@
         });
         $('#clickBox2').unbind('click').click(function(){
             window.location.href = 'index.html';
+        });
+        $('#radio1').css('checked', 'checked');
+        $('#radio2').prop('checked', true);
+        $('#radio3').attr('checked', 'checked');
+
+        $('#box1').unbind('click').click(function(){
+            $('body, html').css({
+                'overflow': 'auto',
+                'height':'auto'
+            });
+        });
+        $('.box2').unbind('click').click(function(){
+            $('body, html').css({
+                'overflow': 'hidden',
+                'height':'100%'
+            });
         });
     });
 </script>

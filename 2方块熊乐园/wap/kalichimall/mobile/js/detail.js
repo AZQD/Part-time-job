@@ -568,21 +568,21 @@ $(function(){
     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .tipOff').click(function(event){
         event.stopPropagation();
         $('#tipOffPopBox').show();
-        $('body, html').css('overflow', 'hidden');
+        $('body, html').css({
+            'overflow': 'hidden',
+            'height':'100%'
+        });
     });
 
-    /*$('#content').bind('focus', function() {
-        $('body, html').css('overflow', 'auto');
-    });
-    $('#content').bind('blur', function() {
-        $('body, html').css('overflow', 'hidden');
-    });*/
 
     ////新增 关闭tipOff
     $('.tipOffPopBox .tipOffBox .closeTipOff').click(function(event){
         event.stopPropagation();
         $('#tipOffPopBox').hide();
-        $('body, html').css('overflow', 'auto');
+        $('body, html').css({
+            'overflow': 'auto',
+            'height':'auto'
+        });
     });
 
     $('.tipOffPopBox .tipOffBox').click(function(event){
@@ -593,6 +593,7 @@ $(function(){
 //            $('.tipOffPopBox').hide();
     });
     $('.tipOffPopBox .tipOffBox .submit .submitBtn').click(function(event){
+        $(this).css('color', 'red');
         event.stopPropagation();
         if($('.tipOffPopBox .tipOffBox #detail').val() != ''){
             $('.tipOffPopBox').hide();

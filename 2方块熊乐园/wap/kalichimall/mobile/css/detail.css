@@ -23,7 +23,7 @@
   position: absolute;
   right: 2.5rem;
   top: 0.375rem;
-  width: 9.75rem;
+  width: 10.75rem;
   height: 3.125rem;
 }
 .detailBox .detail .detailLeft .getPhone .left {
@@ -57,7 +57,7 @@
   font-size: 1.125rem;
   font-weight: bold;
   padding-left: 0.625rem;
-  padding-right: 12rem;
+  padding-right: 13rem;
   line-height: 1.875rem;
   min-height: 1.875rem;
   text-overflow: ellipsis;
@@ -70,7 +70,7 @@
   font-size: 0.875rem;
   font-weight: bold;
   padding-left: 0.625rem;
-  padding-right: 12rem;
+  padding-right: 13rem;
 }
 .detailBox .detail .detailLeft .attr .addressText {
   text-overflow: ellipsis;
@@ -107,8 +107,12 @@
   font-weight: bold;
 }
 .detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPic {
-  position: relative;
-  top: 25%;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
   max-width: 20.625rem;
   max-height: 20.625rem;
 }
@@ -357,8 +361,7 @@ ul.share-buttons img {
 }
 .tipOffPopBox .tipOffBox .submit .submitBtn {
   width: 7.9375rem;
-  height: 2.1875rem;
-  line-height: 2.1875rem;
+  padding: 0.5rem 0;
   border: none;
   outline: none;
   background-color: #FF4720;

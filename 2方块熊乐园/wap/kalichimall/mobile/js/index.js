@@ -17,11 +17,17 @@ function commonPopFun3(dataMsg, title){
     $('.commonPopBox3 .commonPop .title').html(title);
     $('.commonPopBox3 .commonPop .detailTip').html(dataMsg);
     if($('.commonPopBox3').is(':visible')){
-        $('body, html').css('overflow', 'hidden');
+        $('body, html').css({
+            'overflow': 'hidden',
+            'height':'100%'
+        });
     }
     $('.commonPopBox3 .commonPop .confirmBox .confirmBtn').unbind('click').click(function(){
         $('.commonPopBox3').hide();
-        $('body, html').css('overflow', 'auto');
+        $('body, html').css({
+            'overflow': 'auto',
+            'height':'auto'
+        });
     });
 }
 
@@ -102,7 +108,10 @@ $(function(){
     //积分面板
     $('.showPointBox .showPoint .close, .showPointBox .showPoint .ok').unbind('click').click(function(){
        $('.showPointBox').hide();
-        $('body, html').css('overflow', 'auto');
+        $('body, html').css({
+            'overflow': 'auto',
+            'height':'auto'
+        });
         //新增：提示一天登陆一次奖励一个积分
         setCookie('indexShowJiFenBox', 1, 1);
     });
