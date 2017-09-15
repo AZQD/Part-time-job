@@ -33,8 +33,16 @@
     <div class="box1">
         <div class="box2"></div>
     </div>
+    <button id="btn">append</button>
 
 </div>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('#btn').unbind('click').click(function(){
+            $('.box2').append('abcd');
+        });
+    });
+</script>
 </body>
 </html>
