@@ -243,7 +243,7 @@ $(function(){
                 if((data.status == 1) || (data.status == 2)){
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare .btn3').hide();
                     $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .bigImgPicWrapBg').show();
-                    ShowLittleImgBgStr = '<div class="isShowLittleImgBg" style="width: 100%;height: 100%;line-height:5rem;position: absolute;text-align:center;background: RGBA(0,0,0,0.4);">' +
+                    ShowLittleImgBgStr = '<div class="isShowLittleImgBg" style="width: 100%;height: 100%;position: absolute;text-align:center;background: RGBA(0,0,0,0.4);z-index: 9;padding-top: 1.375rem;">' +
                         '<span style="color: #FF4720;font-size: 1.4rem;font-weight: bold;">offline</span>' +
                         '</div>';
                 }
