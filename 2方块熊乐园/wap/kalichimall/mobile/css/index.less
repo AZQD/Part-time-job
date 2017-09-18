@@ -199,12 +199,19 @@ body{
   text-decoration: underline;
 }
 
+
+.container{
+  transform: none;
+}
+
+
 /*infos*/
 .infos{
-  position: fixed;
+  //position: fixed;
   width: 100%;
   left: 0;
   bottom:0;
+  z-index: 999;
   box-shadow: 0 0 20/@rem #333;
 }
 .infos .part{
@@ -219,6 +226,7 @@ body{
   //border-bottom: 6/@rem solid #FF4720;
 }
 .infos .indexPublish{
+  background-color: #FF4720;
   border-right: 1px solid #fff;
 }
 .infos .part span{

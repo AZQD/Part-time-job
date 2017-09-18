@@ -33,6 +33,28 @@ function commonPopFun3(dataMsg, title){
 
 
 $(function(){
+
+
+    /*var otop = $(".info").offset().top;
+    $(window).scroll(function(){
+        var scroll_top = parseInt($(window).scrollTop());
+        if( scroll_top > otop ){
+            if ($.browser.msie && ($.browser.version == "6.0") && !$.support.style) {
+                $("#sub_nav").css({position:"absolute", top:$(window).scrollTop()+"px"});
+            }else{
+                $("#sub_nav").css({position:"fixed", top:"0px"});
+            }
+        }else{
+            $("#sub_nav").css({position:"static", top:""});
+        }
+    });
+*/
+    $('body').unbind('click').click(function(){
+        //console.log(document.body.clientHeight);
+        console.log(document.documentElement.clientHeight);
+        //console.log(window.screen.height);
+        //console.log(document.body.scrollHeight);
+    });
     //首次进入kalichimall网站，弹出一个新消息提示框提示用户免费
     if(getCookie('tipUserFree') == ''){
         userFreeFun();
@@ -583,4 +605,7 @@ $(function(){
             nearFun();
         }
     });
+
+    //$('.infos .indexPublish').css('borderRight', '1px solid #bfa');
+
 });

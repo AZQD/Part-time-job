@@ -180,12 +180,15 @@ body {
   color: #333;
   text-decoration: underline;
 }
+.container {
+  transform: none;
+}
 /*infos*/
 .infos {
-  position: fixed;
   width: 100%;
   left: 0;
   bottom: 0;
+  z-index: 999;
   box-shadow: 0 0 1.25rem #333333;
 }
 .infos .part {
@@ -196,6 +199,7 @@ body {
   padding: 0.625rem 0;
 }
 .infos .indexPublish {
+  background-color: #FF4720;
   border-right: 1px solid #fff;
 }
 .infos .part span {

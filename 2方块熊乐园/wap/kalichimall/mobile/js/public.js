@@ -453,3 +453,8 @@ $('.headerBox .left .logo').unbind('click').click(function(){
 $('.headerBox .right .search').unbind('click').click(function(){
     window.location.href = 'search.html';
 });
+//alert($(window).clientTop);
+//$('.infos').css('top', document.documentElement.clientHeight - $('.infos').height());
+//$(window).on('scroll', function () {
+//    $('.infos').css('top', document.documentElement.clientHeight - $('.infos').height() + $(window).scrollTop());
+//});
