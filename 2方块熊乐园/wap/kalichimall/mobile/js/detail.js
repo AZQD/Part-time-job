@@ -4,7 +4,6 @@ $(function(){
     try {
      window.localStorage.foobar = "foobar";
      } catch (_) {
-     //alert("请取消浏览器无痕浏览再购买哦~");
         //显示底部收藏等信息
         $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutPrice').css('bottom', '0.95rem');
         $('.detailBox .detail .detailLeft .goodDesc .goodDescLeft .bigImg .aboutShare').css('bottom', '0.75rem');
@@ -585,15 +584,14 @@ $(function(){
         });
     });
 
-    $('.tipOffPopBox .tipOffBox').click(function(event){
+    /*$('.tipOffPopBox .tipOffBox').click(function(event){
         event.stopPropagation();
     });
     $('.tipOffPopBox').click(function(event){
         event.stopPropagation();
 //            $('.tipOffPopBox').hide();
-    });
-    $('.tipOffPopBox .tipOffBox .submit .submitBtn').click(function(event){
-        $(this).css('color', 'red');
+    });*/
+    $('.tipOffPopBox .tipOffBox .submit .submitBtn').unbind('click').click(function(event){
         event.stopPropagation();
         if($('.tipOffPopBox .tipOffBox #detail').val() != ''){
             $('.tipOffPopBox').hide();

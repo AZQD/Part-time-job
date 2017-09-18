@@ -260,10 +260,12 @@ body {
   background-color: #FF4720;
 }
 .infos .profilePublish {
-  border-right: 1px solid #fff;
+  background: #ff4720 url("../image/index/borderWhite.png") no-repeat right top;
+  background-size: 1px 100%;
 }
 .infos .goToHome {
-  border-left: 1px solid #fff;
+  background: #ff4720 url("../image/index/borderWhite.png") no-repeat left top;
+  background-size: 1px 100%;
 }
 .infos .part span {
   text-decoration: underline;

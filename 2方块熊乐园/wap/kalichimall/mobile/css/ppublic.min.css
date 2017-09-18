@@ -211,8 +211,9 @@ body {
 .headerBox .indexMiddle .addressUl .addressLi {
     margin: 0 auto;
     width: 6.375rem;
-    height: 1.875rem;
-    line-height: 1.875rem;
+    /*height: 1.875rem;*/
+    /*line-height: 1.875rem;*/
+    padding: 0.3125rem 0;
     font-size: 0.8125rem;
     color: #333333;
     border: 1px solid #999999;

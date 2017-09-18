@@ -70,6 +70,7 @@
   font-weight: bold;
   padding-left: 0.625rem;
   padding-right: 13rem;
+  overflow: hidden;
 }
 .detailBox .detail .detailLeft .attr .addressText {
   text-overflow: ellipsis;
@@ -279,7 +280,8 @@ ul.share-buttons img {
   background-color: #FF4720;
 }
 .infos .detailPublish {
-  border-right: 1px solid #fff;
+  background: #ff4720 url("../image/index/borderWhite.png") no-repeat right top;
+  background-size: 1px 100%;
 }
 .infos .part span {
   text-decoration: underline;

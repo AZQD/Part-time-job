@@ -606,6 +606,13 @@ $(function(){
         }
     });
 
+    //opera mini
+    try {
+        window.localStorage.foobar = "foobar";
+    } catch (_) {
+        //跑马灯数字位置调整
+        $('.messageBox .msgTip .msgNum .msgNumText').addClass('msgNumTextOpera');
+    }
     //$('.infos .indexPublish').css('borderRight', '1px solid #bfa');
 
 });

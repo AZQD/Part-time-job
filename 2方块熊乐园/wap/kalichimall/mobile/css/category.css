@@ -41,8 +41,7 @@
   border-bottom: 1px solid #999999;
 }
 .toggleSortBox .toggleList .uls li {
-  height: 1.875rem;
-  line-height: 1.875rem;
+  padding: 0.3125rem 0;
   font-size: 0.8125rem;
   color: #333333;
   border: 1px solid #999999;
@@ -334,7 +333,8 @@
   background-color: #FF4720;
 }
 .infos .categoryPublish {
-  border-right: 1px solid #fff;
+  background: #ff4720 url("../image/index/borderWhite.png") no-repeat right top;
+  background-size: 1px 100%;
 }
 .infos .part span {
   text-decoration: underline;

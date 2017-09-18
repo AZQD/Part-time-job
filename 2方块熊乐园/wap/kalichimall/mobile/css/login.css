@@ -161,8 +161,7 @@
   cursor: pointer;
   font-size: 0.8125rem;
   color: #fff;
-  height: 2.1875rem;
-  line-height: 2.1875rem;
+  padding: 0.5625rem 0;
   text-align: center;
   background-color: #FF4720;
 }
