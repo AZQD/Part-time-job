@@ -71,6 +71,8 @@ $(function(){
     });
 
 
+    //初始化性别：
+    var sex = 0;
 
     //获取用户信息（用于展示修改之前的用户信息）
     var headLogo = '';
@@ -89,6 +91,7 @@ $(function(){
                 console.log("获得用户信息",data);
                 console.log("用户已登陆");
 
+                sex = data.sex;
                 //gender
                 if(data.sex == 1){
                     $('.infoBox .info .infoWrap .infoRight .part1 .attrBox .genderMale').attr('checked', 'checked');
@@ -126,12 +129,36 @@ $(function(){
                         'overflow': 'hidden',
                         'height':'100%'
                     });
+
+                    $('#nickName').attr('disabled', 'disabled');
+                    //opera mini
+                    /*try {
+                        window.localStorage.foobar = "foobar";
+                    } catch (_) {
+                        //nickname输入框
+                        $('#nickName').attr('disabled', 'disabled');
+                    }*/
+
                 });
 
                 //新增关闭按钮
                 $('.managePopBox .managePop .closePopImg').unbind('click').click(function(ev){
                     ev.stopPropagation();
                     $('.managePopBox').hide();
+                    $('body, html').css({
+                        'overflow': 'auto',
+                        'height':'auto'
+                    });
+
+                    //opera mini
+                    /*try {
+                        window.localStorage.foobar = "foobar";
+                    } catch (_) {
+                        //nickname输入框
+                        $('#nickName').removeAttr('disabled');
+                    }*/
+                    $('#nickName').removeAttr('disabled');
+
                 });
 
                 /*$('.managePopBox').unbind('click').click(function(ev){
@@ -196,6 +223,11 @@ $(function(){
 
                 //点击保存
                 $('.managePopBox .managePop .save .saveBtn').unbind('click').click(function(){
+
+                    //opera mini
+                    //nickname输入框
+                    $('#nickName').removeAttr('disabled');
+
                     console.log(baseImgSrc + headLogo);
                     $('.infoBox .info .infoWrap .infoRight .part1 .headBox .headImg').attr('src', baseImgSrc + headLogo);
                     $('.managePopBox').hide();
@@ -203,6 +235,8 @@ $(function(){
                         'overflow': 'auto',
                         'height':'auto'
                     });
+
+
 
 
                 });
@@ -229,7 +263,7 @@ $(function(){
 
 
     //点击保存：SAVE CHANGES
-    var sex = 0;
+    //var sex = 0;
     $('.infoBox .info .infoWrap .infoRight .part1 .attrBox .saveLink').unbind('click').click(function(){
         if ($('.infoBox .info .infoWrap .infoRight .part1 .attrBox .gender').get(0).checked) {
             sex = 1;

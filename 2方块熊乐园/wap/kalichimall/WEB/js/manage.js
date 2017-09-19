@@ -86,6 +86,7 @@ $(function(){
     });
 
 
+    var sex = 0;
 
     //获取用户信息（用于展示修改之前的用户信息）
     var headLogo = '';
@@ -105,6 +106,7 @@ $(function(){
                 console.log("用户已登陆");
 
 
+                sex = data.sex;
                 //gender
                 if(data.sex == 1){
                     $('.infoBox .info .infoWrap .infoRight .part1 .attrBox .genderMale').attr('checked', 'checked');
@@ -190,7 +192,7 @@ $(function(){
                 });
 
                 //点击保存
-                var sex = 0;
+                //var sex = 0;
                 $('.managePopBox .managePop .save .saveBtn').unbind('click').click(function(){
                     console.log(baseImgSrc + headLogo);
                     $('.infoBox .info .infoWrap .infoRight .part1 .headBox .headImg').attr('src', baseImgSrc + headLogo);
@@ -220,7 +222,7 @@ $(function(){
 
 
     //点击保存：SAVE CHANGES
-    var sex = 0;
+    //var sex = 0;
     $('.infoBox .info .infoWrap .infoRight .part1 .attrBox .saveLink').unbind('click').click(function(){
         if ($('.infoBox .info .infoWrap .infoRight .part1 .attrBox .gender').get(0).checked) {
             sex = 1;
