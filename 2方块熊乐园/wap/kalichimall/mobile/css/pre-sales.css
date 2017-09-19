@@ -247,6 +247,7 @@
   color: #fff;
   text-align: center;
   background-color: #FF4720;
+  font-weight: bold;
 }
 .infos .preSalesPublish {
   background: #ff4720 url("../image/index/borderWhite.png") no-repeat right top;

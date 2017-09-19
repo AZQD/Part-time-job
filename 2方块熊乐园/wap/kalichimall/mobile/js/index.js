@@ -67,9 +67,9 @@ $(function(){
     //弹出一个新消息提示框提示用户免费
     function userFreeFun(){
         setCookie('tipUserFree', 1, 1);
-        var str1 = '<span style="color: #FF4720;text-decoration: underline;">ALL FOR FREE</span>';
-        var str2 = '<span style="color: #FF4720;text-decoration: underline;">No extra charge will be charged</span>';
-        var str3 = '<span style="color: #FF4720;text-decoration: underline;">FREE</span>';
+        var str1 = '<i style="color: #FF4720;text-decoration: underline;">ALL FOR FREE</i>';
+        var str2 = '<i style="color: #FF4720;text-decoration: underline;">No extra charge will be charged</i>';
+        var str3 = '<i style="color: #FF4720;text-decoration: underline;">FREE</i>';
         commonPopFun3('Welcome to Kalichimall! You can buy or sell second hand items & new items on our website which is '+str1+'! It also includes a guarantee that '+str2+'! Come and create your account for '+str3+'! Hope you have a very wonderful experience!', 'NOTICE');
     }
 

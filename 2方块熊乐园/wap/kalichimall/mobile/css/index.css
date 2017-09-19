@@ -57,7 +57,7 @@ body {
 .messageBox .msgTip .msgNum .msgNumTextOpera {
   position: relative;
   height: 100%;
-  top: -0.15rem;
+  top: -0.215rem;
 }
 .messageBox #msgBox {
   overflow: hidden;
@@ -203,6 +203,7 @@ body {
   text-align: center;
   background-color: #FF4720;
   padding: 0.625rem 0;
+  font-weight: bold;
 }
 .infos .indexPublish {
   background: #ff4720 url("../image/index/borderWhite.png") no-repeat right top;

@@ -291,7 +291,7 @@
 .pageControl .pageBtn {
   outline: none;
   border: none;
-  width: 3rem;
+  min-width: 4rem;
   height: 1.5rem;
   line-height: 1.5rem;
   border-radius: 0.25rem;
@@ -331,6 +331,7 @@
   text-align: center;
   padding: 0.625rem 0;
   background-color: #FF4720;
+  font-weight: bold;
 }
 .infos .categoryPublish {
   background: #ff4720 url("../image/index/borderWhite.png") no-repeat right top;

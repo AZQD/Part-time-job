@@ -372,7 +372,8 @@ body{
 .pageControl .pageBtn{
     outline: none;
     border: none;
-    width: 48px;
+    /*width: 48px;*/
+    min-width: 60px;
     height: 24px;
     line-height: 24px;
     border-radius: 4px;

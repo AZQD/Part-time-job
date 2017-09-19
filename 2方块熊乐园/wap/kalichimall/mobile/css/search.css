@@ -12,6 +12,7 @@
   margin: 0 auto;
   position: relative;
   margin-bottom: 2.25rem;
+  height: 2.125rem;
 }
 .searchBox .search .ipt {
   width: 12.5rem;
@@ -37,6 +38,7 @@
   left: 12.5rem;
   top: 0;
   border: 1px solid #FF4720;
+  height: 100%;
 }
 /*bestGoods*/
 .bestGoods {
