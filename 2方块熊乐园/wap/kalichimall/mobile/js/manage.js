@@ -127,13 +127,20 @@ $(function(){
                         'height':'100%'
                     });
                 });
-                $('.managePopBox').unbind('click').click(function(ev){
+
+                //新增关闭按钮
+                $('.managePopBox .managePop .closePopImg').unbind('click').click(function(ev){
+                    ev.stopPropagation();
+                    $('.managePopBox').hide();
+                });
+
+                /*$('.managePopBox').unbind('click').click(function(ev){
                     ev.stopPropagation();
                     $('.managePopBox').hide();
                 });
                 $('.managePopBox .managePop').unbind('click').click(function(ev){
                     ev.stopPropagation();
-                });
+                });*/
 
 
 
