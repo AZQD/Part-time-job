@@ -452,18 +452,10 @@ $(function(){
                             '</li>'
                         );
                     }
-                    /*$('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').hover(
-                     function(){
-                     $(this).find('.goodStatus').show();
-                     },
-                     function(){
-                     $(this).find('.goodStatus').hide();
-                     }
-                     );*/
 
 
                     //点击unpublish或者publish
-                    $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.unpublish', 'click',function(ev){
+                    $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.right .unpublish', 'click',function(ev){
                         ev.stopPropagation();
                         console.log(statusArr);
                         console.log(goodidArr);
@@ -504,7 +496,7 @@ $(function(){
                     });
 
                     //点击finished
-                    $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.finished', 'click',function(ev){
+                    $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.right .finished', 'click',function(ev){
                         ev.stopPropagation();
                         console.log(statusArr);
                         console.log(goodidArr);
@@ -541,7 +533,7 @@ $(function(){
 
 
                     //点击edit
-                    $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.editBtn', 'click',function(ev){
+                    $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.right .editBtn', 'click',function(ev){
                         ev.stopPropagation();
                         console.log(statusArr);
                         console.log(goodidArr);
@@ -552,25 +544,25 @@ $(function(){
                     });
 
                     //.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .left
-                    /*$('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.left','click', function(ev){
+                    $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.left','click', function(ev){
                         ev.stopPropagation();
                         var index = $(this).parents('.listLi').index();
 //                            window.location.href = "detail.html?id="+goodidArr[index];
                         window.open("detail.html?id="+goodidArr[index]);
-                    });*/
+                    });
                     //.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .middle
-                    /*$('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.middle','click', function(ev){
+                    $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.middle','click', function(ev){
                         ev.stopPropagation();
                         var index = $(this).parents('.listLi').index();
 //                            window.location.href = "detail.html?id="+goodidArr[index];
                         window.open("detail.html?id="+goodidArr[index]);
-                    });*/
+                    });
 
-                    $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').unbind('click').click(function(ev){
+                    /*$('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').unbind('click').click(function(ev){
                         ev.stopPropagation();
                         var index = $(this).index();
                         window.open("detail.html?id="+goodidArr[index]);
-                    });
+                    });*/
 
 
 
