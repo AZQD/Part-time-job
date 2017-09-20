@@ -70,6 +70,19 @@
             ev.stopPropagation();
             $('#test2').show();
         });
+
+
+
+        //为了兼容opera mini，用了延时500ms
+        if(window.localStorage.foobar == "foobar"){
+            window.location.href = 'index.html';
+        }else{
+            setTimeout(function(){
+                window.location.href = 'index.html';
+            }, 500);
+        }
+
+
     });
 </script>
 </body>

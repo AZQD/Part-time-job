@@ -5,7 +5,14 @@ $(function(){
     $('.infoBox .info .infoWrap .infoRight .part1 .attrBox .logoutLink').unbind('click').click(function(){
         //localStorage.removeItem('token');
         delCookie('token');
-        window.location.href = 'index.html';
+
+        //为了兼容opera mini，用了延时500ms
+        setTimeout(function(){
+            window.location.href = 'index.html';
+        }, 500);
+
+
+
     });
 
 
@@ -130,7 +137,7 @@ $(function(){
                         'height':'100%'
                     });
 
-                    $('#nickName').attr('disabled', 'disabled');
+                    //$('#nickName').attr('disabled', 'disabled');
                     //opera mini
                     /*try {
                         window.localStorage.foobar = "foobar";
@@ -157,7 +164,7 @@ $(function(){
                         //nickname输入框
                         $('#nickName').removeAttr('disabled');
                     }*/
-                    $('#nickName').removeAttr('disabled');
+                    //$('#nickName').removeAttr('disabled');
 
                 });
 
@@ -226,7 +233,7 @@ $(function(){
 
                     //opera mini
                     //nickname输入框
-                    $('#nickName').removeAttr('disabled');
+                    //$('#nickName').removeAttr('disabled');
 
                     console.log(baseImgSrc + headLogo);
                     $('.infoBox .info .infoWrap .infoRight .part1 .headBox .headImg').attr('src', baseImgSrc + headLogo);
@@ -351,7 +358,22 @@ $(function(){
     //获得用户的发布信息
     //初始化
     getuserpubinfo('',0,30);
-    $(".infoBox .info .infoWrap .infoRight .part2 .form .sell").change(function(){
+    /*$(".infoBox .info .infoWrap .infoRight .part2 .form .sell").change(function(){
+        var index = $(this).index();
+        alert(index);
+        if(index == 0){
+            getuserpubinfo(0,0,30);//status=0表示在线
+        }else if(index == 1){
+            getuserpubinfo(2,0,30);//status=2表示完成
+        }else if(index == 2){
+            getuserpubinfo(1,0,30);//status=1表示下线
+        }else{
+            getuserpubinfo('',0,30);
+        }
+    });*/
+    $('.infoBox .info .infoWrap .infoRight .part2 .form .sell').unbind('click').click(function(){
+        $('.infoBox .info .infoWrap .infoRight .part2 .form .sell').removeClass('sellActive');
+        $(this).addClass('sellActive');
         var index = $(this).index();
         if(index == 0){
             getuserpubinfo(0,0,30);//status=0表示在线
@@ -441,7 +463,8 @@ $(function(){
 
 
                     //点击unpublish或者publish
-                    $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.unpublish', 'click',function(){
+                    $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.unpublish', 'click',function(ev){
+                        ev.stopPropagation();
                         console.log(statusArr);
                         console.log(goodidArr);
                         var index = $(this).parents('.listLi').index();
@@ -481,7 +504,8 @@ $(function(){
                     });
 
                     //点击finished
-                    $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.finished', 'click',function(){
+                    $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.finished', 'click',function(ev){
+                        ev.stopPropagation();
                         console.log(statusArr);
                         console.log(goodidArr);
                         var index = $(this).parents('.listLi').index();
@@ -517,7 +541,8 @@ $(function(){
 
 
                     //点击edit
-                    $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.editBtn', 'click',function(){
+                    $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.editBtn', 'click',function(ev){
+                        ev.stopPropagation();
                         console.log(statusArr);
                         console.log(goodidArr);
                         var index = $(this).parents('.listLi').index();
@@ -527,15 +552,23 @@ $(function(){
                     });
 
                     //.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .left
-                    $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.left','click', function(){
+                    /*$('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.left','click', function(ev){
+                        ev.stopPropagation();
                         var index = $(this).parents('.listLi').index();
 //                            window.location.href = "detail.html?id="+goodidArr[index];
                         window.open("detail.html?id="+goodidArr[index]);
-                    });
+                    });*/
                     //.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi .middle
-                    $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.middle','click', function(){
+                    /*$('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').delegate('.middle','click', function(ev){
+                        ev.stopPropagation();
                         var index = $(this).parents('.listLi').index();
 //                            window.location.href = "detail.html?id="+goodidArr[index];
+                        window.open("detail.html?id="+goodidArr[index]);
+                    });*/
+
+                    $('.infoBox .info .infoWrap .infoRight .part2 .listUl .listLi').unbind('click').click(function(ev){
+                        ev.stopPropagation();
+                        var index = $(this).index();
                         window.open("detail.html?id="+goodidArr[index]);
                     });
 

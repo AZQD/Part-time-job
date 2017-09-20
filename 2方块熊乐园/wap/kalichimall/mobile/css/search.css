@@ -25,6 +25,7 @@
   position: absolute;
   left: 0;
   top: 0;
+  height: 2.125rem;
 }
 .searchBox .search .searchBtn {
   width: 4.375rem;
@@ -37,8 +38,8 @@
   position: absolute;
   left: 12.5rem;
   top: 0;
-  border: 1px solid #FF4720;
-  height: 100%;
+  border: none;
+  height: 2.125rem;
 }
 /*bestGoods*/
 .bestGoods {

@@ -1,6 +1,16 @@
 var baseUrl = "http://www.kalichimall.com:81";
 var baseImgSrc = baseUrl+"/gimg/";
 
+//opera mini
+var isOperaMiniLow = false;
+try {
+    window.localStorage.foobar = "foobar";
+} catch (_) {
+    //opera mini 自动模式/极致模式
+    isOperaMiniLow = true;
+}
+//alert(isOperaMiniLow);
+
 function getParamByUrl(paramKey){
   var url=window.location.search.substring(1);
   var arr=url.split("&");

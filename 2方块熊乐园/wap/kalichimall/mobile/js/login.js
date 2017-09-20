@@ -1,5 +1,10 @@
 $(function(){
 
+    //新增  //opera mini 兼容
+    if(isOperaMiniLow){
+        $('.loginRegisterBox .loginRegister .registerDragNew').hide();
+    }
+
     //登陆/注册切换
     $('#goToRegister').unbind('click').click(function(){
         $('.loginRegisterBox .loginRegister .loginWrap').hide();
@@ -44,9 +49,15 @@ $(function(){
 
 
 
+                    //兼容opera mini
                     if(getParamByUrl('goLogin') == 1){
-                        //跳转到上个页面
-                        window.history.go(-1);
+                        try {
+                            window.localStorage.foobar = "foobar";
+                            //跳转到上个页面
+                            window.history.go(-1);
+                        } catch (_) {
+                            window.location.href = "index.html";
+                        }
                     }else{
                         window.location.href = "index.html";
                     }
@@ -65,7 +76,8 @@ $(function(){
     /*#drag*/
     $('.registerDragNew #drag').drag();
     var timer = setInterval(function(){
-        if($('#drag .drag_text').text() == "OK"){
+        //opera mini 兼容
+        if($('#drag .drag_text').text() == "OK" || isOperaMiniLow){
             clearInterval(timer);
         }
     }, 500);
@@ -140,7 +152,8 @@ $(function(){
             "reg":reg,
             "timestamp":timestamp
         };
-        if(dragText == 'OK'){
+        //opera mini 兼容
+        if(dragText == 'OK' || isOperaMiniLow){
             $.ajax({
                 type:"POST",
                 url:baseUrl + "/apigateway/reg",
@@ -174,8 +187,16 @@ $(function(){
                                     //localStorage.setItem('token',token);//设置本地存储
                                     setCookie('token',token, 1);//设置本地存储
                                     if(getParamByUrl('goLogin') == 1){
-                                        //跳转到上个页面
-                                        window.history.go(-1);
+
+
+                                        try {
+                                            window.localStorage.foobar = "foobar";
+                                            //跳转到上个页面
+                                            window.history.go(-1);
+                                        } catch (_) {
+                                            window.location.href = "index.html";
+                                        }
+
                                     }else{
                                         window.location.href = "index.html";
                                     }

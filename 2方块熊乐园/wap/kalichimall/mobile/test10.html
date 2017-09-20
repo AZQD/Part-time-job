@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>Title</title>
+    <style type="text/css">
+        #box{
+            position: relative;
+        }
+        .contactText{
+            width: 100px;
+            height:30px;
+            display: inline-block;
+            border: 1px solid red;
+        }
+        .contactName{
+
+        }
+        .contactPhone{
+        }
+
+        .textarea{
+            border: 1px solid red;
+            width: 100px;
+            height: 30px;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<input type="text" class="contactText contactName"><br/><input type="text" class="contactText contactPhone">
+<hr>
+<textarea name="" id="aa" class="textarea" cols="30" rows="10"></textarea><br/>
+<textarea name="" id="bb" class="textarea" cols="30" rows="10"></textarea>
+<hr>
+<div class="box2"></div>
+<script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $('#box').unbind('click').click(function(ev){
+            ev.stopPropagation();
+        });
+        /*$('.contactName').bind('input propertychange', function(){
+            alert(1);
+        });
+        $('.contactPhone').bind('input propertychange', function(){
+            alert(2);
+        });*/
+        
+        $('.box2').unbind('click').click(function(){
+            alert(1);
+        });
+    });
+</script>
+</body>
+</html>

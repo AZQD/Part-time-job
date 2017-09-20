@@ -173,7 +173,7 @@
   /*margin-top: 24/@rem;*/
 }
 .sortBox .sort .partInner2 .partInner2Box .right .contactText {
-  width: 8.875rem;
+  width: 11.5625rem;
   height: 2.1875rem;
   line-height: 2.1875rem;
   font-size: 0.8125rem;
@@ -182,9 +182,9 @@
 }
 .sortBox .sort .partInner2 .partInner2Box .right .contactText:last-child {
   margin-right: 0;
+  margin-top: 1.25rem;
 }
 .sortBox .sort .partInner2 .partInner2Box .publishBtn {
-  text-align: center;
   padding-bottom: 0.625rem;
 }
 .sortBox .sort .partInner2 .partInner2Box .publishBtn .publishLink {

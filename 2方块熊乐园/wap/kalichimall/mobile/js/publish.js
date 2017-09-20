@@ -7,6 +7,14 @@ $(function(){
     }
 
 
+    //调整发布按钮居中位置
+    var aaaa = $('.sortBox .sort .partInner2 .partInner2Box .right').width() - $('.sortBox .sort .partInner2 .partInner2Box .right .contactText').innerWidth();
+    var bbbb = $(window).width() - $('.sortBox .sort .partInner2 .partInner2Box .publishBtn .publishLink').width();
+    //alert($('.sortBox .sort .partInner2 .partInner2Box .right').width());
+    //alert($('.sortBox .sort .partInner2 .partInner2Box .right .contactText').innerWidth());
+    $('.sortBox .sort .partInner2 .partInner2Box .publishBtn').css('paddingLeft', bbbb - aaaa);
+
+
 
 
     //用户未登录时弹窗
