@@ -130,21 +130,13 @@ $(function(){
                 $('.managePopBox .managePop .imgBox img').attr('src', baseImgSrc + data.logo);
 
                 //点击Edit
-                $('.infoBox .info .infoWrap .infoRight .part1 .headBox .goToEdit').unbind('click').click(function(){
+                $('.infoBox .info .infoWrap .infoRight .part1 .headBox .goToEdit, .infoBox .info .infoWrap .infoRight .part1 .headBox .goToEdit a').unbind('click').click(function(ev){
+                    ev.stopPropagation();
                     $('.managePopBox').show().css('top',$(document).scrollTop());//滚动条的高度
                     $('body, html').css({
                         'overflow': 'hidden',
                         'height':'100%'
                     });
-
-                    //$('#nickName').attr('disabled', 'disabled');
-                    //opera mini
-                    /*try {
-                        window.localStorage.foobar = "foobar";
-                    } catch (_) {
-                        //nickname输入框
-                        $('#nickName').attr('disabled', 'disabled');
-                    }*/
 
                 });
 
@@ -229,8 +221,8 @@ $(function(){
                 });
 
                 //点击保存
-                $('.managePopBox .managePop .save .saveBtn').unbind('click').click(function(){
-
+                $('.managePopBox .managePop .save .saveBtn').unbind('click').click(function(ev){
+                    ev.stopPropagation();
                     //opera mini
                     //nickname输入框
                     //$('#nickName').removeAttr('disabled');
@@ -424,10 +416,17 @@ $(function(){
                         goodidArr.push(data[i].id);
 
                         var str = '';
-                        if(data[i].status == 0){//status=0表示在线
+                        /*if(data[i].status == 0){//status=0表示在线
                             str = '<a href="javascript:void(0);" class="editBtn">Edit</a><br/><a href="###" class="goodStatus unpublish">Offline</a>&nbsp;&nbsp;<a href="###" class="goodStatus finished">Finished</a>';
                         }else if(data[i].status == 1){//status=1表示下线
                             str = '<a href="javascript:void(0);" class="editBtn">Edit</a><br/><a href="###" class="goodStatus unpublish">Publish</a>&nbsp;&nbsp;<a href="###" class="goodStatus finished">Finished</a>';
+                        }else if(data[i].status == 2){//status=2表示完成
+                            str = '';
+                        }*/
+                        if(data[i].status == 0){//status=0表示在线
+                            str = '<span class="editBtn">Edit</span><br/><span class="goodStatus unpublish">Offline</span>&nbsp;&nbsp;<span class="goodStatus finished">Finished</span>';
+                        }else if(data[i].status == 1){//status=1表示下线
+                            str = '<span class="editBtn">Edit</span><br/><span class="goodStatus unpublish">Publish</span>&nbsp;&nbsp;<span class="goodStatus finished">Finished</span>';
                         }else if(data[i].status == 2){//status=2表示完成
                             str = '';
                         }

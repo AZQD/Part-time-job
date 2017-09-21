@@ -687,12 +687,22 @@ $(function(){
 
 
                     issell = data.issell;
-                    $('.sortBox .sort .partInner2 .partInner2Box .right .issell').removeClass('active').eq(issell).addClass('active');
+                    if(issell == 0){
+                        $('.sortBox .sort .partInner2 .partInner2Box .right .issell').removeClass('active').eq(1).addClass('active');
+                    }
+                    if(issell == 1){
+                        $('.sortBox .sort .partInner2 .partInner2Box .right .issell').removeClass('active').eq(0).addClass('active');
+                    }
 
                     goodstatus = data.goodstatus;
-                    $('.sortBox .sort .partInner2 .partInner2Box .right .issell').removeClass('active').eq(goodstatus).addClass('active');
+                    $('.sortBox .sort .partInner2 .partInner2Box .right .goodstatus').removeClass('active').eq(goodstatus).addClass('active');
 
-                    $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val(data.price);
+                    if(data.price == 0){
+                        $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').hide();
+                        $('.sortBox .sort .partInner2 .partInner2Box .right .negotiated').addClass('active');
+                    }else{
+                        $('.sortBox .sort .partInner2 .partInner2Box .right .priceText').val(data.price);
+                    }
                     $('.sortBox .sort .partInner2 .partInner2Box .right .titleText').val(data.title);
                     $('.sortBox .sort .partInner2 .partInner2Box .right .locationText').val(data.addr_l4);
                     $('.sortBox .sort .partInner2 .partInner2Box .right .detailText').val(data.details);

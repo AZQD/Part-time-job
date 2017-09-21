@@ -1015,20 +1015,33 @@ $(function(){
                 console.log('mmmmm', daLeiIntervalArr);
                 console.log('mmmmm', daLeiSubArr);
                 var daLeiIndex;
+
+                //如果是all，特殊处理
+                var allCid = false;
+
                 //cid = localStorage.getItem('cid');
                 cid = getCookie('cid');
                 if(cid == ''){
                     cid = getParamByUrl('cid');
+                    allCid = true;
                 }
                 console.log('aaaaaaaaaaaaaaa', aaaa);
                 for(var m=0; m<aaaa.length; m++){
 
                     for(var n=0; n<aaaa[m].length; n++){
                         console.log('aaa[m][n]', aaaa[m][n]);
-                        if(aaaa[m][n] == cid){
-                            daLeiIndex = m;
-                            console.log('7777777777777',daLeiIndex);
+                        if(allCid = false){
+                            if(aaaa[m][n] == cid){
+                                daLeiIndex = m;
+                                console.log('7777777777777',daLeiIndex);
+                            }
+                        }else{
+                            if(aaaa[m][n] == 22){
+                                daLeiIndex = m;
+                                console.log('7777777777777',daLeiIndex);
+                            }
                         }
+
                     }
                 }
 

@@ -1,9 +1,5 @@
 $(function(){
 
-    //新增  //opera mini 兼容
-    if(isOperaMiniLow){
-        $('.loginRegisterBox .loginRegister .registerDragNew').hide();
-    }
 
     //登陆/注册切换
     $('#goToRegister').unbind('click').click(function(){
@@ -14,6 +10,11 @@ $(function(){
         $('.loginRegisterBox .loginRegister .loginWrap').show();
         $('.loginRegisterBox .loginRegister .registerWrap').hide();
     });
+
+    //新增  //opera mini 兼容
+    if(isOperaMiniLow){
+        $('.loginRegisterBox .loginRegister .registerDragNew').hide();
+    }
 
     var b = new Base64_new();
     var publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC5jmTSO5V9ILlphRYdfFk4M2Rko/Ur22h43SxkFcGcj9Vkuew5P65XJPQtJesvY37UmU7zXWsqT/i4Evo2gaYu9Eu/fgutkP9KE4yKh4Ruk/pYC+hyNFVIK21kl4o8cfV9cKumydj2WXgmuywX8UQiVIfbKuvEAw+RVvPjBt9UqQIDAQAB";
