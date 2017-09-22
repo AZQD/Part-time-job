@@ -8,38 +8,25 @@
     <link rel="stylesheet" href="css/swiper.min.css">
     <link rel="stylesheet" href="css/ppublic.min.css">
     <style type="text/css">
-        #test{
-            width: 100px;
-            height: 1000px;
+        #upfile1{
+            background-color: fuchsia;
+        }
+        #upfile2{
             background-color: pink;
-            margin-top: 100px;
         }
     </style>
 </head>
 <body>
 <section class="container">
-    
-    <aside id="test">
-        
-    </aside>
+
+    <input type="file" id="upfile1" >
+    <hr/>
+    <input type="file" accept="image/png, image/jpeg" id="upfile2" name="file">
+
 </section>
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
 <script type="text/javascript">
     $(function(){
-        var test = document.getElementById("test");
-        test.addEventListener('touchstart', function(ev){
-            $('#test').append(1);
-        }, false);
-        test.addEventListener('touchmove', function(ev){
-            $('#test').append(2);
-        }, false);
-        test.addEventListener('touchend', function(ev){
-            $('#test').append(3);
-        }, false);
-        
-        $(window).on('scroll', function(){
-            $('#test').append(4);
-        });
     });
 </script>
 </body>

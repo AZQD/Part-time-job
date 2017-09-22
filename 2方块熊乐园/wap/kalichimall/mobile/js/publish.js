@@ -1,5 +1,12 @@
 $(function(){
 
+    //
+    //if(isOperaMiniLow){
+    //    //locationTextOperaMini
+    //    $('.sortBox .sort .partInner2 .partInner2Box .right .locationText').addClass('operaMini');
+    //}else{
+    //}
+
 
     //JavaScript通过元素的索引号删除数组中的元素
     function RemoveValByIndex(arr, index) {
