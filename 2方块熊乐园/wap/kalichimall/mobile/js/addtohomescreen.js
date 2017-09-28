@@ -584,8 +584,8 @@ ath.Class.prototype = {
 		// Enable closing after 1 second
 		if ( !this.options.mandatory ) {
 			setTimeout(function () {
-				//调整：暂时禁止自动消失
-				//that.element.addEventListener('click', that, true);
+				//kalichimall调整：点击之后消失
+				that.element.addEventListener('click', that, true);
 			}, 1000);
 		}
 
@@ -599,7 +599,8 @@ ath.Class.prototype = {
 
 		// set the destroy timer
 		if ( this.options.lifespan ) {
-			this.removeTimer = setTimeout(this.remove.bind(this), this.options.lifespan * 1000);
+			//kalichimall调整：禁止自动消失
+			//this.removeTimer = setTimeout(this.remove.bind(this), this.options.lifespan * 1000);
 		}
 
 		// fire the custom onShow event

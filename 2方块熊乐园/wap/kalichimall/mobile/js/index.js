@@ -3,8 +3,8 @@ function deviceType() {
         if (i.indexOf(e[s]) >= 0) return "isMobile";
     return "isPC"
 }
-//    alert(deviceType());
-if(deviceType() == 'isMobile'){
+    //alert(deviceType());
+if(deviceType() == 'isMobile' || isOperaMiniLow){
 //        window.location.href = 'mobile/index.html';
 }else if(deviceType() == 'isPC'){
     window.location.href = '../WEB/index.html';
