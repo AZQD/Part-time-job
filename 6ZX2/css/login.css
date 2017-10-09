@@ -1,0 +1,11 @@
+/*headerBox*/
+.headerBox {
+  padding: 0.625rem 0.5rem;
+}
+.headerBox .middle {
+  font-size: 1.125rem;
+  text-align: center;
+}
+.headerBox .right {
+  text-align: right;
+}
