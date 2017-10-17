@@ -1,0 +1,8 @@
+{
+  "short_name": "Farfetch",
+  "name": "Farfetch Wechat Store",
+  "start_url": "../src/index.html",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

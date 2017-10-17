@@ -1,0 +1,10 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  font-size: var(--font-size-14);
+  & .ff-container {
+    flex: 1;
+    overflow: auto;
+  }
+}

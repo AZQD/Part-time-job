@@ -1,0 +1,17 @@
+.ff-badge {
+  position: absolute;
+  transform: translateX(-50%);
+  transform-origin: -10% center;
+  top: -.2rem;
+  height: .6rem;
+  border-radius: .4rem;
+  min-width: .6rem;
+  line-height: .6rem;
+  text-align: center;
+  padding: 0 .14rem;
+  font-size: var(--font-size-10);
+  white-space: nowrap;
+  font-family: tahoma;
+  color: var(--color-white);
+  background-color: var(--color-red);
+}

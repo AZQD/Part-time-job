@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>ios_radio_default_ico</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M16,27 C22.0751322,27 27,22.0751322 27,16 C27,9.92486775 22.0751322,5 16,5 C9.92486775,5 5,9.92486775 5,16 C5,22.0751322 9.92486775,27 16,27 Z" id="path-1"></path>
+    </defs>
+    <g id="Old---iPhone-App" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Colours,-Fonts,-Icons,-Controls" transform="translate(-1416.000000, -823.000000)">
+            <g id="ios_radio_default_ico" transform="translate(1411.000000, 818.000000)">
+                <rect id="Rectangle-36" x="0" y="0" width="32" height="32"></rect>
+                <g id="Outer-Circle">
+                    <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    <path stroke="#DDDDDD" stroke-width="1" d="M16,26.5 C21.7989899,26.5 26.5,21.7989899 26.5,16 C26.5,10.2010101 21.7989899,5.5 16,5.5 C10.2010101,5.5 5.5,10.2010101 5.5,16 C5.5,21.7989899 10.2010101,26.5 16,26.5 Z"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

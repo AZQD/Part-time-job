@@ -1,0 +1,5 @@
+export const ADD_TO_BAG = 'ADD_TO_BAG'
+export const SET_BAG_ITEM_COUNT = 'SET_BAG_ITEM_COUNT'
+export const GET_BAG_INFO = 'GET_BAG_INFO'
+
+export const SET_PRODUCT_DETAIL = 'SET_PRODUCT_DETAIL'

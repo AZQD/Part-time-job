@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>ios_radio_active_ios</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M11,22 C17.0751322,22 22,17.0751322 22,11 C22,4.92486775 17.0751322,0 11,0 C4.92486775,0 0,4.92486775 0,11 C0,17.0751322 4.92486775,22 11,22 Z" id="path-1"></path>
+    </defs>
+    <g id="Old---iPhone-App" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Colours,-Fonts,-Icons,-Controls" transform="translate(-1352.000000, -823.000000)">
+            <g id="ios_radio_active_ios" transform="translate(1347.000000, 818.000000)">
+                <rect id="Rectangle-33" x="0" y="0" width="32" height="32"></rect>
+                <g id="Radio-Button---Active" transform="translate(5.000000, 5.000000)">
+                    <g id="Outer-Circle">
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <path stroke="#DDDDDD" stroke-width="1" d="M11,21.5 C16.7989899,21.5 21.5,16.7989899 21.5,11 C21.5,5.20101013 16.7989899,0.5 11,0.5 C5.20101013,0.5 0.5,5.20101013 0.5,11 C0.5,16.7989899 5.20101013,21.5 11,21.5 Z"></path>
+                    </g>
+                    <path d="M11,16 C13.7614237,16 16,13.7614237 16,11 C16,8.23857625 13.7614237,6 11,6 C8.23857625,6 6,8.23857625 6,11 C6,13.7614237 8.23857625,16 11,16 Z" id="Inner-Circle" fill="#222222"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>购物袋</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="x-dns-prefetch-control" content="on" />
+  <meta name="format-detection"content="telephone=no"/>
+  <meta name="format-detection" content="email=no"/>
+  <link rel="stylesheet" href="css/bootstraptc.min.css">
+  <link rel="stylesheet" href="css/ppublic.min.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div id="myBox"></div>
+
+<script src="js/react.js"></script>
+<script src="js/react-dom.js"></script>
+<!--<script src="js/browser.min.js"></script>-->
+<script src="js/JSXTransformer.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<!--<script type="text/babel">-->
+<script type="text/jsx">
+
+  var MyContainer=React.createClass({
+    getInitialState:function(){
+      return {
+        myOrderData:{}
+      }
+    },
+    componentDidMount:function(){
+      var me = this;
+      me.refs.noGoodsBox.style.height = window.innerHeight+'px';
+    },
+    render:function(){
+      return (
+        <section className="container">
+          <div className="hasGoodsBox" style={{display:'block'}}>
+            <div className="goodLists">
+              <div className="listBox">
+                <div className="topPart">
+                  <img src="image/index/country_italy.png" className="countryIcon" />
+                  <p className="desc1">
+                    <span className="fromCountry">两项商品配送自意大利</span><span className="yunFei">预计运费</span><span className="yunFeiText">¥0.00</span>
+                  </p>
+                  <p className="desc2">商品价格已包含关税</p>
+                </div>
+                <div className="bottomPart">
+                  <div className="goodLi">
+                    <img src="image/index/close.svg" className="closeIcon" />
+                    <img src="image/index/product1.png" className="productImg" />
+                    <div className="goodName">GUCCI</div>
+                    <p className="selectBox">
+                      <span className="selectBtn countSelect">数量<span className="num">1</span><img src="image/index/select.svg" className="selectIcon" /></span>
+                      <span className="selectBtn sizeSelect">尺码<span className="num">42</span><img src="image/index/select.svg" className="selectIcon" /></span>
+                    </p>
+                    <p className="bianHao">商品编号: 1184758</p>
+                    <p className="price">¥1,800.00</p>
+                  </div>
+                  <div className="goodLi">
+                    <img src="image/index/close.svg" className="closeIcon" />
+                    <img src="image/index/product2.png" className="productImg" />
+                    <div className="goodName">GUCCI</div>
+                    <p className="selectBox">
+                      <span className="selectBtn countSelect">数量<span className="num">1</span><img src="image/index/select.svg" className="selectIcon" /></span>
+                      <span className="selectBtn sizeSelect">尺码<span className="num">42</span><img src="image/index/select.svg" className="selectIcon" /></span>
+                    </p>
+                    <p className="bianHao">商品编号: 1185783</p>
+                    <p className="price">¥1,500.00</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="listBox">
+                <div className="topPart">
+                  <img src="image/index/country_italy.png" className="countryIcon" />
+                  <p className="desc1">
+                    <span className="fromCountry">一项商品配送自英国</span><span className="yunFei">预计运费</span><span className="yunFeiText">¥0.00</span>
+                  </p>
+                  <p className="desc2">商品价格已包含关税</p>
+                </div>
+                <div className="bottomPart">
+                  <div className="goodLi">
+                    <img src="image/index/close.svg" className="closeIcon" />
+                    <img src="image/index/product3.png" className="productImg" />
+                    <div className="goodName">GUCCI</div>
+                    <p className="selectBox">
+                      <span className="selectBtn countSelect">数量<span className="num">1</span><img src="image/index/select.svg" className="selectIcon" /></span>
+                      <span className="selectBtn sizeSelect">尺码<span className="num">42</span><img src="image/index/select.svg" className="selectIcon" /></span>
+                    </p>
+                    <p className="bianHao">商品编号: 1185783</p>
+                    <p className="price">¥1,500.00</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="constructBox">
+              <div className="freeTuiHuo">
+                <h3 className="title">14天无理由免费退货(退款含税)</h3>
+                <p className="desc">还在犹豫？别担心，我们提供14天无理由免费退货。来自中国内地的退货，您的退款将包含下单时所支付的关税。</p>
+              </div>
+              <div className="needHelp">
+                <h3 className="title">需要帮助 ?</h3>
+                <p className="desc">请以如下方式联系我们的客服：</p>
+              </div>
+              <div className="row contact">
+                <div className="col-xs-6 col-sm-6 part left"><img src="image/index/phone.svg" className="contactIcon" /></div>
+                <div className="col-xs-6 col-sm-6 part right"><img src="image/index/wechat.svg" className="contactIcon" /></div>
+              </div>
+              <div className="priceBox">
+                <p className="xiaoJi">小计 ¥22,134.00</p>
+                <div className="row totalPrice">
+                  <div className="col-xs-6 col-sm-6 left">运费<span className="yunFeiState">免费</span></div>
+                  <div className="col-xs-6 col-sm-6 right"><span className="heJi">总计(含关税)</span><span className="priceText">¥22,134.00</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div className="goToBuy">去结算</div>
+          </div>
+
+          <div className="noGoodsBox" ref='noGoodsBox' style={{display:'none'}}>
+            <div className="info">
+              <p className="desc1">购物袋中无商品</p>
+              <p className="desc2">欢迎来到Farfetch,<br/>享誉全球的多元化时尚精品购物平台<br/>更多商品，尽在Farfetch APP</p>
+              <p className="desc3"><span className="download">立即下载APP</span></p>
+            </div>
+          </div>
+
+        </section>
+      );
+    }
+  });
+  var Component=React.createClass({
+    render:function (){
+      return (
+        <div>
+          <MyContainer />
+        </div>
+      );
+    }
+  });
+  ReactDOM.render(
+    <Component />,document.getElementById('myBox')
+  );
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="7px" height="12px" viewBox="0 0 7 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>ICONS / Chevron</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="登录" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="E1-结算(未选)" transform="translate(-353.000000, -128.000000)">
+            <g id="shipping-address--emtpy" transform="translate(0.000000, 90.000000)">
+                <g id="ICONS-/-Chevron" transform="translate(353.000000, 44.000000) rotate(-180.000000) translate(-353.000000, -44.000000) translate(338.000000, 29.000000)">
+                    <polygon id="marker" fill="#FFFFFF" opacity="0" points="30 30 0 30 0 0 30 0"></polygon>
+                    <path d="M14.29986,21 C14.120669,21 13.9414779,20.9346676 13.8049848,20.8046694 L8.20526474,15.4714101 C7.93157842,15.2107471 7.93157842,14.7894196 8.20526474,14.5287565 L13.8049848,9.19549728 C14.0786711,8.93483424 14.5210489,8.93483424 14.7947353,9.19549728 C15.0684216,9.45616033 15.0684216,9.87748781 14.7947353,10.1381509 L9.68989051,15.0000833 L14.7947353,19.8620158 C15.0684216,20.1226789 15.0684216,20.5440063 14.7947353,20.8046694 C14.6582421,20.9346676 14.479051,21 14.29986,21" id="ICON-Chevron" fill="#222222"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

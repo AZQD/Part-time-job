@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>ios_warning_dark_ico</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="8" cy="8" r="8"></circle>
+    </defs>
+    <g id="登录" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="D3-登录(无效信息)" transform="translate(-16.000000, -73.000000)">
+            <g id="Group-2" transform="translate(0.000000, 64.000000)">
+                <g id="ios_warning_dark_ico" transform="translate(16.000000, 9.000000)">
+                    <g id="Group-9">
+                        <g id="Oval-1-Copy">
+                            <use fill-opacity="0" fill="#D8D8D8" fill-rule="evenodd" xlink:href="#path-1"></use>
+                            <circle stroke="#222222" stroke-width="1" cx="8" cy="8" r="7.5"></circle>
+                        </g>
+                        <path d="M8.33243813,9.34016927 L7.6722819,9.34016927 L7.33166504,4 L8.68119303,4 L8.33243813,9.34016927 Z M7,11.1610579 C7,10.7033035 7.39731354,10.3328188 8.0182804,10.3328188 C8.61381218,10.3328188 9.0120028,10.7033035 8.99972379,11.1610579 C9.0120028,11.6402182 8.61381218,12 8.00512433,12 C7.39731354,12 7.01227901,11.6402182 7,11.1610579 Z" id="Fill-5" fill="#222222"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

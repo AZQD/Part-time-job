@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="8px" viewBox="0 0 12 8" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>ICON-Chevron</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="登录" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="C2-购物袋全部" transform="translate(-195.000000, -174.000000)" fill="#222222">
+            <g id="Checkout-2-Products" transform="translate(0.000000, 64.000000)">
+                <g id="Product-01" transform="translate(0.000000, 62.000000)">
+                    <g id="Group-3" transform="translate(136.000000, 39.330864)">
+                        <path d="M67.79986,18.1905248 C67.620669,18.1905248 67.4414779,18.1262852 67.3049848,17.9984617 L61.7052647,12.7544193 C61.4315784,12.4981167 61.4315784,12.0838374 61.7052647,11.8275348 L67.3049848,6.58349239 C67.5786711,6.32718981 68.0210489,6.32718981 68.2947353,6.58349239 C68.5684216,6.83979496 68.5684216,7.25407431 68.2947353,7.51037688 L63.1898905,12.290977 L68.2947353,17.0715772 C68.5684216,17.3278798 68.5684216,17.7421591 68.2947353,17.9984617 C68.1582421,18.1262852 67.979051,18.1905248 67.79986,18.1905248" id="ICON-Chevron" transform="translate(65.000000, 12.290895) scale(1, -1) rotate(-270.000000) translate(-65.000000, -12.290895) "></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
