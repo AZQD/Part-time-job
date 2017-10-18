@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>登陆</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="x-dns-prefetch-control" content="on" />
+  <meta name="format-detection"content="telephone=no"/>
+  <meta name="format-detection" content="email=no"/>
+  <link rel="stylesheet" href="css/bootstraptc.min.css">
+  <link rel="stylesheet" href="css/ppublic.min.css">
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<div id="myBox"></div>
+
+<script src="js/react.js"></script>
+<script src="js/react-dom.js"></script>
+<!--<script src="js/browser.min.js"></script>-->
+<script src="js/JSXTransformer.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<!--<script type="text/babel">-->
+<script type="text/jsx">
+
+  var MyContainer=React.createClass({
+    getInitialState:function(){
+      return {
+        emailPart:1,
+        emailIconOK:false,
+        emailBlurOk:true,
+
+        pswPart:1,
+        pswBlurOk:true,
+
+        loginState:false,
+
+        warningShow:false,
+
+        myData:{}
+      }
+    },
+    componentDidMount: function () {
+      var me = this;
+//      me.refs.emailIpt.focus();
+    },
+    render:function(){
+      var me = this;
+
+      var emailShowClass = '';
+      if(me.state.emailPart == 1){
+        emailShowClass = 'show1';
+      }else{
+        emailShowClass = 'show2';
+      }
+
+      var pawShowClass = '';
+      if(me.state.pswPart == 1){
+        pawShowClass = 'show1';
+      }else{
+        pawShowClass = 'show2';
+      }
+
+
+      return (
+        <div>
+
+          <div className="warningBox" style={{display:me.state.warningShow==true?'block':'none'}}>
+            <img className="leftIcon" src="image/login/warning2.svg" alt=""/>
+            <span className="desc">请速入有效邮箱地址或密码</span>
+            <img className="rightIcon" onClick={me.closeWarning} src="image/login/close2.svg" alt=""/>
+          </div>
+
+          <section className="container">
+
+
+            <div className="emailBox">
+              <div className="inputPart">
+                <div className="inputPartInner">
+                  <p className="show2Name" style={{display:me.state.emailPart==1?'none':'block'}}>邮箱地址</p>
+                  <input className={'show '+emailShowClass} ref="emailIpt" onBlur={me.emailBlur} onFocus={me.emailFocus} onChange={me.emailChange} type="text" placeholder="邮箱地址"/>
+                </div>
+              </div>
+              <img className="emailWarningIcon" src="image/login/success.svg"  style={{display:me.state.emailIconOK==true?'block':'none'}}/>
+              <p className="emailTips" style={{display:me.state.emailBlurOk==true?'none':'block'}}>请输入有效邮箱地址</p>
+            </div>
+
+            <div className="passwordBox">
+              <div className="inputPart">
+                <div className="inputPartInner">
+                  <p className="show2Name" style={{display:me.state.pswPart==1?'none':'block'}}>密码</p>
+                  <input className={'show '+pawShowClass} ref="pswIpt" onBlur={me.pswBlur} onFocus={me.pswFocus} onChange={me.pswChange} type="password" placeholder="密码"/>
+                </div>
+              </div>
+              <img className="passwordWarningIcon" src="image/login/eye.svg" onClick={me.changeEye} />
+              <p className="pswTips" style={{display:me.state.pswBlurOk==true?'none':'block'}}>请输入有效6位密码</p>
+            </div>
+
+            <div className="forgetPsw" onClick={me.forgetPsw}>忘记密码？</div>
+
+            <div className={me.state.loginState==true?'loginBtnActive':'loginBtn'} onClick={me.state.loginState==true?me.goToLogin:''}>登录</div>
+
+
+            <div className="lineThrough"><i className="or">or</i></div>
+
+
+            <div className="createNewBtn" onClick={me.goToCreate}>创建新账户</div>
+
+
+
+          </section>
+        </div>
+      );
+    },
+
+
+    //邮箱输入框获取焦点时
+    emailChange:function(event){
+      var me = this;
+      if(event.currentTarget.value == ''){
+        me.setState({emailPart:1});
+      }else{
+        me.setState({emailPart:2});
+        var reg = /^[\w\-]+\@[a-zA-Z]{2,4}(\.[a-zA-Z]{2,3}){1,2}$/;
+        if(reg.test(event.currentTarget.value)){
+          me.setState({emailIconOK:true});
+          me.setState({emailBlurOk:true});
+          if(me.refs.pswIpt.value.length == 6){
+            me.setState({loginState:true});
+          }else {
+            me.setState({loginState:false});
+          }
+        }else{
+          me.setState({emailIconOK:false});
+          me.setState({loginState:false});
+        }
+      }
+    },
+
+    //邮箱获取焦点
+    emailFocus:function(event){
+      var me = this;
+      if(event.currentTarget.value != ''){
+        me.setState({emailPart:2});
+      }
+    },
+    //邮箱失去焦点
+    emailBlur:function(event){
+      var me = this;
+      if(event.currentTarget.value != ''){
+        var reg = /^[\w\-]+\@[a-zA-Z]{2,4}(\.[a-zA-Z]{2,3}){1,2}$/;
+        if(reg.test(event.currentTarget.value)){
+          me.setState({emailBlurOk:true});
+        }else{
+          me.setState({emailBlurOk:false});
+        }
+      }
+    },
+
+
+
+    //密码输入框获取焦点时
+    pswChange:function(event){
+      var me = this;
+      if(event.currentTarget.value == ''){
+        me.setState({pswPart:1});
+      }else{
+        me.setState({pswPart:2});
+        if(event.currentTarget.value.length == 6){
+          me.setState({pswBlurOk:true});
+          var reg = /^[\w\-]+\@[a-zA-Z]{2,4}(\.[a-zA-Z]{2,3}){1,2}$/;
+          if(reg.test(me.refs.emailIpt.value)){
+            me.setState({loginState:true});
+          }else {
+            me.setState({loginState:false});
+          }
+        }else{
+          me.setState({loginState:false});
+        }
+      }
+    },
+
+    //密码获取焦点
+    pswFocus:function(event){
+      var me = this;
+      if(event.currentTarget.value != ''){
+        me.setState({pswPart:2});
+      }
+    },
+    //密码失去焦点
+    pswBlur:function(event){
+      var me = this;
+      if(event.currentTarget.value != ''){
+        if(event.currentTarget.value.length == 6){
+          me.setState({pswBlurOk:true});
+        }else{
+          me.setState({pswBlurOk:false});
+        }
+      }
+    },
+
+    //改变密码显示状态
+    changeEye:function(){
+      var me = this;
+      me.refs.pswIpt.setAttribute('type', 'text');
+    },
+
+    //忘记密码
+    forgetPsw:function(){
+//      window.location.href = 'password.html';
+    },
+    //点击登陆
+    goToLogin:function(){
+      var me = this;
+      if(true){
+        me.setState({warningShow:true});
+      }else {
+        window.location.href = 'index.html';
+      }
+    },
+    //closeWarning
+    closeWarning:function(){
+      var me = this;
+      me.setState({warningShow:false});
+    },
+
+    //创建新账户
+    goToCreate:function(){
+//      window.location.href = 'register.html';
+    }
+
+
+
+
+
+  });
+  var Component=React.createClass({
+    render:function (){
+      return (
+        <div>
+          <MyContainer />
+        </div>
+      );
+    }
+  });
+  ReactDOM.render(
+    <Component />,document.getElementById('myBox')
+  );
+</script>
+</body>
+</html>
