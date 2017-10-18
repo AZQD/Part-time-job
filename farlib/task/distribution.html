@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>选择配送方式</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="x-dns-prefetch-control" content="on" />
+  <meta name="format-detection"content="telephone=no"/>
+  <meta name="format-detection" content="email=no"/>
+  <link rel="stylesheet" href="css/bootstraptc.min.css">
+  <link rel="stylesheet" href="css/ppublic.min.css">
+  <link rel="stylesheet" href="css/distribution.css">
+</head>
+<body>
+<div id="myBox"></div>
+
+<script src="js/react.js"></script>
+<script src="js/react-dom.js"></script>
+<!--<script src="js/browser.min.js"></script>-->
+<script src="js/JSXTransformer.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<!--<script type="text/babel">-->
+<script type="text/jsx">
+
+  var MyContainer=React.createClass({
+    getInitialState:function(){
+      return {
+
+        myData:{}
+      }
+    },
+    componentDidMount: function () {
+      var me = this;
+    },
+    render:function(){
+      var me = this;
+
+      return (
+        <section className="container">
+          <ul className="goodsUl">
+            <li className="goodsLi">
+              <div className="part1">
+                <img className="countryIcon" src="image/distribution/country_poland.png" alt=""/>
+                <p className="formWhere">一项商品配送自波兰</p>
+                <p className="contain">价格已包含关税</p>
+              </div>
+              <div className="row part2">
+                <div className="col-xs-4 col-sm-4 left">DHL Express<br/>¥0.00</div>
+                <div className="col-xs-4 col-sm-4 middle">2至4天送达</div>
+                <div className="col-xs-4 col-sm-4 right">
+                  <img src="image/distribution/notSelected.svg" alt=""/>
+                </div>
+              </div>
+            </li>
+            <li className="goodsLi">
+              <div className="part1">
+                <img className="countryIcon" src="image/distribution/country_spain.png" alt=""/>
+                <p className="formWhere">一项商品配送自波兰</p>
+                <p className="contain">价格已包含关税</p>
+              </div>
+              <div className="row part2">
+                <div className="col-xs-4 col-sm-4 left">DHL Express<br/>¥0.00</div>
+                <div className="col-xs-4 col-sm-4 middle">2至4天送达</div>
+                <div className="col-xs-4 col-sm-4 right">
+                  <img src="image/distribution/selected.svg" alt=""/>
+                </div>
+              </div>
+            </li>
+            <li className="goodsLi">
+              <div className="part1">
+                <img className="countryIcon" src="image/distribution/country_italy.png" alt=""/>
+                <p className="formWhere">一项商品配送自波兰</p>
+                <p className="contain">价格已包含关税</p>
+              </div>
+              <div className="row part2">
+                <div className="col-xs-4 col-sm-4 left">DHL Express<br/>¥0.00</div>
+                <div className="col-xs-4 col-sm-4 middle">2至4天送达</div>
+                <div className="col-xs-4 col-sm-4 right">
+                  <img src="image/distribution/selected.svg" alt=""/>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <div className="row bottomBox">
+
+            <div className="col-xs-12 col-sm-12 yuJi">预计运费</div>
+
+            <div className="col-xs-12 col-sm-12 country">
+              <span className="countryKey">波兰</span><span className="countryValue">¥0.00</span>
+            </div>
+
+            <div className="col-xs-12 col-sm-12 country">
+              <span className="countryKey">西班牙</span><span className="countryValue">¥0.00</span>
+            </div>
+
+            <div className="col-xs-6 col-sm-6 countryLeft">
+              <span className="countryKey">意大利</span><span className="countryValue">¥0.00</span>
+            </div>
+            <div className="col-xs-6 col-sm-6 countryRight"><span className="total">总共</span><span className="countryRightText">¥0.00</span></div>
+
+          </div>
+
+          <div className="saveBtn">保存并继续</div>
+
+        </section>
+      );
+    }
+
+
+  });
+  var Component=React.createClass({
+    render:function (){
+      return (
+        <div>
+          <MyContainer />
+        </div>
+      );
+    }
+  });
+  ReactDOM.render(
+    <Component />,document.getElementById('myBox')
+  );
+</script>
+</body>
+</html>

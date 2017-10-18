@@ -1,0 +1,242 @@
+body {
+  font-family: PingFangSC-Regular;
+  background-color: #F5F5F5;
+}
+/*addressBox*/
+.addressBox {
+  height: 5.5rem;
+  line-height: 5.5rem;
+  background-color: #fff;
+  padding: 0 1rem;
+  margin-top: 1.625rem;
+  border-top: 1px solid #E5E5E5;
+  border-bottom: 1px solid #E5E5E5;
+}
+.addressBox .left {
+  font-size: 0.9375rem;
+  color: #222222;
+  font-weight: bold;
+  letter-spacing: 0.0625rem;
+}
+.addressBox .middle1 {
+  font-size: 0.875rem;
+  color: #888888;
+  position: relative;
+  left: -0.25rem;
+}
+.addressBox .middle2 {
+  font-size: 0.875rem;
+  color: #222222;
+  position: relative;
+  left: -0.25rem;
+  line-height: 1rem;
+  padding-top: 1.75rem;
+}
+.addressBox .middle2 .addressName {
+  color: #888888;
+}
+.addressBox .right {
+  text-align: right;
+}
+.addressBox .right .success {
+  padding-right: 1rem;
+}
+/*postBox*/
+.postBox {
+  height: 5.5rem;
+  line-height: 5.5rem;
+  background-color: #fff;
+  padding: 0 1rem;
+  margin-top: 0.875rem;
+  border-top: 1px solid #E5E5E5;
+  border-bottom: 1px solid #E5E5E5;
+}
+.postBox .left {
+  font-size: 0.9375rem;
+  color: #222222;
+  font-weight: bold;
+  letter-spacing: 0.0625rem;
+}
+.postBox .middle2 {
+  font-size: 0.875rem;
+  color: #222222;
+  position: relative;
+  left: -0.25rem;
+  line-height: 1rem;
+  padding-top: 1.25rem;
+}
+.postBox .middle2 .postName {
+  color: #888888;
+}
+.postBox .middle2 .youHui {
+  font-size: 0.625rem;
+  color: #C2A67D;
+  height: 1.25rem;
+  line-height: 1.25rem;
+  text-align: center;
+  padding: 0 0.25rem;
+  background-color: #F7F7F7;
+}
+.postBox .right {
+  text-align: right;
+}
+.postBox .right .success {
+  padding-right: 1rem;
+}
+/*couponBox*/
+.couponBox {
+  margin: 0 1rem;
+  margin-top: 0.875rem;
+  height: 3rem;
+  line-height: 3rem;
+  background-color: #fff;
+  border: 1px solid #E5E5E5;
+  position: relative;
+}
+.couponBox .couponInfo {
+  margin-right: 5.625rem;
+  border-right: 1px solid #E5E5E5;
+}
+.couponBox .couponInfo .left1 {
+  padding-left: 1rem;
+  font-size: 0.875rem;
+  color: #888888;
+}
+.couponBox .couponInfo .left2 {
+  line-height: normal;
+  padding-left: 1rem;
+  font-size: 0.875rem;
+  color: #888888;
+}
+.couponBox .couponInfo .left2 .name {
+  font-size: 0.625rem;
+  color: #888888;
+  padding: 0.1875rem 0;
+}
+.couponBox .couponInfo .left2 .code {
+  font-size: 0.875rem;
+  color: #222222;
+}
+.couponBox .couponInfo .right {
+  text-align: right;
+}
+.couponBox .couponInfo .right .success {
+  margin-bottom: 0.25rem;
+  margin-right: 0.75rem;
+}
+.couponBox .confirm {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.9375rem;
+  color: #222222;
+  font-weight: bold;
+  width: 5.625rem;
+  text-align: center;
+}
+/*bottomBox*/
+.bottomBox {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  font-size: 0.75rem;
+  background-color: #fff;
+  border-top: 1px solid #E5E5E5;
+}
+.bottomBox .good {
+  height: 1.0625rem;
+  line-height: 1.0625rem;
+  margin-top: 0.625rem;
+  padding: 0 1rem;
+}
+.bottomBox .good .goodKey {
+  color: #757575;
+  padding-right: 1.25rem;
+}
+.bottomBox .good .goodValue {
+  color: #222222;
+}
+.bottomBox .xiaoJi {
+  height: 1.0625rem;
+  line-height: 1.0625rem;
+  margin-top: 0.4375rem;
+  padding: 0 1rem;
+}
+.bottomBox .xiaoJi .xiaoJiKey {
+  color: #888888;
+  padding-right: 1.25rem;
+}
+.bottomBox .xiaoJi .xiaoJiValue {
+  color: #139EFF;
+}
+.bottomBox .yunFei {
+  height: 1.0625rem;
+  line-height: 1.0625rem;
+  margin-top: 0.4375rem;
+  padding: 0 1rem;
+}
+.bottomBox .yunFei .yunFeiKey {
+  color: #C2A67D;
+  padding-right: 1.25rem;
+}
+.bottomBox .yunFei .yunFeiValue {
+  color: #C2A67D;
+}
+.bottomBox .dJQLeft {
+  height: 1.0625rem;
+  line-height: 1.0625rem;
+  margin-top: 0.4375rem;
+  padding-left: 1rem;
+}
+.bottomBox .dJQLeft .dJQKey {
+  color: #888888;
+  padding-right: 0.5rem;
+}
+.bottomBox .dJQLeft .dJQValue {
+  color: #139EFF;
+}
+.bottomBox .dJQRight {
+  height: 1.0625rem;
+  line-height: 1.0625rem;
+  text-align: right;
+  margin-top: 0.4375rem;
+  padding-right: 1rem;
+}
+.bottomBox .dJQRight .dJQRightText {
+  color: #888888;
+}
+.bottomBox .dJMLeft {
+  height: 1.5625rem;
+  line-height: 1.5625rem;
+  margin-top: 0.4375rem;
+  padding-left: 1rem;
+}
+.bottomBox .dJMLeft .dJMKey {
+  color: #888888;
+  padding-right: 0.5rem;
+}
+.bottomBox .dJMLeft .dJMValue {
+  color: #139EFF;
+}
+.bottomBox .dJMRight {
+  height: 1.5625rem;
+  line-height: 1.5625rem;
+  text-align: right;
+  margin-top: 0.4375rem;
+  padding-right: 1rem;
+}
+.bottomBox .dJMRight .dJMRightText {
+  color: #222222;
+  font-size: 1.125rem;
+}
+.bottomBox .confirmOrderBtn {
+  color: #fff;
+  text-align: center;
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 0.9375rem;
+  margin-top: 0.75rem;
+  background-color: #222222;
+  letter-spacing: 0.125rem;
+}

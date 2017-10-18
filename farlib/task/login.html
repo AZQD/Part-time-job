@@ -61,7 +61,6 @@
         pawShowClass = 'show2';
       }
 
-
       return (
         <div>
 
@@ -106,13 +105,10 @@
 
             <div className="createNewBtn" onClick={me.goToCreate}>创建新账户</div>
 
-
-
           </section>
         </div>
       );
     },
-
 
     //邮箱输入框获取焦点时
     emailChange:function(event){
@@ -156,8 +152,6 @@
         }
       }
     },
-
-
 
     //密码输入框获取焦点时
     pswChange:function(event){
@@ -226,12 +220,8 @@
 
     //创建新账户
     goToCreate:function(){
-//      window.location.href = 'register.html';
+      window.location.href = 'register.html';
     }
-
-
-
-
 
   });
   var Component=React.createClass({

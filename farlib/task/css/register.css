@@ -2,28 +2,76 @@ body {
   font-family: PingFangSC-Regular;
 }
 .container {
-  padding: 0 16px;
+  padding: 0 1rem;
+}
+/*userBox*/
+.userBox {
+  height: 3rem;
+  margin-top: 1.5rem;
+  border: 1px solid #E2E2E2;
+  position: relative;
+}
+.userBox .userWarningIcon {
+  position: absolute;
+  right: 0.625rem;
+  top: 0.625rem;
+}
+.userBox .userTips {
+  font-size: 0.625rem;
+  color: #FD4F57;
+  padding-top: 0.3125rem;
+}
+.userBox .inputPart {
+  padding-left: 1rem;
+  margin-right: 3.25rem;
+  height: 100%;
+  overflow: hidden;
+}
+.userBox .inputPart .inputPartInner .show {
+  color: #222;
+  width: 100%;
+  border: none;
+}
+.userBox .inputPart .inputPartInner .show:-webkit-input-placeholder {
+  color: #888888;
+}
+.userBox .inputPart .inputPartInner .show1 {
+  color: #222;
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 0.875rem;
+}
+.userBox .inputPart .inputPartInner .show2 {
+  font-size: 0.875rem;
+  color: #222;
+  height: 1.25rem;
+  line-height: 1.25rem;
+}
+.userBox .inputPart .inputPartInner .show2Name {
+  color: #888888;
+  font-size: 0.625rem;
+  padding-top: 0.1875rem;
 }
 /*emailBox*/
 .emailBox {
-  height: 48px;
-  margin-top: 24px;
+  height: 3rem;
+  margin-top: 1.5rem;
   border: 1px solid #E2E2E2;
   position: relative;
 }
 .emailBox .emailWarningIcon {
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 0.625rem;
+  top: 0.625rem;
 }
 .emailBox .emailTips {
-  font-size: 10px;
+  font-size: 0.625rem;
   color: #FD4F57;
-  padding-top: 5px;
+  padding-top: 0.3125rem;
 }
 .emailBox .inputPart {
-  padding-left: 16px;
-  margin-right: 52px;
+  padding-left: 1rem;
+  margin-right: 3.25rem;
   height: 100%;
   overflow: hidden;
 }
@@ -37,41 +85,41 @@ body {
 }
 .emailBox .inputPart .inputPartInner .show1 {
   color: #222;
-  height: 48px;
-  line-height: 48px;
-  font-size: 14px;
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 0.875rem;
 }
 .emailBox .inputPart .inputPartInner .show2 {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #222;
-  height: 20px;
-  line-height: 20px;
+  height: 1.25rem;
+  line-height: 1.25rem;
 }
 .emailBox .inputPart .inputPartInner .show2Name {
   color: #888888;
-  font-size: 10px;
-  padding-top: 3px;
+  font-size: 0.625rem;
+  padding-top: 0.1875rem;
 }
 /*passwordBox*/
 .passwordBox {
-  height: 48px;
-  margin-top: 24px;
+  height: 3rem;
+  margin-top: 1.5rem;
   border: 1px solid #E2E2E2;
   position: relative;
 }
 .passwordBox .passwordWarningIcon {
   position: absolute;
-  right: 10px;
-  top: 16px;
+  right: 0.625rem;
+  top: 1rem;
 }
 .passwordBox .pswTips {
-  font-size: 10px;
+  font-size: 0.625rem;
   color: #FD4F57;
-  padding-top: 5px;
+  padding-top: 0.3125rem;
 }
 .passwordBox .inputPart {
-  padding-left: 16px;
-  margin-right: 52px;
+  padding-left: 1rem;
+  margin-right: 3.25rem;
   height: 100%;
   overflow: hidden;
   border-right: 1px solid #E2E2E2;
@@ -86,94 +134,96 @@ body {
 }
 .passwordBox .inputPart .inputPartInner .show1 {
   color: #222;
-  height: 48px;
-  line-height: 48px;
-  font-size: 14px;
+  height: 3rem;
+  line-height: 3rem;
+  font-size: 0.875rem;
 }
 .passwordBox .inputPart .inputPartInner .show2 {
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #222;
-  height: 20px;
-  line-height: 20px;
+  height: 1.25rem;
+  line-height: 1.25rem;
 }
 .passwordBox .inputPart .inputPartInner .show2Name {
   color: #888888;
-  font-size: 10px;
-  padding-top: 3px;
+  font-size: 0.625rem;
+  padding-top: 0.1875rem;
 }
-/*forgetPsw*/
-.forgetPsw {
-  font-size: 12px;
+/*registerTip*/
+.registerTip {
+  font-size: 0.75rem;
   color: #1A1A1A;
-  text-align: right;
-  padding-top: 20px;
+  padding-top: 2.125rem;
+}
+.registerTip span {
+  text-decoration: underline;
 }
 /*loginBtn*/
 .loginBtn {
-  height: 48px;
-  line-height: 48px;
+  height: 3rem;
+  line-height: 3rem;
   color: #fff;
-  font-size: 15px;
+  font-size: 0.9375rem;
   text-align: center;
-  letter-spacing: 3px;
-  margin-top: 30px;
+  letter-spacing: 0.1875rem;
+  margin-top: 1.875rem;
   background-color: #E5E5E5;
 }
 .loginBtnActive {
-  height: 48px;
-  line-height: 48px;
+  height: 3rem;
+  line-height: 3rem;
   color: #fff;
-  font-size: 15px;
+  font-size: 0.9375rem;
   text-align: center;
-  letter-spacing: 3px;
-  margin-top: 30px;
+  letter-spacing: 0.125rem;
+  margin-top: 1.875rem;
   background-color: #222;
 }
 /*lineThrough*/
 .lineThrough {
-  margin-top: 30px;
+  margin-top: 1.875rem;
   background: #E5E5E5;
-  height: 1px;
+  height: 0.0625rem;
   text-align: center;
 }
 .lineThrough .or {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: #1A1A1A;
   position: relative;
-  bottom: 10px;
-  padding: 0 12px;
+  bottom: 0.625rem;
+  padding: 0 0.75rem;
   background-color: #fff;
 }
 /*createNewBtn*/
 .createNewBtn {
-  height: 48px;
-  line-height: 48px;
+  height: 3rem;
+  line-height: 3rem;
   color: #222;
   background-color: #fff;
   border: 1px solid #E5E5E5;
-  font-size: 15px;
+  font-size: 0.9375rem;
   text-align: center;
-  letter-spacing: 2px;
-  margin-top: 30px;
+  letter-spacing: 0.0625rem;
+  margin-top: 1.875rem;
 }
 /*warningBox*/
 .warningBox {
   color: #222;
-  font-size: 12px;
-  height: 34px;
-  line-height: 34px;
-  padding: 0 16px;
+  font-size: 0.75rem;
+  height: 2.125rem;
+  line-height: 2.125rem;
+  padding: 0 1rem;
   background-color: #EDEDED;
   position: fixed;
   width: 100%;
   z-index: 9;
 }
 .warningBox .leftIcon {
-  padding-right: 6px;
-  vertical-align: -4px;
+  padding-right: 0.375rem;
+  vertical-align: -0.25rem;
 }
 .warningBox .rightIcon {
   position: absolute;
-  right: 16px;
-  top: 13px;
+  right: 1rem;
+  top: 0.8125rem;
 }

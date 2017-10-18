@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>结算</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <meta http-equiv="x-dns-prefetch-control" content="on" />
+  <meta name="format-detection"content="telephone=no"/>
+  <meta name="format-detection" content="email=no"/>
+  <link rel="stylesheet" href="css/bootstraptc.min.css">
+  <link rel="stylesheet" href="css/ppublic.min.css">
+  <link rel="stylesheet" href="css/settlement.css">
+</head>
+<body>
+<div id="myBox"></div>
+
+<script src="js/react.js"></script>
+<script src="js/react-dom.js"></script>
+<!--<script src="js/browser.min.js"></script>-->
+<script src="js/JSXTransformer.js"></script>
+<script type="text/javascript" src="js/swiper.min.js"></script>
+<script type="text/javascript" src="js/public.js"></script>
+<!--<script type="text/babel">-->
+<script type="text/jsx">
+
+  var MyContainer=React.createClass({
+    getInitialState:function(){
+      return {
+
+        selectAddress:false,
+        myData:{}
+      }
+    },
+    componentDidMount: function () {
+      var me = this;
+    },
+    render:function(){
+      var me = this;
+
+      return (
+        <section className="container">
+
+          <div className="row addressBox" onClick={me.chooseAddFun}>
+            <div className="col-xs-3 col-sm-3 left">配送</div>
+            <div className="col-xs-7 col-sm-7 middle1" style={{display:me.state.selectAddress==false?'block':'none'}}>选择收货地址</div>
+            <div className="col-xs-7 col-sm-7 middle2" style={{display:me.state.selectAddress==true?'block':'none'}}>收货地址<br/><span className="addressName">胶州路100号，上海市，中国</span></div>
+            <div className="col-xs-2 col-sm-2 right">
+              <img className="success" src="image/settlement/success.svg" style={{display:me.state.selectAddress==true?'inline':'none'}} alt=""/>
+              <img className="more" src="image/settlement/more.svg" alt=""/>
+            </div>
+          </div>
+
+          <div className="row postBox">
+            <div className="col-xs-3 col-sm-3 left">配送方式</div>
+            <div className="col-xs-7 col-sm-7 middle2">2 笔订单<br/><span className="postName">从法国和意大利配送</span><br/><span className="youHui">免邮优惠</span></div>
+            <div className="col-xs-2 col-sm-2 right">
+              <img className="success" src="image/settlement/success.svg" alt=""/>
+              <img className="more" src="image/settlement/more.svg" alt=""/>
+            </div>
+          </div>
+
+          <div className="couponBox">
+            <div className="row couponInfo">
+              <div className="col-xs-8 col-sm-8 left1" style={{display:me.state.selectAddress==false?'block':'none'}}>优惠券</div>
+              <div className="col-xs-8 col-sm-8 left2" style={{display:me.state.selectAddress==true?'block':'none'}}>
+                <p className="name">优惠码</p>
+                <p className="code">FARFETCH</p>
+              </div>
+              <div className="col-xs-4 col-sm-4 right"><img className="success" src="image/settlement/success.svg" style={{display:me.state.selectAddress==true?'inline':'none'}} alt=""/></div>
+            </div>
+            <div className="confirm">确定</div>
+          </div>
+
+          <div className="row bottomBox">
+
+            <div className="col-xs-12 col-sm-12 good">
+              <span className="goodKey">商品</span><span className="goodValue">3</span>
+            </div>
+
+            <div className="col-xs-12 col-sm-12 xiaoJi">
+              <span className="xiaoJiKey">小计</span><span className="xiaoJiValue">¥22,134.00</span>
+            </div>
+
+            <div className="col-xs-12 col-sm-12 yunFei">
+              <span className="yunFeiKey">运费</span><span className="yunFeiValue">免费</span>
+            </div>
+
+            <div className="col-xs-6 col-sm-6 dJQLeft">
+              <span className="dJQKey">代金券</span><span className="dJQValue">-¥1,105.65</span>
+            </div>
+            <div className="col-xs-6 col-sm-6 dJQRight"><span className="dJQRightText">总计(含关税)</span></div>
+
+            <div className="col-xs-6 col-sm-6 dJMLeft">
+              <span className="dJMKey">代金码</span><span className="dJMValue">-¥6,605.65</span>
+            </div>
+            <div className="col-xs-6 col-sm-6 dJMRight"><span className="dJMRightText">¥13,528.35</span></div>
+
+            <div className="col-xs-12 col-sm-12 confirmOrderBtn">确认下单</div>
+
+          </div>
+
+        </section>
+      );
+    },
+
+    //选择地址
+    chooseAddFun:function(){
+      var me = this;
+      me.setState({selectAddress:true});
+    }
+
+  });
+  var Component=React.createClass({
+    render:function (){
+      return (
+        <div>
+          <MyContainer />
+        </div>
+      );
+    }
+  });
+  ReactDOM.render(
+    <Component />,document.getElementById('myBox')
+  );
+</script>
+</body>
+</html>

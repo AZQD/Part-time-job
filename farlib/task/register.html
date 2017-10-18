@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>登陆</title>
+  <title>创建新账户</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
   <meta http-equiv="x-dns-prefetch-control" content="on" />
   <meta name="format-detection"content="telephone=no"/>
@@ -26,6 +26,10 @@
   var MyContainer=React.createClass({
     getInitialState:function(){
       return {
+        userPart:1,
+        userIconOK:false,
+        userBlurOk:true,
+
         emailPart:1,
         emailIconOK:false,
         emailBlurOk:true,
@@ -42,10 +46,16 @@
     },
     componentDidMount: function () {
       var me = this;
-//      me.refs.emailIpt.focus();
     },
     render:function(){
       var me = this;
+
+      var userShowClass = '';
+      if(me.state.userPart == 1){
+        userShowClass = 'show1';
+      }else{
+        userShowClass = 'show2';
+      }
 
       var emailShowClass = '';
       if(me.state.emailPart == 1){
@@ -61,17 +71,28 @@
         pawShowClass = 'show2';
       }
 
-
       return (
         <div>
 
           <div className="warningBox" style={{display:me.state.warningShow==true?'block':'none'}}>
             <img className="leftIcon" src="image/login/warning2.svg" alt=""/>
-            <span className="desc">请输入有效邮箱地址或密码</span>
+            <span className="desc">该邮箱地址已被注册过，请直接登录</span>
             <img className="rightIcon" onClick={me.closeWarning} src="image/login/close2.svg" alt=""/>
           </div>
 
           <section className="container">
+
+
+            <div className="userBox">
+              <div className="inputPart">
+                <div className="inputPartInner">
+                  <p className="show2Name" style={{display:me.state.userPart==1?'none':'block'}}>姓名(请输入英文或拼音)</p>
+                  <input className={'show '+userShowClass} ref="userIpt" onBlur={me.userBlur} onFocus={me.userFocus} onChange={me.userChange} type="text" placeholder="姓名(请输入英文或拼音)"/>
+                </div>
+              </div>
+              <img className="userWarningIcon" src={me.state.userBlurOk==true?"image/login/success.svg":"image/login/warning.svg"}  style={{display:((me.state.userIconOK==true) ||  (me.state.userBlurOk==false))?'block':'none'}}/>
+              <p className="userTips" style={{display:me.state.userBlurOk==true?'none':'block'}}>请输入有效英文或拼音姓名</p>
+            </div>
 
 
             <div className="emailBox">
@@ -85,26 +106,27 @@
               <p className="emailTips" style={{display:me.state.emailBlurOk==true?'none':'block'}}>请输入有效邮箱地址</p>
             </div>
 
+
             <div className="passwordBox">
               <div className="inputPart">
                 <div className="inputPartInner">
-                  <p className="show2Name" style={{display:me.state.pswPart==1?'none':'block'}}>密码</p>
-                  <input className={'show '+pawShowClass} ref="pswIpt" onBlur={me.pswBlur} onFocus={me.pswFocus} onChange={me.pswChange} type="password" placeholder="密码"/>
+                  <p className="show2Name" style={{display:me.state.pswPart==1?'none':'block'}}>密码(至少6位)</p>
+                  <input className={'show '+pawShowClass} ref="pswIpt" onBlur={me.pswBlur} onFocus={me.pswFocus} onChange={me.pswChange} type="password" placeholder="密码(至少6位)"/>
                 </div>
               </div>
               <img className="passwordWarningIcon" src="image/login/eye.svg" onClick={me.changeEye} />
-              <p className="pswTips" style={{display:me.state.pswBlurOk==true?'none':'block'}}>请输入有效6位密码</p>
+              <p className="pswTips" style={{display:me.state.pswBlurOk==true?'none':'block'}}>请输入有效密码，至少6位</p>
             </div>
 
-            <div className="forgetPsw" onClick={me.forgetPsw}>忘记密码？</div>
+            <div className="registerTip">一旦注册即表示您同意遵守Farfetch <span className="tianKuan" onClick={me.tianKuan}>条件与条款</span> 以及 <span className="yinSi" onClick={me.yinSi}>隐私政策</span></div>
 
-            <div className={me.state.loginState==true?'loginBtnActive':'loginBtn'} onClick={me.state.loginState==true?me.goToLogin:''}>登录</div>
+            <div className={me.state.loginState==true?'loginBtnActive':'loginBtn'} onClick={me.state.loginState==true?me.goToCreate:''}>创建账户</div>
 
 
             <div className="lineThrough"><i className="or">or</i></div>
 
 
-            <div className="createNewBtn" onClick={me.goToCreate}>创建新账户</div>
+            <div className="createNewBtn" onClick={me.goToLogin}>已创建账户？</div>
 
 
 
@@ -113,19 +135,67 @@
       );
     },
 
+    //user输入框获取焦点时
+    userChange:function(event){
+      var me = this;
+      if(event.currentTarget.value == ''){
+        me.setState({userPart:1});
+        me.setState({userIconOK:false});
+        me.setState({userBlurOk:false});
+      }else{
+        me.setState({userPart:2});
+        var regUser = /^[A-Za-z\d]+$/g;
+        var regEmail = /^[\w\-]+\@[a-zA-Z]{2,4}(\.[a-zA-Z]{2,3}){1,2}$/;
+        if(regUser.test(event.currentTarget.value)){
+          me.setState({userIconOK:true});
+          me.setState({userBlurOk:true});
+          if((me.refs.pswIpt.value.length == 6) && (regEmail.test(me.refs.emailIpt.value))){
+            me.setState({loginState:true});
+          }else {
+            me.setState({loginState:false});
+          }
+        }else{
+          me.setState({userIconOK:false});
+          me.setState({loginState:false});
+        }
+      }
+    },
+
+    //user获取焦点
+    userFocus:function(event){
+      var me = this;
+      if(event.currentTarget.value != ''){
+        me.setState({userPart:2});
+      }
+    },
+    //user失去焦点
+    userBlur:function(event){
+      var me = this;
+      if(event.currentTarget.value != ''){
+        var regUser = /^[A-Za-z\d]+$/g;
+        if(regUser.test(event.currentTarget.value)){
+          me.setState({userBlurOk:true});
+        }else{
+          me.setState({userBlurOk:false});
+        }
+      }
+    },
 
     //邮箱输入框获取焦点时
     emailChange:function(event){
       var me = this;
       if(event.currentTarget.value == ''){
         me.setState({emailPart:1});
+        me.setState({emailIconOK:false});
+        me.setState({emailBlurOk:false});
       }else{
         me.setState({emailPart:2});
-        var reg = /^[\w\-]+\@[a-zA-Z]{2,4}(\.[a-zA-Z]{2,3}){1,2}$/;
-        if(reg.test(event.currentTarget.value)){
+        var regUser = /^[A-Za-z\d]+$/g;
+        var regEmail = /^[\w\-]+\@[a-zA-Z]{2,4}(\.[a-zA-Z]{2,3}){1,2}$/;
+        if(regEmail.test(event.currentTarget.value)){
           me.setState({emailIconOK:true});
           me.setState({emailBlurOk:true});
-          if(me.refs.pswIpt.value.length == 6){
+          if((me.refs.pswIpt.value.length == 6) && (regUser.test(me.refs.userIpt.value))){
             me.setState({loginState:true});
           }else {
             me.setState({loginState:false});
@@ -148,8 +218,8 @@
     emailBlur:function(event){
       var me = this;
       if(event.currentTarget.value != ''){
-        var reg = /^[\w\-]+\@[a-zA-Z]{2,4}(\.[a-zA-Z]{2,3}){1,2}$/;
-        if(reg.test(event.currentTarget.value)){
+        var regEmail = /^[\w\-]+\@[a-zA-Z]{2,4}(\.[a-zA-Z]{2,3}){1,2}$/;
+        if(regEmail.test(event.currentTarget.value)){
           me.setState({emailBlurOk:true});
         }else{
           me.setState({emailBlurOk:false});
@@ -157,19 +227,20 @@
       }
     },
 
-
-
     //密码输入框获取焦点时
     pswChange:function(event){
       var me = this;
       if(event.currentTarget.value == ''){
         me.setState({pswPart:1});
+        me.setState({pswIconOK:false});
+        me.setState({pswBlurOk:false});
       }else{
         me.setState({pswPart:2});
         if(event.currentTarget.value.length == 6){
           me.setState({pswBlurOk:true});
-          var reg = /^[\w\-]+\@[a-zA-Z]{2,4}(\.[a-zA-Z]{2,3}){1,2}$/;
-          if(reg.test(me.refs.emailIpt.value)){
+          var regUser = /^[A-Za-z\d]+$/g;
+          var regEmail = /^[\w\-]+\@[a-zA-Z]{2,4}(\.[a-zA-Z]{2,3}){1,2}$/;
+          if(regUser.test(me.refs.userIpt.value) && regEmail.test(me.refs.emailIpt.value)){
             me.setState({loginState:true});
           }else {
             me.setState({loginState:false});
@@ -205,12 +276,16 @@
       me.refs.pswIpt.setAttribute('type', 'text');
     },
 
-    //忘记密码
-    forgetPsw:function(){
-//      window.location.href = 'password.html';
+    //条款
+    tianKuan:function(){
+
+    },
+    //隐私
+    yinSi:function(){
+
     },
     //点击登陆
-    goToLogin:function(){
+    goToCreate:function(){
       var me = this;
       if(true){
         me.setState({warningShow:true});
@@ -225,13 +300,9 @@
     },
 
     //创建新账户
-    goToCreate:function(){
-//      window.location.href = 'register.html';
+    goToLogin:function(){
+      window.location.href = 'login.html';
     }
-
-
-
-
 
   });
   var Component=React.createClass({

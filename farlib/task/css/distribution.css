@@ -1,0 +1,123 @@
+body {
+  font-family: PingFangSC-Regular;
+  background-color: #F5F5F5;
+}
+/*goodsUl*/
+.goodsUl .goodsLi {
+  position: relative;
+}
+.goodsUl .goodsLi .part1 {
+  background-color: #F5F5F5;
+  margin-left: 1.625rem;
+  padding: 0.6875rem 0.9375rem;
+}
+.goodsUl .goodsLi .part1 .countryIcon {
+  position: absolute;
+  left: 0.9375rem;
+  top: 1.4375rem;
+  width: 1rem;
+}
+.goodsUl .goodsLi .part1 .formWhere {
+  font-size: 0.875rem;
+  color: #1D1B1B;
+}
+.goodsUl .goodsLi .part1 .contain {
+  font-size: 0.625rem;
+  color: #757575;
+  padding-top: 0.3125rem;
+}
+.goodsUl .goodsLi .part2 {
+  padding: 0 0.9375rem;
+  height: 3rem;
+  line-height: 3rem;
+  background-color: #ffffff;
+  border-top: 1px solid #E5E5E5;
+  border-bottom: 1px solid #E5E5E5;
+}
+.goodsUl .goodsLi .part2 .left {
+  font-size: 0.75rem;
+  color: #1A1A1A;
+  line-height: 1.0625rem;
+  padding-top: 0.4375rem;
+}
+.goodsUl .goodsLi .part2 .middle {
+  font-size: 0.75rem;
+  color: #888888;
+  text-align: center;
+}
+.goodsUl .goodsLi .part2 .right {
+  text-align: right;
+}
+/*bottomBox*/
+.bottomBox {
+  font-size: 0.75rem;
+  background-color: #fff;
+  margin-top: 0.875rem;
+  border-top: 1px solid #E5E5E5;
+  margin-bottom: 3.125rem;
+  padding-bottom: 0.875rem;
+}
+.bottomBox .yuJi {
+  height: 1.0625rem;
+  line-height: 1.0625rem;
+  margin-top: 0.625rem;
+  padding: 0 1rem;
+  color: #222222;
+}
+.bottomBox .country {
+  height: 1.0625rem;
+  line-height: 1.0625rem;
+  margin-top: 0.4375rem;
+  padding: 0 1rem;
+}
+.bottomBox .country .countryKey {
+  color: #888888;
+  padding-right: 1.25rem;
+}
+.bottomBox .country .countryValue {
+  color: #139EFF;
+}
+.bottomBox .countryLeft {
+  height: 1.5625rem;
+  line-height: 1.5625rem;
+  margin-top: 0.4375rem;
+  padding-left: 1rem;
+}
+.bottomBox .countryLeft .countryKey {
+  color: #888888;
+  padding-right: 1.25rem;
+}
+.bottomBox .countryLeft .countryValue {
+  color: #139EFF;
+}
+.bottomBox .countryRight {
+  height: 1.5625rem;
+  line-height: 1.5625rem;
+  text-align: right;
+  margin-top: 0.4375rem;
+  padding-right: 1rem;
+}
+.bottomBox .countryRight .total {
+  color: #888888;
+  font-size: 0.75rem;
+  padding-right: 0.625rem;
+  vertical-align: 0.0625rem;
+}
+.bottomBox .countryRight .countryRightText {
+  color: #222222;
+  font-size: 1.125rem;
+}
+/*saveBtn*/
+.saveBtn {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  height: 3.125rem;
+  line-height: 3.125rem;
+  font-size: 0.9375rem;
+  background-color: #222222;
+  letter-spacing: 0.125rem;
+}
