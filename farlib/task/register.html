@@ -83,7 +83,7 @@
           <section className="container">
 
 
-            <div className="userBox">
+            <div className={me.state.pswBlurOk==true?"userBox":"userBox userBoxRed"}>
               <div className="inputPart">
                 <div className="inputPartInner">
                   <p className="show2Name" style={{display:me.state.userPart==1?'none':'block'}}>姓名(请输入英文或拼音)</p>
@@ -95,7 +95,7 @@
             </div>
 
 
-            <div className="emailBox">
+            <div className={me.state.emailBlurOk==true?"emailBox":"emailBox emailBoxRed"}>
               <div className="inputPart">
                 <div className="inputPartInner">
                   <p className="show2Name" style={{display:me.state.emailPart==1?'none':'block'}}>邮箱地址</p>
@@ -107,7 +107,7 @@
             </div>
 
 
-            <div className="passwordBox">
+            <div className={me.state.pswBlurOk==true?"passwordBox":"passwordBox passwordBoxRed"}>
               <div className="inputPart">
                 <div className="inputPartInner">
                   <p className="show2Name" style={{display:me.state.pswPart==1?'none':'block'}}>密码(至少6位)</p>

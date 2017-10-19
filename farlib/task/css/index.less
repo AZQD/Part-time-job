@@ -2,6 +2,7 @@
 
 body{
   font-family: PingFangSC-Regular;
+  background-color: #F0F0F0;
 }
 
 /*listBox*/
@@ -86,25 +87,27 @@ body{
   padding-bottom: 10/@rem;
 }
 .listBox .bottomPart .goodLi .selectBox .selectBtn{
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  background: url("../image/index/select.svg") no-repeat scroll 58px center transparent;
+  padding-right: 34px;
   font-size: 12/@rem;
-  width: 78/@rem;
   height: 23/@rem;
   line-height: 23/@rem;
   color: #9A9999;
-  padding-left: 7/@rem;
   border: 1px solid #E5E5E5;
-  position: relative;
-}
+  padding-left: 7/@rem;
 
-.listBox .bottomPart .goodLi .selectBox .selectBtn .selectIcon{
-  position: absolute;
-  right: 6/@rem;
-  top: 7/@rem;
+}
+.listBox .bottomPart .goodLi .selectBox .selectBtn::-ms-expand { display: none;
 }
 .listBox .bottomPart .goodLi .selectBox .selectBtn .num{
   color: #1A1A1A;
   padding-left: 4/@rem;
 }
+
+
 .listBox .bottomPart .goodLi .bianHao{
   color: #9A9999;
   font-size: 10/@rem;
@@ -121,6 +124,7 @@ body{
 .constructBox{
   background-color: #F5F5F5;
   border-top: 1px solid #E5E5E5;
+  margin-bottom: 134/@rem;
 }
 .constructBox .freeTuiHuo{
   margin-top: 20/@rem;
@@ -247,4 +251,14 @@ body{
   background-color: #fff;
   letter-spacing: 2/@rem;
   border: 1px solid #E2E2E2;
+}
+
+
+/*bottomBox*/
+.bottomBox{
+  width: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  border-top: 1px solid #E5E5E5;
 }

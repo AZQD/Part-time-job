@@ -11,6 +11,9 @@ body {
   border: 1px solid #E2E2E2;
   position: relative;
 }
+.userBoxRed {
+  border-bottom: 0.125rem solid #fd4f57;
+}
 .userBox .userWarningIcon {
   position: absolute;
   right: 0.625rem;
@@ -59,6 +62,9 @@ body {
   border: 1px solid #E2E2E2;
   position: relative;
 }
+.emailBoxRed {
+  border-bottom: 0.125rem solid #fd4f57;
+}
 .emailBox .emailWarningIcon {
   position: absolute;
   right: 0.625rem;
@@ -106,6 +112,9 @@ body {
   margin-top: 1.5rem;
   border: 1px solid #E2E2E2;
   position: relative;
+}
+.passwordBoxRed {
+  border-bottom: 0.125rem solid #fd4f57;
 }
 .passwordBox .passwordWarningIcon {
   position: absolute;

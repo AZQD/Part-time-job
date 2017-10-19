@@ -23,6 +23,11 @@
 <!--<script type="text/babel">-->
 <script type="text/jsx">
 
+  var listBoxLength = 2;
+  var listBox1GoodLiLength = 2;
+  var listBox2GoodLiLength = 1;
+
+
   var MyContainer=React.createClass({
     getInitialState:function(){
       return {
@@ -34,11 +39,13 @@
       me.refs.noGoodsBox.style.height = window.innerHeight+'px';
     },
     render:function(){
+      var me = this;
       return (
         <section className="container">
           <div className="hasGoodsBox" style={{display:'block'}}>
-            <div className="goodLists">
-              <div className="listBox">
+            <div className="goodLists" id="goodLists">
+
+              <div className="listBox" id="listBox1" key="0" data-list-num="0">
                 <div className="topPart">
                   <img src="image/index/country_italy.png" className="countryIcon" />
                   <p className="desc1">
@@ -47,24 +54,42 @@
                   <p className="desc2">商品价格已包含关税</p>
                 </div>
                 <div className="bottomPart">
+
                   <div className="goodLi">
-                    <img src="image/index/close.svg" className="closeIcon" />
+                    <img src="image/index/close.svg" className="closeIcon" key="0" data-list-num="0" data-good-num="0" onClick={me.deleteGood}/>
                     <img src="image/index/product1.png" className="productImg" />
                     <div className="goodName">GUCCI</div>
                     <p className="selectBox">
-                      <span className="selectBtn countSelect">数量<span className="num">1</span><img src="image/index/select.svg" className="selectIcon" /></span>
-                      <span className="selectBtn sizeSelect">尺码<span className="num">42</span><img src="image/index/select.svg" className="selectIcon" /></span>
+                      <select name="" ref="select1" className="selectBtn countSelect">
+                        <option value="1">数量 1</option>
+                        <option value="2">数量 2</option>
+                        <option value="3">数量 3</option>
+                      </select>
+                      <select name="" className="selectBtn sizeSelect">
+                        <option value="42">尺码 42</option>
+                        <option value="43">尺码 43</option>
+                        <option value="44">尺码 44</option>
+                      </select>
                     </p>
                     <p className="bianHao">商品编号: 1184758</p>
-                    <p className="price">¥1,800.00</p>
+                    <p className="price">¥<i ref="price1">1,800</i>.00</p>
                   </div>
+
                   <div className="goodLi">
-                    <img src="image/index/close.svg" className="closeIcon" />
+                    <img src="image/index/close.svg" className="closeIcon" key="0" data-list-num="0" data-good-num="1" onClick={me.deleteGood} />
                     <img src="image/index/product2.png" className="productImg" />
                     <div className="goodName">GUCCI</div>
                     <p className="selectBox">
-                      <span className="selectBtn countSelect">数量<span className="num">1</span><img src="image/index/select.svg" className="selectIcon" /></span>
-                      <span className="selectBtn sizeSelect">尺码<span className="num">42</span><img src="image/index/select.svg" className="selectIcon" /></span>
+                      <select name="" className="selectBtn countSelect">
+                        <option value="1">数量 1</option>
+                        <option value="2">数量 2</option>
+                        <option value="3">数量 3</option>
+                      </select>
+                      <select name="" className="selectBtn sizeSelect">
+                        <option value="42">尺码 42</option>
+                        <option value="43">尺码 43</option>
+                        <option value="44">尺码 44</option>
+                      </select>
                     </p>
                     <p className="bianHao">商品编号: 1185783</p>
                     <p className="price">¥1,500.00</p>
@@ -72,7 +97,7 @@
                 </div>
               </div>
 
-              <div className="listBox">
+              <div className="listBox" id="listBox2" key="1" data-list-num="1">
                 <div className="topPart">
                   <img src="image/index/country_italy.png" className="countryIcon" />
                   <p className="desc1">
@@ -81,17 +106,27 @@
                   <p className="desc2">商品价格已包含关税</p>
                 </div>
                 <div className="bottomPart">
+
                   <div className="goodLi">
-                    <img src="image/index/close.svg" className="closeIcon" />
+                    <img src="image/index/close.svg" className="closeIcon" key="0" data-list-num="1" data-good-num="0" onClick={me.deleteGood}/>
                     <img src="image/index/product3.png" className="productImg" />
                     <div className="goodName">GUCCI</div>
                     <p className="selectBox">
-                      <span className="selectBtn countSelect">数量<span className="num">1</span><img src="image/index/select.svg" className="selectIcon" /></span>
-                      <span className="selectBtn sizeSelect">尺码<span className="num">42</span><img src="image/index/select.svg" className="selectIcon" /></span>
+                      <select name="" className="selectBtn countSelect">
+                        <option value="1">数量 1</option>
+                        <option value="2">数量 2</option>
+                        <option value="3">数量 3</option>
+                      </select>
+                      <select name="" className="selectBtn sizeSelect">
+                        <option value="42">尺码 42</option>
+                        <option value="43">尺码 43</option>
+                        <option value="44">尺码 44</option>
+                      </select>
                     </p>
                     <p className="bianHao">商品编号: 1185783</p>
                     <p className="price">¥1,500.00</p>
                   </div>
+
                 </div>
               </div>
             </div>
@@ -109,16 +144,23 @@
                 <div className="col-xs-6 col-sm-6 part left"><img src="image/index/phone.svg" className="contactIcon" /></div>
                 <div className="col-xs-6 col-sm-6 part right"><img src="image/index/wechat.svg" className="contactIcon" /></div>
               </div>
-              <div className="priceBox">
-                <p className="xiaoJi">小计 ¥22,134.00</p>
-                <div className="row totalPrice">
-                  <div className="col-xs-6 col-sm-6 left">运费<span className="yunFeiState">免费</span></div>
-                  <div className="col-xs-6 col-sm-6 right"><span className="heJi">总计(含关税)</span><span className="priceText">¥22,134.00</span></div>
-                </div>
-              </div>
-            </div>
 
-            <div className="goToBuy">去结算</div>
+              <div style={{height:'1.25rem', background:'#F5F5F5'}}></div>
+
+              <div className="bottomBox">
+                <div className="priceBox">
+                  <p className="xiaoJi">小计 ¥22,134.00</p>
+                  <div className="row totalPrice">
+                    <div className="col-xs-6 col-sm-6 left">运费<span className="yunFeiState">免费</span></div>
+                    <div className="col-xs-6 col-sm-6 right"><span className="heJi">总计(含关税)</span><span className="priceText">¥22,134.00</span></div>
+                  </div>
+                </div>
+                <div className="goToBuy">去结算</div>
+              </div>
+
+
+              </div>
+
           </div>
 
           <div className="noGoodsBox" ref='noGoodsBox' style={{display:'none'}}>
@@ -131,7 +173,56 @@
 
         </section>
       );
+    },
+
+    //点击商品右上角关闭按钮
+    deleteGood:function(event){
+      var me = this;
+
+      //数据交互时需要用setState处理；
+//      alert(event.currentTarget.getAttribute('data-list-num'));
+//      alert(event.currentTarget.getAttribute('data-good-num'));
+      //parentNode
+      event.currentTarget.parentNode.style.display = 'none';
+
+
+      var goodLists = document.getElementById("goodLists");
+      var listBox1 = document.getElementById("listBox1");
+      var listBox2 = document.getElementById("listBox2");
+
+      var listNum = event.currentTarget.getAttribute('data-list-num');
+      var goodNum = event.currentTarget.getAttribute('data-good-num');
+
+
+
+
+      if(listNum == 0){
+        if(listBox1GoodLiLength == 1){
+          event.currentTarget.parentNode.style.display = 'none';
+          goodLists.removeChild(listBox1);
+        }else {
+          listBox1GoodLiLength--;
+          event.currentTarget.parentNode.style.display = 'none';
+        }
+      }
+
+      if(listNum == 1){
+        if(listBox2GoodLiLength == 1){
+          event.currentTarget.parentNode.style.display = 'none';
+          goodLists.removeChild(listBox2);
+        }else {
+          event.currentTarget.parentNode.style.display = 'none';
+        }
+      }
+
+
+//      alert(me.refs.select1.value);
+
+
+
+
     }
+
   });
   var Component=React.createClass({
     render:function (){
