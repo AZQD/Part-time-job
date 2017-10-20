@@ -7,7 +7,6 @@
   <meta http-equiv="x-dns-prefetch-control" content="on" />
   <meta name="format-detection"content="telephone=no"/>
   <meta name="format-detection" content="email=no"/>
-  <link rel="stylesheet" href="css/bootstraptc.min.css">
   <link rel="stylesheet" href="css/ppublic.min.css">
   <link rel="stylesheet" href="css/register.css">
 </head>
@@ -83,7 +82,7 @@
           <section className="container">
 
 
-            <div className={me.state.pswBlurOk==true?"userBox":"userBox userBoxRed"}>
+            <div className={me.state.userBlurOk==true?"userBox":"userBox userBoxRed"}>
               <div className="inputPart">
                 <div className="inputPartInner">
                   <p className="show2Name" style={{display:me.state.userPart==1?'none':'block'}}>姓名(请输入英文或拼音)</p>

@@ -17,26 +17,34 @@ body {
   color: #222222;
   font-weight: bold;
   letter-spacing: 0.0625rem;
+  display: inline-block;
+  width: 25%;
 }
 .addressBox .middle1 {
   font-size: 0.875rem;
   color: #888888;
   position: relative;
   left: -0.25rem;
+  display: inline-block;
+  width: 58.33%;
 }
 .addressBox .middle2 {
   font-size: 0.875rem;
   color: #222222;
   position: relative;
   left: -0.25rem;
+  top: 0.5rem;
   line-height: 1rem;
-  padding-top: 1.75rem;
+  display: inline-block;
+  width: 58.33%;
 }
 .addressBox .middle2 .addressName {
   color: #888888;
 }
 .addressBox .right {
   text-align: right;
+  display: inline-block;
+  width: 16.66%;
 }
 .addressBox .right .success {
   padding-right: 1rem;
@@ -56,14 +64,18 @@ body {
   color: #222222;
   font-weight: bold;
   letter-spacing: 0.0625rem;
+  display: inline-block;
+  width: 25%;
 }
 .postBox .middle2 {
   font-size: 0.875rem;
   color: #222222;
   position: relative;
   left: -0.25rem;
+  top: 1.125rem;
   line-height: 1rem;
-  padding-top: 1.25rem;
+  display: inline-block;
+  width: 58.33%;
 }
 .postBox .middle2 .postName {
   color: #888888;
@@ -79,6 +91,8 @@ body {
 }
 .postBox .right {
   text-align: right;
+  display: inline-block;
+  width: 16.66%;
 }
 .postBox .right .success {
   padding-right: 1rem;
@@ -96,17 +110,21 @@ body {
 .couponBox .couponInfo {
   margin-right: 5.625rem;
   border-right: 1px solid #E5E5E5;
+  height: 100%;
+  padding-left: 1rem;
 }
 .couponBox .couponInfo .left1 {
-  padding-left: 1rem;
   font-size: 0.875rem;
   color: #888888;
+  display: inline-block;
+  width: 66.66%;
 }
 .couponBox .couponInfo .left2 {
   line-height: normal;
-  padding-left: 1rem;
   font-size: 0.875rem;
   color: #888888;
+  display: inline-block;
+  width: 66.66%;
 }
 .couponBox .couponInfo .left2 .name {
   font-size: 0.625rem;
@@ -119,9 +137,12 @@ body {
 }
 .couponBox .couponInfo .right {
   text-align: right;
+  display: inline-block;
+  width: 33.33%;
+  position: relative;
+  top: -0.625rem;
 }
 .couponBox .couponInfo .right .success {
-  margin-bottom: 0.25rem;
   margin-right: 0.75rem;
 }
 .couponBox .confirm {
@@ -188,6 +209,7 @@ body {
   line-height: 1.0625rem;
   margin-top: 0.4375rem;
   padding-left: 1rem;
+  display: inline-block;
 }
 .bottomBox .dJQLeft .dJQKey {
   color: #888888;
@@ -202,6 +224,7 @@ body {
   text-align: right;
   margin-top: 0.4375rem;
   padding-right: 1rem;
+  float: right;
 }
 .bottomBox .dJQRight .dJQRightText {
   color: #888888;
@@ -211,6 +234,7 @@ body {
   line-height: 1.5625rem;
   margin-top: 0.4375rem;
   padding-left: 1rem;
+  display: inline-block;
 }
 .bottomBox .dJMLeft .dJMKey {
   color: #888888;
@@ -225,6 +249,7 @@ body {
   text-align: right;
   margin-top: 0.4375rem;
   padding-right: 1rem;
+  float: right;
 }
 .bottomBox .dJMRight .dJMRightText {
   color: #222222;

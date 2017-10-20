@@ -7,7 +7,6 @@
   <meta http-equiv="x-dns-prefetch-control" content="on" />
   <meta name="format-detection"content="telephone=no"/>
   <meta name="format-detection" content="email=no"/>
-  <link rel="stylesheet" href="css/bootstraptc.min.css">
   <link rel="stylesheet" href="css/ppublic.min.css">
   <link rel="stylesheet" href="css/distribution.css">
 </head>
@@ -26,7 +25,6 @@
   var MyContainer=React.createClass({
     getInitialState:function(){
       return {
-
         myData:{}
       }
     },
@@ -45,10 +43,10 @@
                 <p className="formWhere">一项商品配送自波兰</p>
                 <p className="contain">价格已包含关税</p>
               </div>
-              <div className="row part2">
-                <div className="col-xs-4 col-sm-4 left">DHL Express<br/>¥0.00</div>
-                <div className="col-xs-4 col-sm-4 middle">2至4天送达</div>
-                <div className="col-xs-4 col-sm-4 right">
+              <div className="part2">
+                <div className="left"><span className="leftText">DHL Express<br/>¥0.00</span></div>
+                <div className="middle">2至4天送达</div>
+                <div className="right">
                   <img src={selectArr[0]} data-state="0" onClick={me.selectFun} alt=""/>
                 </div>
               </div>
@@ -59,10 +57,10 @@
                 <p className="formWhere">一项商品配送自波兰</p>
                 <p className="contain">价格已包含关税</p>
               </div>
-              <div className="row part2">
-                <div className="col-xs-4 col-sm-4 left">DHL Express<br/>¥0.00</div>
-                <div className="col-xs-4 col-sm-4 middle">2至4天送达</div>
-                <div className="col-xs-4 col-sm-4 right">
+              <div className="part2">
+                <div className="left">DHL Express<br/>¥0.00</div>
+                <div className="middle">2至4天送达</div>
+                <div className="right">
                   <img src={selectArr[1]} data-state="1" onClick={me.selectFun} alt=""/>
                 </div>
               </div>
@@ -73,32 +71,32 @@
                 <p className="formWhere">一项商品配送自波兰</p>
                 <p className="contain">价格已包含关税</p>
               </div>
-              <div className="row part2">
-                <div className="col-xs-4 col-sm-4 left">DHL Express<br/>¥0.00</div>
-                <div className="col-xs-4 col-sm-4 middle">2至4天送达</div>
-                <div className="col-xs-4 col-sm-4 right">
+              <div className="part2">
+                <div className="left">DHL Express<br/>¥0.00</div>
+                <div className="middle">2至4天送达</div>
+                <div className="right">
                   <img src={selectArr[1]} data-state="1" onClick={me.selectFun} alt=""/>
                 </div>
               </div>
             </li>
           </ul>
 
-          <div className="row bottomBox">
+          <div className="bottomBox">
 
-            <div className="col-xs-12 col-sm-12 yuJi">预计运费</div>
+            <div className="yuJi">预计运费</div>
 
-            <div className="col-xs-12 col-sm-12 country">
+            <div className="country">
               <span className="countryKey">波兰</span><span className="countryValue">¥0.00</span>
             </div>
 
-            <div className="col-xs-12 col-sm-12 country">
+            <div className="country">
               <span className="countryKey">西班牙</span><span className="countryValue">¥0.00</span>
             </div>
 
-            <div className="col-xs-6 col-sm-6 countryLeft">
+            <div className="countryLeft">
               <span className="countryKey">意大利</span><span className="countryValue">¥0.00</span>
             </div>
-            <div className="col-xs-6 col-sm-6 countryRight"><span className="total">总共</span><span className="countryRightText">¥0.00</span></div>
+            <div className="countryRight"><span className="total">总共</span><span className="countryRightText">¥0.00</span></div>
 
           </div>
 
@@ -117,7 +115,6 @@
         event.currentTarget.setAttribute('src', selectArr[0]);
       }
     }
-
 
   });
   var Component=React.createClass({

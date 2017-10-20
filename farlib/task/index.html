@@ -7,7 +7,6 @@
   <meta http-equiv="x-dns-prefetch-control" content="on" />
   <meta name="format-detection"content="telephone=no"/>
   <meta name="format-detection" content="email=no"/>
-  <link rel="stylesheet" href="css/bootstraptc.min.css">
   <link rel="stylesheet" href="css/ppublic.min.css">
   <link rel="stylesheet" href="css/index.css">
 </head>
@@ -26,7 +25,6 @@
   var listBoxLength = 2;
   var listBox1GoodLiLength = 2;
   var listBox2GoodLiLength = 1;
-
 
   var MyContainer=React.createClass({
     getInitialState:function(){
@@ -151,13 +149,12 @@
                 <div className="priceBox">
                   <p className="xiaoJi">小计 ¥22,134.00</p>
                   <div className="row totalPrice">
-                    <div className="col-xs-6 col-sm-6 left">运费<span className="yunFeiState">免费</span></div>
-                    <div className="col-xs-6 col-sm-6 right"><span className="heJi">总计(含关税)</span><span className="priceText">¥22,134.00</span></div>
+                    <div className="left">运费<span className="yunFeiState">免费</span></div>
+                    <div className="right"><span className="heJi">总计(含关税)</span><span className="priceText">¥22,134.00</span></div>
                   </div>
                 </div>
                 <div className="goToBuy">去结算</div>
               </div>
-
 
               </div>
 
@@ -185,16 +182,12 @@
       //parentNode
       event.currentTarget.parentNode.style.display = 'none';
 
-
       var goodLists = document.getElementById("goodLists");
       var listBox1 = document.getElementById("listBox1");
       var listBox2 = document.getElementById("listBox2");
 
       var listNum = event.currentTarget.getAttribute('data-list-num');
       var goodNum = event.currentTarget.getAttribute('data-good-num');
-
-
-
 
       if(listNum == 0){
         if(listBox1GoodLiLength == 1){
@@ -214,13 +207,7 @@
           event.currentTarget.parentNode.style.display = 'none';
         }
       }
-
-
 //      alert(me.refs.select1.value);
-
-
-
-
     }
 
   });
