@@ -1,0 +1,428 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <title>manage</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <link href="resources/css/jquery-ui-themes.css" type="text/css" rel="stylesheet"/>
+    <link href="resources/css/axure_rp_page.css" type="text/css" rel="stylesheet"/>
+    <link href="data/styles.css" type="text/css" rel="stylesheet"/>
+    <link href="files/manage/styles.css" type="text/css" rel="stylesheet"/>
+    <script src="resources/scripts/jquery-1.7.1.min.js"></script>
+    <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
+    <script src="resources/scripts/axure/axQuery.js"></script>
+    <script src="resources/scripts/axure/globals.js"></script>
+    <script src="resources/scripts/axutils.js"></script>
+    <script src="resources/scripts/axure/annotation.js"></script>
+    <script src="resources/scripts/axure/axQuery.std.js"></script>
+    <script src="resources/scripts/axure/doc.js"></script>
+    <script src="data/document.js"></script>
+    <script src="resources/scripts/messagecenter.js"></script>
+    <script src="resources/scripts/axure/events.js"></script>
+    <script src="resources/scripts/axure/recording.js"></script>
+    <script src="resources/scripts/axure/action.js"></script>
+    <script src="resources/scripts/axure/expr.js"></script>
+    <script src="resources/scripts/axure/geometry.js"></script>
+    <script src="resources/scripts/axure/flyout.js"></script>
+    <script src="resources/scripts/axure/ie.js"></script>
+    <script src="resources/scripts/axure/model.js"></script>
+    <script src="resources/scripts/axure/repeater.js"></script>
+    <script src="resources/scripts/axure/sto.js"></script>
+    <script src="resources/scripts/axure/utils.temp.js"></script>
+    <script src="resources/scripts/axure/variables.js"></script>
+    <script src="resources/scripts/axure/drag.js"></script>
+    <script src="resources/scripts/axure/move.js"></script>
+    <script src="resources/scripts/axure/visibility.js"></script>
+    <script src="resources/scripts/axure/style.js"></script>
+    <script src="resources/scripts/axure/adaptive.js"></script>
+    <script src="resources/scripts/axure/tree.js"></script>
+    <script src="resources/scripts/axure/init.temp.js"></script>
+    <script src="files/manage/data.js"></script>
+    <script src="resources/scripts/axure/legacy.js"></script>
+    <script src="resources/scripts/axure/viewer.js"></script>
+    <script src="resources/scripts/axure/math.js"></script>
+    <script type="text/javascript">
+      $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
+      $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
+      $axure.utils.getReloadPath = function() { return 'resources/reload.html'; };
+    </script>
+  </head>
+  <body>
+    <div id="base" class="">
+
+      <!-- Unnamed (矩形) -->
+      <div id="u1498" class="ax_default box_2">
+        <div id="u1498_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u1499" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- profile (矩形) -->
+      <div id="u1500" class="ax_default label" data-label="profile">
+        <div id="u1500_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u1501" class="text" style="visibility: visible;">
+          <p><span>Profile</span></p>
+        </div>
+      </div>
+
+      <!-- products (矩形) -->
+      <div id="u1502" class="ax_default label" data-label="products">
+        <div id="u1502_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u1503" class="text" style="visibility: visible;">
+          <p><span>Products</span></p>
+        </div>
+      </div>
+
+      <!-- messages (矩形) -->
+      <div id="u1504" class="ax_default label" data-label="messages">
+        <div id="u1504_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u1505" class="text" style="visibility: visible;">
+          <p><span>Messages</span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (垂直线) -->
+      <div id="u1506" class="ax_default line">
+        <img id="u1506_img" class="img " src="images/manage/u1506.png"/>
+        <!-- Unnamed () -->
+        <div id="u1507" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- profilecontent (组合) -->
+      <div id="u1508" class="ax_default" data-label="profilecontent">
+
+        <!-- Unnamed (个人信息管理) -->
+
+        <!-- Unnamed (矩形) -->
+        <div id="u1510" class="ax_default label">
+          <div id="u1510_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u1511" class="text" style="visibility: visible;">
+            <p><span>Cellphone:</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u1512" class="ax_default label">
+          <div id="u1512_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u1513" class="text" style="visibility: visible;">
+            <p><span>Nickname:</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u1514" class="ax_default label">
+          <div id="u1514_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u1515" class="text" style="visibility: visible;">
+            <p><span>Gender:</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (单选按钮) -->
+        <div id="u1516" class="ax_default radio_button">
+          <label for="u1516_input">
+            <!-- Unnamed () -->
+            <div id="u1517" class="text" style="visibility: visible;">
+              <p><span>Male</span></p>
+            </div>
+          </label>
+          <input id="u1516_input" type="radio" value="radio" name="u1516"/>
+        </div>
+
+        <!-- Unnamed (单选按钮) -->
+        <div id="u1518" class="ax_default radio_button">
+          <label for="u1518_input">
+            <!-- Unnamed () -->
+            <div id="u1519" class="text" style="visibility: visible;">
+              <p><span>Female</span></p>
+            </div>
+          </label>
+          <input id="u1518_input" type="radio" value="radio" name="u1518"/>
+        </div>
+
+        <!-- Unnamed (图片) -->
+        <div id="u1520" class="ax_default image">
+          <img id="u1520_img" class="img " src="images/detail/u1087.png"/>
+          <!-- Unnamed () -->
+          <div id="u1521" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u1522" class="ax_default link_button">
+          <div id="u1522_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u1523" class="text" style="visibility: visible;">
+            <p><span style="text-decoration:underline;">Edit</span></p>
+          </div>
+        </div>
+
+        <!-- btn_publish (矩形) -->
+        <div id="u1524" class="ax_default primary_button" data-label="btn_publish">
+          <div id="u1524_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u1525" class="text" style="visibility: visible;">
+            <p><span>SAVE CHANGES</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (文本框) -->
+        <div id="u1526" class="ax_default text_field">
+          <input id="u1526_input" type="text" value=""/>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u1527" class="ax_default label">
+          <div id="u1527_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u1528" class="text" style="visibility: visible;">
+            <p><span>XXXXXXXXX</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u1529" class="ax_default sticky_1">
+          <div id="u1529_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u1530" class="text" style="visibility: visible;">
+            <p><span>用户注册后从未设置时，昵称默认显示用户手机号码，性别二者都不选择</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u1531" class="ax_default sticky_1">
+          <div id="u1531_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u1532" class="text" style="visibility: visible;">
+            <p><span>点击后弹出编辑头像的浮层。不使用flash。请参考jd的头像编辑功能。</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (连接线) -->
+        <div id="u1533" class="ax_default _连接线">
+          <img id="u1533_seg0" class="img " src="images/manage/u1533_seg0.png" alt="u1533_seg0"/>
+          <img id="u1533_seg1" class="img " src="images/manage/u1533_seg1.png" alt="u1533_seg1"/>
+          <img id="u1533_seg2" class="img " src="images/manage/u1533_seg2.png" alt="u1533_seg2"/>
+          <!-- Unnamed () -->
+          <div id="u1534" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (连接线) -->
+        <div id="u1535" class="ax_default _连接线">
+          <img id="u1535_seg0" class="img " src="images/manage/u1535_seg0.png" alt="u1535_seg0"/>
+          <img id="u1535_seg1" class="img " src="images/manage/u1535_seg1.png" alt="u1535_seg1"/>
+          <img id="u1535_seg2" class="img " src="images/manage/u1535_seg2.png" alt="u1535_seg2"/>
+          <!-- Unnamed () -->
+          <div id="u1536" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (水平线) -->
+        <div id="u1537" class="ax_default line">
+          <img id="u1537_img" class="img " src="images/manage/u1537.png"/>
+          <!-- Unnamed () -->
+          <div id="u1538" class="text" style="display: none; visibility: hidden">
+            <p><span></span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u1539" class="ax_default label">
+          <div id="u1539_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u1540" class="text" style="visibility: visible;">
+            <p><span style="text-decoration:underline;">PASSWORD</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u1541" class="ax_default label">
+          <div id="u1541_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u1542" class="text" style="visibility: visible;">
+            <p><span>Current password:</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (文本框) -->
+        <div id="u1543" class="ax_default text_field">
+          <input id="u1543_input" type="text" value=""/>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u1544" class="ax_default label">
+          <div id="u1544_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u1545" class="text" style="visibility: visible;">
+            <p><span>New password:</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (文本框) -->
+        <div id="u1546" class="ax_default text_field">
+          <input id="u1546_input" type="text" value=""/>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u1547" class="ax_default label">
+          <div id="u1547_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u1548" class="text" style="visibility: visible;">
+            <p><span>Verify password:</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (文本框) -->
+        <div id="u1549" class="ax_default text_field">
+          <input id="u1549_input" type="text" value=""/>
+        </div>
+
+        <!-- btn_publish (矩形) -->
+        <div id="u1550" class="ax_default primary_button" data-label="btn_publish">
+          <div id="u1550_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u1551" class="text" style="visibility: visible;">
+            <p><span>RESET PASSWARD</span></p>
+          </div>
+        </div>
+
+        <!-- Unnamed (矩形) -->
+        <div id="u1552" class="ax_default link_button">
+          <div id="u1552_div" class=""></div>
+          <!-- Unnamed () -->
+          <div id="u1553" class="text" style="visibility: visible;">
+            <p><span>Forgot your password?</span></p>
+          </div>
+        </div>
+
+        <!-- editavatar (头像编辑面板) -->
+
+        <!-- all (组合) -->
+        <div id="u1555" class="ax_default ax_default_hidden" data-label="all">
+
+          <!-- Unnamed (矩形) -->
+          <div id="u1556" class="ax_default box_2">
+            <div id="u1556_div" class=""></div>
+            <!-- Unnamed () -->
+            <div id="u1557" class="text" style="display: none; visibility: hidden">
+              <p><span></span></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (矩形) -->
+          <div id="u1558" class="ax_default box_1">
+            <div id="u1558_div" class=""></div>
+            <!-- Unnamed () -->
+            <div id="u1559" class="text" style="display: none; visibility: hidden">
+              <p><span></span></p>
+            </div>
+          </div>
+
+          <!-- Unnamed (图片) -->
+          <div id="u1560" class="ax_default image">
+            <img id="u1560_img" class="img " src="images/manage/u1560.png"/>
+            <!-- Unnamed () -->
+            <div id="u1561" class="text" style="display: none; visibility: hidden">
+              <p><span></span></p>
+            </div>
+          </div>
+
+          <!-- btn_publish (矩形) -->
+          <div id="u1562" class="ax_default primary_button" data-label="btn_publish">
+            <div id="u1562_div" class=""></div>
+            <!-- Unnamed () -->
+            <div id="u1563" class="text" style="visibility: visible;">
+              <p><span>Browser...</span></p>
+            </div>
+          </div>
+
+          <!-- btn_publish (矩形) -->
+          <div id="u1564" class="ax_default primary_button" data-label="btn_publish">
+            <div id="u1564_div" class=""></div>
+            <!-- Unnamed () -->
+            <div id="u1565" class="text" style="visibility: visible;">
+              <p><span>Save</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unnamed (顶部banner) -->
+
+      <!-- Unnamed (矩形) -->
+      <div id="u1567" class="ax_default box_2">
+        <div id="u1567_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u1568" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (图片) -->
+      <div id="u1569" class="ax_default image">
+        <img id="u1569_img" class="img " src="images/index/u53.png"/>
+        <!-- Unnamed () -->
+        <div id="u1570" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- Unnamed (搜索栏) -->
+
+      <!-- Unnamed (矩形) -->
+      <div id="u1572" class="ax_default box_1">
+        <div id="u1572_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u1573" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- btn_search (图片) -->
+      <div id="u1574" class="ax_default image" data-label="btn_search">
+        <img id="u1574_img" class="img " src="images/index/btn_search_u58.png"/>
+        <!-- Unnamed () -->
+        <div id="u1575" class="text" style="display: none; visibility: hidden">
+          <p><span></span></p>
+        </div>
+      </div>
+
+      <!-- btn_publish (矩形) -->
+      <div id="u1576" class="ax_default primary_button" data-label="btn_publish">
+        <div id="u1576_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u1577" class="text" style="visibility: visible;">
+          <p><span>PUBLISH</span></p>
+        </div>
+      </div>
+
+      <!-- txt_search (文本框) -->
+      <div id="u1578" class="ax_default text_field" data-label="txt_search">
+        <input id="u1578_input" type="text" value=""/>
+      </div>
+
+      <!-- Unnamed (矩形) -->
+      <div id="u1579" class="ax_default label">
+        <div id="u1579_div" class=""></div>
+        <!-- Unnamed () -->
+        <div id="u1580" class="text" style="visibility: visible;">
+          <p><span>跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马灯跑马1</span></p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
