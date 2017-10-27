@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--
+    刘超杰批阅：
+    前端开发工程师在开发移动端项目时，根据需要，建议适当添加指定的meta标签，从而更利于搜索引擎优化SEO。
+    如：
+    <!--手机全屏显示-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">-->
+    <!--作者信息-->
+    <!--<meta name="author" content="www.meituan.com">-->
+    <!-- 苹果手机是否全屏显示页面-->
+    <!--<meta name="apple-mobile-web-app-capable" content="yes">-->
+    <!--控制苹果手机状态栏的颜色-->
+    <!--<meta name="apple-mobile-web-app-status-bar-style" content="black">-->
+    <!--数字不能当作电话号码使用-->
+    <!--<meta name="format-detection" content="telephone=no">-->
+    <!--防止浏览器缓存数据:浏览器缓存：实时刷新-->
+    <!--<meta http-equiv="Expires" content="-1">-->
+    <!--<meta http-equiv="Cache-Control" content="no-cache">-->
+    <!--<meta http-equiv="Pragma" content="no-cache">-->
+    <!--关键字-->
+    <!--<meta name="keywords" content="美团，团购" />-->
+    <!--描述-->
+    <!--<meta name="description" content="美团网，和你一起共享优惠！" />-->
+    <!--网站LOGO-->
+    <!--<link href="img/logo.png" rel="shortcut icon" type="image/x-icon"/>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>朋友圈</title>
+    <link rel="stylesheet" href="http://coding.imweb.io/demo/reset.css">
+    <!-- 页面样式 -->
+    <!--
+    刘超杰批阅：
+    建议：创建一个项目时，首先创建对应的文件夹，尽量不要把html, css, js放在同一个文件夹下，否则项目越来越大，会变的臃肿。
+    格式如：
+    task:
+        img:
+            1.png
+            2.png
+            3.png
+        css:
+            index.css
+        js:
+            index.js
+        index.html
+    -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!--刘超杰批阅：
+    开发移动端项目建议采用更多html5语义化标签。
+    如最外层用section，内部根据需要采用aside, article, nav等；
+    -->
+    <div class="page-moments">
+        <header class="header">
+            <div class="header-banner"></div>
+            <div class="header-user">
+                <span class="user-name"></span>
+                <a class="user-link" href="#"><img src="img/avatar1.png" width="70" height="70" alt=""></a>
+            </div>
+        </header>
+        <div class="moments-list">
+            <!-- 消息内容 -->
+        </div>
+    </div>
+    <!-- 引入jQuery -->
+    <script src="https://7.url.cn/edu/jslib/jquery/1.9.1/jquery.min.js"></script>
+    <!-- 页面逻辑代码 -->
+    <script src="./app.js"></script>
+</body>
+</html>
