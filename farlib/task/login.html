@@ -22,6 +22,10 @@
 <!--<script type="text/babel">-->
 <script type="text/jsx">
 
+  //var regEmail = /^[\w\-]+\@[a-zA-Z]{2,4}(\.[a-zA-Z]{2,3}){1,2}$/;
+  var regEmail = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/;
+  var regPsw = /^[0-9A-Za-z]{6}$/;
+
   var MyContainer=React.createClass({
     getInitialState:function(){
       return {
@@ -31,6 +35,7 @@
 
         pswPart:1,
         pswBlurOk:true,
+        eyeWhite:false,
 
         loginState:false,
 
@@ -83,14 +88,14 @@
               <p className="emailTips" style={{display:me.state.emailBlurOk==true?'none':'block'}}>请输入有效邮箱地址</p>
             </div>
 
-            <div className={me.state.pswBlurOk==true?"passwordBox":"passwordBox passwordBoxRed"}>
+            <div className={(me.state.eyeWhite==true)?((me.state.pswBlurOk==true)?"passwordBoxShowPsw passwordBox":"passwordBoxShowPsw passwordBox passwordBoxRed"):((me.state.pswBlurOk==true)?"passwordBox":"passwordBox passwordBoxRed")}>
               <div className="inputPart">
                 <div className="inputPartInner">
                   <p className="show2Name" style={{display:me.state.pswPart==1?'none':'block'}}>密码</p>
                   <input className={'show '+pawShowClass} ref="pswIpt" onBlur={me.pswBlur} onFocus={me.pswFocus} onChange={me.pswChange} type="password" placeholder="密码"/>
                 </div>
               </div>
-              <img className="passwordWarningIcon" src="image/login/eye.svg" onClick={me.changeEye} />
+              <img className="passwordWarningIcon" src={me.state.eyeWhite==true?"image/login/eyeWhite.svg":"image/login/eye.svg"} onClick={me.changeEye} />
               <p className="pswTips" style={{display:me.state.pswBlurOk==true?'none':'block'}}>请输入有效6位密码</p>
             </div>
 
@@ -116,11 +121,10 @@
         me.setState({emailPart:1});
       }else{
         me.setState({emailPart:2});
-        var reg = /^[\w\-]+\@[a-zA-Z]{2,4}(\.[a-zA-Z]{2,3}){1,2}$/;
-        if(reg.test(event.currentTarget.value)){
+        if(regEmail.test(event.currentTarget.value)){
           me.setState({emailIconOK:true});
           me.setState({emailBlurOk:true});
-          if(me.refs.pswIpt.value.length == 6){
+          if(regPsw.test(me.refs.pswIpt.value)){
             me.setState({loginState:true});
           }else {
             me.setState({loginState:false});
@@ -143,8 +147,7 @@
     emailBlur:function(event){
       var me = this;
       if(event.currentTarget.value != ''){
-        var reg = /^[\w\-]+\@[a-zA-Z]{2,4}(\.[a-zA-Z]{2,3}){1,2}$/;
-        if(reg.test(event.currentTarget.value)){
+        if(regEmail.test(event.currentTarget.value)){
           me.setState({emailBlurOk:true});
         }else{
           me.setState({emailBlurOk:false});
@@ -159,10 +162,9 @@
         me.setState({pswPart:1});
       }else{
         me.setState({pswPart:2});
-        if(event.currentTarget.value.length == 6){
+        if(regPsw.test(event.currentTarget.value)){
           me.setState({pswBlurOk:true});
-          var reg = /^[\w\-]+\@[a-zA-Z]{2,4}(\.[a-zA-Z]{2,3}){1,2}$/;
-          if(reg.test(me.refs.emailIpt.value)){
+          if(regEmail.test(me.refs.emailIpt.value)){
             me.setState({loginState:true});
           }else {
             me.setState({loginState:false});
@@ -184,7 +186,7 @@
     pswBlur:function(event){
       var me = this;
       if(event.currentTarget.value != ''){
-        if(event.currentTarget.value.length == 6){
+        if(regPsw.test(event.currentTarget.value)){
           me.setState({pswBlurOk:true});
         }else{
           me.setState({pswBlurOk:false});
@@ -196,6 +198,7 @@
     changeEye:function(){
       var me = this;
       me.refs.pswIpt.setAttribute('type', 'text');
+      me.setState({eyeWhite:true});
     },
 
     //忘记密码
