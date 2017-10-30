@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>更改绑定用户</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script type="text/javascript" src="js/flexible.js"></script>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/changeInfo.css">
+</head>
+<body>
+<section class="wrapper">
+
+    <aside class="nowInfo">
+        当前账户信息
+    </aside>
+
+    <aside class="alipayBox">
+        <img class="alipayIcon" src="image/changeInfo/alipayIcon.png" alt="支付宝">
+        <p class="desc1">提现支付宝账号：<span class="value">AXBUTR</span></p>
+        <p class="desc2">账户姓名：<span class="value">BOLES</span></p>
+        <p class="desc3">绑定手机号：<span class="value">15976567872</span></p>
+    </aside>
+
+    <aside class="newInfo">
+        填写新的账户信息
+    </aside>
+
+    <aside class="inputInfo">
+        <div class="infoBox">
+            <label class="labels" for="userName">支付宝账号</label><input class="inputs" id="userName" type="text" placeholder="如账号无需更改则无需填写此栏">
+        </div>
+        <div class="infoBox">
+            <label class="labels" for="userLabel">账户姓名</label><input class="inputs" id="userLabel" type="text" placeholder="如姓名无需更改则无需填写此栏">
+        </div>
+        <div class="infoBox">
+            <label class="labels" for="codeLabel">短信验证码</label><input class="inputs" id="codeLabel" type="text" placeholder="请输入验证码">
+            <span class="getCode">获取验证码</span>
+        </div>
+    </aside>
+
+    <aside class="warning">
+        操作验证码将发送至当前绑定手机：18987283788
+    </aside>
+
+    <aside class="changeBtn">
+        确定更改
+    </aside>
+
+
+</section>
+<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        console.log(lib.flexible.dpr);
+    });
+</script>
+</body>
+</html>
