@@ -15,6 +15,7 @@ body {
   position: relative;
 }
 .titleBox .backBtn {
+  cursor: pointer;
   width: 1.28125rem;
   position: absolute;
   left: 0.375rem;
@@ -33,7 +34,7 @@ body {
   background-color: #fff;
   position: relative;
   padding-left: 2.09375rem;
-  border-top: 1px solid #F1F1F1;
+  border-top: 0.03125rem solid #f1f1f1;
 }
 .alipayBox .alipayIcon {
   width: 1.25rem;
@@ -59,7 +60,7 @@ body {
   font-size: 0.4375rem;
   height: 1.40625rem;
   line-height: 1.40625rem;
-  border-top: 1px solid #F1F1F1;
+  border-top: 0.03125rem solid #f1f1f1;
 }
 .inputInfo {
   background-color: #fff;
@@ -70,7 +71,7 @@ body {
   line-height: 1.5625rem;
   background-color: #fff;
   position: relative;
-  border-top: 1px solid #F1F1F1;
+  border-top: 0.03125rem solid #f1f1f1;
   overflow: hidden;
 }
 .inputInfo .infoBox .labels {
@@ -94,6 +95,7 @@ body {
   color: #959595;
 }
 .inputInfo .infoBox .getCode {
+  cursor: pointer;
   position: absolute;
   right: 0.375rem;
   top: 0.3125rem;
@@ -105,17 +107,18 @@ body {
   padding: 0 0.28125rem;
   border-radius: 0.4375rem;
   color: #959595;
-  border: 1px solid #959595;
+  border: 0.03125rem solid #959595;
 }
 .warning {
   color: #959595;
   font-size: 0.40625rem;
   text-align: center;
   padding-top: 0.28125rem;
-  border-top: 1px solid #F1F1F1;
+  border-top: 0.03125rem solid #f1f1f1;
   margin-bottom: 1.40625rem;
 }
 .changeBtn {
+  cursor: pointer;
   position: fixed;
   left: 0;
   bottom: 0;

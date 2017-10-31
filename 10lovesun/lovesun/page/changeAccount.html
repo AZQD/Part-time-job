@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <title>更改绑定账号</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <script type="text/javascript" src="js/flexible.js"></script>
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/changeAccount.css">
+    <script type="text/javascript" src="../js/flexible.js"></script>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/changeAccount.css">
 </head>
 <body>
 <section class="wrapper">
 
     <aside class="titleBox">
-        <img class="backBtn" src="image/changeInfo/backBtn.png" alt="backBtn">
+        <img class="backBtn" src="../image/changeInfo/backBtn.png" alt="backBtn">
         更改绑定账号
     </aside>
 
@@ -30,29 +30,9 @@
     <aside class="changeBtn">
         确定更改
     </aside>
-
-
+    
 </section>
-<script type="text/javascript" src="js/jquery-2.2.4.min.js"></script>
-<script type="text/javascript">
-    $(function(){
-        console.log(lib.flexible.dpr);
-        $('#getCode1').unbind('click').click(function(){
-            $('#leftTime').html(60);
-           $('#getCode1').hide();
-            $('#getCode2').show();
-            var leftTime = 60;
-            var timer = setInterval(function(){
-                if(leftTime == 1){
-                    clearInterval(timer);
-                    $('#getCode1').show();
-                    $('#getCode2').hide();
-                }
-                leftTime -- ;
-                $('#leftTime').html(leftTime);
-            }, 1000);
-        });
-    });
-</script>
+<script type="text/javascript" src="../js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="../js/changeAccount.js"></script>
 </body>
 </html>
