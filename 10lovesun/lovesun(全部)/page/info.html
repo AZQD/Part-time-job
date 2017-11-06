@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="zh-cn">
+    <head>
+       <meta charset="utf-8">
+       <title>消息中心</title>
+       <meta name="description" content="">
+       <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=no"/>
+       <script src="../js/flexible.js"></script>
+       <link rel="stylesheet" type="text/css" href="../css/info.css">
+	</head>
+<body>
+	<div class="main" id="wrapper">
+		<ul class="info-list">
+			<li>
+				<div class="info">
+					<h3>系统消息</h3>
+					<p>恭喜发布成功，系统将在3天后奖励到位.....</p>
+					<span class="time">2017-10-29 18:35</span>
+				</div>
+				<span class="delect"><i>删除</i></span>
+			</li>
+			<li>
+				<div class="info">
+					<h3>重要公告</h3>
+					<p>恭喜发布成功，系统将在3天后奖励到位.....</p>
+					<span class="time">2017-10-29 18:35</span>
+				</div>
+				<span class="delect"><i>删除</i></span>
+			</li>
+			<li class="active">
+				<div class="info">
+					<h3>系统消息</h3>
+					<p>恭喜发布成功，系统将在3天后奖励到位.....</p>
+					<span class="time">2017-10-29 18:35</span>
+				</div>
+				<span class="delect"><i>删除</i></span>
+			</li>
+			<li class="active">
+				<div class="info">
+					<h3>系统消息</h3>
+					<p>恭喜发布成功，系统将在3天后奖励到位.....</p>
+					<span class="time">2017-10-29 18:35</span>
+				</div>
+				<span class="delect"><i>删除</i></span>
+			</li>
+		</ul>
+
+	</div>
+	<p class="pullUpLabel">上拉加载更多</p>
+
+	<script src="../js/jquery-2.2.4.min.js"></script>
+	<script src="../js/iscroll.js"></script>
+	<script src="../js/pullToRefresh.js"></script>
+	<script type="text/javascript">
+	refresher.init({
+		id:"wrapper",
+		pullDownAction:appendInfo,
+		pullUpAction:Loading							
+	});	
+	// 上拉
+	function appendInfo(){
+		setTimeout(function(){
+			$(".pullDownIcon").hide();		
+			$(".pullDownLabel").text("刷新成功");	
+			$(".info-list").append('<li><div class="info"><h3>系统消息</h3><p>恭喜发布成功，系统将在3天后奖励到位.....</p><span class="time">2017-10-29 18:35</span></div><span class="delect"><i>删除</i></span></li>')
+			setTimeout(function(){
+				wrapper.refresh();
+				$(".pullDownLabel").text("");	
+			},500)
+		},2000)
+	}
+
+	function Loading(){
+		setTimeout(function(){
+			$(".info-list").append('<li><div class="info"><h3>系统消息</h3><p>恭喜发布成功，系统将在3天后奖励到位.....</p><span class="time">2017-10-29 18:35</span></div><span class="delect"><i>删除</i></span></li>')
+			wrapper.refresh();
+		},2000)
+	}
+
+
+		$(function(){
+
+			
+
+			var touchNum;
+			$(".info-list").on("touchstart"," li",function(e){
+				touchNum = e.originalEvent.targetTouches[0].clientX
+			})
+			$(".info-list").on("touchend"," li",function(e){
+				var touchEnd = e.originalEvent.changedTouches[0].clientX
+				if( touchNum > touchEnd+50 ){
+					productMove(this,"-21.25%");
+				}else{
+					productMove(this,0);
+				}
+			})
+			$(".info-list").on("click"," li",function(e){
+				$(this).addClass("active");
+			})
+			$(".info-list").on("click"," li .delect",function(e){
+				$(this).parent("li").remove();
+			})
+			function productMove(event,leftVal){
+				$(event).css("left",leftVal);
+			}
+
+		})
+	</script>
+</body>
+</html>

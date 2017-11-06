@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>登录注册</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--公共样式-->
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <!--爱晒登录/注册样式-->
+    <link rel="stylesheet" type="text/css" href="css/login.css"/>
+    <!--引入rem自适应类库-->
+    <script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <!--query-2.2.4脚本-->
+    <script src="js/jquery-2.2.4.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body class="love-sun">
+	
+	<!--logo start-->
+	<div class="logo">
+		<img src="image/logo.png"/>
+	</div>
+	<!--logo end-->
+	
+	<!--form start-->
+	<form>
+		<div class="m-cell">
+			<div class="cell-item">
+	            <div class="cell-left">手机号码</div>
+	            <div class="cell-right"><input type="tel" class="cell-input" placeholder="请输入您的手机号码"></div>
+	        </div>
+	        <div class="cell-item">
+	            <div class="cell-left">短信验证码</div>
+	            <div class="cell-right">
+	            		<input type="text" class="cell-input" placeholder="请输入您的验证码">
+	            		<sapn class="btn btn-warning" id="J_GetCode">发送</sapn>
+	            </div>
+	        </div>
+		</div>
+		<div class="tip cl">
+			<div class="tip-opt fl" id="opt"></div>
+			<div class="fl">我已阅读并遵守</div>
+			<div class="tip-red fl">爱晒网用户协议</div>
+		</div>
+		<div class="sign-in" id="signIn">注册/登录</div>
+	</form>
+	<!--form end-->
+</body>
+<script src="js/logo.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		var $getCode = $('#J_GetCode');
+		// 定义参数
+	    $getCode.sendCode({
+	        disClass: 'btn-disabled', // 禁用按钮样式【必填】
+	        secs: 60, // 倒计时时长 [可选，默认：60秒]
+	        run: false,// 是否初始化自动运行 [可选，默认：false]
+	        runStr: '{%s}s重发送',// 倒计时显示文本 [可选，默认：58秒后重新获取]
+	        resetStr: '发送'// 倒计时结束后按钮显示文本 [可选，默认：重新获取验证码]
+	    });
+		//发送验证码
+	    $getCode.on('click', function () {
+	        var $this = $(this);
+	        $this.sendCode('start');
+	        
+	    });
+	    //勾选爱晒网用户协议
+	    $('#opt').click(function(){
+	    	if ($(this).hasClass("tip-opt-no")) {
+	    		$(this).removeClass("tip-opt-no");
+	    	} else{
+	    		$(this).addClass("tip-opt-no");
+	    	}
+	    })
+	    //注册/登录
+	    $('#signIn').click(function(){
+	    	window.location.href="index.html"
+	    });
+	});
+</script>
+</html>

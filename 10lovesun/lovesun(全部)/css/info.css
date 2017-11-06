@@ -1,0 +1,114 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; }
+
+body {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', STHeiti,'Hiragino Sans GB','Lucida Grande',Microsoft YaHei,arial;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+  background-color: #f5f5f5; }
+
+body, html, .main {
+  height: 100%; }
+
+ul, li, h3, p {
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+.main {
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 100%; }
+  .main .scroller {
+    padding-bottom: 1.40625rem; }
+  .main .info-list li.active:before {
+    background-image: url(../image/icon3.png); }
+  .main .info-list li.active .info h3 {
+    color: #727272; }
+  .main .info-list li {
+    position: relative;
+    border-bottom: 1px solid #f5f5f5;
+    padding: 0.375rem 0 0.375rem 0.3125rem;
+    background-color: #fff;
+    transition: left .5s linear;
+    -ms-transition: left .5s linear;
+    -moz-transition: left .5s linear;
+    -webkit-transition: left .5s linear;
+    left: 0; }
+    .main .info-list li:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .main .info-list li:before {
+      content: "";
+      width: 1.0625rem;
+      height: 1.0625rem;
+      background: url(../image/icon2.png) no-repeat top center/100% auto;
+      position: absolute;
+      left: 0.3125rem;
+      top: 50%;
+      transform: translate(0, -50%); }
+    .main .info-list li .info {
+      position: relative;
+      float: right;
+      color: #727272;
+      vertical-align: middle;
+      width: 83.25%; }
+      .main .info-list li .info h3 {
+        font-size: 0.46875rem;
+        color: #000;
+        line-height: 1.5; }
+      .main .info-list li .info p {
+        font-size: 0.4375rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
+      .main .info-list li .info .time {
+        position: absolute;
+        top: 0;
+        right: 0.07813rem;
+        font-size: 0.32672rem; }
+    .main .info-list li .delect {
+      position: absolute;
+      right: -2.28125rem;
+      top: 0;
+      width: 2.28125rem;
+      height: 100%;
+      background-color: #ee3a48;
+      cursor: pointer; }
+      .main .info-list li .delect i {
+        color: #fff;
+        font-size: 0.46875rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        font-style: normal; }
+  .main .pullDown {
+    line-height: 2;
+    color: #727272;
+    font-size: 0.5rem;
+    text-align: center; }
+
+.pullUpLabel {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  line-height: 1.40625rem;
+  background-color: #fff;
+  text-align: center;
+  color: #727272;
+  font-size: 0.5rem; }
+
+/*# sourceMappingURL=info.css.map */

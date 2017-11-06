@@ -1,0 +1,69 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; }
+
+body {
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', STHeiti,'Hiragino Sans GB','Lucida Grande',Microsoft YaHei,arial;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  margin: 0;
+  background-color: #f5f5f5; }
+
+p {
+  margin: 0; }
+
+.main {
+  max-width: 100%;
+  margin:0 auto;
+  padding-bottom: 1.40625rem;
+  overflow: hidden; }
+  .main .rule {
+    padding: 0.5625rem 0.39063rem;
+    font-size: 0.4375rem;
+    line-height: 1.5;
+    margin-bottom: 0.23438rem;
+    background-color: #fff; }
+  .main .money-box {
+    background-color: #fff; }
+    .main .money-box .Quota-info {
+      padding: 0.46875rem 0.39063rem;
+      font-size: 0.46875rem;
+      border-bottom: 1px solid #f1f1f1; }
+      .main .money-box .Quota-info .Quota {
+        color: #f36c21; }
+    .main .money-box .money-m {
+      position: relative;
+      padding: 0.54688rem 0.39063rem; }
+      .main .money-box .money-m .icon1 {
+        width: 0.57813rem;
+        vertical-align: middle; }
+      .main .money-box .money-m .moneyValue {
+        font-size: 0.46875rem;
+        vertical-align: middle;
+        border: 0;
+        outline: none; }
+      .main .money-box .money-m .allMoney {
+        position: absolute;
+        top: 50%;
+        right: 0.3125rem;
+        transform: translate(0, -50%);
+        font-size: 0.40625rem;
+        color: #f36c21;
+        cursor: pointer; }
+  .main .apply {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1.40625rem;
+    line-height: 1.40625rem;
+    background-color: #f36c21;
+    text-align: center;
+    color: #fff;
+    font-size: 0.5rem;
+    cursor: pointer; }
+
+/*# sourceMappingURL=main.css.map */

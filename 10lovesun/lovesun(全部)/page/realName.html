@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<!--edited by Eliot 2017-10-31 -->
+<head>
+    <meta charset="UTF-8">
+    <title>实名认证</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script src="../js/flexible.js"></script>
+    <link href="../css/common.css" type="text/css" rel="stylesheet" />
+    <link rel='stylesheet' href='../css/realName.css' />
+</head>
+
+<body>
+    <div class="warp">
+        <div class="realname-box">
+            <!--导航切换-->
+            <nav class="tabs">
+                <ul>
+                    <li>
+                        <a class="tab tab-active">实名认证</a>
+                    </li>
+                    <li>
+                        <a class="tab">达人认证</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+            <!--导航切换-->
+            <div class="tabs-area">
+                <!--切换区域一-->
+                <div class="tab-panel" style="display:block;">
+                    <!--提示区域-->
+                    <div class="tips">
+                        <p>未完成实名认证将无法进行提现，并限制部分功能使用</p>
+                    </div>
+                    <!--提示区域-->
+                    <div class="present-state">
+                        <p>当前实名认证状态：
+                            <span class="danger-red">(未认证/已认证)</span>
+                        </p>
+                    </div>
+                    <!--表单组件-->
+                    <div class="form-box">
+                        <from>
+                            <div class="form-group">
+                                <label>姓名</label>
+                                <input type="text" class="form-input" placeholder="请输入姓名" />
+                            </div>
+                            <div class="form-group">
+                                <label>身份证</label>
+                                <input type="text" class="form-input" placeholder="请输入身份证号码" />
+                            </div>
+                        </from>
+                    </div>
+                    <button class="btn btn-apply btn-ally-real">申请实名认证</button>
+                    <!--表单组件-->
+                </div>
+                <!--切换区域一-->
+                <!--切换区域二-->
+                <div class="tab-panel">
+                    <!--提示区域-->
+                    <div class="tips">
+                        <p>当前达人认证状态：未认证/已认证达人认证需有推荐人认证后可获得更高比例分成。如无推荐人，请与官方客服联系，点击：
+                            <a href="#" class="customer-service">客服联系方式</a>
+                        </p>
+                    </div>
+                    <!--提示区域-->
+                    <div class="present-state">
+                        <p>当前达人认证状态：
+                            <span class="danger-red">(未认证/已认证)</span>
+                        </p>
+                    </div>
+                    <!--表单组件-->
+                    <div class="form-box">
+                        <from>
+                            <div class="form-group">
+                                <label>推荐人ID</label>
+                                <input type="text" class="form-input" placeholder="请输入推荐人ID" />
+                            </div>
+
+                        </from>
+                    </div>
+                    <!--表单组件-->
+                    <!--上传身份证-->
+                    <div class="idcard-upload-panel">
+                        <h3 class='idcard-title'>上传身份证
+                            <span class="danger-red">(必填)</span>
+                        </h3>
+                        <div class="idcard-body">
+                            <div class="flex-box">
+                                <div class="idcard-upload-area">
+                                    <label class="idcard-upload-form idcard-facade" for='idcard-facade-input'></label>
+                                    <input type="file" class="input-file" id='idcard-facade-input'/>
+                                </div>
+                                <div class="idcard-upload-area">
+                                    <label  class="idcard-upload-form idcard-obverse" for='idcard-obverse-input'></label>
+                                    <input type="file" class="input-file" id='idcard-obverse-input'/>
+                                </div>
+                            </div>
+                            <button class="btn btn-apply btn-apply-daren">申请达人认证</button>
+                        </div>
+
+                    </div>
+                    <!--上传身份证-->
+                </div>
+                <!--切换区域二-->
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src='../js/realName.js'></script>
+
+</html>

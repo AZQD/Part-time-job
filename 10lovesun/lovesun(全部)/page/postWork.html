@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>发布作品</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/postWork.css">
+</head>
+<body class="postWorkBg">
+	<div class="datePart">
+		<div class="num">6</div>
+		<div class="weekInfo">
+			<p>星期日</p>
+			<p>08/2017</p>
+		</div>
+	</div>
+	<div class="slogan">
+		<h5>制作好打赏相册或视频</h5>
+		<h5>分享到<em>微博</em>或<em>朋友圈</em>才能赚钱哦~</h5>
+		<h6>严禁上传违法信息，一经发现立即删除作品并立即封号处理</h6>
+	</div>
+	<div class="operate">
+		<div class="oper">
+			<img src="../image/postWork/makeAlbum.png" alt="">
+			<p>制作相册</p>
+		</div>
+		<div class="oper">
+			<img src="../image/postWork/makeVideo.png" alt="">
+			<p>制作视频</p>
+		</div>
+	</div>
+	<div style="height: 1.8rem;"></div>
+	<div class="footer">
+	    <ul>
+	        <li>
+	            <a href="../index.html">
+	                <img src="../image/personcenter/home.png" alt="">
+	                <span>首页</span>
+	            </a>
+	        </li>
+	        <li class="active">
+	            <a href="postWork.html">
+	                <img src="../image/personcenter/artia.png" alt="">
+	                <span>发布作品</span>
+	            </a>
+	        </li>
+	        <li>
+	            <a href="AccountManage.html">
+	                <img src="../image/personcenter/pocket.png" alt="">
+	                <span>账户管理</span>
+	            </a>
+	        </li>
+	        <li>
+	            <a href="personcenter.html">
+	                <img src="../image/personcenter/person.png" alt="">
+	                <span>个人中心</span>
+	            </a>
+	        </li>
+	    </ul>
+	</div>
+	<script>
+		(function (doc, win) {
+			var docEl = doc.documentElement, // html
+				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+				recalc = function () {
+					var clientWidth = docEl.clientWidth;
+					if (!clientWidth) return;
+					if (clientWidth <= 1600) {
+						docEl.style.fontSize = 20 * (clientWidth / 640) + 'px';
+					} else {
+						docEl.style.fontSize = '16px';
+					}
+				};
+
+			if (!doc.addEventListener) return;
+			win.addEventListener(resizeEvt, recalc, false);
+			doc.addEventListener('DOMContentLoaded', recalc, false);
+
+		})(document, window);
+	</script>
+</body>
+</html>

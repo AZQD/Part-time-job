@@ -1,0 +1,100 @@
+.zsWraper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.zsTop {
+    height: 3.359375rem;
+    background: url("../image/shouzhilishi/shouzhiBg.png") no-repeat;
+    background-size:100%;
+    padding-top: 1rem;
+}
+
+.zsLft {
+    float: left;
+    width: 49%;
+}
+
+.zsCnt {
+    float: left;
+    width: 1px;
+    height: 2.484375rem;
+}
+
+.zsLft p {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 0.4375rem;
+}
+.zsLft h3{
+    font-size: 0.875rem;
+    text-align: center;
+    color:#fff;
+}
+.zsLft h3 span{
+    font-size: 0.5rem;
+}
+.zsCnt img{
+    width: 1px;
+    height: 2.484375rem;
+}
+.zsList{
+
+}
+.zsList li{
+    background: #fff;
+    padding-left:0.46875rem;
+    padding-right: 0.46875rem;
+    padding-top: 0.390625rem;
+    padding-bottom: 0.390625rem;
+}
+.zsList li:nth-child(even){
+    background-color: #f5f5f5;
+}
+.zsLstTop{
+    margin-bottom: 0.15625rem;
+}
+.zsTpLft{
+    float:left;
+    color:#f62727;
+    font-size:0.46875rem ;
+    font-weight:bold;
+}
+.zsTpRt{
+    float: right;
+    color: #222222;
+    font-size: 0.46875rem;
+    text-align: right;
+    font-weight:bold;
+}
+
+.zsLstBtm{
+    margin-bottom: 0.15625rem;
+}
+.zsBtmLft{
+    float:left;
+    color:#727272;
+    font-size:0.40625rem ;
+}
+.zsBtmRt{
+    float: right;
+    color: #727272;
+    font-size: 0.40625rem;
+    text-align: right;
+}
+.colorGreen{
+    color: #399d02;
+}
+.showMore{
+    background: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.40625rem;
+    color: #727272;
+    display: block;
+    height: 1.53125rem ;
+    line-height: 1.53625rem;
+    margin-top: 0.7rem;
+}

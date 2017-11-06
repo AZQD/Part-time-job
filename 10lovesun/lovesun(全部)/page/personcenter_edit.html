@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑信息</title>
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/personcenter_edit.css">
+    <link rel="stylesheet" href="../js/datetime/css/normalize3.0.2.min.css" />
+    <link rel="stylesheet" href="../js/datetime/css/style.css?v=7" />
+    <link href="../js/datetime/css/mobiscroll.css" rel="stylesheet" />
+    <link href="../js/datetime/css/mobiscroll_date.css" rel="stylesheet" />
+
+</head>
+<body>
+<div class="head">
+    <span class="name">头像</span>
+    <img src="../image/personcenter_edit/tx.png" alt="">
+    <input type="file" style="display: none" id="sc">
+</div>
+<div class="bd">
+    <ul>
+        <li>
+            <span class="name">昵称</span>
+            <input type="text" placeholder="请输入新的昵称">
+        </li>
+        <li>
+            <span class="name">性别</span>
+            <div class="fr">
+                <label class="active">
+                    <span>男</span>
+                    <img src="../image/personcenter_edit/male.png" alt="">
+                    <div class="check"></div>
+                </label>
+                <label>
+                    <span>女</span>
+                    <img src="../image/personcenter_edit/female.png" alt="">
+                    <div class="check" style="margin-right: 0"></div>
+                </label>
+            </div>
+        </li>
+        <li>
+            <span class="name">生日</span>
+            <input type="text" placeholder="请输入您的生日" id="USER_AGE">
+
+        </li>
+    </ul>
+</div>
+<div class="btn"></div>
+</body>
+<script src="../js/jquery-2.2.4.min.js"></script>
+<script src="../js/datetime/js/mobiscroll_date.js" charset="gb2312"></script>
+<script src="../js/datetime/js/mobiscroll.js"></script>
+<script>
+    $(function () {
+
+        setInterval(function () {
+            var a=$(".btn").width();
+            $(".btn").css('height',a*.144+'px');
+            var b=$(".head").width();
+            $(".head").css('height',b*.234375+'px');
+            $(".head .name").css('line-height',b*.234375+'px');
+            $(".head img").css('margin-top',(b*.234375-66.69)/2+'px');
+            var c=$(".bd ul li").width();
+            $(".bd ul li").css('height',c*.15625+'px');
+            $(".bd ul li .name").css('line-height',c*.15625+'px');
+            $(".bd ul li input").css('height',c*.155+'px');
+            $('.bd ul li .fr label span').css('line-height',c*.15625+'px');
+        },500)
+        $(".bd ul li .fr label").click(function () {
+            $(".bd ul li .fr label").removeClass('active');
+            $(this).addClass('active');
+        })
+
+        $(".head img").click(function () {
+            $("#sc").trigger('click');
+        })
+
+
+        $("#sc").change(function () {
+            var obj=$("#sc")[0].files[0];
+            var type=obj.type;
+            type=type.split('/');
+            var size=Math.round(obj.size/1024*100)/100
+            $("#upload").hide();
+            $("#upthen").show();
+            if(type[0]!='image'){
+                alert('请上传图片文件')
+            }
+            else if(size>5120){
+                alert('请上传小于5M的图片！')
+            }
+            else{
+                var fr=new FileReader();
+                fr.onload=function (data) {
+                    $(".head img").remove();
+                    var img=$('<img src="'+this.result+'"/>');
+                    img.appendTo($(".head"));
+                };
+                fr.readAsDataURL(obj);
+            }
+
+        })
+
+        var currYear = (new Date()).getFullYear();
+        var opt={};
+        opt.date = {preset : 'date'};
+        opt.datetime = {preset : 'datetime'};
+        opt.time = {preset : 'time'};
+        opt.default = {
+            theme: 'android-ics light', //皮肤样式
+            display: 'modal', //显示方式
+            mode: 'scroller', //日期选择模式
+            dateFormat: 'yyyy-mm-dd',
+            lang: 'zh',
+            showNow: true,
+            nowText: "今天",
+            startYear: currYear - 50, //开始年份
+            endYear: currYear + 10 //结束年份
+        };
+
+        $("#USER_AGE").mobiscroll($.extend(opt['date'], opt['default']));
+
+    })
+</script>
+</html>

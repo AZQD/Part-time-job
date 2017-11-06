@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>更改绑定账号</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <script type="text/javascript" src="../js/flexible.js"></script>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/changeAccount.css">
+</head>
+<body>
+<section class="wrapper">
+
+    <!--<aside class="titleBox">
+        <img class="backBtn" src="../image/changeInfo/backBtn.png" alt="backBtn">
+        更改绑定账号
+    </aside>-->
+
+    <aside class="inputInfo">
+        <div class="infoBox">
+            <label class="labels" for="userLabel">新手机号码</label><input class="inputs" id="userLabel" type="text" placeholder="请输入新手机号码">
+        </div>
+        <div class="infoBox">
+            <label class="labels" for="codeLabel">短信验证码</label><input class="inputs" id="codeLabel" type="text" placeholder="请输入验证码">
+            <span class="getCode" id="getCode1">获取验证码</span>
+            <span class="getCode" id="getCode2" style="display: none;"><span id="leftTime">60</span>S后重发</span>
+        </div>
+    </aside>
+
+    <aside class="changeBtn">
+        确定更改
+    </aside>
+    
+</section>
+<script type="text/javascript" src="../js/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="../js/changeAccount.js"></script>
+</body>
+</html>

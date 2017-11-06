@@ -1,0 +1,99 @@
+body{
+    background: #f6f6f6!important;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.head{
+    width: 100%;
+    height: 87.75px;
+    margin-top: 2.925px;
+    margin-bottom: 5.85px;
+    background: #fff;
+}
+
+.head .name{
+    font-size:1.2rem;
+    color: #222;
+    float: left;
+    line-height:  87.75px;
+    margin-left: 14.625px;
+}
+
+.head img{
+    float: right;
+    width: 66.69px;
+    height: 66.69px;
+    border-radius: 50%;
+     margin-top: 9.36px;
+    margin-right: 14.625px;
+    vertical-align: middle;
+}
+
+.bd ul li{
+    height: 58.5px;
+    background: #fff;
+    margin-bottom: 1.797119px;
+}
+
+.bd ul li .name{
+    line-height: 58.5px;
+    color: #222;
+    font-size: 1.2rem;
+    margin-left: 14.625px;
+}
+
+.bd ul li input{
+    float: right;
+    height: 56.16px;
+    width: 70%;
+    font-size: 1.2rem;
+    border: none;
+}
+
+.bd ul li .fr{
+    width: 70%;
+    height: 100%;
+}
+
+
+.bd ul li .fr label{
+    float: left;
+}
+
+.bd ul li .fr label span{
+    font-size: 1.2rem;
+    color: #222;
+    line-height: 58.5px;
+}
+
+.bd ul li .fr label img{
+    width:15.209px;
+    margin-left: 1.8719px;
+    margin-right: 14.624px;
+    vertical-align: middle;
+}
+
+
+.bd ul li .fr label .check{
+    width: 23.985px;
+    height: 23.985px;
+    background: url("../image/personcenter_edit/select.png");
+    background-size: 100% 100%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 37.44px;
+}
+
+.bd ul li .fr label.active .check{
+    background: url("../image/personcenter_edit/active.png");
+    background-size: 100% 100%;
+}
+
+.btn{
+    width: 85%;
+    background: url("../image/personcenter_edit/save.png");
+    background-size: 100% 100%;
+    margin: 0 auto;
+    margin-top: 29.25px;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>账户管理页面</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/accountManage.css">
+		
+	</head>
+	<body>
+		<div class="head font_white" id="cash_div">
+			<div class="size_n center padding_top">
+				账户管理
+			</div>
+			<a class="cash" href="tixian.html" style="color: #fff;">提现</a>
+			<div style="clear: both"></div>
+			<div class="size_n current center" >
+				当前可提现余额<br/>
+				<div>
+					¥<span class="size_l " >98000</span>
+				</div>
+			</div>
+			
+		</div>
+		<div class="size_n font_white total">
+			<div class="fl">
+				当前历史收益总计:&nbsp;¥<span id="total_benifit">321867</span>
+			</div>
+			<div class="fr size_s padding_top">
+				<a id="show_detail " href="shouzhilishi.html" class="font_white" style="color: #fff;">查看明细</a>
+			</div>
+			<div style="clear: both"></div>
+			
+		</div>
+		
+		<div class="padding_label font_black">
+			当前账户信息
+		</div>
+		
+		<div class="padding_content white_b font_black">
+			<div class="fl">
+				<div class="">
+					提现支付宝账号 : AXBUTR
+				</div>
+				<div class="padding_top">
+					<span class="font_grey size_s">账户姓名：<span id="userName">BOLES</span></span>
+				</div>
+				<div class="padding_top">
+					<span class="font_grey size_s">绑定手机号：<span id="userName">15976567872</span></span>
+				</div>
+			</div>
+			<div class="fr" style="height: 100%;margin-top: 0.6rem;">
+				<img src="../image/AccountManage/edit.png" class="modification"/>
+			</div>
+			<div style="clear: both"></div>
+		</div>
+		
+		
+		
+		<div class="padding_label font_black">
+			推广计划
+		</div>
+		<div class="padding_content white_b font_black">
+			<div class="fl">
+				<div class="">
+					成功推荐<span class="font_orange" id="recNum"> 7 </span>人
+				</div>
+				<div class="padding_top">
+					累计获得佣金: <span class="font_orange" id="total_commision">¥19878</span>
+				</div>
+				
+			           
+			</div>
+			<button class="fr font_orange btn_popular">
+				我要推广
+			</button>
+			
+			<div style="clear: both"></div>
+			
+		</div>
+		<div style="height: 1.8rem;"></div>
+		<!--footer start-->
+		<div class="footer">
+		    <ul>
+		        <li>
+		            <a href="../index.html">
+		                <img src="../image/personcenter/home.png">
+		                <span>首页</span>
+		            </a>
+		        </li>
+		        <li>
+		            <a href="postWork.html">
+		                <img src="../image/personcenter/arti.png">
+		                <span>发布作品</span>
+		            </a>
+		        </li>
+		        <li class="active">
+		            <a href="AccountManage.html">
+		                <img src="../image/personcenter/ionc-account.png" style="width: 0.6rem;">
+		                <span style="margin-top: 0.08rem;">账户管理</span>
+		            </a>
+		        </li>
+		        <li>
+		            <a href="personcenter.html">
+		                <img src="../image/postWork/person.png">
+		                <span>个人中心</span>
+		            </a>
+		        </li>
+		    </ul>
+		</div>
+		<!--footer end-->
+	</body>
+	<script type="application/javascript" src="../js/jquery-2.2.4.min.js"></script>
+	<script type="application/javascript" src="../js/flexible.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//我要推广
+			$('.btn_popular').click(function(){
+				window.location.href="tg.html";
+			});
+			//更改绑定手机号
+			$('.modification').click(function(){
+				window.location.href="changeInfo.html";
+			})
+		});
+	</script>
+</html>

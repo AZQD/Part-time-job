@@ -1,0 +1,183 @@
+body{
+    background: #f6f6f6;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.head{
+    width: 100%;
+    height: 6.0468rem;
+    background: url("../image/personcenter/bg.jpg");
+    background-size: 100% 100%;
+    position: relative;
+}
+.msg{
+    width:.625rem;
+    height: .625rem;
+    background: url("../image/personcenter/msg.png");
+    background-size: 100% 100%;
+    float: left;
+    margin-left: .34375rem;
+    margin-top: .32rem;
+    position: relative;
+}
+.msg .dot{
+    width: .15625rem;
+    height: .15625rem;
+    background: url("../image/personcenter/dot.png");
+    background-size: 100% 100%;
+    position: absolute;
+    right: 0rem;
+    top: 0rem;
+}
+.edit{
+    width:.578125rem;
+    height: .59375rem;
+    background: url("../image/personcenter/edit.png");
+    background-size: 100% 100%;
+    float: right;
+    margin-right: .34375rem;
+    margin-top: .32rem;
+}
+.favicon{
+    width: 2.234375rem;
+    height: 2.234375rem;
+    margin: 0 auto;
+    margin-top: .46875rem;
+}
+
+.favicon img{
+    width: 100%;
+    height: 100%;
+}
+
+.name{
+    text-align: center;
+    color: #fff;
+    font-size: .5rem;
+    margin-top: .15rem;
+}
+
+
+.name img{
+    margin-top: -.07rem;
+}
+
+.info{
+    text-align: center;
+    font-size: .40625rem;
+    color: #fdc7bf;
+    margin-top: .38rem;
+}
+
+.info span{
+    padding-left: .2rem;
+    padding-right: .2rem;
+}
+
+.bd ul li{
+    height: 1.484375rem;
+    background:#fff;
+    margin-bottom: .048rem;
+}
+
+.bd ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.bd ul li a img{
+    width: .6406rem;
+    float: left;
+    margin-top: .45rem;
+    margin-left: .375rem;
+}
+
+
+.bd ul li a span{
+    font-size: .4375rem;
+    line-height: 1.484375rem;
+}
+
+.bd ul li a span.fl{
+    color: #222;
+    margin-left: .3125rem;
+}
+
+.bd ul li a span.fr{
+    color: #aaa;
+    margin-right:.38rem;
+    font-size: .40625rem;
+}
+
+.bd ul li a .next{
+    width: .2343rem;
+    height: .40625rem;
+    background: url("../image/personcenter/nextpage.png");
+    background-size: 100% 100%;
+    float: right;
+    margin-top: .55rem;
+    margin-right: .375rem;
+}
+
+.footer{
+    height: 1.5625rem;
+    width: 100%;
+    background: #fff;
+    position:fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer ul{
+    width: 100%;
+    height: 100%;
+}
+
+.footer ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.footer ul li{
+    height: 100%;
+    width: 25%;
+    float: left;
+    text-align: center;
+    font-size: .34375rem;
+}
+
+.footer ul li a{
+    color: #525252;
+}
+
+.footer ul li span{
+    letter-spacing: .03rem;
+    display: block;
+    margin-top: .07rem;
+}
+
+.footer ul li img{
+    width: .640625rem;
+    margin: 0 auto;
+    margin-top: .3rem;
+    display: block;
+}
+
+.footer ul li.active a{
+    color: #f75f2e!important;
+}
+
+.bd .exit{
+    height: 1.484375rem;
+    line-height: 1.484375rem;
+    text-align: center;
+    color: #f36c21;
+    font-size: .46875rem;
+    background: #fff;
+    border-radius: .15rem;
+    margin: 1.38375rem 0.24rem;
+}

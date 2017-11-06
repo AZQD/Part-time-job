@@ -1,0 +1,99 @@
+@charset "utf-8";
+.postWorkBg{
+	padding: 5rem 1.5rem 0;
+	background: url(../image/postWork/postWorkBg1px.jpg) #faf4f2 repeat-x;
+	background-size: auto 100%;
+}
+.datePart{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 6.7rem;
+	height: 2.8rem;
+	color: #f36c21;
+}
+.datePart .num{
+	font-size: 2.8rem;
+	font-weight: bold;
+}
+.datePart .weekInfo{
+	display: flex;
+	flex-direction: column;
+}
+.weekInfo p{font-size: 1.2rem;line-height: 1;}
+.slogan{
+	padding-top: 1.8rem;
+}
+.slogan h5{
+	color: #222;
+	font-size: 1.6rem;
+	line-height: 1.5;
+}
+.slogan h5 em{color: #f36c21;}
+.slogan h6{
+	padding-top: .8rem;
+	color: #727272;
+	font-size: 1.2rem;
+	line-height: 1.4;
+}
+.operate{
+	margin: 0 auto;
+	padding-top: 8rem;
+	width: 21.9rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.operate .oper{
+	text-align: center;
+}
+.operate .oper img{
+	width: 6.9rem;
+	height: 6.9rem;
+}
+.operate .oper p{
+	padding-top: 1rem;
+	color: #727272;
+	font-size: 1.5rem;
+}
+.footer{
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    height: 5rem;
+    width: 100%;
+    background: #fff;
+}
+.footer ul{
+    width: 100%;
+    height: 100%;
+}
+.footer ul li a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.footer ul li{
+    height: 100%;
+    width: 25%;
+    float: left;
+    text-align: center;
+    font-size: 1.1rem;
+}
+.footer ul li a{
+    color: #525252;
+}
+.footer ul li span{
+    display: block;
+    margin-top: .2rem;
+    letter-spacing: .1rem;
+}
+.footer ul li img{
+    width: 2.05rem;
+    margin: 0 auto;
+    margin-top: 1rem;
+    display: block;
+}
+.footer ul li.active a{
+    color: #f75f2e!important;
+}

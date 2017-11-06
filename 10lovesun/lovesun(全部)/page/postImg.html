@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>发布图片</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/postImg.css">
+</head>
+<body>
+	<div class="postImgPart1">
+		<img src="../image/postImg/img1.png" alt="" width="100%">
+		<div class="prodInfo">
+			<h5>动物之间和谐相处</h5>
+			<h6>视频：134分</h6>
+		</div>
+		<div class="prodInfo">
+			<p>2017.10.28</p>
+			<p>浏览:<em>799</em></p>
+			<p>赏金:￥<em>88</em></p>
+		</div>
+	</div>
+	<div class="postImgPart2">
+		<div class="list-form bdbt2">
+			<label>修改相册名称</label>
+			<p>动物相处</p>
+			<img src="../image/postImg/editIcon.png" alt="">
+		</div>
+		<div class="list-form bdbt2">
+			<label>修改相册名称</label>
+			<p class="orange">¥232</p>
+			<img src="../image/postImg/editIcon.png" alt="">
+		</div>
+		<div class="list-form">
+			<label>
+				免费浏览张数<br>
+				<span>(视频此选项为灰色)</span>
+			</label>
+			<img id="subBtn" src="../image/postImg/subIcon.png" alt="" class="count">
+			<p id="num">4</p>
+			<img id="plusBtn" src="../image/postImg/plusIcon.png" alt="" class="count">
+		</div>
+		<button class="btmBtn">保存更改并提交审核</button>
+	</div>
+	<script>
+		(function (doc, win) {
+			var docEl = doc.documentElement, // html
+				resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+				recalc = function () {
+					var clientWidth = docEl.clientWidth;
+					if (!clientWidth) return;
+					if (clientWidth <= 1600) {
+						docEl.style.fontSize = 20 * (clientWidth / 640) + 'px';
+					} else {
+						docEl.style.fontSize = '16px';
+					}
+				};
+
+			if (!doc.addEventListener) return;
+			win.addEventListener(resizeEvt, recalc, false);
+			doc.addEventListener('DOMContentLoaded', recalc, false);
+
+		})(document, window);
+		window.onload = function() {
+			var subBtn = document.querySelector('#subBtn'),
+				num = document.querySelector('#num'),
+				plusBtn = document.querySelector('#plusBtn'),
+				val = 1;
+			val = parseInt(num.innerHTML);
+			subBtn.onclick = function() {
+				if(val <= 1) {
+					val = 1;
+				}else{
+					val--;
+					num.innerHTML = val;
+				}
+			}
+			plusBtn.onclick = function() {
+				if(val < 9){
+				   val++;
+				   num.innerHTML = val;
+				}
+			}
+		}
+	</script>
+</body>
+</html>

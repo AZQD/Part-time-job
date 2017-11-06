@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>相簿</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <!--公共样式-->
+    <link rel="stylesheet" type="text/css" href="css/common.css"/>
+    <!--爱晒首页样式-->
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <!--引入rem自适应类库-->
+    <script src="js/flexible.js" type="text/javascript" charset="utf-8"></script>
+    <!--query-2.2.4脚本-->
+    <script src="js/jquery-2.2.4.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body class="bg" style="overflow-y: auto;">
+	<!--photo-sum start-->
+	<div class="photo-sum">
+		<div class="title cl">
+			<div class="col-33 text fr">作品数量</div>
+			<div class="col-33 text fr">打赏金额</div>
+		</div>
+		<div class="content cl">
+			<div class="col-33 ioc fl">
+				<img src="image/iocn-photo-01.png"/>
+				<span>相册</span>
+			</div>
+			<div class="col-33 text fl">100</div>
+			<div class="col-33 text fl">¥ 19</div>
+		</div>
+		<div class="content cl">
+			<div class="col-33 ioc fl">
+				<img src="image/iocn-photo-02.png"/>
+				<span>视频</span>
+			</div>
+			<div class="col-33 text fl">200</div>
+			<div class="col-33 text fl">¥ 25</div>
+		</div>
+	</div>
+	<!--photo-sum end-->
+	
+	<!--photo start-->
+	<div class="photo">
+		<article class="m-list list-theme2 cl">
+            <div class="list-item">
+                <div class="list-img" onclick="toPageImg();">
+                    <img src="image/index-img-01.png">
+                    <!--  图片右上角感叹号
+                    <div class="list-img-top">
+                    	<img src="image/iocn-photo-06.png"/>
+                    </div>
+                     -->
+                    <div class="list-img-up">
+                    	<img src="image/iocn-photo-01.png"/>
+                    	<sapn>4图</sapn>
+                    </div>
+                </div>
+                <div class="list-mes">
+                    <div class="list-mes-item">
+                        <div>
+                            <span class="list-price">相册1</span>
+                        </div>
+                        <div>
+                        	<img src="image/iocn-photo-03.png" class="list-img-ioc modification"/>
+                        	<img src="image/iocn-photo-04.png" class="list-img-ioc"/>
+                        	<img src="image/iocn-photo-05.png" class="list-img-ioc J_ShowActionSheet"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-item">
+               <div class="list-img" onclick="toPageImg();">
+                    <img src="image/index-img-02.png">
+                    <!--  图片右上角感叹号
+                    <div class="list-img-top">
+                    	<img src="image/iocn-photo-06.png"/>
+                    </div>
+                     -->
+                    <div class="list-img-up">
+                    	<img src="image/iocn-photo-01.png"/>
+                    	<sapn>8图</sapn>
+                    </div>
+                </div>
+                <div class="list-mes">
+                    <div class="list-mes-item">
+                        <div>
+                            <span class="list-price">相册2</span>
+                        </div>
+                        <div>
+                        	<img src="image/iocn-photo-03.png" class="list-img-ioc modification"/>
+                        	<img src="image/iocn-photo-04.png" class="list-img-ioc"/>
+                        	<img src="image/iocn-photo-05.png" class="list-img-ioc J_ShowActionSheet"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="list-img" onclick="toPageImg();">
+                    <img src="image/index-img-03.png">
+                    <!--  图片右上角感叹号
+                    <div class="list-img-top">
+                    	<img src="image/iocn-photo-06.png"/>
+                    </div>
+                     -->
+                    <div class="list-img-up">
+                    	<img src="image/iocn-photo-01.png"/>
+                    	<sapn>6图</sapn>
+                    </div>
+                </div>
+                <div class="list-mes">
+                    <div class="list-mes-item">
+                        <div>
+                            <span class="list-price">相册3</span>
+                        </div>
+                        <div>
+                        	<img src="image/iocn-photo-03.png" class="list-img-ioc modification"/>
+                        	<img src="image/iocn-photo-04.png" class="list-img-ioc"/>
+                        	<img src="image/iocn-photo-05.png" class="list-img-ioc J_ShowActionSheet"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="list-img" onclick="toPageImg();">
+                    <img src="image/index-img-04.png">
+                    <!--  图片右上角感叹号
+                    <div class="list-img-top">
+                    	<img src="image/iocn-photo-06.png"/>
+                    </div>
+                     -->
+                    <div class="list-img-up">
+                    	<img src="image/iocn-photo-01.png"/>
+                    	<sapn>4图</sapn>
+                    </div>
+                </div>
+                <div class="list-mes">
+                    <div class="list-mes-item">
+                        <div>
+                            <span class="list-price">相册4</span>
+                        </div>
+                        <div>
+                        	<img src="image/iocn-photo-03.png" class="list-img-ioc modification"/>
+                        	<img src="image/iocn-photo-04.png" class="list-img-ioc"/>
+                        	<img src="image/iocn-photo-05.png" class="list-img-ioc J_ShowActionSheet"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="list-img" onclick="toPageImg();">
+                    <img src="image/index-img-04.png">
+                    <!--  图片右上角感叹号
+                    <div class="list-img-top">
+                    	<img src="image/iocn-photo-06.png"/>
+                    </div>
+                     -->
+                    <div class="list-img-up">
+                    	<img src="image/iocn-photo-01.png"/>
+                    	<sapn>4图</sapn>
+                    </div>
+                </div>
+                <div class="list-mes">
+                    <div class="list-mes-item">
+                        <div>
+                            <span class="list-price">相册4</span>
+                        </div>
+                        <div>
+                        	<img src="image/iocn-photo-03.png" class="list-img-ioc modification"/>
+                        	<img src="image/iocn-photo-04.png" class="list-img-ioc"/>
+                        	<img src="image/iocn-photo-05.png" class="list-img-ioc J_ShowActionSheet"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="list-img" onclick="toPageImg();">
+                    <img src="image/index-img-04.png">
+                    <!--  图片右上角感叹号
+                    <div class="list-img-top">
+                    	<img src="image/iocn-photo-06.png"/>
+                    </div>
+                     -->
+                    <div class="list-img-up">
+                    	<img src="image/iocn-photo-01.png"/>
+                    	<sapn>4图</sapn>
+                    </div>
+                </div>
+                <div class="list-mes">
+                    <div class="list-mes-item">
+                        <div>
+                            <span class="list-price">相册4</span>
+                        </div>
+                        <div>
+                        	<img src="image/iocn-photo-03.png" class="list-img-ioc modification"/>
+                        	<img src="image/iocn-photo-04.png" class="list-img-ioc"/>
+                        	<img src="image/iocn-photo-05.png" class="list-img-ioc J_ShowActionSheet"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="list-img" onclick="toPageImg();">
+                    <img src="image/index-img-04.png">
+                    <!--  图片右上角感叹号
+                    <div class="list-img-top">
+                    	<img src="image/iocn-photo-06.png"/>
+                    </div>
+                     -->
+                    <div class="list-img-up">
+                    	<img src="image/iocn-photo-01.png"/>
+                    	<sapn>4图</sapn>
+                    </div>
+                </div>
+                <div class="list-mes">
+                    <div class="list-mes-item">
+                        <div>
+                            <span class="list-price">相册4</span>
+                        </div>
+                        <div>
+                        	<img src="image/iocn-photo-03.png" class="list-img-ioc modification"/>
+                        	<img src="image/iocn-photo-04.png" class="list-img-ioc"/>
+                        	<img src="image/iocn-photo-05.png" class="list-img-ioc J_ShowActionSheet"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="list-item">
+                <div class="list-img" onclick="toPageImg();">
+                    <img src="image/index-img-04.png">
+                    <!--  图片右上角感叹号
+                    <div class="list-img-top">
+                    	<img src="image/iocn-photo-06.png"/>
+                    </div>
+                     -->
+                    <div class="list-img-up">
+                    	<img src="image/iocn-photo-01.png"/>
+                    	<sapn>4图</sapn>
+                    </div>
+                </div>
+                <div class="list-mes">
+                    <div class="list-mes-item">
+                        <div>
+                            <span class="list-price">相册4</span>
+                        </div>
+                        <div>
+                        	<img src="image/iocn-photo-03.png" class="list-img-ioc modification"/>
+                        	<img src="image/iocn-photo-04.png" class="list-img-ioc"/>
+                        	<img src="image/iocn-photo-05.png" class="list-img-ioc J_ShowActionSheet"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+	</div>
+	<!--photo start-->
+	
+	<!--footer start-->
+	<div class="footer">
+	    <ul>
+	        <li class="active">
+	            <a href="index.html">
+	                <img src="image/personcenter/ionc-index.png">
+	                <span>首页</span>
+	            </a>
+	        </li>
+	        <li>
+	            <a href="page/postWork.html">
+	                <img src="image/personcenter/arti.png">
+	                <span>发布作品</span>
+	            </a>
+	        </li>
+	        <li>
+	            <a href="page/AccountManage.html">
+	                <img src="image/personcenter/pocket.png">
+	                <span>账户管理</span>
+	            </a>
+	        </li>
+	        <li>
+	            <a href="page/personcenter.html">
+	                <img src="image/postWork/person.png">
+	                <span>个人中心</span>
+	            </a>
+	        </li>
+	    </ul>
+	</div>
+	<!--footer end-->
+	
+	<!--shar start-->
+	<div class="m-actionsheet" id="J_ActionSheet">
+       <div class="m-actionsheet-shar">
+       	<div class="title">
+       		<span class="wire wire-l"></span>
+       		<span>分享到</span>
+       		<span class="wire wire-r"></span>
+       	</div>
+       	<div class="content">
+       		<ul class="cl">
+       			<li class="col-25 fl">
+       				<img src="image/shar-iocn-01.png" class="shar-img"/>
+       				<span class="shar-text">复制链接</span>
+       			</li>
+       			<li class="col-25 fl">
+       				<img src="image/shar-iocn-03.png" class="shar-img"/>
+       				<span class="shar-text">微博</span>
+       			</li>
+       			<li class="col-25 fl">
+       				<img src="image/shar-iocn-04.png" class="shar-img"/>
+       				<span class="shar-text">微信好友</span>
+       			</li>
+       			<li class="col-25 fl">
+       				<img src="image/shar-iocn-02.png" class="shar-img"/>
+       				<span class="shar-text">朋友圈</span>
+       			</li>
+       		</ul>
+       	</div>
+       </div>
+       <div class="actionsheet-action" id="J_Cancel">取消</div>
+    </div>
+	<!--shar end-->
+	
+</body>
+<script src="js/logo.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		var $myAs = $('#J_ActionSheet');
+		// 分享
+	   $('.J_ShowActionSheet').on('click', function () {
+            $myAs.actionSheet('open');
+        });
+
+        $('#J_Cancel').on('click', function () {
+            $myAs.actionSheet('close');
+        });
+        $('.modification').click(function(){
+        	window.location.href = "page/zengshanpaixu.html"
+        });
+	});
+	
+	function toPageImg(id){
+		window.location.href = "page/postImg.html";
+	}
+</script>
+</html>
