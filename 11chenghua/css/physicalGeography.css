@@ -1,0 +1,167 @@
+body {
+  overflow: auto;
+  color: #000;
+  font-family: "宋体";
+}
+#main-wrap {
+  width: 1200px;
+  margin: 0 auto;
+}
+#container {
+  width: 1000px;
+  margin-left: 200px;
+  padding-top: 120px;
+}
+#container .menu {
+  background: url(../images/physicalGeography/menuBJ.jpg) no-repeat;
+  height: 54px;
+  padding-left: 55px;
+}
+#container .menu li {
+  float: left;
+  width: 112px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 41px;
+}
+#container .menu li a {
+  color: #fff;
+  text-decoration: none;
+}
+#container .menu li:hover {
+  background: url(../images/physicalGeography/menuHover.gif) no-repeat center bottom;
+}
+#container .main {
+  font-size: 12px;
+  border: 1px solid #a8d5e3;
+  border-top: none;
+  border-bottom: none;
+  padding: 0 8px 10px 8px;
+}
+#container .main .childLM {
+  background: url(../images/physicalGeography/childBJ.gif) repeat-x;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  margin-top: -7px;
+}
+#container .main .childLM a {
+  padding: 0 10px;
+  font-size: 14px;
+}
+#container .main .childLM a:hover {
+  font-weight: bold;
+}
+#container .main .clearfix:after {
+  content: "\200B";
+  display: block;
+  height: 0;
+  clear: both;
+}
+#container .main .leftBox {
+  width: 724px;
+}
+#container .main .fl {
+  float: left;
+}
+#container .main .fl .box_1 {
+  background: url(../images/physicalGeography/box_top_1.gif) no-repeat;
+  padding-top: 10px;
+}
+#container .main .fl .box_1 .listBox {
+  height: 722px;
+  overflow-y: auto;
+}
+#container .main .fl .box_1 .listBox .dqwz {
+  background: url(../images/physicalGeography/icon_2.gif) no-repeat 5px center;
+  line-height: 25px;
+  padding-left: 25px;
+  color: #008dd1;
+}
+#container .main .fl .box_1 .listBox .dqwz a {
+  color: #008dd1;
+  text-decoration: none;
+}
+#container .main .fl .box_1 .listBox .innerList {
+  padding: 5px 10px 3px 10px;
+}
+#container .main .fl .box_1 .listBox .innerList #one_content {
+  line-height: 25px;
+  font-size: 14px;
+}
+#container .main .fl .box_1 .listBox .innerList #one_content p {
+  padding-left: 10px;
+  line-height: 26px;
+}
+#container .main .fl .box_1 .listBox .page {
+  height: 25px;
+  line-height: 25px;
+  text-align: center;
+  font-size: 14px;
+}
+#container .main .fl .box_1 .news,
+#container .main .fl .box_1 .ztzl {
+  border-left: 1px solid #dedede;
+  border-right: 1px solid #dedede;
+  padding: 0 10px 5px 10px;
+}
+#container .main .fl .box_1 .bottom {
+  background: url(../images/physicalGeography/box_bottom_1.gif) no-repeat;
+  height: 6px;
+}
+#container .main .rightBox {
+  width: 249px;
+}
+#container .main .rightBox .zyxxzz .title_1 {
+  background: url(../images/physicalGeography/box_top_2.gif) no-repeat;
+  height: 35px;
+  line-height: 35px;
+  padding: 0 10px;
+}
+#container .main .rightBox .zyxxzz .title_1 .fl {
+  float: left;
+}
+#container .main .rightBox .zyxxzz .h120 {
+  height: 119px;
+}
+#container .main .rightBox .zyxxzz .list_1 {
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  padding: 5px 10px;
+  min-height: 150px;
+}
+#container .main .rightBox .zyxxzz .list_1 li {
+  background: url(../images/physicalGeography/dian.gif) no-repeat left center;
+  padding-left: 10px;
+  line-height: 30px;
+  font-size: 14px;
+}
+#container .main .rightBox .zyxxzz .list_1 .chgk_list {
+  padding: 0 10px;
+}
+#container .main .rightBox .zyxxzz .list_1 .chgk_list li {
+  width: 45%;
+  float: left;
+  line-height: 28px;
+  font-size: 12px;
+}
+#container .main .rightBox .zyxxzz .list_1 .chgk_list li a {
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+}
+#container .main .rightBox .zyxxzz .list_1 .chgk_list li.hover {
+  font-weight: bold;
+}
+#container .main .rightBox .yrchPic a {
+  color: #333;
+  text-decoration: none;
+}
+#container .main .rightBox .yrchPic a img {
+  border: none;
+  margin-top: 10px;
+}
+#container .main .fr {
+  float: right;
+}
