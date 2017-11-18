@@ -1,0 +1,209 @@
+@rem : 16rem;
+
+body{
+    overflow: auto;
+    color: #000;
+    font-family: "宋体";
+}
+
+#main-wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#container{
+    width: 1000px;
+    margin-left: 200px;
+    padding-top: 120px;
+
+    .menu {
+        background: url(../images/manuscriptDetails/menuBJ.jpg) no-repeat;
+        height: 54px;
+        padding-left: 55px;
+
+        li{
+            float: left;
+            width: 112px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 41px;
+            a{
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+        li:hover{
+            background: url(../images/manuscriptDetails/menuHover.gif) no-repeat center bottom;
+        }
+    }
+
+
+    .main {
+        font-size: 12px;
+        border: 1px solid #a8d5e3;
+        border-top: none;
+        border-bottom: none;
+        padding: 0 8px 10px 8px;
+
+        .childLM {
+            background: url(../images/manuscriptDetails/childBJ.gif) repeat-x;
+            height: 35px;
+            line-height: 35px;
+            text-align: center;
+            margin-top: -7px;
+            a{
+                padding: 0 10px;
+                font-size: 14px;
+            }
+            a:hover{
+                font-weight: bold;
+            }
+        }
+
+        .box_2 {
+            background: url(../images/manuscriptDetails/detailTop.gif) no-repeat;
+            background-size: 100%;
+            margin: auto;
+            width: 100%;
+            padding-top: 5/@rem;
+
+            .news, .ztzl {
+                border-left: 1px solid #dedede;
+                border-right: 1px solid #dedede;
+                padding: 0 10px 5px 10px;
+
+                .dqwz {
+                    background: url(../images/manuscriptDetails/icon_2.gif) no-repeat 5px center;
+                    line-height: 25px;
+                    padding-left: 25px;
+                    color: #008dd1;
+
+                    a{
+                        color: #008dd1;
+                        text-decoration: none;
+                    }
+                }
+
+                .detail {
+                    position: relative;
+                    padding: 10px;
+
+                    h1{
+                        padding: 10px;
+                        line-height: 25px;
+                        font-size: 16px;
+                        text-align: center;
+                        font-weight: bold;
+                    }
+                    p.fubiao{
+                        text-align: center;
+                        color: #888;
+                        line-height: 30px;
+                        border-bottom: 1px dashed #ccc;
+                        span{
+                            margin: 0 10px;
+                        }
+                        a{
+                            color: #888;
+                        }
+                    }
+
+                    .cont{
+                        padding: 20px 0;
+                        line-height: 30px;
+                        min-height: 300px;
+                        font-size: 14px;
+                    }
+
+                    .bshare-custom,.icon-medium{
+                        font-size: 14px;
+                        line-height: 20px !important;
+                        a{
+                            padding-left: 27px;
+                            height: 24px;
+                        }
+                        .bshare-qzone{
+                            background: url('../images/manuscriptDetails/top_logos_sprite.gif') no-repeat 0 -338px;
+                            display: inline-block;
+                        }
+                        .bshare-weixin{
+                            background: url('../images/manuscriptDetails/weixin.gif') no-repeat;
+                            display: inline-block;
+                        }
+                        .bshare-sinaminiblog{
+                            background: url('../images/manuscriptDetails/top_logos_sprite.gif') no-repeat 0 -390px;
+                            display: inline-block;
+                        }
+                        .bshare-renren {
+                            background: url('../images/manuscriptDetails/top_logos_sprite.gif') no-repeat 0 -364px;
+                            display: inline-block;
+                        }
+                        .more-style-addthis {
+                            background: url('../images/manuscriptDetails/more-style-addthis.gif') no-repeat;
+                            display: inline-block;
+                        }
+                        .bshare-share-count{
+                            width: 45px;
+                            padding: 0 0 0 2px;
+                            vertical-align: bottom;
+                            background: transparent url('../images/manuscriptDetails/counter_box_24.gif') no-repeat;
+                            height: 24px;
+                            color: #444;
+                            line-height: 24px !important;
+                            text-align: center;
+                            //font: bold 12px Arial,宋体,sans-serif;
+                            zoom: 1;
+                            _padding-top: 5px;
+                            display: inline-block;
+                            position: relative;
+                            top: -5px;
+                        }
+                    }
+
+                }
+
+                .pageAfter {
+                    //height: 173px;
+                    clear: both;
+
+                    .after{
+                        position: relative;
+                        .det {
+                            position: absolute;
+                            top: -8px;
+                            left: 5px;
+                        }
+                        h3 {
+                            height: 20px;
+                            line-height: 20px;
+                            border-top: 1px solid #d6d7d7;
+                            background: #ececec;
+                            text-indent: 50px;
+                            //color: #8F0000;
+                            //font-size: 12px;
+                        }
+                    }
+
+                    .look h3 {
+                        color: #000;
+                        font-size: 14px;
+                    }
+
+                    .lookText {
+                        padding: 16px 0px 17px 23px;
+                        p{
+                            line-height: 25px;
+                        }
+                    }
+                }
+            }
+            .bottom2 {
+                background: url(../images/manuscriptDetails/detailBottom.gif) no-repeat;
+                background-size: 100%;
+                height: 13px;
+            }
+        }
+    }
+
+}
