@@ -29,8 +29,11 @@ body {
   color: #fff;
   text-decoration: none;
 }
-#container .menu li:hover {
+#container .menu li.hover {
   background: url(../images/manuscriptDetails/menuHover.gif) no-repeat center bottom;
+}
+#container .menu li.hover a {
+  color: #fff5cc;
 }
 #container .main {
   font-size: 12px;
@@ -50,7 +53,7 @@ body {
   padding: 0 10px;
   font-size: 14px;
 }
-#container .main .childLM a:hover {
+#container .main .childLM a.hover {
   font-weight: bold;
 }
 #container .main .box_2 {
@@ -131,6 +134,7 @@ body {
 #container .main .box_2 .ztzl .detail .bshare-custom .bshare-qzone,
 #container .main .box_2 .news .detail .icon-medium .bshare-qzone,
 #container .main .box_2 .ztzl .detail .icon-medium .bshare-qzone {
+  cursor: pointer;
   background: url('../images/manuscriptDetails/top_logos_sprite.gif') no-repeat 0 -338px;
   display: inline-block;
 }
@@ -138,6 +142,7 @@ body {
 #container .main .box_2 .ztzl .detail .bshare-custom .bshare-weixin,
 #container .main .box_2 .news .detail .icon-medium .bshare-weixin,
 #container .main .box_2 .ztzl .detail .icon-medium .bshare-weixin {
+  cursor: pointer;
   background: url('../images/manuscriptDetails/weixin.gif') no-repeat;
   display: inline-block;
 }
@@ -145,6 +150,7 @@ body {
 #container .main .box_2 .ztzl .detail .bshare-custom .bshare-sinaminiblog,
 #container .main .box_2 .news .detail .icon-medium .bshare-sinaminiblog,
 #container .main .box_2 .ztzl .detail .icon-medium .bshare-sinaminiblog {
+  cursor: pointer;
   background: url('../images/manuscriptDetails/top_logos_sprite.gif') no-repeat 0 -390px;
   display: inline-block;
 }
@@ -152,6 +158,7 @@ body {
 #container .main .box_2 .ztzl .detail .bshare-custom .bshare-renren,
 #container .main .box_2 .news .detail .icon-medium .bshare-renren,
 #container .main .box_2 .ztzl .detail .icon-medium .bshare-renren {
+  cursor: pointer;
   background: url('../images/manuscriptDetails/top_logos_sprite.gif') no-repeat 0 -364px;
   display: inline-block;
 }
@@ -159,6 +166,7 @@ body {
 #container .main .box_2 .ztzl .detail .bshare-custom .more-style-addthis,
 #container .main .box_2 .news .detail .icon-medium .more-style-addthis,
 #container .main .box_2 .ztzl .detail .icon-medium .more-style-addthis {
+  cursor: pointer;
   background: url('../images/manuscriptDetails/more-style-addthis.gif') no-repeat;
   display: inline-block;
 }
@@ -166,6 +174,7 @@ body {
 #container .main .box_2 .ztzl .detail .bshare-custom .bshare-share-count,
 #container .main .box_2 .news .detail .icon-medium .bshare-share-count,
 #container .main .box_2 .ztzl .detail .icon-medium .bshare-share-count {
+  cursor: pointer;
   width: 45px;
   padding: 0 0 0 2px;
   vertical-align: bottom;

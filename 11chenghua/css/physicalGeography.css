@@ -29,8 +29,11 @@ body {
   color: #fff;
   text-decoration: none;
 }
-#container .menu li:hover {
+#container .menu li.hover {
   background: url(../images/physicalGeography/menuHover.gif) no-repeat center bottom;
+}
+#container .menu li.hover a {
+  color: #fff5cc;
 }
 #container .main {
   font-size: 12px;
@@ -50,7 +53,7 @@ body {
   padding: 0 10px;
   font-size: 14px;
 }
-#container .main .childLM a:hover {
+#container .main .childLM a.hover {
   font-weight: bold;
 }
 #container .main .clearfix:after {
