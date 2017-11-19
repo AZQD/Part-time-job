@@ -3,41 +3,39 @@ body {
   color: #000;
   font-family: "宋体";
 }
-#main-wrap {
+/*#main-wrap {
   width: 1200px;
   margin: 0 auto;
-}
+}*/
 #container {
   width: 1000px;
-  margin-left: 200px;
-  padding-top: 120px;
-}
-#container .menu {
-  background: url(../images/physicalGeography/menuBJ.jpg) no-repeat;
-  height: 54px;
-  padding-left: 55px;
-}
-#container .menu li {
-  float: left;
-  width: 112px;
-  text-align: center;
-  font-size: 14px;
-  font-weight: bold;
-  line-height: 41px;
-}
-#container .menu li a {
-  color: #fff;
-  text-decoration: none;
-}
-#container .menu li.hover {
-  background: url(../images/physicalGeography/menuHover.gif) no-repeat center bottom;
-}
-#container .menu li.hover a {
-  color: #fff5cc;
+  /*.menu {
+    background: url(../images/physicalGeography/menuBJ.jpg) no-repeat;
+    height: 54px;
+    padding-left: 55px;
+
+    li {
+      float: left;
+      width: 112px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: bold;
+      line-height: 41px;
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+    li.hover {
+      background: url(../images/physicalGeography/menuHover.gif) no-repeat center bottom;
+      a {
+        color: #fff5cc;
+      }
+    }
+  }*/
 }
 #container .main {
   font-size: 12px;
-  border: 1px solid #a8d5e3;
   border-top: none;
   border-bottom: none;
   padding: 0 8px 10px 8px;
