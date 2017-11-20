@@ -59,7 +59,7 @@ body {
   clear: both;
 }
 #container .main .leftBox {
-  width: 724px;
+  width: 73.4%;
 }
 #container .main .fl {
   float: left;
@@ -93,6 +93,9 @@ body {
   padding-left: 10px;
   line-height: 26px;
 }
+#container .main .fl .box_1 .listBox .innerList #one_content p img {
+  width: 100%;
+}
 #container .main .fl .box_1 .listBox .page {
   height: 25px;
   line-height: 25px;
@@ -110,25 +113,22 @@ body {
   height: 6px;
 }
 #container .main .rightBox {
-  width: 249px;
+  width: 25.6%;
 }
 #container .main .rightBox .zyxxzz .title_1 {
   background: url(../images/physicalGeography/box_top_2.gif) no-repeat;
-  height: 35px;
+  min-height: 35px;
   line-height: 35px;
   padding: 0 10px;
+  background-size: 100% 100%;
 }
 #container .main .rightBox .zyxxzz .title_1 .fl {
   float: left;
-}
-#container .main .rightBox .zyxxzz .h120 {
-  height: 119px;
 }
 #container .main .rightBox .zyxxzz .list_1 {
   border: 1px solid #e0e0e0;
   border-top: none;
   padding: 5px 10px;
-  min-height: 150px;
 }
 #container .main .rightBox .zyxxzz .list_1 li {
   background: url(../images/physicalGeography/dian.gif) no-repeat left center;
@@ -137,6 +137,7 @@ body {
   font-size: 14px;
 }
 #container .main .rightBox .zyxxzz .list_1 .chgk_list {
+  overflow: hidden;
   padding: 0 10px;
 }
 #container .main .rightBox .zyxxzz .list_1 .chgk_list li {
@@ -158,6 +159,7 @@ body {
   text-decoration: none;
 }
 #container .main .rightBox .yrchPic a img {
+  width: 100%;
   border: none;
   margin-top: 10px;
 }

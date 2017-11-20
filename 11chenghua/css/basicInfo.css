@@ -59,7 +59,7 @@ body {
   clear: both;
 }
 #container .main .leftBox {
-  width: 724px;
+  width: 73.4%;
 }
 #container .main .fl {
   float: left;
@@ -151,7 +151,7 @@ body {
 #container .main .fl .box_1 .listBox .rightListJueCe p {
   line-height: 27px;
   position: relative;
-  height: 27px;
+  padding-right: 24px;
 }
 #container .main .fl .box_1 .listBox .rightListJueCe p a {
   color: #333;
@@ -207,14 +207,15 @@ body {
   height: 6px;
 }
 #container .main .rightBox {
-  width: 249px;
+  width: 25.6%;
 }
 #container .main .rightBox .gongkai {
   background: url(../images/basicInfo/title_4.gif) no-repeat;
+  background-size: 100%;
 }
 #container .main .rightBox .gongkai .titleS2out {
   background: url(../images/basicInfo/titleS2outbg.gif) left bottom repeat-x;
-  margin: 0 10px;
+  margin-left: 10px;
 }
 #container .main .rightBox .gongkai .titleS2out .titleS2 {
   background: url(../images/basicInfo/titleS21.gif) left bottom no-repeat;
@@ -234,6 +235,7 @@ body {
   padding-left: 23px;
 }
 #container .main .rightBox .gongkai .list_2 {
+  overflow: hidden;
   border: 1px solid #ccc;
   border-top: none;
   padding: 10px 15px;
@@ -252,22 +254,11 @@ body {
   text-decoration: none;
   font-size: 14px;
 }
-#container .main .rightBox .gongkai .h150 {
-  height: 150px;
-}
-#container .main .rightBox .gongkai .h220 {
-  height: 240px;
-}
 #container .main .rightBox .mt10 {
   margin-top: 10px;
 }
-#container .main .rightBox .lmList {
-  height: 217px;
-  overflow: hidden;
-}
 #container .main .rightBox .lmList a {
   background: url(../images/basicInfo/bj_1.gif) no-repeat;
-  height: 40px;
   line-height: 40px;
   padding-left: 70px;
   font-size: 16px;
