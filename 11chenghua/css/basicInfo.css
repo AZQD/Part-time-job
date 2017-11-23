@@ -33,6 +33,16 @@ body {
     }
   }*/
 }
+@media screen and (min-width: 560px) {
+  #container .main {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 560px) {
+  #container .main {
+    margin-top: 7px;
+  }
+}
 #container .main {
   font-size: 12px;
   border-top: none;
@@ -58,8 +68,15 @@ body {
   height: 0;
   clear: both;
 }
-#container .main .leftBox {
-  width: 73.4%;
+@media screen and (min-width: 560px) {
+  #container .main .leftBox {
+    width: 724px;
+  }
+}
+@media screen and (max-width: 560px) {
+  #container .main .leftBox {
+    width: 100%;
+  }
 }
 #container .main .fl {
   float: left;
@@ -68,8 +85,17 @@ body {
   background: url(../images/physicalGeography/box_top_1.gif) no-repeat;
   padding-top: 10px;
 }
+@media screen and (min-width: 560px) {
+  #container .main .fl .box_1 .listBox {
+    height: 775px;
+  }
+}
+@media screen and (max-width: 560px) {
+  #container .main .fl .box_1 .listBox {
+    height: auto;
+  }
+}
 #container .main .fl .box_1 .listBox {
-  height: 775px;
   overflow-y: auto;
 }
 #container .main .fl .box_1 .listBox .dqwz {
@@ -206,18 +232,17 @@ body {
   background: url(../images/physicalGeography/box_bottom_1.gif) no-repeat;
   height: 6px;
 }
-#container .main .rightBox {
-  width: 25.6%;
-}
 #container .main .rightBox .gongkai {
-  background: url(../images/basicInfo/title_4.gif) no-repeat;
-  background-size: 100%;
+  background: url(../images/basicInfo/title_new1_4.png) no-repeat 4px 8px;
 }
 #container .main .rightBox .gongkai .titleS2out {
+  border: 1px solid #D7D7D7;
+  border-bottom: none;
+  border-radius: 2px;
   background: url(../images/basicInfo/titleS2outbg.gif) left bottom repeat-x;
-  margin-left: 10px;
 }
 #container .main .rightBox .gongkai .titleS2out .titleS2 {
+  padding-left: 10px;
   background: url(../images/basicInfo/titleS21.gif) left bottom no-repeat;
   height: 36px;
 }
@@ -267,6 +292,17 @@ body {
   margin-bottom: 4px;
   display: block;
 }
+@media screen and (min-width: 560px) {
+  #container .main .rightBox {
+    width: 248px;
+  }
+}
+@media screen and (max-width: 560px) {
+  #container .main .rightBox {
+    width: auto;
+  }
+}
 #container .main .fr {
   float: right;
 }
+/*# sourceMappingURL=basicInfo.css.map */

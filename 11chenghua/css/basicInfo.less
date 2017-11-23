@@ -40,6 +40,16 @@ body {
       }
     }
   }*/
+  @media screen and (min-width:560px){
+    .main{
+      margin-top: 0;
+    }
+  }
+  @media screen and (max-width:560px){
+    .main{
+      margin-top: 7px;
+    }
+  }
 
   .main {
     font-size: 12px;
@@ -72,7 +82,19 @@ body {
 
     .leftBox {
       //width: 724px;
-      width:73.4%;
+      //width:73.4%;
+      //max-width: 724px;
+    }
+
+    @media screen and (min-width:560px){
+      .leftBox{
+        width:724px;
+      }
+    }
+    @media screen and (max-width:560px){
+      .leftBox{
+        width:100%;
+      }
     }
     .fl {
       float: left;
@@ -81,8 +103,18 @@ body {
         background: url(../images/physicalGeography/box_top_1.gif) no-repeat;
         padding-top: 10px;
 
+        @media screen and (min-width:560px){
+          .listBox{
+            height: 775px;
+          }
+        }
+        @media screen and (max-width:560px){
+          .listBox{
+            height: auto;
+          }
+        }
+
         .listBox {
-          height: 775px;
           overflow-y: auto;
           .dqwz {
             background: url(../images/physicalGeography/icon_2.gif) no-repeat 5px center;
@@ -231,15 +263,20 @@ body {
 
     .rightBox {
       //width: 249px;
-      width:25.6%;
+      //width:25.6%;
+      //min-width:249px;
       .gongkai {
-        background: url(../images/basicInfo/title_4.gif) no-repeat;
-        background-size: 100%;
+        background: url(../images/basicInfo/title_new1_4.png) no-repeat 4px 8px;
+        //background-size: 100%;
         .titleS2out {
+          border: 1px solid #D7D7D7;
+          border-bottom: none;
+          border-radius: 2px;
           background: url(../images/basicInfo/titleS2outbg.gif) left bottom repeat-x;
           //margin: 0 10px;
-          margin-left: 10px;
+          //padding-left: 10px;
           .titleS2 {
+            padding-left: 10px;
             background: url(../images/basicInfo/titleS21.gif) left bottom no-repeat;
             height: 36px;
             h2 {
@@ -304,6 +341,18 @@ body {
         }
       }
     }
+
+    @media screen and (min-width:560px){
+      .rightBox{
+        width:248px;
+      }
+    }
+    @media screen and (max-width:560px){
+      .rightBox{
+        width:auto;
+      }
+    }
+
     .fr {
       float: right;
     }

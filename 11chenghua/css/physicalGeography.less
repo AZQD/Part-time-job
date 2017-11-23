@@ -40,6 +40,16 @@ body{
             }
         }
     }*/
+    @media screen and (min-width:560px){
+        .main{
+            margin-top: 0;
+        }
+    }
+    @media screen and (max-width:560px){
+        .main{
+            margin-top: 7px;
+        }
+    }
 
     .main {
         font-size: 12px;
@@ -72,8 +82,18 @@ body{
 
         .leftBox {
             //width: 724px;
-            width:73.4%;
+            //width:73.4%;
 
+        }
+        @media screen and (min-width:560px){
+            .leftBox{
+                width:724px;
+            }
+        }
+        @media screen and (max-width:560px){
+            .leftBox{
+                width:100%;
+            }
         }
         .fl {
             float: left;
@@ -82,8 +102,17 @@ body{
                 background: url(../images/physicalGeography/box_top_1.gif) no-repeat;
                 padding-top: 10px;
 
+                @media screen and (min-width:560px){
+                    .listBox{
+                        height: 722px;
+                    }
+                }
+                @media screen and (max-width:560px){
+                    .listBox{
+                        height: auto;
+                    }
+                }
                 .listBox {
-                    height: 722px;
                     overflow-y: auto;
                     .dqwz {
                         background: url(../images/physicalGeography/icon_2.gif) no-repeat 5px center;
@@ -182,11 +211,21 @@ body{
                     color: #333;
                     text-decoration: none;
                     img{
-                        width: 100%;
+                        //width: 100%;
                         border: none;
                         margin-top: 10px;
                     }
                 }
+            }
+        }
+        @media screen and (min-width:560px){
+            .rightBox{
+                width:248px;
+            }
+        }
+        @media screen and (max-width:560px){
+            .rightBox{
+                width:auto;
             }
         }
         .fr {
