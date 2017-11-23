@@ -33,6 +33,16 @@ body {
         }
     }*/
 }
+@media screen and (min-width: 560px) {
+  #container .main {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 560px) {
+  #container .main {
+    margin-top: 7px;
+  }
+}
 #container .main {
   font-size: 12px;
   border-top: none;
@@ -225,3 +235,4 @@ body {
   background-size: 100%;
   height: 13px;
 }
+/*# sourceMappingURL=manuscriptDetails.css.map */

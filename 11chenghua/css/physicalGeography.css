@@ -33,6 +33,16 @@ body {
         }
     }*/
 }
+@media screen and (min-width: 560px) {
+  #container .main {
+    margin-top: 0;
+  }
+}
+@media screen and (max-width: 560px) {
+  #container .main {
+    margin-top: 7px;
+  }
+}
 #container .main {
   font-size: 12px;
   border-top: none;
@@ -58,8 +68,15 @@ body {
   height: 0;
   clear: both;
 }
-#container .main .leftBox {
-  width: 73.4%;
+@media screen and (min-width: 560px) {
+  #container .main .leftBox {
+    width: 724px;
+  }
+}
+@media screen and (max-width: 560px) {
+  #container .main .leftBox {
+    width: 100%;
+  }
 }
 #container .main .fl {
   float: left;
@@ -68,8 +85,17 @@ body {
   background: url(../images/physicalGeography/box_top_1.gif) no-repeat;
   padding-top: 10px;
 }
+@media screen and (min-width: 560px) {
+  #container .main .fl .box_1 .listBox {
+    height: 722px;
+  }
+}
+@media screen and (max-width: 560px) {
+  #container .main .fl .box_1 .listBox {
+    height: auto;
+  }
+}
 #container .main .fl .box_1 .listBox {
-  height: 722px;
   overflow-y: auto;
 }
 #container .main .fl .box_1 .listBox .dqwz {
@@ -159,10 +185,20 @@ body {
   text-decoration: none;
 }
 #container .main .rightBox .yrchPic a img {
-  width: 100%;
   border: none;
   margin-top: 10px;
+}
+@media screen and (min-width: 560px) {
+  #container .main .rightBox {
+    width: 248px;
+  }
+}
+@media screen and (max-width: 560px) {
+  #container .main .rightBox {
+    width: auto;
+  }
 }
 #container .main .fr {
   float: right;
 }
+/*# sourceMappingURL=physicalGeography.css.map */
