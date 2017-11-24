@@ -13,6 +13,16 @@ body{
     background: none;
     position: inherit;
 
+    @media screen and (min-width:560px){
+        .header{
+
+        }
+    }
+    @media screen and (max-width:560px){
+        .header{
+            margin-bottom: -42px;
+        }
+    }
     .header{
         padding-top: 60px;
         overflow: hidden;
@@ -169,6 +179,7 @@ body{
                 z-index: 999;
                 height:auto;
                 li{
+                    cursor: pointer;
                     text-align: center;
                     font-size: 14px;
                     font-weight: bold;
@@ -182,18 +193,18 @@ body{
         }
         @media screen and (min-width:560px){
             .tas{
+                width: 979px;
                 overflow: hidden;
             }
         }
         @media screen and (max-width:560px){
             .tas{
-
+                width: 100%;
             }
         }
         .tas{
             background: url(../images/commonImg/shadowBg.jpg) top repeat-x;
             height: 55px;
-            width: 979px;
             border-left: 1px solid #b3dce9;
             border-right: 1px solid #b3dce9;
             margin: 0 auto;
@@ -231,6 +242,11 @@ body{
             @media screen and (max-width:560px){
                 .search{
                     float: inherit;
+                    position: relative;
+                    top: -56px;
+                    display: block;
+                    width: 100%;
+                    text-align: center;
                 }
             }
             .search{
