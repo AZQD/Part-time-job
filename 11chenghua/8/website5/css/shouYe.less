@@ -1,6 +1,15 @@
 @rem:16rem;
+@media screen and (min-width:560px){
+  .main{
+    width: 979px;
+  }
+}
+@media screen and (max-width:560px){
+  .main{
+    width: auto;
+  }
+}
 .main{
-  width: 979px;
   border: 1px solid #b3dce9;
   border-top: 0;
   margin: 0 auto;
@@ -10,9 +19,19 @@
   .mid02 {
     overflow: hidden;
     margin-top: 10px;
+    @media screen and (min-width:560px){
+      .zxdt{
+        width: 690px;
+        height: 237px;
+      }
+    }
+    @media screen and (max-width:560px){
+      .zxdt{
+        width: auto;
+        height:auto;
+      }
+    }
     .zxdt {
-      width: 690px;
-      height: 237px;
       float: left;
       border: 1px solid #eaeaea;
       .bar03 {
@@ -88,15 +107,43 @@
             }
           }
         }
+        @media screen and (min-width:560px){
+          ul{
+            width: 412px;
+          }
+        }
+        @media screen and (max-width:560px){
+          ul{
+            width:auto;
+          }
+        }
         ul {
           display: block;
           margin: 16px 0 0 15px;
           float: left;
-          width: 412px;
+          @media screen and (min-width:560px){
+            li{
+              width: 412px;
+            }
+          }
+          @media screen and (max-width:560px){
+            li{
+              width:auto;
+            }
+          }
           li{
             line-height: 28px;
-            width: 412px;
             height: 28px;
+            @media screen and (min-width:560px){
+              a{
+                //width: 412px;
+              }
+            }
+            @media screen and (max-width:560px){
+              a{
+                width:84%;
+              }
+            }
             a{
               font-size: 14px;
               background: url(../images/shouYe/op.jpg) left no-repeat;
@@ -112,8 +159,17 @@
       }
     }
 
+    @media screen and (min-width:560px){
+      .gsgg{
+        width: 277px;
+      }
+    }
+    @media screen and (max-width:560px){
+      .gsgg{
+        width:100%;
+      }
+    }
     .gsgg {
-      width: 277px;
       height: 228px;
       float: left;
       margin-left: 10px;
@@ -129,7 +185,7 @@
           text-align: center;
           line-height: 35px;
           color: #888;
-          margin-right: 5px;
+          margin-right: 8px;
         }
         h5 {
           cursor: pointer;
@@ -178,10 +234,25 @@
   //part2
   .mid01 {
     overflow: hidden;
+
+    @media screen and (min-width:560px){
+      .zjgnq{
+        width: 691px;
+        height: 233px;
+        float: left;
+      }
+    }
+    @media screen and (max-width:560px){
+      .zjgnq{
+        width: auto;
+        height: auto;
+      }
+    }
+
     .zjgnq {
-      width: 691px;
-      height: 233px;
-      float: left;
+      //width: 691px;
+      ////height: 233px;
+      //float: left;
       .bar01 {
         background-color: #ebf3fa;
         height: 35px;
@@ -205,30 +276,68 @@
           float: right;
         }
       }
+      @media screen and (min-width:560px){
+        .x2015cont{
+          height: 186px;
+        }
+      }
+      @media screen and (max-width:560px){
+        .x2015cont{
+          display: flex;
+        }
+      }
       .x2015cont {
-        height: 186px;
         padding-top: 12px;
         position: relative;
+        @media screen and (min-width:560px){
+          a{
+            display: block;
+            width: 125px;
+            height: 125px;
+            float: left;
+            margin: 25px 52px;
+          }
+        }
+        @media screen and (max-width:560px){
+          a{
+            display: block;
+            width: 125px;
+            //width: 33.33%;
+            height: 125px;
+            //float: left;
+            //margin: 25px 52px;
+          }
+        }
         a {
-          display: block;
-          width: 125px;
-          height: 125px;
-          float: left;
-          margin: 25px 52px;
+
         }
         .a1 {
+          margin-right: 10px;
           background: url(../images/shouYe/x1.png) no-repeat;
+          background-size: 100%;
         }
         .a2 {
+          margin-right: 10px;
           background: url(../images/shouYe/x2.png) no-repeat;
+          background-size: 100%;
         }
         .a3 {
           background: url(../images/shouYe/x3.png) no-repeat;
+          background-size: 100%;
         }
       }
     }
+    @media screen and (min-width:560px){
+      .xcpck{
+        width: 277px;
+      }
+    }
+    @media screen and (max-width:560px){
+      .xcpck{
+        width:100%;
+      }
+    }
     .xcpck {
-      width: 277px;
       height: 228px;
       float: left;
       margin-left: 11px;
@@ -255,7 +364,7 @@
           text-align: center;
           line-height: 35px;
           color: #fff;
-          margin-right: 5px;
+          margin-right: 8px;
         }
       }
       .cont{
@@ -282,12 +391,21 @@
   .mid03 {
     overflow: hidden;
     margin-top: 12px;
+    @media screen and (min-width:560px){
+      .m3b{
+        width: 339px;
+        margin-right: 10px;
+      }
+    }
+    @media screen and (max-width:560px){
+      .m3b{
+        width:100%;
+      }
+    }
     .m3b {
-      width: 339px;
       height: 181px;
       float: left;
       border: 1px solid #eaeaea;
-      margin-right: 10px;
       .bar05 {
         background-color: #f0f0ef;
         height: 35px;
@@ -370,9 +488,18 @@
         }
       }
     }
+    @media screen and (min-width:560px){
+      .jgzn{
+        width: 277px;
+      }
+    }
+    @media screen and (max-width:560px){
+      .jgzn{
+        width:100%;
+      }
+    }
     .jgzn {
       float: left;
-      width: 277px;
       height: 184px;
       .bar04 {
         background-color: #ebf3fa;
@@ -433,11 +560,20 @@
   .mid04 {
     overflow: hidden;
     margin-top: 12px;
+    @media screen and (min-width:560px){
+      .bhfc{
+        float: left;
+      }
+    }
+    @media screen and (max-width:560px){
+      .bhfc{
+        width:100%;
+      }
+    }
     .bhfc {
-      width: 690px;
+      //width: 690px;
       height: 245px;
       border: 1px solid #eaeaea;
-      float: left;
       .bar03 {
         background-color: #f1f1f1;
         height: 35px;
@@ -473,9 +609,32 @@
             display: block;
             position: relative;
             text-decoration: none;
+            @media screen and (min-width:560px){
+              img{
+                width: 250px;
+              }
+            }
+            @media screen and (max-width:560px){
+              img{
+                width:100%;
+              }
+            }
             img {
-              width: 250px;
+
               height: 188px;
+            }
+            @media screen and (min-width:560px){
+              div{
+                width: 250px;
+                background: url(../images/shouYe/wBg.png) no-repeat;
+              }
+            }
+            @media screen and (max-width:560px){
+              div{
+                width:100%;
+                background: url(../images/shouYe/wBg.png) no-repeat;
+                background-size: 100%;
+              }
             }
             div {
               color: #333;
@@ -485,14 +644,21 @@
               height: 28px;
               text-align: center;
               line-height: 25px;
-              width: 250px;
-              background: url(../images/shouYe/wBg.png) no-repeat;
               font-size: 14px;
             }
           }
         }
+        @media screen and (min-width:560px){
+          .fr{
+            width: 413px;
+          }
+        }
+        @media screen and (max-width:560px){
+          .fr{
+            width:100%;
+          }
+        }
         .fr {
-          width: 413px;
           float: right;
           a {
             display: block;
@@ -520,12 +686,24 @@
         }
       }
     }
+    @media screen and (min-width:560px){
+      .ztzl{
+        width: 277px;
+        background: url(../images/shouYe/bri.jpg) no-repeat;
+      }
+    }
+    @media screen and (max-width:560px){
+      .ztzl{
+        width:100%;
+        background: url(../images/shouYe/bri.jpg) no-repeat;
+        background-size: 100%;
+      }
+    }
     .ztzl {
       float: left;
-      width: 277px;
       height: 247px;
       margin-left: 10px;
-      background: url(../images/shouYe/bri.jpg) no-repeat;
+
     }
   }
 }

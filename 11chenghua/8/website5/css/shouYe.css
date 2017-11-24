@@ -1,5 +1,14 @@
+@media screen and (min-width: 560px) {
+  .main {
+    width: 979px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main {
+    width: auto;
+  }
+}
 .main {
-  width: 979px;
   border: 1px solid #b3dce9;
   border-top: 0;
   margin: 0 auto;
@@ -11,9 +20,19 @@
   overflow: hidden;
   margin-top: 10px;
 }
+@media screen and (min-width: 560px) {
+  .main .mid02 .zxdt {
+    width: 690px;
+    height: 237px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main .mid02 .zxdt {
+    width: auto;
+    height: auto;
+  }
+}
 .main .mid02 .zxdt {
-  width: 690px;
-  height: 237px;
   float: left;
   border: 1px solid #eaeaea;
 }
@@ -87,16 +106,39 @@
 .main .mid02 .zxdt .cont .hd .mF_classicHC_wrap .mF_classicHC .pic {
   border: 1px solid #666;
 }
+@media screen and (min-width: 560px) {
+  .main .mid02 .zxdt .cont ul {
+    width: 412px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main .mid02 .zxdt .cont ul {
+    width: auto;
+  }
+}
 .main .mid02 .zxdt .cont ul {
   display: block;
   margin: 16px 0 0 15px;
   float: left;
-  width: 412px;
+}
+@media screen and (min-width: 560px) {
+  .main .mid02 .zxdt .cont ul li {
+    width: 412px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main .mid02 .zxdt .cont ul li {
+    width: auto;
+  }
 }
 .main .mid02 .zxdt .cont ul li {
   line-height: 28px;
-  width: 412px;
   height: 28px;
+}
+@media screen and (max-width: 560px) {
+  .main .mid02 .zxdt .cont ul li a {
+    width: 84%;
+  }
 }
 .main .mid02 .zxdt .cont ul li a {
   font-size: 14px;
@@ -108,8 +150,17 @@
   float: right;
   color: #999;
 }
+@media screen and (min-width: 560px) {
+  .main .mid02 .gsgg {
+    width: 277px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main .mid02 .gsgg {
+    width: 100%;
+  }
+}
 .main .mid02 .gsgg {
-  width: 277px;
   height: 228px;
   float: left;
   margin-left: 10px;
@@ -127,7 +178,7 @@
   text-align: center;
   line-height: 35px;
   color: #888;
-  margin-right: 5px;
+  margin-right: 8px;
 }
 .main .mid02 .gsgg .bar04 h5 {
   cursor: pointer;
@@ -172,10 +223,18 @@
 .main .mid01 {
   overflow: hidden;
 }
-.main .mid01 .zjgnq {
-  width: 691px;
-  height: 233px;
-  float: left;
+@media screen and (min-width: 560px) {
+  .main .mid01 .zjgnq {
+    width: 691px;
+    height: 233px;
+    float: left;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main .mid01 .zjgnq {
+    width: auto;
+    height: auto;
+  }
 }
 .main .mid01 .zjgnq .bar01 {
   background-color: #ebf3fa;
@@ -200,29 +259,61 @@
   background: #00b8ee url(../images/shouYe/plus.png) center no-repeat;
   float: right;
 }
+@media screen and (min-width: 560px) {
+  .main .mid01 .zjgnq .x2015cont {
+    height: 186px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main .mid01 .zjgnq .x2015cont {
+    display: flex;
+  }
+}
 .main .mid01 .zjgnq .x2015cont {
-  height: 186px;
   padding-top: 12px;
   position: relative;
 }
-.main .mid01 .zjgnq .x2015cont a {
-  display: block;
-  width: 125px;
-  height: 125px;
-  float: left;
-  margin: 25px 52px;
+@media screen and (min-width: 560px) {
+  .main .mid01 .zjgnq .x2015cont a {
+    display: block;
+    width: 125px;
+    height: 125px;
+    float: left;
+    margin: 25px 52px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main .mid01 .zjgnq .x2015cont a {
+    display: block;
+    width: 125px;
+    height: 125px;
+  }
 }
 .main .mid01 .zjgnq .x2015cont .a1 {
+  margin-right: 10px;
   background: url(../images/shouYe/x1.png) no-repeat;
+  background-size: 100%;
 }
 .main .mid01 .zjgnq .x2015cont .a2 {
+  margin-right: 10px;
   background: url(../images/shouYe/x2.png) no-repeat;
+  background-size: 100%;
 }
 .main .mid01 .zjgnq .x2015cont .a3 {
   background: url(../images/shouYe/x3.png) no-repeat;
+  background-size: 100%;
+}
+@media screen and (min-width: 560px) {
+  .main .mid01 .xcpck {
+    width: 277px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main .mid01 .xcpck {
+    width: 100%;
+  }
 }
 .main .mid01 .xcpck {
-  width: 277px;
   height: 228px;
   float: left;
   margin-left: 11px;
@@ -251,7 +342,7 @@
   text-align: center;
   line-height: 35px;
   color: #fff;
-  margin-right: 5px;
+  margin-right: 8px;
 }
 .main .mid01 .xcpck .cont {
   overflow: hidden;
@@ -271,12 +362,21 @@
   overflow: hidden;
   margin-top: 12px;
 }
+@media screen and (min-width: 560px) {
+  .main .mid03 .m3b {
+    width: 339px;
+    margin-right: 10px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main .mid03 .m3b {
+    width: 100%;
+  }
+}
 .main .mid03 .m3b {
-  width: 339px;
   height: 181px;
   float: left;
   border: 1px solid #eaeaea;
-  margin-right: 10px;
 }
 .main .mid03 .m3b .bar05 {
   background-color: #f0f0ef;
@@ -359,9 +459,18 @@
   background: url(../images/shouYe/bp.jpg) left no-repeat;
   padding-left: 10px;
 }
+@media screen and (min-width: 560px) {
+  .main .mid03 .jgzn {
+    width: 277px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main .mid03 .jgzn {
+    width: 100%;
+  }
+}
 .main .mid03 .jgzn {
   float: left;
-  width: 277px;
   height: 184px;
 }
 .main .mid03 .jgzn .bar04 {
@@ -420,11 +529,19 @@
   overflow: hidden;
   margin-top: 12px;
 }
+@media screen and (min-width: 560px) {
+  .main .mid04 .bhfc {
+    float: left;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main .mid04 .bhfc {
+    width: 100%;
+  }
+}
 .main .mid04 .bhfc {
-  width: 690px;
   height: 245px;
   border: 1px solid #eaeaea;
-  float: left;
 }
 .main .mid04 .bhfc .bar03 {
   background-color: #f1f1f1;
@@ -462,9 +579,31 @@
   position: relative;
   text-decoration: none;
 }
+@media screen and (min-width: 560px) {
+  .main .mid04 .bhfc .cont .fl a img {
+    width: 250px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main .mid04 .bhfc .cont .fl a img {
+    width: 100%;
+  }
+}
 .main .mid04 .bhfc .cont .fl a img {
-  width: 250px;
   height: 188px;
+}
+@media screen and (min-width: 560px) {
+  .main .mid04 .bhfc .cont .fl a div {
+    width: 250px;
+    background: url(../images/shouYe/wBg.png) no-repeat;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main .mid04 .bhfc .cont .fl a div {
+    width: 100%;
+    background: url(../images/shouYe/wBg.png) no-repeat;
+    background-size: 100%;
+  }
 }
 .main .mid04 .bhfc .cont .fl a div {
   color: #333;
@@ -474,12 +613,19 @@
   height: 28px;
   text-align: center;
   line-height: 25px;
-  width: 250px;
-  background: url(../images/shouYe/wBg.png) no-repeat;
   font-size: 14px;
 }
+@media screen and (min-width: 560px) {
+  .main .mid04 .bhfc .cont .fr {
+    width: 413px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main .mid04 .bhfc .cont .fr {
+    width: 100%;
+  }
+}
 .main .mid04 .bhfc .cont .fr {
-  width: 413px;
   float: right;
 }
 .main .mid04 .bhfc .cont .fr a {
@@ -505,10 +651,21 @@
   background: url(../images/shouYe/wBg.png) no-repeat;
   font-size: 14px;
 }
+@media screen and (min-width: 560px) {
+  .main .mid04 .ztzl {
+    width: 277px;
+    background: url(../images/shouYe/bri.jpg) no-repeat;
+  }
+}
+@media screen and (max-width: 560px) {
+  .main .mid04 .ztzl {
+    width: 100%;
+    background: url(../images/shouYe/bri.jpg) no-repeat;
+    background-size: 100%;
+  }
+}
 .main .mid04 .ztzl {
   float: left;
-  width: 277px;
   height: 247px;
   margin-left: 10px;
-  background: url(../images/shouYe/bri.jpg) no-repeat;
 }
