@@ -5,8 +5,13 @@
 密码：chaojie888
 
 代码位置：
-七期：git clone https://gitee.com/kongxin-own/chenghua.git 
-八期：git clone https://gitee.com/kongxin-own/chenghua2.git 
+七期：git clone https://gitee.com/kongxin-own/chenghua.git
+参考网站：http://www.chenghua.gov.cn/
 
-开发网站参考：
-http://www.chenghua.gov.cn/
+
+八期：git clone https://gitee.com/kongxin-own/chenghua2.git
+参考网站：http://www.chenghua.gov.cn/index.php?cid=1682
+
+九期：git clone https://gitee.com/kongxin-own/qbjgov.git
+
+参考网站：
