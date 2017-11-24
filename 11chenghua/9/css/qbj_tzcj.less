@@ -7,19 +7,90 @@ body{
     font-size: 12px;
     font-family: "雅黑","宋体",arial,verdana,sans-serif;
 }
+#main-wrap{
+    margin-bottom: 0;
+}
 
 .tzmain {
     font-size: 12px;
     width: 100%;
     background: url(../images/qbj_tzcj/botbg.jpg) repeat-x left bottom;
+    @media screen and (min-width:560px){
+        .tzcon{
+            width: 980px;
+        }
+    }
+    @media screen and (max-width:560px){
+        .tzcon{
+            width:auto;
+        }
+    }
     .tzcon {
-        width: 980px;
+        //width: 980px;
         margin: 0 auto;
         margin-top: 15px;
+        .clearfloat:after {
+            display: block;
+            clear: both;
+            content: "";
+            visibility: hidden;
+            height: 0;
+        }
         .clearfloat {
+            overflow: hidden;
             zoom: 1;
+            .swiperBox{
+                position: relative;
+            }
+            @media screen and (min-width:560px){
+                .newImage1Box{
+                    float: right;
+                    padding-right: 38px;
+                }
+            }
+            @media screen and (max-width:560px){
+                .newImage1Box{
+                    img{
+                        width:100%;
+                    }
+                }
+            }
+            .newImage1Box{
+            }
+            @media screen and (min-width:560px){
+                .tzhj{
+                    width: 500px;
+                }
+            }
+            @media screen and (max-width:560px){
+                .tzhj{
+                    width:100%;
+                }
+            }
             .tzhj {
-                width: 700px;
+
+
+                .blk_01{ width:100%; overflow:hidden;ZOOM: 1; POSITION: relative;}
+                .blk_01 .LeftBotton {BACKGROUND: url(../images/qbj_tzcj/left.jpg) no-repeat center center; z-index: 99; LEFT: 0px; FLOAT: left; WIDTH: 28px; CURSOR: pointer;
+                    POSITION: absolute; TOP: 0px; HEIGHT:217px;}
+                .blk_01 .RightBotton {RIGHT: -1px; BACKGROUND: url(../images/qbj_tzcj/rig.jpg) no-repeat center center; FLOAT: right; WIDTH: 28px; CURSOR: pointer;
+                    POSITION: absolute; TOP:0px; HEIGHT: 217px;}
+                .blk_01 .Cont {MARGIN: 0px auto; OVERFLOW: hidden; WIDTH: 644px;height: 217px;}
+                .blk_01 .box01 {FLOAT: left; TEXT-ALIGN: center; height:217px;}
+                .rollphotos01 {WIDTH: 700px;height: 217px; float:left;margin:0px;}
+                .tzhjimg img{padding:2px;border:1px solid #dbdbdb;background-color:#ffffff;width:202px;height:156px;}
+                .hjtit a{font-size:14px;}
+
+                .ff embed{width:252px;height:215px;}
+                .ff object{width:252px;height:215px;}
+
+                .qycj_zt{width:100%;}
+                .qycj_ztimg img{border:1px solid #bdbdbd;padding:2px;}
+
+
+
+
+                //width: 500px;
                 float: left;
                 .modblu {
                     width: 100%;
@@ -55,8 +126,18 @@ body{
                         overflow: hidden;
                         background-color: #f4fbfc;
                         border-bottom: 1px solid #d3eced;
+                        @media screen and (min-width:560px){
+                            .rollphotos01{
+                                width: 492px;
+                            }
+                        }
+                        @media screen and (max-width:560px){
+                            .rollphotos01{
+                                width:100%;
+                            }
+                        }
                         .rollphotos01 {
-                            WIDTH: 700px;
+                            //WIDTH: 492px;
                             height: 217px;
                             float: left;
                             margin: 0px;
@@ -85,6 +166,19 @@ body{
                                     FLOAT: left;
                                     TEXT-ALIGN: center;
                                     height: 217px;
+                                    @media screen and (min-width:560px){
+                                        .tzhjimg img{
+                                            width: 224px;
+                                        }
+                                    }
+                                    @media screen and (max-width:560px){
+                                        .tzhjimg img{
+                                            width:100%;
+                                        }
+                                    }
+                                    .tzhjimg img{
+                                        //width: 224px;
+                                    }
                                 }
                                 .RightBotton {
                                     RIGHT: -1px;
@@ -101,11 +195,208 @@ body{
                     }
                 }
             }
+        }
+        .tzztcon {
+            width: 100%;
+            margin-top: 15px;
+            background: url(../images/qbj_tzcj/line01.jpg) no-repeat left top;
+            @media screen and (min-width:560px){
+                .twoleft{
+                    width: 700px;
+                }
+            }
+            @media screen and (max-width:560px){
+                .twoleft{
+                    width:100%;
+                }
+            }
+            .twoleft {
+                //width: 700px;
+                float: left;
+                .tz {
+                    width: 100%;
+
+
+
+                    .modblue_title {
+                        width: 100%;
+                        height: 35px;
+                        line-height: 35px;
+                        background: url(../images/qbj_tzcj/bg2_03.jpg) repeat-x left bottom;
+                        position: relative;
+                        margin-top: 15px;
+                        .blue_title {
+                            font-size: 16px;
+                            color: #0099cc;
+                            font-weight: bold;
+                            height: 35px;
+                            line-height: 35px;
+                            background: url(../images/qbj_tzcj/bg.jpg) repeat-x left bottom;
+                            padding: 0px 10px;
+                            display: inline-block;
+                        }
+                        .modmore {
+                            position: absolute;
+                            right: 10px;
+                            display: inline-block;
+                            height: 28px;
+                            line-height: 28px;
+                            color: #ffffff;
+                        }
+                    }
+                    .blue_con {
+                        font-size: 12px;
+                        width: 100%;
+                        overflow: hidden;
+                        tr,td{
+                            font-size: 12px;
+                        }
+                        @media screen and (min-width:560px){
+                            .tzztimg img{
+                                width: 167px;
+                            }
+                            .pcTable{
+                                display: block;
+                            }
+                            .mobileTable{
+                                display: none;
+                            }
+                        }
+                        @media screen and (max-width:560px){
+                            .tzztimg img{
+
+                            }
+                            .pcTable{
+                                display: none;
+                            }
+                            .mobileTable{
+                                display: block;
+                            }
+                        }
+                        .tzztimg img {
+                            padding: 2px;
+                            border: 1px solid #dbdbdb;
+                            height: 94px;
+                            background-color: #ffffff;
+                        }
+                    }
+                }
+                .qyzt {
+                    margin-top: 15px;
+                    @media screen and (min-width:560px){
+                        .qyzttit{
+                            background: url(../images/qbj_tzcj/qyzt.jpg) no-repeat center;
+                        }
+                        .qiYeZhanTai{
+                            display: none;
+                        }
+                    }
+                    @media screen and (max-width:560px){
+                        .qyzttit{
+                            background: url(../images/qbj_tzcj/line01.jpg) no-repeat center;
+                            background-size: 100%;
+                        }
+                        .qiYeZhanTai{
+                            display: inline-block;
+                            float: left;
+                            font-size: 16px;
+                            color: #0099cc;
+                            font-weight: bold;
+                            height: 52px;
+                            line-height: 52px;
+                            padding: 0px 10px;
+                        }
+                    }
+                    .qyzttit {
+                        width: 100%;
+                        height: 52px;
+                        text-align: right;
+                        a {
+                            display: inline-block;
+                            line-height: 45px;
+                            margin-right: 18px;
+                        }
+                    }
+                    @media screen and (min-width:560px){
+                        .qyztcon{
+                            width: 698px;
+                        }
+                    }
+                    @media screen and (max-width:560px){
+                        .qyztcon{
+                            width:100%;
+                        }
+                    }
+                    .qyztcon {
+                        //width: 698px;
+                        border: 1px solid #4fa6e1;
+                        background: url(../images/qbj_tzcj/qyzt001.jpg) repeat-x left bottom;
+                        border-top: none;
+                        @media screen and (min-width:560px){
+                            .qyztcontent{
+                                width: 664px;
+                            }
+                            td.clickNum{
+                                color:#E97E00;
+                                text-indent:20px;
+                            }
+                        }
+                        @media screen and (max-width:560px){
+                            .qyztcontent{
+                                width:100%;
+                            }
+                            td{
+                                float: left;
+                            }
+                            td.clickNum{
+                                color:#E97E00;
+                                text-indent:20px;
+                                padding-right:6px;
+                            }
+                            .qycj_ztimg{
+                                width: 100%;
+                                img{
+                                    width: 100%;
+                                }
+                            }
+                        }
+
+                        .qyztcontent {
+                            border: 1px solid #dce5ee;
+                            background: url(../images/qbj_tzcj/qyzt002.jpg) repeat-x left bottom;
+                            margin: 0 auto;
+                            .qycj_zt {
+                                width: 100%;
+                            }
+                            td{
+
+                            }
+                        }
+                        tr,td{
+                            font-size: 12px;
+                        }
+                        .list12 tr td {
+                            line-height: 28px;
+                        }
+                    }
+                }
+            }
+            @media screen and (min-width:560px){
+                .tzzc{
+                    width: 260px;
+                }
+            }
+            @media screen and (max-width:560px){
+                .tzzc{
+                    width:100%;
+                }
+            }
             .tzzc {
-                width: 260px;
+                //width: 260px;
                 float: right;
                 background: url(../images/qbj_tzcj/zsxmbg.png) no-repeat top center;
-                height: 253px;
+                background-size: 100% 100%;
+                height: 246px;
                 .xzk_tit01 {
                     height: 28px;
                     line-height: 28px;
@@ -142,96 +433,59 @@ body{
                     }
                 }
             }
-        }
-        .tzztcon {
-            width: 100%;
-            margin-top: 15px;
-            background: url(../images/qbj_tzcj/line01.jpg) no-repeat left top;
-            .twoleft {
-                width: 700px;
-                float: left;
-                .tz {
-                    width: 100%;
-                    .modblue_title {
-                        width: 100%;
-                        height: 35px;
-                        line-height: 35px;
-                        background: url(../images/qbj_tzcj/bg2_03.jpg) repeat-x left bottom;
-                        position: relative;
-                        margin-top: 15px;
-                        .blue_title {
-                            font-size: 16px;
-                            color: #0099cc;
-                            font-weight: bold;
-                            height: 35px;
-                            line-height: 35px;
-                            background: url(../images/qbj_tzcj/bg.jpg) repeat-x left bottom;
-                            padding: 0px 10px;
-                            display: inline-block;
-                        }
-                        .modmore {
-                            position: absolute;
-                            right: 10px;
-                            display: inline-block;
-                            height: 28px;
-                            line-height: 28px;
-                            color: #ffffff;
-                        }
-                    }
-                    .blue_con {
-                        font-size: 12px;
-                        width: 100%;
-                        overflow: hidden;
-                        tr,td{
-                            font-size: 12px;
-                        }
-                    }
+            @media screen and (min-width:560px){
+                .tworig{
+                    width: 260px;
                 }
-                .qyzt {
-                    margin-top: 15px;
-                    .qyzttit {
-                        width: 100%;
-                        height: 52px;
-                        background: url(../images/qbj_tzcj/qyzt.jpg) no-repeat center;
-                        text-align: right;
-                        a {
-                            display: inline-block;
-                            line-height: 45px;
-                            margin-right: 18px;
-                        }
-                    }
-                    .qyztcon {
-                        width: 698px;
-                        border: 1px solid #4fa6e1;
-                        background: url(../images/qbj_tzcj/qyzt001.jpg) repeat-x left bottom;
-                        border-top: none;
-                        .qyztcontent {
-                            width: 664px;
-                            border: 1px solid #dce5ee;
-                            background: url(../images/qbj_tzcj/qyzt002.jpg) repeat-x left bottom;
-                            margin: 0 auto;
-                            .qycj_zt {
-                                width: 100%;
-                            }
-                        }
-                        tr,td{
-                            font-size: 12px;
-                        }
-                        .list12 tr td {
-                            line-height: 28px;
-                        }
-                    }
+            }
+            @media screen and (max-width:560px){
+                .tworig{
+                    width:100%;
                 }
             }
             .tworig {
-                width: 260px;
+                //width: 260px;
                 float: right;
-                .modbblue {
-                    width: 260px;
-                    .modbblue_title {
+
+
+
+                .newImage2Box{
+                    padding-top: 11px;
+                    img{
+                        width: 100%;
+                    }
+                }
+                @media screen and (min-width:560px){
+                    .modbblue{
                         width: 260px;
+                    }
+                }
+                @media screen and (max-width:560px){
+                    .modbblue{
+                        width:100%;
+                    }
+                }
+                .modbblue {
+                    //width: 260px;
+
+
+
+                    @media screen and (min-width:560px){
+                        .modbblue_title{
+                            width: 260px;
+                            background: url(../images/qbj_tzcj/topimg.png) no-repeat center;
+                        }
+                    }
+                    @media screen and (max-width:560px){
+                        .modbblue_title{
+                            width:100%;
+                            background: url(../images/qbj_tzcj/topimg.png) no-repeat center;
+                            background-size: 100%;
+                        }
+                    }
+                    .modbblue_title {
+                        //width: 260px;
                         height: 35px;
-                        background: url(../images/qbj_tzcj/topimg.png) no-repeat center;
                         position: relative;
                         margin-top: 10px;
                         .btitmid {
@@ -246,13 +500,55 @@ body{
                             }
                         }
                     }
+                    @media screen and (min-width:560px){
+                        .bblue_con{
+                            background: url(../images/qbj_tzcj/midimg.jpg) repeat-y;
+                        }
+                    }
+                    @media screen and (max-width:560px){
+                        .bblue_con{
+                            background: url(../images/qbj_tzcj/midimg.jpg) repeat-y;
+                            background-size: 100%;
+                        }
+                    }
                     .bblue_con {
                         width: 100%;
-                        background: url(../images/qbj_tzcj/midimg.jpg) repeat-y;
+                        .ff embed{
+                            height: 136px;
+                        }
+                        .bblue_conDiv{
+                            width: 100%;
+                            height: 56px;
+                            .p1 {
+                                padding-top: 10px;
+                                text-align: center;
+                                color: rgb(75, 155, 188);
+                                font-size: 16px;
+                                font-weight: bold;
+                            }
+                            .p2 {
+                                padding-top: 12px;
+                                text-align: center;
+                                color: rgb(75, 155, 188);
+                                font-size: 16px;
+                                font-style: italic;
+                                font-weight: bold;
+                            }
+                        }
+                    }
+                    @media screen and (min-width:560px){
+                        .bbot{
+                            background: url(../images/qbj_tzcj/bot.png) no-repeat left top;
+                        }
+                    }
+                    @media screen and (max-width:560px){
+                        .bbot{
+                            background: url(../images/qbj_tzcj/bot.png) no-repeat left top;
+                            background-size: 100% 100%;
+                        }
                     }
                     .bbot {
                         width: 100%;
-                        background: url(../images/qbj_tzcj/bot.png) no-repeat left top;
                         height: 10px;
                         overflow: hidden;
                     }

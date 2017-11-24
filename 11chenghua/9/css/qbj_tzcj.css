@@ -6,22 +6,134 @@ body {
   font-size: 12px;
   font-family: "雅黑", "宋体", arial, verdana, sans-serif;
 }
+#main-wrap {
+  margin-bottom: 0;
+}
 .tzmain {
   font-size: 12px;
   width: 100%;
   background: url(../images/qbj_tzcj/botbg.jpg) repeat-x left bottom;
 }
+@media screen and (min-width: 560px) {
+  .tzmain .tzcon {
+    width: 980px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .tzmain .tzcon {
+    width: auto;
+  }
+}
 .tzmain .tzcon {
-  width: 980px;
   margin: 0 auto;
   margin-top: 15px;
 }
+.tzmain .tzcon .clearfloat:after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0;
+}
 .tzmain .tzcon .clearfloat {
+  overflow: hidden;
   zoom: 1;
 }
+.tzmain .tzcon .clearfloat .swiperBox {
+  position: relative;
+}
+@media screen and (min-width: 560px) {
+  .tzmain .tzcon .clearfloat .newImage1Box {
+    float: right;
+    padding-right: 38px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .tzmain .tzcon .clearfloat .newImage1Box img {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 560px) {
+  .tzmain .tzcon .clearfloat .tzhj {
+    width: 500px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .tzmain .tzcon .clearfloat .tzhj {
+    width: 100%;
+  }
+}
 .tzmain .tzcon .clearfloat .tzhj {
-  width: 700px;
   float: left;
+}
+.tzmain .tzcon .clearfloat .tzhj .blk_01 {
+  width: 100%;
+  overflow: hidden;
+  ZOOM: 1;
+  POSITION: relative;
+}
+.tzmain .tzcon .clearfloat .tzhj .blk_01 .LeftBotton {
+  BACKGROUND: url(../images/qbj_tzcj/left.jpg) no-repeat center center;
+  z-index: 99;
+  LEFT: 0px;
+  FLOAT: left;
+  WIDTH: 28px;
+  CURSOR: pointer;
+  POSITION: absolute;
+  TOP: 0px;
+  HEIGHT: 217px;
+}
+.tzmain .tzcon .clearfloat .tzhj .blk_01 .RightBotton {
+  RIGHT: -1px;
+  BACKGROUND: url(../images/qbj_tzcj/rig.jpg) no-repeat center center;
+  FLOAT: right;
+  WIDTH: 28px;
+  CURSOR: pointer;
+  POSITION: absolute;
+  TOP: 0px;
+  HEIGHT: 217px;
+}
+.tzmain .tzcon .clearfloat .tzhj .blk_01 .Cont {
+  MARGIN: 0px auto;
+  OVERFLOW: hidden;
+  WIDTH: 644px;
+  height: 217px;
+}
+.tzmain .tzcon .clearfloat .tzhj .blk_01 .box01 {
+  FLOAT: left;
+  TEXT-ALIGN: center;
+  height: 217px;
+}
+.tzmain .tzcon .clearfloat .tzhj .rollphotos01 {
+  WIDTH: 700px;
+  height: 217px;
+  float: left;
+  margin: 0px;
+}
+.tzmain .tzcon .clearfloat .tzhj .tzhjimg img {
+  padding: 2px;
+  border: 1px solid #dbdbdb;
+  background-color: #ffffff;
+  width: 202px;
+  height: 156px;
+}
+.tzmain .tzcon .clearfloat .tzhj .hjtit a {
+  font-size: 14px;
+}
+.tzmain .tzcon .clearfloat .tzhj .ff embed {
+  width: 252px;
+  height: 215px;
+}
+.tzmain .tzcon .clearfloat .tzhj .ff object {
+  width: 252px;
+  height: 215px;
+}
+.tzmain .tzcon .clearfloat .tzhj .qycj_zt {
+  width: 100%;
+}
+.tzmain .tzcon .clearfloat .tzhj .qycj_ztimg img {
+  border: 1px solid #bdbdbd;
+  padding: 2px;
 }
 .tzmain .tzcon .clearfloat .tzhj .modblu {
   width: 100%;
@@ -59,8 +171,17 @@ body {
   background-color: #f4fbfc;
   border-bottom: 1px solid #d3eced;
 }
+@media screen and (min-width: 560px) {
+  .tzmain .tzcon .clearfloat .tzhj .modblu .modblu_con .rollphotos01 {
+    width: 492px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .tzmain .tzcon .clearfloat .tzhj .modblu .modblu_con .rollphotos01 {
+    width: 100%;
+  }
+}
 .tzmain .tzcon .clearfloat .tzhj .modblu .modblu_con .rollphotos01 {
-  WIDTH: 700px;
   height: 217px;
   float: left;
   margin: 0px;
@@ -92,6 +213,16 @@ body {
   TEXT-ALIGN: center;
   height: 217px;
 }
+@media screen and (min-width: 560px) {
+  .tzmain .tzcon .clearfloat .tzhj .modblu .modblu_con .rollphotos01 .blk_01 .box01 .tzhjimg img {
+    width: 224px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .tzmain .tzcon .clearfloat .tzhj .modblu .modblu_con .rollphotos01 .blk_01 .box01 .tzhjimg img {
+    width: 100%;
+  }
+}
 .tzmain .tzcon .clearfloat .tzhj .modblu .modblu_con .rollphotos01 .blk_01 .RightBotton {
   RIGHT: -1px;
   BACKGROUND: url(../images/qbj_tzcj/rig.jpg) no-repeat center center;
@@ -102,52 +233,22 @@ body {
   TOP: 0px;
   HEIGHT: 217px;
 }
-.tzmain .tzcon .clearfloat .tzzc {
-  width: 260px;
-  float: right;
-  background: url(../images/qbj_tzcj/zsxmbg.png) no-repeat top center;
-  height: 253px;
-}
-.tzmain .tzcon .clearfloat .tzzc .xzk_tit01 {
-  height: 28px;
-  line-height: 28px;
-  position: relative;
-}
-.tzmain .tzcon .clearfloat .tzzc .xzk_tit01 li {
-  font-size: 16px;
-  color: #ffffff;
-  float: left;
-  display: inline-block;
-  overflow: hidden;
-  padding: 0 5px;
-  cursor: pointer;
-}
-.tzmain .tzcon .clearfloat .tzzc .xzk_tit01 div.mmore {
-  position: absolute;
-  height: 28px;
-  line-height: 28px;
-  right: 10px;
-  top: 0;
-}
-.tzmain .tzcon .clearfloat .tzzc .xzk_tit01 div.mmore span a {
-  display: inline-block;
-  width: 100%;
-  height: 28px;
-  line-height: 28px;
-  color: #ffffff;
-}
-.tzmain .tzcon .clearfloat .tzzc .Conbox01 .listmod14 {
-  padding: 10px 0px;
-  width: 90%;
-  margin: 0 auto;
-}
 .tzmain .tzcon .tzztcon {
   width: 100%;
   margin-top: 15px;
   background: url(../images/qbj_tzcj/line01.jpg) no-repeat left top;
 }
+@media screen and (min-width: 560px) {
+  .tzmain .tzcon .tzztcon .twoleft {
+    width: 700px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .tzmain .tzcon .tzztcon .twoleft {
+    width: 100%;
+  }
+}
 .tzmain .tzcon .tzztcon .twoleft {
-  width: 700px;
   float: left;
 }
 .tzmain .tzcon .tzztcon .twoleft .tz {
@@ -188,13 +289,61 @@ body {
 .tzmain .tzcon .tzztcon .twoleft .tz .blue_con td {
   font-size: 12px;
 }
+@media screen and (min-width: 560px) {
+  .tzmain .tzcon .tzztcon .twoleft .tz .blue_con .tzztimg img {
+    width: 167px;
+  }
+  .tzmain .tzcon .tzztcon .twoleft .tz .blue_con .pcTable {
+    display: block;
+  }
+  .tzmain .tzcon .tzztcon .twoleft .tz .blue_con .mobileTable {
+    display: none;
+  }
+}
+@media screen and (max-width: 560px) {
+  .tzmain .tzcon .tzztcon .twoleft .tz .blue_con .pcTable {
+    display: none;
+  }
+  .tzmain .tzcon .tzztcon .twoleft .tz .blue_con .mobileTable {
+    display: block;
+  }
+}
+.tzmain .tzcon .tzztcon .twoleft .tz .blue_con .tzztimg img {
+  padding: 2px;
+  border: 1px solid #dbdbdb;
+  height: 94px;
+  background-color: #ffffff;
+}
 .tzmain .tzcon .tzztcon .twoleft .qyzt {
   margin-top: 15px;
+}
+@media screen and (min-width: 560px) {
+  .tzmain .tzcon .tzztcon .twoleft .qyzt .qyzttit {
+    background: url(../images/qbj_tzcj/qyzt.jpg) no-repeat center;
+  }
+  .tzmain .tzcon .tzztcon .twoleft .qyzt .qiYeZhanTai {
+    display: none;
+  }
+}
+@media screen and (max-width: 560px) {
+  .tzmain .tzcon .tzztcon .twoleft .qyzt .qyzttit {
+    background: url(../images/qbj_tzcj/line01.jpg) no-repeat center;
+    background-size: 100%;
+  }
+  .tzmain .tzcon .tzztcon .twoleft .qyzt .qiYeZhanTai {
+    display: inline-block;
+    float: left;
+    font-size: 16px;
+    color: #0099cc;
+    font-weight: bold;
+    height: 52px;
+    line-height: 52px;
+    padding: 0px 10px;
+  }
 }
 .tzmain .tzcon .tzztcon .twoleft .qyzt .qyzttit {
   width: 100%;
   height: 52px;
-  background: url(../images/qbj_tzcj/qyzt.jpg) no-repeat center;
   text-align: right;
 }
 .tzmain .tzcon .tzztcon .twoleft .qyzt .qyzttit a {
@@ -202,14 +351,50 @@ body {
   line-height: 45px;
   margin-right: 18px;
 }
+@media screen and (min-width: 560px) {
+  .tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon {
+    width: 698px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon {
+    width: 100%;
+  }
+}
 .tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon {
-  width: 698px;
   border: 1px solid #4fa6e1;
   background: url(../images/qbj_tzcj/qyzt001.jpg) repeat-x left bottom;
   border-top: none;
 }
+@media screen and (min-width: 560px) {
+  .tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon .qyztcontent {
+    width: 664px;
+  }
+  .tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon td.clickNum {
+    color: #E97E00;
+    text-indent: 20px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon .qyztcontent {
+    width: 100%;
+  }
+  .tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon td {
+    float: left;
+  }
+  .tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon td.clickNum {
+    color: #E97E00;
+    text-indent: 20px;
+    padding-right: 6px;
+  }
+  .tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon .qycj_ztimg {
+    width: 100%;
+  }
+  .tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon .qycj_ztimg img {
+    width: 100%;
+  }
+}
 .tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon .qyztcontent {
-  width: 664px;
   border: 1px solid #dce5ee;
   background: url(../images/qbj_tzcj/qyzt002.jpg) repeat-x left bottom;
   margin: 0 auto;
@@ -224,17 +409,99 @@ body {
 .tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon .list12 tr td {
   line-height: 28px;
 }
+@media screen and (min-width: 560px) {
+  .tzmain .tzcon .tzztcon .tzzc {
+    width: 260px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .tzmain .tzcon .tzztcon .tzzc {
+    width: 100%;
+  }
+}
+.tzmain .tzcon .tzztcon .tzzc {
+  float: right;
+  background: url(../images/qbj_tzcj/zsxmbg.png) no-repeat top center;
+  background-size: 100% 100%;
+  height: 246px;
+}
+.tzmain .tzcon .tzztcon .tzzc .xzk_tit01 {
+  height: 28px;
+  line-height: 28px;
+  position: relative;
+}
+.tzmain .tzcon .tzztcon .tzzc .xzk_tit01 li {
+  font-size: 16px;
+  color: #ffffff;
+  float: left;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0 5px;
+  cursor: pointer;
+}
+.tzmain .tzcon .tzztcon .tzzc .xzk_tit01 div.mmore {
+  position: absolute;
+  height: 28px;
+  line-height: 28px;
+  right: 10px;
+  top: 0;
+}
+.tzmain .tzcon .tzztcon .tzzc .xzk_tit01 div.mmore span a {
+  display: inline-block;
+  width: 100%;
+  height: 28px;
+  line-height: 28px;
+  color: #ffffff;
+}
+.tzmain .tzcon .tzztcon .tzzc .Conbox01 .listmod14 {
+  padding: 10px 0px;
+  width: 90%;
+  margin: 0 auto;
+}
+@media screen and (min-width: 560px) {
+  .tzmain .tzcon .tzztcon .tworig {
+    width: 260px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .tzmain .tzcon .tzztcon .tworig {
+    width: 100%;
+  }
+}
 .tzmain .tzcon .tzztcon .tworig {
-  width: 260px;
   float: right;
 }
-.tzmain .tzcon .tzztcon .tworig .modbblue {
-  width: 260px;
+.tzmain .tzcon .tzztcon .tworig .newImage2Box {
+  padding-top: 11px;
+}
+.tzmain .tzcon .tzztcon .tworig .newImage2Box img {
+  width: 100%;
+}
+@media screen and (min-width: 560px) {
+  .tzmain .tzcon .tzztcon .tworig .modbblue {
+    width: 260px;
+  }
+}
+@media screen and (max-width: 560px) {
+  .tzmain .tzcon .tzztcon .tworig .modbblue {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 560px) {
+  .tzmain .tzcon .tzztcon .tworig .modbblue .modbblue_title {
+    width: 260px;
+    background: url(../images/qbj_tzcj/topimg.png) no-repeat center;
+  }
+}
+@media screen and (max-width: 560px) {
+  .tzmain .tzcon .tzztcon .tworig .modbblue .modbblue_title {
+    width: 100%;
+    background: url(../images/qbj_tzcj/topimg.png) no-repeat center;
+    background-size: 100%;
+  }
 }
 .tzmain .tzcon .tzztcon .tworig .modbblue .modbblue_title {
-  width: 260px;
   height: 35px;
-  background: url(../images/qbj_tzcj/topimg.png) no-repeat center;
   position: relative;
   margin-top: 10px;
 }
@@ -249,13 +516,55 @@ body {
   color: #ffffff;
   font-weight: bold;
 }
+@media screen and (min-width: 560px) {
+  .tzmain .tzcon .tzztcon .tworig .modbblue .bblue_con {
+    background: url(../images/qbj_tzcj/midimg.jpg) repeat-y;
+  }
+}
+@media screen and (max-width: 560px) {
+  .tzmain .tzcon .tzztcon .tworig .modbblue .bblue_con {
+    background: url(../images/qbj_tzcj/midimg.jpg) repeat-y;
+    background-size: 100%;
+  }
+}
 .tzmain .tzcon .tzztcon .tworig .modbblue .bblue_con {
   width: 100%;
-  background: url(../images/qbj_tzcj/midimg.jpg) repeat-y;
+}
+.tzmain .tzcon .tzztcon .tworig .modbblue .bblue_con .ff embed {
+  height: 136px;
+}
+.tzmain .tzcon .tzztcon .tworig .modbblue .bblue_con .bblue_conDiv {
+  width: 100%;
+  height: 56px;
+}
+.tzmain .tzcon .tzztcon .tworig .modbblue .bblue_con .bblue_conDiv .p1 {
+  padding-top: 10px;
+  text-align: center;
+  color: #4b9bbc;
+  font-size: 16px;
+  font-weight: bold;
+}
+.tzmain .tzcon .tzztcon .tworig .modbblue .bblue_con .bblue_conDiv .p2 {
+  padding-top: 12px;
+  text-align: center;
+  color: #4b9bbc;
+  font-size: 16px;
+  font-style: italic;
+  font-weight: bold;
+}
+@media screen and (min-width: 560px) {
+  .tzmain .tzcon .tzztcon .tworig .modbblue .bbot {
+    background: url(../images/qbj_tzcj/bot.png) no-repeat left top;
+  }
+}
+@media screen and (max-width: 560px) {
+  .tzmain .tzcon .tzztcon .tworig .modbblue .bbot {
+    background: url(../images/qbj_tzcj/bot.png) no-repeat left top;
+    background-size: 100% 100%;
+  }
 }
 .tzmain .tzcon .tzztcon .tworig .modbblue .bbot {
   width: 100%;
-  background: url(../images/qbj_tzcj/bot.png) no-repeat left top;
   height: 10px;
   overflow: hidden;
 }
