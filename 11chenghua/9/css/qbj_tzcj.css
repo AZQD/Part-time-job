@@ -1,0 +1,261 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-size: 12px;
+  font-family: "雅黑", "宋体", arial, verdana, sans-serif;
+}
+.tzmain {
+  font-size: 12px;
+  width: 100%;
+  background: url(../images/qbj_tzcj/botbg.jpg) repeat-x left bottom;
+}
+.tzmain .tzcon {
+  width: 980px;
+  margin: 0 auto;
+  margin-top: 15px;
+}
+.tzmain .tzcon .clearfloat {
+  zoom: 1;
+}
+.tzmain .tzcon .clearfloat .tzhj {
+  width: 700px;
+  float: left;
+}
+.tzmain .tzcon .clearfloat .tzhj .modblu {
+  width: 100%;
+}
+.tzmain .tzcon .clearfloat .tzhj .modblu .modblu_title {
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  background: url(../images/qbj_tzcj/tzulbg.jpg) repeat-x center;
+  position: relative;
+}
+.tzmain .tzcon .clearfloat .tzhj .modblu .modblu_title .tit {
+  height: 35px;
+  background: url(../images/qbj_tzcj/tztitbg.jpg) no-repeat center;
+  float: left;
+  width: 178px;
+  text-indent: 24px;
+}
+.tzmain .tzcon .clearfloat .tzhj .modblu .modblu_title .tit .titstyle {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: bold;
+}
+.tzmain .tzcon .clearfloat .tzhj .modblu .modblu_title div .modblumore {
+  position: absolute;
+  right: 10px;
+  display: inline-block;
+  height: 35px;
+  line-height: 35px;
+  color: #303030;
+}
+.tzmain .tzcon .clearfloat .tzhj .modblu .modblu_con {
+  width: 100%;
+  overflow: hidden;
+  background-color: #f4fbfc;
+  border-bottom: 1px solid #d3eced;
+}
+.tzmain .tzcon .clearfloat .tzhj .modblu .modblu_con .rollphotos01 {
+  WIDTH: 700px;
+  height: 217px;
+  float: left;
+  margin: 0px;
+}
+.tzmain .tzcon .clearfloat .tzhj .modblu .modblu_con .rollphotos01 .blk_01 {
+  width: 100%;
+  overflow: hidden;
+  ZOOM: 1;
+  POSITION: relative;
+}
+.tzmain .tzcon .clearfloat .tzhj .modblu .modblu_con .rollphotos01 .blk_01 .LeftBotton {
+  BACKGROUND: url(../images/qbj_tzcj/left.jpg) no-repeat center center;
+  LEFT: 0px;
+  FLOAT: left;
+  WIDTH: 28px;
+  CURSOR: pointer;
+  POSITION: absolute;
+  TOP: 0px;
+  HEIGHT: 217px;
+}
+.tzmain .tzcon .clearfloat .tzhj .modblu .modblu_con .rollphotos01 .blk_01 .Cont {
+  width: 645px;
+  overflow: hidden;
+  MARGIN: 0px auto;
+  height: 217px;
+}
+.tzmain .tzcon .clearfloat .tzhj .modblu .modblu_con .rollphotos01 .blk_01 .box01 {
+  FLOAT: left;
+  TEXT-ALIGN: center;
+  height: 217px;
+}
+.tzmain .tzcon .clearfloat .tzhj .modblu .modblu_con .rollphotos01 .blk_01 .RightBotton {
+  RIGHT: -1px;
+  BACKGROUND: url(../images/qbj_tzcj/rig.jpg) no-repeat center center;
+  FLOAT: right;
+  WIDTH: 28px;
+  CURSOR: pointer;
+  POSITION: absolute;
+  TOP: 0px;
+  HEIGHT: 217px;
+}
+.tzmain .tzcon .clearfloat .tzzc {
+  width: 260px;
+  float: right;
+  background: url(../images/qbj_tzcj/zsxmbg.png) no-repeat top center;
+  height: 253px;
+}
+.tzmain .tzcon .clearfloat .tzzc .xzk_tit01 {
+  height: 28px;
+  line-height: 28px;
+  position: relative;
+}
+.tzmain .tzcon .clearfloat .tzzc .xzk_tit01 li {
+  font-size: 16px;
+  color: #ffffff;
+  float: left;
+  display: inline-block;
+  overflow: hidden;
+  padding: 0 5px;
+  cursor: pointer;
+}
+.tzmain .tzcon .clearfloat .tzzc .xzk_tit01 div.mmore {
+  position: absolute;
+  height: 28px;
+  line-height: 28px;
+  right: 10px;
+  top: 0;
+}
+.tzmain .tzcon .clearfloat .tzzc .xzk_tit01 div.mmore span a {
+  display: inline-block;
+  width: 100%;
+  height: 28px;
+  line-height: 28px;
+  color: #ffffff;
+}
+.tzmain .tzcon .clearfloat .tzzc .Conbox01 .listmod14 {
+  padding: 10px 0px;
+  width: 90%;
+  margin: 0 auto;
+}
+.tzmain .tzcon .tzztcon {
+  width: 100%;
+  margin-top: 15px;
+  background: url(../images/qbj_tzcj/line01.jpg) no-repeat left top;
+}
+.tzmain .tzcon .tzztcon .twoleft {
+  width: 700px;
+  float: left;
+}
+.tzmain .tzcon .tzztcon .twoleft .tz {
+  width: 100%;
+}
+.tzmain .tzcon .tzztcon .twoleft .tz .modblue_title {
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  background: url(../images/qbj_tzcj/bg2_03.jpg) repeat-x left bottom;
+  position: relative;
+  margin-top: 15px;
+}
+.tzmain .tzcon .tzztcon .twoleft .tz .modblue_title .blue_title {
+  font-size: 16px;
+  color: #0099cc;
+  font-weight: bold;
+  height: 35px;
+  line-height: 35px;
+  background: url(../images/qbj_tzcj/bg.jpg) repeat-x left bottom;
+  padding: 0px 10px;
+  display: inline-block;
+}
+.tzmain .tzcon .tzztcon .twoleft .tz .modblue_title .modmore {
+  position: absolute;
+  right: 10px;
+  display: inline-block;
+  height: 28px;
+  line-height: 28px;
+  color: #ffffff;
+}
+.tzmain .tzcon .tzztcon .twoleft .tz .blue_con {
+  font-size: 12px;
+  width: 100%;
+  overflow: hidden;
+}
+.tzmain .tzcon .tzztcon .twoleft .tz .blue_con tr,
+.tzmain .tzcon .tzztcon .twoleft .tz .blue_con td {
+  font-size: 12px;
+}
+.tzmain .tzcon .tzztcon .twoleft .qyzt {
+  margin-top: 15px;
+}
+.tzmain .tzcon .tzztcon .twoleft .qyzt .qyzttit {
+  width: 100%;
+  height: 52px;
+  background: url(../images/qbj_tzcj/qyzt.jpg) no-repeat center;
+  text-align: right;
+}
+.tzmain .tzcon .tzztcon .twoleft .qyzt .qyzttit a {
+  display: inline-block;
+  line-height: 45px;
+  margin-right: 18px;
+}
+.tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon {
+  width: 698px;
+  border: 1px solid #4fa6e1;
+  background: url(../images/qbj_tzcj/qyzt001.jpg) repeat-x left bottom;
+  border-top: none;
+}
+.tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon .qyztcontent {
+  width: 664px;
+  border: 1px solid #dce5ee;
+  background: url(../images/qbj_tzcj/qyzt002.jpg) repeat-x left bottom;
+  margin: 0 auto;
+}
+.tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon .qyztcontent .qycj_zt {
+  width: 100%;
+}
+.tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon tr,
+.tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon td {
+  font-size: 12px;
+}
+.tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon .list12 tr td {
+  line-height: 28px;
+}
+.tzmain .tzcon .tzztcon .tworig {
+  width: 260px;
+  float: right;
+}
+.tzmain .tzcon .tzztcon .tworig .modbblue {
+  width: 260px;
+}
+.tzmain .tzcon .tzztcon .tworig .modbblue .modbblue_title {
+  width: 260px;
+  height: 35px;
+  background: url(../images/qbj_tzcj/topimg.png) no-repeat center;
+  position: relative;
+  margin-top: 10px;
+}
+.tzmain .tzcon .tzztcon .tworig .modbblue .modbblue_title .btitmid {
+  height: 28px;
+  float: left;
+  line-height: 28px;
+  text-indent: 17px;
+}
+.tzmain .tzcon .tzztcon .tworig .modbblue .modbblue_title .btitmid .bblue_title {
+  font-size: 16px;
+  color: #ffffff;
+  font-weight: bold;
+}
+.tzmain .tzcon .tzztcon .tworig .modbblue .bblue_con {
+  width: 100%;
+  background: url(../images/qbj_tzcj/midimg.jpg) repeat-y;
+}
+.tzmain .tzcon .tzztcon .tworig .modbblue .bbot {
+  width: 100%;
+  background: url(../images/qbj_tzcj/bot.png) no-repeat left top;
+  height: 10px;
+  overflow: hidden;
+}
