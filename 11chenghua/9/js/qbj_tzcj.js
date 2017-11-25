@@ -2,9 +2,9 @@ var indexNum = 0;
 var windowWidth = $(window).width();
 $(window).on('resize', function(){
     windowWidth = $(window).width();
-    console.log(windowWidth);
+    //console.log(windowWidth);
 });
-console.log(windowWidth);
+//console.log(windowWidth);
 
 var imgWidth = $('.tzmain .tzcon .clearfloat .tzhj .modblu .modblu_con .rollphotos01 .blk_01 .box01 .tzhjimg img').outerWidth();
 var moveWidth = 235;
