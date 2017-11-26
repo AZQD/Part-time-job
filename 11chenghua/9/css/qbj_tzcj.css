@@ -10,8 +10,7 @@ body {
   margin-bottom: 0;
 }
 #container {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding: 10px;
 }
 .tzmain {
   padding-bottom: 20px;
@@ -389,7 +388,6 @@ body {
   }
   .tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon td.clickNum {
     color: #E97E00;
-    text-indent: 20px;
     padding-right: 6px;
   }
   .tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon .qycj_ztimg {
