@@ -360,11 +360,6 @@ body {
     width: 698px;
   }
 }
-@media screen and (max-width: 560px) {
-  .tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon {
-    width: 100%;
-  }
-}
 .tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon {
   border: 1px solid #4fa6e1;
   background: url(../images/qbj_tzcj/qyzt001.jpg) repeat-x left bottom;
@@ -380,9 +375,6 @@ body {
   }
 }
 @media screen and (max-width: 560px) {
-  .tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon .qyztcontent {
-    width: 100%;
-  }
   .tzmain .tzcon .tzztcon .twoleft .qyzt .qyztcon td {
     float: left;
   }
@@ -420,6 +412,7 @@ body {
 @media screen and (max-width: 560px) {
   .tzmain .tzcon .tzztcon .tzzc {
     width: 100%;
+    margin-top: 10px;
   }
 }
 .tzmain .tzcon .tzztcon .tzzc {
