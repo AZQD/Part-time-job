@@ -180,6 +180,9 @@ body {
 #container .main .rightBox .zyxxzz .list_1 .chgk_list li.hover {
   font-weight: bold;
 }
+#container .main .rightBox .yrchPic {
+  text-align: center;
+}
 #container .main .rightBox .yrchPic a {
   color: #333;
   text-decoration: none;
@@ -201,4 +204,3 @@ body {
 #container .main .fr {
   float: right;
 }
-/*# sourceMappingURL=physicalGeography.css.map */
