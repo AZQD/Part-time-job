@@ -7,11 +7,14 @@
 代码位置：
 七期：git clone https://gitee.com/kongxin-own/chenghua.git
 参考网站：http://www.chenghua.gov.cn/
+费用：4个页面费用
 
 
 八期：git clone https://gitee.com/kongxin-own/chenghua2.git
 参考网站：http://www.chenghua.gov.cn/index.php?cid=1682
+费用：2个页面费用、组长管理费
+
 
 九期：git clone https://gitee.com/kongxin-own/qbjgov.git
-
 参考网站：http://www.qbj.gov.cn/qbj/443829/index.html
+费用：1个页面费用
