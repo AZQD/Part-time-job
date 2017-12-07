@@ -16,6 +16,10 @@
   background-color: #fff;
   padding-bottom: 11px;
 }
+.main a:hover {
+  color: #CC0000;
+  text-decoration: underline!important;
+}
 .main .of {
   overflow: hidden;
 }
@@ -97,6 +101,10 @@
   line-height: 30px;
   padding-left: 80px;
   font-size: 14px;
+}
+.main .of .lleft .logoDiv ul li a:hover {
+  color: #CC0000;
+  text-decoration: none!important;
 }
 .main .of .lleft .logoDiv ul li .a1 {
   background: url(../images/zjgnq/bu1.jpg) left no-repeat;
@@ -211,6 +219,10 @@
 .main .of .lright .bar03 > div a {
   text-decoration: none;
   color: #333;
+}
+.main .of .lright .bar03 > div a:hover {
+  color: #CC0000;
+  text-decoration: underline!important;
 }
 .main .of .lright .lrl {
   overflow: hidden;

@@ -10,6 +10,10 @@
   }
 }
 .main{
+  a:hover{
+    color: #CC0000;
+    text-decoration: underline!important;
+  }
   border: 1px solid #b3dce9;
   border-top: 0;
   margin: 0 auto;
@@ -63,11 +67,24 @@
         }
       }
       .cont {
+
+        @media screen and (min-width:560px){
+          .hd{
+            float: left;
+            margin: 16px 0 0 14px;
+          }
+        }
+        @media screen and (max-width:560px){
+          .hd{
+            margin: 0 auto;
+            margin-top: 16px;
+          }
+        }
+
         .hd {
-          margin: 16px 0 0 14px;
           width: 229px;
           height: 172px;
-          float: left;
+
           .mF_classicHC_wrap{
             #myFocus {
               width: 229px!important;
@@ -129,6 +146,7 @@
           @media screen and (max-width:560px){
             li{
               width:auto;
+
             }
           }
           li{
@@ -150,6 +168,7 @@
               padding-left: 10px;
               float: left;
             }
+
             span{
               float: right;
               color: #999;
@@ -378,6 +397,9 @@
           a{
             color: #333;
           }
+          a:hover{
+            color: #CC0000;
+          }
         }
       }
     }
@@ -452,19 +474,19 @@
             cursor: pointer;
           }
           /*span:first-child:hover{
-              .m3bul:first-child{
-                  display: block;
+              .m3bul1{
+                  display: block!important;
               }
-              .m3bul:last-child{
-                  display: none;
+              .m3bul2{
+                  display: none!important;
               }
-          }
-          span:last-child:hover{
-              .m3bul:first-child{
-                  display: none;
+          }*/
+          /*span:hover{
+              .m3bul1{
+                  display: none!important;
               }
-              .m3bul:last-child{
-                  display: block;
+              .m3bul2{
+                  display: block!important;
               }
           }*/
           .active {
@@ -525,6 +547,9 @@
           line-height: 35px;
           color: #888;
           margin-right: 5px;
+        }
+        >a:hover{
+          text-decoration: none!important;
         }
       }
       .cont {
@@ -707,3 +732,8 @@
     }
   }
 }
+/*
+.main .mid03 .m3b .cont .bar span:hover .m3bul1{
+  color: red;
+  display: none!important;
+}*/
