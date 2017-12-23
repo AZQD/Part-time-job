@@ -13,7 +13,20 @@
 </head>
 <body>
 
+<div class="emptyTip">
+    <p class="tipsBox">
+        <span class="tips">
+        请选择商品~
+    </span>
+    </p>
+</div>
+
 <section class="container">
+
+    <aside class="opacityBg">
+
+    </aside>
+
 
     <aside class="headerBox">
         <div class="left"><img src="image/index/logo.png" alt=""></div>
@@ -24,13 +37,54 @@
     </aside>
 
 
-    <aside class="footerBox">
-        <div class="">1</div>
-        <div class="">1</div>
-    </aside>
+
 
 </section>
+
+<aside class="footerBox">
+    <div class="listBox" style="display: none;">
+        <h3>已选商品(<span class="count">3</span>)</h3>
+        <ul class="cartList">
+            <li class="cartLi">
+                <div class="left">卫龙大面筋65g</div>
+                <div class="right">
+                    <span class="price">
+                        <span class="currentPrice hasYouHui"><span class="currentNum">3.5</span>&nbsp;元</span><br/>
+                        <span class="originPrice">原价<span class="through"><i class="originNum">5</i>&nbsp;元</span></span>
+                    </span>
+                    <img class="reduce" src="image/index/reduce.png" alt="">
+                    <span class="currentCount">2</span>
+                    <img class="add" src="image/index/add.png" alt="">
+                </div>
+            </li>
+            <li class="cartLi">
+                <div class="left">卫龙大面筋65g</div>
+                <div class="right">
+                    <span class="price">
+                        <span class="currentPrice"><span class="currentNum">3.5</span>&nbsp;元</span><br/>
+                        <span style="display: none;" class="originPrice">原价<span class="through"><i class="originNum">5</i>&nbsp;元</span></span>
+                    </span>
+                    <img class="reduce" src="image/index/reduce.png" alt="">
+                    <span class="currentCount">2</span>
+                    <img class="add" src="image/index/add.png" alt="">
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="buyBox">
+        <div class="left">
+            <div class="part cartIcon"><img id="cart" src="image/index/icon_cart.svg" alt=""><span class="count">4</span></div>
+            <div class="part">
+                <span class="total">合计：<span class="totalMoney">1</span>元</span><br/>
+                <span class="youHui">已优惠：<span class="youHuiMoney">1.5</span>&nbsp;元</span>
+            </div>
+        </div>
+        <div class="right">去结算</div>
+    </div>
+</aside>
+
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
 <script type="text/javascript" src="js/public.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
 </body>
 </html>
