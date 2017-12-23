@@ -1,0 +1,33 @@
+.headerBox {
+  padding: 5px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FFCC00;
+  border-bottom: 1px solid #eee;
+}
+.headerBox .left img {
+  height: 2.5rem;
+}
+.headerBox .right {
+  display: flex;
+  text-align: center;
+  font-size: 0.6875rem;
+  color: #111;
+}
+.headerBox .right img {
+  width: 1.4375rem;
+}
+.headerBox .right .saoMa {
+  margin-right: 1.5rem;
+}
+.footerBox {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #eee;
+}
