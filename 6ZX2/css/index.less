@@ -74,6 +74,39 @@ body{
   }
 }
 
+.goodsBox{
+  color: red;
+  display: flex;
+  //justify-content:space-between;
+  //align-items:center;
+  min-height: calc(100vh - 270/@rem);
+  .left{
+    flex-basis: 70/@rem;
+    overflow: scroll;
+    background-color: #F4F4F4;
+    .goodsSort{
+      .sortName{
+        text-align: center;
+        height: 52/@rem;
+        line-height: 52/@rem;
+        font-size: 14/@rem;
+        color: #111;
+        background: none;
+      }
+      .active{
+        font-size: 16/@rem;
+        color: #111;
+        background: #fff url("../image/index/sortBg.png") no-repeat left center;
+        background-size: 4/@rem 14/@rem;
+      }
+    }
+  }
+  .right{
+    flex-grow: 1;
+    overflow: scroll;
+  }
+}
+
 .footerBox{
   position: fixed;
   left:0;
