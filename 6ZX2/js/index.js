@@ -52,10 +52,13 @@ $(function(){
         });
     });
 
+
     //底部列表加和减
-    function footerListNumCtr() {
+    function footerListReduce() {
         //减少
-        $('.footerBox .listBox .cartList .cartLi').unbind('click').delegate('.right .reduce','click',function(ev){
+        $('.footerBox .listBox .cartList .cartLi').delegate('.right .reduce','click',function(ev){
+
+
             var index = $(this).parents('.cartLi').index();
             var thisNum = $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html();
             thisNum--;
@@ -76,17 +79,29 @@ $(function(){
                 }
             }
         });
-        //添加
-        $('.footerBox .listBox .cartList .cartLi').unbind('click').delegate('.right .add','click',function(ev){
+
+        $('.footerBox .listBox .cartList .cartLi').delegate('.right .add','click',function(ev){
             rotateCart();
             var index = $(this).parents('.cartLi').index();
             var thisNum = $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html();
-            console.log(thisNum);
             thisNum++;
             totalCount++;
             $('.footerBox .buyBox .left .part .count').html(totalCount);
             $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html(thisNum);
         });
+    }//减少
+
+    function footerListAdd() {
+        //添加
+        /*$('.footerBox .listBox .cartList .cartLi').unbind('click').delegate('.right .add','click',function(ev){
+            rotateCart();
+            var index = $(this).parents('.cartLi').index();
+            var thisNum = $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html();
+            thisNum++;
+            totalCount++;
+            $('.footerBox .buyBox .left .part .count').html(totalCount);
+            $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html(thisNum);
+        });*/
     }
 
 
@@ -152,16 +167,17 @@ $(function(){
         }
     }
 
-    footerListNumCtr();
+    footerListReduce();
+    // footerListAdd();
     //列表加减
     $('.goodsBox .right .sortBoxWrap .sortBox').delegate('.sortUl .sortLi .partRight .reduce', 'click', function(ev){
         var index1 = $(this).parents('.sortBox').index();
         var index2 = $(this).parents('.sortLi').index();
-        console.log(index1);
-        console.log(index2);
+        // console.log(index1);
+        // console.log(index2);
         var $currentSortLi = $('.goodsBox .right .sortBoxWrap .sortBox').eq(index1).children('.sortUl').children('.sortLi').eq(index2);
         var thisNum1 = $currentSortLi.children('.partRight').children('.currentCount').html();
-        console.log(thisNum1);
+        // console.log(thisNum1);
         thisNum1--;
         totalCount--;
         $('.footerBox .buyBox .left .part .count').html(totalCount);
@@ -171,17 +187,24 @@ $(function(){
         }else if(thisNum1 == 0){
             $currentSortLi.children('.partRight').children('.currentCount, .reduce').hide();
         }
-        footerListNumCtr();
+
+        for(var i = 0; i<$('.footerBox .listBox .cartList .cartLi').length; i++){
+            if($('.footerBox .listBox .cartList .cartLi').eq(i).attr('id') == (index1+''+index2)){
+                $('.footerBox .listBox .cartList .cartLi').eq(i).find('.currentCount').html(thisNum1);
+            }
+        }
+        // footerListAdd();
+        footerListReduce();
+
     });
 
     //添加
     $('.goodsBox .right .sortBoxWrap .sortBox').delegate('.sortUl .sortLi .partRight .add', 'click', function(ev){
-        footerListNumCtr();
         rotateCart();
         var index1 = $(this).parents('.sortBox').index();
         var index2 = $(this).parents('.sortLi').index();
-        console.log(index1);
-        console.log(index2);
+        // console.log(index1);
+        // console.log(index2);
         var $currentSortLi = $('.goodsBox .right .sortBoxWrap .sortBox').eq(index1).children('.sortUl').children('.sortLi').eq(index2);
         var thisNum2 = $currentSortLi.children('.partRight').children('.currentCount').html();
         if(thisNum2 == 0){
@@ -231,8 +254,8 @@ $(function(){
                 }
             }
         }
-
-
+        // footerListAdd();
+        footerListReduce();
     });
 
 
