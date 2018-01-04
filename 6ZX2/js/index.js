@@ -52,38 +52,42 @@ $(function(){
         });
     });
 
-    //减少
-    $('.footerBox .listBox .cartList .cartLi').delegate('.right .reduce','click',function(ev){
-        var index = $(this).parents('.cartLi').index();
-        var thisNum = $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html();
-        thisNum--;
-        totalCount--;
-        $('.footerBox .buyBox .left .part .count').html(totalCount);
-        if(thisNum > 0){
-            rotateCart();
-            $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html(thisNum);
-        }else if(thisNum == 0){
-            $('.footerBox .listBox .cartList .cartLi').eq(index).remove();
-            if($('.footerBox .listBox .cartList .cartLi').length == 0){
-                $('.footerBox .listBox').remove();
-                hideCartList();
-                totalCount = 0;
-                $('.footerBox .buyBox .left .part .count').hide();
-            }else {
+    //底部列表加和减
+    function footerListNumCtr() {
+        //减少
+        $('.footerBox .listBox .cartList .cartLi').unbind('click').delegate('.right .reduce','click',function(ev){
+            var index = $(this).parents('.cartLi').index();
+            var thisNum = $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html();
+            thisNum--;
+            totalCount--;
+            $('.footerBox .buyBox .left .part .count').html(totalCount);
+            if(thisNum > 0){
                 rotateCart();
+                $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html(thisNum);
+            }else if(thisNum == 0){
+                $('.footerBox .listBox .cartList .cartLi').eq(index).remove();
+                if($('.footerBox .listBox .cartList .cartLi').length == 0){
+                    $('.footerBox .listBox').remove();
+                    hideCartList();
+                    totalCount = 0;
+                    $('.footerBox .buyBox .left .part .count').hide();
+                }else {
+                    rotateCart();
+                }
             }
-        }
-    });
-    //添加
-    $('.footerBox .listBox .cartList .cartLi').delegate('.right .add','click',function(ev){
-        rotateCart();
-        var index = $(this).parents('.cartLi').index();
-        var thisNum = $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html();
-        thisNum++;
-        totalCount++;
-        $('.footerBox .buyBox .left .part .count').html(totalCount);
-        $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html(thisNum);
-    });
+        });
+        //添加
+        $('.footerBox .listBox .cartList .cartLi').unbind('click').delegate('.right .add','click',function(ev){
+            rotateCart();
+            var index = $(this).parents('.cartLi').index();
+            var thisNum = $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html();
+            console.log(thisNum);
+            thisNum++;
+            totalCount++;
+            $('.footerBox .buyBox .left .part .count').html(totalCount);
+            $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html(thisNum);
+        });
+    }
 
 
     var size=0;
@@ -148,6 +152,7 @@ $(function(){
         }
     }
 
+    footerListNumCtr();
     //列表加减
     $('.goodsBox .right .sortBoxWrap .sortBox').delegate('.sortUl .sortLi .partRight .reduce', 'click', function(ev){
         var index1 = $(this).parents('.sortBox').index();
@@ -155,32 +160,34 @@ $(function(){
         console.log(index1);
         console.log(index2);
         var $currentSortLi = $('.goodsBox .right .sortBoxWrap .sortBox').eq(index1).children('.sortUl').children('.sortLi').eq(index2);
-        var thisNum = $currentSortLi.children('.partRight').children('.currentCount').html();
-        console.log(thisNum);
-        thisNum--;
+        var thisNum1 = $currentSortLi.children('.partRight').children('.currentCount').html();
+        console.log(thisNum1);
+        thisNum1--;
         totalCount--;
         $('.footerBox .buyBox .left .part .count').html(totalCount);
-        $currentSortLi.children('.partRight').children('.currentCount').html(thisNum);
-        if(thisNum > 0){
+        $currentSortLi.children('.partRight').children('.currentCount').html(thisNum1);
+        if(thisNum1 > 0){
             rotateCart();
-        }else if(thisNum == 0){
+        }else if(thisNum1 == 0){
             $currentSortLi.children('.partRight').children('.currentCount, .reduce').hide();
         }
+        footerListNumCtr();
     });
 
     //添加
     $('.goodsBox .right .sortBoxWrap .sortBox').delegate('.sortUl .sortLi .partRight .add', 'click', function(ev){
+        footerListNumCtr();
         rotateCart();
         var index1 = $(this).parents('.sortBox').index();
         var index2 = $(this).parents('.sortLi').index();
         console.log(index1);
         console.log(index2);
         var $currentSortLi = $('.goodsBox .right .sortBoxWrap .sortBox').eq(index1).children('.sortUl').children('.sortLi').eq(index2);
-        var thisNum = $currentSortLi.children('.partRight').children('.currentCount').html();
-        if(thisNum == 0){
+        var thisNum2 = $currentSortLi.children('.partRight').children('.currentCount').html();
+        if(thisNum2 == 0){
             $currentSortLi.children('.partRight').children('.currentCount, .reduce').show();
         }
-        thisNum++;
+        thisNum2++;
         totalCount++;
         //商品名称
         var goodName = $currentSortLi.children('.partMiddle').children('.name').html();
@@ -203,18 +210,16 @@ $(function(){
     '                    </span>'
         }
 
-
         $('.footerBox .buyBox .left .part .count').html(totalCount);
-        $currentSortLi.children('.partRight').children('.currentCount').html(thisNum);
+        $currentSortLi.children('.partRight').children('.currentCount').html(thisNum2);
 
 
-        console.log(111111,index1+''+index2);
-        if(thisNum == 1){
+        if(thisNum2 == 1){
             $('.footerBox .listBox .cartList').append(
                 '<li class="cartLi" id='+index1+''+index2+'>\n' +
     '                <div class="left">'+goodName+'</div>\n' +
     '                <div class="right">\n'+priceStr+'<img class="reduce" src="image/index/reduce.png" alt="">\n' +
-    '                    <span class="currentCount">'+thisNum+'</span>\n' +
+    '                    <span class="currentCount">'+thisNum2+'</span>\n' +
     '                    <img class="add" src="image/index/add.png" alt="">\n' +
     '                </div>\n' +
     '            </li>'
@@ -222,11 +227,12 @@ $(function(){
         }else{
             for(var i = 0; i<$('.footerBox .listBox .cartList .cartLi').length; i++){
                 if($('.footerBox .listBox .cartList .cartLi').eq(i).attr('id') == (index1+''+index2)){
-                    $('.footerBox .listBox .cartList .cartLi').eq(i).find('.currentCount').html(thisNum);
+                    $('.footerBox .listBox .cartList .cartLi').eq(i).find('.currentCount').html(thisNum2);
                 }
             }
-            // $('.footerBox .listBox .cartList .cartLi').attr('id').find('.currentCount').html(thisNum);
         }
+
+
     });
 
 
