@@ -17,6 +17,7 @@ body{
   height: 100vh;
   background-color: #000;
   opacity: .4;
+  z-index: 3;
 }
 
 .emptyTip{
@@ -55,6 +56,10 @@ body{
   align-items:center;
   background-color: #FFCC00;
   border-bottom: 1/@rem solid #eee;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  height: 51/@rem;
   .left{
     img{
       height: 40/@rem;
@@ -75,7 +80,7 @@ body{
 }
 
 .goodsBox{
-  color: red;
+  padding-top: 51/@rem;
   display: flex;
   //justify-content:space-between;
   //align-items:center;
@@ -84,14 +89,21 @@ body{
     flex-basis: 70/@rem;
     overflow: scroll;
     background-color: #F4F4F4;
+    position: fixed;
+    left: 0;
+    top: 51/@rem;
+    width: 70/@rem;
+    height: 100%;
     .goodsSort{
       .sortName{
         text-align: center;
         height: 52/@rem;
         line-height: 52/@rem;
         font-size: 14/@rem;
-        color: #111;
         background: none;
+        a{
+          color: #111;
+        }
       }
       .active{
         font-size: 16/@rem;
@@ -102,8 +114,115 @@ body{
     }
   }
   .right{
+    padding-left: 70/@rem;
     flex-grow: 1;
     overflow: scroll;
+    margin: 0 10/@rem;
+    padding-bottom: 61/@rem;
+    .currentName{
+      font-size: 16/@rem;
+      color: #111;
+      padding-left: 14/@rem;
+      height: 32/@rem;
+      line-height: 32/@rem;
+      position: fixed;
+      z-index: 2;
+      width: 100%;
+      background-color: #fff;
+      border-bottom: 1/@rem solid #D3D3D3;
+    }
+    .sortBox{
+      h3{
+        font-size: 16/@rem;
+        color: #111;
+        padding-left: 14/@rem;
+        height: 32/@rem;
+        line-height: 32/@rem;
+      }
+      .sortUl{
+        .sortLi{
+          display: flex;
+          height: 96/@rem;
+          padding: 12/@rem 0;
+          position: relative;
+          .partLeft{
+            flex-basis: 86/@rem;
+            padding: 0 8/@rem;
+            display: flex;
+            align-items:center;
+            img{
+              width: 100%;
+            }
+          }
+          .partMiddle{
+            flex-grow: 1;
+            .name{
+              font-size: 16/@rem;
+              color: #111;
+            }
+            .label{
+              margin: 5/@rem 0;
+              height: 20/@rem;
+              span{
+                font-size: 11/@rem;
+                padding: 0 5/@rem;
+                border-radius: 10/@rem;
+                margin-right: 4/@rem;
+              }
+              span:last-child{
+                margin-right: 0;
+              }
+              .red{
+                color: #FF5500;
+                border: 1/@rem solid #FF5500;
+              }
+              .gray{
+                color: #D3D3D3;
+                border: 1/@rem solid #D3D3D3;
+              }
+            }
+            .price{
+
+            }
+            .notYouHui{
+              color: #111;
+              font-size: 11/@rem;
+              .priceNum{
+                font-size: 17/@rem;
+                padding-right: 4/@rem;
+              }
+            }
+            .isYouHui{
+              color: #FF5500;
+              font-size: 11/@rem;
+              .priceNum{
+                font-size: 17/@rem;
+                padding-right: 4/@rem;
+              }
+              .originPrice{
+                padding-left: 4/@rem;
+                color: #D3D3D3;
+                text-decoration: line-through;
+                font-size: 11/@rem;
+              }
+            }
+          }
+          .partRight{
+            position: absolute;
+            right: 0;
+            bottom: 12/@rem;
+            display: flex;
+            align-items:center;
+            img{
+              width: 16/@rem;
+            }
+            .currentCount{
+              padding: 0 6/@rem;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
