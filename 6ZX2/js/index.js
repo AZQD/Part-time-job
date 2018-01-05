@@ -291,8 +291,8 @@ $(function(){
                 totalYouHui+= nowYouHui*parseInt(currentCount);
             }
         }
-        console.log(totalPrice);
-        console.log(totalYouHui);
+        console.log('totalPrice='+totalPrice);
+        console.log('totalYouHui='+totalYouHui);
         $('.footerBox .buyBox .left .part .total .totalMoney').html(totalPrice);
         $('.footerBox .buyBox .left .part .youHui .youHuiMoney').html(totalYouHui);
     }
