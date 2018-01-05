@@ -1,8 +1,13 @@
 $(function(){
     var totalCount = 4;//购物车总数
-    //点击底部购物车：显示已选商品列表
 
+    //点击底部购物车：显示已选商品列表
     function showCartList(){
+        if($('.footerBox .listBox .cartList .cartLi').length>0){
+            $('.footerBox .listBox').show();
+        }else{
+            $('.footerBox .listBox').hide();
+        }
         if(totalCount != 0){
             $('.footerBox .buyBox .right').html('去购买');
             $('.opacityBg').fadeIn().unbind('click').click(function(){
@@ -54,55 +59,65 @@ $(function(){
 
 
     //底部列表加和减
-    function footerListReduce() {
-        //减少
-        $('.footerBox .listBox .cartList .cartLi').delegate('.right .reduce','click',function(ev){
+    //减少
+    $('.footerBox .listBox .cartList').delegate('.cartLi .right .reduce','click',function(ev){
+        var index = $(this).parents('.cartLi').index();
+        var index1 = $(this).parents('.cartLi').attr('index1');
+        var index2 = $(this).parents('.cartLi').attr('index2');
+        var thisNum = $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html();
+        thisNum--;
+        totalCount--;
+        $('.footerBox .buyBox .left .part .count').html(totalCount);
+        if(thisNum > 0){
+            rotateCart();
+            $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html(thisNum);
 
-
-            var index = $(this).parents('.cartLi').index();
-            var thisNum = $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html();
-            thisNum--;
-            totalCount--;
-            $('.footerBox .buyBox .left .part .count').html(totalCount);
-            if(thisNum > 0){
+        }else if(thisNum == 0){
+            $('.footerBox .listBox .cartList .cartLi').eq(index).remove();
+            if($('.footerBox .listBox .cartList .cartLi').length == 0){
+                $('.footerBox .listBox').hide();
+                hideCartList();
+                totalCount = 0;
+                $('.footerBox .buyBox .left .part .count').hide();
+            }else {
                 rotateCart();
-                $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html(thisNum);
-            }else if(thisNum == 0){
-                $('.footerBox .listBox .cartList .cartLi').eq(index).remove();
-                if($('.footerBox .listBox .cartList .cartLi').length == 0){
-                    $('.footerBox .listBox').remove();
-                    hideCartList();
-                    totalCount = 0;
-                    $('.footerBox .buyBox .left .part .count').hide();
-                }else {
-                    rotateCart();
+            }
+        }
+        for(var i = 0; i<$('.goodsBox .right .sortBoxWrap .sortBox').length; i++){
+            for(var j = 0; j<$('.goodsBox .right .sortBoxWrap .sortBox').eq(i).children('.sortUl').children('.sortLi').length; j++){
+                var $sortLi = $('.goodsBox .right .sortBoxWrap .sortBox').eq(i).children('.sortUl').children('.sortLi').eq(j);
+                if(($sortLi.attr('index1') == index1) && ($sortLi.attr('index2') == index2)){
+                    $sortLi.children('.partRight').children('.currentCount').html(thisNum);
+                    if(thisNum == 0){
+                        $sortLi.children('.partRight').children('.reduce, .currentCount').hide();
+                    }
                 }
             }
-        });
+        }
+        getTotalPrice();
+    });
+    //添加
+    $('.footerBox .listBox .cartList').delegate('.cartLi .right .add','click',function(ev){
+        rotateCart();
+        var index = $(this).parents('.cartLi').index();
+        var index1 = $(this).parents('.cartLi').attr('index1');
+        var index2 = $(this).parents('.cartLi').attr('index2');
+        var thisNum = $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html();
+        thisNum++;
+        totalCount++;
+        $('.footerBox .buyBox .left .part .count').html(totalCount);
+        $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html(thisNum);
 
-        $('.footerBox .listBox .cartList .cartLi').delegate('.right .add','click',function(ev){
-            rotateCart();
-            var index = $(this).parents('.cartLi').index();
-            var thisNum = $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html();
-            thisNum++;
-            totalCount++;
-            $('.footerBox .buyBox .left .part .count').html(totalCount);
-            $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html(thisNum);
-        });
-    }//减少
-
-    function footerListAdd() {
-        //添加
-        /*$('.footerBox .listBox .cartList .cartLi').unbind('click').delegate('.right .add','click',function(ev){
-            rotateCart();
-            var index = $(this).parents('.cartLi').index();
-            var thisNum = $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html();
-            thisNum++;
-            totalCount++;
-            $('.footerBox .buyBox .left .part .count').html(totalCount);
-            $('.footerBox .listBox .cartList .cartLi').eq(index).find('.currentCount').html(thisNum);
-        });*/
-    }
+        for(var i = 0; i<$('.goodsBox .right .sortBoxWrap .sortBox').length; i++){
+            for(var j = 0; j<$('.goodsBox .right .sortBoxWrap .sortBox').eq(i).children('.sortUl').children('.sortLi').length; j++){
+                var $sortLi = $('.goodsBox .right .sortBoxWrap .sortBox').eq(i).children('.sortUl').children('.sortLi').eq(j);
+                if(($sortLi.attr('index1') == index1) && ($sortLi.attr('index2') == index2)){
+                    $sortLi.children('.partRight').children('.currentCount').html(thisNum);
+                }
+            }
+        }
+        getTotalPrice();
+    });
 
 
     var size=0;
@@ -167,8 +182,7 @@ $(function(){
         }
     }
 
-    footerListReduce();
-    // footerListAdd();
+
     //列表加减
     $('.goodsBox .right .sortBoxWrap .sortBox').delegate('.sortUl .sortLi .partRight .reduce', 'click', function(ev){
         var index1 = $(this).parents('.sortBox').index();
@@ -189,13 +203,14 @@ $(function(){
         }
 
         for(var i = 0; i<$('.footerBox .listBox .cartList .cartLi').length; i++){
-            if($('.footerBox .listBox .cartList .cartLi').eq(i).attr('id') == (index1+''+index2)){
+            if(($('.footerBox .listBox .cartList .cartLi').eq(i).attr('index1') == index1) && ($('.footerBox .listBox .cartList .cartLi').eq(i).attr('index2') == index2)){
                 $('.footerBox .listBox .cartList .cartLi').eq(i).find('.currentCount').html(thisNum1);
+                if(thisNum1 == 0){
+                    $('.footerBox .listBox .cartList .cartLi').eq(i).remove();
+                }
             }
         }
-        // footerListAdd();
-        footerListReduce();
-
+        getTotalPrice();
     });
 
     //添加
@@ -239,7 +254,7 @@ $(function(){
 
         if(thisNum2 == 1){
             $('.footerBox .listBox .cartList').append(
-                '<li class="cartLi" id='+index1+''+index2+'>\n' +
+                '<li class="cartLi" index1='+index1+' index2='+index2+'>\n' +
     '                <div class="left">'+goodName+'</div>\n' +
     '                <div class="right">\n'+priceStr+'<img class="reduce" src="image/index/reduce.png" alt="">\n' +
     '                    <span class="currentCount">'+thisNum2+'</span>\n' +
@@ -249,15 +264,38 @@ $(function(){
             );
         }else{
             for(var i = 0; i<$('.footerBox .listBox .cartList .cartLi').length; i++){
-                if($('.footerBox .listBox .cartList .cartLi').eq(i).attr('id') == (index1+''+index2)){
+                if(($('.footerBox .listBox .cartList .cartLi').eq(i).attr('index1') == index1) && ($('.footerBox .listBox .cartList .cartLi').eq(i).attr('index2') == index2)){
                     $('.footerBox .listBox .cartList .cartLi').eq(i).find('.currentCount').html(thisNum2);
                 }
             }
         }
-        // footerListAdd();
-        footerListReduce();
+        getTotalPrice();
     });
 
+    //商品总价、优惠券总价
+    getTotalPrice();
+    function getTotalPrice() {
+        var totalPrice = 0;//商品总价
+        var totalYouHui = 0;//商品总优惠
+        for(var i = 0; i<$('.footerBox .listBox .cartList .cartLi').length; i++){
+            var $currentCartLi = $('.footerBox .listBox .cartList .cartLi').eq(i);
+            var currentCartLiPrice = $currentCartLi.find('.currentNum').html();
+            var originCartLiPrice = $currentCartLi.find('.originNum').html();
+            var currentCount = $currentCartLi.find('.currentCount').html();
+            totalPrice += parseFloat(currentCartLiPrice)*parseInt(currentCount);
+            if($currentCartLi.children('.right').children('.price').children('.currentPrice').hasClass('hasYouHui')){
+                var nowYouHui = parseFloat(originCartLiPrice)-parseFloat(currentCartLiPrice);
+                // console.log(parseFloat(originCartLiPrice));
+                // console.log(parseFloat(currentCartLiPrice));
+                // console.log(nowYouHui);
+                totalYouHui+= nowYouHui*parseInt(currentCount);
+            }
+        }
+        console.log(totalPrice);
+        console.log(totalYouHui);
+        $('.footerBox .buyBox .left .part .total .totalMoney').html(totalPrice);
+        $('.footerBox .buyBox .left .part .youHui .youHuiMoney').html(totalYouHui);
+    }
 
 
 });
