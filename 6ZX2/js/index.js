@@ -47,11 +47,11 @@ $(function(){
        $('.footerBox .listBox').slideDown();
         //点击购物车隐藏列表
         $('.footerBox .buyBox .cartIcon').unbind('click').click(function(ev){
-            if($('.footerBox .listBox').is(':visible')){
+            /*if($('.footerBox .listBox').is(':visible')){
                 hideCartList();
             }else{
                 showCartList();
-            }
+            }*/
             ev.stopPropagation();
             $('.footerBox .listBox').slideToggle();
         });
