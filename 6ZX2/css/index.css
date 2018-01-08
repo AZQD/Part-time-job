@@ -93,7 +93,7 @@
 .goodsBox .left .goodsSort .active {
   font-size: 1rem;
   color: #111;
-  background: #ffffff url("../image/index/sortBg.png") no-repeat left center;
+  background: #ffffff url("/public/static/index/mobile/image/index/sortBg2.png") no-repeat left center;
   background-size: 0.25rem 0.875rem;
 }
 .goodsBox .right {
@@ -199,6 +199,8 @@
 }
 .goodsBox .right .sortBox .sortUl .sortLi .partRight .currentCount {
   padding: 0 0.375rem;
+  min-width: 1.625rem;
+  text-align: center;
 }
 .footerBox {
   position: fixed;
@@ -257,6 +259,8 @@
 }
 .footerBox .listBox .cartList .cartLi .right .currentCount {
   padding: 0 0.375rem;
+  min-width: 1.625rem;
+  text-align: center;
 }
 .footerBox .buyBox {
   padding: 0.3125rem 0.9375rem;
