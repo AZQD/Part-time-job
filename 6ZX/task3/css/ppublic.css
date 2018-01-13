@@ -196,12 +196,11 @@ body {
 }
 .commonPopBox1 .commonPop .confirmBox {
   font-size: 0.325rem;
-  padding: 0.3rem 1rem;
   text-align: center;
 }
 .commonPopBox1 .commonPop .confirmBox .confirmBtn {
   cursor: pointer;
-  width: 3.175rem;
+  width: 100%;
   /*height: 2.1875/@rem;*/
   /*line-height: 2.1875/@rem;*/
   padding: 0.2rem 0;
