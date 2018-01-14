@@ -39,6 +39,5 @@ $(function(){
         }else if(index == 2){
             window.location.href = 'mySelf.html';
         }
-
     });
 });
