@@ -12,38 +12,46 @@ body{
   height: 100%;
 }
 .commonPopBox1 .commonPop {
-  width: 20.9375/@rem;
   background-color: #fff;
-  margin: 0 auto;
-  margin-top: 9.375/@rem;
+  margin: 0 3/@rem;
+  margin-top: 12.375/@rem;
+  line-height: 1.5/@rem;
+  position: relative;
 }
 .commonPopBox1 .commonPop .title {
-  /*height: 2.3125/@rem;*/
-  /*line-height: 2.3125/@rem;*/
-  padding: 0.625/@rem 0;
-  padding-left: 0.75/@rem;
-  font-size: 0.875/@rem;
+  font-size: 0.9375/@rem;
   text-align: center;
-  background-color: #cccccc;
+  padding-top: 1/@rem;
 }
 .commonPopBox1 .commonPop .detailTip {
-  text-align: justify;
-  padding: 2/@rem 2.5/@rem;
+  padding: 0 2.5/@rem;
   font-size: 0.875/@rem;
+  text-align: center;
+}
+.commonPopBox1 .commonPop .detailTip .price{
+  color: #ff6600;
+  padding-left: 1/@rem;
 }
 .commonPopBox1 .commonPop .confirmBox {
   font-size: 0.8125/@rem;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1/@rem;
 }
 .commonPopBox1 .commonPop .confirmBox .confirmBtn {
-  cursor: pointer;
-  width: 100%;
-  /*height: 2.1875/@rem;*/
-  /*line-height: 2.1875/@rem;*/
-  padding: 0.5/@rem 0;
-  background-color: #ff4f0d;
-  color: #fff;
+  flex-grow: 1;
+  font-size: 1.2/@rem;
   text-align: center;
+  padding: 1/@rem 0;
+  color: #fff;
+  background-color: #ff6600;
+}
+.commonPopBox1 .commonPop .close{
+  position: absolute;
+  right: 0.25/@rem;
+  top: 0.25/@rem;
+  width: 1.2/@rem;
 }
 /*commonPopBox2弹窗*/
 .commonPopBox2 {
@@ -54,38 +62,42 @@ body{
   height: 100%;
 }
 .commonPopBox2 .commonPop {
-  width: 20.9375/@rem;
   background-color: #fff;
-  margin: 0 auto;
-  margin-top: 9.375/@rem;
+  margin: 0 3/@rem;
+  margin-top: 12.375/@rem;
+  line-height: 1.5/@rem;
 }
 .commonPopBox2 .commonPop .title {
-  /*height: 2.3125/@rem;*/
-  /*line-height: 2.3125/@rem;*/
-  padding: 0.625/@rem 0;
-  padding-left: 0.75/@rem;
-  font-size: 0.875/@rem;
-  background-color: #cccccc;
+  font-size: 0.9375/@rem;
+  text-align: center;
+  padding-top: 1/@rem;
 }
 .commonPopBox2 .commonPop .detailTip {
-  text-align: justify;
-  padding: 2/@rem 2.5/@rem;
+  padding: 0 2.5/@rem;
   font-size: 0.875/@rem;
+  text-align: center;
 }
 .commonPopBox2 .commonPop .confirmBox {
   font-size: 0.8125/@rem;
-  padding: 0.75/@rem 0;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 0.0625/@rem solid #757575;
+  margin-top: 1/@rem;
 }
 .commonPopBox2 .commonPop .confirmBox .confirmBtn {
-  cursor: pointer;
-  width: 7.9375/@rem;
-  /*height: 2.1875/@rem;*/
-  /*line-height: 2.1875/@rem;*/
-  padding: 0.5/@rem 0;
-  background-color: #ff4f0d;
-  color: #fff;
+  flex-grow: 1;
+  font-size: 1.2/@rem;
   text-align: center;
+  padding: 1/@rem 0;
+}
+.commonPopBox2 .commonPop .confirmBox .confirmBtn1{
+  color: #000;
+  background-color: #fff;
+}
+.commonPopBox2 .commonPop .confirmBox .confirmBtn2{
+  color: #fff;
+  background-color: #ff6600;
 }
 
 .bottomBtn{
