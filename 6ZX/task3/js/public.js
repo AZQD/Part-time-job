@@ -118,10 +118,11 @@ function stopLoading2(){
 
 
 //commonPopBox1:第一种弹窗//提示信息，标题；
-function commonPopFun1(dataMsg, title){
+function commonPopFun1(dataMsg, title, btn, fun){
     var top = $(document).scrollTop();
     $('.commonPopBox1').show().css('top',top);//滚动条的高度
     $('.commonPopBox1 .commonPop .title').html(title);
+    $('.commonPopBox1 .commonPop .confirmBox .confirmBtn').html(btn);
     $('.commonPopBox1 .commonPop .detailTip').html(dataMsg);
     if($('.commonPopBox1').is(':visible')){
         $('body, html').css({
@@ -129,7 +130,15 @@ function commonPopFun1(dataMsg, title){
             'height':'100%'
         });
     }
-    $('.commonPopBox1 .commonPop .confirmBox .confirmBtn').unbind('click').click(function(){
+    $('.commonPopBox1 .commonPop .confirmBox .confirmBtn').html(btn).unbind('click').click(function(){
+        fun();
+        $('.commonPopBox1').hide();
+        $('body, html').css({
+            'overflow': 'auto',
+            'height':'auto'
+        });
+    });
+    $('.commonPopBox1 .commonPop .close').unbind('click').click(function(){
         $('.commonPopBox1').hide();
         $('body, html').css({
             'overflow': 'auto',
