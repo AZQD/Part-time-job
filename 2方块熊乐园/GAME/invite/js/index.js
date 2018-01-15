@@ -42,13 +42,17 @@ if((lang == 'fan') || (getParamByUrl('test') == 'chaojie')){
 }
 var uid;//7126
 uid = getParamByUrl('uid');
+if(getParamByUrl('test') == 'chaojie'){
+    uid = 1727;
+}
 if(uid == 'false'){
     alert('请携带uid参数');
 }else{
     //数据交互
     $.ajax({
         type: "get",
-        url: 'http://rqdld-test2.youkongwan.com/api/boss_inv_data?uid='+ uid,//1727
+        // url: 'http://rqdld-test2.youkongwan.com/api/boss_inv_data?uid='+ uid,//1727
+        url: 'http://rqdld-s2.youkongwan.com/api/boss_inv_data?uid='+ uid,//1727
         dataType:"json",
         success: function(data){
             console.log(data);
