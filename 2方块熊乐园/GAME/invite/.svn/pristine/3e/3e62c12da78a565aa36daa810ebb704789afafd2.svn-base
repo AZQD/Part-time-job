@@ -7,6 +7,7 @@ body {
   background: url("../image/bodyBg.png") no-repeat;
   background-size: 100% 100%;
   padding-bottom: 0.99609375rem;
+  overflow-x: hidden;
 }
 .container .partA {
   height: 3.14453125rem;
@@ -38,7 +39,7 @@ body {
   width: 100%;
   left: 0rem;
   top: 0.63476563rem;
-  padding: 0 0.06835938rem;
+  padding: 0 0.05859375rem;
 }
 .container .partB .partBImg2 {
   position: absolute;
@@ -110,7 +111,7 @@ body {
   font-size: 0.41015625rem;
   font-weight: bold;
   color: #fff;
-  margin: 0 0.2734375rem;
+  padding: 0 0.2734375rem;
   /*新增*/
   overflow: hidden;
   width: 100%;
@@ -161,7 +162,21 @@ body {
   color: #0dab01;
 }
 .container .partC .codeWrap .copyBox {
+  position: relative;
   text-align: center;
+  margin: 0 0.56640625rem;
+}
+.container .partC .codeWrap .copyBox .copyAlert {
+  height: 0.9375rem;
+  line-height: 0.9375rem;
+  color: #fff;
+  font-size: 0.44921875rem;
+  background-color: #000;
+  opacity: .7;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: -0.4296875rem;
 }
 .container .partC .codeWrap .copyBox .copyBtn {
   width: 3.26171875rem;
@@ -187,9 +202,10 @@ body {
   width: 5.98632813rem;
   height: 2.36328125rem;
   position: absolute;
-  left: 2.02148438rem;
+  left: 1.92382813rem;
   top: 0.04882813rem;
   z-index: 7;
+  padding: 0 0.09765625rem;
 }
 .container .partC .downloadWarp .part {
   text-align: center;
@@ -232,10 +248,12 @@ body {
 .container .partC .downloadWarp .left {
   background: url("../image/blueBg.png") no-repeat 0 -0.234375rem;
   background-size: 100%;
+  padding-right: 0.2734375rem;
 }
 .container .partC .downloadWarp .right {
   background: url("../image/orangeBg.png") no-repeat 0 -0.234375rem;
   background-size: 100%;
+  padding-left: 0.234375rem;
 }
 .container .partC .explainBox {
   padding-bottom: 1.77734375rem;
