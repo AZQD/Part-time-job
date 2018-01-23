@@ -17,42 +17,62 @@ $(function(){
 
 
     for(var i=0; i<appData.banner.length; i++){
-        $('.bannerBox .banner').append('<div class="swiper-slide"><img src="'+appData.banner[i]+'"></div>');
+        $('.bannerBox .banner').append('<div class="swiper-slide"><img id="banner'+i+'" src="'+appData.banner[i]+'"></div>');
     }
 
+    // 设置延时保证图片加载完成
+    setTimeout(function() {
+        var
+            real_width,
+            real_height,
+            _im         = document.getElementById('banner1'),
+            im          = document.createElement('img');
+        im.src      = _im.src,
+            real_width  = im.width,
+            real_height = im.height;
+        //alert(real_width+'\n'+real_height);
 
-    var bannerImgWidth = $('.bannerBox img').width();
-    var bannerImgHeight = $('.bannerBox img').height();
-    if(bannerImgWidth<=bannerImgHeight){
+        //var bannerImgWidth = $('.bannerBox img').width();
+        //var bannerImgHeight = $('.bannerBox img').height();
 
-        var bottomBoxWidth = $('.contentBox .bottomWrap .bottomBox').width();
+        var bannerImgWidth = real_width;
+        var bannerImgHeight = real_height;
+        //alert(bannerImgWidth);
+        //alert(bannerImgHeight);
+        if(bannerImgWidth<=bannerImgHeight){
 
-        $('.bannerBox img').width(bottomBoxWidth/2-10);
+            var bottomBoxWidth = $('.contentBox .bottomWrap .bottomBox').width();
 
-        var swiper = new Swiper('.swiper-container', {
-            pagination: '.swiper-pagination',
-            loop: true,
-            autoplay: 2000,
-            slidesPerView: 2,
-            paginationClickable: true
+            $('.bannerBox img').width(bottomBoxWidth/2-10);
 
-        });
+            var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',
+                loop: true,
+                autoplay: 2000,
+                slidesPerView: 2,
+                paginationClickable: true
 
-    }else{
+            });
 
-        var bottomBoxWidth = $('.contentBox .bottomWrap .bottomBox').width();
+        }else{
 
-        $('.bannerBox img').width(bottomBoxWidth-10);
+            var bottomBoxWidth = $('.contentBox .bottomWrap .bottomBox').width();
 
-        var swiper = new Swiper('.swiper-container', {
-            pagination: '.swiper-pagination',
-            loop: true,
-            autoplay: 2000,
-            slidesPerView: 1,
-            paginationClickable: true
+            $('.bannerBox img').width(bottomBoxWidth-10);
+
+            var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',
+                loop: true,
+                autoplay: 2000,
+                slidesPerView: 1,
+                paginationClickable: true
 //            spaceBetween: 30
-        });
-    }
+            });
+        }
+
+
+    },50);
+
 
 
 
@@ -81,6 +101,18 @@ $(function(){
     };
 
 
+    //判断是否为微信浏览器
+    function isWeiXin(){
+        var ua = window.navigator.userAgent.toLowerCase();
+        console.log(ua);
+        if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+
     if(isPc()){
         //alert("isPc");
         if(appData.adUrl && appData.iosUrl){
@@ -100,7 +132,15 @@ $(function(){
         if(appData.adUrl){
             $('.contentBox .downloadBox').hide().eq(0).show();
             $('.contentBox .download').unbind("click").click(function(){
-                window.location.href = appData.adUrl;
+                if(isWeiXin()){
+                    $('.bgWrap').show();
+                    $('.bgWrap .tipImg').attr('src', 'image/tip_android.png');
+                    $('.bgWrap').unbind('click').click(function(){
+                        $('.bgWrap').hide();
+                    });
+                }else{
+                    window.location.href = appData.adUrl;
+                }
             });
         }else{
             $('.contentBox .downloadBox').hide().eq(2).show();
@@ -110,7 +150,15 @@ $(function(){
         $('.contentBox .downloadBox').hide().eq(0).show();
         if(appData.iosUrl){
             $('.contentBox .download').unbind("click").click(function(){
-                window.location.href = appData.iosUrl;
+                if(isWeiXin()){
+                    $('.bgWrap').show();
+                    $('.bgWrap .tipImg').attr('src', 'image/tip_ios2.png');
+                    $('.bgWrap').unbind('click').click(function(){
+                        $('.bgWrap').hide();
+                    });
+                }else{
+                    window.location.href = appData.iosUrl;
+                }
             });
         }else{
             $('.contentBox .downloadBox').hide().eq(2).show();
