@@ -15,7 +15,7 @@ body,html{
 .contentBox .dingWei{
     position: fixed;
     width:100%;
-    z-index: 999999999999;
+    z-index: 1;
     left:0;
     top:0;
 }
@@ -139,7 +139,7 @@ body,html{
 .bottomBox .tips .tips-virus{
     padding-right:1.375rem;
 }
-.header{position:fixed;height:13.4375rem;background-color:#fff;z-index: 888888888888;width: 100%;
+.header{position:fixed;height:13.4375rem;background-color:#fff;z-index: 1;width: 100%;
     left:0;
     top:0;
 overflow: hidden;}
@@ -148,3 +148,18 @@ overflow: hidden;}
 .header .pic-bg{position:absolute;height:22.5rem;width:100%;top:-50%;left:0}
 .header .pic-bg div{width:100%;height:100%}
 .header .h-bg{position:absolute;bottom:0;left:0;height:9rem;width:100%;z-index:2}
+
+
+.bgWrap{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 9999999;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.9;
+}
+.bgWrap .tipImg{
+    width: 100%;
+}
