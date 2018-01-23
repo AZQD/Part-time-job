@@ -172,11 +172,11 @@ body{
             }
 
             .codeTip{
-                padding: 6/@rem 0;
+                padding: 8/@rem 0;
                 text-align: center;
                 font-size: 42/@rem;
                 height: 64/@rem;
-                color: #0dab01;
+                color: #FF0101;
             }
 
             .copyBox{
@@ -188,12 +188,14 @@ body{
                     line-height: 96/@rem;
                     color: #fff;
                     font-size: 46/@rem;
-                    background-color: #000;
-                    opacity: .7;
+                    //background-color: #000;
+                    //opacity: .7;
+                    background-color: RGBA(0,0,0,.7);
                     width: 100%;
                     position: absolute;
                     left: 0;
-                    top: -44/@rem;
+                    //top: -44/@rem;
+                    top: -75/@rem;
                 }
                 .copyBtn{
                     width: 334/@rem;
@@ -217,7 +219,8 @@ body{
         
         .downloadWarp{
             position: relative;
-            padding: 0 28/@rem;
+            padding: 16/@rem 28/@rem 100/@rem 28/@rem;
+            margin: 0 66/@rem;
             .bigJianTou{
                 width:613/@rem;
                 height:242/@rem;
@@ -229,7 +232,7 @@ body{
             }
             .part{
                 text-align: center;
-                height: 652/@rem;
+                //height: 652/@rem;
                 .isInstall{
                     padding-top: 252/@rem;
                     img{
@@ -265,9 +268,13 @@ body{
                         background: url("../image/rightBtn.png") no-repeat;
                         background-size: 100% 100%;
                     }
+                    .rightBtnCopy{
+                        background: url("../image/copyBg.png") no-repeat;
+                        background-size: 100% 100%;
+                    }
                 }
             }
-            .left{
+            /*.left{
                 background: url("../image/blueBg.png") no-repeat 0 -24/@rem;
                 background-size: 100%;
                 padding-right: 28/@rem;
@@ -276,7 +283,7 @@ body{
                 background: url("../image/orangeBg.png") no-repeat 0 -24/@rem;
                 background-size: 100%;
                 padding-left: 24/@rem;
-            }
+            }*/
         }
 
         .explainBox{

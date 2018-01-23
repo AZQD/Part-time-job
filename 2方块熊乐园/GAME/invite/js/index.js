@@ -15,6 +15,7 @@ switch(sysLanguage) {
 if((lang == 'fan') || (getParamByUrl('test') == 'chaojie')){
     $('.container .partC .codeWrap .codeTip').html('*在遊戲中填寫以協助好友');
     $('.container .partC .codeWrap .copyBox .copyBtn .copy').html('複製');
+    $('#copyBtn .copy').html('複製');
     $('#downloadBtn').html('前往下載');
     $('#helpBtn').html('馬上協助');
     $('.container .partC .codeWrap .copyBox .copyAlert').html('複製成功！');
@@ -28,6 +29,7 @@ if((lang == 'fan') || (getParamByUrl('test') == 'chaojie')){
 }else {
     $('.container .partC .codeWrap .codeTip').html('*在游戏中填写以协助好友');
     $('.container .partC .codeWrap .copyBox .copyBtn .copy').html('复制');
+    $('#copyBtn .copy').html('复制');
     $('#downloadBtn').html('前往下载');
     $('#helpBtn').html('马上协助');
     $('.container .partC .codeWrap .copyBox .copyAlert').html('复制成功！');
@@ -69,21 +71,6 @@ $.ajax({
 		$('body').show();
 
 		//复制功能
-		/*$('#copyBtn').unbind('click').bind('click', function (ev) {
-			ev = ev || event;
-			if(ev.preventDefault){
-				ev.preventDefault();
-			}else{
-				return false;
-			}
-			var Url1=document.getElementById("copyCode");
-			console.log(Url1);
-			Url1.select(); // 选择对象
-			document.execCommand("Copy"); // 执行浏览器复制命令
-			alert('复制成功!');
-			document.documentElement.style.webkitUserSelect = 'none';
-			document.documentElement.style.webkitTouchCallout = 'none';
-		});*/
 		var clipboard = new Clipboard('.btn');
 
 		clipboard.on('success', function(e) {
@@ -105,10 +92,10 @@ $.ajax({
 			window.location.href = jsonData.download;
 		});
 
-		//马上协助
+		/*//马上协助
 		$('#helpBtn').unbind('click').bind('click', function(){
 			alert('马上协助');
-		});
+		});*/
 
 	},
 	error:function(error){
