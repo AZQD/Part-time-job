@@ -156,11 +156,11 @@ body {
   background-size: 100% 100%;
 }
 .container .partC .codeWrap .codeTip {
-  padding: 0.05859375rem 0;
+  padding: 0.078125rem 0;
   text-align: center;
   font-size: 0.41015625rem;
   height: 0.625rem;
-  color: #0dab01;
+  color: #FF0101;
 }
 .container .partC .codeWrap .copyBox {
   position: relative;
@@ -172,12 +172,11 @@ body {
   line-height: 0.9375rem;
   color: #fff;
   font-size: 0.44921875rem;
-  background-color: #000;
-  opacity: .7;
+  background-color: rgba(0, 0, 0, 0.7);
   width: 100%;
   position: absolute;
   left: 0;
-  top: -0.4296875rem;
+  top: -0.73242187rem;
 }
 .container .partC .codeWrap .copyBox .copyBtn {
   width: 3.26171875rem;
@@ -197,7 +196,18 @@ body {
 }
 .container .partC .downloadWarp {
   position: relative;
-  padding: 0 0.2734375rem;
+  padding: 0.15625rem 0.2734375rem 0.9765625rem 0.2734375rem;
+  margin: 0 0.64453125rem;
+  /*.left{
+                background: url("../image/blueBg.png") no-repeat 0 -24/@rem;
+                background-size: 100%;
+                padding-right: 28/@rem;
+            }
+            .right{
+                background: url("../image/orangeBg.png") no-repeat 0 -24/@rem;
+                background-size: 100%;
+                padding-left: 24/@rem;
+            }*/
 }
 .container .partC .downloadWarp .bigJianTou {
   width: 5.98632813rem;
@@ -210,7 +220,6 @@ body {
 }
 .container .partC .downloadWarp .part {
   text-align: center;
-  height: 6.3671875rem;
 }
 .container .partC .downloadWarp .part .isInstall {
   padding-top: 2.4609375rem;
@@ -246,15 +255,9 @@ body {
   background: url("../image/rightBtn.png") no-repeat;
   background-size: 100% 100%;
 }
-.container .partC .downloadWarp .left {
-  background: url("../image/blueBg.png") no-repeat 0 -0.234375rem;
-  background-size: 100%;
-  padding-right: 0.2734375rem;
-}
-.container .partC .downloadWarp .right {
-  background: url("../image/orangeBg.png") no-repeat 0 -0.234375rem;
-  background-size: 100%;
-  padding-left: 0.234375rem;
+.container .partC .downloadWarp .part .btnBox .rightBtnCopy {
+  background: url("../image/copyBg.png") no-repeat;
+  background-size: 100% 100%;
 }
 .container .partC .explainBox {
   padding-bottom: 1.77734375rem;
