@@ -1,1 +1,0 @@
-<?php	return array ( 'Home' => 'Mr jobs人才系统核心模块', 'Mobile' => '手机触屏端', ); ?>
