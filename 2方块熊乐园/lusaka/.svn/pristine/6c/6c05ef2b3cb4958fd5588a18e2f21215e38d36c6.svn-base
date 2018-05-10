@@ -1,8 +1,0 @@
-<empty name="list">
-	<div class="empty font_gray9"> Language ability is the magic weapon to enhance job competitiveness ， Do not be modest ！</div>
-<else/>
-	<volist name="list" id="list">
-		<div class="label"><strong class="font_blue">{$list.language_cn}</strong>{$list.level_cn}</div>
-	</volist>
-	<div class="clear"></div>
-</empty>
