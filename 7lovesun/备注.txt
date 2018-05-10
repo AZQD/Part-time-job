@@ -1,8 +1,3 @@
-SVN注册地址：http://code.taobao.org/login/
-账号：604972395@qq.com
-密码：chaojie888
-
-
 代码checkout链接：http://code.taobao.org/svn/kongxin-own/trunk/lovesun
-账号：liuchaojie
-密码：chaojie888
+
+账号密码详见百度云；
