@@ -1,8 +1,0 @@
-[ 2017-06-09T15:09:09+08:00 ] ::1 /qishi/
-INFO: Cron:ClearPromotion Runat 2017-06-09 15:09:08 Use 1.572090 s 
-Cron:AutoApplyJobs Runat 2017-06-09 15:09:08 Use -0.028001 s 
-Cron:AutoRefreshResume Runat 2017-06-09 15:09:08 Use -0.072004 s 
-Cron:AutoRefreshJobs Runat 2017-06-09 15:09:08 Use -0.100005 s 
-Cron:ClearExpiredSetmeal Runat 2017-06-09 15:09:08 Use -0.102005 s 
-Cron:ClearOrder Runat 2017-06-09 15:09:09 Use -0.173010 s 
-

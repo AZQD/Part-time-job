@@ -1,4 +1,0 @@
-name: Orange dream 
-version:4.2.3
-author:jobs.kalichimall.com
-authorurl:http://www.jobs.kalichimall.com
