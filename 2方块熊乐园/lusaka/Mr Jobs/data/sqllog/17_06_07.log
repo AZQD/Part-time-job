@@ -1,4 +1,0 @@
-[ 2017-06-07T13:56:19+08:00 ] ::1 /qishi/
-SQL: SHOW COLUMNS FROM `qs_notice` [RunTime:0.357s] [IP:0.0.0.0] [AddTime:1496814979] [qscms]
-[ 2017-06-07T16:02:17+08:00 ] ::1 /qishi/index.php?m=&c=company&a=index
-SQL: SHOW COLUMNS FROM `qs_members_bind` [RunTime:0.238s] [IP:0.0.0.0] [AddTime:1496822537] [qscms]

@@ -1,4 +1,0 @@
-name:默认模版
-version:4.0
-author:jobs.kalichimall.com
-authorurl:http://www.jobs.kalichimall.com
