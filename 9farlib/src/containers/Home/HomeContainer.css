@@ -1,8 +1,0 @@
-.ff-home {
-  height: 2000px;
-  & .header {
-    padding: .8rem;
-    height: 2rem;
-    background: url(../../assets/logo.png) center center no-repeat;
-  }
-}
